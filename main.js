@@ -644,4 +644,37 @@
     slider.addEventListener('dragstart', e => e.preventDefault());
   });
 
+  /* ── REVIEWS PAGE: Filter by category ──────────────────── */
+  const filterBtns = document.querySelectorAll('.reviews-filter-btn');
+  const reviewCards = document.querySelectorAll('.review-full-card');
+  const reviewsEmpty = document.getElementById('reviewsEmpty');
+
+  if (filterBtns.length && reviewCards.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active state
+        filterBtns.forEach(b => {
+          b.classList.remove('reviews-filter-btn--active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('reviews-filter-btn--active');
+        btn.setAttribute('aria-selected', 'true');
+
+        // Filter cards
+        let visible = 0;
+        reviewCards.forEach(card => {
+          const cats = card.dataset.category || '';
+          const show = filter === 'all' || cats.split(' ').includes(filter);
+          card.hidden = !show;
+          if (show) visible++;
+        });
+
+        // Show/hide empty state
+        if (reviewsEmpty) reviewsEmpty.hidden = visible > 0;
+      });
+    });
+  }
+
 })();
