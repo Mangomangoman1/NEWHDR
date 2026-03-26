@@ -5,36 +5,7 @@
 (function () {
   'use strict';
 
-  // ─── Promo banner: seasonal rotation + dismiss ────────────
-  // To change promotions, just edit this array. Active = date-matched or fallback.
-  var PROMOS = [
-    { id: 'summer_2026',   start: '2026-05-01', end: '2026-09-30', html: '<strong>☀️ Summer Special:</strong> Free screen protector with every screen repair' },
-    { id: 'backtoschool',  start: '2026-08-01', end: '2026-09-15', html: '<strong>📚 Back to School:</strong> 20% off laptop repairs for students' },
-    { id: 'holiday_2026',  start: '2026-11-15', end: '2027-01-05', html: '<strong>🎁 Holiday Deal:</strong> Free diagnostics + 10% off any repair through New Year\'s' },
-    { id: 'spring_2026',   start: '2026-03-01', end: '2026-04-30', html: '<strong>🌸 Spring Cleaning:</strong> Free screen protector with every screen repair' },
-    { id: 'default',       start: '2020-01-01', end: '2099-12-31', html: '<strong>🥭 HDR Promise:</strong> No fix, no charge — free diagnostics on every device' }
-  ];
-
-  var promoBanner = document.getElementById('promoBanner');
-  var promoBannerClose = document.getElementById('promoBannerClose');
-
-  if (promoBanner && promoBannerClose) {
-    var now = new Date().toISOString().slice(0, 10);
-    var promo = PROMOS.find(function(p) { return now >= p.start && now <= p.end; }) || PROMOS[PROMOS.length - 1];
-    var bannerKey = 'hdr_banner_' + promo.id;
-
-    // Update banner content dynamically
-    var bannerText = promoBanner.querySelector('p');
-    if (bannerText) bannerText.innerHTML = promo.html;
-
-    if (localStorage.getItem(bannerKey) === 'dismissed') {
-      promoBanner.classList.add('dismissed');
-    }
-    promoBannerClose.addEventListener('click', function() {
-      promoBanner.classList.add('dismissed');
-      try { localStorage.setItem(bannerKey, 'dismissed'); } catch (e) {}
-    });
-  }
+  // ─── Promo banner: removed ─────────────────────────────────
 
   // ─── Theme toggle ────────────────────────────────────────
   const html = document.documentElement;
