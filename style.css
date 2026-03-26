@@ -1911,6 +1911,18 @@ ul { list-style: none; }
   border-radius: var(--radius-xl);
   padding: var(--space-lg);
 }
+[data-theme="dark"] .area-map {
+  background: #e8edf4;
+  border-color: #c8d0dc;
+}
+[data-theme="dark"] .area-map .area-svg {
+  --area-mountain: #3a6bc5;
+  --area-road: #4a5568;
+  --area-road-label: #4a5568;
+  --area-river: #2b7de9;
+  --area-dot: #4a5568;
+  --area-label: #1a202c;
+}
 
 .area-svg {
   width: 100%;
