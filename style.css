@@ -1224,6 +1224,367 @@ ul { list-style: none; }
   text-align: center;
 }
 
+/* ─── TIPS / BLOG PAGE ────────────────────────────────────── */
+
+/* Table of contents */
+.tips-toc {
+  max-width: 640px;
+  margin: var(--space-xl) auto 0;
+}
+.tips-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.tips-toc-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+}
+.tips-toc-item:hover {
+  background: var(--bg-elevated);
+  transform: translateX(4px);
+}
+.tips-toc-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.tips-toc-label {
+  font-weight: 600;
+  flex: 1;
+}
+.tips-toc-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+.tips-toc-tag--emergency {
+  color: var(--color-orange);
+  background: rgba(247, 129, 102, 0.1);
+}
+
+/* Article layout */
+.tips-article-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.tips-article-header {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  margin-bottom: var(--space-md);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.tips-article-title {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.3;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+.tips-article-title-icon {
+  font-size: 1.6rem;
+  margin-top: 0.15em;
+  flex-shrink: 0;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Article body */
+.tips-article-body h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: var(--space-xl) 0 var(--space-md);
+  color: var(--text-primary);
+}
+.tips-article-body p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--space-md);
+}
+.tips-article-intro {
+  font-size: 1.05rem;
+  color: var(--text-primary) !important;
+  line-height: 1.7;
+  margin-bottom: var(--space-xl) !important;
+}
+.tips-article-body ul,
+.tips-article-body ol {
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+.tips-article-body li {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--space-sm);
+}
+.tips-article-body code {
+  background: var(--bg-elevated);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85em;
+  font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+/* Callout boxes */
+.tips-callout {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  margin: var(--space-xl) 0;
+  border-left: 4px solid;
+}
+.tips-callout p { margin-bottom: 0; }
+.tips-callout-icon {
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.tips-callout--danger {
+  background: rgba(247, 129, 102, 0.08);
+  border-color: var(--color-orange);
+}
+.tips-callout--danger .tips-callout-icon { color: var(--color-orange); }
+.tips-callout--tip {
+  background: rgba(79, 142, 247, 0.08);
+  border-color: var(--color-blue);
+}
+.tips-callout--tip .tips-callout-icon { color: var(--color-blue); }
+
+/* Ordered steps */
+.tips-steps {
+  counter-reset: tip-step;
+  list-style: none;
+  padding-left: 0;
+}
+.tips-steps li {
+  counter-increment: tip-step;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: var(--space-lg);
+}
+.tips-steps li::before {
+  content: counter(tip-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LCD vs OLED comparison cards */
+.tips-compare-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+.tips-compare-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+.tips-compare-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+.tips-compare-card--accent {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--bg-card), rgba(79, 142, 247, 0.05));
+}
+.tips-compare-price {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+}
+.tips-compare-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tips-compare-card li {
+  padding: var(--space-xs) 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.tips-compare-card li:last-child { border-bottom: none; }
+
+/* Battery signs grid */
+.tips-signs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+.tips-sign-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  position: relative;
+}
+.tips-sign-number {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-dim);
+  line-height: 1;
+}
+.tips-sign-card h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  padding-right: 2rem;
+}
+.tips-sign-card p {
+  font-size: 0.85rem;
+}
+
+/* Repair vs Replace math cards */
+.tips-math-examples {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+.tips-math-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+.tips-math-card h4 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  font-size: 1rem;
+}
+.tips-math-verdict {
+  font-size: 1.2rem;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.tips-math-card--yes { border-color: rgba(63, 185, 80, 0.3); }
+.tips-math-card--yes .tips-math-verdict { color: var(--color-green); }
+.tips-math-card--no { border-color: rgba(247, 129, 102, 0.3); }
+.tips-math-card--no .tips-math-verdict { color: var(--color-orange); }
+.tips-math-card p {
+  font-size: 0.85rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* Factor list (repair vs replace) */
+.tips-factor-list {
+  list-style: none;
+  padding: 0;
+}
+.tips-factor-list li {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.tips-factor-list li:last-child { border-bottom: none; }
+
+/* Numbered step cards (slow laptop) */
+.tips-steps-numbered {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+.tips-step-card {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+}
+.tips-step-num {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tips-step-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+.tips-step-card p {
+  font-size: 0.9rem;
+}
+
+/* Inline CTA */
+.tips-cta-inline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-xl);
+}
+.tips-cta-inline p {
+  margin: 0 !important;
+  font-weight: 600;
+  color: var(--text-primary) !important;
+  white-space: nowrap;
+}
+
+/* Tips responsive */
+@media (max-width: 640px) {
+  .tips-compare-cards,
+  .tips-math-examples {
+    grid-template-columns: 1fr;
+  }
+  .tips-cta-inline {
+    flex-direction: column;
+    text-align: center;
+  }
+  .tips-step-card {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  .tips-article-title {
+    flex-direction: column;
+  }
+}
+
 /* ─── BEFORE / AFTER GALLERY ──────────────────────────────── */
 .gallery-grid {
   display: grid;
