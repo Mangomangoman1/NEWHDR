@@ -331,7 +331,7 @@
         .catch(() => {
           // Show error, re-enable button
           if (formError) {
-            formError.hidden = false;
+            formError.classList.add('visible');
             formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
           restoreSubmitBtn();
@@ -349,13 +349,13 @@
 
       function showFormSuccess() {
         if (formSuccess) {
-          formSuccess.hidden = false;
+          formSuccess.classList.add('visible');
           formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
         contactForm.reset();
         // Hide success after 8 seconds
         setTimeout(() => {
-          if (formSuccess) formSuccess.hidden = true;
+          if (formSuccess) formSuccess.classList.remove('visible');
           restoreSubmitBtn();
         }, 8000);
       }
