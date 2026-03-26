@@ -1,0 +1,19 @@
+# Hailey Device Repair — Redirects (Netlify)
+# Pretty URLs: /pricing → /pricing.html
+
+/iphone-repair      /iphone-repair.html     200
+/android-repair     /android-repair.html    200
+/laptop-repair      /laptop-repair.html     200
+/tablet-repair      /tablet-repair.html     200
+/console-repair     /console-repair.html    200
+/mail-in-repair     /mail-in-repair.html    200
+/emergency-repair   /emergency-repair.html  200
+/device-check       /device-check.html      200
+/pricing            /pricing.html           200
+/reviews            /reviews.html           200
+/tips               /tips.html              200
+/warranty           /warranty.html          200
+/about              /about.html             200
+/contact            /contact.html           200
+/privacy            /privacy.html           200
+/student-military   /student-military.html  200

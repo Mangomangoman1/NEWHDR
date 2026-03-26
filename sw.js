@@ -1,17 +1,18 @@
-// Hailey Device Repair — Service Worker
-// Simple cache-first strategy for static assets, network-first for HTML
+// Hailey Device Repair — Service Worker v2
+// Network-first for HTML, cache-first for static assets
+// Updated: 2026-03-26
 
-const CACHE_NAME = 'hdr-v1';
+const CACHE_NAME = 'hdr-v2';
 const STATIC_ASSETS = [
   '/',
   '/style.css',
   '/main.js',
   '/favicon.svg',
-  '/manifest.json',
-  '/og-image.svg'
+  '/og-image.svg',
+  '/manifest.json'
 ];
 
-// Install: cache core assets
+// Pre-cache core assets on install
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -20,7 +21,7 @@ self.addEventListener('install', event => {
   );
 });
 
-// Activate: clean old caches
+// Clean old caches on activate
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -29,14 +30,14 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch: network-first for HTML, cache-first for assets
+// Fetch strategy
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
   // Skip non-GET and external requests
   if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
 
-  // HTML pages: network first, fall back to cache, then offline page
+  // HTML: network-first (fresh content), fallback to cache
   if (event.request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       fetch(event.request)
@@ -50,15 +51,16 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Assets: cache first, fall back to network
+  // Static assets: stale-while-revalidate
   event.respondWith(
     caches.match(event.request).then(cached => {
-      if (cached) return cached;
-      return fetch(event.request).then(response => {
+      const fetchPromise = fetch(event.request).then(response => {
         const clone = response.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
         return response;
-      });
+      }).catch(() => cached);
+
+      return cached || fetchPromise;
     })
   );
 });

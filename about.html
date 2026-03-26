@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <title>About — Hailey Device Repair | Meet Samuel, Your Local Repair Tech</title>
   <meta name="description" content="Hailey Device Repair is a one-person operation run by Samuel in Hailey, Idaho. Learn about the person behind the repairs — why I started, how I work, and what makes HDR different." />
   <meta name="keywords" content="about Hailey Device Repair, Samuel device repair, phone repair technician Hailey Idaho, local repair shop Wood River Valley" />
@@ -40,34 +42,57 @@
     "@type": "LocalBusiness",
     "name": "Hailey Device Repair",
     "founder": {
-      "@type": "Person",
-      "name": "Samuel",
-      "jobTitle": "Repair Technician & Owner"
+        "@type": "Person",
+        "name": "Samuel",
+        "jobTitle": "Repair Technician & Owner"
     },
     "telephone": "+12083666111",
     "email": "samuel@haileyrepair.com",
     "url": "https://haileyrepair.com",
     "description": "One-person consumer electronics repair business serving the Wood River Valley in Hailey, Idaho. Specializing in iPhone, Android, laptop, tablet, and game console repair with curbside and mail-in service.",
     "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Hailey",
-      "addressRegion": "ID",
-      "addressCountry": "US"
+        "@type": "PostalAddress",
+        "addressLocality": "Hailey",
+        "addressRegion": "ID",
+        "addressCountry": "US"
     },
     "areaServed": [
-      { "@type": "City", "name": "Hailey" },
-      { "@type": "City", "name": "Ketchum" },
-      { "@type": "City", "name": "Sun Valley" },
-      { "@type": "City", "name": "Bellevue" }
+        {
+            "@type": "City",
+            "name": "Hailey"
+        },
+        {
+            "@type": "City",
+            "name": "Ketchum"
+        },
+        {
+            "@type": "City",
+            "name": "Sun Valley"
+        },
+        {
+            "@type": "City",
+            "name": "Bellevue"
+        }
     ],
     "priceRange": "$29-$249",
     "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "19:00"
-    }
-  }
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+    },
+    "image": "https://haileyrepair.com/og-image.svg",
+    "sameAs": [
+        "https://g.page/r/CRz04Aqd3UvPEBM"
+    ]
+}
   </script>
 
   <!-- JSON-LD: Breadcrumb -->
@@ -76,10 +101,20 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://haileyrepair.com" },
-      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://haileyrepair.com/about" }
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://haileyrepair.com"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://haileyrepair.com/about"
+        }
     ]
-  }
+}
   </script>
 </head>
 <body>
@@ -411,6 +446,7 @@
           <a href="/about" aria-current="page">About</a>
           <a href="/student-military">Student &amp; Military</a>
           <a href="/emergency-repair">Emergency Repair</a>
+          <a href="/device-check">Device Check</a>
         </div>
         <div class="footer-col">
           <strong>Contact</strong>
@@ -509,6 +545,6 @@
     </button>
   </div>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

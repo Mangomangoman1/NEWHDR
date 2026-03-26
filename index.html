@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <title>Hailey Device Repair — Don't Replace It. Let Me Fix It.</title>
   <meta name="description" content="Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available statewide." />
   <meta name="keywords" content="phone repair hailey idaho, iphone repair, android repair, laptop repair, ketchum, sun valley, bellevue" />
@@ -11,6 +13,7 @@
   <meta property="og:description" content="Fast, fair device repair in Hailey, Idaho. iPhone, Android, laptop & PC. Mail-in statewide. Response under 2 hours." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://haileyrepair.com" />
+  <link rel="canonical" href="https://haileyrepair.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hailey Device Repair" />
   <meta name="twitter:description" content="Don't replace it. Let me fix it. Fast device repair in Hailey, Idaho." />
@@ -85,7 +88,7 @@
       "@type": "AggregateRating",
       "ratingValue": "5.0",
       "bestRating": "5",
-      "ratingCount": "12"
+      "ratingCount": "18"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -174,6 +177,22 @@
         }
       }
     ]
+  }
+  </script>
+
+  <!-- Structured Data: WebSite + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Hailey Device Repair",
+    "url": "https://haileyrepair.com",
+    "description": "Professional device repair in Hailey, Idaho. iPhones, Android, laptops, tablets, and game consoles.",
+    "publisher": {
+      "@type": "LocalBusiness",
+      "name": "Hailey Device Repair",
+      "url": "https://haileyrepair.com"
+    }
   }
   </script>
 </head>
@@ -917,6 +936,23 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       DEVICE CHECK CTA
+  ══════════════════════════════════════════════ -->
+  <section class="section dc-cta-strip" id="device-check-cta">
+    <div class="container" style="max-width: 720px; text-align: center;">
+      <span class="section-eyebrow" data-animate>🔍 Free Tool</span>
+      <h2 class="section-title" data-animate>Not sure what's wrong?</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem;" data-animate>
+        Answer 3 quick questions and get an instant repair estimate. Free, no sign-up required.
+      </p>
+      <a href="/device-check" class="btn btn-primary btn-lg" data-animate style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1rem; padding: 0.85rem 2rem;">
+        <span class="material-symbols-outlined">search</span>
+        Check My Device — It's Free
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        BEFORE / AFTER GALLERY
   ══════════════════════════════════════════════ -->
   <section class="section section--alt" id="gallery">
@@ -1363,6 +1399,36 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       GOOGLE BUSINESS PROFILE CTA
+  ══════════════════════════════════════════════ -->
+  <section class="section gbp-section" id="google">
+    <div class="container" style="max-width: 800px; text-align: center;">
+      <span class="section-eyebrow" data-animate>⭐ Google Verified</span>
+      <h2 class="section-title" data-animate>Find Us on Google</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.05rem;" data-animate>
+        5.0 stars from real customers. Check the reviews, get directions, or leave your own.
+      </p>
+      <div class="gbp-cards" data-animate>
+        <a href="https://g.page/r/CRz04Aqd3UvPEBM" class="gbp-card" target="_blank" rel="noopener noreferrer">
+          <span class="material-symbols-outlined gbp-card-icon" style="color: #4285f4;">location_on</span>
+          <strong>Get Directions</strong>
+          <span>Hailey, Idaho</span>
+        </a>
+        <a href="https://g.page/r/CRz04Aqd3UvPEBM/review" class="gbp-card" target="_blank" rel="noopener noreferrer">
+          <span class="material-symbols-outlined gbp-card-icon" style="color: #fbbc04;">star</span>
+          <strong>Leave a Review</strong>
+          <span>It helps a lot</span>
+        </a>
+        <a href="sms:+12083666111" class="gbp-card">
+          <span class="material-symbols-outlined gbp-card-icon" style="color: #34a853;">sms</span>
+          <strong>Text for Quote</strong>
+          <span>(208) 366-6111</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        CONTACT / FOOTER CTA
   ══════════════════════════════════════════════ -->
   <section class="section" id="contact">
@@ -1518,6 +1584,7 @@
           <a href="/about">About</a>
           <a href="/student-military">Student &amp; Military</a>
           <a href="/emergency-repair">Emergency Repair</a>
+          <a href="/device-check">Device Check</a>
           <a href="/tips#water-damage">Water Damage Guide</a>
           <a href="/tips#lcd-vs-oled">LCD vs OLED</a>
           <a href="/tips#repair-vs-replace">Repair vs Replace</a>
@@ -1620,6 +1687,6 @@
     </button>
   </div>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
