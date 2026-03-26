@@ -750,6 +750,10 @@
     }
     // Safety: always remove after 1.5s even if load event is slow
     setTimeout(removeCurtain, 1500);
+    // Fix back-button: bfcache restores the page with curtain still active
+    window.addEventListener('pageshow', (e) => {
+      if (e.persisted) curtain.classList.add('done');
+    });
   }
 
   /* ── 3D card tilt ────────────────────── */
