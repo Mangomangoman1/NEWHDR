@@ -14,6 +14,10 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Customer Reviews — Hailey Device Repair" />
   <meta name="twitter:description" content="Real reviews from real customers in Hailey, Ketchum, Sun Valley, and beyond." />
+  <meta property="og:image" content="https://haileyrepair.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://haileyrepair.com/og-image.svg" />
   <link rel="canonical" href="https://haileyrepair.com/reviews" />
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -104,13 +108,21 @@
 </head>
 <body>
 
+  <!-- Page load curtain -->
+  <div class="page-curtain" id="pageCurtain">
+    <div class="page-curtain-logo">
+      <span class="material-symbols-outlined">smartphone</span>
+      Hailey Device Repair
+    </div>
+  </div>
+
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- Promo Banner -->
   <div class="promo-banner" id="promoBanner" role="status">
     <div class="container promo-banner-inner">
       <span class="material-symbols-outlined promo-banner-icon">local_offer</span>
-      <p class="promo-banner-text"><strong>Summer Special:</strong> Free screen protector with every screen repair. <a href="/#contact">Book now →</a></p>
+      <p class="promo-banner-text"><strong>Summer Special:</strong> Free screen protector with every screen repair. <a href="/contact">Book now →</a></p>
       <button class="promo-banner-close" id="promoBannerClose" aria-label="Dismiss banner">
         <span class="material-symbols-outlined">close</span>
       </button>
@@ -130,9 +142,9 @@
         <li><a href="/pricing" class="nav-link">Pricing</a></li>
         <li><a href="/tips" class="nav-link">Tips</a></li>
         <li><a href="/reviews" class="nav-link nav-link--active" aria-current="page">Reviews</a></li>
-        <li><a href="/#contact" class="nav-link">Contact</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
-      <a href="/#contact" class="btn btn-primary btn-sm">Get a Quote</a>
+      <a href="/contact" class="btn btn-primary btn-sm">Get a Quote</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -148,9 +160,9 @@
         <li><a href="/pricing" class="nav-link">Pricing</a></li>
         <li><a href="/tips" class="nav-link">Tips</a></li>
         <li><a href="/reviews" class="nav-link nav-link--active" aria-current="page">Reviews</a></li>
-        <li><a href="/#contact" class="nav-link">Contact</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
-      <a href="/#contact" class="btn btn-primary">Get a Quote</a>
+      <a href="/contact" class="btn btn-primary">Get a Quote</a>
     </div>
   </nav>
 
@@ -527,7 +539,7 @@
       <!-- No results message -->
       <div class="reviews-empty" id="reviewsEmpty" hidden>
         <span class="material-symbols-outlined">search_off</span>
-        <p>No reviews in this category yet. <a href="/#contact">Be the first!</a></p>
+        <p>No reviews in this category yet. <a href="/contact">Be the first!</a></p>
       </div>
     </div>
   </section>
@@ -545,7 +557,7 @@
             <span class="material-symbols-outlined">star</span>
             Leave a Google Review
           </a>
-          <a href="/#contact" class="btn btn-outline btn-lg">
+          <a href="/contact" class="btn btn-outline btn-lg">
             <span class="material-symbols-outlined">sms</span>
             Need a Repair?
           </a>

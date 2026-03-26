@@ -14,6 +14,10 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="About — Hailey Device Repair" />
   <meta name="twitter:description" content="Meet the person behind Hailey Device Repair." />
+  <meta property="og:image" content="https://haileyrepair.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://haileyrepair.com/og-image.svg" />
   <link rel="canonical" href="https://haileyrepair.com/about" />
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -80,13 +84,21 @@
 </head>
 <body>
 
+  <!-- Page load curtain -->
+  <div class="page-curtain" id="pageCurtain">
+    <div class="page-curtain-logo">
+      <span class="material-symbols-outlined">smartphone</span>
+      Hailey Device Repair
+    </div>
+  </div>
+
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- Promo Banner -->
   <div class="promo-banner" id="promoBanner" role="status">
     <div class="container promo-banner-inner">
       <span class="material-symbols-outlined promo-banner-icon">local_offer</span>
-      <p class="promo-banner-text"><strong>Summer Special:</strong> Free screen protector with every screen repair. <a href="/#contact">Book now →</a></p>
+      <p class="promo-banner-text"><strong>Summer Special:</strong> Free screen protector with every screen repair. <a href="/contact">Book now →</a></p>
       <button class="promo-banner-close" id="promoBannerClose" aria-label="Dismiss banner">
         <span class="material-symbols-outlined">close</span>
       </button>
@@ -106,9 +118,9 @@
         <li><a href="/pricing" class="nav-link">Pricing</a></li>
         <li><a href="/tips" class="nav-link">Tips</a></li>
         <li><a href="/reviews" class="nav-link">Reviews</a></li>
-        <li><a href="/#contact" class="nav-link">Contact</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
-      <a href="/#contact" class="btn btn-primary btn-sm">Get a Quote</a>
+      <a href="/contact" class="btn btn-primary btn-sm">Get a Quote</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -124,9 +136,9 @@
         <li><a href="/pricing" class="nav-link">Pricing</a></li>
         <li><a href="/tips" class="nav-link">Tips</a></li>
         <li><a href="/reviews" class="nav-link">Reviews</a></li>
-        <li><a href="/#contact" class="nav-link">Contact</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
-      <a href="/#contact" class="btn btn-primary">Get a Quote</a>
+      <a href="/contact" class="btn btn-primary">Get a Quote</a>
     </div>
   </nav>
 
@@ -136,6 +148,7 @@
        HERO
   ══════════════════════════════════════════════ -->
   <section class="lp-hero">
+    <div class="hero-particles" aria-hidden="true"></div>
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
@@ -208,31 +221,31 @@
       <h2 class="section-title">Five things I won't compromise on</h2>
 
       <div class="about-values-grid">
-        <div class="about-value" data-animate>
+        <div class="about-value card-tilt" data-animate>
           <div class="about-value-number">01</div>
           <h3>Honesty first</h3>
           <p>If your device isn't worth repairing, I'll tell you. If I can't fix it, you pay nothing. I'd rather lose a sale than lose your trust.</p>
         </div>
 
-        <div class="about-value" data-animate>
+        <div class="about-value card-tilt" data-animate>
           <div class="about-value-number">02</div>
           <h3>Transparent pricing</h3>
           <p>You get a firm quote before I touch anything. No hidden fees, no "well, we found additional issues." The price I quote is the price you pay.</p>
         </div>
 
-        <div class="about-value" data-animate>
+        <div class="about-value card-tilt" data-animate>
           <div class="about-value-number">03</div>
           <h3>Quality parts</h3>
           <p>I don't use the cheapest parts from the cheapest supplier. Every screen, battery, and component I install is tested before it goes in your device — and warranted for 90 days after.</p>
         </div>
 
-        <div class="about-value" data-animate>
+        <div class="about-value card-tilt" data-animate>
           <div class="about-value-number">04</div>
           <h3>Your data is yours</h3>
           <p>I don't snoop through your phone. I don't copy your files. If a repair requires a factory reset, I'll tell you first and help you back up. Your privacy matters.</p>
         </div>
 
-        <div class="about-value" data-animate>
+        <div class="about-value card-tilt" data-animate>
           <div class="about-value-number">05</div>
           <h3>Speed without shortcuts</h3>
           <p>Most repairs are done same-day, many within the hour. But I won't rush and risk doing it wrong. Quick and right — not quick and sloppy.</p>
@@ -250,25 +263,25 @@
       <h2 class="section-title">Why "local" isn't just a buzzword</h2>
 
       <div class="about-local-grid">
-        <div class="about-local-card" data-animate>
+        <div class="about-local-card card-tilt" data-animate>
           <span class="material-symbols-outlined about-local-icon">sms</span>
           <h3>You text a real person</h3>
           <p>Not a bot, not a call center, not a "please leave a message and we'll get back to you in 24-48 hours." You text me. I reply. Usually within the hour, often in minutes.</p>
         </div>
 
-        <div class="about-local-card" data-animate>
+        <div class="about-local-card card-tilt" data-animate>
           <span class="material-symbols-outlined about-local-icon">handshake</span>
           <h3>Accountability you can see</h3>
           <p>I live here. I shop at the same stores. If I do bad work, I'll hear about it at the grocery store. That's a level of accountability a chain repair shop in Boise simply doesn't have.</p>
         </div>
 
-        <div class="about-local-card" data-animate>
+        <div class="about-local-card card-tilt" data-animate>
           <span class="material-symbols-outlined about-local-icon">directions_car</span>
           <h3>I come to you</h3>
           <p>Curbside repair anywhere in the Wood River Valley — Bellevue, Hailey, Ketchum, Sun Valley. Your parking lot, your driveway, your office. No trip fee.</p>
         </div>
 
-        <div class="about-local-card" data-animate>
+        <div class="about-local-card card-tilt" data-animate>
           <span class="material-symbols-outlined about-local-icon">savings</span>
           <h3>No overhead = lower prices</h3>
           <p>No rent, no employees, no franchise fees. I keep costs low so you don't pay $200 for a repair that should cost $60. Simple math.</p>

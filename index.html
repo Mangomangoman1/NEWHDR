@@ -14,6 +14,10 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hailey Device Repair" />
   <meta name="twitter:description" content="Don't replace it. Let me fix it. Fast device repair in Hailey, Idaho." />
+  <meta property="og:image" content="https://haileyrepair.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://haileyrepair.com/og-image.svg" />
   <!-- Favicon: add favicon.ico or favicon.svg to this directory -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="favicon.svg" />
@@ -175,6 +179,14 @@
 </head>
 <body>
 
+  <!-- Page load curtain -->
+  <div class="page-curtain" id="pageCurtain">
+    <div class="page-curtain-logo">
+      <span class="material-symbols-outlined">smartphone</span>
+      Hailey Device Repair
+    </div>
+  </div>
+
   <!-- Skip to content (accessibility) -->
   <a href="#hero" class="skip-link">Skip to main content</a>
 
@@ -250,6 +262,7 @@
     <div class="hero-bg-grid" aria-hidden="true"></div>
     <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
     <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+    <div class="hero-particles" aria-hidden="true"></div>
 
     <div class="container hero-inner">
       <div class="hero-eyebrow">
@@ -388,7 +401,7 @@
 
       <div class="cards-grid">
 
-        <div class="card" data-animate>
+        <div class="card card-tilt" data-animate>
           <div class="card-icon card-icon--blue">
             <span class="material-symbols-outlined">phone_iphone</span>
           </div>
@@ -404,7 +417,7 @@
           </a>
         </div>
 
-        <div class="card" data-animate>
+        <div class="card card-tilt" data-animate>
           <div class="card-icon card-icon--green">
             <span class="material-symbols-outlined">android</span>
           </div>
@@ -420,7 +433,7 @@
           </a>
         </div>
 
-        <div class="card" data-animate>
+        <div class="card card-tilt" data-animate>
           <div class="card-icon card-icon--purple">
             <span class="material-symbols-outlined">laptop</span>
           </div>
@@ -436,7 +449,7 @@
           </a>
         </div>
 
-        <div class="card" data-animate>
+        <div class="card card-tilt" data-animate>
           <div class="card-icon card-icon--cyan">
             <span class="material-symbols-outlined">tablet</span>
           </div>
@@ -452,7 +465,7 @@
           </a>
         </div>
 
-        <div class="card" data-animate>
+        <div class="card card-tilt" data-animate>
           <div class="card-icon card-icon--red">
             <span class="material-symbols-outlined">sports_esports</span>
           </div>
@@ -468,7 +481,7 @@
           </a>
         </div>
 
-        <div class="card" data-animate>
+        <div class="card card-tilt" data-animate>
           <div class="card-icon card-icon--orange">
             <span class="material-symbols-outlined">manage_search</span>
           </div>
@@ -481,7 +494,7 @@
           </ul>
         </div>
 
-        <div class="card" data-animate>
+        <div class="card card-tilt" data-animate>
           <div class="card-icon card-icon--cyan">
             <span class="material-symbols-outlined">speed</span>
           </div>
@@ -494,7 +507,7 @@
           </ul>
         </div>
 
-        <div class="card card--highlight" data-animate>
+        <div class="card card--highlight card-tilt" data-animate>
           <div class="card-icon card-icon--indigo">
             <span class="material-symbols-outlined">local_shipping</span>
           </div>
@@ -517,6 +530,8 @@
   <!-- ═══════════════════════════════════════════
        PRICING
   ══════════════════════════════════════════════ -->
+  <div class="wave-divider" aria-hidden="true"><svg viewBox="0 0 1440 48" preserveAspectRatio="none"><path class="wave-fill" d="M0,24 C360,48 720,0 1080,24 C1260,36 1380,48 1440,48 L1440,48 L0,48 Z"/></svg></div>
+
   <section class="section section--alt" id="pricing">
     <div class="container">
       <div class="section-header">

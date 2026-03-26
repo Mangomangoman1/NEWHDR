@@ -14,6 +14,10 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Game Console Repair — Hailey Device Repair" />
   <meta name="twitter:description" content="Nintendo Switch, PS5, Xbox & Steam Deck repair in Hailey, Idaho. Fast turnaround, fair pricing." />
+  <meta property="og:image" content="https://haileyrepair.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://haileyrepair.com/og-image.svg" />
   <link rel="canonical" href="https://haileyrepair.com/console-repair" />
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -129,6 +133,14 @@
 </head>
 <body>
 
+  <!-- Page load curtain -->
+  <div class="page-curtain" id="pageCurtain">
+    <div class="page-curtain-logo">
+      <span class="material-symbols-outlined">smartphone</span>
+      Hailey Device Repair
+    </div>
+  </div>
+
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- Promo Banner -->
@@ -155,9 +167,9 @@
         <li><a href="/pricing" class="nav-link">Pricing</a></li>
         <li><a href="/tips" class="nav-link">Tips</a></li>
         <li><a href="/reviews" class="nav-link">Reviews</a></li>
-        <li><a href="/#contact" class="nav-link">Contact</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
-      <a href="/#contact" class="btn btn-primary btn-sm">Get a Quote</a>
+      <a href="/contact" class="btn btn-primary btn-sm">Get a Quote</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -173,9 +185,9 @@
         <li><a href="/pricing" class="nav-link">Pricing</a></li>
         <li><a href="/tips" class="nav-link">Tips</a></li>
         <li><a href="/reviews" class="nav-link">Reviews</a></li>
-        <li><a href="/#contact" class="nav-link">Contact</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
-      <a href="/#contact" class="btn btn-primary">Get a Quote</a>
+      <a href="/contact" class="btn btn-primary">Get a Quote</a>
     </div>
   </nav>
 
@@ -185,6 +197,7 @@
        HERO
   ══════════════════════════════════════════════ -->
   <section class="lp-hero">
+    <div class="hero-particles" aria-hidden="true"></div>
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>

@@ -677,6 +677,52 @@
     });
   }
 
+  /* ── Page load curtain ────────────────── */
+  const curtain = document.getElementById('pageCurtain');
+  if (curtain) {
+    // Remove curtain once page fully loaded (or after 1.5s max)
+    const removeCurtain = () => curtain.classList.add('done');
+    if (document.readyState === 'complete') {
+      setTimeout(removeCurtain, 300);
+    } else {
+      window.addEventListener('load', () => setTimeout(removeCurtain, 300));
+    }
+    // Safety: always remove after 1.5s even if load event is slow
+    setTimeout(removeCurtain, 1500);
+  }
+
+  /* ── 3D card tilt ────────────────────── */
+  document.querySelectorAll('.card-tilt').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const midX = rect.width / 2;
+      const midY = rect.height / 2;
+      const rotY = ((x - midX) / midX) * 6; // max 6deg
+      const rotX = ((midY - y) / midY) * 6;
+      card.style.transform = `perspective(600px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(600px) rotateX(0) rotateY(0)';
+    });
+  });
+
+  /* ── Hero floating particles ─────────── */
+  const particleContainer = document.querySelector('.hero-particles');
+  if (particleContainer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    for (let i = 0; i < 20; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('hero-particle');
+      dot.style.left = Math.random() * 100 + '%';
+      dot.style.top = (60 + Math.random() * 40) + '%';
+      dot.style.animationDuration = (8 + Math.random() * 12) + 's';
+      dot.style.animationDelay = (Math.random() * 10) + 's';
+      dot.style.width = dot.style.height = (2 + Math.random() * 4) + 'px';
+      particleContainer.appendChild(dot);
+    }
+  }
+
   /* ── Pricing page tabs ─────────────────── */
   const pricingTabs = document.querySelectorAll('.pricing-tab');
   if (pricingTabs.length) {
@@ -718,6 +764,28 @@
           next.click();
         }
       });
+    });
+  }
+
+  /* ── Service worker registration ─────── */
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  }
+
+  /* ── Smooth page transitions ──────────── */
+  // When clicking internal links, fade out via curtain before navigating
+  if (curtain && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.addEventListener('click', e => {
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      // Only intercept internal navigation (not anchors, tel:, sms:, mailto:, external)
+      if (!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('sms:') || href.startsWith('mailto:') || href.startsWith('http') || link.target === '_blank') return;
+      // Must be a local page link
+      if (!href.startsWith('/') && !href.endsWith('.html')) return;
+      e.preventDefault();
+      curtain.classList.remove('done');
+      setTimeout(() => { window.location.href = href; }, 300);
     });
   }
 
