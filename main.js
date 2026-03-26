@@ -835,4 +835,68 @@
     });
   }
 
+  // ─── Floating Help Widget ─────────────────────────────────
+  const helpFab = document.getElementById('helpFab');
+  const helpTrigger = document.getElementById('helpFabTrigger');
+
+  if (helpFab && helpTrigger) {
+    // Check if dismissed this session
+    if (sessionStorage.getItem('hdr_help_dismissed') === '1') {
+      helpFab.classList.add('dismissed');
+    }
+
+    helpTrigger.addEventListener('click', () => {
+      if (helpFab.classList.contains('open')) {
+        helpFab.classList.remove('open');
+      } else {
+        helpFab.classList.add('open');
+      }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (helpFab.classList.contains('open') && !helpFab.contains(e.target)) {
+        helpFab.classList.remove('open');
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && helpFab.classList.contains('open')) {
+        helpFab.classList.remove('open');
+        helpTrigger.focus();
+      }
+    });
+
+    // Hide after clicking a contact option (they navigated)
+    helpFab.querySelectorAll('.help-fab-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        helpFab.classList.remove('open');
+      });
+    });
+
+    // Don't show immediately — wait for scroll to indicate engagement
+    helpFab.style.opacity = '0';
+    helpFab.style.transform = 'translateY(16px)';
+    helpFab.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    let helpShown = false;
+    const showHelp = () => {
+      if (!helpShown && window.scrollY > 300) {
+        helpShown = true;
+        helpFab.style.opacity = '1';
+        helpFab.style.transform = 'translateY(0)';
+        window.removeEventListener('scroll', showHelp);
+      }
+    };
+    window.addEventListener('scroll', showHelp, { passive: true });
+    // Also show after 8 seconds if user hasn't scrolled
+    setTimeout(() => {
+      if (!helpShown) {
+        helpShown = true;
+        helpFab.style.opacity = '1';
+        helpFab.style.transform = 'translateY(0)';
+      }
+    }, 8000);
+  }
+
 })();
