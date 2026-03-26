@@ -64,7 +64,7 @@ a{color:inherit;text-decoration:none}
 .hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);max-width:520px;line-height:1.7;margin-bottom:2rem}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
 .page-curtain{position:fixed;inset:0;z-index:9999;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;transition:opacity 0.4s,visibility 0.4s}
-.page-curtain.lifted{opacity:0;visibility:hidden;pointer-events:none}
+.page-curtain.done{opacity:0;visibility:hidden;pointer-events:none}
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--color-cyan,#22d3ee));z-index:101;width:0;transition:none}
 .promo-banner{background:var(--accent);color:#fff;font-size:0.85rem;padding:0.5rem 0;text-align:center}
 .promo-banner.dismissed{display:none}
@@ -1243,19 +1243,19 @@ a{color:inherit;text-decoration:none}
         <div class="area-map" data-animate>
           <svg viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" class="area-svg" role="img" aria-label="Map of the Wood River Valley showing Bellevue, Hailey, Ketchum, and Sun Valley along Highway 75">
             <!-- Mountain silhouette background -->
-            <path d="M0 130 L40 80 L75 110 L110 50 L150 95 L180 40 L210 75 L250 25 L280 60 L310 15 L340 55 L370 30 L400 70 L400 520 L0 520 Z" fill="var(--area-mountain)" opacity="0.15"/>
-            <path d="M0 180 L50 140 L90 160 L130 115 L170 145 L200 100 L240 130 L280 90 L320 120 L360 85 L400 110 L400 520 L0 520 Z" fill="var(--area-mountain)" opacity="0.1"/>
+            <path d="M0 130 L40 80 L75 110 L110 50 L150 95 L180 40 L210 75 L250 25 L280 60 L310 15 L340 55 L370 30 L400 70 L400 520 L0 520 Z" fill="var(--area-mountain)" opacity="0.3"/>
+            <path d="M0 180 L50 140 L90 160 L130 115 L170 145 L200 100 L240 130 L280 90 L320 120 L360 85 L400 110 L400 520 L0 520 Z" fill="var(--area-mountain)" opacity="0.2"/>
 
             <!-- Highway 75 (main road) -->
-            <path d="M200 480 C200 440, 195 400, 200 360 C205 320, 190 280, 200 240 C210 200, 195 160, 200 120 C205 100, 210 80, 220 60" stroke="var(--area-road)" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="12 6" opacity="0.6"/>
-            <text x="230" y="270" fill="var(--area-road-label)" font-size="11" font-family="var(--font-body)" font-weight="600" opacity="0.5" transform="rotate(-5 230 270)">HWY 75</text>
+            <path d="M200 480 C200 440, 195 400, 200 360 C205 320, 190 280, 200 240 C210 200, 195 160, 200 120 C205 100, 210 80, 220 60" stroke="var(--area-road)" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="12 6" opacity="0.8"/>
+            <text x="230" y="270" fill="var(--area-road-label)" font-size="11" font-family="var(--font-body)" font-weight="600" opacity="0.75" transform="rotate(-5 230 270)">HWY 75</text>
 
             <!-- Big Wood River (subtle) -->
-            <path d="M170 490 C175 450, 165 410, 175 370 C185 330, 160 290, 170 250 C180 210, 165 170, 175 130 C180 110, 185 90, 195 65" stroke="var(--area-river)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.35"/>
+            <path d="M170 490 C175 450, 165 410, 175 370 C185 330, 160 290, 170 250 C180 210, 165 170, 175 130 C180 110, 185 90, 195 65" stroke="var(--area-river)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.55"/>
 
             <!-- Town: Bellevue (southernmost) -->
             <g class="area-town area-town--bellevue" data-town="bellevue">
-              <circle cx="200" cy="450" r="8" fill="var(--area-dot)" opacity="0.2"/>
+              <circle cx="200" cy="450" r="8" fill="var(--area-dot)" opacity="0.4"/>
               <circle cx="200" cy="450" r="4" fill="var(--area-dot)"/>
               <text x="225" y="455" fill="var(--area-label)" font-size="14" font-family="var(--font-display)" font-weight="700">Bellevue</text>
             </g>
@@ -1273,24 +1273,24 @@ a{color:inherit;text-decoration:none}
 
             <!-- Town: Ketchum -->
             <g class="area-town area-town--ketchum" data-town="ketchum">
-              <circle cx="200" cy="200" r="8" fill="var(--area-dot)" opacity="0.2"/>
+              <circle cx="200" cy="200" r="8" fill="var(--area-dot)" opacity="0.4"/>
               <circle cx="200" cy="200" r="4" fill="var(--area-dot)"/>
               <text x="225" y="205" fill="var(--area-label)" font-size="14" font-family="var(--font-display)" font-weight="700">Ketchum</text>
             </g>
 
             <!-- Town: Sun Valley -->
             <g class="area-town area-town--sunvalley" data-town="sunvalley">
-              <circle cx="230" cy="140" r="8" fill="var(--area-dot)" opacity="0.2"/>
+              <circle cx="230" cy="140" r="8" fill="var(--area-dot)" opacity="0.4"/>
               <circle cx="230" cy="140" r="4" fill="var(--area-dot)"/>
               <text x="255" y="145" fill="var(--area-label)" font-size="14" font-family="var(--font-display)" font-weight="700">Sun Valley</text>
             </g>
 
             <!-- Distance markers -->
-            <line x1="130" y1="340" x2="130" y2="450" stroke="var(--area-label)" stroke-width="1" opacity="0.25" stroke-dasharray="3 3"/>
-            <text x="125" y="400" fill="var(--area-label)" font-size="10" font-family="var(--font-body)" text-anchor="end" opacity="0.4">~12 mi</text>
+            <line x1="130" y1="340" x2="130" y2="450" stroke="var(--area-label)" stroke-width="1" opacity="0.45" stroke-dasharray="3 3"/>
+            <text x="125" y="400" fill="var(--area-label)" font-size="10" font-family="var(--font-body)" text-anchor="end" opacity="0.7">~12 mi</text>
 
-            <line x1="145" y1="200" x2="145" y2="340" stroke="var(--area-label)" stroke-width="1" opacity="0.25" stroke-dasharray="3 3"/>
-            <text x="140" y="275" fill="var(--area-label)" font-size="10" font-family="var(--font-body)" text-anchor="end" opacity="0.4">~12 mi</text>
+            <line x1="145" y1="200" x2="145" y2="340" stroke="var(--area-label)" stroke-width="1" opacity="0.45" stroke-dasharray="3 3"/>
+            <text x="140" y="275" fill="var(--area-label)" font-size="10" font-family="var(--font-body)" text-anchor="end" opacity="0.7">~12 mi</text>
           </svg>
         </div>
 
