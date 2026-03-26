@@ -26,23 +26,69 @@
   const themeToggle = document.getElementById('themeToggle');
   const THEME_KEY = 'hdr-theme';
 
-  function setTheme(theme) {
+  function setTheme(theme, announce) {
     html.setAttribute('data-theme', theme);
     localStorage.setItem(THEME_KEY, theme);
+    if (announce !== false) announceToSR(theme === 'dark' ? 'Dark theme enabled' : 'Light theme enabled');
   }
 
-  // Init: respect saved preference, then system preference
+  // Screen reader live announcements
+  function announceToSR(msg) {
+    let el = document.getElementById('srAnnounce');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'srAnnounce';
+      el.setAttribute('role', 'status');
+      el.setAttribute('aria-live', 'polite');
+      el.setAttribute('aria-atomic', 'true');
+      el.className = 'sr-only';
+      document.body.appendChild(el);
+    }
+    el.textContent = '';
+    requestAnimationFrame(() => { el.textContent = msg; });
+  }
+
+  // Init: respect saved preference, then system preference (no SR announce on load)
   const saved = localStorage.getItem(THEME_KEY);
   if (saved) {
-    setTheme(saved);
+    setTheme(saved, false);
   } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    setTheme('light');
+    setTheme('light', false);
   }
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const current = html.getAttribute('data-theme');
       setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  // Floating theme toggle (available on all pages)
+  const floatingToggle = document.getElementById('floatingThemeToggle');
+  if (floatingToggle) {
+    floatingToggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  // ─── Cookie consent banner ───────────────────────────────
+  const cookieBanner = document.getElementById('cookieBanner');
+  const cookieAccept = document.getElementById('cookieAccept');
+  const cookieDecline = document.getElementById('cookieDecline');
+  if (cookieBanner && !localStorage.getItem('hdr_cookie_consent')) {
+    setTimeout(() => cookieBanner.classList.add('visible'), 1500);
+  }
+  function dismissCookie(choice) {
+    localStorage.setItem('hdr_cookie_consent', choice);
+    cookieBanner.classList.remove('visible');
+    announceToSR('Cookie preferences saved');
+  }
+  if (cookieAccept) cookieAccept.addEventListener('click', () => dismissCookie('accepted'));
+  if (cookieDecline) cookieDecline.addEventListener('click', () => dismissCookie('declined'));
+  if (cookieBanner) {
+    cookieBanner.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') dismissCookie('declined');
     });
   }
 
