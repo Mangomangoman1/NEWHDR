@@ -1,0 +1,17 @@
+{
+  "name": "Hailey Device Repair",
+  "short_name": "HDR",
+  "description": "Professional device repair in Hailey, Idaho. iPhone, Android, laptop & PC. Fast, fair, text-first.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
