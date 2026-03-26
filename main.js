@@ -1266,3 +1266,48 @@
     update(); // Initial state
   });
 })();
+
+// ─── Timeline scroll-fill animation ──────────────────────
+(function() {
+  var timeline = document.getElementById('processTimeline');
+  var fill = document.getElementById('timelineFill');
+  if (!timeline || !fill) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function updateFill() {
+    var rect = timeline.getBoundingClientRect();
+    var viewH = window.innerHeight;
+
+    // Calculate how far through the timeline the viewport center is
+    var timelineTop = rect.top;
+    var timelineH = rect.height;
+
+    if (timelineTop > viewH) {
+      fill.style.height = '0%';
+      return;
+    }
+    if (timelineTop + timelineH < 0) {
+      fill.style.height = '100%';
+      return;
+    }
+
+    // Progress: 0 when section top hits viewport bottom, 1 when section bottom hits viewport top
+    var scrolled = viewH - timelineTop;
+    var total = viewH + timelineH;
+    var pct = Math.max(0, Math.min(100, (scrolled / total) * 125));
+
+    fill.style.height = (reduceMotion ? 100 : pct) + '%';
+  }
+
+  if (!reduceMotion) {
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() { updateFill(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+  updateFill();
+})();
