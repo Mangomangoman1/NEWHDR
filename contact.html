@@ -98,12 +98,20 @@ a{color:inherit;text-decoration:none}
         "addressRegion": "ID",
         "addressCountry": "US"
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "09:00",
-        "closes": "19:00"
-      }
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday","Sunday"],
+          "opens": "11:00",
+          "closes": "19:00"
+        }
+      ]
     }
   }
   </script>
