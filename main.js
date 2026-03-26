@@ -235,21 +235,87 @@
         return;
       }
 
-      // Build mailto
-      const subject = encodeURIComponent(`Quote Request — ${device || 'Device'} Repair`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nContact: ${contact}\nDevice: ${device || 'Not specified'}\n` +
-        `Mail-In: ${mailin ? 'Yes' : 'No'}\n\nIssue:\n${issue}`
-      );
-      window.location.href = `mailto:samuel@haileyrepair.com?subject=${subject}&body=${body}`;
+      // ─── Submit via Formspree (or fallback to mailto) ───────
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const formError = document.getElementById('formError');
+      const FORMSPREE_ID = contactForm.dataset.formspree; // set data-formspree="YOUR_ID" on <form>
 
-      // Show success
-      if (formSuccess) {
-        formSuccess.hidden = false;
-        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      // Disable button + show spinner
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.dataset.originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined spin-icon">progress_activity</span> Sending…';
       }
 
-      contactForm.reset();
+      if (FORMSPREE_ID) {
+        // Real Formspree submission
+        fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            contact: contact,
+            device: device || 'Not specified',
+            issue: issue,
+            mailin: mailin ? 'Yes' : 'No'
+          })
+        })
+        .then(response => {
+          if (response.ok) {
+            showFormSuccess();
+          } else {
+            throw new Error('Submission failed');
+          }
+        })
+        .catch(() => {
+          // Show error, re-enable button
+          if (formError) {
+            formError.hidden = false;
+            formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+          restoreSubmitBtn();
+        });
+      } else {
+        // Fallback: mailto (no Formspree ID configured)
+        const subject = encodeURIComponent(`Quote Request — ${device || 'Device'} Repair`);
+        const mailBody = encodeURIComponent(
+          `Name: ${name}\nContact: ${contact}\nDevice: ${device || 'Not specified'}\n` +
+          `Mail-In: ${mailin ? 'Yes' : 'No'}\n\nIssue:\n${issue}`
+        );
+        window.location.href = `mailto:samuel@haileyrepair.com?subject=${subject}&body=${mailBody}`;
+        showFormSuccess();
+      }
+
+      function showFormSuccess() {
+        if (formSuccess) {
+          formSuccess.hidden = false;
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        contactForm.reset();
+        // Hide success after 8 seconds
+        setTimeout(() => {
+          if (formSuccess) formSuccess.hidden = true;
+          restoreSubmitBtn();
+        }, 8000);
+      }
+
+      function restoreSubmitBtn() {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = submitBtn.dataset.originalText || '<span class="material-symbols-outlined">send</span> Send Quote Request';
+        }
+      }
+    });
+  }
+
+  // ─── Recently Fixed ticker: clone items for seamless loop ─
+  const tickerScroll = document.querySelector('.ticker-scroll');
+  if (tickerScroll) {
+    // Clone all ticker items to create seamless infinite loop
+    const items = tickerScroll.querySelectorAll('.ticker-item');
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      tickerScroll.appendChild(clone);
     });
   }
 
