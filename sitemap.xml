@@ -97,6 +97,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://haileyrepair.com/faq</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haileyrepair.com/privacy</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>yearly</changefreq>
