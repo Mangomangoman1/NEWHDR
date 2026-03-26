@@ -1,4 +1,9 @@
+# Hailey Device Repair — robots.txt
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://haileyrepair.com/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1

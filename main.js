@@ -677,4 +677,48 @@
     });
   }
 
+  /* ── Pricing page tabs ─────────────────── */
+  const pricingTabs = document.querySelectorAll('.pricing-tab');
+  if (pricingTabs.length) {
+    pricingTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        // Deactivate all
+        pricingTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.pricing-panel').forEach(p => {
+          p.classList.remove('active');
+          p.hidden = true;
+        });
+        // Activate selected
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const panel = document.getElementById('panel-' + target);
+        if (panel) {
+          panel.classList.add('active');
+          panel.hidden = false;
+        }
+      });
+
+      // Keyboard: arrow keys between tabs
+      tab.addEventListener('keydown', e => {
+        const tabs = Array.from(pricingTabs);
+        const idx = tabs.indexOf(tab);
+        let next;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          next = tabs[(idx + 1) % tabs.length];
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          next = tabs[(idx - 1 + tabs.length) % tabs.length];
+        }
+        if (next) {
+          e.preventDefault();
+          next.focus();
+          next.click();
+        }
+      });
+    });
+  }
+
 })();
