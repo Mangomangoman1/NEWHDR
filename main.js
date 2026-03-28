@@ -1226,6 +1226,279 @@
   });
 })();
 
+/* ═══════════════════════════════════════════════
+   MAGNETIC BUTTONS — Cursor-pull effect
+   Buttons pull toward cursor within a proximity radius.
+═══════════════════════════════════════════════ */
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var hasPointer = window.matchMedia('(pointer: fine)').matches || window.matchMedia('(hover: hover)').matches;
+  if (!hasPointer) return;
+
+  var MAGNETIC_RADIUS = 80;
+  var MAGNETIC_STRENGTH = 0.35;
+  var buttons = document.querySelectorAll('[data-magnetic]');
+
+  buttons.forEach(function(btn) {
+    if (!btn.querySelector('.btn-magnetic-inner')) {
+      var inner = document.createElement('span');
+      inner.className = 'btn-magnetic-inner';
+      while (btn.firstChild) inner.appendChild(btn.firstChild);
+      btn.appendChild(inner);
+    }
+
+    var rafId = null;
+
+    function handleMove(e) {
+      if (rafId) return;
+      rafId = requestAnimationFrame(function() {
+        rafId = null;
+        var rect = btn.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        var dx = e.clientX - cx;
+        var dy = e.clientY - cy;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        var radius = Math.max(rect.width, rect.height) / 2 + MAGNETIC_RADIUS;
+
+        if (dist < radius) {
+          var pull = 1 - (dist / radius);
+          var moveX = dx * pull * MAGNETIC_STRENGTH;
+          var moveY = dy * pull * MAGNETIC_STRENGTH;
+          btn.style.transform = 'translate(' + moveX.toFixed(1) + 'px, ' + moveY.toFixed(1) + 'px)';
+          var innerEl = btn.querySelector('.btn-magnetic-inner');
+          if (innerEl) {
+            innerEl.style.transform = 'translate(' + (moveX * 0.3).toFixed(1) + 'px, ' + (moveY * 0.3).toFixed(1) + 'px)';
+          }
+          btn.classList.add('is-magnetic');
+        } else {
+          release();
+        }
+      });
+    }
+
+    function release() {
+      btn.style.transform = '';
+      var innerEl = btn.querySelector('.btn-magnetic-inner');
+      if (innerEl) innerEl.style.transform = '';
+      btn.classList.remove('is-magnetic');
+    }
+
+    document.addEventListener('mousemove', handleMove, { passive: true });
+    btn.addEventListener('mouseleave', release);
+  });
+})();
+
+
+/* ═══════════════════════════════════════════════
+   MAGNETIC NAV LINKS
+   Subtle magnetic pull effect on navigation links.
+═══════════════════════════════════════════════ */
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var hasPointer = window.matchMedia('(pointer: fine)').matches || window.matchMedia('(hover: hover)').matches;
+  if (!hasPointer) return;
+
+  var links = document.querySelectorAll('.nav-links .nav-link');
+  if (!links.length) return;
+
+  var RADIUS = 50;
+  var STRENGTH = 0.2;
+
+  links.forEach(function(link) {
+    var rafId = null;
+
+    function handleMove(e) {
+      if (rafId) return;
+      rafId = requestAnimationFrame(function() {
+        rafId = null;
+        var rect = link.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        var dx = e.clientX - cx;
+        var dy = e.clientY - cy;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        var triggerRadius = Math.max(rect.width, rect.height) / 2 + RADIUS;
+
+        if (dist < triggerRadius) {
+          var pull = 1 - (dist / triggerRadius);
+          var moveX = dx * pull * STRENGTH;
+          var moveY = dy * pull * STRENGTH;
+          link.style.transform = 'translate(' + moveX.toFixed(1) + 'px, ' + moveY.toFixed(1) + 'px)';
+        } else {
+          link.style.transform = '';
+        }
+      });
+    }
+
+    function release() {
+      link.style.transform = '';
+    }
+
+    link.addEventListener('mouseenter', function() {
+      document.addEventListener('mousemove', handleMove, { passive: true });
+    });
+    link.addEventListener('mouseleave', function() {
+      document.removeEventListener('mousemove', handleMove);
+      release();
+    });
+  });
+})();
+
+
+/* ═══════════════════════════════════════════════
+   SERVICE AREA MAP — Self-Building Animation
+   Adds 'visible' class when map scrolls into view.
+═══════════════════════════════════════════════ */
+(function() {
+  var areaMap = document.querySelector('.area-map');
+  if (!areaMap) return;
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    observer.observe(areaMap);
+  } else {
+    areaMap.classList.add('visible');
+  }
+})();
+
+
+/* ═══════════════════════════════════════════════
+   FAQ ACCORDION — Smooth height animation
+   Intercepts native <details> toggle to add
+   smooth open/close height transitions, keyboard
+   navigation, and staggered scroll-in indices.
+═══════════════════════════════════════════════ */
+(function() {
+  var faqItems = document.querySelectorAll('.faq-list .faq-item');
+  if (!faqItems.length) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ANIMATION_DURATION = reduceMotion ? 0 : 300;
+
+  // Set stagger index CSS custom property for scroll-in
+  faqItems.forEach(function(item, i) {
+    item.style.setProperty('--faq-idx', i);
+  });
+
+  // Wrap each answer's content for padding management
+  faqItems.forEach(function(item) {
+    var answer = item.querySelector('.faq-answer');
+    if (!answer || answer.classList.contains('faq-answer--managed')) return;
+
+    var inner = document.createElement('div');
+    inner.className = 'faq-answer-inner';
+    while (answer.firstChild) {
+      inner.appendChild(answer.firstChild);
+    }
+    answer.appendChild(inner);
+    answer.classList.add('faq-answer--managed');
+  });
+
+  if (reduceMotion) return;
+
+  // Smooth toggle handler
+  faqItems.forEach(function(item) {
+    var summary = item.querySelector('summary');
+    var answer = item.querySelector('.faq-answer');
+    if (!summary || !answer) return;
+
+    var isAnimating = false;
+
+    summary.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (isAnimating) return;
+
+      if (item.hasAttribute('open')) {
+        closeItem(item, answer);
+      } else {
+        openItem(item, answer);
+      }
+    });
+
+    function openItem(detailsEl, answerEl) {
+      isAnimating = true;
+
+      var chevron = detailsEl.querySelector('.faq-chevron');
+      if (chevron) {
+        chevron.classList.remove('arrow-bounce-close');
+        chevron.classList.add('arrow-bounce-open');
+      }
+
+      detailsEl.setAttribute('open', '');
+
+      var targetHeight = answerEl.scrollHeight;
+
+      answerEl.style.height = '0px';
+      answerEl.style.opacity = '0';
+      answerEl.style.overflow = 'hidden';
+      answerEl.style.transition = 'height ' + ANIMATION_DURATION + 'ms cubic-bezier(0.34, 1.12, 0.64, 1), opacity ' + Math.round(ANIMATION_DURATION * 0.7) + 'ms ease';
+
+      answerEl.offsetHeight; // force reflow
+
+      answerEl.style.height = targetHeight + 'px';
+      answerEl.style.opacity = '1';
+
+      var inner = answerEl.querySelector('.faq-answer-inner');
+      if (inner) {
+        setTimeout(function() {
+          inner.classList.add('reading-lit');
+        }, 150);
+      }
+
+      setTimeout(function() {
+        answerEl.style.height = '';
+        answerEl.style.overflow = '';
+        answerEl.style.transition = '';
+        answerEl.style.opacity = '';
+        isAnimating = false;
+      }, ANIMATION_DURATION + 50);
+    }
+
+    function closeItem(detailsEl, answerEl) {
+      isAnimating = true;
+
+      var chevron = detailsEl.querySelector('.faq-chevron');
+      if (chevron) {
+        chevron.classList.remove('arrow-bounce-open');
+        chevron.classList.add('arrow-bounce-close');
+      }
+
+      var currentHeight = answerEl.scrollHeight;
+      answerEl.style.height = currentHeight + 'px';
+      answerEl.style.overflow = 'hidden';
+      answerEl.style.transition = 'height ' + ANIMATION_DURATION + 'ms cubic-bezier(0.34, 0, 0.64, 1), opacity ' + Math.round(ANIMATION_DURATION * 0.5) + 'ms ease';
+
+      answerEl.offsetHeight; // force reflow
+
+      answerEl.style.height = '0px';
+      answerEl.style.opacity = '0';
+
+      var inner = answerEl.querySelector('.faq-answer-inner');
+      if (inner) {
+        inner.classList.remove('reading-lit');
+      }
+
+      setTimeout(function() {
+        detailsEl.removeAttribute('open');
+        answerEl.style.height = '';
+        answerEl.style.overflow = '';
+        answerEl.style.transition = '';
+        answerEl.style.opacity = '';
+        isAnimating = false;
+      }, ANIMATION_DURATION + 50);
+    }
+  });
+})();
+
+
 // ─── Float Labels: Select handling ────────────────────────
 // Selects don't support :placeholder-shown, so we toggle a class
 (function() {

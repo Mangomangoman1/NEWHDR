@@ -442,6 +442,11 @@ ul { list-style: none; }
   font-size: 1.4rem;
   color: var(--accent);
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  transition: filter 300ms, transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.nav-logo:hover .nav-logo-icon {
+  filter: drop-shadow(0 0 6px var(--accent));
+  transform: scale(1.1) rotate(-8deg);
 }
 .nav-logo-text {
   font-size: 0.95rem;
@@ -459,32 +464,43 @@ ul { list-style: none; }
   margin-left: auto;
 }
 .nav-link {
+  display: inline-block;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-secondary);
   padding: 0.35rem 0.6rem;
   border-radius: var(--radius-sm);
-  transition: all var(--transition);
+  transition: color var(--transition), transform 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
+  position: relative;
 }
-.nav-link:hover {
-  color: var(--text-primary);
-  background: var(--bg-elevated);
-}
-.nav-link.active {
-  color: var(--accent);
-  background: var(--accent-dim);
-}
-.nav-link.active::after {
+/* Animated underline — expands from center on hover */
+.nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
+  width: 0;
   height: 2px;
   background: var(--accent);
   border-radius: 1px;
+  transition: width 250ms cubic-bezier(0.16, 1, 0.3, 1), left 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-link:hover {
+  color: var(--text-primary);
+}
+.nav-link:hover::after {
+  width: 60%;
+  left: 20%;
+}
+.nav-link.active {
+  color: var(--accent);
+}
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  height: 2px;
 }
 .nav-link {
   position: relative;
@@ -1932,13 +1948,82 @@ ul { list-style: none; }
   filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.08));
 }
 
+/* ── Service Area: Map entrance choreography ── */
+
+/* Mountain silhouettes fade in */
+.area-mountain {
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+.area-map.visible .area-mountain-1 { opacity: 0.3; }
+.area-map.visible .area-mountain-2 { opacity: 0.2; }
+
+/* Highway 75 fades in with mountains */
+.area-highway {
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
+}
+.area-map.visible .area-highway { opacity: 0.8; }
+
+/* Big Wood River draw-in */
+.area-river {
+  stroke-dasharray: 480;
+  stroke-dashoffset: 480;
+  transition: stroke-dashoffset 2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s;
+}
+.area-map.visible .area-river {
+  stroke-dashoffset: 0;
+}
+
+/* HWY 75 label fades in after road draws */
+.area-hwy-label {
+  opacity: 0;
+  transition: opacity 500ms 1.8s;
+}
+.area-map.visible .area-hwy-label { opacity: 0.75; }
+
+/* Town dots: stagger pop-in south to north */
 .area-town {
-  cursor: default;
-  transition: opacity var(--transition);
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.6);
+  transform-origin: center;
+  transition:
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 200ms;
 }
-.area-town:hover circle {
-  filter: brightness(1.2);
+.area-town--bellevue  { transition-delay: 1.2s; }
+.area-town--hailey    { transition-delay: 1.5s; }
+.area-town--ketchum   { transition-delay: 1.8s; }
+.area-town--sunvalley { transition-delay: 2.0s; }
+
+.area-map.visible .area-town {
+  opacity: 1;
+  transform: scale(1);
 }
+
+/* Town hover: glow + scale + accent color */
+.area-town:hover {
+  transform: scale(1.15) !important;
+  filter: drop-shadow(0 0 6px var(--accent));
+}
+.area-town:hover text {
+  fill: var(--accent) !important;
+}
+
+/* Distance markers and labels fade in last */
+.area-distance {
+  opacity: 0;
+  transition: opacity 600ms 2.3s;
+}
+.area-map.visible .area-distance { opacity: 0.45; }
+
+.area-distance-label {
+  opacity: 0;
+  transition: opacity 600ms 2.5s;
+}
+.area-map.visible .area-distance-label { opacity: 0.7; }
 
 .area-info {
   display: flex;
@@ -2147,14 +2232,34 @@ ul { list-style: none; }
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: all var(--transition);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  counter-increment: faq-counter;
+  position: relative;
 }
 .faq-item:hover {
   border-color: var(--border-default);
 }
 .faq-item[open] {
   border-color: rgba(79,142,247,0.3);
-  box-shadow: 0 2px 12px rgba(79,142,247,0.08);
+  box-shadow: 0 2px 16px rgba(79,142,247,0.1);
+}
+
+/* Left accent bar — slides in on open */
+.faq-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 3px 0 0 3px;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.faq-item[open]::before {
+  transform: scaleY(1);
 }
 
 .faq-question {
@@ -2165,7 +2270,7 @@ ul { list-style: none; }
   cursor: pointer;
   list-style: none;
   user-select: none;
-  transition: background var(--transition);
+  transition: background 0.2s ease;
 }
 .faq-question::-webkit-details-marker {
   display: none;
@@ -2177,6 +2282,30 @@ ul { list-style: none; }
   background: var(--bg-elevated);
 }
 
+/* Focus ring for keyboard nav */
+.faq-question:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  border-radius: var(--radius-lg);
+}
+
+/* Number badge via CSS counter */
+.faq-question::before {
+  content: counter(faq-counter, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  min-width: 1.8rem;
+  text-align: center;
+  opacity: 0.5;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+.faq-item[open] .faq-question::before {
+  color: var(--accent);
+  opacity: 1;
+}
+
 .faq-q-text {
   flex: 1;
   font-family: var(--font-display);
@@ -2186,20 +2315,54 @@ ul { list-style: none; }
   line-height: 1.4;
 }
 
+/* Chevron with spring rotation + bounce wiggle */
 .faq-chevron {
   color: var(--text-muted);
   font-size: 1.4rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
   flex-shrink: 0;
 }
 .faq-item[open] .faq-chevron {
   transform: rotate(180deg);
   color: var(--accent);
 }
+/* Arrow bounce animation on toggle */
+@keyframes faqArrowBounce {
+  0% { transform: rotate(0deg) scale(1); }
+  30% { transform: rotate(200deg) scale(1.15); }
+  50% { transform: rotate(175deg) scale(0.95); }
+  70% { transform: rotate(183deg) scale(1.02); }
+  100% { transform: rotate(180deg) scale(1); }
+}
+@keyframes faqArrowBounceClose {
+  0% { transform: rotate(180deg) scale(1); }
+  30% { transform: rotate(-20deg) scale(1.15); }
+  50% { transform: rotate(5deg) scale(0.95); }
+  70% { transform: rotate(-3deg) scale(1.02); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+.faq-chevron.arrow-bounce-open {
+  animation: faqArrowBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.faq-chevron.arrow-bounce-close {
+  animation: faqArrowBounceClose 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
 
+/* Answer container — animated via JS for smooth height */
 .faq-answer {
-  padding: 0 var(--space-xl) var(--space-lg);
-  animation: faqSlide 0.3s ease;
+  padding: 0 var(--space-xl) 0;
+  overflow: hidden;
+  height: 0;
+}
+.faq-item[open] .faq-answer {
+  height: auto;
+}
+.faq-answer-inner {
+  padding-bottom: var(--space-lg);
+}
+/* Fallback: if JS hasn't initialized, show answer normally */
+.faq-answer:not(.faq-answer--managed) {
+  padding-bottom: var(--space-lg);
 }
 .faq-answer p {
   font-size: 0.9rem;
@@ -2209,6 +2372,22 @@ ul { list-style: none; }
 .faq-answer strong {
   color: var(--text-primary);
   font-weight: 600;
+}
+
+/* FAQ Answer Reading Lamp - text illuminates on open */
+.faq-answer-inner {
+  opacity: 0.5;
+  filter: brightness(0.85);
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+.faq-item[open] .faq-answer-inner.reading-lit {
+  opacity: 1;
+  filter: brightness(1);
+}
+
+/* Staggered scroll-in for FAQ items */
+.faq-item[data-animate] {
+  transition-delay: calc(var(--faq-idx, 0) * 80ms);
 }
 
 @keyframes faqSlide {
@@ -3647,8 +3826,20 @@ button[type="submit"]:disabled {
 /* ─── FOOTER ─────────────────────────────────────────────── */
 .footer {
   background: var(--bg-surface);
-  border-top: 1px solid var(--border-subtle);
+  border-top: none;
   padding-top: var(--space-3xl);
+  position: relative;
+}
+/* Gradient top accent line */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 5%, var(--accent) 35%, rgba(163,113,247,0.5) 65%, transparent 95%);
+  opacity: 0.5;
 }
 .footer-inner {
   display: grid;
@@ -3677,20 +3868,68 @@ button[type="submit"]:disabled {
   font-weight: 600;
   color: var(--text-primary);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.25rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(79, 142, 247, 0.15);
+  align-self: flex-start;
 }
 .footer-col a {
   font-size: 0.875rem;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: color var(--transition);
+  transition: color 200ms, transform 200ms;
+  position: relative;
+  align-self: flex-start;
+  padding: 1px 0;
+}
+/* Sliding underline from left */
+.footer-col a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .footer-col a:hover {
   color: var(--accent);
+  transform: translateX(3px);
 }
+.footer-col a:hover::after {
+  width: 100%;
+}
+
+/* Footer column cascade hover — staggered link shift */
+.footer-col:hover a:nth-child(2)  { transform: translateX(4px); transition-delay: 0ms; }
+.footer-col:hover a:nth-child(3)  { transform: translateX(4px); transition-delay: 25ms; }
+.footer-col:hover a:nth-child(4)  { transform: translateX(4px); transition-delay: 50ms; }
+.footer-col:hover a:nth-child(5)  { transform: translateX(4px); transition-delay: 75ms; }
+.footer-col:hover a:nth-child(6)  { transform: translateX(4px); transition-delay: 100ms; }
+.footer-col:hover a:nth-child(7)  { transform: translateX(4px); transition-delay: 125ms; }
+.footer-col:hover a:nth-child(8)  { transform: translateX(4px); transition-delay: 150ms; }
+.footer-col:hover a:nth-child(9)  { transform: translateX(4px); transition-delay: 175ms; }
+.footer-col:hover a:nth-child(10) { transform: translateX(4px); transition-delay: 200ms; }
+.footer-col:hover a:nth-child(11) { transform: translateX(4px); transition-delay: 225ms; }
+.footer-col:hover a:nth-child(12) { transform: translateX(4px); transition-delay: 250ms; }
+.footer-col:hover a {
+  color: var(--text-primary);
+}
+.footer-col a:hover {
+  color: var(--accent) !important;
+  transform: translateX(6px) !important;
+  transition-delay: 0ms !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-col:hover a:nth-child(n) {
+    transition-delay: 0ms;
+  }
+}
+
 .footer-bottom {
-  border-top: 1px solid var(--border-subtle);
+  border-top: none;
   padding: var(--space-lg) var(--space-xl);
   display: flex;
   justify-content: space-between;
@@ -3699,6 +3938,29 @@ button[type="submit"]:disabled {
   color: var(--text-muted);
   max-width: 1160px;
   margin: 0 auto;
+  position: relative;
+}
+/* Gradient separator above footer-bottom */
+.footer-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-subtle) 20%, var(--border-subtle) 80%, transparent);
+}
+/* Heartbeat animation for the ❤️ */
+.footer-heart {
+  display: inline-block;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.2); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.15); }
+  56% { transform: scale(1); }
 }
 
 /* ─── BACK TO TOP ─────────────────────────────────────────── */
@@ -6754,4 +7016,59 @@ body {
   .timeline-track { left: 18px; }
   .timeline-title { font-size: 1rem; }
   .timeline-desc { font-size: 0.85rem; }
+}
+
+
+/* ═══════════════════════════════════════════════
+   MAGNETIC BUTTONS — Fluid cursor-pull effect
+   ═══════════════════════════════════════════════ */
+
+.btn-magnetic {
+  transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.25s ease,
+              background 0.2s ease,
+              border-color 0.2s ease;
+  will-change: transform;
+}
+.btn-magnetic .btn-magnetic-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+.btn-magnetic:not(.is-magnetic) {
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════
+   REDUCED MOTION — disable magnetic + map animations
+   ═══════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .btn-magnetic,
+  .btn-magnetic:not(.is-magnetic) {
+    transition: background 0.2s ease, border-color 0.2s ease !important;
+    transform: none !important;
+  }
+  .btn-magnetic .btn-magnetic-inner {
+    transition: none !important;
+    transform: none !important;
+  }
+  .faq-chevron.arrow-bounce-open,
+  .faq-chevron.arrow-bounce-close {
+    animation: none !important;
+  }
+  .area-mountain,
+  .area-highway,
+  .area-river,
+  .area-hwy-label,
+  .area-town,
+  .area-distance,
+  .area-distance-label {
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+    transition: none !important;
+  }
 }
