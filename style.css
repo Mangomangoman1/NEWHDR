@@ -4532,16 +4532,14 @@ button[type="submit"]:disabled {
 
 /* ─── PAGE LOAD ANIMATION ─────────────────────────────────── */
 body {
-  animation: pageIn 0.6s ease-out both;
+  animation: pageIn 0.6s ease-out forwards;
 }
 @keyframes pageIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
