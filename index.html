@@ -55,7 +55,7 @@ a{color:inherit;text-decoration:none}
 .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.2rem;border-radius:10px;font-weight:600;font-size:0.85rem;border:none;cursor:pointer;transition:all 0.2s;text-decoration:none}
 .btn-primary{background:var(--accent);color:#fff}
 .btn-sm{padding:0.4rem 0.9rem;font-size:0.8rem}
-.hero{min-height:90vh;display:flex;align-items:center;padding:6rem 0 4rem;position:relative;overflow:hidden}
+.hero{min-height:75vh;display:flex;align-items:center;padding:5rem 0 3rem;position:relative;overflow:hidden}
 .hero-content{position:relative;z-index:2;max-width:680px}
 .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:0.4rem 1rem;font-size:0.8rem;color:var(--text-secondary);margin-bottom:1.5rem}
 .hero-headline{font-family:var(--font-heading);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem}
@@ -82,7 +82,25 @@ a{color:inherit;text-decoration:none}
 .breadcrumb a{color:var(--text-secondary);text-decoration:none}
 .breadcrumb-sep{font-size:0.9rem}
 .text-accent{background:linear-gradient(135deg,var(--accent),var(--color-cyan,#22d3ee));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex;flex-direction:column;gap:4px}.hero{min-height:80vh;padding:5rem 0 3rem}}</style>
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex;flex-direction:column;gap:4px}.hero{min-height:70vh;padding:5rem 0 2.5rem}.service-selector{padding:1.5rem 0 2rem}.service-selector-grid{grid-template-columns:1fr}}
+.service-selector{padding:2.5rem 0 3rem;background:var(--bg-surface);border-bottom:1px solid var(--border)}
+.service-selector-label{text-align:center;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1.25rem}
+.service-selector-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;max-width:860px;margin:0 auto}
+.sel-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:1.75rem 2rem;display:flex;flex-direction:column;gap:0.75rem;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;text-decoration:none;color:inherit}
+.sel-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 32px rgba(79,142,247,0.15)}
+.sel-card-it{border-color:rgba(79,142,247,0.3);background:linear-gradient(135deg,var(--bg-card),rgba(79,142,247,0.04))}
+.sel-card-it:hover{border-color:var(--accent);box-shadow:0 8px 32px rgba(79,142,247,0.2)}
+.sel-icon{width:48px;height:48px;border-radius:14px;background:var(--accent-dim);display:flex;align-items:center;justify-content:center}
+.sel-icon .material-symbols-outlined{color:var(--accent);font-size:1.5rem}
+.sel-title{font-family:var(--font-heading,var(--font-display,'Plus Jakarta Sans'));font-size:1.15rem;font-weight:800;line-height:1.2}
+.sel-desc{font-size:0.875rem;color:var(--text-secondary);line-height:1.6}
+.sel-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.25rem}
+.sel-tag{font-size:0.72rem;font-weight:600;color:var(--text-muted);background:var(--bg-elevated);border:1px solid var(--border);border-radius:100px;padding:0.2rem 0.6rem}
+.sel-arrow{display:flex;align-items:center;gap:0.35rem;font-size:0.82rem;font-weight:700;color:var(--accent);margin-top:auto;padding-top:0.5rem}
+.sel-arrow .material-symbols-outlined{font-size:1rem;transition:transform 0.2s}
+.sel-card:hover .sel-arrow .material-symbols-outlined{transform:translateX(4px)}
+.sel-badge{display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:var(--accent);color:#fff;border-radius:100px;padding:0.15rem 0.55rem;margin-left:0.5rem;vertical-align:middle}
+</style>
   <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="style.css" /></noscript>
 
@@ -327,6 +345,7 @@ a{color:inherit;text-decoration:none}
 
       <ul class="nav-links" role="list">
         <li><a href="/#services" class="nav-link">Services</a></li>
+        <li><a href="/computer-support" class="nav-link">Computer Help</a></li>
         <li><a href="/pricing" class="nav-link">Pricing</a></li>
         <li><a href="/tips" class="nav-link">Tips</a></li>
         <li><a href="/about" class="nav-link">About</a></li>
@@ -350,6 +369,7 @@ a{color:inherit;text-decoration:none}
     <div class="nav-mobile" id="navMobile" aria-hidden="true">
       <ul role="list">
         <li><a href="/#services" class="nav-link">Services</a></li>
+        <li><a href="/computer-support" class="nav-link">Computer Help</a></li>
         <li><a href="/pricing" class="nav-link">Pricing</a></li>
         <li><a href="/tips" class="nav-link">Tips</a></li>
         <li><a href="/about" class="nav-link">About</a></li>
@@ -420,6 +440,48 @@ a{color:inherit;text-decoration:none}
       <span class="material-symbols-outlined">keyboard_arrow_down</span>
     </div>
   </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICE SELECTOR
+  ══════════════════════════════════════════════ -->
+  <div class="service-selector">
+    <div class="container">
+      <div class="service-selector-label">What do you need help with?</div>
+      <div class="service-selector-grid">
+
+        <a href="#services" class="sel-card">
+          <div class="sel-icon"><span class="material-symbols-outlined">devices</span></div>
+          <div class="sel-title">Device Repair</div>
+          <div class="sel-desc">Cracked screen, dead battery, charging port, water damage — phones, tablets, and laptops.</div>
+          <div class="sel-tags">
+            <span class="sel-tag">iPhone</span>
+            <span class="sel-tag">Android</span>
+            <span class="sel-tag">Laptop</span>
+            <span class="sel-tag">Tablet</span>
+          </div>
+          <div class="sel-arrow">
+            See repairs <span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+        </a>
+
+        <a href="computer-support.html" class="sel-card sel-card-it">
+          <div class="sel-icon"><span class="material-symbols-outlined">computer</span></div>
+          <div class="sel-title">Computer Help & IT Support <span class="sel-badge">New</span></div>
+          <div class="sel-desc">Slow computer, virus, bootloop, crashing, or just need local IT support — remote or in-person.</div>
+          <div class="sel-tags">
+            <span class="sel-tag">Virus Removal</span>
+            <span class="sel-tag">Slow PC</span>
+            <span class="sel-tag">Bootloop</span>
+            <span class="sel-tag">Remote Support</span>
+          </div>
+          <div class="sel-arrow">
+            Get computer help <span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════════
        RECENTLY FIXED TICKER
