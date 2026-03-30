@@ -34,12 +34,12 @@
     requestAnimationFrame(() => { el.textContent = msg; });
   }
 
-  // Init: respect saved preference, then system preference (no SR announce on load)
+  // Init: always dark — ignore system preference
   const saved = localStorage.getItem(THEME_KEY);
   if (saved) {
     setTheme(saved, false);
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    setTheme('light', false);
+  } else {
+    setTheme('dark', false);
   }
 
   if (themeToggle) {
