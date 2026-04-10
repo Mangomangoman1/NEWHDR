@@ -1499,6 +1499,83 @@
 })();
 
 
+/* ── Text luminance reveal — scroll-linked gradient text wipe ────────── */
+  /* Velocity-aware: faster scrolling boosts reveal progress ahead of normal position */
+  (function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var reveals = document.querySelectorAll('[data-text-reveal]');
+    if (!reveals.length) return;
+
+    // Velocity tracking
+    var lastScrollY = window.scrollY;
+    var lastTime = performance.now();
+    var velocityBoost = 0; // 0-15% bonus based on scroll speed
+
+    function updateReveal() {
+      var vh = window.innerHeight;
+
+      // Calculate scroll velocity
+      var now = performance.now();
+      var dt = now - lastTime;
+      if (dt > 0) {
+        var dy = Math.abs(window.scrollY - lastScrollY);
+        var velocity = dy / dt; // px/ms
+        // Map velocity to boost: 0-4 px/ms → 0-15% bonus
+        velocityBoost = Math.min(15, velocity * 3.75);
+        // Decay boost gradually when scrolling slow
+        if (velocity < 0.5) {
+          velocityBoost *= 0.8;
+        }
+      }
+      lastScrollY = window.scrollY;
+      lastTime = now;
+
+      reveals.forEach(function(el) {
+        if (el.classList.contains('text-revealed')) return;
+        var rect = el.getBoundingClientRect();
+        // Start revealing when element enters viewport, complete when center of element reaches 40% from top
+        var start = vh * 0.85;   // element entering bottom 85% of viewport
+        var end = vh * 0.25;     // element well into view (top 25%)
+        var current = rect.top + rect.height / 2;
+        var progress;
+        if (current >= start) {
+          progress = 0;
+        } else if (current <= end) {
+          progress = 100;
+        } else {
+          progress = ((start - current) / (start - end)) * 100;
+        }
+        // Add velocity boost — fast scrolling reveals text ahead
+        var boostedProgress = Math.min(100, progress + velocityBoost);
+        // Apply easeOutCubic for a natural deceleration at the end
+        var t = boostedProgress / 100;
+        var eased = 1 - Math.pow(1 - t, 3);
+        var easedProgress = eased * 100;
+        el.style.setProperty('--reveal-progress', easedProgress.toFixed(1));
+        // Lock when fully revealed to remove gradient overhead
+        if (boostedProgress >= 100) {
+          el.classList.add('text-revealed');
+          el.style.removeProperty('--reveal-progress');
+        }
+      });
+    }
+
+    var ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          updateReveal();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Initial check (elements might already be in view)
+    updateReveal();
+  })();
+
 // ─── Float Labels: Select handling ────────────────────────
 // Selects don't support :placeholder-shown, so we toggle a class
 (function() {
