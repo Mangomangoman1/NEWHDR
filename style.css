@@ -7231,6 +7231,236 @@ body {
 
 
 /* ═══════════════════════════════════════════════
+   ANIMATED SVG TIMELINE ICONS — "The Repair Journey"
+   ═══════════════════════════════════════════════ */
+
+/* Timeline glow effect (floating dot on the fill line) */
+.timeline-glow {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  left: -3px;
+  top: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow), 0 0 24px var(--accent-glow);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+  pointer-events: none;
+}
+.timeline-glow.active {
+  opacity: 1;
+}
+
+/* Ripple effect on timeline dots */
+.timeline-dot-ripple {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  transform: scale(0.7);
+  pointer-events: none;
+}
+.timeline-step.visible .timeline-dot-ripple {
+  animation: tl-ripple 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes tl-ripple {
+  0%   { opacity: 0.6; transform: scale(0.7); }
+  100% { opacity: 0;   transform: scale(1.5); }
+}
+.timeline-step.visible .timeline-dot--done .timeline-dot-ripple,
+.timeline-step.visible .timeline-dot--done + .timeline-dot-ripple {
+  border-color: var(--color-green);
+}
+
+/* SVG icon base */
+.timeline-svg-icon {
+  color: var(--text-muted);
+  transition: color 0.4s;
+  overflow: visible;
+}
+.timeline-step.visible .timeline-svg-icon {
+  color: var(--accent);
+}
+.timeline-step.visible .timeline-dot--done .timeline-svg-icon {
+  color: var(--color-green) !important;
+}
+
+/* Hide original material icons in timeline dots when SVG present */
+.timeline-dot .material-symbols-outlined {
+  /* keep for non-SVG fallback */
+}
+
+/* ─── Step 1: Chat bubble draw-in ─── */
+.tl-chat-bubble {
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.timeline-step.visible .tl-chat-bubble {
+  stroke-dashoffset: 0;
+}
+.tl-chat-tail {
+  transition: opacity 0.3s 0.6s;
+}
+.timeline-step.visible .tl-chat-tail {
+  opacity: 1;
+}
+/* Typing dots bounce */
+.tl-chat-dot {
+  transition: opacity 0.2s;
+}
+.timeline-step.visible .tl-chat-dot-1 {
+  animation: tl-typing 1.2s 0.8s ease-in-out infinite;
+}
+.timeline-step.visible .tl-chat-dot-2 {
+  animation: tl-typing 1.2s 1.0s ease-in-out infinite;
+}
+.timeline-step.visible .tl-chat-dot-3 {
+  animation: tl-typing 1.2s 1.2s ease-in-out infinite;
+}
+@keyframes tl-typing {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30%           { opacity: 1;   transform: translateY(-2px); }
+}
+
+/* ─── Step 2: Search lens draw-in ─── */
+.tl-search-lens {
+  transition: stroke-dashoffset 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tl-search-handle {
+  transition: stroke-dashoffset 0.4s 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.timeline-step.visible .tl-search-lens {
+  stroke-dashoffset: 0;
+}
+.timeline-step.visible .tl-search-handle {
+  stroke-dashoffset: 0;
+}
+/* Scanning pulse inside lens */
+.timeline-step.visible .tl-search-pulse {
+  animation: tl-scan 2s 0.8s ease-in-out infinite;
+}
+@keyframes tl-scan {
+  0%, 100% { opacity: 0; r: 2; }
+  50%      { opacity: 0.4; r: 5; }
+}
+
+/* ─── Step 3: Approve circle + check ─── */
+.tl-approve-circle {
+  transition: stroke-dashoffset 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tl-approve-check {
+  transition: stroke-dashoffset 0.4s 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.timeline-step.visible .tl-approve-circle {
+  stroke-dashoffset: 0;
+}
+.timeline-step.visible .tl-approve-check {
+  stroke-dashoffset: 0;
+}
+
+/* ─── Step 4: Wrench draw-in + sparks ─── */
+.tl-repair-wrench {
+  transition: stroke-dashoffset 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.timeline-step.visible .tl-repair-wrench {
+  stroke-dashoffset: 0;
+}
+/* Repair sparks */
+.timeline-step.visible .tl-repair-spark-1 {
+  animation: tl-spark 0.6s 0.9s ease-out forwards, tl-spark 0.6s 2.4s ease-out forwards;
+}
+.timeline-step.visible .tl-repair-spark-2 {
+  animation: tl-spark 0.5s 1.1s ease-out forwards, tl-spark 0.5s 2.6s ease-out forwards;
+}
+.timeline-step.visible .tl-repair-spark-3 {
+  animation: tl-spark 0.4s 1.3s ease-out forwards, tl-spark 0.4s 2.8s ease-out forwards;
+}
+@keyframes tl-spark {
+  0%   { opacity: 0; transform: translate(0, 0) scale(0.5); }
+  30%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--spark-x, 4px), var(--spark-y, -6px)) scale(1.2); }
+}
+.tl-repair-spark-1 { --spark-x: 3px; --spark-y: -5px; }
+.tl-repair-spark-2 { --spark-x: 5px; --spark-y: -3px; }
+.tl-repair-spark-3 { --spark-x: -2px; --spark-y: -6px; }
+
+/* ─── Step 5: Shield + check draw-in ─── */
+.tl-shield-body {
+  transition: stroke-dashoffset 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tl-shield-check {
+  transition: stroke-dashoffset 0.4s 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.timeline-step.visible .tl-shield-body {
+  stroke-dashoffset: 0;
+}
+.timeline-step.visible .tl-shield-check {
+  stroke-dashoffset: 0;
+}
+
+/* ─── Hover micro-interaction on timeline dots ─── */
+.timeline-dot {
+  position: relative;
+  cursor: default;
+}
+.timeline-step.visible .timeline-dot:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 24px var(--accent-glow), 0 0 48px rgba(79, 142, 247, 0.1);
+}
+.timeline-step.visible .timeline-dot--done:hover {
+  box-shadow: 0 0 24px rgba(63, 185, 80, 0.3), 0 0 48px rgba(63, 185, 80, 0.1);
+}
+
+/* ─── Staggered reveal for timeline content ─── */
+.timeline-step .timeline-content {
+  opacity: 0;
+  transform: translateX(12px);
+  transition: opacity 0.5s 0.2s ease, transform 0.5s 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.timeline-step.visible .timeline-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+.timeline-step[data-step="2"] .timeline-content { transition-delay: 0.25s; }
+.timeline-step[data-step="3"] .timeline-content { transition-delay: 0.3s; }
+.timeline-step[data-step="4"] .timeline-content { transition-delay: 0.35s; }
+.timeline-step[data-step="5"] .timeline-content { transition-delay: 0.4s; }
+
+/* ─── Reduced motion: instant everything ─── */
+@media (prefers-reduced-motion: reduce) {
+  .tl-chat-bubble,
+  .tl-chat-tail,
+  .tl-search-lens,
+  .tl-search-handle,
+  .tl-approve-circle,
+  .tl-approve-check,
+  .tl-repair-wrench,
+  .tl-shield-body,
+  .tl-shield-check {
+    transition: none !important;
+    stroke-dashoffset: 0 !important;
+    opacity: 1 !important;
+  }
+  .tl-chat-dot-1, .tl-chat-dot-2, .tl-chat-dot-3,
+  .tl-search-pulse,
+  .tl-repair-spark,
+  .timeline-dot-ripple {
+    animation: none !important;
+    opacity: 0.5 !important;
+  }
+  .timeline-glow { display: none; }
+  .timeline-step .timeline-content {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
+
+/* ═══════════════════════════════════════════════
    MAGNETIC BUTTONS — Fluid cursor-pull effect
    ═══════════════════════════════════════════════ */
 

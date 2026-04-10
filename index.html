@@ -726,17 +726,26 @@ a{color:inherit;text-decoration:none}
       <div class="section-header">
         <div class="section-eyebrow">How It Works</div>
         <h2 class="section-title">Simple, transparent, fast</h2>
-        <p class="section-sub">No surprises. You know exactly what's happening every step of the way.</p>
+        <p class="section-sub" data-text-reveal>No surprises. You know exactly what's happening every step of the way.</p>
       </div>
 
       <div class="timeline" id="processTimeline" role="list">
         <div class="timeline-track" aria-hidden="true">
           <div class="timeline-fill" id="timelineFill"></div>
+          <div class="timeline-glow" id="timelineGlow"></div>
         </div>
 
-        <div class="timeline-step" data-animate role="listitem">
+        <!-- Step 1: Text me -->
+        <div class="timeline-step" data-animate data-step="1" role="listitem">
           <div class="timeline-dot">
-            <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+            <div class="timeline-dot-ripple" aria-hidden="true"></div>
+            <svg class="timeline-svg-icon tl-icon-chat" viewBox="0 0 32 32" width="24" height="24" aria-hidden="true">
+              <rect class="tl-chat-bubble" x="4" y="5" width="24" height="17" rx="4" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="82" stroke-dashoffset="82"/>
+              <polygon class="tl-chat-tail" points="10,22 14,27 18,22" fill="currentColor" opacity="0"/>
+              <circle class="tl-chat-dot tl-chat-dot-1" cx="11" cy="13.5" r="1.5" fill="currentColor" opacity="0"/>
+              <circle class="tl-chat-dot tl-chat-dot-2" cx="16" cy="13.5" r="1.5" fill="currentColor" opacity="0"/>
+              <circle class="tl-chat-dot tl-chat-dot-3" cx="21" cy="13.5" r="1.5" fill="currentColor" opacity="0"/>
+            </svg>
           </div>
           <div class="timeline-content">
             <span class="timeline-time">Minute 0</span>
@@ -749,9 +758,15 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
 
-        <div class="timeline-step" data-animate role="listitem">
+        <!-- Step 2: Diagnosis -->
+        <div class="timeline-step" data-animate data-step="2" role="listitem">
           <div class="timeline-dot">
-            <span class="material-symbols-outlined" aria-hidden="true">manage_search</span>
+            <div class="timeline-dot-ripple" aria-hidden="true"></div>
+            <svg class="timeline-svg-icon tl-icon-search" viewBox="0 0 32 32" width="24" height="24" aria-hidden="true">
+              <circle class="tl-search-lens" cx="14" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="50.3" stroke-dashoffset="50.3"/>
+              <line class="tl-search-handle" x1="20" y1="20" x2="27" y2="27" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="10" stroke-dashoffset="10"/>
+              <circle class="tl-search-pulse" cx="14" cy="14" r="4" fill="currentColor" opacity="0"/>
+            </svg>
           </div>
           <div class="timeline-content">
             <span class="timeline-time">Within 2 hours</span>
@@ -761,9 +776,14 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
 
-        <div class="timeline-step" data-animate role="listitem">
+        <!-- Step 3: Approve -->
+        <div class="timeline-step" data-animate data-step="3" role="listitem">
           <div class="timeline-dot">
-            <span class="material-symbols-outlined" aria-hidden="true">task_alt</span>
+            <div class="timeline-dot-ripple" aria-hidden="true"></div>
+            <svg class="timeline-svg-icon tl-icon-approve" viewBox="0 0 32 32" width="24" height="24" aria-hidden="true">
+              <circle class="tl-approve-circle" cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="69.1" stroke-dashoffset="69.1"/>
+              <polyline class="tl-approve-check" points="10,16 14.5,20.5 22,11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="20" stroke-dashoffset="20"/>
+            </svg>
           </div>
           <div class="timeline-content">
             <span class="timeline-time">Your call</span>
@@ -772,9 +792,16 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
 
-        <div class="timeline-step" data-animate role="listitem">
+        <!-- Step 4: Repair -->
+        <div class="timeline-step" data-animate data-step="4" role="listitem">
           <div class="timeline-dot">
-            <span class="material-symbols-outlined" aria-hidden="true">build_circle</span>
+            <div class="timeline-dot-ripple" aria-hidden="true"></div>
+            <svg class="timeline-svg-icon tl-icon-repair" viewBox="0 0 32 32" width="24" height="24" aria-hidden="true">
+              <path class="tl-repair-wrench" d="M8 24l10-10c-1-3.5 1-7 4-9 1.5-1 3-1.5 5-1.5l-3 3 0 3 3 0 3-3c0 2-0.5 3.5-1.5 5-2 3-5.5 5-9 4L10 24c-0.5 0.5-1.5 0.5-2 0s-0.5-1.5 0-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="80" stroke-dashoffset="80"/>
+              <circle class="tl-repair-spark tl-repair-spark-1" cx="20" cy="12" r="1" fill="currentColor" opacity="0"/>
+              <circle class="tl-repair-spark tl-repair-spark-2" cx="24" cy="8" r="0.8" fill="currentColor" opacity="0"/>
+              <circle class="tl-repair-spark tl-repair-spark-3" cx="17" cy="9" r="0.6" fill="currentColor" opacity="0"/>
+            </svg>
           </div>
           <div class="timeline-content">
             <span class="timeline-time">Same day (usually)</span>
@@ -783,9 +810,14 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
 
-        <div class="timeline-step" data-animate role="listitem">
+        <!-- Step 5: Done -->
+        <div class="timeline-step" data-animate data-step="5" role="listitem">
           <div class="timeline-dot timeline-dot--done">
-            <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+            <div class="timeline-dot-ripple" aria-hidden="true"></div>
+            <svg class="timeline-svg-icon tl-icon-shield" viewBox="0 0 32 32" width="24" height="24" aria-hidden="true">
+              <path class="tl-shield-body" d="M16 3L5 8v7c0 7.5 4.7 14.5 11 17 6.3-2.5 11-9.5 11-17V8L16 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-dasharray="70" stroke-dashoffset="70"/>
+              <polyline class="tl-shield-check" points="11,16 14.5,19.5 21,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16" stroke-dashoffset="16"/>
+            </svg>
           </div>
           <div class="timeline-content">
             <span class="timeline-time">Done</span>

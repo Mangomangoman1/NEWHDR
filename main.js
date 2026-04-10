@@ -1596,6 +1596,7 @@
 (function() {
   var timeline = document.getElementById('processTimeline');
   var fill = document.getElementById('timelineFill');
+  var glow = document.getElementById('timelineGlow');
   if (!timeline || !fill) return;
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1610,10 +1611,12 @@
 
     if (timelineTop > viewH) {
       fill.style.height = '0%';
+      if (glow) { glow.classList.remove('active'); }
       return;
     }
     if (timelineTop + timelineH < 0) {
       fill.style.height = '100%';
+      if (glow) { glow.classList.remove('active'); }
       return;
     }
 
@@ -1623,6 +1626,14 @@
     var pct = Math.max(0, Math.min(100, (scrolled / total) * 125));
 
     fill.style.height = (reduceMotion ? 100 : pct) + '%';
+
+    // Position the glow dot at the fill's leading edge
+    if (glow && !reduceMotion && pct > 0 && pct < 100) {
+      glow.classList.add('active');
+      glow.style.top = pct + '%';
+    } else if (glow) {
+      glow.classList.remove('active');
+    }
   }
 
   if (!reduceMotion) {
@@ -1635,4 +1646,61 @@
     }, { passive: true });
   }
   updateFill();
+})();
+
+/* ═══════════════════════════════════════════════
+   TIMELINE DOT PARALLAX
+   Timeline dots float gently as you scroll through
+   the section, creating subtle depth perception.
+═══════════════════════════════════════════════ */
+(function timelineDotParallaxInit() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var dots = document.querySelectorAll('.timeline-dot');
+  var timeline = document.getElementById('processTimeline');
+  if (!dots.length || !timeline) return;
+
+  var PARALLAX_STRENGTH = 15; // max px offset
+  var lastScrollY = window.scrollY;
+  var ticking = false;
+
+  function updateParallax() {
+    var rect = timeline.getBoundingClientRect();
+    var viewH = window.innerHeight;
+
+    // Only animate when timeline is in view
+    if (rect.top > viewH || rect.bottom < 0) {
+      dots.forEach(function(dot) {
+        dot.style.setProperty('--parallax-y', '0px');
+      });
+      return;
+    }
+
+    // Calculate progress through timeline (0 = top of section at bottom of viewport, 1 = bottom at top)
+    var scrolled = viewH - rect.top;
+    var total = viewH + rect.height;
+    var progress = Math.max(0, Math.min(1, scrolled / total));
+
+    // Apply staggered parallax to each dot
+    dots.forEach(function(dot, i) {
+      // Each dot has a slightly different parallax offset based on its position
+      var dotOffset = i * 0.12; // Stagger factor
+      var effectiveProgress = progress + dotOffset;
+      // Sine wave for smooth floating effect
+      var offset = Math.sin(effectiveProgress * Math.PI * 2) * PARALLAX_STRENGTH;
+      dot.style.setProperty('--parallax-y', offset + 'px');
+    });
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        updateParallax();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateParallax();
 })();
