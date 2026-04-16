@@ -7611,3 +7611,90 @@ body {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+/* ─── Mail-In Pricing Grid ───────────────────────────────── */
+.mail-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.mail-pricing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+}
+.mail-pricing-device {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+.mail-pricing-device .material-symbols-outlined {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+.mail-pricing-price {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.mail-pricing-price strong {
+  color: var(--accent);
+}
+.mail-pricing-items {
+  list-style: none;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.mail-pricing-items li {
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+.mail-pricing-items li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ─── Mail-In Testimonials ───────────────────────────────── */
+.mail-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.mail-testimonial {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+.mail-testimonial-stars {
+  color: #f0b429;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 2px;
+}
+.mail-testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.mail-testimonial-author {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
