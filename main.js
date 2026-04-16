@@ -1648,59 +1648,55 @@
   updateFill();
 })();
 
-/* ═══════════════════════════════════════════════
-   TIMELINE DOT PARALLAX
-   Timeline dots float gently as you scroll through
-   the section, creating subtle depth perception.
-═══════════════════════════════════════════════ */
-(function timelineDotParallaxInit() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+/* ── Services Cards: Mobile Horizontal Scroll + Dots ── */
+(function() {
+  var grid = document.getElementById('servicesCardsGrid');
+  var dotsContainer = document.getElementById('cardsScrollIndicators');
+  if (!grid || !dotsContainer) return;
 
-  var dots = document.querySelectorAll('.timeline-dot');
-  var timeline = document.getElementById('processTimeline');
-  if (!dots.length || !timeline) return;
+  var cards = grid.querySelectorAll('.card');
+  var dotCount = cards.length;
 
-  var PARALLAX_STRENGTH = 15; // max px offset
-  var lastScrollY = window.scrollY;
-  var ticking = false;
+  // Only activate on mobile
+  var mq = window.matchMedia('(max-width: 768px)');
 
-  function updateParallax() {
-    var rect = timeline.getBoundingClientRect();
-    var viewH = window.innerHeight;
-
-    // Only animate when timeline is in view
-    if (rect.top > viewH || rect.bottom < 0) {
-      dots.forEach(function(dot) {
-        dot.style.setProperty('--parallax-y', '0px');
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    if (!mq.matches) return;
+    cards.forEach(function(_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'cards-scroll-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to card ' + (i + 1));
+      dot.dataset.index = i;
+      dot.addEventListener('click', function() {
+        var targetScrollLeft = cards[i].offsetLeft - grid.offsetLeft - 16;
+        grid.scrollTo({ left: targetScrollLeft, behavior: 'smooth' });
       });
-      return;
-    }
-
-    // Calculate progress through timeline (0 = top of section at bottom of viewport, 1 = bottom at top)
-    var scrolled = viewH - rect.top;
-    var total = viewH + rect.height;
-    var progress = Math.max(0, Math.min(1, scrolled / total));
-
-    // Apply staggered parallax to each dot
-    dots.forEach(function(dot, i) {
-      // Each dot has a slightly different parallax offset based on its position
-      var dotOffset = i * 0.12; // Stagger factor
-      var effectiveProgress = progress + dotOffset;
-      // Sine wave for smooth floating effect
-      var offset = Math.sin(effectiveProgress * Math.PI * 2) * PARALLAX_STRENGTH;
-      dot.style.setProperty('--parallax-y', offset + 'px');
+      dotsContainer.appendChild(dot);
     });
   }
 
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      requestAnimationFrame(function() {
-        updateParallax();
-        ticking = false;
-      });
-      ticking = true;
-    }
+  function updateActiveDot() {
+    if (!mq.matches) return;
+    var scrollLeft = grid.scrollLeft;
+    var cardWidth = cards[0].offsetWidth + 16; // including gap
+    var activeIndex = Math.round(scrollLeft / cardWidth);
+    activeIndex = Math.max(0, Math.min(activeIndex, dotCount - 1));
+    dotsContainer.querySelectorAll('.cards-scroll-dot').forEach(function(dot, i) {
+      dot.classList.toggle('active', i === activeIndex);
+    });
+  }
+
+  buildDots();
+
+  // Update dots on scroll
+  grid.addEventListener('scroll', function() {
+    updateActiveDot();
   }, { passive: true });
 
-  updateParallax();
+  // Rebuild dots on resize (orientation change, etc.)
+  window.addEventListener('resize', function() {
+    buildDots();
+    updateActiveDot();
+  });
 })();
