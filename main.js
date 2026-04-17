@@ -1732,3 +1732,26 @@
     updateActiveDot();
   });
 })();
+
+// Hero open/closed status clock
+(function() {
+function updateHeroStatus() {
+var now = new Date();
+var mtTime = new Date(now.getTime() + (-7 * 3600000));
+var day = mtTime.getUTCDay();
+var totalMin = (mtTime.getUTCHours() - 7) * 60 + mtTime.getUTCMinutes();
+var isOpen = false;
+var isClosingSoon = false;
+if (day >= 1 && day <= 5 && totalMin >= 540 && totalMin < 1080) { isOpen = true; if (totalMin >= 1050) isClosingSoon = true; }
+else if (day === 6 && totalMin >= 600 && totalMin < 960) { isOpen = true; if (totalMin >= 930) isClosingSoon = true; }
+var dot = document.getElementById('heroStatusDot');
+var clock = document.getElementById('heroClock');
+if (!dot || !clock) return;
+dot.className = 'hero-status-dot' + (isOpen ? (isClosingSoon ? ' closing-soon' : '') : ' closed');
+var statusText = isOpen ? (isClosingSoon ? 'Closing soon · ' : 'Open · ') : 'Closed · ';
+var timeStr = mtTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Boise' });
+clock.textContent = statusText + timeStr;
+}
+updateHeroStatus();
+setInterval(updateHeroStatus, 60000);
+})();

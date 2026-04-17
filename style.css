@@ -7888,3 +7888,10 @@ body {
   color: var(--text-muted);
   font-weight: 500;
 }
+
+/* Hero open/closed status */
+.hero-status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; margin-right: 6px; position: relative; top: 1px; animation: heroStatusPulse 2s ease-in-out infinite; }
+.hero-status-dot.closed { background: #ef4444; animation: none; }
+.hero-status-dot.closing-soon { background: #f59e0b; }
+@keyframes heroStatusPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+#heroOpenStatus { font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; }
