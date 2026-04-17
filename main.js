@@ -1797,30 +1797,35 @@
       </svg>`,
       steps: [
         {
-          title: 'Get it out of the water. Now.',
-          desc: 'The longer it stays submerged, the worse the damage. Fish it out immediately — every second matters.',
-          timer: 'Do this immediately'
+          title: 'Get it out and keep it off',
+          desc: 'The longer it stays wet, the worse the damage. If the screen is still on, <strong>power it down immediately</strong>.',
+          timer: 'Immediately'
         },
         {
-          title: 'Do NOT press any buttons',
-          desc: "Pressing buttons while it's wet can short-circuit the board. Just pick it up and leave it off.",
-          timer: 'Resist the urge to check if it works'
+          title: 'Do not charge it and do not test it',
+          desc: 'Charging a wet phone is one of the fastest ways to short it out. Resist the urge to “just see if it still works.”',
+          timer: 'Right now'
         },
         {
-          title: 'Wipe it dry gently',
-          desc: "Use a soft cloth or paper towel to remove visible water from the outside. Don't shake it — that pushes water deeper.",
+          title: 'Wipe the outside only',
+          desc: 'Use a soft cloth or paper towel. <strong>Do not shake it</strong> — that can push water deeper into the phone.',
           timer: '30 seconds'
         },
         {
-          title: 'Text me right away',
-          desc: 'Water damage is time-sensitive. The sooner I can start the rescue process, the better your chances. Text me a photo and I\'ll walk you through what to do next.',
+          title: 'Skip the rice and skip the heat',
+          desc: 'Rice does not fix corrosion. Hair dryers, ovens, dashboard heat, or direct sunlight usually make the situation worse.',
+          timer: 'Do not waste time here'
+        },
+        {
+          title: 'Text me a photo and the model',
+          desc: 'Water damage is time-sensitive. The sooner I can start drying, cleaning, and checking corrosion, the better the odds of saving the phone.',
           timer: 'Text: (208) 366-6111'
         }
       ]
     },
     cracked: {
       title: 'Cracked Screen',
-      urgency: 'Fixable same day — don\'t wait',
+      urgency: 'High — usually fixable same day',
       icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
         <rect x="10" y="6" width="28" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
         <path d="M16 14 L22 22 L18 30 L26 36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -1828,30 +1833,35 @@
       </svg>`,
       steps: [
         {
-          title: 'Stop touching the screen',
-          desc: 'Cracked glass can cut fingers. If you must use it, apply a screen protector or clear tape over the crack to prevent injury.',
-          timer: 'Before you do anything else'
+          title: 'Stop pressing on the broken area',
+          desc: 'Cracked glass gets worse with pressure. If pieces are lifting, keep fingers away from the edges so you do not cut yourself.',
+          timer: 'Before anything else'
         },
         {
-          title: 'Back up if you can',
-          desc: "If your phone is still working, now's a smart time to back up your photos and data — just in case the screen gets worse.",
-          timer: '2 minutes'
+          title: 'Cover it if you need to keep using it',
+          desc: 'A screen protector or even clear tape can keep loose glass from shedding while you back up or text for help.',
+          timer: '1 minute'
         },
         {
-          title: "Don't use fix-it kits",
-          desc: 'Those "liquid glass" or "screen repair" kits rarely work on real cracks and can void your warranty or damage the display. Skip them.',
+          title: 'Back up if the phone still works',
+          desc: 'If touch is still responding, now is the time to back up photos, messages, and notes before the display gets worse.',
+          timer: '2–5 minutes'
+        },
+        {
+          title: 'Skip DIY liquid-glass kits',
+          desc: 'Most crack-repair kits do not fix real drop damage and can make a professional screen replacement messier.',
           timer: 'Save yourself the frustration'
         },
         {
-          title: 'Text me a photo',
-          desc: "Send me a picture of the crack and your phone model. I'll tell you exactly what it'll cost to fix and how fast I can get it done. Most screen repairs are done same day.",
+          title: 'Text me a photo and your model',
+          desc: 'Front photo + device model lets me tell you the likely repair and whether it looks like glass-only damage or full display damage.',
           timer: 'Text: (208) 366-6111'
         }
       ]
     },
     dead: {
-      title: "Dead / Won't Charge",
-      urgency: 'Usually an easy fix — let\'s find out',
+      title: 'Won’t Charge / Dead Battery',
+      urgency: 'Medium — often a straightforward fix',
       icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
         <rect x="8" y="12" width="28" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
         <path d="M36 20 L36 28 L40 28 L40 20 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -1860,30 +1870,35 @@
       </svg>`,
       steps: [
         {
-          title: 'Try a different cable and brick',
-          desc: 'Cables fail more often than phones. Try another cable and wall charger — ideally one you know works with another device.',
+          title: 'Try a known-good cable and brick',
+          desc: 'Cables and cheap charging bricks fail constantly. Use a charger you know works on another device before blaming the phone.',
           timer: '30 seconds'
         },
         {
-          title: 'Check the port',
-          desc: "Look into the charging port with a light. Lint, dust, and pocket debris are the #1 cause of \"won't charge.\" If you see gunk, gently clear it with a dry toothpick or soft brush.",
+          title: 'Check the charging port for lint',
+          desc: 'Pocket lint is one of the biggest reasons a phone “won’t charge.” Use a dry toothpick or soft brush only — no metal tools.',
           timer: '1 minute'
         },
         {
-          title: 'Try a wireless charge',
-          desc: "If your phone supports wireless charging, place it on a wireless pad. If it charges this way, the port is the problem — not the battery.",
+          title: 'Try a force restart once',
+          desc: 'Some phones look dead but are actually frozen. One force restart is worth trying before you assume it needs a battery.',
+          timer: '20 seconds'
+        },
+        {
+          title: 'If it supports wireless charging, test that',
+          desc: 'If wireless charging works but the cable does not, that is a strong clue the charging port is the issue instead of the whole phone.',
           timer: '2 minutes'
         },
         {
-          title: 'Text me what you see',
-          desc: "Tell me what happened: what you tried, what you're seeing (charging icon? nothing? intermittent?). I'll diagnose it and give you a clear answer — no guesswork.",
+          title: 'Text the model and what happens on charge',
+          desc: 'Tell me if you get no icon, intermittent charging, cable wiggle, heat, vibration, or only wireless power. That narrows it down fast.',
           timer: 'Text: (208) 366-6111'
         }
       ]
     },
     overheat: {
       title: 'Overheating Device',
-      urgency: "Don't ignore this one",
+      urgency: 'Medium to high — do not ignore it',
       icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
         <path d="M24 6 L24 12 M24 36 L24 42 M6 24 L12 24 M36 24 L42 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         <path d="M10.1 10.1 L14.5 14.5 M33.5 33.5 L37.9 37.9 M37.9 10.1 L33.5 14.5 M14.5 33.5 L10.1 37.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -1894,59 +1909,69 @@
       steps: [
         {
           title: 'Stop using it immediately',
-          desc: "If it's hot to the touch and actively overheating during use, put it down and walk away. Continued use accelerates the damage.",
+          desc: 'If it is hot to the touch, closing apps is not enough. Put it down and let it rest. Continued use accelerates damage.',
           timer: 'Right now'
         },
         {
-          title: 'Remove the case',
-          desc: "Cases trap heat. Taking off the case helps it cool down faster. Don't put it in the fridge — rapid cooling causes condensation and more damage.",
+          title: 'Unplug it and remove the case',
+          desc: 'Charging plus a tight case traps heat. Removing both gives the device its best chance to cool normally.',
           timer: '10 seconds'
         },
         {
-          title: 'Move it to a cool spot',
-          desc: "Lay it on a cool, flat surface — a countertop, not a bed or couch (fabric insulates heat). Point a fan at it if you have one.",
+          title: 'Move it to a cool, hard surface',
+          desc: 'Countertop beats bed or couch. Fabric holds heat. A fan is fine. <strong>Do not use a freezer or fridge.</strong>',
           timer: '30 seconds'
         },
         {
-          title: "Text me if it doesn't cool down",
-          desc: "If it stays hot after 10–15 minutes of being idle and off the charger, there's likely a deeper issue. Text me what happened — overheating can often be fixed once we identify the cause.",
+          title: 'Watch for swelling, smell, or repeat overheating',
+          desc: 'If the screen is lifting, the device smells sharp or sweet, or it heats up again quickly, treat it as urgent and stop using it.',
+          timer: '10–15 minutes'
+        },
+        {
+          title: 'Text me if it keeps happening',
+          desc: 'Overheating can be a battery problem, charging issue, thermal paste issue, software loop, or board-level fault. Repeats mean it needs hands-on diagnosis.',
           timer: 'Text: (208) 366-6111'
         }
       ]
     },
     blackout: {
-      title: 'Black Screen / Dead',
-      urgency: "Don't give up on it yet",
+      title: 'Black Screen / No Display',
+      urgency: 'High — the device may still be alive',
       icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
         <rect x="10" y="6" width="28" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
         <path d="M16 16 L32 32 M32 16 L16 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>`,
       steps: [
         {
-          title: 'Force restart it',
-          desc: 'Hold the power button + volume down (iPhone) or power button alone (most Android) for 15–20 seconds. This often wakes a "soft-dead" phone.',
+          title: 'Force restart it once',
+          desc: 'A soft crash can leave the phone looking dead. One force restart is worth trying before you assume the worst.',
           timer: '20 seconds'
         },
         {
-          title: 'Try another charger',
-          desc: "Plug it into a different cable and charger. A fully dead battery sometimes needs a moment on a working charger before it shows signs of life.",
-          timer: '1 minute'
+          title: 'Charge it with a known-good setup for 10–15 minutes',
+          desc: 'Sometimes the battery is deeply drained and the display does not wake up right away. Use a working charger, then leave it alone for a few minutes.',
+          timer: '10–15 minutes'
         },
         {
-          title: 'Check for damage indicators',
-          desc: "Look at the charging port — bent pins, lint buildup, or moisture corrosion can prevent charging entirely. Look at the screen — do you see any faint glow, cracks, or bleeding?",
+          title: 'Listen and feel for signs of life',
+          desc: 'Vibration, sound, charging chime, alarm, or ring means the phone may be alive even if the screen is not.',
           timer: '30 seconds'
         },
         {
-          title: 'Text me what you see',
-          desc: 'Tell me: What happened right before it died? What have you tried? Even "I have no idea, it just stopped working" is useful. I\'ll tell you whether this sounds fixable — most black screens are.',
+          title: 'Do not keep hammering the power button',
+          desc: 'Repeated forced restarts and random button combos add confusion without giving you more information. Try the basics once, then stop.',
+          timer: 'After one good attempt'
+        },
+        {
+          title: 'Text me what happened before it went dark',
+          desc: 'Drop, update, heat, water, battery drain, bad charger, or random blackout — all of that helps. Most black-screen phones are not truly dead.',
           timer: 'Text: (208) 366-6111'
         }
       ]
     },
     data: {
-      title: 'Lost Photos / Data',
-      urgency: 'Time matters — act fast',
+      title: 'Lost Photos / Data Recovery',
+      urgency: 'Critical if the data matters',
       icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
         <path d="M12 16 C12 12 16 8 24 8 C32 8 36 12 36 16 L38 36 C38 40 34 44 24 44 C14 44 10 40 10 36 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
         <circle cx="24" cy="26" r="6" stroke="currentColor" stroke-width="2"/>
@@ -1955,28 +1980,175 @@
       steps: [
         {
           title: 'Stop using the device',
-          desc: "Continuing to use a failing storage device can overwrite the data you're trying to recover. Power it off if you can — don't keep trying to access files.",
+          desc: 'If storage is failing, every extra write can overwrite recoverable data. If it is on and unstable, stop poking around.',
           timer: 'Immediately'
         },
         {
-          title: "Don't shake it or bang on it",
-          desc: "Physical manipulation can make a failing drive worse. If the drive is clicking, humming abnormally, or the device is very hot, just set it down gently.",
-          timer: 'Handle with care'
+          title: 'Do not factory reset it if the data matters',
+          desc: 'Resetting, reinstalling, or doing repeated recovery-mode attempts can make recovery harder or impossible if the data is not backed up.',
+          timer: 'Before any restore attempts'
         },
         {
-          title: "If it's a phone: check iCloud / Google backup",
-          desc: "Your photos may already be safe in the cloud. Check photos.google.com on a computer, or log into iCloud.com on a friend's device. This takes 2 minutes and might give you peace of mind.",
+          title: 'Check cloud backups first',
+          desc: 'Look at iCloud, Google Photos, Google Drive, OneDrive, or Dropbox on another device. You may already have more than you think.',
+          timer: '2–5 minutes'
+        },
+        {
+          title: 'Figure out what matters most',
+          desc: 'Photos? Tax files? Business documents? Text me the highest-priority data so I know whether we are doing repair-first or recovery-first triage.',
+          timer: '1 minute'
+        },
+        {
+          title: 'Text me the device and symptoms',
+          desc: 'Tell me if it clicks, loops, gets hot, shows a logo, vibrates, or does absolutely nothing. Even “it just died” is useful information here.',
+          timer: 'Text: (208) 366-6111'
+        }
+      ]
+    },
+    swollen: {
+      title: 'Swollen Battery / Lifting Screen',
+      urgency: 'CRITICAL — stop using it now',
+      icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
+        <rect x="8" y="12" width="28" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
+        <path d="M36 20 L36 28 L40 28 L40 20 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M14 18 C20 14 24 14 30 18 C24 22 20 22 14 18 Z" fill="currentColor" opacity="0.25"/>
+      </svg>`,
+      steps: [
+        {
+          title: 'Stop charging it immediately',
+          desc: 'Power plus heat is the last thing a swollen battery needs. Unplug it now.',
+          timer: 'Immediately'
+        },
+        {
+          title: 'Stop using it and move it somewhere safe',
+          desc: 'Keep it off beds, couches, cars in the sun, and anything flammable. Hard surface is best.',
+          timer: 'Right now'
+        },
+        {
+          title: 'Do not press the screen down',
+          desc: 'If the display is lifting, do not try to clamp it, tape it flat, or “seat it back down.” That can puncture the battery.',
+          timer: 'Hands off the pressure point'
+        },
+        {
+          title: 'Do not pry or puncture the battery',
+          desc: 'This is not a DIY situation if the battery is already bloated. The risk is not worth it.',
+          timer: 'No tools'
+        },
+        {
+          title: 'Text me a side photo of the lift',
+          desc: 'A side-angle photo usually tells me immediately whether the battery is swelling and how urgent the handoff needs to be.',
+          timer: 'Text: (208) 366-6111'
+        }
+      ]
+    },
+    bootloop: {
+      title: 'Stuck on Logo / Boot Loop',
+      urgency: 'High — don’t wipe it yet',
+      icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
+        <path d="M24 8 A14 14 0 1 1 10 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M10 10 L10 22 L22 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`,
+      steps: [
+        {
+          title: 'Notice what happened right before it started',
+          desc: 'Failed update, low storage, battery swap, drop, water, or random restart — the backstory matters a lot with boot-loop diagnosis.',
+          timer: '30 seconds'
+        },
+        {
+          title: 'Force restart it once',
+          desc: 'One good restart attempt is fine. Ten in a row does not tell you anything new.',
+          timer: '20 seconds'
+        },
+        {
+          title: 'Do not factory reset it unless you know you are backed up',
+          desc: 'A wipe may solve the loop but cost you photos, notes, and app data if backup is not current.',
+          timer: 'Before recovery mode'
+        },
+        {
+          title: 'Check backup status if you can',
+          desc: 'If the device briefly boots or you can see it in iCloud or Google, confirm whether your data is already safe before you try anything destructive.',
           timer: '2 minutes'
         },
         {
-          title: 'Text me — data recovery is possible',
-          desc: "I can often recover data from phones, laptops, and USB drives. Even \"dead\" devices sometimes yield their data. Don't assume it's gone — text me what happened and I'll tell you your options.",
+          title: 'Text me the model and what you see',
+          desc: 'Tell me whether it is stuck on the Apple logo, Samsung splash screen, spinning wheel, update bar, or repeated restart. That changes the repair path.',
+          timer: 'Text: (208) 366-6111'
+        }
+      ]
+    },
+    spill: {
+      title: 'Laptop Spill / Coffee Damage',
+      urgency: 'CRITICAL — shut it down now',
+      icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
+        <rect x="8" y="10" width="32" height="22" rx="2" stroke="currentColor" stroke-width="2"/>
+        <path d="M4 36 H44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M28 6 C28 6 24 11 24 14 C24 16.8 26.2 19 29 19 C31.8 19 34 16.8 34 14 C34 11 28 6 28 6 Z" fill="currentColor" opacity="0.22"/>
+      </svg>`,
+      steps: [
+        {
+          title: 'Unplug the charger immediately',
+          desc: 'If the laptop is plugged in, disconnect power first. Electricity plus liquid is the real problem.',
+          timer: 'Immediately'
+        },
+        {
+          title: 'Shut it down hard',
+          desc: 'If it is on, hold the power button until it turns off. Do not keep typing or moving windows around to save work if liquid is actively inside it.',
+          timer: 'Right now'
+        },
+        {
+          title: 'Blot and tent it keyboard-down',
+          desc: 'Gently blot visible liquid and position it like an upside-down V or tent so gravity helps drain it away from the board.',
+          timer: '1 minute'
+        },
+        {
+          title: 'Do not turn it back on “to test”',
+          desc: 'A laptop that seems fine for an hour can still corrode internally. Testing it too soon can finish the job.',
+          timer: 'Avoid the risky test boot'
+        },
+        {
+          title: 'Text me what spilled and how much',
+          desc: 'Water, coffee, soda, tea, wine, energy drink — the type of liquid matters because sticky or acidic spills need more aggressive cleanup.',
+          timer: 'Text: (208) 366-6111'
+        }
+      ]
+    },
+    nosignal: {
+      title: 'No Signal / HDMI / No Display Out',
+      urgency: 'High — often a port or cable issue',
+      icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
+        <rect x="8" y="10" width="32" height="22" rx="2" stroke="currentColor" stroke-width="2"/>
+        <path d="M16 38 H32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M22 32 V38 M26 32 V38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>`,
+      steps: [
+        {
+          title: 'Try another cable and another display first',
+          desc: 'A bad cable or TV input is more common than people think. Swap those before assuming the console, dock, or laptop is dead.',
+          timer: '1 minute'
+        },
+        {
+          title: 'Power-cycle the device once',
+          desc: 'One clean reboot is reasonable for consoles, docks, and laptops. Repeated hard resets do not help after that.',
+          timer: '30 seconds'
+        },
+        {
+          title: 'Inspect the port carefully',
+          desc: 'Bent pins, looseness, wobble, or obvious damage strongly suggest the HDMI or display-out port itself is the culprit. Do not force the cable in.',
+          timer: '30 seconds'
+        },
+        {
+          title: 'Note the exact model',
+          desc: 'PS5, Xbox Series X, Switch OLED, Steam Deck dock, MacBook, Dell XPS — the model matters because the common failure points are different.',
+          timer: '15 seconds'
+        },
+        {
+          title: 'Text me a photo of the port or setup',
+          desc: 'A close photo of the HDMI port, dock, cable fit, or “no signal” screen gives me a much better guess before you bring it in.',
           timer: 'Text: (208) 366-6111'
         }
       ]
     }
   };
-
   const sosOverlay = document.getElementById('sosOverlay');
   const sosPanel = document.getElementById('sosPanel');
   const sosBackdrop = document.getElementById('sosBackdrop');
@@ -1987,6 +2159,7 @@
   const sosProgressFill = document.getElementById('sosProgressFill');
   const sosProgressLabel = document.getElementById('sosProgressLabel');
   const sosCtaBlock = document.getElementById('sosCtaBlock');
+  const sosCtaLink = document.getElementById('sosCtaLink');
 
   let currentSosType = null;
   let currentStep = 0;
@@ -2005,6 +2178,10 @@
     document.getElementById('sosOverlayIcon').innerHTML = data.icon;
     document.getElementById('sosOverlayUrgency').textContent = data.urgency;
     document.getElementById('sosOverlayTitle').textContent = data.title;
+    if (sosCtaLink) {
+      var sosBody = encodeURIComponent('Hi Samuel — I need SOS help with ' + data.title + '. Device: . What happened: . Current symptoms: . I am in [city/area].');
+      sosCtaLink.href = 'sms:+120****6111?body=' + sosBody;
+    }
 
     renderSosSteps();
 
@@ -2019,6 +2196,9 @@
     sosOverlay.setAttribute('aria-hidden', 'false');
     sosOverlay.classList.add('visible');
     document.body.style.overflow = 'hidden';
+    sosCtaBlock.classList.remove('visible', 'sos-cta-activated');
+    sosCtaBlock.setAttribute('aria-hidden', 'true');
+    if (sosPanel) sosPanel.scrollTop = 0;
 
     requestAnimationFrame(function() {
       animateStepIn(0);
@@ -2031,7 +2211,7 @@
     document.body.style.overflow = '';
     currentSosType = null;
     currentStep = 0;
-    sosCtaBlock.classList.remove('visible');
+    sosCtaBlock.classList.remove('visible', 'sos-cta-activated');
     sosCtaBlock.setAttribute('aria-hidden', 'true');
   }
 

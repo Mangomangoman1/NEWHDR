@@ -7,7 +7,7 @@
 /tablet-repair      /tablet-repair.html     200
 /console-repair     /console-repair.html    200
 /mail-in-repair     /mail-in-repair.html    200
-/emergency-repair   /emergency-repair.html  200
+/emergency-repair   /repair-sos            301
 /device-check       /device-check.html      200
 /pricing            /pricing.html           200
 /reviews            /reviews.html           200
@@ -18,3 +18,4 @@
 /privacy            /privacy.html           200
 /student-military   /student-military.html  200
 /faq              /faq.html          200
+/repair-sos          /repair-sos.html       200
