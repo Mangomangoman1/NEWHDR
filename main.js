@@ -1735,23 +1735,48 @@
 
 // Hero open/closed status clock
 (function() {
-function updateHeroStatus() {
-var now = new Date();
-var mtTime = new Date(now.getTime() + (-7 * 3600000));
-var day = mtTime.getUTCDay();
-var totalMin = (mtTime.getUTCHours() - 7) * 60 + mtTime.getUTCMinutes();
-var isOpen = false;
-var isClosingSoon = false;
-if (day >= 1 && day <= 5 && totalMin >= 540 && totalMin < 1080) { isOpen = true; if (totalMin >= 1050) isClosingSoon = true; }
-else if (day === 6 && totalMin >= 600 && totalMin < 960) { isOpen = true; if (totalMin >= 930) isClosingSoon = true; }
-var dot = document.getElementById('heroStatusDot');
-var clock = document.getElementById('heroClock');
-if (!dot || !clock) return;
-dot.className = 'hero-status-dot' + (isOpen ? (isClosingSoon ? ' closing-soon' : '') : ' closed');
-var statusText = isOpen ? (isClosingSoon ? 'Closing soon · ' : 'Open · ') : 'Closed · ';
-var timeStr = mtTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Boise' });
-clock.textContent = statusText + timeStr;
-}
-updateHeroStatus();
-setInterval(updateHeroStatus, 60000);
+  var clockEl = document.getElementById('heroClock');
+  var dotEl = document.getElementById('heroStatusDot');
+  if (!clockEl || !dotEl) return;
+
+  var HAILEY_TZ = 'America/Boise'; // Mountain Time
+
+  function isOpen() {
+    var now = new Date();
+    var timeStr = now.toLocaleTimeString('en-US', { timeZone: HAILEY_TZ });
+    var [time, period] = timeStr.split(' ');
+    var [hours, minutes] = time.split(':').map(Number);
+    if (period === 'PM' && hours !== 12) hours += 12;
+    if (period === 'AM' && hours === 12) hours = 0;
+
+    var dayStr = now.toLocaleDateString('en-US', { timeZone: HAILEY_TZ, weekday: 'short' });
+    var dayNum = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(dayStr);
+
+    var isOpen = dayNum >= 1 && dayNum <= 6 && hours >= 9 && hours < 19;
+    var closingSoon = dayNum >= 1 && dayNum <= 6 && hours === 18 && minutes >= 30;
+    return { open: isOpen, closingSoon: closingSoon };
+  }
+
+  function updateClock() {
+    var now = new Date();
+    var timeStr = now.toLocaleTimeString('en-US', {
+      timeZone: HAILEY_TZ,
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    });
+    var { open, closingSoon } = isOpen();
+
+    clockEl.textContent = timeStr + ' MT — ' + (open ? 'Open' : 'Closed');
+
+    dotEl.classList.remove('closed', 'closing-soon');
+    if (!open) {
+      dotEl.classList.add('closed');
+    } else if (closingSoon) {
+      dotEl.classList.add('closing-soon');
+    }
+  }
+
+  updateClock();
+  setInterval(updateClock, 60000);
 })();
