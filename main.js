@@ -1780,3 +1780,395 @@
   updateClock();
   setInterval(updateClock, 60000);
 })();
+
+/* ═══════════════════════════════════════════
+   REPAIR SOS — Interactive Emergency Guides
+══════════════════════════════════════════ */
+(function() {
+  'use strict';
+
+  const SOS_DATA = {
+    water: {
+      title: 'Water Damage',
+      urgency: 'CRITICAL — Every minute counts',
+      icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
+        <path d="M24 6 C24 6 10 22 10 31 C10 38.7 16.3 45 24 45 C31.7 45 38 38.7 38 31 C38 22 24 6 24 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24 18 C24 18 16 28 16 33 C16 37 19.6 40 24 40 C28.4 40 32 37 32 33 C32 28 24 18 24 18Z" fill="currentColor" opacity="0.25"/>
+      </svg>`,
+      steps: [
+        {
+          title: 'Get it out of the water. Now.',
+          desc: 'The longer it stays submerged, the worse the damage. Fish it out immediately — every second matters.',
+          timer: 'Do this immediately'
+        },
+        {
+          title: 'Do NOT press any buttons',
+          desc: "Pressing buttons while it's wet can short-circuit the board. Just pick it up and leave it off.",
+          timer: 'Resist the urge to check if it works'
+        },
+        {
+          title: 'Wipe it dry gently',
+          desc: "Use a soft cloth or paper towel to remove visible water from the outside. Don't shake it — that pushes water deeper.",
+          timer: '30 seconds'
+        },
+        {
+          title: 'Text me right away',
+          desc: 'Water damage is time-sensitive. The sooner I can start the rescue process, the better your chances. Text me a photo and I\'ll walk you through what to do next.',
+          timer: 'Text: (208) 366-6111'
+        }
+      ]
+    },
+    cracked: {
+      title: 'Cracked Screen',
+      urgency: 'Fixable same day — don\'t wait',
+      icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
+        <rect x="10" y="6" width="28" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+        <path d="M16 14 L22 22 L18 30 L26 36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M30 12 L34 18 L28 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>`,
+      steps: [
+        {
+          title: 'Stop touching the screen',
+          desc: 'Cracked glass can cut fingers. If you must use it, apply a screen protector or clear tape over the crack to prevent injury.',
+          timer: 'Before you do anything else'
+        },
+        {
+          title: 'Back up if you can',
+          desc: "If your phone is still working, now's a smart time to back up your photos and data — just in case the screen gets worse.",
+          timer: '2 minutes'
+        },
+        {
+          title: "Don't use fix-it kits",
+          desc: 'Those "liquid glass" or "screen repair" kits rarely work on real cracks and can void your warranty or damage the display. Skip them.',
+          timer: 'Save yourself the frustration'
+        },
+        {
+          title: 'Text me a photo',
+          desc: "Send me a picture of the crack and your phone model. I'll tell you exactly what it'll cost to fix and how fast I can get it done. Most screen repairs are done same day.",
+          timer: 'Text: (208) 366-6111'
+        }
+      ]
+    },
+    dead: {
+      title: "Dead / Won't Charge",
+      urgency: 'Usually an easy fix — let\'s find out',
+      icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
+        <rect x="8" y="12" width="28" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
+        <path d="M36 20 L36 28 L40 28 L40 20 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="10" y="14" width="8" height="20" rx="1" fill="currentColor" opacity="0.25"/>
+        <path d="M20 22 L28 30 M28 22 L20 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>`,
+      steps: [
+        {
+          title: 'Try a different cable and brick',
+          desc: 'Cables fail more often than phones. Try another cable and wall charger — ideally one you know works with another device.',
+          timer: '30 seconds'
+        },
+        {
+          title: 'Check the port',
+          desc: "Look into the charging port with a light. Lint, dust, and pocket debris are the #1 cause of \"won't charge.\" If you see gunk, gently clear it with a dry toothpick or soft brush.",
+          timer: '1 minute'
+        },
+        {
+          title: 'Try a wireless charge',
+          desc: "If your phone supports wireless charging, place it on a wireless pad. If it charges this way, the port is the problem — not the battery.",
+          timer: '2 minutes'
+        },
+        {
+          title: 'Text me what you see',
+          desc: "Tell me what happened: what you tried, what you're seeing (charging icon? nothing? intermittent?). I'll diagnose it and give you a clear answer — no guesswork.",
+          timer: 'Text: (208) 366-6111'
+        }
+      ]
+    },
+    overheat: {
+      title: 'Overheating Device',
+      urgency: "Don't ignore this one",
+      icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
+        <path d="M24 6 L24 12 M24 36 L24 42 M6 24 L12 24 M36 24 L42 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M10.1 10.1 L14.5 14.5 M33.5 33.5 L37.9 37.9 M37.9 10.1 L33.5 14.5 M14.5 33.5 L10.1 37.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
+        <path d="M24 20 L24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="24" cy="28" r="2" fill="currentColor"/>
+      </svg>`,
+      steps: [
+        {
+          title: 'Stop using it immediately',
+          desc: "If it's hot to the touch and actively overheating during use, put it down and walk away. Continued use accelerates the damage.",
+          timer: 'Right now'
+        },
+        {
+          title: 'Remove the case',
+          desc: "Cases trap heat. Taking off the case helps it cool down faster. Don't put it in the fridge — rapid cooling causes condensation and more damage.",
+          timer: '10 seconds'
+        },
+        {
+          title: 'Move it to a cool spot',
+          desc: "Lay it on a cool, flat surface — a countertop, not a bed or couch (fabric insulates heat). Point a fan at it if you have one.",
+          timer: '30 seconds'
+        },
+        {
+          title: "Text me if it doesn't cool down",
+          desc: "If it stays hot after 10–15 minutes of being idle and off the charger, there's likely a deeper issue. Text me what happened — overheating can often be fixed once we identify the cause.",
+          timer: 'Text: (208) 366-6111'
+        }
+      ]
+    },
+    blackout: {
+      title: 'Black Screen / Dead',
+      urgency: "Don't give up on it yet",
+      icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
+        <rect x="10" y="6" width="28" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+        <path d="M16 16 L32 32 M32 16 L16 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>`,
+      steps: [
+        {
+          title: 'Force restart it',
+          desc: 'Hold the power button + volume down (iPhone) or power button alone (most Android) for 15–20 seconds. This often wakes a "soft-dead" phone.',
+          timer: '20 seconds'
+        },
+        {
+          title: 'Try another charger',
+          desc: "Plug it into a different cable and charger. A fully dead battery sometimes needs a moment on a working charger before it shows signs of life.",
+          timer: '1 minute'
+        },
+        {
+          title: 'Check for damage indicators',
+          desc: "Look at the charging port — bent pins, lint buildup, or moisture corrosion can prevent charging entirely. Look at the screen — do you see any faint glow, cracks, or bleeding?",
+          timer: '30 seconds'
+        },
+        {
+          title: 'Text me what you see',
+          desc: 'Tell me: What happened right before it died? What have you tried? Even "I have no idea, it just stopped working" is useful. I\'ll tell you whether this sounds fixable — most black screens are.',
+          timer: 'Text: (208) 366-6111'
+        }
+      ]
+    },
+    data: {
+      title: 'Lost Photos / Data',
+      urgency: 'Time matters — act fast',
+      icon: `<svg viewBox="0 0 48 48" fill="none" width="32" height="32">
+        <path d="M12 16 C12 12 16 8 24 8 C32 8 36 12 36 16 L38 36 C38 40 34 44 24 44 C14 44 10 40 10 36 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="24" cy="26" r="6" stroke="currentColor" stroke-width="2"/>
+        <path d="M24 22 L24 30 M20 26 L28 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>`,
+      steps: [
+        {
+          title: 'Stop using the device',
+          desc: "Continuing to use a failing storage device can overwrite the data you're trying to recover. Power it off if you can — don't keep trying to access files.",
+          timer: 'Immediately'
+        },
+        {
+          title: "Don't shake it or bang on it",
+          desc: "Physical manipulation can make a failing drive worse. If the drive is clicking, humming abnormally, or the device is very hot, just set it down gently.",
+          timer: 'Handle with care'
+        },
+        {
+          title: "If it's a phone: check iCloud / Google backup",
+          desc: "Your photos may already be safe in the cloud. Check photos.google.com on a computer, or log into iCloud.com on a friend's device. This takes 2 minutes and might give you peace of mind.",
+          timer: '2 minutes'
+        },
+        {
+          title: 'Text me — data recovery is possible',
+          desc: "I can often recover data from phones, laptops, and USB drives. Even \"dead\" devices sometimes yield their data. Don't assume it's gone — text me what happened and I'll tell you your options.",
+          timer: 'Text: (208) 366-6111'
+        }
+      ]
+    }
+  };
+
+  const sosOverlay = document.getElementById('sosOverlay');
+  const sosPanel = document.getElementById('sosPanel');
+  const sosBackdrop = document.getElementById('sosBackdrop');
+  const sosClose = document.getElementById('sosClose');
+  const sosSteps = document.getElementById('sosSteps');
+  const sosPrev = document.getElementById('sosPrev');
+  const sosNext = document.getElementById('sosNext');
+  const sosProgressFill = document.getElementById('sosProgressFill');
+  const sosProgressLabel = document.getElementById('sosProgressLabel');
+  const sosCtaBlock = document.getElementById('sosCtaBlock');
+
+  let currentSosType = null;
+  let currentStep = 0;
+  let totalSteps = 0;
+  let stepStates = [];
+
+  function openSos(type) {
+    currentSosType = type;
+    const data = SOS_DATA[type];
+    if (!data) return;
+
+    currentStep = 0;
+    totalSteps = data.steps.length;
+    stepStates = data.steps.map(function() { return 'pending'; });
+
+    document.getElementById('sosOverlayIcon').innerHTML = data.icon;
+    document.getElementById('sosOverlayUrgency').textContent = data.urgency;
+    document.getElementById('sosOverlayTitle').textContent = data.title;
+
+    renderSosSteps();
+
+    sosPrev.style.display = '';
+    sosNext.style.display = '';
+    sosPrev.disabled = true;
+    sosNext.textContent = 'Next Step';
+    sosNext.innerHTML = 'Next Step <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>';
+    sosNext.disabled = false;
+    sosNext.className = 'sos-nav-btn sos-nav-btn--next btn btn-primary';
+
+    sosOverlay.setAttribute('aria-hidden', 'false');
+    sosOverlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+
+    requestAnimationFrame(function() {
+      animateStepIn(0);
+    });
+  }
+
+  function closeSos() {
+    sosOverlay.setAttribute('aria-hidden', 'true');
+    sosOverlay.classList.remove('visible');
+    document.body.style.overflow = '';
+    currentSosType = null;
+    currentStep = 0;
+    sosCtaBlock.classList.remove('visible');
+    sosCtaBlock.setAttribute('aria-hidden', 'true');
+  }
+
+  function renderSosSteps() {
+    var data = SOS_DATA[currentSosType];
+    sosSteps.innerHTML = '';
+
+    data.steps.forEach(function(step, i) {
+      var el = document.createElement('div');
+      el.className = 'sos-step';
+      el.setAttribute('role', 'listitem');
+      el.dataset.index = i;
+
+      var doneIcon = '<svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.2"/><path d="M5 8 L7 10 L11 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+      el.innerHTML = '<div class="sos-step-number">' + (i + 1) + '</div>' +
+        '<div class="sos-step-content">' +
+          '<div class="sos-step-title">' + step.title + '</div>' +
+          '<div class="sos-step-desc">' + step.desc + '</div>' +
+          '<div class="sos-step-timer">' +
+            '<span class="material-symbols-outlined" aria-hidden="true">timer</span> ' +
+            step.timer +
+          '</div>' +
+          '<div class="sos-step-check" data-action="done">' +
+            doneIcon + ' Mark Done' +
+          '</div>' +
+        '</div>';
+
+      el.addEventListener('click', function(e) {
+        if (e.target.closest('[data-action="done"]')) return;
+        var idx = parseInt(el.dataset.index, 10);
+        if (idx > currentStep) {
+          currentStep = idx;
+          animateStepIn(currentStep);
+        }
+      });
+
+      el.querySelector('[data-action="done"]').addEventListener('click', function(e) {
+        e.stopPropagation();
+        var idx = parseInt(el.dataset.index, 10);
+        if (stepStates[idx] !== 'done') {
+          stepStates[idx] = 'done';
+          el.classList.remove('active');
+          el.classList.add('done');
+          if (idx === currentStep && currentStep < totalSteps - 1) {
+            currentStep++;
+            animateStepIn(currentStep);
+          } else if (idx === currentStep && currentStep === totalSteps - 1) {
+            showSosCta();
+          }
+        }
+      });
+
+      sosSteps.appendChild(el);
+    });
+  }
+
+  function animateStepIn(index) {
+    var steps = sosSteps.querySelectorAll('.sos-step');
+    steps.forEach(function(s, i) {
+      s.classList.remove('active', 'done');
+      if (i < index) s.classList.add('done');
+      if (i === index) {
+        void s.offsetWidth;
+        s.classList.add('active');
+      }
+    });
+
+    var pct = ((index + 1) / totalSteps) * 100;
+    sosProgressFill.style.width = pct + '%';
+    sosProgressLabel.textContent = 'Step ' + (index + 1) + ' of ' + totalSteps;
+
+    sosPrev.disabled = index === 0;
+  }
+
+  function nextStep() {
+    if (currentStep < totalSteps - 1) {
+      var steps = sosSteps.querySelectorAll('.sos-step');
+      var currentStepEl = steps[currentStep];
+      if (currentStepEl && stepStates[currentStep] !== 'done') {
+        stepStates[currentStep] = 'done';
+        currentStepEl.classList.remove('active');
+        currentStepEl.classList.add('done');
+      }
+      currentStep++;
+      animateStepIn(currentStep);
+    } else {
+      var steps2 = sosSteps.querySelectorAll('.sos-step');
+      var currentStepEl2 = steps2[currentStep];
+      if (currentStepEl2 && stepStates[currentStep] !== 'done') {
+        stepStates[currentStep] = 'done';
+        currentStepEl2.classList.remove('active');
+        currentStepEl2.classList.add('done');
+      }
+      showSosCta();
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 0) {
+      currentStep--;
+      animateStepIn(currentStep);
+    }
+  }
+
+  function showSosCta() {
+    sosProgressFill.style.width = '100%';
+    sosProgressLabel.textContent = 'All done';
+    sosPrev.style.display = 'none';
+    sosNext.style.display = 'none';
+    sosCtaBlock.classList.add('visible', 'sos-cta-activated');
+    sosCtaBlock.setAttribute('aria-hidden', 'false');
+  }
+
+  document.querySelectorAll('.sos-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      var type = card.dataset.sos;
+      if (type) openSos(type);
+    });
+  });
+
+  if (sosClose) sosClose.addEventListener('click', closeSos);
+  if (sosBackdrop) sosBackdrop.addEventListener('click', closeSos);
+  if (sosPrev) sosPrev.addEventListener('click', prevStep);
+  if (sosNext) sosNext.addEventListener('click', nextStep);
+
+  document.addEventListener('keydown', function(e) {
+    if (!sosOverlay || !sosOverlay.classList.contains('visible')) return;
+    if (e.key === 'Escape') closeSos();
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); nextStep(); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); prevStep(); }
+  });
+
+  if (sosOverlay) {
+    sosOverlay.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSos();
+    });
+  }
+
+})();
