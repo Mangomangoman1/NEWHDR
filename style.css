@@ -320,6 +320,12 @@ ul { list-style: none; }
   line-height: 1.2;
   color: var(--text-primary);
   margin-bottom: var(--space-md);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), text-shadow 0.3s;
+}
+.section-title:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 0 20px rgba(0, 200, 200, 0.5);
+  cursor: default;
 }
 .section-sub {
   font-size: 1.05rem;
@@ -743,6 +749,34 @@ ul { list-style: none; }
   color: var(--accent);
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
 }
+.hero-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+.status-dot.closed {
+  background: #ef4444;
+}
+.status-dot.closing-soon {
+  background: #f59e0b;
+}
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.status-dot {
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
 .hero-trust-sep {
   color: var(--border-strong);
 }
@@ -866,6 +900,53 @@ ul { list-style: none; }
 
 @media print {
   .ticker-section { display: none; }
+}
+
+/* ─── TRUST BADGES ─────────────────────────────────────── */
+.trust-badges {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.trust-badge {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  text-align: center;
+  flex: 1;
+  min-width: 160px;
+  max-width: 220px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.trust-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,200,200,0.15);
+}
+.trust-icon {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+.trust-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+.trust-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+@media (max-width: 768px) {
+  .trust-badges {
+    gap: 10px;
+  }
+  .trust-badge {
+    min-width: 100px;
+    padding: 12px;
+  }
 }
 
 /* ─── CARDS GRID ─────────────────────────────────────────── */

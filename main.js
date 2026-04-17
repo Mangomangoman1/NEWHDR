@@ -1576,6 +1576,38 @@
     updateReveal();
   })();
 
+// Hero status clock
+(function() {
+  function updateStatus() {
+    const now = new Date();
+    const mtOffset = -7; // Mountain Time
+    const mtTime = new Date(now.getTime() + (mtOffset - now.getTimezoneOffset()/60) * 3600000);
+    const day = mtTime.getUTCDay();
+    const hour = mtTime.getUTCHours() - 7;
+    const min = mtTime.getUTCMinutes();
+    const totalMin = hour * 60 + min;
+    let open = false;
+    let closingSoon = false;
+    if (day >= 1 && day <= 5 && totalMin >= 540 && totalMin < 1080) {
+      open = true;
+      if (totalMin >= 1050) closingSoon = true;
+    } else if (day === 6 && totalMin >= 600 && totalMin < 960) {
+      open = true;
+      if (totalMin >= 930) closingSoon = true;
+    }
+    const dot = document.getElementById('statusDot');
+    const text = document.getElementById('statusText');
+    const time = document.getElementById('statusTime');
+    if (dot && text && time) {
+      dot.className = 'status-dot' + (open ? (closingSoon ? ' closing-soon' : '') : ' closed');
+      text.textContent = open ? (closingSoon ? 'Closing soon' : 'Open now') : 'Currently closed';
+      time.textContent = mtTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Boise' });
+    }
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000);
+})();
+
 // ─── Float Labels: Select handling ────────────────────────
 // Selects don't support :placeholder-shown, so we toggle a class
 (function() {
