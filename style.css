@@ -1001,8 +1001,10 @@ ul { list-style: none; }
   .cards-grid {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     gap: var(--space-md);
     padding-bottom: var(--space-md);
     /* Fade edges to indicate more content */
