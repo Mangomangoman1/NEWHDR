@@ -978,6 +978,14 @@ ul { list-style: none; }
 .trust-badge span {
   display: block;
 }
+
+/* Mobile: hide trust badges */
+@media (max-width: 768px) {
+  .trust-badges { display: none; }
+  .sel-card .sel-desc,
+  .sel-card .sel-tags { display: none; }
+  .cards-grid { overflow-x: visible !important; overscroll-behavior: contain; }
+}
 .trust-badge strong {
   font-size: 0.95rem;
   color: var(--text-primary);
