@@ -1004,26 +1004,12 @@ ul { list-style: none; }
   gap: var(--space-lg);
 }
 
-/* Mobile: horizontal scroll carousel */
+/* Mobile: stack cards vertically (no scroll hijack) */
 @media (max-width: 768px) {
   .cards-grid {
     display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
+    flex-direction: column;
     gap: var(--space-md);
-    padding-bottom: var(--space-md);
-    /* Fade edges to indicate more content */
-    mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
-    /* No visible scrollbar */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .cards-grid::-webkit-scrollbar {
-    display: none;
   }
 
   .card {

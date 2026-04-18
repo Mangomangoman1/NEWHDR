@@ -1588,12 +1588,13 @@
     const totalMin = hour * 60 + min;
     let open = false;
     let closingSoon = false;
-    if (day >= 1 && day <= 5 && totalMin >= 540 && totalMin < 1080) {
+    // Mon-Fri 9am-9pm, Weekends 11am-7pm
+    if (day >= 1 && day <= 5 && totalMin >= 540 && totalMin < 1260) {
       open = true;
-      if (totalMin >= 1050) closingSoon = true;
-    } else if (day === 6 && totalMin >= 600 && totalMin < 960) {
+      if (totalMin >= 1230) closingSoon = true;
+    } else if ((day === 0 || day === 6) && totalMin >= 660 && totalMin < 1140) {
       open = true;
-      if (totalMin >= 930) closingSoon = true;
+      if (totalMin >= 1110) closingSoon = true;
     }
     const dot = document.getElementById('statusDot');
     const text = document.getElementById('statusText');
@@ -1752,8 +1753,11 @@
     var dayStr = now.toLocaleDateString('en-US', { timeZone: HAILEY_TZ, weekday: 'short' });
     var dayNum = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(dayStr);
 
-    var isOpen = dayNum >= 1 && dayNum <= 6 && hours >= 9 && hours < 19;
-    var closingSoon = dayNum >= 1 && dayNum <= 6 && hours === 18 && minutes >= 30;
+    // Mon-Fri 9am-9pm, Weekends 11am-7pm
+    var isOpen = false;
+    var closingSoon = false;
+    if (dayNum >= 1 && dayNum <= 5) { isOpen = hours >= 9 && hours < 21; closingSoon = hours === 20 && minutes >= 30; }
+    else if (dayNum === 0 || dayNum === 6) { isOpen = hours >= 11 && hours < 19; closingSoon = hours === 18 && minutes >= 30; }
     return { open: isOpen, closingSoon: closingSoon };
   }
 
