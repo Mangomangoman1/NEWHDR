@@ -8600,3 +8600,108 @@ body {
     justify-content: flex-start;
   }
 }
+
+
+/* ═══════════════════════════════════════════
+   repair-sos follow-up fixes
+   ═══════════════════════════════════════════ */
+.sos-steps {
+  max-height: min(44vh, 420px);
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+.sos-nav {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  padding-top: 1rem;
+  margin-top: 0.25rem;
+  background: linear-gradient(180deg, rgba(28,34,48,0), var(--bg-elevated) 32%);
+}
+
+[data-theme="light"] .sos-nav {
+  background: linear-gradient(180deg, rgba(240,242,245,0), var(--bg-elevated) 32%);
+}
+
+.sos-signal-grid,
+.sos-mistakes-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.sos-signal-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sos-mistakes-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sos-signal-card,
+.sos-mistake-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-card);
+}
+
+.sos-signal-card {
+  position: relative;
+}
+
+.sos-signal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  right: 1.25rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--color-cyan));
+}
+
+.sos-signal-card h3,
+.sos-mistake-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-bottom: 0.55rem;
+  color: var(--text-primary);
+}
+
+.sos-signal-card p,
+.sos-mistake-card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.sos-signal-note {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sos-signal-note strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  .sos-signal-grid,
+  .sos-mistakes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .sos-steps {
+    max-height: 36vh;
+  }
+
+  .sos-nav {
+    padding-top: 0.85rem;
+  }
+}

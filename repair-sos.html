@@ -38,76 +38,38 @@
 
   <style id="critical-css">:root {--bg-base:#0d1117;--bg-primary:#0d1117;--bg-surface:#161b22;--bg-elevated:#1c2230;--bg-card:#1a2033;--bg-input:#1e2736;--bg-alt:#111827;--text-primary:#e6edf3;--text-secondary:#8b949e;--text-muted:#7e8a99;--text-on-accent:#ffffff;--border-subtle:rgba(255,255,255,0.07);--border-default:rgba(255,255,255,0.12);--border-strong:rgba(255,255,255,0.2);--accent:#4f8ef7;--accent-hover:#6ba3fa;--accent-dim:rgba(79,142,247,0.12);--accent-glow:rgba(79,142,247,0.25);--color-blue:#4f8ef7;--color-green:#3fb950;--color-purple:#a371f7;--color-orange:#f78166;--color-cyan:#39c5cf;--color-indigo:#818cf8;--space-xs:0.25rem;--space-sm:0.5rem;--space-md:1rem;--space-lg:1.5rem;--space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:6rem;--font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-display:'Plus Jakarta Sans','Inter',sans-serif;--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-pill:999px;--shadow-card:0 1px 3px rgba(0,0,0,0.4),0 4px 16px rgba(0,0,0,0.3);--shadow-float:0 8px 32px rgba(0,0,0,0.5);--transition:200ms cubic-bezier(0.4,0,0.2,1);}[data-theme="light"]{--bg-base:#f8f9fb;--bg-primary:#f8f9fb;--bg-surface:#ffffff;--bg-elevated:#f0f2f5;--bg-card:#ffffff;--bg-input:#f4f5f7;--bg-alt:#eef0f4;--text-primary:#111827;--text-secondary:#4b5563;--text-muted:#6b7280;--text-on-accent:#ffffff;--border-subtle:rgba(0,0,0,0.05);--border-default:rgba(0,0,0,0.09);--border-strong:rgba(0,0,0,0.15);--accent:#2563eb;--accent-hover:#1e40af;--accent-dim:rgba(37,99,235,0.06);--accent-glow:rgba(37,99,235,0.15);--accent-green:#059669;--green-dim:rgba(5,150,105,0.08);--shadow-card:0 1px 3px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.06);--shadow-float:0 8px 32px rgba(0,0,0,0.12);}[data-theme="light"] .sos-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.12),0 0 0 1px rgba(247,129,102,0.2)}[data-theme="light"] .sos-overlay-panel{background:var(--bg-surface)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.container{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--space-lg)}.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg-primary);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-default)}.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:1rem;max-width:1200px;margin:0 auto;padding:0 var(--space-lg)}.nav-logo{display:flex;align-items:center;gap:0.5rem;font-weight:700;font-size:0.95rem;white-space:nowrap}.nav-logo-icon{font-size:1.4rem;color:var(--accent)}.nav-logo-text{color:var(--text-primary)}.nav-links{display:flex;align-items:center;gap:0.25rem;list-style:none;margin:0 auto;position:absolute;left:50%;transform:translateX(-50%)}@media(max-width:900px){.nav-links{display:none}}.nav-link{color:var(--text-secondary);font-size:0.88rem;font-weight:500;padding:0.4rem 0.75rem;border-radius:var(--radius-sm);transition:color 0.2s,background 0.2s}.nav-link:hover{color:var(--text-primary);background:var(--accent-dim)}.nav-actions{display:flex;align-items:center;gap:0.75rem}.theme-toggle{background:none;border:none;cursor:pointer;color:var(--text-secondary);padding:0.4rem;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;transition:color 0.2s,background 0.2s}.theme-toggle:hover{color:var(--text-primary);background:var(--accent-dim)}.theme-icon-dark,.theme-icon-light{display:none}[data-theme="dark"] .theme-icon-dark{display:block}[data-theme="light"] .theme-icon-light{display:block}.btn{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.6rem 1.2rem;border-radius:var(--radius-md);font-weight:600;font-size:0.88rem;cursor:pointer;transition:all 0.2s;border:none;font-family:var(--font-body)}.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}.btn-sm{padding:0.4rem 0.9rem;font-size:0.82rem}.btn-lg{padding:0.85rem 1.75rem;font-size:1rem}.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:0.5rem}.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-primary);border-radius:1px;transition:all 0.3s}@media(max-width:900px){.nav-hamburger{display:flex}}.nav-mobile{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg-elevated);border-bottom:1px solid var(--border-default);padding:1rem;flex-direction:column;gap:0.5rem}.nav-mobile.open{display:flex}.nav-mobile ul{list-style:none;display:flex;flex-direction:column;gap:0.25rem}.nav-mobile .nav-link{display:block;padding:0.6rem 0.75rem;border-radius:var(--radius-sm)}.footer{background:var(--bg-elevated);border-top:1px solid var(--border-default);padding:3rem 0 1.5rem;margin-top:4rem}.footer-inner{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;margin-bottom:2rem}.footer-brand{max-width:280px}.footer-brand .nav-logo{margin-bottom:0.75rem;font-size:1rem}.footer-tagline{color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem}.footer-links{display:flex;flex-wrap:wrap;gap:2rem}.footer-col{display:flex;flex-direction:column;gap:0.5rem;min-width:140px}.footer-col strong{color:var(--text-primary);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.25rem}.footer-col a{color:var(--text-secondary);font-size:0.85rem;transition:color 0.2s}.footer-col a:hover{color:var(--text-primary)}.footer-bottom{border-top:1px solid var(--border-default);padding-top:1.5rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:0.8rem;color:var(--text-muted)}.footer-heart{color:#e05}
 </style>
-
-  <!-- JSON-LD: Repair SOS FAQPage -->
+  <!-- JSON-LD: HowTo -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@type": "HowTo",
+    "name": "What to do in a device emergency before you make it worse",
+    "description": "First steps for a water-damaged phone, black screen, swollen battery, laptop spill, or other urgent device problem in Hailey, Ketchum, Sun Valley, and Bellevue.",
+    "totalTime": "PT10M",
+    "step": [
       {
-        "@type": "Question",
-        "name": "What should I do first if my phone got wet?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Get it out of the water immediately, keep it powered off, do not charge it, do not shake it, and do not put it in rice. The sooner you get it opened and cleaned, the better the chance of saving it."
-        }
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Stop charging it and stop forcing it",
+        "text": "If the device is wet, hot, swollen, or suddenly dead, stop charging it, stop pressing buttons repeatedly, and stop forcing connectors."
       },
       {
-        "@type": "Question",
-        "name": "Should I put my phone in rice?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Rice does not remove corrosion and often delays real treatment. For water damage, the safest move is to power the device down, keep it unplugged, and text for help right away."
-        }
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Avoid the common myths",
+        "text": "Skip rice, freezers, metal tools in the port, random repair kits, and test boots after spills."
       },
       {
-        "@type": "Question",
-        "name": "Is a swollen battery dangerous?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. A swollen battery can rupture, leak, or damage the display and frame. Stop charging it, stop using it, keep it away from heat, and get it repaired as soon as possible."
-        }
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Document what happened",
+        "text": "Take photos of the damage, spill, error message, lifted screen, charging port, or bent HDMI pins and note what happened right before failure."
       },
       {
-        "@type": "Question",
-        "name": "What if my phone will not charge but wireless charging still works?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "That usually points to a charging-port problem rather than a dead battery. Do not force the cable. Check for lint, try a known-good cable, and text the device model plus what happens when you plug it in."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you help with a laptop spill the same day?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Often, yes. The first priority is shutting it down, unplugging it, and preventing more liquid from spreading. Same-day triage is especially important after coffee, water, or soda spills."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you recover photos from a phone that will not turn on?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sometimes, yes. Stop trying to use the device, avoid reset attempts if your data matters, check for iCloud or Google backup, and text the model plus what happened. Even phones with black screens sometimes still yield data."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you help tourists in Sun Valley and Ketchum?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Visitors break phones and laptops here all the time. If you are staying in Hailey, Ketchum, Sun Valley, or Bellevue, text your situation and location and we will figure out the fastest repair plan."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What should I text for the fastest SOS help?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Send the device model, what happened, what it is doing now, anything you already tried, and your city or area. A photo of the screen, charging port, swelling, spill, or error message helps speed up diagnosis."
-        }
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Text the model, symptoms, and your location",
+        "text": "Text the device model, what happened, what it is doing now, anything you already tried, and whether you are in Hailey, Ketchum, Sun Valley, Bellevue, or visiting the valley."
       }
     ]
   }
@@ -176,17 +138,6 @@
   </nav>
 
   <main id="main" role="main">
-
-  <div class="breadcrumb-bar">
-    <div class="container">
-      <nav aria-label="Breadcrumb">
-        <ol class="breadcrumb">
-          <li><a href="/">Home</a></li>
-          <li aria-current="page">Repair SOS</li>
-        </ol>
-      </nav>
-    </div>
-  </div>
 
   <!-- ══════════════════════════════════════════════
        REPAIR SOS — Instant First Aid
@@ -595,159 +546,88 @@
     </div>
   </section>
 
-  <section class="section" id="common-repairs">
-    <div class="container">
-      <span class="section-eyebrow">Urgent Repairs I Handle All the Time</span>
-      <h2 class="section-title">Common same-day and next-step emergency fixes</h2>
+  <section class="section" id="symptom-decoder">
+    <div class="container" style="max-width: 1040px;">
+      <span class="section-eyebrow">Symptom Decoder</span>
+      <h2 class="section-title">What these SOS problems usually point to</h2>
+      <p class="section-sub">You do not need a fake instant price. You need a better read on what is probably happening inside the device and what details help me diagnose it fast.</p>
 
-      <div class="emergency-repairs-grid">
-        <div class="emergency-repair-item" data-animate>
-          <div class="emergency-repair-icon"><span class="material-symbols-outlined">smartphone</span></div>
-          <div class="emergency-repair-info">
-            <strong>iPhone screen replacement</strong>
-            <span class="emergency-repair-time"><span class="material-symbols-outlined">timer</span> 45–60 min</span>
-          </div>
-          <div class="emergency-repair-price">From $39</div>
-        </div>
+      <div class="sos-signal-grid">
+        <article class="sos-signal-card" data-animate>
+          <h3>Phone won’t charge, but wireless charging still works</h3>
+          <p>That usually points to a charging-port issue, packed lint, or port damage rather than a totally dead phone.</p>
+          <p class="sos-signal-note"><strong>Text me:</strong> the model, whether the cable feels loose, and whether it ever flashes the charging icon.</p>
+        </article>
 
-        <div class="emergency-repair-item" data-animate>
-          <div class="emergency-repair-icon"><span class="material-symbols-outlined">smartphone</span></div>
-          <div class="emergency-repair-info">
-            <strong>Samsung / Android screen repair</strong>
-            <span class="emergency-repair-time"><span class="material-symbols-outlined">timer</span> 60–90 min</span>
-          </div>
-          <div class="emergency-repair-price">From $49</div>
-        </div>
+        <article class="sos-signal-card" data-animate>
+          <h3>Black screen, but the phone still vibrates</h3>
+          <p>The phone may still be alive. That often means a failed display, backlight issue, or drop damage rather than a dead logic board.</p>
+          <p class="sos-signal-note"><strong>Text me:</strong> whether it rings, vibrates, or makes sounds when plugged in.</p>
+        </article>
 
-        <div class="emergency-repair-item" data-animate>
-          <div class="emergency-repair-icon"><span class="material-symbols-outlined">battery_alert</span></div>
-          <div class="emergency-repair-info">
-            <strong>Battery replacement</strong>
-            <span class="emergency-repair-time"><span class="material-symbols-outlined">timer</span> 30–45 min</span>
-          </div>
-          <div class="emergency-repair-price">From $35</div>
-        </div>
+        <article class="sos-signal-card" data-animate>
+          <h3>Stuck on the Apple logo or constant restart loop</h3>
+          <p>That can be a failed update, storage problem, battery issue, or system corruption. Wiping it too early can cost you data.</p>
+          <p class="sos-signal-note"><strong>Text me:</strong> what happened right before the loop started and whether you have a current backup.</p>
+        </article>
 
-        <div class="emergency-repair-item" data-animate>
-          <div class="emergency-repair-icon"><span class="material-symbols-outlined">water_drop</span></div>
-          <div class="emergency-repair-info">
-            <strong>Water-damage triage</strong>
-            <span class="emergency-repair-time"><span class="material-symbols-outlined" aria-hidden="true">timer</span> Immediate start</span>
-          </div>
-          <div class="emergency-repair-price">From $49</div>
-        </div>
+        <article class="sos-signal-card" data-animate>
+          <h3>Screen lifting or battery puffing out</h3>
+          <p>That is usually a swollen battery, and it is a real safety issue — not just a cosmetic problem.</p>
+          <p class="sos-signal-note"><strong>Text me:</strong> a side photo of the lift and whether it gets hot or smells unusual.</p>
+        </article>
 
-        <div class="emergency-repair-item" data-animate>
-          <div class="emergency-repair-icon"><span class="material-symbols-outlined">laptop</span></div>
-          <div class="emergency-repair-info">
-            <strong>Laptop won’t boot</strong>
-            <span class="emergency-repair-time"><span class="material-symbols-outlined">timer</span> 1–2 hrs</span>
-          </div>
-          <div class="emergency-repair-price">From $49</div>
-        </div>
+        <article class="sos-signal-card" data-animate>
+          <h3>Laptop spill that still seems to work</h3>
+          <p>It may still have liquid inside. A “working” laptop after a spill can corrode for hours or days before the real failure shows up.</p>
+          <p class="sos-signal-note"><strong>Text me:</strong> what spilled, how much, and whether the laptop was on when it happened.</p>
+        </article>
 
-        <div class="emergency-repair-item" data-animate>
-          <div class="emergency-repair-icon"><span class="material-symbols-outlined">usb</span></div>
-          <div class="emergency-repair-info">
-            <strong>Charging port repair</strong>
-            <span class="emergency-repair-time"><span class="material-symbols-outlined">timer</span> 45–60 min</span>
-          </div>
-          <div class="emergency-repair-price">From $39</div>
-        </div>
+        <article class="sos-signal-card" data-animate>
+          <h3>Console, dock, or laptop powers on but shows no signal</h3>
+          <p>That often means HDMI-port damage, bent pins, dock problems, or display-output hardware failure — not necessarily a dead device.</p>
+          <p class="sos-signal-note"><strong>Text me:</strong> the exact model, what display you tested, and a close photo of the port if possible.</p>
+        </article>
       </div>
-
-      <p class="emergency-repairs-note">
-        <span class="material-symbols-outlined" aria-hidden="true">info</span>
-        Need full pricing? <a href="/pricing">See pricing</a> &nbsp;|&nbsp; Need a quote first? <a href="/contact">Send a quote request</a>
-      </p>
     </div>
   </section>
 
-  <section class="section section--alt" id="faq">
+  <section class="section section--alt" id="avoid">
     <div class="container">
-      <span class="section-eyebrow">Questions</span>
-      <h2 class="section-title">Repair SOS FAQ</h2>
+      <span class="section-eyebrow">Avoid These</span>
+      <h2 class="section-title">The moves that make device emergencies worse fast</h2>
+      <p class="section-sub">These are the repair-sos mistakes I see most often in Hailey, Ketchum, Sun Valley, and Bellevue — and they are the reason small problems turn into harder repairs.</p>
 
-      <div class="faq-list">
-        <details class="faq-item" data-animate>
-          <summary class="faq-question">
-            <span class="faq-q-text">What should I do first if my phone got wet?</span>
-            <span class="material-symbols-outlined faq-chevron">expand_more</span>
-          </summary>
-          <div class="faq-answer">
-            <p>Get it out of the water, keep it powered off, do not charge it, and do not shake it. Skip the rice. The faster it gets cleaned and dried properly, the better the odds of saving it.</p>
-          </div>
-        </details>
+      <div class="sos-mistakes-grid">
+        <article class="sos-mistake-card" data-animate>
+          <h3>Putting a wet phone in rice</h3>
+          <p>Rice does not stop corrosion and it usually burns time while damage keeps spreading inside the phone.</p>
+        </article>
 
-        <details class="faq-item" data-animate>
-          <summary class="faq-question">
-            <span class="faq-q-text">Should I put my phone in rice?</span>
-            <span class="material-symbols-outlined faq-chevron">expand_more</span>
-          </summary>
-          <div class="faq-answer">
-            <p>No. Rice does not remove corrosion and it wastes time while liquid damage keeps spreading. Power the phone down, leave it unplugged, and text me instead.</p>
-          </div>
-        </details>
+        <article class="sos-mistake-card" data-animate>
+          <h3>Charging a swollen battery</h3>
+          <p>If the screen is lifting or the battery is puffing out, keep it unplugged. More charging means more heat and more risk.</p>
+        </article>
 
-        <details class="faq-item" data-animate>
-          <summary class="faq-question">
-            <span class="faq-q-text">What if my phone won’t charge but wireless charging still works?</span>
-            <span class="material-symbols-outlined faq-chevron">expand_more</span>
-          </summary>
-          <div class="faq-answer">
-            <p>That usually points to a charging-port problem instead of a dead battery. Do not force the cable. Check for lint, try a known-good charger, and text me the model plus exactly what happens when you plug it in.</p>
-          </div>
-        </details>
+        <article class="sos-mistake-card" data-animate>
+          <h3>Factory-resetting a boot-loop phone before checking backup</h3>
+          <p>A wipe may stop the loop, but it can also wipe the data you actually care about if your backup is not current.</p>
+        </article>
 
-        <details class="faq-item" data-animate>
-          <summary class="faq-question">
-            <span class="faq-q-text">Is a swollen battery dangerous?</span>
-            <span class="material-symbols-outlined faq-chevron">expand_more</span>
-          </summary>
-          <div class="faq-answer">
-            <p>Yes. Stop charging it and stop using it. A swollen battery can damage the display, frame, or internal parts and in rare cases can rupture. Keep it away from heat and get it repaired as soon as possible.</p>
-          </div>
-        </details>
+        <article class="sos-mistake-card" data-animate>
+          <h3>Digging into the charging port with metal</h3>
+          <p>Metal picks can short pins or damage the port. Use a soft brush or dry toothpick only if you are removing lint.</p>
+        </article>
 
-        <details class="faq-item" data-animate>
-          <summary class="faq-question">
-            <span class="faq-q-text">Can you help with a laptop spill the same day?</span>
-            <span class="material-symbols-outlined faq-chevron">expand_more</span>
-          </summary>
-          <div class="faq-answer">
-            <p>Often, yes. Shut it down, unplug the charger, and do not turn it back on just to check it. Same-day triage matters a lot after coffee, water, soda, or energy-drink spills.</p>
-          </div>
-        </details>
+        <article class="sos-mistake-card" data-animate>
+          <h3>Turning a spilled laptop back on “just to test it”</h3>
+          <p>A laptop can look okay right after a spill and still corrode internally. The test boot is often what finishes it off.</p>
+        </article>
 
-        <details class="faq-item" data-animate>
-          <summary class="faq-question">
-            <span class="faq-q-text">Can you recover photos from a phone that won’t turn on?</span>
-            <span class="material-symbols-outlined faq-chevron">expand_more</span>
-          </summary>
-          <div class="faq-answer">
-            <p>Sometimes, yes. Stop trying repeated restore attempts if the data matters. Check iCloud or Google backup first, then text me the model and what happened. Even phones with black screens are sometimes still recoverable.</p>
-          </div>
-        </details>
-
-        <details class="faq-item" data-animate>
-          <summary class="faq-question">
-            <span class="faq-q-text">Do you help tourists in Sun Valley and Ketchum?</span>
-            <span class="material-symbols-outlined faq-chevron">expand_more</span>
-          </summary>
-          <div class="faq-answer">
-            <p>Yes. Visitors break phones, tablets, and laptops here all the time. If you are staying in Hailey, Ketchum, Sun Valley, or Bellevue, text your situation and location and I’ll help you figure out the fastest plan.</p>
-          </div>
-        </details>
-
-        <details class="faq-item" data-animate>
-          <summary class="faq-question">
-            <span class="faq-q-text">What should I text for the fastest SOS help?</span>
-            <span class="material-symbols-outlined faq-chevron">expand_more</span>
-          </summary>
-          <div class="faq-answer">
-            <p>Send the device model, what happened, what it is doing now, anything you already tried, and your city or area. A photo of the screen, charging port, spill, error message, or swelling helps speed things up.</p>
-          </div>
-        </details>
+        <article class="sos-mistake-card" data-animate>
+          <h3>Force-restarting a black-screen phone over and over</h3>
+          <p>One good restart attempt is useful. Ten more do not tell you anything new and only add confusion to the diagnosis.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -827,9 +707,9 @@
   </button>
 
   <!-- Preload main stylesheet -->
-  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css" /></noscript>
+  <link rel="preload" href="style.css?v=repair-sos-2" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="style.css?v=repair-sos-2" /></noscript>
 
-  <script src="main.js" defer></script>
+  <script src="main.js?v=repair-sos-2" defer></script>
 </body>
 </html>
