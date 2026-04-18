@@ -426,24 +426,27 @@ ul { list-style: none; }
   opacity: 1;
 }
 
-/* Mobile: simplify (no physics) */
+/* Mobile: hide desktop nav liquid button, keep mobile menu button */
 @media (max-width: 900px) {
-  .water-wrapper {
+  #water-wrapper-nav {
+    display: none;
+  }
+  .nav-mobile .water-wrapper {
     width: 100%;
     height: 44px;
   }
-  .btn-text {
-    font-size: 0.8rem;
+  .nav-mobile .btn-text {
+    font-size: 0.85rem;
   }
-  .glare-sharp,
-  .glare-radial {
+  .nav-mobile .glare-sharp,
+  .nav-mobile .glare-radial {
     display: none;
   }
-  .water-btn {
+  .nav-mobile .water-btn {
     transform: none;
     filter: none;
   }
-  .rectangle-volume {
+  .nav-mobile .rectangle-volume {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
