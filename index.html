@@ -314,6 +314,16 @@ a{color:inherit;text-decoration:none}
 </head>
 <body>
 
+  <!-- SVG filter for liquid button displacement (no visual rendering) -->
+  <svg width="0" height="0" style="position:absolute;pointer-events:none;" aria-hidden="true">
+    <defs>
+      <filter id="water-displacement" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.015 0.02" numOctaves="2" seed="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" id="displace-map"/>
+      </filter>
+    </defs>
+  </svg>
+
   <!-- Page load curtain -->
   <div class="page-curtain" id="pageCurtain">
     <div class="page-curtain-logo">
@@ -355,7 +365,16 @@ a{color:inherit;text-decoration:none}
           <span class="material-symbols-outlined theme-icon-dark" aria-hidden="true">dark_mode</span>
           <span class="material-symbols-outlined theme-icon-light">light_mode</span>
         </button>
-        <a href="#contact" class="btn-liquid"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:1rem">request_quote</span> Get a Quote</a>
+        <div class="water-wrapper" id="water-wrapper-nav">
+          <div class="ambient-shadow"></div>
+          <div class="caustic"></div>
+          <a href="#contact" class="water-btn" aria-label="Get a Quote">
+            <div class="rectangle-volume"></div>
+            <span class="btn-text"><span class="material-symbols-outlined" aria-hidden="true" style="font-size:1rem">request_quote</span> Get a Quote</span>
+            <div class="glare-radial"></div>
+            <div class="glare-sharp"></div>
+          </a>
+        </div>
       </div>
 
       <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
@@ -373,7 +392,16 @@ a{color:inherit;text-decoration:none}
         <li><a href="/about" class="nav-link">About</a></li>
         <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
-      <a href="/contact" class="btn-liquid">Get a Quote</a>
+      <div class="water-wrapper" id="water-wrapper-mobile" style="width:100%;">
+        <div class="ambient-shadow"></div>
+        <div class="caustic"></div>
+        <a href="/contact" class="water-btn" aria-label="Get a Quote">
+          <div class="rectangle-volume"></div>
+          <span class="btn-text">Get a Quote</span>
+          <div class="glare-radial" style="display:none"></div>
+          <div class="glare-sharp" style="display:none"></div>
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -1525,6 +1553,7 @@ a{color:inherit;text-decoration:none}
     </button>
   </div>
 
+  <script src="liquid-btn.js" defer></script>
   <script src="main.js" defer></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
