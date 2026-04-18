@@ -271,8 +271,8 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 180px;
-  height: 52px;
+  width: 140px;
+  height: 40px;
 }
 
 /* Ambient floating shadow under button */
@@ -280,16 +280,12 @@ ul { list-style: none; }
   position: absolute;
   inset: 10% 5%;
   border-radius: 99px;
-  background: rgba(79, 142, 247, 0.25);
+  background: rgba(255, 255, 255, 0.08);
   filter: blur(20px);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
   z-index: -1;
-}
-.sunlit .ambient-shadow,
-[data-theme="light"] .ambient-shadow {
-  background: rgba(37, 99, 235, 0.2);
 }
 
 /* Caustic light pool */
@@ -297,7 +293,7 @@ ul { list-style: none; }
   position: absolute;
   inset: 5%;
   border-radius: 99px;
-  background: radial-gradient(ellipse at 50% 80%, rgba(79, 142, 247, 0.15), transparent 70%);
+  background: radial-gradient(ellipse at 50% 80%, rgba(255, 255, 255, 0.12), transparent 70%);
   filter: blur(8px);
   opacity: 0;
   transition: opacity 0.3s ease, filter 0.3s ease;
@@ -319,7 +315,7 @@ ul { list-style: none; }
     rotateY(calc(var(--tilt-y, 0) * 1deg));
   transform-style: preserve-3d;
   -webkit-tap-highlight-color: transparent;
-  filter: url(#water-displacement) drop-shadow(0 6px 12px rgba(0,0,0,0.08));
+  filter: url(#water-displacement) drop-shadow(0 4px 8px rgba(0,0,0,0.15));
 }
 
 .water-btn:hover ~ .caustic {
@@ -331,7 +327,7 @@ ul { list-style: none; }
   filter: blur(4px);
 }
 
-/* Volumetric refraction layer */
+/* Volumetric refraction layer — original CodePen white/grey glass */
 .rectangle-volume {
   position: absolute;
   inset: 0;
@@ -349,20 +345,6 @@ ul { list-style: none; }
   pointer-events: none;
 }
 
-/* For dark background (default), override to use blue-purple gradient */
-.water-wrapper .rectangle-volume {
-  background: linear-gradient(135deg, #4f8ef7 0%, #7c3aed 50%, #4f8ef7 100%);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow:
-    inset 0 14px 24px -6px rgba(255, 255, 255, 0.25),
-    inset 0 -14px 24px -6px rgba(0, 0, 0, 0.2),
-    inset 3px 3px 8px rgba(255, 255, 255, 0.15),
-    inset -3px -3px 8px rgba(0, 0, 0, 0.1),
-    0 2px 12px rgba(79,142,247,0.4),
-    0 0 0 1px rgba(255,255,255,0.15);
-}
-
 /* Specular radial glare */
 .glare-radial {
   position: absolute;
@@ -378,16 +360,16 @@ ul { list-style: none; }
   pointer-events: none;
 }
 
-/* Sharp specular highlight */
+/* Sharp specular highlight — scaled for nav button size */
 .glare-sharp {
   position: absolute;
-  top: 4px;
-  left: 8%;
-  width: 84%;
-  height: 45%;
+  top: 3px;
+  left: 6%;
+  width: 88%;
+  height: 40%;
   border-radius: 99px 99px 30px 30px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.1) 60%, transparent 100%);
-  box-shadow: inset 0 2px 2px rgba(255,255,255,0.7);
+  background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.1) 60%, transparent 100%);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.6);
   pointer-events: none;
   transform: translate(calc(var(--glare-x, 0) * 0.2px), calc(var(--glare-y, 0) * 0.2px));
   mix-blend-mode: overlay;
@@ -396,17 +378,17 @@ ul { list-style: none; }
 .glare-sharp::after {
   content: '';
   position: absolute;
-  top: 5px;
+  top: 3px;
   left: 15%;
-  width: 16px;
-  height: 6px;
-  border-radius: 6px;
+  width: 12px;
+  height: 4px;
+  border-radius: 4px;
   background: #FFFFFF;
   transform: rotate(-10deg);
-  box-shadow: 0 0 10px rgba(255,255,255,0.8);
+  box-shadow: 0 0 6px rgba(255,255,255,0.7);
 }
 
-/* Button text */
+/* Button text — original CodePen debossed style */
 .btn-text {
   position: absolute;
   inset: 0;
@@ -414,15 +396,15 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 600;
   font-family: var(--font-body);
-  color: #fff;
+  color: rgba(0, 0, 0, 0.5);
   letter-spacing: 0;
   pointer-events: none;
   user-select: none;
   transform: translateZ(12px);
-  text-shadow: 0 1px 1px rgba(255,255,255,0.3), 0 -1px 1px rgba(0,0,0,0.1);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7), 0 -1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .btn-text .material-symbols-outlined {
@@ -432,11 +414,11 @@ ul { list-style: none; }
 /* Active state: compressed shadows */
 .water-btn:active .rectangle-volume {
   box-shadow:
-    inset 0 6px 12px -4px rgba(255, 255, 255, 0.25),
+    inset 0 6px 12px -4px rgba(255, 255, 255, 0.8),
     inset 0 -6px 12px -4px rgba(0, 0, 0, 0.2),
-    inset 2px 2px 6px rgba(255, 255, 255, 0.15),
+    inset 2px 2px 6px rgba(255, 255, 255, 0.4),
     inset -2px -2px 6px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(255,255,255,0.15);
+    0 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
 /* Hover: show ambient shadow */
@@ -448,10 +430,10 @@ ul { list-style: none; }
 @media (max-width: 900px) {
   .water-wrapper {
     width: 100%;
-    height: 48px;
+    height: 44px;
   }
   .btn-text {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
   }
   .glare-sharp,
   .glare-radial {
@@ -467,16 +449,20 @@ ul { list-style: none; }
   }
 }
 
-/* Light theme adjustments */
+/* Light theme — glass looks slightly brighter */
 [data-theme="light"] .water-wrapper .rectangle-volume {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #2563eb 100%);
+  background-color: rgba(200, 200, 205, 0.45);
+  background-image: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08) 100%);
   box-shadow:
-    inset 0 14px 24px -6px rgba(255, 255, 255, 0.35),
-    inset 0 -14px 24px -6px rgba(0, 0, 0, 0.1),
-    inset 3px 3px 8px rgba(255, 255, 255, 0.2),
-    inset -3px -3px 8px rgba(0, 0, 0, 0.05),
-    0 2px 12px rgba(37,99,235,0.35),
-    0 0 0 1px rgba(255,255,255,0.2);
+    inset 0 14px 24px -6px rgba(255, 255, 255, 0.9),
+    inset 0 -14px 24px -6px rgba(0, 0, 0, 0.08),
+    inset 5px 5px 12px rgba(255, 255, 255, 0.5),
+    inset -5px -5px 12px rgba(0, 0, 0, 0.03),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .btn-text {
+  color: rgba(0, 0, 0, 0.55);
 }
 
 
