@@ -49,6 +49,18 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.haileyrepair.com/mail-in/macbook</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.haileyrepair.com/mail-in/ipad</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.haileyrepair.com/pricing</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
