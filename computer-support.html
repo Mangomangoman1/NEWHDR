@@ -11,6 +11,11 @@
   <meta property="og:description" content="Slow PC, virus, startup issue, crash, or update gone wrong? Get local computer help in Hailey, Ketchum, Sun Valley, and Bellevue, with remote support statewide." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.haileyrepair.com/computer-support" />
+  <meta property="og:image" content="https://www.haileyrepair.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.haileyrepair.com/og-image.svg" />
   <link rel="canonical" href="https://www.haileyrepair.com/computer-support" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="manifest.json" />
@@ -236,50 +241,45 @@
 <body>
 
   <!-- NAV -->
-  <nav class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="/" class="nav-logo">
-          <span class="material-symbols-outlined nav-logo-icon">build_circle</span>
-          <span class="nav-logo-text">Hailey Device Repair</span>
-        </a>
-        <ul class="nav-links">
-          <li><a href="/" class="nav-link">Home</a></li>
-          <li><a href="/iphone-repair" class="nav-link">iPhone</a></li>
-          <li><a href="/laptop-repair" class="nav-link">Laptop</a></li>
-          <li><a href="/computer-support" class="nav-link active">Computer Help</a></li>
-          <li><a href="/faq" class="nav-link">FAQ</a></li>
-          <li><a href="/contact" class="nav-link">Contact</a></li>
-        </ul>
-        <div class="nav-cta">
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <span class="material-symbols-outlined" style="font-size:1.1rem">light_mode</span>
-          </button>
-          <a href="tel:+12083666111" class="btn btn-primary btn-sm">
-            <span class="material-symbols-outlined" style="font-size:1rem">call</span>
-            Call Now
-          </a>
-        </div>
-        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
+  <nav class="nav" role="navigation" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Hailey Device Repair Home">
+        <span class="material-symbols-outlined nav-logo-icon" aria-hidden="true">smartphone</span>
+        <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/#services" class="nav-link">Services</a></li>
+        <li><a href="/pricing" class="nav-link">Pricing</a></li>
+        <li><a href="/#process" class="nav-link">How It Works</a></li>
+        <li><a href="/#faq" class="nav-link">FAQ</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="material-symbols-outlined theme-icon-dark" aria-hidden="true">dark_mode</span>
+          <span class="material-symbols-outlined theme-icon-light">light_mode</span>
         </button>
+        <a href="sms:+12083666111" class="btn btn-primary btn-sm">Text Me</a>
       </div>
+
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <ul role="list">
+        <li><a href="/#services" class="nav-link">Services</a></li>
+        <li><a href="/pricing" class="nav-link">Pricing</a></li>
+        <li><a href="/#process" class="nav-link">How It Works</a></li>
+        <li><a href="/#faq" class="nav-link">FAQ</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="sms:+12083666111" class="btn btn-primary">Text Me</a>
     </div>
   </nav>
-
-  <!-- MOBILE NAV -->
-  <div class="nav-mobile" id="mobileNav">
-    <ul class="nav-mobile-links">
-      <li><a href="/" class="nav-mobile-link">Home</a></li>
-      <li><a href="/iphone-repair" class="nav-mobile-link">iPhone Repair</a></li>
-      <li><a href="/laptop-repair" class="nav-mobile-link">Laptop Repair</a></li>
-      <li><a href="/computer-support" class="nav-mobile-link">Computer Help</a></li>
-      <li><a href="/faq" class="nav-mobile-link">FAQ</a></li>
-      <li><a href="/contact" class="nav-mobile-link">Contact</a></li>
-    </ul>
-  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -750,10 +750,10 @@
     });
 
     // Mobile nav
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
+    const hamburger = document.getElementById('navHamburger');
+    const mobileNav = document.getElementById('navMobile');
     hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
-    document.querySelectorAll('.nav-mobile-link').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+    document.querySelectorAll('.nav-mobile .nav-link').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
 
     // Scroll animations
     const observer = new IntersectionObserver(entries => {

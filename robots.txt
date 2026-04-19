@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://haileyrepair.com/sitemap.xml
+Sitemap: https://www.haileyrepair.com/sitemap.xml
 
 # Disallow admin/build files
 Disallow: /build.sh

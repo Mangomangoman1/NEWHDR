@@ -180,30 +180,43 @@ a{color:inherit;text-decoration:none}
 
   <!-- Promo Banner -->
 <nav class="nav" role="navigation" id="nav">
-    <div class="nav-inner container">
-      <a href="/" class="nav-logo">
-        <span class="material-symbols-outlined nav-logo-icon" aria-hidden="true">phone_iphone</span>
-        Hailey Device Repair
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Hailey Device Repair Home">
+        <span class="material-symbols-outlined nav-logo-icon" aria-hidden="true">smartphone</span>
+        <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
       </a>
-      <div class="nav-links">
-        <a href="/#services" class="nav-link">Services</a>
-        <a href="/pricing" class="nav-link">Pricing</a>
-        <a href="/tips" class="nav-link">Tips</a>
-        <a href="/contact" class="nav-link">Contact</a>
-        <a href="/contact" class="btn btn-primary btn-sm nav-cta">Get a Quote</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/#services" class="nav-link">Services</a></li>
+        <li><a href="/pricing" class="nav-link">Pricing</a></li>
+        <li><a href="/#process" class="nav-link">How It Works</a></li>
+        <li><a href="/#faq" class="nav-link">FAQ</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="material-symbols-outlined theme-icon-dark" aria-hidden="true">dark_mode</span>
+          <span class="material-symbols-outlined theme-icon-light">light_mode</span>
+        </button>
+        <a href="sms:+12083666111" class="btn btn-primary btn-sm">Text Me</a>
       </div>
-      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span class="material-symbols-outlined">menu</span>
+
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Mobile navigation">
-      <a href="/#services" class="nav-link">Services</a>
-      <a href="/pricing" class="nav-link">Pricing</a>
-      <a href="/tips" class="nav-link">Tips</a>
-      <a href="/contact" class="nav-link">Contact</a>
-      <a href="/contact" class="btn btn-primary btn-sm">Get a Quote</a>
+
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <ul role="list">
+        <li><a href="/#services" class="nav-link">Services</a></li>
+        <li><a href="/pricing" class="nav-link">Pricing</a></li>
+        <li><a href="/#process" class="nav-link">How It Works</a></li>
+        <li><a href="/#faq" class="nav-link">FAQ</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="sms:+12083666111" class="btn btn-primary">Text Me</a>
     </div>
-    <div class="nav-mobile-backdrop" id="navBackdrop"></div>
   </nav>
 
   <main id="main" role="main">
