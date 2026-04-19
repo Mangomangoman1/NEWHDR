@@ -8140,6 +8140,251 @@ body {
   font-weight: 500;
 }
 
+/* ═══════════════════════════════════════════
+     MAIL-IN EXPANDED: WHY IDAHO SECTION
+═══════════════════════════════════════════ */
+.mail-reality-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2.5rem 0 2rem;
+}
+.mail-reality-stat {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.mail-reality-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--color-cyan, #22d3ee));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+.mail-reality-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.mail-reality-note {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+}
+.mail-reality-note p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════════
+     MAIL-IN EXPANDED: DAY-BY-DAY TIMELINE
+═══════════════════════════════════════════ */
+.mail-timeline-strip {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 2rem 0 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.mail-timeline-strip::-webkit-scrollbar {
+  height: 4px;
+}
+.mail-timeline-strip::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 4px;
+}
+.mail-timeline-day {
+  min-width: 220px;
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  scroll-snap-align: start;
+  position: relative;
+}
+.mail-timeline-day-num {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+.mail-timeline-day-label {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.mail-timeline-day p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.mail-timeline-day-icon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  opacity: 0.15;
+}
+.mail-timeline-day-icon .material-symbols-outlined {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+/* ═══════════════════════════════════════════
+     MAIL-IN EXPANDED: FOUNDER NOTE
+═══════════════════════════════════════════ */
+.mail-founder-note {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  position: relative;
+}
+.mail-founder-note-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.mail-founder-note-header .material-symbols-outlined {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+.mail-founder-note-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.mail-founder-note-body p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.mail-founder-note-body p:last-child {
+  margin-bottom: 0;
+}
+.mail-founder-note-body em {
+  color: var(--text-primary);
+  font-style: italic;
+}
+.mail-founder-note-sig {
+  margin-top: 1.5rem !important;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-weight: 600;
+  color: var(--text-primary) !important;
+}
+.mail-founder-note-sig span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ═══════════════════════════════════════════
+     MAIL-IN EXPANDED: PACKING COST BADGES
+═══════════════════════════════════════════ */
+.mail-packing-cost {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.65rem 0.9rem;
+  background: var(--accent-dim);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.mail-packing-cost .material-symbols-outlined {
+  font-size: 1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.mail-packing-cost strong {
+  color: var(--text-primary);
+}
+.mail-packing-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  max-width: 640px;
+  margin: 2rem auto 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+.mail-packing-tip .material-symbols-outlined {
+  font-size: 1.2rem;
+  color: var(--color-cyan, #22d3ee);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.mail-packing-tip p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.mail-packing-tip a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════
+     MAIL-IN EXPANDED: RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .mail-reality-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .mail-reality-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .mail-reality-number {
+    font-size: 1.5rem;
+  }
+  .mail-timeline-strip {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .mail-timeline-day {
+    min-width: unset;
+  }
+  .mail-founder-note {
+    padding: 1.5rem;
+  }
+  .mail-packing-tip {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
 /* Hero open/closed status */
 .hero-status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; margin-right: 6px; position: relative; top: 1px; animation: heroStatusPulse 2s ease-in-out infinite; }
 .hero-status-dot.closed { background: #ef4444; animation: none; }
