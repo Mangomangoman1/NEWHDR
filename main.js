@@ -2356,3 +2356,184 @@
   }
 
 })();
+
+
+/* ═══════════════════════════════════════════════════
+   QUICK FIND — Command-palette site navigation
+   ═══════════════════════════════════════════════════ */
+(function() {
+  var overlay = document.getElementById('qfOverlay');
+  var searchInput = document.getElementById('qfSearch');
+  var closeBtn = document.getElementById('qfClose');
+  var backdrop = document.getElementById('qfBackdrop');
+  var emptyState = document.getElementById('qfEmpty');
+  var columns = document.getElementById('qfColumns');
+  var allLinks = document.querySelectorAll('.qf-link');
+  var allCategories = document.querySelectorAll('.qf-category');
+  var activeIndex = -1;
+  var visibleLinks = [];
+
+  function open() {
+    if (!overlay) return;
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (searchInput) {
+      searchInput.value = '';
+      searchInput.focus();
+    }
+    showAll();
+    activeIndex = -1;
+  }
+
+  function close() {
+    if (!overlay) return;
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    activeIndex = -1;
+    clearActive();
+  }
+
+  function showAll() {
+    allLinks.forEach(function(link) { link.classList.remove('hidden'); });
+    allCategories.forEach(function(cat) { cat.style.display = ''; });
+    if (emptyState) emptyState.classList.remove('visible');
+    if (columns) columns.style.display = '';
+    updateVisibleList();
+  }
+
+  function clearActive() {
+    visibleLinks.forEach(function(link) {
+      link.style.background = '';
+      link.style.transform = '';
+    });
+  }
+
+  function setActive(index) {
+    clearActive();
+    if (index < 0 || index >= visibleLinks.length) return;
+    var link = visibleLinks[index];
+    link.style.background = 'var(--accent-dim)';
+    link.scrollIntoView({ block: 'nearest' });
+  }
+
+  function updateVisibleList() {
+    visibleLinks = [];
+    allLinks.forEach(function(link) {
+      if (!link.classList.contains('hidden')) {
+        visibleLinks.push(link);
+      }
+    });
+  }
+
+  function filter(query) {
+    if (!query) { showAll(); return; }
+    var q = query.toLowerCase().trim();
+    var anyVisible = false;
+
+    allLinks.forEach(function(link) {
+      var name = (link.querySelector('.qf-link-name') || {}).textContent || '';
+      var desc = (link.querySelector('.qf-link-desc') || {}).textContent || '';
+      var keywords = link.getAttribute('data-qf') || '';
+      var haystack = (name + ' ' + desc + ' ' + keywords).toLowerCase();
+      if (haystack.indexOf(q) !== -1) {
+        link.classList.remove('hidden');
+        anyVisible = true;
+      } else {
+        link.classList.add('hidden');
+      }
+    });
+
+    // Hide empty categories
+    allCategories.forEach(function(cat) {
+      var hasVisible = cat.querySelectorAll('.qf-link:not(.hidden)').length > 0;
+      cat.style.display = hasVisible ? '' : 'none';
+    });
+
+    if (emptyState) {
+      emptyState.classList.toggle('visible', !anyVisible);
+    }
+    if (columns) {
+      columns.style.display = anyVisible ? '' : 'none';
+    }
+    activeIndex = -1;
+    updateVisibleList();
+  }
+
+  // Triggers
+  var trigger = document.getElementById('qfTrigger');
+  var triggerMobile = document.getElementById('qfTriggerMobile');
+  if (trigger) trigger.addEventListener('click', open);
+  if (triggerMobile) triggerMobile.addEventListener('click', function() {
+    // Close mobile nav first
+    var mobileNav = document.getElementById('navMobile');
+    if (mobileNav) mobileNav.setAttribute('aria-hidden', 'true');
+    open();
+  });
+
+  // Close
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  if (backdrop) backdrop.addEventListener('click', close);
+
+  // Search
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      filter(this.value);
+    });
+  }
+
+  // Keyboard
+  document.addEventListener('keydown', function(e) {
+    // Cmd/Ctrl + K to open
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      if (overlay && overlay.classList.contains('open')) {
+        close();
+      } else {
+        open();
+      }
+      return;
+    }
+
+    if (!overlay || !overlay.classList.contains('open')) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      close();
+      return;
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      activeIndex = Math.min(activeIndex + 1, visibleLinks.length - 1);
+      setActive(activeIndex);
+      return;
+    }
+
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      activeIndex = Math.max(activeIndex - 1, 0);
+      setActive(activeIndex);
+      return;
+    }
+
+    if (e.key === 'Enter') {
+      if (activeIndex >= 0 && activeIndex < visibleLinks.length) {
+        e.preventDefault();
+        visibleLinks[activeIndex].click();
+      }
+      return;
+    }
+  });
+
+  // Close on link click
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target.closest('.qf-link')) {
+        close();
+      }
+    });
+  }
+})();
+QFJSFIELD

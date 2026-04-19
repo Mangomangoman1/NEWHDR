@@ -369,6 +369,11 @@ a{color:inherit;text-decoration:none}
           <span class="material-symbols-outlined theme-icon-dark" aria-hidden="true">dark_mode</span>
           <span class="material-symbols-outlined theme-icon-light">light_mode</span>
         </button>
+        <button class="qf-trigger" id="qfTrigger" aria-label="Quick Find — search all pages">
+          <span class="material-symbols-outlined" aria-hidden="true">search</span>
+          Quick Find
+          <kbd>⌘K</kbd>
+        </button>
         <div class="water-wrapper" id="water-wrapper-nav">
           <div class="ambient-shadow"></div>
           <div class="caustic"></div>
@@ -396,6 +401,10 @@ a{color:inherit;text-decoration:none}
         <li><a href="/about" class="nav-link">About</a></li>
         <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
+      <button class="qf-trigger" id="qfTriggerMobile" aria-label="Quick Find — search all pages">
+        <span class="material-symbols-outlined" aria-hidden="true">search</span>
+        Quick Find
+      </button>
       <div class="water-wrapper" id="water-wrapper-mobile" style="width:100%;">
         <div class="ambient-shadow"></div>
         <div class="caustic"></div>
@@ -1567,5 +1576,151 @@ a{color:inherit;text-decoration:none}
   <script src="liquid-btn.js" defer></script>
   <script src="main.js" defer></script>
 <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- ═══════════════════════════════════════════════════
+       QUICK FIND — Site-wide command palette
+       ═══════════════════════════════════════════════════ -->
+  <div class="qf-overlay" id="qfOverlay" aria-hidden="true" role="dialog" aria-label="Quick Find — navigate to any page">
+    <div class="qf-backdrop" id="qfBackdrop"></div>
+    <div class="qf-panel">
+      <div class="qf-header">
+        <span class="material-symbols-outlined" aria-hidden="true">search</span>
+        <input type="text" class="qf-search" id="qfSearch" placeholder="Search pages..." autocomplete="off" />
+        <button class="qf-close" id="qfClose" aria-label="Close Quick Find">ESC</button>
+      </div>
+
+      <div class="qf-body" id="qfBody">
+        <div class="qf-columns" id="qfColumns">
+          <!-- COLUMN 1: Device Repair + Computer Help + Emergency -->
+          <div>
+            <div class="qf-category">
+              <div class="qf-category-title"><span class="material-symbols-outlined" aria-hidden="true">devices</span> Device Repair</div>
+              <a href="/iphone-repair" class="qf-link" data-qf="iphone repair screen battery phone apple">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">phone_iphone</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">iPhone Repair</span><span class="qf-link-desc">Screen, battery, charging port &amp; more</span></div>
+              </a>
+              <a href="/android-repair" class="qf-link" data-qf="android repair samsung galaxy pixel phone">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">smartphone</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Android Repair</span><span class="qf-link-desc">Samsung, Pixel, OnePlus &amp; more</span></div>
+              </a>
+              <a href="/laptop-repair" class="qf-link" data-qf="laptop repair mac pc computer macbook screen battery">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">laptop</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Laptop &amp; PC Repair</span><span class="qf-link-desc">Mac, Windows, Chromebook</span></div>
+              </a>
+              <a href="/tablet-repair" class="qf-link" data-qf="tablet ipad repair screen battery galaxy tab fire">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">tablet</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">iPad &amp; Tablet</span><span class="qf-link-desc">iPad, Galaxy Tab, Amazon Fire</span></div>
+              </a>
+              <a href="/console-repair" class="qf-link" data-qf="console game nintendo switch ps5 xbox steam deck controller drift">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">sports_esports</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Game Console Repair</span><span class="qf-link-desc">Switch, PS5, Xbox, Steam Deck</span></div>
+              </a>
+              <a href="/mail-in-repair" class="qf-link" data-qf="mail in repair ship statewide idaho send">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">local_shipping</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Mail-In Repair</span><span class="qf-link-desc">Ship from anywhere in Idaho</span></div>
+              </a>
+            </div>
+
+            <div class="qf-category">
+              <div class="qf-category-title"><span class="material-symbols-outlined" aria-hidden="true">computer</span> Computer Help</div>
+              <a href="/computer-support" class="qf-link" data-qf="computer help support slow pc crash startup it">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">computer</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Computer Help &amp; IT</span><span class="qf-link-desc">Slow PC, crashes, startup issues</span></div>
+              </a>
+              <a href="/virus-removal" class="qf-link" data-qf="virus malware removal pop ups fake alerts browser hijack scareware">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">coronavirus</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Virus &amp; Malware Removal</span><span class="qf-link-desc">Pop-ups, hijacks, fake alerts</span></div>
+              </a>
+              <a href="/printer-setup" class="qf-link" data-qf="printer setup wifi wireless connect driver scan">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">print</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Printer Setup &amp; Wi-Fi</span><span class="qf-link-desc">Wireless printers, drivers, scanning</span></div>
+              </a>
+            </div>
+
+            <div class="qf-category">
+              <div class="qf-category-title"><span class="material-symbols-outlined" aria-hidden="true">bolt</span> Emergency</div>
+              <a href="/repair-sos" class="qf-link" data-qf="repair sos emergency water damage black screen swollen battery boot loop wet">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">bolt</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Repair SOS</span><span class="qf-link-desc">Water damage, black screen, boot loop first aid</span></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: Info + Resources + Everything Else -->
+          <div>
+            <div class="qf-category">
+              <div class="qf-category-title"><span class="material-symbols-outlined" aria-hidden="true">home</span> Main</div>
+              <a href="/" class="qf-link" data-qf="home main homepage landing">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">home</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Homepage</span><span class="qf-link-desc">All services &amp; quick quote</span></div>
+              </a>
+              <a href="/#services" class="qf-link" data-qf="services repairs all device fix">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">build_circle</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Services Overview</span><span class="qf-link-desc">Every repair I offer</span></div>
+              </a>
+              <a href="/pricing" class="qf-link" data-qf="pricing cost price quote how much">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">payments</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Pricing</span><span class="qf-link-desc">Transparent, fair, no surprises</span></div>
+              </a>
+              <a href="/contact" class="qf-link" data-qf="contact quote text call email reach form">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">chat</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Contact &amp; Get a Quote</span><span class="qf-link-desc">Text, call, email, or form</span></div>
+              </a>
+            </div>
+
+            <div class="qf-category">
+              <div class="qf-category-title"><span class="material-symbols-outlined" aria-hidden="true">menu_book</span> Resources</div>
+              <a href="/tips" class="qf-link" data-qf="tips guides advice care protect repair replace water damage lcd oled">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">lightbulb</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Tips &amp; Guides</span><span class="qf-link-desc">Protect your devices, repair vs replace</span></div>
+              </a>
+              <a href="/faq" class="qf-link" data-qf="faq questions answers how long warranty turnaround">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">help</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">FAQ</span><span class="qf-link-desc">Pricing, turnaround, warranty &amp; more</span></div>
+              </a>
+              <a href="/device-check" class="qf-link" data-qf="device check estimate instant free diagnostic whats wrong">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">manage_search</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Device Check</span><span class="qf-link-desc">Free instant repair estimate</span></div>
+              </a>
+              <a href="/warranty" class="qf-link" data-qf="warranty guarantee coverage 40 day parts labor">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">verified</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Warranty</span><span class="qf-link-desc">40-day guarantee on every repair</span></div>
+              </a>
+              <a href="/student-military" class="qf-link" data-qf="student military discount 15 percent off id college veteran">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">percent</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Student &amp; Military Discount</span><span class="qf-link-desc">15% off — just show your ID</span></div>
+              </a>
+            </div>
+
+            <div class="qf-category">
+              <div class="qf-category-title"><span class="material-symbols-outlined" aria-hidden="true">info</span> About</div>
+              <a href="/about" class="qf-link" data-qf="about sam samuel who person story local repair tech">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">person</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">About HDR</span><span class="qf-link-desc">Meet Samuel — your local repair tech</span></div>
+              </a>
+              <a href="/privacy" class="qf-link" data-qf="privacy policy data information cookies">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">shield</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Privacy Policy</span><span class="qf-link-desc">How your data is handled</span></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="qf-empty" id="qfEmpty">
+          <span class="material-symbols-outlined" aria-hidden="true">search_off</span>
+          No pages match your search.
+        </div>
+      </div>
+
+      <div class="qf-footer">
+        <span>20 pages</span>
+        <div class="qf-footer-keys">
+          <span><kbd>↑↓</kbd> Navigate</span>
+          <span><kbd>↵</kbd> Open</span>
+          <span><kbd>ESC</kbd> Close</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
