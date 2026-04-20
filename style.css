@@ -4226,8 +4226,7 @@ button[type="submit"]:disabled {
   margin-top: 0.1rem;
   color: var(--color-green);
 }
-.mail-packing-list li .material-symbols-outlined[style],
-.mail-packing-list li:last-child .material-symbols-outlined {
+.mail-packing-list li .material-symbols-outlined[style] {
   color: #ef4444;
 }
 
