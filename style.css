@@ -9217,6 +9217,22 @@ body {
   line-height: 1.4;
 }
 
+@media (max-width: 1099px) {
+  .nav-actions .qf-trigger {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .nav-actions .qf-trigger .qf-label,
+  .nav-actions .qf-trigger kbd {
+    display: none;
+  }
+}
+
 /* Overlay */
 .qf-overlay {
   position: fixed;
