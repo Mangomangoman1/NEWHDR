@@ -748,39 +748,35 @@
   const particleContainer = document.querySelector('.hero-particles');
   if (particleContainer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const heroSection = particleContainer.closest('.hero') || particleContainer.parentElement;
-    const particles = [];
-    const lanesX = [0.10, 0.20, 0.31, 0.44, 0.58, 0.73, 0.88];
-    const lanesY = [0.20, 0.34, 0.49, 0.64, 0.80, 0.92];
-    const TAU = Math.PI * 2;
+    const trackLayer = document.createElement('div');
+    trackLayer.className = 'hero-tracks';
+    trackLayer.setAttribute('aria-hidden', 'true');
+    particleContainer.before(trackLayer);
 
-    const clampIndex = (value, max) => Math.max(0, Math.min(max, value));
-    const easeInOut = t => (t < 0.5
-      ? 2 * t * t
-      : 1 - Math.pow(-2 * t + 2, 2) / 2);
+    const particles = [];
+    const lanesX = [0.08, 0.18, 0.31, 0.45, 0.59, 0.73, 0.87];
+    const lanesY = [0.18, 0.32, 0.47, 0.62, 0.77, 0.90];
+    const TAU = Math.PI * 2;
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+    const easeInOut = t => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
     const rand = (min, max) => min + Math.random() * (max - min);
     const particleCount = () => (window.innerWidth < 640 ? 10 : 16);
-
-    const stepIndex = (index, max) => {
-      if (max <= 0) return 0;
-      if (index <= 0) return 1;
-      if (index >= max) return max - 1;
-      return Math.random() > 0.5 ? index + 1 : index - 1;
-    };
 
     function buildRoute(width, height) {
       const maxX = lanesX.length - 1;
       const maxY = lanesY.length - 1;
-      let x0 = 1 + Math.floor(Math.random() * (lanesX.length - 2));
-      let y0 = 1 + Math.floor(Math.random() * (lanesY.length - 2));
-      let x1 = stepIndex(x0, maxX);
-      let y1 = stepIndex(y0, maxY);
-      let x2 = stepIndex(x1, maxX);
-      let y2 = stepIndex(y1, maxY);
-
-      if (x1 === x0) x1 = clampIndex(x0 + (x0 < maxX ? 1 : -1), maxX);
-      if (y1 === y0) y1 = clampIndex(y0 + (y0 < maxY ? 1 : -1), maxY);
-      if (x2 === x1) x2 = clampIndex(x1 + (x1 < maxX ? 1 : -1), maxX);
-      if (y2 === y1) y2 = clampIndex(y1 + (y1 < maxY ? 1 : -1), maxY);
+      const pickStep = (index, max) => {
+        const options = [];
+        if (index > 0) options.push(index - 1);
+        if (index < max) options.push(index + 1);
+        return options.length ? options[Math.floor(Math.random() * options.length)] : index;
+      };
+      const x0 = 1 + Math.floor(Math.random() * (lanesX.length - 2));
+      const y0 = 1 + Math.floor(Math.random() * (lanesY.length - 2));
+      const x1 = pickStep(x0, maxX);
+      const y1 = pickStep(y0, maxY);
+      const x2 = pickStep(x1, maxX);
+      const y2 = pickStep(y1, maxY);
 
       const points = [
         { x: lanesX[x0] * width, y: lanesY[y0] * height },
@@ -804,21 +800,46 @@
     }
 
     function pointOnRoute(route, progress) {
-      if (!route.total) return { x: 0, y: 0, angle: 0, segmentIndex: 0 };
+      if (!route.total) return { x: 0, y: 0, angle: 0, segmentIndex: 0, local: 0, segment: null };
       const distance = (((progress % 1) + 1) % 1) * route.total;
       const segmentIndex = route.segments.findIndex(seg => distance >= seg.start && distance <= seg.end);
       const segment = route.segments[segmentIndex >= 0 ? segmentIndex : route.segments.length - 1];
-      const local = Math.max(0, Math.min(1, (distance - segment.start) / segment.len));
+      const local = clamp((distance - segment.start) / segment.len, 0, 1);
       return {
         x: segment.a.x + (segment.b.x - segment.a.x) * local,
         y: segment.a.y + (segment.b.y - segment.a.y) * local,
         angle: Math.atan2(segment.b.y - segment.a.y, segment.b.x - segment.a.x),
-        segmentIndex: segmentIndex >= 0 ? segmentIndex : route.segments.length - 1
+        segmentIndex: segmentIndex >= 0 ? segmentIndex : route.segments.length - 1,
+        local,
+        segment
+      };
+    }
+
+    function createTrack(segment, direction, now, segmentIndex) {
+      const el = document.createElement('span');
+      el.className = 'hero-track';
+      trackLayer.appendChild(el);
+      const from = direction > 0 ? segment.a : segment.b;
+      const to = direction > 0 ? segment.b : segment.a;
+      return {
+        el,
+        segment,
+        segmentIndex,
+        from,
+        to,
+        angle: Math.atan2(to.y - from.y, to.x - from.x),
+        length: segment.len,
+        direction,
+        bornAt: now,
+        completedAt: null,
+        fadeMs: rand(900, 1400),
+        lingerMs: rand(1700, 2400)
       };
     }
 
     function buildParticles() {
       particleContainer.innerHTML = '';
+      trackLayer.innerHTML = '';
       particles.length = 0;
 
       const heroBox = heroSection.getBoundingClientRect();
@@ -833,11 +854,12 @@
         particles.push({
           el: dot,
           route: buildRoute(width, height),
-          size: rand(2.2, 4),
-          speed: rand(0.55, 1.15),
+          speed: rand(0.00003, 0.000045),
           phase: Math.random(),
           direction: Math.random() > 0.5 ? 1 : -1,
-          wobble: rand(0.8, 1.6)
+          tracks: [],
+          currentTrack: null,
+          lastSegmentIndex: -1
         });
       }
     }
@@ -848,22 +870,58 @@
       resizeTimer = setTimeout(buildParticles, 120);
     };
 
+    function updateTrack(track, currentPoint, now) {
+      const active = !track.completedAt && track.segmentIndex === currentPoint.segmentIndex;
+      const buildProgress = active
+        ? clamp(track.direction > 0 ? currentPoint.local : 1 - currentPoint.local, 0, 1)
+        : 1;
+      const age = now - track.bornAt;
+      const fadeAge = track.completedAt ? now - track.completedAt : 0;
+      const fade = track.completedAt
+        ? clamp(1 - fadeAge / (track.fadeMs + track.lingerMs), 0, 1)
+        : 1;
+      const opacityBase = active ? 0.16 + buildProgress * 0.14 : 0.10;
+      const opacity = opacityBase * fade;
+      const width = Math.max(1, track.length * Math.max(0.08, buildProgress));
+      const drift = Math.sin((age * 0.002) + (track.segmentIndex || 0)) * 0.35;
+
+      if (fade <= 0.001) {
+        track.el.remove();
+        return false;
+      }
+
+      track.el.style.opacity = opacity.toFixed(3);
+      track.el.style.width = `${width.toFixed(2)}px`;
+      track.el.style.transform = `translate3d(${track.from.x.toFixed(2)}px, ${(track.from.y + drift).toFixed(2)}px, 0) rotate(${track.angle}rad)`;
+      return true;
+    }
+
     function animateParticles(now) {
       const heartbeat = 0.5 + 0.5 * Math.sin(now * 0.0012);
+
       particles.forEach((particle, index) => {
-        const raw = (now * 0.00004 * particle.speed + particle.phase) % 1;
-        const progress = particle.direction > 0 ? raw : 1 - raw;
-        const eased = easeInOut(progress);
+        const raw = (now * particle.speed + particle.phase) % 1;
+        const eased = easeInOut(particle.direction > 0 ? raw : 1 - raw);
         const point = pointOnRoute(particle.route, eased);
-        const sway = Math.sin(now * 0.001 + particle.phase * TAU + index) * particle.wobble;
-        const offsetX = Math.cos(point.angle + Math.PI / 2) * sway * 0.35;
-        const offsetY = Math.sin(point.angle + Math.PI / 2) * sway * 0.35;
-        const pulse = 0.08 + heartbeat * 0.05 + Math.sin(now * 0.002 + particle.phase * TAU) * 0.02;
-        const scale = 0.85 + heartbeat * 0.25;
-        particle.el.style.opacity = pulse.toFixed(3);
-        particle.el.style.width = particle.el.style.height = `${particle.size.toFixed(2)}px`;
-        particle.el.style.transform = `translate3d(${(point.x + offsetX).toFixed(2)}px, ${(point.y + offsetY).toFixed(2)}px, 0) scale(${scale.toFixed(3)})`;
+
+        if (particle.currentTrack && particle.lastSegmentIndex !== point.segmentIndex) {
+          particle.currentTrack.completedAt = now;
+          particle.currentTrack = null;
+        }
+
+        if (!particle.currentTrack) {
+          particle.currentTrack = createTrack(point.segment, particle.direction, now, point.segmentIndex);
+          particle.tracks.push(particle.currentTrack);
+          particle.lastSegmentIndex = point.segmentIndex;
+        }
+
+        particle.tracks = particle.tracks.filter(track => updateTrack(track, point, now));
+
+        particle.el.style.opacity = (0.24 + heartbeat * 0.10).toFixed(3);
+        particle.el.style.width = particle.el.style.height = '4px';
+        particle.el.style.transform = `translate3d(${point.x.toFixed(2)}px, ${point.y.toFixed(2)}px, 0)`;
       });
+
       requestAnimationFrame(animateParticles);
     }
 
@@ -871,7 +929,6 @@
     requestAnimationFrame(animateParticles);
     window.addEventListener('resize', rebuild, { passive: true });
   }
-
   /* ── Pricing page tabs ─────────────────── */
   const pricingTabs = document.querySelectorAll('.pricing-tab');
   if (pricingTabs.length) {

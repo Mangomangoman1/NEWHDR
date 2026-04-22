@@ -917,7 +917,7 @@ ul { list-style: none; }
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   max-width: 740px;
 }
 
@@ -5407,24 +5407,44 @@ body {
 }
 
 /* ─── CIRCUIT SIGNALS (hero background) ───────────────────── */
+.hero-tracks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  mix-blend-mode: screen;
+}
 .hero-particles {
   position: absolute;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
 }
 .hero-particle {
   position: absolute;
   top: 0;
   left: 0;
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.92) 0%, rgba(79,142,247,0.55) 36%, rgba(79,142,247,0) 72%);
-  box-shadow: 0 0 10px rgba(79,142,247,0.18);
+  background: radial-gradient(circle, rgba(255,255,255,0.96) 0%, rgba(79,142,247,0.85) 40%, rgba(79,142,247,0) 72%);
+  box-shadow: 0 0 12px rgba(79,142,247,0.3);
   opacity: 0;
   will-change: transform, opacity;
+}
+.hero-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 999px;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, rgba(79,142,247,0), rgba(79,142,247,0.18) 18%, rgba(255,255,255,0.72) 50%, rgba(79,142,247,0.18) 82%, rgba(79,142,247,0));
+  box-shadow: 0 0 10px rgba(79,142,247,0.12);
+  opacity: 0;
+  will-change: transform, width, opacity;
 }
 
 /* ─── GLOWING ACCENT UNDERLINES (eyebrows) ────────────────── */
@@ -7371,6 +7391,7 @@ body {
   .scroll-progress {
     transition: none;
   }
+  .hero-tracks,
   .hero-particles,
   .page-curtain {
     display: none !important;
