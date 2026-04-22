@@ -5406,7 +5406,7 @@ body {
   to { opacity: 1; transform: scale(1.02); }
 }
 
-/* ─── FLOATING DOTS (hero background) ─────────────────────── */
+/* ─── CIRCUIT SIGNALS (hero background) ───────────────────── */
 .hero-particles {
   position: absolute;
   inset: 0;
@@ -5416,18 +5416,15 @@ body {
 }
 .hero-particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.15;
-  animation: particleFloat linear infinite;
-}
-@keyframes particleFloat {
-  0% { transform: translateY(0) translateX(0); opacity: 0; }
-  10% { opacity: 0.15; }
-  90% { opacity: 0.15; }
-  100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+  background: radial-gradient(circle, rgba(255,255,255,0.92) 0%, rgba(79,142,247,0.55) 36%, rgba(79,142,247,0) 72%);
+  box-shadow: 0 0 10px rgba(79,142,247,0.18);
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 /* ─── GLOWING ACCENT UNDERLINES (eyebrows) ────────────────── */

@@ -744,19 +744,132 @@
     });
   });
 
-  /* ── Hero floating particles ─────────── */
+  /* ── Hero circuit particles ─────────── */
   const particleContainer = document.querySelector('.hero-particles');
   if (particleContainer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    for (let i = 0; i < 20; i++) {
-      const dot = document.createElement('span');
-      dot.classList.add('hero-particle');
-      dot.style.left = Math.random() * 100 + '%';
-      dot.style.top = (60 + Math.random() * 40) + '%';
-      dot.style.animationDuration = (8 + Math.random() * 12) + 's';
-      dot.style.animationDelay = (Math.random() * 10) + 's';
-      dot.style.width = dot.style.height = (2 + Math.random() * 4) + 'px';
-      particleContainer.appendChild(dot);
+    const heroSection = particleContainer.closest('.hero') || particleContainer.parentElement;
+    const particles = [];
+    const lanesX = [0.10, 0.20, 0.31, 0.44, 0.58, 0.73, 0.88];
+    const lanesY = [0.20, 0.34, 0.49, 0.64, 0.80, 0.92];
+    const TAU = Math.PI * 2;
+
+    const clampIndex = (value, max) => Math.max(0, Math.min(max, value));
+    const easeInOut = t => (t < 0.5
+      ? 2 * t * t
+      : 1 - Math.pow(-2 * t + 2, 2) / 2);
+    const rand = (min, max) => min + Math.random() * (max - min);
+    const particleCount = () => (window.innerWidth < 640 ? 10 : 16);
+
+    const stepIndex = (index, max) => {
+      if (max <= 0) return 0;
+      if (index <= 0) return 1;
+      if (index >= max) return max - 1;
+      return Math.random() > 0.5 ? index + 1 : index - 1;
+    };
+
+    function buildRoute(width, height) {
+      const maxX = lanesX.length - 1;
+      const maxY = lanesY.length - 1;
+      let x0 = 1 + Math.floor(Math.random() * (lanesX.length - 2));
+      let y0 = 1 + Math.floor(Math.random() * (lanesY.length - 2));
+      let x1 = stepIndex(x0, maxX);
+      let y1 = stepIndex(y0, maxY);
+      let x2 = stepIndex(x1, maxX);
+      let y2 = stepIndex(y1, maxY);
+
+      if (x1 === x0) x1 = clampIndex(x0 + (x0 < maxX ? 1 : -1), maxX);
+      if (y1 === y0) y1 = clampIndex(y0 + (y0 < maxY ? 1 : -1), maxY);
+      if (x2 === x1) x2 = clampIndex(x1 + (x1 < maxX ? 1 : -1), maxX);
+      if (y2 === y1) y2 = clampIndex(y1 + (y1 < maxY ? 1 : -1), maxY);
+
+      const points = [
+        { x: lanesX[x0] * width, y: lanesY[y0] * height },
+        { x: lanesX[x1] * width, y: lanesY[y0] * height },
+        { x: lanesX[x1] * width, y: lanesY[y1] * height },
+        { x: lanesX[x2] * width, y: lanesY[y1] * height },
+        { x: lanesX[x2] * width, y: lanesY[y2] * height }
+      ];
+
+      const segments = [];
+      let total = 0;
+      for (let i = 0; i < points.length - 1; i++) {
+        const a = points[i];
+        const b = points[i + 1];
+        const len = Math.hypot(b.x - a.x, b.y - a.y) || 0.001;
+        segments.push({ a, b, len, start: total, end: total + len });
+        total += len;
+      }
+
+      return { points, segments, total };
     }
+
+    function pointOnRoute(route, progress) {
+      if (!route.total) return { x: 0, y: 0, angle: 0, segmentIndex: 0 };
+      const distance = (((progress % 1) + 1) % 1) * route.total;
+      const segmentIndex = route.segments.findIndex(seg => distance >= seg.start && distance <= seg.end);
+      const segment = route.segments[segmentIndex >= 0 ? segmentIndex : route.segments.length - 1];
+      const local = Math.max(0, Math.min(1, (distance - segment.start) / segment.len));
+      return {
+        x: segment.a.x + (segment.b.x - segment.a.x) * local,
+        y: segment.a.y + (segment.b.y - segment.a.y) * local,
+        angle: Math.atan2(segment.b.y - segment.a.y, segment.b.x - segment.a.x),
+        segmentIndex: segmentIndex >= 0 ? segmentIndex : route.segments.length - 1
+      };
+    }
+
+    function buildParticles() {
+      particleContainer.innerHTML = '';
+      particles.length = 0;
+
+      const heroBox = heroSection.getBoundingClientRect();
+      const width = Math.max(1, heroBox.width);
+      const height = Math.max(1, heroBox.height);
+      const count = particleCount();
+
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'hero-particle';
+        particleContainer.appendChild(dot);
+        particles.push({
+          el: dot,
+          route: buildRoute(width, height),
+          size: rand(2.2, 4),
+          speed: rand(0.55, 1.15),
+          phase: Math.random(),
+          direction: Math.random() > 0.5 ? 1 : -1,
+          wobble: rand(0.8, 1.6)
+        });
+      }
+    }
+
+    let resizeTimer = 0;
+    const rebuild = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(buildParticles, 120);
+    };
+
+    function animateParticles(now) {
+      const heartbeat = 0.5 + 0.5 * Math.sin(now * 0.0012);
+      particles.forEach((particle, index) => {
+        const raw = (now * 0.00004 * particle.speed + particle.phase) % 1;
+        const progress = particle.direction > 0 ? raw : 1 - raw;
+        const eased = easeInOut(progress);
+        const point = pointOnRoute(particle.route, eased);
+        const sway = Math.sin(now * 0.001 + particle.phase * TAU + index) * particle.wobble;
+        const offsetX = Math.cos(point.angle + Math.PI / 2) * sway * 0.35;
+        const offsetY = Math.sin(point.angle + Math.PI / 2) * sway * 0.35;
+        const pulse = 0.08 + heartbeat * 0.05 + Math.sin(now * 0.002 + particle.phase * TAU) * 0.02;
+        const scale = 0.85 + heartbeat * 0.25;
+        particle.el.style.opacity = pulse.toFixed(3);
+        particle.el.style.width = particle.el.style.height = `${particle.size.toFixed(2)}px`;
+        particle.el.style.transform = `translate3d(${(point.x + offsetX).toFixed(2)}px, ${(point.y + offsetY).toFixed(2)}px, 0) scale(${scale.toFixed(3)})`;
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    buildParticles();
+    requestAnimationFrame(animateParticles);
+    window.addEventListener('resize', rebuild, { passive: true });
   }
 
   /* ── Pricing page tabs ─────────────────── */
