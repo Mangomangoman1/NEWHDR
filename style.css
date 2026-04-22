@@ -876,6 +876,23 @@ ul { list-style: none; }
   padding: var(--space-4xl) 0;
 }
 
+#pcb-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.22);
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* Dot grid background */
 .hero-bg-grid {
   position: absolute;

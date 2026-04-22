@@ -744,191 +744,119 @@
     });
   });
 
-  /* ── Hero circuit particles ─────────── */
-  const particleContainer = document.querySelector('.hero-particles');
-  if (particleContainer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const heroSection = particleContainer.closest('.hero') || particleContainer.parentElement;
-    const trackLayer = document.createElement('div');
-    trackLayer.className = 'hero-tracks';
-    trackLayer.setAttribute('aria-hidden', 'true');
-    particleContainer.before(trackLayer);
+  /* ── Hero PCB canvas ─────────────────── */
+  (function () {
+    const canvas = document.getElementById('pcb-canvas');
+    if (!canvas) return;
 
-    const particles = [];
-    const lanesX = [0.08, 0.18, 0.31, 0.45, 0.59, 0.73, 0.87];
-    const lanesY = [0.18, 0.32, 0.47, 0.62, 0.77, 0.90];
-    const TAU = Math.PI * 2;
-    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
-    const easeInOut = t => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-    const rand = (min, max) => min + Math.random() * (max - min);
-    const particleCount = () => (window.innerWidth < 640 ? 10 : 16);
-
-    function buildRoute(width, height) {
-      const maxX = lanesX.length - 1;
-      const maxY = lanesY.length - 1;
-      const pickStep = (index, max) => {
-        const options = [];
-        if (index > 0) options.push(index - 1);
-        if (index < max) options.push(index + 1);
-        return options.length ? options[Math.floor(Math.random() * options.length)] : index;
-      };
-      const x0 = 1 + Math.floor(Math.random() * (lanesX.length - 2));
-      const y0 = 1 + Math.floor(Math.random() * (lanesY.length - 2));
-      const x1 = pickStep(x0, maxX);
-      const y1 = pickStep(y0, maxY);
-      const x2 = pickStep(x1, maxX);
-      const y2 = pickStep(y1, maxY);
-
-      const points = [
-        { x: lanesX[x0] * width, y: lanesY[y0] * height },
-        { x: lanesX[x1] * width, y: lanesY[y0] * height },
-        { x: lanesX[x1] * width, y: lanesY[y1] * height },
-        { x: lanesX[x2] * width, y: lanesY[y1] * height },
-        { x: lanesX[x2] * width, y: lanesY[y2] * height }
-      ];
-
-      const segments = [];
-      let total = 0;
-      for (let i = 0; i < points.length - 1; i++) {
-        const a = points[i];
-        const b = points[i + 1];
-        const len = Math.hypot(b.x - a.x, b.y - a.y) || 0.001;
-        segments.push({ a, b, len, start: total, end: total + len });
-        total += len;
-      }
-
-      return { points, segments, total };
-    }
-
-    function pointOnRoute(route, progress) {
-      if (!route.total) return { x: 0, y: 0, angle: 0, segmentIndex: 0, local: 0, segment: null };
-      const distance = (((progress % 1) + 1) % 1) * route.total;
-      const segmentIndex = route.segments.findIndex(seg => distance >= seg.start && distance <= seg.end);
-      const segment = route.segments[segmentIndex >= 0 ? segmentIndex : route.segments.length - 1];
-      const local = clamp((distance - segment.start) / segment.len, 0, 1);
-      return {
-        x: segment.a.x + (segment.b.x - segment.a.x) * local,
-        y: segment.a.y + (segment.b.y - segment.a.y) * local,
-        angle: Math.atan2(segment.b.y - segment.a.y, segment.b.x - segment.a.x),
-        segmentIndex: segmentIndex >= 0 ? segmentIndex : route.segments.length - 1,
-        local,
-        segment
-      };
-    }
-
-    function createTrack(segment, direction, now, segmentIndex) {
-      const el = document.createElement('span');
-      el.className = 'hero-track';
-      trackLayer.appendChild(el);
-      const from = direction > 0 ? segment.a : segment.b;
-      const to = direction > 0 ? segment.b : segment.a;
-      return {
-        el,
-        segment,
-        segmentIndex,
-        from,
-        to,
-        angle: Math.atan2(to.y - from.y, to.x - from.x),
-        length: segment.len,
-        direction,
-        bornAt: now,
-        completedAt: null,
-        fadeMs: rand(900, 1400),
-        lingerMs: rand(1700, 2400)
-      };
-    }
-
-    function buildParticles() {
-      particleContainer.innerHTML = '';
-      trackLayer.innerHTML = '';
-      particles.length = 0;
-
-      const heroBox = heroSection.getBoundingClientRect();
-      const width = Math.max(1, heroBox.width);
-      const height = Math.max(1, heroBox.height);
-      const count = particleCount();
-
-      for (let i = 0; i < count; i++) {
-        const dot = document.createElement('span');
-        dot.className = 'hero-particle';
-        particleContainer.appendChild(dot);
-        particles.push({
-          el: dot,
-          route: buildRoute(width, height),
-          speed: rand(0.00003, 0.000045),
-          phase: Math.random(),
-          direction: Math.random() > 0.5 ? 1 : -1,
-          tracks: [],
-          currentTrack: null,
-          lastSegmentIndex: -1
-        });
-      }
-    }
-
-    let resizeTimer = 0;
-    const rebuild = () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(buildParticles, 120);
-    };
-
-    function updateTrack(track, currentPoint, now) {
-      const active = !track.completedAt && track.segmentIndex === currentPoint.segmentIndex;
-      const buildProgress = active
-        ? clamp(track.direction > 0 ? currentPoint.local : 1 - currentPoint.local, 0, 1)
-        : 1;
-      const age = now - track.bornAt;
-      const fadeAge = track.completedAt ? now - track.completedAt : 0;
-      const fade = track.completedAt
-        ? clamp(1 - fadeAge / (track.fadeMs + track.lingerMs), 0, 1)
-        : 1;
-      const opacityBase = active ? 0.16 + buildProgress * 0.14 : 0.10;
-      const opacity = opacityBase * fade;
-      const width = Math.max(1, track.length * Math.max(0.08, buildProgress));
-      const drift = Math.sin((age * 0.002) + (track.segmentIndex || 0)) * 0.35;
-
-      if (fade <= 0.001) {
-        track.el.remove();
-        return false;
-      }
-
-      track.el.style.opacity = opacity.toFixed(3);
-      track.el.style.width = `${width.toFixed(2)}px`;
-      track.el.style.transform = `translate3d(${track.from.x.toFixed(2)}px, ${(track.from.y + drift).toFixed(2)}px, 0) rotate(${track.angle}rad)`;
-      return true;
-    }
-
-    function animateParticles(now) {
-      const heartbeat = 0.5 + 0.5 * Math.sin(now * 0.0012);
-
-      particles.forEach((particle, index) => {
-        const raw = (now * particle.speed + particle.phase) % 1;
-        const eased = easeInOut(particle.direction > 0 ? raw : 1 - raw);
-        const point = pointOnRoute(particle.route, eased);
-
-        if (particle.currentTrack && particle.lastSegmentIndex !== point.segmentIndex) {
-          particle.currentTrack.completedAt = now;
-          particle.currentTrack = null;
+    const ctx = canvas.getContext('2d');
+    const CELL=38,TRACE_WIDTH=1.5,NODE_RADIUS=4,TRACE_MAX_OP=0.16,NODE_MAX_OP=0.28,DECAY_RATE=0.0028,LOOK_AHEAD=0.28,NUM_WALKERS=22,SPEED_MIN=0.28,SPEED_MAX=0.65,NODE_PLACE_PROB=0.5,COVERAGE=0.38,HOVER_RADIUS=68;
+    let cols,rows,traces=[],nodes=[],traceMap=new Map(),walkers=[],animId,lastTime=0,hoveredKey=null;
+    const DIRS=[{dc:0,dr:-1},{dc:0,dr:1},{dc:-1,dr:0},{dc:1,dr:0}];
+    function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a;}
+    function px(c){return c*CELL;} function py(r){return r*CELL;} function nkey(c,r){return`${c},${r}`;}
+    function buildNetwork(){
+      traces=[];nodes=[];traceMap=new Map();
+      const grid=Array.from({length:rows},()=>Array.from({length:cols},()=>({traced:false,nodeAt:false})));
+      const target=Math.floor(cols*rows*COVERAGE);let filled=0;
+      const seeds=Math.max(8,Math.floor(cols*rows/45));
+      for(let s=0;s<seeds*3&&filled<target;s++){
+        const sc=1+Math.floor(Math.random()*(cols-2)),sr=1+Math.floor(Math.random()*(rows-2));
+        if(grid[sr][sc].traced)continue;
+        grid[sr][sc].traced=true;grid[sr][sc].nodeAt=true;nodes.push({col:sc,row:sr});filled++;
+        let c=sc,r=sr;const maxSteps=Math.floor(cols*rows/seeds*3.5);
+        for(let step=0;step<maxSteps&&filled<target;step++){
+          const dirs=shuffle([...DIRS]);let moved=false;
+          for(const d of dirs){
+            const nc=c+d.dc,nr=r+d.dr;
+            if(nc<1||nc>=cols-1||nr<1||nr>=rows-1)continue;
+            if(grid[nr][nc].traced&&Math.random()>0.18)continue;
+            traces.push({x1:c,y1:r,x2:nc,y2:nr,life:0,extent:0});
+            if(!grid[nr][nc].traced){grid[nr][nc].traced=true;filled++;}
+            if(!grid[nr][nc].nodeAt&&Math.random()<NODE_PLACE_PROB){grid[nr][nc].nodeAt=true;nodes.push({col:nc,row:nr});}
+            c=nc;r=nr;moved=true;break;
+          }
+          if(!moved)break;
         }
-
-        if (!particle.currentTrack) {
-          particle.currentTrack = createTrack(point.segment, particle.direction, now, point.segmentIndex);
-          particle.tracks.push(particle.currentTrack);
-          particle.lastSegmentIndex = point.segmentIndex;
-        }
-
-        particle.tracks = particle.tracks.filter(track => updateTrack(track, point, now));
-
-        particle.el.style.opacity = (0.24 + heartbeat * 0.10).toFixed(3);
-        particle.el.style.width = particle.el.style.height = '4px';
-        particle.el.style.transform = `translate3d(${point.x.toFixed(2)}px, ${point.y.toFixed(2)}px, 0)`;
-      });
-
-      requestAnimationFrame(animateParticles);
+        if(!grid[r][c].nodeAt){grid[r][c].nodeAt=true;nodes.push({col:c,row:r});}
+      }
+      traces.forEach((t,i)=>{for(const k of[nkey(t.x1,t.y1),nkey(t.x2,t.y2)]){if(!traceMap.has(k))traceMap.set(k,[]);traceMap.get(k).push(i);}});
     }
-
-    buildParticles();
-    requestAnimationFrame(animateParticles);
-    window.addEventListener('resize', rebuild, { passive: true });
-  }
+    function spawnWalker(fromCol,fromRow,isHover=false){
+      const k=nkey(fromCol,fromRow),pool=traceMap.get(k);
+      if(!pool||!pool.length)return;
+      const idx=pool[Math.floor(Math.random()*pool.length)],t=traces[idx];
+      walkers.push({idx,forward:t.x1===fromCol&&t.y1===fromRow,progress:0,speed:SPEED_MIN+Math.random()*(SPEED_MAX-SPEED_MIN),trail:[],isHover,hopsLeft:isHover?3:-1});
+    }
+    function initWalkers(){walkers=[];for(let i=0;i<NUM_WALKERS;i++){if(!nodes.length)break;const n=nodes[Math.floor(Math.random()*nodes.length)];spawnWalker(n.col,n.row);}}
+    function animate(now){
+      animId=requestAnimationFrame(animate);
+      if(!lastTime){lastTime=now;return;}
+      const dt=Math.min((now-lastTime)/1000,0.05);lastTime=now;
+      for(const t of traces){t.life=Math.max(0,t.life-DECAY_RATE);if(t.life===0)t.extent=0;}
+      for(let i=walkers.length-1;i>=0;i--){
+        const w=walkers[i],t=traces[w.idx];
+        t.life=1;t.extent=Math.max(t.extent,Math.min(1,w.progress+LOOK_AHEAD));
+        if(w.progress>0.25){
+          const endC=w.forward?t.x2:t.x1,endR=w.forward?t.y2:t.y1,la=(w.progress-0.25)/0.75;
+          for(const ni of(traceMap.get(nkey(endC,endR))||[])){if(ni!==w.idx){traces[ni].life=Math.max(traces[ni].life,la*0.55);traces[ni].extent=Math.max(traces[ni].extent,la*0.45);}}
+        }
+        w.progress+=w.speed*dt;
+        if(w.progress>=1){
+if(w.hopsLeft===0){walkers.splice(i,1);continue;}
+          const endC=w.forward?t.x2:t.x1,endR=w.forward?t.y2:t.y1;
+          const next=(traceMap.get(nkey(endC,endR))||[]).filter(x=>x!==w.idx);
+          if(!next.length){walkers.splice(i,1);continue;}
+          const ni=next[Math.floor(Math.random()*next.length)],nt=traces[ni];
+          w.forward=nt.x1===endC&&nt.y1===endR;w.idx=ni;w.progress=0;w.trail=[];
+          if(w.hopsLeft>0)w.hopsLeft--;
+        }
+      }
+      let regular=walkers.filter(w=>!w.isHover).length,attempts=0;
+      while(regular<NUM_WALKERS&&attempts++<40){const n=nodes[Math.floor(Math.random()*nodes.length)];spawnWalker(n.col,n.row);regular++;}
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(const t of traces){
+        if(t.life<0.01||t.extent<0.01)continue;
+        const x1=px(t.x1),y1=py(t.y1),x2=px(t.x2),y2=py(t.y2);
+        ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x1+(x2-x1)*t.extent,y1+(y2-y1)*t.extent);
+        ctx.strokeStyle=`rgba(192,200,210,${t.life*TRACE_MAX_OP})`;ctx.lineWidth=TRACE_WIDTH;ctx.lineCap='round';ctx.stroke();
+      }
+      for(const n of nodes){
+        const connected=traceMap.get(nkey(n.col,n.row))||[];
+        const life=connected.reduce((m,i)=>Math.max(m,traces[i].life),0);
+        if(life<0.04)continue;
+        ctx.shadowBlur=1+life*3;ctx.shadowColor=`rgba(180,210,240,${life*0.2})`;
+        ctx.beginPath();ctx.arc(px(n.col),py(n.row),NODE_RADIUS*Math.min(1,0.4+life*0.8),0,Math.PI*2);
+        ctx.fillStyle=`rgba(215,225,235,${life*NODE_MAX_OP})`;ctx.fill();ctx.shadowBlur=0;
+      }
+      for(const w of walkers){
+        const t=traces[w.idx];
+        const x1=w.forward?px(t.x1):px(t.x2),y1=w.forward?py(t.y1):py(t.y2);
+        const x2=w.forward?px(t.x2):px(t.x1),y2=w.forward?py(t.y2):py(t.y1);
+        const cx=x1+(x2-x1)*w.progress,cy=y1+(y2-y1)*w.progress;
+        w.trail.push({x:cx,y:cy});if(w.trail.length>18)w.trail.shift();
+        for(let j=0;j<w.trail.length;j++){const frac=w.trail.length>1?j/(w.trail.length-1):1;ctx.beginPath();ctx.arc(w.trail[j].x,w.trail[j].y,1.4+frac*0.8,0,Math.PI*2);ctx.fillStyle=`rgba(200,218,235,${frac*(w.isHover?0.20:0.13)})`;ctx.fill();}
+        ctx.shadowBlur=w.isHover?6:4;ctx.shadowColor=w.isHover?'rgba(160,220,255,0.45)':'rgba(220,235,255,0.35)';
+        ctx.beginPath();ctx.arc(cx,cy,w.isHover?2.8:2.2,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.75)';ctx.fill();ctx.shadowBlur=0;
+      }
+    }
+    window.addEventListener('mousemove',function(e){
+      const rect=canvas.getBoundingClientRect(),mx=e.clientX-rect.left,my=e.clientY-rect.top;
+      let nearest=null,nearestDist=HOVER_RADIUS;
+      for(const n of nodes){const dx=px(n.col)-mx,dy=py(n.row)-my,d=Math.sqrt(dx*dx+dy*dy);if(d<nearestDist){nearestDist=d;nearest=n;}}
+      const k=nearest?nkey(nearest.col,nearest.row):null;
+      if(k!==hoveredKey){hoveredKey=k;if(nearest){const pool=traceMap.get(k)||[],picked=shuffle([...pool]).slice(0,1);for(const idx of picked){const t=traces[idx];walkers.push({idx,forward:t.x1===nearest.col&&t.y1===nearest.row,progress:0,speed:0.9+Math.random()*0.4,trail:[],isHover:true,hopsLeft:3});}}}
+    });
+    function resize(){
+      if(animId)cancelAnimationFrame(animId);
+      canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;
+      cols=Math.ceil(canvas.width/CELL)+1;rows=Math.ceil(canvas.height/CELL)+1;
+      buildNetwork();initWalkers();lastTime=0;animId=requestAnimationFrame(animate);
+    }
+    let resizeTimer;
+    window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(resize,150);});
+    if(document.readyState==='complete'){resize();}else{window.addEventListener('load',resize);}
+  })();
   /* ── Pricing page tabs ─────────────────── */
   const pricingTabs = document.querySelectorAll('.pricing-tab');
   if (pricingTabs.length) {

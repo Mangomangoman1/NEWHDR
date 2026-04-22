@@ -1,8 +1,8 @@
-// Hailey Device Repair — Service Worker v2
+// Hailey Device Repair — Service Worker v3
 // Network-first for HTML, cache-first for static assets
-// Updated: 2026-03-26
+// Updated: 2026-04-22
 
-const CACHE_NAME = 'hdr-v2';
+const CACHE_NAME = 'hdr-v3';
 const STATIC_ASSETS = [
   '/',
   '/style.css',
