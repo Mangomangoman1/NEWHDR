@@ -449,7 +449,6 @@
       'Let me fix it.',
       'Save hundreds.',
       'Same-day repair.',
-      'Honest pricing, always.',
       'Text me anytime.'
     ];
     let phraseIndex = 0;
