@@ -747,6 +747,7 @@
   (function () {
     const canvas = document.getElementById('pcb-canvas');
     if (!canvas) return;
+    if (window.matchMedia('(max-width: 768px)').matches) return;
 
     const ctx = canvas.getContext('2d');
     const CELL=38,TRACE_WIDTH=1.5,NODE_RADIUS=4,TRACE_MAX_OP=0.16,NODE_MAX_OP=0.28,DECAY_RATE=0.0028,LOOK_AHEAD=0.28,NUM_WALKERS=22,SPEED_MIN=0.28,SPEED_MAX=0.65,NODE_PLACE_PROB=0.5,COVERAGE=0.38,HOVER_RADIUS=68;
