@@ -19,3 +19,6 @@
 /faq              /faq.html          200
 /repair-sos          /repair-sos.html       200
 /data-recovery      /data-recovery.html    200
+/laptop-wont-turn-on /laptop-wont-turn-on.html 200
+/dead-laptop         /laptop-wont-turn-on      301
+/no-power-laptop     /laptop-wont-turn-on      301
