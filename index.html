@@ -107,8 +107,8 @@ a{color:inherit;text-decoration:none}
 .sel-card:hover .sel-arrow .material-symbols-outlined{transform:translateX(4px)}
 .sel-badge{display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:var(--accent);color:#fff;border-radius:100px;padding:0.15rem 0.55rem;margin-left:0.5rem;vertical-align:middle}
 </style>
-  <link rel="preload" href="style.css?v=home-polish-20260423" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css?v=home-polish-20260423" /></noscript>
+  <link rel="preload" href="style.css?v=home-bold-20260424" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="style.css?v=home-bold-20260424" /></noscript>
 
   <!-- Structured Data: LocalBusiness JSON-LD -->
   <script type="application/ld+json">
@@ -524,78 +524,49 @@ a{color:inherit;text-decoration:none}
   </section>
 
   <!-- ═══════════════════════════════════════════
-       RECENTLY FIXED TICKER
+       REPAIR LEDGER + TEXT GUIDE
   ══════════════════════════════════════════════ -->
-  <div class="ticker-section" aria-label="Recent repairs">
-    <div class="container ticker-header">
+  <div class="ticker-section repair-ledger-section" aria-label="Recent repairs">
+    <div class="container ticker-header repair-ledger-header">
       <span class="material-symbols-outlined ticker-icon" aria-hidden="true">bolt</span>
-      <span class="ticker-label">Recently Fixed</span>
+      <span class="ticker-label">Repair Ledger</span>
+      <span class="ledger-note">Recent bench work · real problems, plain-English outcomes</span>
     </div>
-    <div class="ticker-track" id="tickerTrack">
-      <div class="ticker-scroll">
-        <div class="ticker-item">
-          <span class="ticker-device">iPhone 14 Pro</span>
-          <span class="ticker-repair">Screen Replacement</span>
-          <span class="ticker-time">2 hours ago</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">MacBook Air M2</span>
-          <span class="ticker-repair">Battery Swap</span>
-          <span class="ticker-time">Yesterday</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">Samsung Galaxy S24</span>
-          <span class="ticker-repair">Charging Port</span>
-          <span class="ticker-time">Yesterday</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">iPad 10th Gen</span>
-          <span class="ticker-repair">Cracked Screen</span>
-          <span class="ticker-time">2 days ago</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">iPhone 13</span>
-          <span class="ticker-repair">Battery + Screen</span>
-          <span class="ticker-time">2 days ago</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">Dell XPS 15</span>
-          <span class="ticker-repair">SSD Upgrade</span>
-          <span class="ticker-time">3 days ago</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">iPhone 15 Pro Max</span>
-          <span class="ticker-repair">Back Glass</span>
-          <span class="ticker-time">3 days ago</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">Galaxy Tab S9</span>
-          <span class="ticker-repair">Screen Replacement</span>
-          <span class="ticker-time">4 days ago</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">ThinkPad T14</span>
-          <span class="ticker-repair">Keyboard Replacement</span>
-          <span class="ticker-time">4 days ago</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">iPhone 12</span>
-          <span class="ticker-repair">Water Damage Recovery</span>
-          <span class="ticker-time">5 days ago</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">Nintendo Switch OLED</span>
-          <span class="ticker-repair">Joy-Con Drift Fix</span>
-          <span class="ticker-time">5 days ago</span>
-        </div>
-        <div class="ticker-item">
-          <span class="ticker-device">PS5</span>
-          <span class="ticker-repair">HDMI Port Replacement</span>
-          <span class="ticker-time">6 days ago</span>
-        </div>
+    <div class="ticker-track repair-ledger-track" id="tickerTrack">
+      <div class="ticker-scroll repair-ledger-scroll">
+        <div class="ticker-item ledger-item"><span class="ticker-device">iPhone 14 Pro</span><span class="ticker-repair">Cracked screen → display replaced</span><span class="ticker-time">Back same day</span></div>
+        <div class="ticker-item ledger-item"><span class="ticker-device">MacBook Air M2</span><span class="ticker-repair">Battery health failing → swapped + tested</span><span class="ticker-time">1 day</span></div>
+        <div class="ticker-item ledger-item"><span class="ticker-device">Galaxy S24</span><span class="ticker-repair">Wouldn't charge → port cleaned/repaired</span><span class="ticker-time">Same day</span></div>
+        <div class="ticker-item ledger-item"><span class="ticker-device">iPad 10th Gen</span><span class="ticker-repair">Kid-drop screen crack → glass replaced</span><span class="ticker-time">2 days</span></div>
+        <div class="ticker-item ledger-item"><span class="ticker-device">Dell XPS 15</span><span class="ticker-repair">Slow + full drive → SSD upgrade</span><span class="ticker-time">Next day</span></div>
+        <div class="ticker-item ledger-item"><span class="ticker-device">Nintendo Switch OLED</span><span class="ticker-repair">Joy-Con drift → sticks recalibrated</span><span class="ticker-time">Same day</span></div>
+        <div class="ticker-item ledger-item"><span class="ticker-device">PS5</span><span class="ticker-repair">No signal → HDMI port replaced</span><span class="ticker-time">2 days</span></div>
+        <div class="ticker-item ledger-item"><span class="ticker-device">ThinkPad T14</span><span class="ticker-repair">Sticky keys → keyboard replaced</span><span class="ticker-time">1 day</span></div>
       </div>
     </div>
   </div>
+
+  <section class="section text-intake-section" aria-labelledby="text-intake-title">
+    <div class="container">
+      <div class="text-intake-card" data-animate>
+        <div class="text-intake-copy">
+          <div class="section-eyebrow">Fastest Quote</div>
+          <h2 class="section-title" id="text-intake-title">Text me the useful stuff once.</h2>
+          <p class="section-sub">Most repair quotes get faster when the first message includes the device, the symptom, and one photo if it helps. No tech vocabulary required.</p>
+        </div>
+        <div class="text-ticket" aria-label="What to text for a faster quote">
+          <div class="text-ticket-top"><span class="material-symbols-outlined" aria-hidden="true">sms</span><strong>Copy this format</strong></div>
+          <ul class="text-ticket-list">
+            <li><span>1</span> Device/model: iPhone 14, Dell XPS, Switch, etc.</li>
+            <li><span>2</span> What happened: dropped, wet, won't charge, slow, no power.</li>
+            <li><span>3</span> What you need: fix, quote, data recovery, upgrade, or diagnosis.</li>
+          </ul>
+          <code>“iPhone 14 Pro, screen cracked after a drop. Touch still works. Can you quote it?”</code>
+          <a href="sms:+120****6111" class="btn btn-primary text-ticket-cta"><span class="material-symbols-outlined" aria-hidden="true">send</span>Text for a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════════════
        SERVICES GRID
@@ -1078,6 +1049,27 @@ a{color:inherit;text-decoration:none}
             <h3>Thorough Diagnosis</h3>
             <p>Not sure what's wrong? Every repair starts with a thorough diagnosis. You'll get a firm quote before any work begins.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       OWNER TRUST NOTE
+  ══════════════════════════════════════════════ -->
+  <section class="section owner-note-section" aria-labelledby="owner-note-title">
+    <div class="container">
+      <div class="owner-note" data-animate>
+        <div class="owner-note-mark" aria-hidden="true">ST</div>
+        <div class="owner-note-copy">
+          <div class="section-eyebrow">A Plain Note From Samuel</div>
+          <h2 class="section-title" id="owner-note-title">I’m not here to sell you a repair you don’t need.</h2>
+          <p>If it’s worth fixing, I’ll tell you. If replacement is smarter, I’ll tell you that too. The whole point is to give Hailey and the Wood River Valley a repair option that feels direct, honest, and local.</p>
+        </div>
+        <div class="owner-note-proof" aria-label="How repairs are handled">
+          <span><strong>Quote first</strong> before work starts</span>
+          <span><strong>Text updates</strong> from the person fixing it</span>
+          <span><strong>40-day warranty</strong> on repair work</span>
         </div>
       </div>
     </div>
