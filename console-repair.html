@@ -136,7 +136,7 @@ section .lp-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;
 .lp-bottom-cta-note{font-size:.82rem;color:var(--text-muted);margin-top:1.2rem}
 
 @media(max-width:900px){.lp-info-cards{grid-template-columns:repeat(2,1fr)}.lp-symptoms-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.lp-symptoms-grid{grid-template-columns:1fr}.lp-info-cards{grid-template-columns:1fr}.lp-compare-grid{grid-template-columns:1fr}.lp-hero-badges{gap:.35rem}.lp-hero-badge{font-size:.72rem;padding:.32rem .7rem}.pricing-table{font-size:.84rem}.pricing-table td{padding:.6rem .8rem}.pricing-table td:first-child{min-width:auto}}</style>
+@media(max-width:640px){.lp-symptoms-grid{grid-template-columns:1fr}.lp-info-cards{grid-template-columns:1fr}.lp-compare-grid{grid-template-columns:1fr}.lp-hero-badges{gap:.35rem}.lp-hero-badge{font-size:.72rem;padding:.32rem .7rem}.pricing-table thead{display:none}.pricing-table,.pricing-table tbody,.pricing-table tr,.pricing-table td{display:block;width:100%}.pricing-table tr{border-bottom:1px solid var(--border-subtle);padding:.55rem 0}.pricing-table tr:last-child{border-bottom:none}.pricing-table td{display:flex;justify-content:space-between;gap:1rem;padding:.34rem .9rem;border-bottom:none}.pricing-table td::before{content:attr(data-label);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}.pricing-table td:first-child{min-width:auto}}</style>
   <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="style.css" /></noscript>
 
@@ -505,69 +505,69 @@ section .lp-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;
           </thead>
           <tbody>
             <tr>
-              <td><strong>Joy-Con Drift Fix</strong> <span class="pricing-note">per Joy-Con</span></td>
-              <td>$29</td>
-              <td>45 min</td>
+              <td data-label="Repair"><strong>Joy-Con Drift Fix</strong> <span class="pricing-note">per Joy-Con</span></td>
+              <td data-label="Price">$29</td>
+              <td data-label="Time">45 min</td>
             </tr>
             <tr>
-              <td><strong>Controller Joystick</strong> <span class="pricing-note">Xbox / DualSense / Pro</span></td>
-              <td>$25–$35</td>
-              <td>45 min</td>
+              <td data-label="Repair"><strong>Controller Joystick</strong> <span class="pricing-note">Xbox / DualSense / Pro</span></td>
+              <td data-label="Price">$25–$35</td>
+              <td data-label="Time">45 min</td>
             </tr>
             <tr>
-              <td><strong>HDMI Port Replacement</strong> <span class="pricing-note">PS5 / Xbox / PS4</span></td>
-              <td>$59</td>
-              <td>1–2 hrs</td>
+              <td data-label="Repair"><strong>HDMI Port Replacement</strong> <span class="pricing-note">PS5 / Xbox / PS4</span></td>
+              <td data-label="Price">$59</td>
+              <td data-label="Time">1–2 hrs</td>
             </tr>
             <tr>
-              <td><strong>Thermal Paste + Deep Clean</strong> <span class="pricing-note">any console</span></td>
-              <td>$39</td>
-              <td>1 hr</td>
+              <td data-label="Repair"><strong>Thermal Paste + Deep Clean</strong> <span class="pricing-note">any console</span></td>
+              <td data-label="Price">$39</td>
+              <td data-label="Time">1 hr</td>
             </tr>
             <tr>
-              <td><strong>Disc Drive Repair</strong> <span class="pricing-note">PS5 / Xbox / PS4</span></td>
-              <td>$49–$79</td>
-              <td>1–2 hrs</td>
+              <td data-label="Repair"><strong>Disc Drive Repair</strong> <span class="pricing-note">PS5 / Xbox / PS4</span></td>
+              <td data-label="Price">$49–$79</td>
+              <td data-label="Time">1–2 hrs</td>
             </tr>
             <tr>
-              <td><strong>Switch Screen Replacement</strong> <span class="pricing-note">LCD or OLED</span></td>
-              <td>$69–$99</td>
-              <td>1–2 hrs</td>
+              <td data-label="Repair"><strong>Switch Screen Replacement</strong> <span class="pricing-note">LCD or OLED</span></td>
+              <td data-label="Price">$69–$99</td>
+              <td data-label="Time">1–2 hrs</td>
             </tr>
             <tr>
-              <td><strong>Switch Charging Port</strong> <span class="pricing-note">USB-C replacement</span></td>
-              <td>$45</td>
-              <td>1 hr</td>
+              <td data-label="Repair"><strong>Switch Charging Port</strong> <span class="pricing-note">USB-C replacement</span></td>
+              <td data-label="Price">$45</td>
+              <td data-label="Time">1 hr</td>
             </tr>
             <tr>
-              <td><strong>Steam Deck Screen</strong> <span class="pricing-note">LCD or OLED</span></td>
-              <td>$79–$109</td>
-              <td>1–2 hrs</td>
+              <td data-label="Repair"><strong>Steam Deck Screen</strong> <span class="pricing-note">LCD or OLED</span></td>
+              <td data-label="Price">$79–$109</td>
+              <td data-label="Time">1–2 hrs</td>
             </tr>
             <tr>
-              <td><strong>Steam Deck Joystick</strong> <span class="pricing-note">drift / dead zone</span></td>
-              <td>$35</td>
-              <td>45 min</td>
+              <td data-label="Repair"><strong>Steam Deck Joystick</strong> <span class="pricing-note">drift / dead zone</span></td>
+              <td data-label="Price">$35</td>
+              <td data-label="Time">45 min</td>
             </tr>
             <tr>
-              <td><strong>Battery Replacement</strong> <span class="pricing-note">Switch / Steam Deck</span></td>
-              <td>$49–$59</td>
-              <td>1 hr</td>
+              <td data-label="Repair"><strong>Battery Replacement</strong> <span class="pricing-note">Switch / Steam Deck</span></td>
+              <td data-label="Price">$49–$59</td>
+              <td data-label="Time">1 hr</td>
             </tr>
             <tr>
-              <td><strong>SSD Upgrade</strong> <span class="pricing-note">PS5 / Steam Deck</span></td>
-              <td>from $49 <span class="pricing-note">+ SSD cost</span></td>
-              <td>30 min</td>
+              <td data-label="Repair"><strong>SSD Upgrade</strong> <span class="pricing-note">PS5 / Steam Deck</span></td>
+              <td data-label="Price">from $49 <span class="pricing-note">+ SSD cost</span></td>
+              <td data-label="Time">30 min</td>
             </tr>
             <tr>
-              <td><strong>Fan Replacement</strong> <span class="pricing-note">any console / handheld</span></td>
-              <td>$39–$55</td>
-              <td>1 hr</td>
+              <td data-label="Repair"><strong>Fan Replacement</strong> <span class="pricing-note">any console / handheld</span></td>
+              <td data-label="Price">$39–$55</td>
+              <td data-label="Time">1 hr</td>
             </tr>
             <tr class="pricing-row--highlight">
-              <td><strong>Diagnostics</strong> <span class="pricing-note">any console or controller</span></td>
-              <td><strong>FREE</strong></td>
-              <td>—</td>
+              <td data-label="Repair"><strong>Diagnostics</strong> <span class="pricing-note">any console or controller</span></td>
+              <td data-label="Price"><strong>FREE</strong></td>
+              <td data-label="Time">—</td>
             </tr>
           </tbody>
         </table>

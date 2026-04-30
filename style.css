@@ -5228,6 +5228,20 @@ button[type="submit"]:disabled {
   .lp-pricing-col--name {
     padding-top: 0.75rem;
   }
+  .lp-pricing-col--price,
+  .lp-pricing-col--time {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .lp-pricing-col--price::before,
+  .lp-pricing-col--time::before {
+    content: attr(data-label);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
   .lp-pricing-col--time {
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--border-subtle);
