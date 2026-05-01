@@ -10297,3 +10297,288 @@ body:not(.menu-open) .hero {
     transform: none;
   }
 }
+/* ─── SERVICE CARD ARTIFACT ICON POLISH — 2026-05-01 ─────────── */
+#services .service-ticket-art {
+  width: 112px;
+  height: 76px;
+  right: 16px;
+  bottom: 54px;
+  opacity: 0.34;
+  filter: drop-shadow(0 10px 22px color-mix(in srgb, var(--ticket-accent) 12%, transparent));
+}
+#services .service-ticket:hover .service-ticket-art,
+#services .service-ticket.is-tilting .service-ticket-art {
+  opacity: 0.72;
+}
+#services .service-ticket-art::before,
+#services .service-ticket-art::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+/* iPhone/iPad repair: phone slab with speaker, camera island, screws, cracked-glass line */
+#services .service-ticket--phone .service-ticket-art {
+  width: 58px;
+  height: 86px;
+  right: 34px;
+  bottom: 42px;
+  border: 1px solid color-mix(in srgb, var(--ticket-accent) 86%, white 8%);
+  border-radius: 15px;
+  background:
+    linear-gradient(132deg, transparent 0 44%, color-mix(in srgb, var(--ticket-accent) 70%, transparent) 45% 46%, transparent 47% 100%),
+    radial-gradient(circle at 15px 18px, rgba(255,255,255,0.18) 0 2px, transparent 2.5px),
+    linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.01));
+  box-shadow:
+    inset 0 0 0 5px rgba(255,255,255,0.025),
+    inset 0 -18px 24px rgba(0,0,0,0.22);
+}
+#services .service-ticket--phone .service-ticket-art::before {
+  left: 50%;
+  top: 6px;
+  width: 20px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--ticket-accent);
+  transform: translateX(-50%);
+  box-shadow:
+    -18px 68px 0 -1px var(--ticket-accent),
+    18px 68px 0 -1px rgba(255,255,255,0.2);
+}
+#services .service-ticket--phone .service-ticket-art::after {
+  right: -18px;
+  top: 14px;
+  width: 18px;
+  height: 28px;
+  border: 1px solid color-mix(in srgb, var(--ticket-accent) 64%, transparent);
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+  background: radial-gradient(circle at 8px 9px, var(--ticket-accent) 0 3px, transparent 3.5px);
+}
+
+/* Android: board trace + camera punch-hole + repair pads */
+#services .service-ticket--android .service-ticket-art {
+  border: 1px solid color-mix(in srgb, var(--ticket-accent) 72%, transparent);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 18px 16px, var(--ticket-accent) 0 4px, transparent 4.5px),
+    radial-gradient(circle at 76px 46px, rgba(255,255,255,0.2) 0 3px, transparent 3.5px),
+    linear-gradient(90deg, transparent 0 20px, color-mix(in srgb, var(--ticket-accent) 54%, transparent) 21px 22px, transparent 23px 100%),
+    linear-gradient(0deg, transparent 0 38px, color-mix(in srgb, var(--ticket-accent) 42%, transparent) 39px 40px, transparent 41px 100%),
+    rgba(255,255,255,0.018);
+  box-shadow: inset 0 0 0 6px rgba(255,255,255,0.018);
+}
+#services .service-ticket--android .service-ticket-art::before {
+  left: 24px;
+  top: 30px;
+  width: 52px;
+  height: 22px;
+  border-left: 1px solid var(--ticket-accent);
+  border-bottom: 1px solid var(--ticket-accent);
+  border-radius: 0 0 0 10px;
+}
+#services .service-ticket--android .service-ticket-art::after {
+  right: 13px;
+  top: 11px;
+  width: 22px;
+  height: 42px;
+  background: radial-gradient(circle, var(--ticket-accent) 0 2px, transparent 2.5px) 0 0/11px 11px;
+}
+
+/* Laptop/PC: open laptop, keyboard rows, diagnostic terminal cursor */
+#services .service-ticket--laptop .service-ticket-art {
+  width: 118px;
+  height: 76px;
+  background: none;
+  border-bottom: 3px solid color-mix(in srgb, var(--ticket-accent) 82%, transparent);
+}
+#services .service-ticket--laptop .service-ticket-art::before {
+  left: 18px;
+  top: 4px;
+  width: 80px;
+  height: 48px;
+  border: 1px solid var(--ticket-accent);
+  border-radius: 8px 8px 3px 3px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.18) 0 16px, transparent 16px 100%) 12px 12px/48px 2px no-repeat,
+    linear-gradient(90deg, var(--ticket-accent) 0 8px, transparent 8px 100%) 12px 22px/54px 2px no-repeat,
+    linear-gradient(90deg, rgba(255,255,255,0.16) 0 28px, transparent 28px 100%) 12px 32px/56px 2px no-repeat;
+}
+#services .service-ticket--laptop .service-ticket-art::after {
+  left: 3px;
+  bottom: 0;
+  width: 112px;
+  height: 18px;
+  border: 1px solid color-mix(in srgb, var(--ticket-accent) 68%, transparent);
+  border-top: 0;
+  border-radius: 2px 2px 12px 12px;
+  background:
+    radial-gradient(circle at 56px 7px, rgba(255,255,255,0.22) 0 2px, transparent 2.5px),
+    repeating-linear-gradient(90deg, transparent 0 6px, rgba(255,255,255,0.12) 6px 7px);
+}
+
+/* Tablet: wider glass slab, home dot, screen protector corner, broken corner */
+#services .service-ticket--tablet .service-ticket-art {
+  width: 104px;
+  height: 72px;
+  border: 1px solid color-mix(in srgb, var(--ticket-accent) 82%, transparent);
+  border-radius: 12px;
+  background:
+    linear-gradient(145deg, transparent 0 72%, color-mix(in srgb, var(--ticket-accent) 54%, transparent) 73% 74%, transparent 75% 100%),
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  box-shadow: inset 0 0 0 6px rgba(255,255,255,0.024);
+}
+#services .service-ticket--tablet .service-ticket-art::before {
+  left: 12px;
+  top: 10px;
+  width: 68px;
+  height: 42px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 7px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent 38%);
+}
+#services .service-ticket--tablet .service-ticket-art::after {
+  right: 10px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--ticket-accent);
+  transform: translateY(-50%);
+}
+
+/* Console: gamepad shell with sticks, d-pad, AB buttons */
+#services .service-ticket--console .service-ticket-art {
+  width: 118px;
+  height: 66px;
+  border: 1px solid color-mix(in srgb, var(--ticket-accent) 76%, transparent);
+  border-radius: 30px 30px 18px 18px;
+  background:
+    radial-gradient(circle at 35px 34px, rgba(255,255,255,0.18) 0 8px, transparent 8.5px),
+    radial-gradient(circle at 78px 34px, color-mix(in srgb, var(--ticket-accent) 72%, transparent) 0 8px, transparent 8.5px),
+    linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.012));
+}
+#services .service-ticket--console .service-ticket-art::before {
+  left: 17px;
+  top: 20px;
+  width: 25px;
+  height: 25px;
+  background:
+    linear-gradient(var(--ticket-accent), var(--ticket-accent)) 10px 0/5px 25px no-repeat,
+    linear-gradient(90deg, var(--ticket-accent), var(--ticket-accent)) 0 10px/25px 5px no-repeat;
+  border-radius: 5px;
+}
+#services .service-ticket--console .service-ticket-art::after {
+  right: 19px;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--ticket-accent);
+  box-shadow:
+    13px 9px 0 rgba(255,255,255,0.22),
+    0 18px 0 color-mix(in srgb, var(--ticket-accent) 72%, transparent),
+    -13px 9px 0 rgba(255,255,255,0.16);
+}
+
+/* Diagnostics: magnifying glass over tiny board with status dots */
+#services .service-ticket--diagnostics .service-ticket-art {
+  border: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+  background-size: 14px 14px;
+  border-radius: 12px;
+}
+#services .service-ticket--diagnostics .service-ticket-art::before {
+  left: 18px;
+  top: 8px;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--ticket-accent);
+  border-radius: 999px;
+  background: radial-gradient(circle at 22px 20px, rgba(255,255,255,0.18) 0 4px, transparent 4.5px);
+}
+#services .service-ticket--diagnostics .service-ticket-art::after {
+  right: 20px;
+  bottom: 10px;
+  width: 36px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--ticket-accent);
+  transform: rotate(42deg);
+  box-shadow: -56px -30px 0 -1px rgba(255,255,255,0.22), -34px -10px 0 -1px var(--ticket-accent);
+}
+
+/* Tune-up: speedometer + cleanup sweep + performance ticks */
+#services .service-ticket--tuneup .service-ticket-art {
+  border: 1px solid color-mix(in srgb, var(--ticket-accent) 70%, transparent);
+  border-bottom-width: 0;
+  border-radius: 70px 70px 8px 8px;
+  background:
+    conic-gradient(from 225deg, transparent 0 20%, rgba(255,255,255,0.16) 20% 24%, transparent 24% 38%, var(--ticket-accent) 38% 43%, transparent 43% 100%);
+}
+#services .service-ticket--tuneup .service-ticket-art::before {
+  left: 52px;
+  bottom: 18px;
+  width: 38px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--ticket-accent);
+  transform: rotate(-34deg);
+  transform-origin: left center;
+}
+#services .service-ticket--tuneup .service-ticket-art::after {
+  left: 24px;
+  bottom: 10px;
+  width: 64px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.16), var(--ticket-accent));
+  opacity: 0.78;
+}
+
+/* Mail-in: shipping box + label + route line */
+#services .service-ticket--mail .service-ticket-art {
+  width: 112px;
+  height: 76px;
+  border: 1px solid color-mix(in srgb, var(--ticket-accent) 76%, transparent);
+  border-radius: 12px;
+  background:
+    linear-gradient(90deg, transparent 0 54%, color-mix(in srgb, var(--ticket-accent) 34%, transparent) 55% 56%, transparent 57% 100%),
+    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.014));
+}
+#services .service-ticket--mail .service-ticket-art::before {
+  left: 9px;
+  top: 11px;
+  width: 44px;
+  height: 22px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 5px;
+  background:
+    linear-gradient(90deg, var(--ticket-accent) 0 18px, transparent 18px 100%) 7px 7px/30px 2px no-repeat,
+    linear-gradient(90deg, rgba(255,255,255,0.18) 0 26px, transparent 26px 100%) 7px 14px/30px 2px no-repeat;
+}
+#services .service-ticket--mail .service-ticket-art::after {
+  right: 10px;
+  bottom: 12px;
+  width: 48px;
+  height: 28px;
+  border-top: 1px dashed var(--ticket-accent);
+  border-right: 1px dashed var(--ticket-accent);
+  border-radius: 0 18px 0 0;
+  box-shadow: -44px -8px 0 -5px var(--ticket-accent), 2px 18px 0 -5px rgba(255,255,255,0.24);
+}
+@media (max-width: 768px) {
+  #services .service-ticket-art {
+    width: 84px;
+    height: 58px;
+    right: 12px;
+    bottom: 46px;
+  }
+  #services .service-ticket--phone .service-ticket-art {
+    width: 44px;
+    height: 66px;
+    right: 28px;
+  }
+}
