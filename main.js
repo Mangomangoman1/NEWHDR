@@ -728,19 +728,57 @@
 
   /* ── 3D card tilt ────────────────────── */
   document.querySelectorAll('.card-tilt').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
+    if (window.matchMedia('(hover: none), (pointer: coarse), (prefers-reduced-motion: reduce)').matches) return;
+
+    let rect = null;
+    let raf = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    const maxTilt = 4.5;
+    const ease = 0.18;
+
+    function render() {
+      currentX += (targetX - currentX) * ease;
+      currentY += (targetY - currentY) * ease;
+      card.style.setProperty('--tilt-x', currentX.toFixed(3) + 'deg');
+      card.style.setProperty('--tilt-y', currentY.toFixed(3) + 'deg');
+
+      if (Math.abs(targetX - currentX) > 0.01 || Math.abs(targetY - currentY) > 0.01) {
+        raf = requestAnimationFrame(render);
+      } else {
+        raf = 0;
+      }
+    }
+
+    function queue() {
+      if (!raf) raf = requestAnimationFrame(render);
+    }
+
+    card.addEventListener('pointerenter', () => {
+      rect = card.getBoundingClientRect();
+      card.classList.add('is-tilting');
+    }, { passive: true });
+
+    card.addEventListener('pointermove', e => {
+      if (!rect) rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       const midX = rect.width / 2;
       const midY = rect.height / 2;
-      const rotY = ((x - midX) / midX) * 6; // max 6deg
-      const rotX = ((midY - y) / midY) * 6;
-      card.style.transform = `perspective(600px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(600px) rotateX(0) rotateY(0)';
-    });
+      targetY = ((x - midX) / midX) * maxTilt;
+      targetX = ((midY - y) / midY) * maxTilt;
+      queue();
+    }, { passive: true });
+
+    card.addEventListener('pointerleave', () => {
+      rect = null;
+      targetX = 0;
+      targetY = 0;
+      card.classList.remove('is-tilting');
+      queue();
+    }, { passive: true });
   });
 
   /* ── Hero PCB canvas ─────────────────── */

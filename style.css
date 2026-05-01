@@ -10057,7 +10057,13 @@ body:not(.menu-open) .hero {
     0 16px 42px rgba(0,0,0,0.24),
     inset 0 1px 0 rgba(255,255,255,0.08),
     inset 0 -1px 0 rgba(0,0,0,0.28);
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  transform: perspective(900px) translate3d(0,0,0) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
   transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 #services .service-ticket--android { --ticket-accent: var(--color-green, #3fb950); }
 #services .service-ticket--laptop { --ticket-accent: #a78bfa; }
@@ -10095,7 +10101,8 @@ body:not(.menu-open) .hero {
   transform: translate3d(18px,-18px,20px);
   transition: opacity 220ms ease, transform 220ms var(--ease-professional, ease);
 }
-#services .service-ticket:hover {
+#services .service-ticket:hover,
+#services .service-ticket.is-tilting {
   border-color: color-mix(in srgb, var(--ticket-accent) 44%, rgba(255,255,255,0.14));
   box-shadow:
     0 26px 64px rgba(0,0,0,0.34),
@@ -10103,7 +10110,8 @@ body:not(.menu-open) .hero {
     0 0 38px color-mix(in srgb, var(--ticket-accent) 13%, transparent),
     inset 0 1px 0 rgba(255,255,255,0.1);
 }
-#services .service-ticket:hover::after {
+#services .service-ticket:hover::after,
+#services .service-ticket.is-tilting::after {
   opacity: 1;
   transform: translate3d(0,0,20px);
 }
@@ -10146,7 +10154,8 @@ body:not(.menu-open) .hero {
     linear-gradient(135deg, color-mix(in srgb, var(--ticket-accent) 16%, transparent), rgba(255,255,255,0.04)),
     rgba(255,255,255,0.035);
 }
-#services .service-ticket:hover .card-icon {
+#services .service-ticket:hover .card-icon,
+#services .service-ticket.is-tilting .card-icon {
   transform: translateY(-2px) translateZ(30px) scale(1.04);
   box-shadow: 0 12px 28px color-mix(in srgb, var(--ticket-accent) 17%, transparent);
 }
@@ -10187,7 +10196,8 @@ body:not(.menu-open) .hero {
   pointer-events: none;
   transition: opacity 220ms ease, transform 220ms var(--ease-professional, ease);
 }
-#services .service-ticket:hover .service-ticket-art {
+#services .service-ticket:hover .service-ticket-art,
+#services .service-ticket.is-tilting .service-ticket-art {
   opacity: 0.58;
   transform: translate3d(-3px,-3px,22px);
 }
@@ -10280,9 +10290,10 @@ body:not(.menu-open) .hero {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  #services .service-ticket:hover,
-  #services .service-ticket:hover .card-icon,
-  #services .service-ticket:hover .service-ticket-art {
+  #services .service-ticket,
+#services .service-ticket .card-icon,
+#services .service-ticket .service-ticket-art,
+#services .service-ticket::after {
     transform: none;
   }
 }
