@@ -10037,203 +10037,171 @@ body:not(.menu-open) .hero {
     margin-top: 0.5rem;
   }
 }
-/* ─── HOMEPAGE SERVICE DIAGNOSTIC TICKET CARDS — 2026-05-01 ─────────── */
-.hero .service-selector-grid {
-  perspective: 1200px;
+/* ─── SERVICES GRID DIAGNOSTIC TICKET CARDS — 2026-05-01 ─────────── */
+#services .cards-grid {
   align-items: stretch;
+  perspective: 1200px;
 }
-.hero .sel-card {
+#services .service-ticket {
   --ticket-accent: var(--accent);
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 292px;
-  padding: 1.05rem 1.1rem 1.1rem;
-  gap: 0.85rem;
-  border-radius: 22px;
-  border-color: rgba(180, 200, 220, 0.16);
+  padding-top: 1rem;
+  border-color: rgba(180,200,220,0.16);
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.055), transparent 34%),
-    radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--ticket-accent) 24%, transparent), transparent 38%),
+    linear-gradient(135deg, rgba(255,255,255,0.055), transparent 32%),
+    radial-gradient(circle at 18% 0%, color-mix(in srgb, var(--ticket-accent) 18%, transparent), transparent 40%),
     linear-gradient(180deg, rgba(24,31,44,0.94), rgba(13,17,23,0.96));
   box-shadow:
-    0 18px 48px rgba(0,0,0,0.28),
+    0 16px 42px rgba(0,0,0,0.24),
     inset 0 1px 0 rgba(255,255,255,0.08),
-    inset 0 -1px 0 rgba(0,0,0,0.3);
+    inset 0 -1px 0 rgba(0,0,0,0.28);
   transform-style: preserve-3d;
-  transition: transform 220ms var(--ease-professional, ease), border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
-.hero .sel-card::before,
-.hero .sel-card::after {
+#services .service-ticket--android { --ticket-accent: var(--color-green, #3fb950); }
+#services .service-ticket--laptop { --ticket-accent: #a78bfa; }
+#services .service-ticket--tablet { --ticket-accent: var(--color-cyan, #B2C1CF); }
+#services .service-ticket--console { --ticket-accent: #f87171; }
+#services .service-ticket--diagnostics { --ticket-accent: #f59e0b; }
+#services .service-ticket--tuneup { --ticket-accent: #67e8f9; }
+#services .service-ticket--mail { --ticket-accent: #93c5fd; }
+#services .service-ticket::before,
+#services .service-ticket::after {
   content: "";
   position: absolute;
   pointer-events: none;
   z-index: -1;
 }
-.hero .sel-card::before {
+#services .service-ticket::before {
   inset: 10px;
   border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 16px;
+  border-radius: calc(var(--radius-lg, 20px) - 6px);
   background:
     linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
     linear-gradient(0deg, rgba(255,255,255,0.025) 1px, transparent 1px);
   background-size: 28px 28px;
-  mask-image: linear-gradient(140deg, transparent 0%, #000 18%, #000 72%, transparent 100%);
+  mask-image: linear-gradient(150deg, transparent 0%, #000 18%, #000 76%, transparent 100%);
   opacity: 0.5;
 }
-.hero .sel-card::after {
-  right: 16px;
-  bottom: 16px;
-  width: 118px;
-  height: 74px;
-  border-right: 1px solid color-mix(in srgb, var(--ticket-accent) 52%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--ticket-accent) 36%, transparent);
-  opacity: 0.42;
-  transform: translateZ(10px);
-}
-.hero .sel-card-it {
-  --ticket-accent: var(--color-cyan, #39c5cf);
-}
-.hero .sel-card:hover {
-  border-color: color-mix(in srgb, var(--ticket-accent) 48%, rgba(255,255,255,0.15));
-  transform: translateY(-6px) rotateX(1.5deg) rotateY(-1deg);
-  box-shadow:
-    0 28px 68px rgba(0,0,0,0.36),
-    0 0 0 1px color-mix(in srgb, var(--ticket-accent) 22%, transparent),
-    0 0 42px color-mix(in srgb, var(--ticket-accent) 16%, transparent),
-    inset 0 1px 0 rgba(255,255,255,0.1);
-}
-.hero .sel-bench-light {
-  position: absolute;
-  inset: -35% -20% auto auto;
-  width: 62%;
+#services .service-ticket::after {
+  top: -34%;
+  right: -18%;
+  width: 68%;
   aspect-ratio: 1;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(255,255,255,0.18), color-mix(in srgb, var(--ticket-accent) 14%, transparent) 34%, transparent 68%);
+  background: radial-gradient(circle, rgba(255,255,255,0.16), color-mix(in srgb, var(--ticket-accent) 14%, transparent) 34%, transparent 68%);
   opacity: 0;
-  transform: translate3d(18px, -18px, 28px);
+  transform: translate3d(18px,-18px,20px);
   transition: opacity 220ms ease, transform 220ms var(--ease-professional, ease);
-  pointer-events: none;
 }
-.hero .sel-card:hover .sel-bench-light {
+#services .service-ticket:hover {
+  border-color: color-mix(in srgb, var(--ticket-accent) 44%, rgba(255,255,255,0.14));
+  box-shadow:
+    0 26px 64px rgba(0,0,0,0.34),
+    0 0 0 1px color-mix(in srgb, var(--ticket-accent) 20%, transparent),
+    0 0 38px color-mix(in srgb, var(--ticket-accent) 13%, transparent),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+#services .service-ticket:hover::after {
   opacity: 1;
-  transform: translate3d(0, 0, 28px);
+  transform: translate3d(0,0,20px);
 }
-.hero .sel-ticket-strip {
+#services .service-ticket-strip {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 0.6rem;
+  align-items: center;
   min-height: 28px;
-  padding: 0.36rem 0.48rem;
+  margin-bottom: 1rem;
+  padding: 0.34rem 0.48rem;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
   background: rgba(5,10,16,0.34);
   color: var(--text-muted);
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  transform: translateZ(20px);
+  transform: translateZ(18px);
 }
-.hero .sel-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.34rem;
+#services .service-ticket-strip span:last-child {
   color: var(--text-secondary);
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
-.hero .sel-status i {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--ticket-accent);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ticket-accent) 14%, transparent);
-}
-.hero .sel-card-main {
+#services .service-ticket-main {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.88rem;
-  align-items: start;
+  gap: 0.86rem;
+  align-items: center;
+  margin-bottom: 0.9rem;
   transform: translateZ(24px);
 }
-.hero .sel-card .sel-icon {
+#services .service-ticket .card-icon {
   margin: 0;
   border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--ticket-accent) 24%, rgba(255,255,255,0.08));
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--ticket-accent) 18%, transparent), rgba(255,255,255,0.04)),
+    linear-gradient(135deg, color-mix(in srgb, var(--ticket-accent) 16%, transparent), rgba(255,255,255,0.04)),
     rgba(255,255,255,0.035);
-  border: 1px solid color-mix(in srgb, var(--ticket-accent) 20%, rgba(255,255,255,0.08));
 }
-.hero .sel-card:hover .sel-icon {
+#services .service-ticket:hover .card-icon {
   transform: translateY(-2px) translateZ(30px) scale(1.04);
-  box-shadow: 0 12px 28px color-mix(in srgb, var(--ticket-accent) 18%, transparent);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--ticket-accent) 17%, transparent);
 }
-.hero .sel-title {
+#services .service-ticket .card-title {
+  margin: 0;
   line-height: 1.12;
 }
-.hero .sel-desc {
-  margin-top: 0.36rem;
-  line-height: 1.48;
-}
-.hero .sel-ledger {
-  display: grid;
-  gap: 0.42rem;
-  padding: 0.74rem 0.78rem;
-  border: 1px solid rgba(255,255,255,0.075);
-  border-radius: 14px;
-  background: rgba(6,10,16,0.32);
-  transform: translateZ(18px);
-}
-.hero .sel-ledger span {
+#services .service-ticket .card-desc,
+#services .service-ticket .card-features,
+#services .service-ticket .card-link {
   position: relative;
-  padding-left: 1rem;
-  color: var(--text-secondary);
-  font-size: 0.78rem;
-  line-height: 1.25;
-}
-.hero .sel-ledger span::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.48em;
-  width: 6px;
-  height: 6px;
-  border-radius: 2px;
-  border: 1px solid var(--ticket-accent);
-  opacity: 0.78;
-}
-.hero .sel-tags {
+  z-index: 2;
   transform: translateZ(14px);
 }
-.hero .sel-card .sel-tag {
-  border-color: color-mix(in srgb, var(--ticket-accent) 16%, rgba(255,255,255,0.08));
-  background: rgba(255,255,255,0.035);
+#services .service-ticket .card-features {
+  padding: 0.72rem 0.78rem;
+  border: 1px solid rgba(255,255,255,0.075);
+  border-radius: 14px;
+  background: rgba(6,10,16,0.3);
 }
-.hero .sel-art {
+#services .service-ticket .card-features li {
+  line-height: 1.25;
+}
+#services .service-ticket .card-features .material-symbols-outlined {
+  color: var(--ticket-accent);
+}
+#services .service-ticket .card-link {
+  width: fit-content;
+  border-bottom-color: color-mix(in srgb, var(--ticket-accent) 28%, transparent);
+}
+#services .service-ticket-art {
   position: absolute;
   right: 18px;
-  bottom: 48px;
-  width: 96px;
-  height: 56px;
-  opacity: 0.34;
+  bottom: 56px;
+  width: 92px;
+  height: 58px;
+  opacity: 0.26;
   pointer-events: none;
   transition: opacity 220ms ease, transform 220ms var(--ease-professional, ease);
 }
-.hero .sel-art-phone {
+#services .service-ticket:hover .service-ticket-art {
+  opacity: 0.58;
+  transform: translate3d(-3px,-3px,22px);
+}
+#services .service-ticket--phone .service-ticket-art,
+#services .service-ticket--tablet .service-ticket-art {
   border: 1px solid var(--ticket-accent);
   border-radius: 14px;
   box-shadow: inset 0 0 0 5px rgba(255,255,255,0.025);
 }
-.hero .sel-art-phone::before,
-.hero .sel-art-phone::after,
-.hero .sel-art-computer::before,
-.hero .sel-art-computer::after {
+#services .service-ticket--tablet .service-ticket-art { width: 104px; height: 68px; border-radius: 11px; }
+#services .service-ticket--phone .service-ticket-art::before,
+#services .service-ticket--tablet .service-ticket-art::before {
   content: "";
   position: absolute;
-}
-.hero .sel-art-phone::before {
   left: 50%;
   top: 5px;
   width: 18px;
@@ -10242,83 +10210,79 @@ body:not(.menu-open) .hero {
   background: var(--ticket-accent);
   transform: translateX(-50%);
 }
-.hero .sel-art-phone::after {
-  left: -16px;
-  bottom: -8px;
-  width: 5px;
-  height: 5px;
-  border-radius: 999px;
-  background: var(--ticket-accent);
-  box-shadow: 22px 8px 0 rgba(255,255,255,0.18), 42px -4px 0 color-mix(in srgb, var(--ticket-accent) 80%, transparent);
-}
-.hero .sel-art-computer {
+#services .service-ticket--android .service-ticket-art,
+#services .service-ticket--laptop .service-ticket-art,
+#services .service-ticket--tuneup .service-ticket-art {
   background:
     linear-gradient(90deg, color-mix(in srgb, var(--ticket-accent) 44%, transparent) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(255,255,255,0.16) 1px, transparent 1px);
+    linear-gradient(0deg, rgba(255,255,255,0.14) 1px, transparent 1px);
   background-size: 12px 12px;
   border-bottom: 1px solid var(--ticket-accent);
 }
-.hero .sel-art-computer::before {
-  left: 8px;
-  top: 10px;
-  width: 68px;
-  height: 1px;
-  background: var(--ticket-accent);
-  box-shadow: 16px 16px 0 color-mix(in srgb, var(--ticket-accent) 75%, transparent), 36px 30px 0 rgba(255,255,255,0.18);
+#services .service-ticket--console .service-ticket-art {
+  border: 1px solid var(--ticket-accent);
+  border-radius: 999px 999px 18px 18px;
 }
-.hero .sel-art-computer::after {
-  right: 4px;
-  top: 3px;
-  width: 7px;
-  height: 7px;
+#services .service-ticket--console .service-ticket-art::before,
+#services .service-ticket--console .service-ticket-art::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  width: 8px;
+  height: 8px;
   border-radius: 999px;
   background: var(--ticket-accent);
-  box-shadow: -28px 18px 0 rgba(255,255,255,0.16), -56px 34px 0 color-mix(in srgb, var(--ticket-accent) 70%, transparent);
 }
-.hero .sel-card:hover .sel-art {
-  opacity: 0.62;
-  transform: translate3d(-3px, -3px, 22px);
+#services .service-ticket--console .service-ticket-art::before { left: 24px; box-shadow: 12px 0 0 rgba(255,255,255,0.18); }
+#services .service-ticket--console .service-ticket-art::after { right: 26px; box-shadow: 11px -8px 0 rgba(255,255,255,0.18), 11px 8px 0 color-mix(in srgb, var(--ticket-accent) 70%, transparent); }
+#services .service-ticket--diagnostics .service-ticket-art {
+  border: 1px solid var(--ticket-accent);
+  border-radius: 999px;
 }
-.hero .sel-arrow {
-  position: relative;
-  z-index: 2;
-  transform: translateZ(24px);
+#services .service-ticket--diagnostics .service-ticket-art::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  bottom: -5px;
+  width: 32px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--ticket-accent);
+  transform: rotate(42deg);
+}
+#services .service-ticket--mail .service-ticket-art {
+  border: 1px solid var(--ticket-accent);
+  border-radius: 12px;
+}
+#services .service-ticket--mail .service-ticket-art::before,
+#services .service-ticket--mail .service-ticket-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 49%, var(--ticket-accent) 50%, transparent 51%);
+}
+#services .service-ticket--mail .service-ticket-art::after {
+  background: linear-gradient(45deg, transparent 49%, rgba(255,255,255,0.18) 50%, transparent 51%);
 }
 @media (max-width: 768px) {
-  .hero .service-selector-grid {
-    grid-template-columns: 1fr;
+  #services .service-ticket {
+    padding-top: 0.9rem;
   }
-  .hero .sel-card {
-    min-height: 0;
-    width: 100%;
-    padding: 0.86rem;
-    border-radius: 18px;
-  }
-  .hero .sel-ticket-strip {
-    padding: 0.32rem 0.42rem;
-    font-size: 0.56rem;
+  #services .service-ticket-strip {
     flex-wrap: wrap;
+    font-size: 0.58rem;
   }
-  .hero .sel-status {
-    white-space: normal;
-  }
-  .hero .sel-card-main {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 0.68rem;
-  }
-  .hero .sel-card-main > div:last-child {
-    min-width: 0;
-  }
-  .hero .sel-ledger {
-    display: none;
-  }
-  .hero .sel-bench-light {
-    display: none;
-  }
-  .hero .sel-art {
+  #services .service-ticket-art {
     right: 14px;
-    bottom: 38px;
-    width: 72px;
-    height: 42px;
+    bottom: 46px;
+    width: 74px;
+    height: 46px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #services .service-ticket:hover,
+  #services .service-ticket:hover .card-icon,
+  #services .service-ticket:hover .service-ticket-art {
+    transform: none;
   }
 }

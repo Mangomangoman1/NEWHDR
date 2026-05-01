@@ -107,8 +107,8 @@ a{color:inherit;text-decoration:none}
 .sel-card:hover .sel-arrow .material-symbols-outlined{transform:translateX(4px)}
 .sel-badge{display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:var(--accent);color:#fff;border-radius:100px;padding:0.15rem 0.55rem;margin-left:0.5rem;vertical-align:middle}
 </style>
-  <link rel="preload" href="style.css?v=service-ticket-cards-20260501" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css?v=service-ticket-cards-20260501" /></noscript>
+  <link rel="preload" href="style.css?v=service-cards-20260501" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="style.css?v=service-cards-20260501" /></noscript>
   <!-- Chalky blue accent override (Actrix palette) — must come after style.css -->
   <style>:root{--accent:#74879A!important;--accent-hover:#8FA1B2!important;--accent-dim:rgba(116,135,154,0.12)!important;--accent-glow:rgba(116,135,154,0.25)!important;--color-blue:#74879A!important;--color-cyan:#B2C1CF!important}</style>
 
@@ -482,32 +482,18 @@ a{color:inherit;text-decoration:none}
 
       <div class="service-selector-grid">
         <div class="sel-card-wrap">
-          <a href="/iphone-repair" class="sel-card sel-card-phone" aria-label="iPhone repair in Hailey">
-            <span class="sel-bench-light" aria-hidden="true"></span>
-            <div class="sel-ticket-strip">
-              <span>DEVICE 01</span>
-              <span class="sel-status"><i aria-hidden="true"></i>Same-day possible</span>
-            </div>
-            <div class="sel-card-main">
-              <div class="sel-icon"><span class="material-symbols-outlined">phone_iphone</span></div>
-              <div>
-                <div class="sel-title">iPhone Repair in Hailey</div>
-                <div class="sel-desc">Cracked screen, weak battery, charging port, water damage, or camera/speaker trouble.</div>
-              </div>
-            </div>
-            <div class="sel-ledger" aria-label="Common iPhone repair work">
-              <span>Screen / battery / charging</span>
-              <span>Quick diagnosis before quote</span>
-              <span>Text photos for estimate</span>
-            </div>
+          <a href="/iphone-repair" class="sel-card">
+            <div class="sel-icon"><span class="material-symbols-outlined">phone_iphone</span></div>
+            <div class="sel-title">iPhone Repair in Hailey</div>
+            <div class="sel-desc">Cracked iPhone screen, weak battery, charging port, water damage, or camera/speaker trouble — same-day options when parts are available.</div>
             <div class="sel-tags">
               <span class="sel-tag">Screen Repair</span>
               <span class="sel-tag">Battery</span>
               <span class="sel-tag">Charging Port</span>
+              <span class="sel-tag">Water Damage</span>
             </div>
-            <div class="sel-art sel-art-phone" aria-hidden="true"></div>
             <div class="sel-arrow">
-              Text for iPhone quote <span class="material-symbols-outlined">arrow_forward</span>
+              Get iPhone repair <span class="material-symbols-outlined">arrow_forward</span>
             </div>
           </a>
           <a href="/repair-sos" class="sel-sos-pill" aria-label="Open Repair SOS emergency guide">
@@ -516,32 +502,18 @@ a{color:inherit;text-decoration:none}
           </a>
         </div>
 
-        <a href="/computer-support" class="sel-card sel-card-it" aria-label="Computer help and IT support">
-          <span class="sel-bench-light" aria-hidden="true"></span>
-          <div class="sel-ticket-strip">
-            <span>WORKBENCH 02</span>
-            <span class="sel-status"><i aria-hidden="true"></i>Remote or local</span>
-          </div>
-          <div class="sel-card-main">
-            <div class="sel-icon"><span class="material-symbols-outlined">computer</span></div>
-            <div>
-              <div class="sel-title">Computer Help &amp; IT Support</div>
-              <div class="sel-desc">Slow computer, virus, bootloop, crashing, or local IT support without the corporate runaround.</div>
-            </div>
-          </div>
-          <div class="sel-ledger" aria-label="Common computer support work">
-            <span>Slow PC / virus / bootloop</span>
-            <span>Remote help when possible</span>
-            <span>Plain-English fix plan</span>
-          </div>
+        <a href="/computer-support" class="sel-card sel-card-it">
+          <div class="sel-icon"><span class="material-symbols-outlined">computer</span></div>
+          <div class="sel-title">Computer Help &amp; IT Support</div>
+          <div class="sel-desc">Slow computer, virus, bootloop, crashing, or just need local IT support — remote or in-person.</div>
           <div class="sel-tags">
             <span class="sel-tag">Virus Removal</span>
             <span class="sel-tag">Slow PC</span>
+            <span class="sel-tag">Bootloop</span>
             <span class="sel-tag">Remote Support</span>
           </div>
-          <div class="sel-art sel-art-computer" aria-hidden="true"></div>
           <div class="sel-arrow">
-            Start computer help <span class="material-symbols-outlined">arrow_forward</span>
+            Get computer help <span class="material-symbols-outlined">arrow_forward</span>
           </div>
         </a>
       </div>
@@ -635,11 +607,15 @@ a{color:inherit;text-decoration:none}
 
       <div class="cards-grid" id="servicesCardsGrid">
 
-        <div class="card card-tilt" data-animate>
-          <div class="card-icon card-icon--blue">
-            <span class="material-symbols-outlined">phone_iphone</span>
+        <div class="card card-tilt service-ticket service-ticket--phone" data-animate>
+          <div class="service-ticket-strip"><span>BENCH 01</span><span>Most common</span></div>
+          <div class="service-ticket-main">
+            <div class="card-icon card-icon--blue">
+              <span class="material-symbols-outlined">phone_iphone</span>
+            </div>
+            <h3 class="card-title">iPhone &amp; iPad</h3>
           </div>
-          <h3 class="card-title">iPhone &amp; iPad</h3>
+          <div class="service-ticket-art" aria-hidden="true"></div>
           <p class="card-desc">Screen replacements, battery swaps, charging ports, buttons, water damage, and more.</p>
           <ul class="card-features">
             <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> All models supported</li>
@@ -651,11 +627,15 @@ a{color:inherit;text-decoration:none}
           </a>
         </div>
 
-        <div class="card card-tilt" data-animate>
-          <div class="card-icon card-icon--green">
-            <span class="material-symbols-outlined">android</span>
+        <div class="card card-tilt service-ticket service-ticket--android" data-animate>
+          <div class="service-ticket-strip"><span>BENCH 02</span><span>Samsung / Pixel</span></div>
+          <div class="service-ticket-main">
+            <div class="card-icon card-icon--green">
+              <span class="material-symbols-outlined">android</span>
+            </div>
+            <h3 class="card-title">Android Phones</h3>
           </div>
-          <h3 class="card-title">Android Phones</h3>
+          <div class="service-ticket-art" aria-hidden="true"></div>
           <p class="card-desc">Samsung, Google Pixel, OnePlus, and more. Screens, batteries, ports — fixed fast.</p>
           <ul class="card-features">
             <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Samsung Galaxy specialist</li>
@@ -667,11 +647,15 @@ a{color:inherit;text-decoration:none}
           </a>
         </div>
 
-        <div class="card card-tilt" data-animate>
-          <div class="card-icon card-icon--purple">
-            <span class="material-symbols-outlined">laptop</span>
+        <div class="card card-tilt service-ticket service-ticket--laptop" data-animate>
+          <div class="service-ticket-strip"><span>BENCH 03</span><span>Mac + Windows</span></div>
+          <div class="service-ticket-main">
+            <div class="card-icon card-icon--purple">
+              <span class="material-symbols-outlined">laptop</span>
+            </div>
+            <h3 class="card-title">Laptop &amp; PC</h3>
           </div>
-          <h3 class="card-title">Laptop &amp; PC</h3>
+          <div class="service-ticket-art" aria-hidden="true"></div>
           <p class="card-desc">Mac and Windows repairs — screens, keyboards, batteries, storage upgrades, and virus removal.</p>
           <ul class="card-features">
             <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Mac &amp; Windows</li>
@@ -683,11 +667,15 @@ a{color:inherit;text-decoration:none}
           </a>
         </div>
 
-        <div class="card card-tilt" data-animate>
-          <div class="card-icon card-icon--cyan">
-            <span class="material-symbols-outlined">tablet</span>
+        <div class="card card-tilt service-ticket service-ticket--tablet" data-animate>
+          <div class="service-ticket-strip"><span>BENCH 04</span><span>Glass + charge</span></div>
+          <div class="service-ticket-main">
+            <div class="card-icon card-icon--cyan">
+              <span class="material-symbols-outlined">tablet</span>
+            </div>
+            <h3 class="card-title">iPad &amp; Tablet</h3>
           </div>
-          <h3 class="card-title">iPad &amp; Tablet</h3>
+          <div class="service-ticket-art" aria-hidden="true"></div>
           <p class="card-desc">iPad, Samsung Galaxy Tab, Amazon Fire — cracked screens, dead batteries, charging issues, and more.</p>
           <ul class="card-features">
             <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> All brands &amp; models</li>
@@ -699,11 +687,15 @@ a{color:inherit;text-decoration:none}
           </a>
         </div>
 
-        <div class="card card-tilt" data-animate>
-          <div class="card-icon card-icon--red">
-            <span class="material-symbols-outlined">sports_esports</span>
+        <div class="card card-tilt service-ticket service-ticket--console" data-animate>
+          <div class="service-ticket-strip"><span>BENCH 05</span><span>Ports + drift</span></div>
+          <div class="service-ticket-main">
+            <div class="card-icon card-icon--red">
+              <span class="material-symbols-outlined">sports_esports</span>
+            </div>
+            <h3 class="card-title">Game Consoles</h3>
           </div>
-          <h3 class="card-title">Game Consoles</h3>
+          <div class="service-ticket-art" aria-hidden="true"></div>
           <p class="card-desc">Nintendo Switch, PS5, Xbox, Steam Deck — drift fixes, HDMI ports, overheating, disc drives, and controller repair.</p>
           <ul class="card-features">
             <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> All platforms</li>
@@ -715,11 +707,15 @@ a{color:inherit;text-decoration:none}
           </a>
         </div>
 
-        <div class="card card-tilt" data-animate>
-          <div class="card-icon card-icon--orange">
-            <span class="material-symbols-outlined">manage_search</span>
+        <div class="card card-tilt service-ticket service-ticket--diagnostics" data-animate>
+          <div class="service-ticket-strip"><span>INTAKE 06</span><span>Quote first</span></div>
+          <div class="service-ticket-main">
+            <div class="card-icon card-icon--orange">
+              <span class="material-symbols-outlined">manage_search</span>
+            </div>
+            <h3 class="card-title">Diagnostics</h3>
           </div>
-          <h3 class="card-title">Diagnostics</h3>
+          <div class="service-ticket-art" aria-hidden="true"></div>
           <p class="card-desc">Not sure what's wrong? I'll figure it out. Every repair starts with a thorough diagnosis to identify the issue before we discuss solutions and pricing.</p>
           <ul class="card-features">
             <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Free assessment</li>
@@ -728,11 +724,15 @@ a{color:inherit;text-decoration:none}
           </ul>
         </div>
 
-        <div class="card card-tilt" data-animate>
-          <div class="card-icon card-icon--cyan">
-            <span class="material-symbols-outlined">speed</span>
+        <div class="card card-tilt service-ticket service-ticket--tuneup" data-animate>
+          <div class="service-ticket-strip"><span>CLEANUP 07</span><span>Speed pass</span></div>
+          <div class="service-ticket-main">
+            <div class="card-icon card-icon--cyan">
+              <span class="material-symbols-outlined">speed</span>
+            </div>
+            <h3 class="card-title">Tune-ups</h3>
           </div>
-          <h3 class="card-title">Tune-ups</h3>
+          <div class="service-ticket-art" aria-hidden="true"></div>
           <p class="card-desc">Sluggish device? I'll clean it up — remove junk, optimize performance, and get it running like new.</p>
           <ul class="card-features">
             <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Software optimization</li>
@@ -741,11 +741,15 @@ a{color:inherit;text-decoration:none}
           </ul>
         </div>
 
-        <div class="card card--highlight card-tilt" data-animate>
-          <div class="card-icon card-icon--indigo">
-            <span class="material-symbols-outlined">local_shipping</span>
+        <div class="card card--highlight card-tilt service-ticket service-ticket--mail" data-animate>
+          <div class="service-ticket-strip"><span>SHIP 08</span><span>Idaho mail-in</span></div>
+          <div class="service-ticket-main">
+            <div class="card-icon card-icon--indigo">
+              <span class="material-symbols-outlined">local_shipping</span>
+            </div>
+            <h3 class="card-title">Mail-In Repair</h3>
           </div>
-          <h3 class="card-title">Mail-In Repair</h3>
+          <div class="service-ticket-art" aria-hidden="true"></div>
           <p class="card-desc">Not local? No problem. Ship your device to me anywhere in Idaho. Safe, insured, and fast return shipping.</p>
           <ul class="card-features">
             <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Statewide Idaho</li>
