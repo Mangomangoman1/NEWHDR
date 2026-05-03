@@ -204,11 +204,11 @@
   };
 
   function validateField(input) {
-    const name = input.id;
-    const validator = validators[name];
+    const key = input.name || input.id;
+    const validator = validators[key] || validators[input.id];
     if (!validator) return true;
 
-    const errorEl = document.getElementById(name + 'Error');
+    const errorEl = document.getElementById(key + 'Error') || document.getElementById(input.id + 'Error');
     const isValid = validator.test(input.value);
 
     if (!isValid && input.value.length > 0) {
@@ -231,7 +231,7 @@
   if (contactForm) {
     // Bind blur/input validation
     ['name', 'contact', 'issue'].forEach(id => {
-      const input = contactForm.querySelector('#' + id);
+      const input = contactForm.querySelector(`[name="${id}"], #${id}`);
       if (input) {
         input.addEventListener('blur', () => validateField(input));
         input.addEventListener('input', () => {
@@ -243,16 +243,22 @@
       e.preventDefault();
 
       const nameInput    = contactForm.querySelector('#name');
-      const contactInput = contactForm.querySelector('#contact');
+      const contactInput = contactForm.querySelector('[name="contact"], #contact, #contactField');
       const issueInput   = contactForm.querySelector('#issue');
-      const name    = nameInput.value.trim();
-      const contact = contactInput.value.trim();
-      const device  = contactForm.querySelector('#device').value;
-      const issue   = issueInput.value.trim();
-      const mailin  = contactForm.querySelector('#mailinCheck').checked;
+      const deviceInput  = contactForm.querySelector('#device');
+      const modelInput   = contactForm.querySelector('#model');
+      const serviceInput = contactForm.querySelector('#service');
+      const mailinInput  = contactForm.querySelector('#mailinCheck');
+      const name    = nameInput ? nameInput.value.trim() : '';
+      const contact = contactInput ? contactInput.value.trim() : '';
+      const device  = deviceInput ? deviceInput.value : '';
+      const model   = modelInput ? modelInput.value.trim() : '';
+      const service = serviceInput ? serviceInput.value : '';
+      const issue   = issueInput ? issueInput.value.trim() : '';
+      const mailin  = mailinInput ? mailinInput.checked : /mail-in/i.test(service);
 
       // Run inline validation on all required fields
-      const fields = [nameInput, contactInput, issueInput];
+      const fields = [nameInput, contactInput, issueInput].filter(Boolean);
       let allValid = true;
       fields.forEach(input => {
         if (!validateField(input)) {
@@ -288,6 +294,8 @@
             name: name,
             contact: contact,
             device: device || 'Not specified',
+            model: model || 'Not specified',
+            service: service || 'No preference',
             issue: issue,
             mailin: mailin ? 'Yes' : 'No'
           })
@@ -302,6 +310,7 @@
         .catch(() => {
           // Show error, re-enable button
           if (formError) {
+            formError.hidden = false;
             formError.classList.add('visible');
             formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
@@ -312,6 +321,7 @@
         const subject = encodeURIComponent(`Quote Request — ${device || 'Device'} Repair`);
         const mailBody = encodeURIComponent(
           `Name: ${name}\nContact: ${contact}\nDevice: ${device || 'Not specified'}\n` +
+          `Model: ${model || 'Not specified'}\nService method: ${service || 'No preference'}\n` +
           `Mail-In: ${mailin ? 'Yes' : 'No'}\n\nIssue:\n${issue}`
         );
         window.location.href = `mailto:samuel@haileyrepair.com?subject=${subject}&body=${mailBody}`;
@@ -320,13 +330,17 @@
 
       function showFormSuccess() {
         if (formSuccess) {
+          formSuccess.hidden = false;
           formSuccess.classList.add('visible');
           formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
         contactForm.reset();
         // Hide success after 8 seconds
         setTimeout(() => {
-          if (formSuccess) formSuccess.classList.remove('visible');
+          if (formSuccess) {
+            formSuccess.classList.remove('visible');
+            formSuccess.hidden = true;
+          }
           restoreSubmitBtn();
         }, 8000);
       }
