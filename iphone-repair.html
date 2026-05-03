@@ -348,20 +348,48 @@ a{color:inherit;text-decoration:none}
         </div>
 
         <div class="lp-hero-visual" data-animate>
-          <div class="lp-price-card">
-            <div class="lp-price-card-header">
-              <span class="material-symbols-outlined" aria-hidden="true">phone_iphone</span>
-              <span>iPhone Repairs from</span>
+          <div class="lp-iphone-art">
+            <svg viewBox="0 0 260 460" fill="none" xmlns="http://www.w3.org/2000/svg" class="lp-iphone-svg">
+              <defs>
+                <radialGradient id="apple-glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.8"/>
+                  <stop offset="60%" stop-color="var(--accent)" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <!-- Phone body shadow -->
+              <rect x="34" y="18" width="192" height="424" rx="36" fill="#1a1f2e" filter="url(#phone-shadow)"/>
+              <!-- Phone body -->
+              <rect x="34" y="18" width="192" height="424" rx="36" stroke="var(--accent-dim)" stroke-width="2.5" fill="none"/>
+              <rect x="38" y="22" width="184" height="416" rx="34" fill="var(--bg-card)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <!-- Screen -->
+              <rect x="46" y="62" width="168" height="336" rx="12" fill="#0d1117"/>
+              <rect x="46" y="62" width="168" height="336" rx="12" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <!-- Dynamic Island notch -->
+              <rect x="94" y="74" width="72" height="18" rx="9" fill="#1a1f2e"/>
+              <!-- Glow behind Apple -->
+              <circle cx="130" cy="232" r="44" fill="url(#apple-glow)" class="apple-glow-pulse"/>
+              <!-- Apple leaf -->
+              <path d="M130,194 C126,184 118,179 114,182 C112,184 116,192 122,196 C126,198 130,196 130,194Z" fill="var(--accent)" opacity="0.9"/>
+              <!-- Apple body (full) -->
+              <path d="M130,198 C104,196 92,212 92,233 C92,256 108,268 130,270 C152,268 168,256 168,233 C168,212 156,196 130,198Z" fill="var(--accent)" opacity="0.92"/>
+              <!-- Bite overlay - animates in/out -->
+              <circle cx="176" cy="228" r="26" fill="#0d1117" class="apple-bite"/>
+            </svg>
+            <div class="lp-iphone-perks">
+              <div class="lp-iphone-perk">
+                <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+                <span>All models: iPhone 6 – 16 Pro</span>
+              </div>
+              <div class="lp-iphone-perk">
+                <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+                <span>OEM or OEM-quality parts</span>
+              </div>
+              <div class="lp-iphone-perk">
+                <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+                <span>40-day warranty</span>
+              </div>
             </div>
-            <div class="lp-price-card-amount">$59</div>
-            <div class="lp-price-card-sub">Battery replacement starting price</div>
-            <div class="lp-price-card-divider"></div>
-            <ul class="lp-price-card-perks">
-              <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> All models: iPhone 6 – 16</li>
-              <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> OEM-quality parts</li>
-              
-              
-            </ul>
           </div>
         </div>
       </div>
