@@ -10817,4 +10817,550 @@ body:not(.menu-open) .hero {
     transition: none;
   }
 }
+
+/* ═══════════════════════════════════════════════
+   HOMEPAGE MOBILE-NATIVE PASS — 2026-05-03
+   Mobile only. Desktop remains on the existing homepage system.
+   ═══════════════════════════════════════════════ */
+.home-page .hero-mobile-actions {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Archive non-requested homepage content on phones. */
+  .home-page .repair-ledger-section,
+  .home-page .text-intake-section,
+  .home-page #services,
+  .home-page #mailin,
+  .home-page .owner-note-section,
+  .home-page .wave-divider {
+    display: none !important;
+  }
+
+  .home-page {
+    background:
+      radial-gradient(ellipse 120% 48% at 50% 0%, rgba(91,139,207,0.10), transparent 62%),
+      var(--bg-primary);
+  }
+
+  .home-page .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .home-page .nav-actions,
+  .home-page .nav-links {
+    display: none !important;
+  }
+
+  .home-page .nav-hamburger {
+    display: flex !important;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .home-page .nav-inner {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .home-page .nav-logo {
+    min-width: 0;
+  }
+
+  .home-page .section {
+    padding: 2.65rem 0;
+    scroll-margin-top: 76px;
+  }
+
+  .home-page .section-header {
+    text-align: left;
+    margin-bottom: 1.25rem;
+  }
+
+  .home-page .section-eyebrow {
+    font-size: 0.68rem;
+    padding: 0.28rem 0.58rem;
+    letter-spacing: 0.12em;
+  }
+
+  .home-page .section-title {
+    font-size: clamp(1.58rem, 8vw, 2rem);
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+    text-align: left;
+    text-wrap: balance;
+  }
+
+  .home-page .section-sub {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 34ch;
+    font-size: 0.94rem;
+    line-height: 1.58;
+    text-align: left;
+  }
+
+  /* Hero: phone-native, no buried service cards or dead #services CTA. */
+  .home-page #hero.hero {
+    min-height: auto;
+    padding: 4.45rem 0 1.7rem;
+    background:
+      radial-gradient(ellipse 88% 48% at 18% 8%, rgba(91,139,207,0.17), transparent 62%),
+      radial-gradient(ellipse 66% 44% at 92% 4%, rgba(57,197,207,0.10), transparent 62%),
+      linear-gradient(180deg, rgba(13,17,23,0.98), rgba(13,17,23,0.94));
+  }
+
+  .home-page #hero .hero-inner {
+    display: block;
+    padding: 0;
+  }
+
+  .home-page #hero .hero-eyebrow {
+    max-width: 100%;
+    width: auto;
+    padding: 0.45rem 0.68rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.045);
+    border-color: rgba(255,255,255,0.09);
+  }
+
+  .home-page #hero .hero-headline {
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: clamp(2.28rem, 13vw, 3.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.07em;
+    text-wrap: balance;
+  }
+
+  .home-page #hero .hero-tagline {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    padding: 0.36rem 0.62rem;
+    border: 1px solid rgba(91,139,207,0.20);
+    border-radius: 12px;
+    background: rgba(91,139,207,0.075);
+    color: var(--text-primary);
+    font-size: 0.94rem;
+    line-height: 1.25;
+  }
+
+  .home-page #hero .hero-sub {
+    max-width: 31ch;
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.58;
+  }
+
+  .home-page #hero .hero-actions,
+  .home-page #hero .service-selector-grid,
+  .home-page #hero .hero-scroll-hint {
+    display: none !important;
+  }
+
+  .home-page #hero .hero-mobile-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.68rem;
+    margin: 1rem 0 0.9rem;
+  }
+
+  .home-page #hero .hero-mobile-actions .btn {
+    width: 100%;
+    min-height: 52px;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 0.94rem;
+  }
+
+  .home-page #hero .hero-trust {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 0.95rem;
+    padding: 0;
+    background: transparent;
+    border: 0;
+  }
+
+  .home-page #hero .hero-trust-item {
+    min-width: 0;
+    padding: 0.54rem 0.58rem;
+    border: 1px solid rgba(255,255,255,0.085);
+    border-radius: 13px;
+    background: rgba(255,255,255,0.035);
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+    line-height: 1.25;
+  }
+
+  .home-page #hero .hero-trust-item .material-symbols-outlined {
+    font-size: 0.95rem;
+  }
+
+  /* Pricing: reads like a quote promise, not a desktop text block. */
+  .home-page #pricing {
+    background:
+      linear-gradient(180deg, rgba(17,24,39,0.82), rgba(13,17,23,0.98));
+  }
+
+  .home-page #pricing .container {
+    max-width: none !important;
+  }
+
+  .home-page #pricing .section-header {
+    margin-bottom: 1rem;
+  }
+
+  .home-page #pricing p {
+    margin-bottom: 0.7rem !important;
+    padding: 0.9rem 0.95rem;
+    border: 1px solid rgba(255,255,255,0.085);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.035);
+    color: var(--text-secondary) !important;
+    font-size: 0.94rem !important;
+    line-height: 1.58 !important;
+  }
+
+  .home-page #pricing p strong {
+    color: var(--text-primary);
+  }
+
+  .home-page #pricing .btn {
+    width: 100%;
+    min-height: 52px;
+    justify-content: center;
+    margin-top: 0.2rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* How it works: compact repair timeline cards. */
+  .home-page #process {
+    background: var(--bg-primary);
+  }
+
+  .home-page #process .timeline {
+    max-width: none;
+    padding: 0.25rem 0 0;
+  }
+
+  .home-page #process .timeline-track {
+    left: 17px;
+    top: 0.45rem;
+    bottom: 0.45rem;
+    width: 2px;
+    opacity: 0.7;
+  }
+
+  .home-page #process .timeline-step {
+    gap: 0.85rem;
+    padding-bottom: 1rem;
+  }
+
+  .home-page #process .timeline-dot {
+    width: 36px;
+    height: 36px;
+    border-width: 2px;
+    box-shadow: none;
+  }
+
+  .home-page #process .timeline-content {
+    padding: 0.78rem 0.85rem;
+    border: 1px solid rgba(255,255,255,0.085);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.035);
+  }
+
+  .home-page #process .timeline-time {
+    font-size: 0.66rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .home-page #process .timeline-title {
+    font-size: 0.98rem;
+    line-height: 1.25;
+  }
+
+  .home-page #process .timeline-desc {
+    font-size: 0.84rem;
+    line-height: 1.52;
+  }
+
+  .home-page #process .timeline-example,
+  .home-page #process .timeline-tag {
+    margin-top: 0.55rem;
+    font-size: 0.76rem;
+  }
+
+  /* Service area: map becomes a short local proof card. */
+  .home-page #area .area-layout {
+    gap: 1rem;
+  }
+
+  .home-page #area .area-map {
+    width: 100%;
+    max-width: none;
+    padding: 0.85rem;
+    border-radius: 18px;
+  }
+
+  .home-page #area .area-svg {
+    max-height: 310px;
+  }
+
+  .home-page #area .area-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .home-page #area .area-card {
+    padding: 0.8rem 0.85rem;
+    gap: 0.7rem;
+    border-radius: 15px;
+  }
+
+  .home-page #area .area-card-icon {
+    font-size: 1.2rem;
+  }
+
+  .home-page #area .area-card h3 {
+    font-size: 0.92rem;
+  }
+
+  .home-page #area .area-card p {
+    font-size: 0.82rem;
+    line-height: 1.48;
+  }
+
+  /* Compare: make each row read as a phone card instead of a collapsed table. */
+  .home-page #compare .compare-table {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    overflow: visible;
+  }
+
+  .home-page #compare .compare-header {
+    display: none;
+  }
+
+  .home-page #compare .compare-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 0.68rem;
+    border: 1px solid rgba(255,255,255,0.085);
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.035);
+  }
+
+  .home-page #compare .compare-row::before {
+    width: 4px;
+    transform: none;
+    opacity: 0.85;
+  }
+
+  .home-page #compare .compare-cell {
+    padding: 0.58rem 0.85rem 0.58rem 1rem;
+    font-size: 0.84rem;
+  }
+
+  .home-page #compare .compare-cell--feature {
+    padding-top: 0.82rem;
+    color: var(--text-primary);
+    background: rgba(255,255,255,0.025);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.88rem;
+  }
+
+  .home-page #compare .compare-cell--us {
+    color: var(--text-primary);
+    background: rgba(63,185,80,0.055);
+  }
+
+  .home-page #compare .compare-cell--us::before {
+    content: "HDR";
+    min-width: 42px;
+    color: var(--color-green);
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .home-page #compare .compare-cell--them {
+    color: var(--text-muted);
+    border-bottom: 0;
+  }
+
+  .home-page #compare .compare-cell--them::before {
+    content: "CHAIN";
+    min-width: 42px;
+    color: var(--color-orange);
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  /* FAQ: bigger tap targets, less accordion clutter. */
+  .home-page #faq .faq-list {
+    gap: 0.58rem;
+  }
+
+  .home-page #faq .faq-item {
+    border-radius: 16px;
+  }
+
+  .home-page #faq .faq-question {
+    padding: 0.92rem 0.88rem;
+    gap: 0.65rem;
+  }
+
+  .home-page #faq .faq-question::before {
+    display: none;
+  }
+
+  .home-page #faq .faq-q-text {
+    font-size: 0.92rem;
+    line-height: 1.32;
+  }
+
+  .home-page #faq .faq-answer {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .home-page #faq .faq-answer p {
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  /* Google: three clear phone actions. */
+  .home-page #google.gbp-section {
+    background:
+      radial-gradient(ellipse 88% 58% at 50% 0%, rgba(91,139,207,0.13), transparent 66%),
+      var(--bg-primary);
+  }
+
+  .home-page #google .container {
+    text-align: left !important;
+    max-width: none !important;
+  }
+
+  .home-page #google p {
+    margin-bottom: 1rem !important;
+    font-size: 0.92rem !important;
+    line-height: 1.55;
+  }
+
+  .home-page #google .gbp-cards {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .home-page #google .gbp-card {
+    min-height: 0;
+    padding: 0.86rem 0.95rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    border-radius: 16px;
+  }
+
+  .home-page #google .gbp-card-icon {
+    width: 38px;
+    min-width: 38px;
+    font-size: 1.32rem;
+    text-align: center;
+  }
+
+  /* Contact: mobile users get contact cards first, form second. */
+  .home-page #contact {
+    padding-bottom: 2.25rem;
+  }
+
+  .home-page #contact .contact-wrap {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .home-page #contact .contact-methods {
+    margin-top: 1rem;
+    gap: 0.65rem;
+  }
+
+  .home-page #contact .contact-method {
+    padding: 0.84rem 0.88rem;
+    border-radius: 16px;
+  }
+
+  .home-page #contact .contact-method-icon {
+    width: 39px;
+    height: 39px;
+    border-radius: 12px;
+  }
+
+  .home-page #contact .contact-method span {
+    overflow-wrap: anywhere;
+  }
+
+  .home-page #contact .contact-form-wrap {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .home-page #contact .contact-form-title {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .home-page #contact .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .home-page #contact .form-group input,
+  .home-page #contact .form-group select,
+  .home-page #contact .form-group textarea {
+    min-height: 48px;
+    font-size: 16px;
+    border-radius: 13px;
+  }
+
+  .home-page #contact .form-group textarea {
+    min-height: 116px;
+  }
+
+  .home-page #contact .btn-block {
+    min-height: 52px;
+    border-radius: 15px;
+  }
+
+  .home-page .floating-theme-toggle,
+  .home-page .back-to-top,
+  .home-page .help-fab {
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-page #hero .hero-headline {
+    font-size: clamp(2.05rem, 12.4vw, 2.72rem);
+  }
+
+  .home-page #hero .hero-trust {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page #pricing .btn {
+    font-size: 0.82rem;
+  }
+}
 /* ─── END CONTACT PAGE POLISH 2026-05-03 ───────────────────── */
