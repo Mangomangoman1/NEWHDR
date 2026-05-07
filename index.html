@@ -88,7 +88,7 @@ a{color:inherit;text-decoration:none}
 .breadcrumb-sep{font-size:0.9rem}
 .text-accent{background:linear-gradient(135deg,var(--accent),var(--color-cyan,#22d3ee));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex;flex-direction:column;gap:4px}.hero{min-height:auto;padding:5rem 0 2.5rem}#pcb-canvas{display:none}.service-selector-grid{grid-template-columns:1fr;margin-top:1.25rem}.sel-desc,.sel-tags,.trust-badges{display:none}.sel-card{padding:1rem 1.25rem}.sel-icon{width:36px;height:36px}.sel-title{font-size:0.95rem}.sel-sos-pill{display:none}.cards-grid{overflow-x:visible}.cards-grid .card{scroll-snap-align:unset}}
-.service-selector-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;max-width:860px;margin:1.75rem auto 0}.sel-card-wrap{position:relative}.sel-card-wrap .sel-card{height:100%}
+.service-selector-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;max-width:1040px;margin:1.75rem auto 0}.sel-card-wrap{position:relative}.sel-card-wrap .sel-card{height:100%}
 .sel-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:1.75rem 2rem;display:flex;flex-direction:column;gap:0.75rem;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;text-decoration:none;color:inherit}
 .sel-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 32px rgba(91,139,207,0.15)}
 .sel-card-it{border-color:rgba(91,139,207,0.3);background:linear-gradient(135deg,var(--bg-card),rgba(91,139,207,0.04))}
@@ -359,6 +359,7 @@ a{color:inherit;text-decoration:none}
       <ul class="nav-links" role="list">
         <li><a href="/#services" class="nav-link">Services</a></li>
         <li><a href="/computer-support" class="nav-link">Computer Help</a></li>
+        <li><a href="/tech-helper" class="nav-link">Tech Helper</a></li>
         <li><a href="/pricing" class="nav-link">Pricing</a></li>
         <li><a href="/tips" class="nav-link">Tips</a></li>
         <li><a href="/about" class="nav-link">About</a></li>
@@ -396,6 +397,7 @@ a{color:inherit;text-decoration:none}
     <div class="nav-mobile" id="navMobile" aria-hidden="true">
       <ul role="list">
         <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="/tech-helper" class="nav-link">Tech Helper</a></li>
         <li><a href="#process" class="nav-link">How It Works</a></li>
         <li><a href="#area" class="nav-link">Service Area</a></li>
         <li><a href="#compare" class="nav-link">Why Local</a></li>
@@ -525,6 +527,21 @@ a{color:inherit;text-decoration:none}
           </div>
           <div class="sel-arrow">
             Get computer help <span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+        </a>
+
+        <a href="/tech-helper" class="sel-card sel-card-it">
+          <div class="sel-icon"><span class="material-symbols-outlined">smart_toy</span></div>
+          <div class="sel-title">Tech Helper Bot</div>
+          <div class="sel-desc">Quick first steps for slow computers, Wi‑Fi, printers, scams, data scares, and when to stop and text Samuel.</div>
+          <div class="sel-tags">
+            <span class="sel-tag">AI-ready</span>
+            <span class="sel-tag">Safe Triage</span>
+            <span class="sel-tag">Text Handoff</span>
+            <span class="sel-tag">Basic Tech Help</span>
+          </div>
+          <div class="sel-arrow">
+            Try the helper <span class="material-symbols-outlined">arrow_forward</span>
           </div>
         </a>
       </div>
@@ -1490,6 +1507,7 @@ a{color:inherit;text-decoration:none}
           <a href="/mail-in-repair">Mail-In Repair</a>
           <a href="/electronics-recycling">Electronics Recycling</a>
           <a href="/computer-support">Computer Help</a>
+          <a href="/tech-helper">Tech Helper</a>
           <a href="/virus-removal">Virus Removal</a>
           <a href="/printer-setup">Printer Setup</a>
           <a href="#services">Diagnostics</a>
@@ -1679,6 +1697,10 @@ a{color:inherit;text-decoration:none}
                 <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">computer</span></div>
                 <div class="qf-link-text"><span class="qf-link-name">Computer Help &amp; IT</span><span class="qf-link-desc">Slow PC, crashes, startup issues</span></div>
               </a>
+              <a href="/tech-helper" class="qf-link" data-qf="tech helper ai bot chatbot help triage minimax deepseek slow computer wifi printer scam data recovery">
+                <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">smart_toy</span></div>
+                <div class="qf-link-text"><span class="qf-link-name">Tech Helper Bot</span><span class="qf-link-desc">Quick first steps and safe repair handoff</span></div>
+              </a>
               <a href="/virus-removal" class="qf-link" data-qf="virus malware removal pop ups fake alerts browser hijack scareware">
                 <div class="qf-link-icon"><span class="material-symbols-outlined" aria-hidden="true">coronavirus</span></div>
                 <div class="qf-link-text"><span class="qf-link-name">Virus &amp; Malware Removal</span><span class="qf-link-desc">Pop-ups, hijacks, fake alerts</span></div>
@@ -1777,7 +1799,7 @@ a{color:inherit;text-decoration:none}
       </div>
 
       <div class="qf-footer">
-        <span>20 pages</span>
+        <span>21 pages</span>
         <div class="qf-footer-keys">
           <span><kbd>↑↓</kbd> Navigate</span>
           <span><kbd>↵</kbd> Open</span>

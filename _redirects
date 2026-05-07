@@ -1,5 +1,6 @@
 /printer-setup.html    /printer-setup       301
 /computer-support.html /computer-support    301
+/tech-helper.html     /tech-helper         301
 /iphone-repair.html   /iphone-repair       301
 # Hailey Device Repair — Redirects (Netlify)
 # Pretty URLs: /pricing → /pricing.html
@@ -19,6 +20,7 @@
 /about              /about.html             200
 /contact            /contact.html           200
 /computer-support   /computer-support.html  200
+/tech-helper        /tech-helper.html       200
 /printer-setup      /printer-setup.html     200
 /virus-removal      /virus-removal.html     200
 /privacy            /privacy.html           200
