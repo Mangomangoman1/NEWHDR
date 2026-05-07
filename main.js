@@ -2334,7 +2334,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     document.getElementById('sosOverlayTitle').textContent = data.title;
     if (sosCtaLink) {
       var sosBody = encodeURIComponent('Hi Samuel — I need SOS help with ' + data.title + '. Device: . What happened: . Current symptoms: . I am in [city/area].');
-      sosCtaLink.href = 'sms:+120****6111?body=' + sosBody;
+      sosCtaLink.href = 'sms:+12083666111?body=' + sosBody;
     }
 
     renderSosSteps();

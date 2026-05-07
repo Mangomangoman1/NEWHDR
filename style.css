@@ -9642,6 +9642,13 @@ body:not(.menu-open) .hero {
 }
 
 
+
+@media (max-width: 900px) {
+  #water-wrapper-sos-nav {
+    display: none;
+  }
+}
+
 /* ═══════════════════════════════════════════
    repair-sos follow-up fixes
    ═══════════════════════════════════════════ */
