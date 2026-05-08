@@ -3859,6 +3859,48 @@ button[type="submit"]:disabled {
 }
 
 /* ─── WARRANTY PAGE ──────────────────────────────────────── */
+.warranty-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-lg);
+}
+.warranty-hero-cta {
+  min-height: 52px;
+  padding: 0.9rem 1.25rem;
+  color: contrast-color(var(--accent));
+}
+.warranty-hero-phone {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-weight: 800;
+  background: rgba(255,255,255,0.03);
+}
+.warranty-hero-phone:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+.warranty-hero-reassurance {
+  margin-top: var(--space-sm);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+@media (max-width: 560px) {
+  .warranty-hero-actions {
+    gap: var(--space-sm);
+  }
+  .warranty-hero-actions .btn,
+  .warranty-hero-phone {
+    width: 100%;
+    justify-content: center;
+  }
+}
 .warranty-promises {
   display: flex;
   flex-direction: column;
