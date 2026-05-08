@@ -1,0 +1,42 @@
+# Hailey Device Repair
+
+> Hailey Device Repair fixes phones, tablets, laptops, gaming PCs, consoles, and small-business tech problems for Hailey, Ketchum, Sun Valley, Bellevue, and mail-in customers across Idaho.
+
+## Primary services
+
+- [iPhone repair](/iphone-repair): Screen, battery, charging, camera, and common iPhone fixes with quote-first guidance.
+- [Android repair](/android-repair): Samsung, Pixel, Motorola, and other Android repair options in the Wood River Valley.
+- [Laptop repair](/laptop-repair): Laptop diagnostics, charging, battery, software, and hardware repair help.
+- [MacBook repair](/macbook-repair): MacBook screen, battery, charging, keyboard, and no-power triage.
+- [Gaming PC repair](/gaming-pc-repair): Custom PC diagnostics, thermal cleanup, upgrades, no-boot troubleshooting, and performance fixes.
+- [Console repair](/console-repair): PlayStation, Xbox, and Nintendo Switch repair triage and cleaning.
+- [Tablet repair](/tablet-repair): iPad and tablet screen, battery, charging, and setup help.
+- [Data recovery](/data-recovery): Practical first steps for failed drives, damaged phones, and important files.
+
+## Help and support pages
+
+- [Repair SOS](/repair-sos): What to do first after water damage, drops, no-power failures, and urgent device problems.
+- [Pricing](/pricing): Repair pricing guidance and what affects a final quote.
+- [Warranty](/warranty): Plain-English warranty and support expectations after a repair.
+- [Device check](/device-check): Self-check guidance before booking a repair.
+- [Tech helper](/tech-helper): Guided help for common device and computer questions.
+- [Computer support](/computer-support): Local computer setup, troubleshooting, cleanup, and small-business tech help.
+- [Virus removal](/virus-removal): Malware cleanup and safer-device guidance.
+- [Printer setup](/printer-setup): Printer, Wi-Fi, driver, and home-office setup help.
+
+## Mail-in repair
+
+- [Mail-in repair](/mail-in-repair): Quote-first mail-in repair from Idaho with packing and turnaround guidance.
+- [Mail-in iPhone repair](/mail-in/iphone): Ship an iPhone for screen, battery, charging, and diagnostic help.
+- [Mail-in iPad repair](/mail-in/ipad): Ship an iPad or tablet for repair triage.
+- [Mail-in MacBook repair](/mail-in/macbook): Ship a MacBook for no-power, screen, battery, and charging issues.
+
+## Service areas
+
+- [Boise repair](/boise-repair): Statewide mail-in / quote-first option for Boise, Meridian, Nampa, Caldwell, Eagle, and nearby towns.
+- [Rexburg repair](/rexburg-repair): Student and family device repair support with Idaho mail-in guidance.
+- [Hailey Device Repair home](/): Local repair shop site for Hailey and the Wood River Valley.
+
+## Contact
+
+- [Contact Hailey Device Repair](/contact): Text or call (208) 366-6111 with the device model, what happened, and a photo if useful.

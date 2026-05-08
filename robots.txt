@@ -1,11 +1,43 @@
 # Hailey Device Repair — robots.txt
-User-agent: *
+# Explicit AI crawler allowlist for AI Overview / ChatGPT / Perplexity visibility.
+
+User-agent: GPTBot
 Allow: /
 
-# Sitemap
-Sitemap: https://www.haileyrepair.com/sitemap.xml
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: *
+Allow: /
 
 # Disallow admin/build files
 Disallow: /build.sh
 Disallow: /PROJECT-STATE.md
 Disallow: /sw.js
+
+# Sitemap
+Sitemap: https://www.haileyrepair.com/sitemap.xml
