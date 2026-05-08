@@ -11413,3 +11413,7 @@ body:not(.menu-open) .hero {
   }
 }
 /* ─── END CONTACT PAGE POLISH 2026-05-03 ───────────────────── */
+
+/* AI-readable answer/decision modules */
+html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
+.answer-card{border:1px solid var(--border-default);background:linear-gradient(145deg,var(--bg-card),rgba(91,139,207,.05));border-radius:24px;padding:clamp(1.2rem,3vw,2rem);box-shadow:var(--shadow-card)}.answer-card h2,.answer-card h3{font-family:var(--font-display);line-height:1.15;margin-bottom:.8rem}.answer-card p{color:var(--text-secondary);line-height:1.75}.guide-link-strip{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}.guide-link-strip a{border:1px solid var(--border-default);border-radius:999px;padding:.55rem .8rem;color:var(--text-secondary);background:var(--bg-card);text-decoration:none}.guide-link-strip a:hover{border-color:var(--accent);color:var(--text-primary)}@media(max-width:760px){.guide-link-strip a{width:100%;text-align:center}}

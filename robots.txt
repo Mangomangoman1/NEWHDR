@@ -1,5 +1,5 @@
 # Hailey Device Repair — robots.txt
-# Explicit AI crawler allowlist for AI Overview / ChatGPT / Perplexity visibility.
+# Explicit AI crawler allowlist. This permits access; it does not guarantee citation or ranking.
 
 User-agent: GPTBot
 Allow: /
