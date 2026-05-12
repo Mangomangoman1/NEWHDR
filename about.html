@@ -62,7 +62,7 @@ a{color:inherit;text-decoration:none}
 .hero-headline-accent{background:linear-gradient(135deg,var(--accent),var(--color-cyan,#22d3ee));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);max-width:520px;line-height:1.7;margin-bottom:2rem}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
-.page-curtain{position:fixed;inset:0;z-index:9999;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;transition:opacity 0.4s,visibility 0.4s}
+.page-curtain{position:fixed;inset:0;z-index:-1;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.18s,visibility 0.18s}
 .page-curtain.done{opacity:0;visibility:hidden;pointer-events:none}
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--color-cyan,#22d3ee));z-index:101;width:0;transition:none}
 .promo-banner{background:var(--accent);color:#fff;font-size:0.85rem;padding:0.5rem 0;text-align:center}
@@ -83,8 +83,8 @@ a{color:inherit;text-decoration:none}
 .breadcrumb-sep{font-size:0.9rem}
 .text-accent{background:linear-gradient(135deg,var(--accent),var(--color-cyan,#22d3ee));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 @media(max-width:768px){.nav-links,.nav-actions .theme-toggle{display:none}.nav-hamburger{display:flex;flex-direction:column;gap:4px}.hero{min-height:80vh;padding:5rem 0 3rem}}</style>
-  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css" /></noscript>
+  <link rel="preload" href="style.css?v=perf-20260512" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="style.css?v=perf-20260512" /></noscript>
 
   <!-- JSON-LD: Person + LocalBusiness -->
   <script type="application/ld+json">
@@ -588,6 +588,6 @@ a{color:inherit;text-decoration:none}
     </button>
   </div>
 
-  <script src="main.js" defer></script>
+  <script src="main.js?v=perf-20260512" defer></script>
 </body>
 </html>

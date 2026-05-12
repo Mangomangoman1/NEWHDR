@@ -153,7 +153,7 @@
     .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--color-cyan));z-index:101;width:0;transition:none}
 
     /* Page curtain */
-    .page-curtain{position:fixed;inset:0;z-index:9999;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;transition:opacity 0.5s,visibility 0.5s}
+    .page-curtain{position:fixed;inset:0;z-index:-1;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.18s,visibility 0.18s}
     .page-curtain.done{opacity:0;visibility:hidden;pointer-events:none}
     .page-curtain-logo{display:flex;align-items:center;gap:0.75rem;font-family:var(--font-display);font-size:1.5rem;color:var(--text-primary)}
     .page-curtain-logo .material-symbols-outlined{color:var(--accent);font-size:1.75rem}

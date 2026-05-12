@@ -722,21 +722,15 @@
     });
   }
 
-  /* ── Page load curtain ────────────────── */
+  /* ── Page curtain fail-safe ────────────────── */
   const curtain = document.getElementById('pageCurtain');
   if (curtain) {
-    // Remove curtain once page fully loaded (or after 1.5s max)
+    // The curtain is decorative only. It must never hide content or trap taps.
     const removeCurtain = () => curtain.classList.add('done');
-    if (document.readyState === 'complete') {
-      setTimeout(removeCurtain, 300);
-    } else {
-      window.addEventListener('load', () => setTimeout(removeCurtain, 300));
-    }
-    // Safety: always remove after 1.5s even if load event is slow
-    setTimeout(removeCurtain, 1500);
-    // Fix back-button: bfcache restores the page with curtain still active
-    window.addEventListener('pageshow', (e) => {
-      if (e.persisted) curtain.classList.add('done');
+    removeCurtain();
+    window.addEventListener('pageshow', removeCurtain);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) removeCurtain();
     });
   }
 
@@ -953,27 +947,24 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     });
   }
 
-  /* ── Service worker registration ─────── */
+  /* ── Service worker cleanup ─────── */
+  // Static marketing pages should not depend on a stale service worker.
+  // It was returning cached JS/CSS during navigation, which can leave the curtain
+  // and old interaction code active after deployments.
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
+    navigator.serviceWorker.getRegistrations()
+      .then(registrations => registrations.forEach(registration => registration.unregister()))
+      .catch(() => {});
+  }
+  if ('caches' in window) {
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(key => key.startsWith('hdr-')).map(key => caches.delete(key))))
+      .catch(() => {});
   }
 
-  /* ── Smooth page transitions ──────────── */
-  // When clicking internal links, fade out via curtain before navigating
-  if (curtain && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.addEventListener('click', e => {
-      const link = e.target.closest('a[href]');
-      if (!link) return;
-      const href = link.getAttribute('href');
-      // Only intercept internal navigation (not anchors, tel:, sms:, mailto:, external)
-      if (!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('sms:') || href.startsWith('mailto:') || href.startsWith('http') || link.target === '_blank') return;
-      // Must be a local page link
-      if (!href.startsWith('/') && !href.endsWith('.html')) return;
-      e.preventDefault();
-      curtain.classList.remove('done');
-      setTimeout(() => { window.location.href = href; }, 300);
-    });
-  }
+  /* ── Native page navigation ──────────── */
+  // Do not intercept links for a fade transition. Normal anchors are faster,
+  // safer, and cannot get stuck under a full-screen cover.
 
   // ─── Device Check Wizard ─────────────────────────────────
   const dcStep1 = document.getElementById('dcStep1');

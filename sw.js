@@ -1,66 +1,24 @@
-// Hailey Device Repair — Service Worker v3
-// Network-first for HTML, cache-first for static assets
-// Updated: 2026-04-22
+// Hailey Device Repair — service worker retirement shim
+// Updated: 2026-05-12
+//
+// The site is a static marketing/service site. A stale service worker was
+// adding cache uncertainty to page transitions and JS/CSS updates, so this
+// shim unregisters itself and clears old HDR caches for returning visitors.
 
-const CACHE_NAME = 'hdr-v3';
-const STATIC_ASSETS = [
-  '/',
-  '/style.css',
-  '/main.js',
-  '/favicon.svg',
-  '/og-image.svg',
-  '/manifest.json'
-];
-
-// Pre-cache core assets on install
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(STATIC_ASSETS))
-      .then(() => self.skipWaiting())
-  );
+  self.skipWaiting();
 });
 
-// Clean old caches on activate
 self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
-    ).then(() => self.clients.claim())
-  );
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter(key => key.startsWith('hdr-')).map(key => caches.delete(key)));
+    await self.registration.unregister();
+    const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const client of clients) client.navigate(client.url);
+  })());
 });
 
-// Fetch strategy
-self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
-
-  // Skip non-GET and external requests
-  if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
-
-  // HTML: network-first (fresh content), fallback to cache
-  if (event.request.headers.get('accept')?.includes('text/html')) {
-    event.respondWith(
-      fetch(event.request)
-        .then(response => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
-          return response;
-        })
-        .catch(() => caches.match(event.request).then(r => r || caches.match('/')))
-    );
-    return;
-  }
-
-  // Static assets: stale-while-revalidate
-  event.respondWith(
-    caches.match(event.request).then(cached => {
-      const fetchPromise = fetch(event.request).then(response => {
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
-        return response;
-      }).catch(() => cached);
-
-      return cached || fetchPromise;
-    })
-  );
+self.addEventListener('fetch', () => {
+  // No-op: let the browser/network handle every request.
 });
