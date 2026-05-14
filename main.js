@@ -79,7 +79,7 @@
   }
 
   // ─── Nav: scroll shadow ──────────────────────────────────
-  const nav = document.getElementById('nav');
+  const nav = document.getElementById('nav') || document.getElementById('mainNav');
   if (nav) {
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 10);
@@ -87,7 +87,7 @@
   }
 
   // ─── Mobile nav hamburger ────────────────────────────────
-  const hamburger = document.getElementById('navHamburger');
+  const hamburger = document.getElementById('navHamburger') || document.getElementById('navToggle');
   const mobileMenu = document.getElementById('navMobile');
   const navBackdrop = document.getElementById('navBackdrop');
 
@@ -96,12 +96,14 @@
       hamburger.setAttribute('aria-expanded', 'false');
       mobileMenu.classList.remove('open');
       mobileMenu.setAttribute('aria-hidden', 'true');
+      mobileMenu.hidden = true;
       document.body.classList.remove('menu-open');
       if (navBackdrop) navBackdrop.classList.remove('visible');
       hamburger.focus();
     };
     const openMenu = () => {
       hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.hidden = false;
       mobileMenu.classList.add('open');
       mobileMenu.setAttribute('aria-hidden', 'false');
       document.body.classList.add('menu-open');

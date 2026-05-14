@@ -374,8 +374,919 @@ a{color:inherit;text-decoration:none}
 
     gtag('config', 'G-SGQ617V748');
   </script>
+
+  <style id="mailin-craft-css">
+    /* Mail-in Repair flagship pass — the gold is in the details */
+    .mailin-page {
+      --mail-bg: #0d1117;
+      --mail-panel: rgba(17, 24, 39, 0.78);
+      --mail-panel-strong: rgba(28, 34, 48, 0.92);
+      --mail-line: rgba(226, 232, 240, 0.12);
+      --mail-line-strong: rgba(226, 232, 240, 0.2);
+      --mail-text: #eef4fb;
+      --mail-muted: #9aa8b8;
+      --mail-soft: #6f7f91;
+      --mail-amber: #e8b15f;
+      --mail-amber-2: #ffd28a;
+      --mail-blue: #7fa8df;
+      --mail-teal: #75d6c8;
+      --mail-green: #7ed99a;
+      --mail-danger: #f28b82;
+      --mail-shadow: 0 24px 80px rgba(0,0,0,0.36);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(126, 168, 223, 0.16), transparent 34rem),
+        radial-gradient(circle at 82% 4%, rgba(232, 177, 95, 0.13), transparent 30rem),
+        linear-gradient(180deg, #0d1117 0%, #101723 42%, #0d1117 100%);
+    }
+    .mailin-page .container { max-width: 1180px; }
+    .mailin-page .section {
+      position: relative;
+      padding: clamp(3.6rem, 5.6vw, 5.75rem) 0;
+      overflow: clip;
+      content-visibility: visible !important;
+      contain-intrinsic-size: auto !important;
+    }
+    .mailin-page .section--alt {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.005)),
+        radial-gradient(circle at 18% 18%, rgba(126,168,223,0.08), transparent 26rem);
+      border-block: 1px solid rgba(255,255,255,0.045);
+    }
+    .mailin-page .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      width: fit-content;
+      color: var(--mail-amber-2);
+      background: rgba(232,177,95,.09);
+      border: 1px solid rgba(232,177,95,.22);
+      border-radius: 999px;
+      padding: .38rem .72rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      font-size: .69rem;
+      font-weight: 800;
+      margin-bottom: .95rem;
+    }
+    .mailin-page .section-eyebrow::before {
+      content: "";
+      width: .45rem;
+      height: .45rem;
+      border-radius: 50%;
+      background: var(--mail-amber);
+      box-shadow: 0 0 18px rgba(232,177,95,.65);
+    }
+    .mailin-page .section-title {
+      color: var(--mail-text);
+      font-size: clamp(2rem, 4vw, 3.45rem);
+      letter-spacing: -.045em;
+      line-height: .98;
+      text-wrap: balance;
+      margin-bottom: 1rem;
+    }
+    .mailin-page .section-sub {
+      color: var(--mail-muted);
+      max-width: 720px;
+      font-size: clamp(1rem, 1.45vw, 1.14rem);
+      line-height: 1.75;
+    }
+
+    /* Hero */
+    .mailin-page .lp-hero {
+      min-height: min(820px, 94vh);
+      display: flex;
+      align-items: center;
+      padding: clamp(6.3rem, 8vw, 8.4rem) 0 clamp(3.4rem, 5vw, 5rem);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,.055);
+    }
+    .mailin-page .lp-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) 0 0/74px 74px,
+        linear-gradient(rgba(255,255,255,.032) 1px, transparent 1px) 0 0/74px 74px,
+        radial-gradient(circle at 76% 34%, rgba(232,177,95,.16), transparent 22rem),
+        radial-gradient(circle at 18% 58%, rgba(117,214,200,.1), transparent 25rem);
+      mask-image: radial-gradient(ellipse at center, #000 0%, #000 58%, transparent 92%);
+      opacity: .82;
+    }
+    .mailin-page .lp-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -42% -20%;
+      height: 55%;
+      background: radial-gradient(ellipse at center, rgba(126,168,223,.14), transparent 62%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    .mailin-page .mail-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(340px, .86fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .mailin-page .mail-hero-copy { max-width: 710px; }
+    .mailin-page .breadcrumb {
+      justify-content: flex-start;
+      margin-bottom: 1.1rem;
+      color: var(--mail-soft);
+    }
+    .mailin-page .lp-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .48rem .78rem;
+      margin-bottom: 1.25rem;
+      border-radius: 999px;
+      background: rgba(126,168,223,.09);
+      border: 1px solid rgba(126,168,223,.22);
+      color: #dbeafe;
+      font-size: .82rem;
+      font-weight: 800;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+    }
+    .mailin-page .lp-hero-title {
+      font-size: clamp(2.75rem, 7vw, 6.7rem);
+      line-height: .88;
+      letter-spacing: -.078em;
+      color: var(--mail-text);
+      margin: 0 0 1.3rem;
+      text-wrap: balance;
+    }
+    .mailin-page .lp-hero-title .accent {
+      position: relative;
+      display: inline-block;
+      color: var(--mail-amber-2);
+      background: linear-gradient(100deg, #fff0c2, var(--mail-amber), #86e7dc);
+      -webkit-background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 14px 36px rgba(232,177,95,.18));
+    }
+    .mailin-page .lp-hero-title .accent::after {
+      content: "";
+      position: absolute;
+      left: .04em;
+      right: .06em;
+      bottom: -.13em;
+      height: .08em;
+      background: linear-gradient(90deg, transparent, rgba(232,177,95,.78), rgba(117,214,200,.72), transparent);
+      border-radius: 999px;
+    }
+    .mailin-page .lp-hero-sub {
+      max-width: 650px;
+      color: #b4c2d2;
+      font-size: clamp(1.06rem, 1.7vw, 1.24rem);
+      line-height: 1.72;
+      margin-bottom: 1.45rem;
+    }
+    .mailin-page .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem;
+      align-items: center;
+      margin-top: 1.1rem;
+    }
+    .mailin-page .btn-lg {
+      min-height: 3.55rem;
+      border-radius: 1.05rem;
+      padding: .95rem 1.18rem;
+      font-weight: 850;
+      letter-spacing: -.01em;
+    }
+    .mailin-page .btn-primary {
+      background: linear-gradient(135deg, var(--mail-amber-2), var(--mail-amber));
+      color: #15120b;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 18px 42px rgba(232,177,95,.22), inset 0 1px 0 rgba(255,255,255,.38);
+    }
+    .mailin-page .btn-outline {
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.15);
+      color: var(--mail-text);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .mailin-page .btn:hover { transform: translateY(-2px); }
+    .mailin-page .mail-trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-top: 1.2rem;
+    }
+    .mailin-page .mail-trust-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .52rem .72rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.1);
+      color: #d7e3f2;
+      font-size: .82rem;
+      font-weight: 750;
+    }
+    .mailin-page .mail-trust-chip svg { width: 16px; height: 16px; color: var(--mail-teal); }
+
+    .mailin-page .mail-hero-art {
+      position: relative;
+      min-height: 520px;
+      perspective: 1200px;
+    }
+    .mailin-page .mail-route-orbit {
+      position: absolute;
+      inset: 1rem;
+      border: 1px dashed rgba(126,168,223,.26);
+      border-radius: 42% 58% 49% 51% / 48% 42% 58% 52%;
+      transform: rotate(-8deg);
+      opacity: .8;
+      animation: mailOrbit 16s linear infinite;
+    }
+    .mailin-page .mail-route-orbit::before,
+    .mailin-page .mail-route-orbit::after {
+      content: "";
+      position: absolute;
+      width: .65rem;
+      height: .65rem;
+      border-radius: 50%;
+      background: var(--mail-amber-2);
+      box-shadow: 0 0 24px rgba(232,177,95,.75);
+    }
+    .mailin-page .mail-route-orbit::before { top: 10%; left: 18%; }
+    .mailin-page .mail-route-orbit::after { right: 16%; bottom: 12%; background: var(--mail-teal); box-shadow: 0 0 24px rgba(117,214,200,.75); }
+    .mailin-page .mail-parcel {
+      position: relative;
+      z-index: 2;
+      max-width: 440px;
+      margin: 2rem auto 0;
+      padding: 1.05rem;
+      border-radius: 2rem;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.035)),
+        radial-gradient(circle at 25% 0%, rgba(232,177,95,.18), transparent 18rem);
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: var(--mail-shadow), inset 0 1px 0 rgba(255,255,255,.16);
+      transform: rotate3d(1, -1, 0, 7deg) rotate(-1.2deg);
+      transition: transform .45s ease, border-color .45s ease;
+    }
+    .mailin-page .mail-parcel:hover { transform: rotate3d(1, -1, 0, 3deg) rotate(.2deg) translateY(-4px); border-color: rgba(232,177,95,.34); }
+    .mailin-page .mail-parcel-tape {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 72px;
+      transform: translateX(-50%);
+      background: repeating-linear-gradient(90deg, rgba(232,177,95,.24) 0 10px, rgba(255,210,138,.17) 10px 20px);
+      opacity: .42;
+      border-inline: 1px solid rgba(232,177,95,.18);
+      pointer-events: none;
+    }
+    .mailin-page .mail-parcel-inner {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.45rem;
+      background: #f3ead8;
+      color: #1f2933;
+      min-height: 430px;
+      padding: 1rem;
+      box-shadow: inset 0 0 0 1px rgba(31,41,51,.08);
+    }
+    .mailin-page .mail-parcel-inner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 12rem), linear-gradient(135deg, rgba(0,0,0,.025), transparent 40%);
+      pointer-events: none;
+    }
+    .mailin-page .mail-label {
+      position: relative;
+      z-index: 2;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(31,41,51,.16);
+      border-radius: 1.05rem;
+      padding: 1rem;
+      box-shadow: 0 16px 30px rgba(31,41,51,.1);
+    }
+    .mailin-page .mail-label-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: .9rem;
+      padding-bottom: .85rem;
+      border-bottom: 1px dashed rgba(31,41,51,.22);
+    }
+    .mailin-page .mail-label-kicker {
+      font-size: .66rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #667085;
+      font-weight: 900;
+    }
+    .mailin-page .mail-label h3 { font-size: 1.22rem; line-height: 1.05; margin: .25rem 0 0; letter-spacing: -.04em; color: #111827; }
+    .mailin-page .mail-stamp {
+      display: grid;
+      place-items: center;
+      min-width: 82px;
+      min-height: 66px;
+      border: 2px solid #b65b45;
+      color: #9f452f;
+      border-radius: .35rem;
+      text-transform: uppercase;
+      font-size: .64rem;
+      letter-spacing: .08em;
+      font-weight: 900;
+      transform: rotate(5deg);
+      background: repeating-linear-gradient(-12deg, rgba(182,91,69,.06) 0 4px, transparent 4px 8px);
+    }
+    .mailin-page .mail-route-lines {
+      display: grid;
+      gap: .55rem;
+      margin: .9rem 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: .77rem;
+      color: #344054;
+    }
+    .mailin-page .mail-route-line {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+    }
+    .mailin-page .route-dot { width: .48rem; height: .48rem; border-radius: 50%; background: #98a2b3; box-shadow: 0 0 0 4px rgba(152,162,179,.14); }
+    .mailin-page .route-dot--hot { background: #d89642; box-shadow: 0 0 0 4px rgba(216,150,66,.18); }
+    .mailin-page .mail-barcode {
+      height: 42px;
+      border-radius: .45rem;
+      background: repeating-linear-gradient(90deg, #111827 0 2px, transparent 2px 5px, #111827 5px 8px, transparent 8px 13px);
+      opacity: .72;
+      position: relative;
+      overflow: hidden;
+    }
+    .mailin-page .mail-barcode::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.68), transparent);
+      transform: translateX(-100%);
+      animation: barcodeScan 4.5s ease-in-out infinite;
+    }
+    .mailin-page .device-slab {
+      position: absolute;
+      z-index: 3;
+      right: 1.35rem;
+      bottom: 1.25rem;
+      width: 134px;
+      height: 196px;
+      border-radius: 1.35rem;
+      background: linear-gradient(145deg, #202a36, #0f1621);
+      border: 4px solid #111827;
+      box-shadow: 0 20px 42px rgba(0,0,0,.32);
+      transform: rotate(7deg);
+    }
+    .mailin-page .device-slab::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: 1rem;
+      background:
+        linear-gradient(130deg, transparent 48%, rgba(255,255,255,.16) 49%, transparent 51%),
+        radial-gradient(circle at 70% 18%, rgba(126,168,223,.42), transparent 3rem),
+        linear-gradient(180deg, #111827, #182334);
+    }
+    .mailin-page .device-slab::after {
+      content: "";
+      position: absolute;
+      left: 36%;
+      top: 18%;
+      width: 2px;
+      height: 96px;
+      background: rgba(255,255,255,.48);
+      transform: rotate(28deg);
+      box-shadow: 18px 18px 0 rgba(255,255,255,.22), -15px 40px 0 rgba(255,255,255,.16);
+    }
+    .mailin-page .mail-micro-ledger {
+      position: absolute;
+      left: 1.2rem;
+      bottom: 1.15rem;
+      width: 190px;
+      z-index: 4;
+      display: grid;
+      gap: .42rem;
+    }
+    .mailin-page .ledger-chip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      padding: .5rem .62rem;
+      border-radius: .75rem;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(31,41,51,.1);
+      color: #1f2937;
+      font-size: .69rem;
+      font-weight: 850;
+      box-shadow: 0 8px 20px rgba(31,41,51,.08);
+    }
+    .mailin-page .ledger-chip span:last-child { color: #027a48; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .mailin-page .mail-floating-note {
+      position: absolute;
+      z-index: 4;
+      top: 2rem;
+      right: -.25rem;
+      width: 150px;
+      padding: .75rem;
+      border-radius: 1rem;
+      background: rgba(13,17,23,.82);
+      color: #d9e7f5;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 16px 44px rgba(0,0,0,.28);
+      font-size: .76rem;
+      transform: rotate(3deg);
+      backdrop-filter: blur(14px);
+    }
+    .mailin-page .mail-floating-note strong { display:block; color: var(--mail-amber-2); margin-bottom:.25rem; }
+
+    /* Answer / diagnostic card */
+    .mailin-page .answer-card {
+      position: relative;
+      border: 1px solid rgba(255,255,255,.13);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.035)),
+        radial-gradient(circle at 10% 0%, rgba(232,177,95,.12), transparent 18rem);
+      border-radius: clamp(1.3rem, 3vw, 2rem);
+      box-shadow: var(--mail-shadow), inset 0 1px 0 rgba(255,255,255,.09);
+      padding: clamp(1.25rem, 3vw, 2rem);
+      overflow: hidden;
+    }
+    .mailin-page .answer-card::before {
+      content: "HDR INTAKE / MAIL-IN";
+      position: absolute;
+      top: 1rem;
+      right: -2.4rem;
+      transform: rotate(18deg);
+      padding: .28rem 2.6rem;
+      background: rgba(232,177,95,.14);
+      border: 1px solid rgba(232,177,95,.22);
+      color: rgba(255,210,138,.86);
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+    }
+    .mailin-page .mail-answer-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(260px, .55fr);
+      gap: clamp(1rem, 4vw, 2rem);
+      align-items: center;
+    }
+    .mailin-page .mail-answer-checklist {
+      display: grid;
+      gap: .55rem;
+      margin-top: 1rem;
+    }
+    .mailin-page .mail-answer-checklist span,
+    .mailin-page .guide-link-strip a {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      border-radius: 999px;
+      padding: .55rem .76rem;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      color: #dce8f7;
+      font-size: .84rem;
+      font-weight: 760;
+    }
+    .mailin-page .mail-answer-checklist span::before,
+    .mailin-page .guide-link-strip a::before {
+      content: "";
+      width: .45rem;
+      height: .45rem;
+      border-radius: 50%;
+      background: var(--mail-teal);
+      box-shadow: 0 0 14px rgba(117,214,200,.55);
+    }
+    .mailin-page .guide-link-strip { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1.1rem; }
+    .mailin-page .mail-mini-ticket {
+      position: relative;
+      border-radius: 1.2rem;
+      background: #f4ead7;
+      color: #1f2937;
+      padding: 1rem;
+      box-shadow: 0 18px 42px rgba(0,0,0,.24);
+      transform: rotate(.8deg);
+    }
+    .mailin-page .mail-mini-ticket::before {
+      content: "";
+      position: absolute;
+      left: .9rem;
+      right: .9rem;
+      top: -.35rem;
+      height: .7rem;
+      background: radial-gradient(circle, transparent 0 .28rem, #f4ead7 .29rem) 0 0/.7rem .7rem repeat-x;
+    }
+    .mailin-page .mini-ticket-row { display:flex; justify-content:space-between; gap:1rem; padding:.55rem 0; border-bottom:1px dashed rgba(31,41,51,.2); font-size:.8rem; }
+    .mailin-page .mini-ticket-row strong { color:#111827; }
+    .mailin-page .mini-ticket-stamp { margin-top:.85rem; text-align:center; border:2px solid #b65b45; color:#9f452f; border-radius:.4rem; padding:.45rem; font-weight:900; letter-spacing:.12em; transform:rotate(-2deg); }
+
+    /* Rich cards and modules */
+    .mailin-page .mail-reality-grid,
+    .mailin-page .lp-info-grid,
+    .mailin-page .mail-cities-grid,
+    .mailin-page .mail-packing-grid,
+    .mailin-page .mail-pricing-grid,
+    .mailin-page .lp-compare-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: clamp(1.5rem, 4vw, 2.4rem);
+    }
+    .mailin-page .mail-reality-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .mailin-page .lp-info-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .mailin-page .mail-cities-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .mailin-page .mail-packing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .mailin-page .mail-pricing-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .mailin-page .lp-compare-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+    .mailin-page .mail-reality-stat,
+    .mailin-page .lp-info-card,
+    .mailin-page .mail-city-card,
+    .mailin-page .mail-packing-card,
+    .mailin-page .mail-pricing-card,
+    .mailin-page .lp-compare-card,
+    .mailin-page .mail-timeline-day {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.105);
+      background: linear-gradient(160deg, rgba(255,255,255,.075), rgba(255,255,255,.028));
+      border-radius: 1.25rem;
+      padding: 1.05rem;
+      box-shadow: 0 14px 48px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.06);
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .mailin-page .lp-info-card::after,
+    .mailin-page .mail-packing-card::after,
+    .mailin-page .mail-pricing-card::after,
+    .mailin-page .mail-city-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.075), transparent 42%);
+      transform: translateX(-120%);
+      transition: transform .75s ease;
+      pointer-events: none;
+    }
+    .mailin-page .lp-info-card:hover,
+    .mailin-page .mail-packing-card:hover,
+    .mailin-page .mail-pricing-card:hover,
+    .mailin-page .mail-city-card:hover,
+    .mailin-page .lp-compare-card:hover,
+    .mailin-page .mail-reality-stat:hover { transform: translateY(-4px); border-color: rgba(232,177,95,.28); background: linear-gradient(160deg, rgba(255,255,255,.095), rgba(255,255,255,.038)); }
+    .mailin-page .lp-info-card:hover::after,
+    .mailin-page .mail-packing-card:hover::after,
+    .mailin-page .mail-pricing-card:hover::after,
+    .mailin-page .mail-city-card:hover::after { transform: translateX(120%); }
+    .mailin-page .mail-reality-number,
+    .mailin-page .mail-pricing-price strong {
+      color: var(--mail-amber-2);
+      font-size: clamp(1.65rem, 3vw, 2.45rem);
+      line-height: 1;
+      letter-spacing: -.05em;
+      margin-bottom: .55rem;
+      display: block;
+    }
+    .mailin-page .mail-reality-label,
+    .mailin-page .lp-info-card p,
+    .mailin-page .mail-city-card p,
+    .mailin-page .mail-packing-card li,
+    .mailin-page .mail-pricing-items,
+    .mailin-page .lp-compare-card p,
+    .mailin-page .mail-timeline-day p { color: var(--mail-muted); line-height: 1.62; font-size: .93rem; }
+    .mailin-page .lp-info-card h3,
+    .mailin-page .mail-city-name,
+    .mailin-page .mail-packing-card h3,
+    .mailin-page .lp-compare-card h3 { color: var(--mail-text); letter-spacing: -.025em; line-height: 1.08; margin: .75rem 0 .5rem; }
+    .mailin-page .lp-info-card a,
+    .mailin-page .mail-city-card a,
+    .mailin-page .faq-answer a,
+    .mailin-page .mail-packing-tip a { color: #b8d5ff; text-decoration: underline; text-decoration-color: rgba(184,213,255,.35); text-underline-offset: .2em; }
+    .mailin-page .lp-info-card-icon,
+    .mailin-page .mail-packing-icon,
+    .mailin-page .lp-compare-icon {
+      width: 3.15rem;
+      height: 3.15rem;
+      display: grid;
+      place-items: center;
+      border-radius: 1rem;
+      background: rgba(126,168,223,.12);
+      border: 1px solid rgba(126,168,223,.22);
+      color: #b8d5ff;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+    }
+    .mailin-page .lp-info-card-icon--green { background: rgba(126,217,154,.11); border-color: rgba(126,217,154,.22); color: var(--mail-green); }
+    .mailin-page .lp-info-card-icon--cyan { background: rgba(117,214,200,.1); border-color: rgba(117,214,200,.22); color: var(--mail-teal); }
+    .mailin-page .lp-info-card-icon--red { background: rgba(242,139,130,.1); border-color: rgba(242,139,130,.22); color: var(--mail-danger); }
+    .mailin-page .mail-turnaround,
+    .mailin-page .mail-city-time,
+    .mailin-page .mail-packing-cost,
+    .mailin-page .mail-step-detail {
+      margin-top: .9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      color: #dce8f7;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px;
+      padding: .48rem .64rem;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+    .mailin-page .mail-reality-note,
+    .mailin-page .mail-packing-tip {
+      border: 1px solid rgba(232,177,95,.2);
+      background: linear-gradient(145deg, rgba(232,177,95,.1), rgba(255,255,255,.035));
+      border-radius: 1.2rem;
+      padding: 1rem 1.1rem;
+      margin-top: 1.3rem;
+      color: #d9e5f2;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+    }
+    .mailin-page .mail-packing-tip { display:flex; align-items:flex-start; gap:.8rem; max-width: 860px; margin-inline:auto; }
+    .mailin-page .mail-packing-tip > .material-symbols-outlined { color: var(--mail-amber-2); }
+
+    /* Process timeline */
+    .mailin-page .mail-steps-timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2.2rem;
+    }
+    .mailin-page .mail-steps-timeline::before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 2.35rem;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(126,168,223,.12), rgba(232,177,95,.6), rgba(117,214,200,.5), rgba(126,168,223,.12));
+      box-shadow: 0 0 22px rgba(232,177,95,.18);
+    }
+    .mailin-page .mail-step {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: .85rem;
+      border: 1px solid rgba(255,255,255,.11);
+      background: rgba(13,17,23,.58);
+      backdrop-filter: blur(16px);
+      border-radius: 1.3rem;
+      padding: 1rem;
+      box-shadow: 0 14px 48px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .mailin-page .mail-step-number {
+      position: absolute;
+      top: -.75rem;
+      right: 1rem;
+      width: 2.15rem;
+      height: 2.15rem;
+      display: grid;
+      place-items: center;
+      border-radius: .8rem;
+      color: #15120b;
+      background: linear-gradient(135deg, var(--mail-amber-2), var(--mail-amber));
+      box-shadow: 0 10px 28px rgba(232,177,95,.23);
+      font-weight: 950;
+    }
+    .mailin-page .mail-step-icon {
+      width: 4.4rem;
+      height: 4.4rem;
+      display: grid;
+      place-items: center;
+      border-radius: 1.25rem;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.18), transparent 55%), rgba(126,168,223,.1);
+      border: 1px solid rgba(126,168,223,.2);
+      color: #c7ddff;
+    }
+    .mailin-page .mail-step-icon .material-symbols-outlined { font-size: 2.1rem; }
+    .mailin-page .mail-step h3 { color: var(--mail-text); letter-spacing: -.03em; line-height: 1.08; margin-bottom:.4rem; }
+    .mailin-page .mail-step p { color: var(--mail-muted); line-height:1.62; }
+
+    /* Comparison and data-heavy sections */
+    .mailin-page .lp-table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 1.3rem;
+      box-shadow: var(--mail-shadow);
+      background: rgba(255,255,255,.035);
+      margin-top: 1.7rem;
+    }
+    .mailin-page .lp-table { width: 100%; border-collapse: collapse; min-width: 740px; }
+    .mailin-page .lp-table th,
+    .mailin-page .lp-table td { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,.08); text-align:left; color: var(--mail-muted); }
+    .mailin-page .lp-table th { color: var(--mail-text); font-size: .82rem; text-transform: uppercase; letter-spacing:.08em; background: rgba(255,255,255,.04); }
+    .mailin-page .lp-table-highlight { color: #eef6ff !important; background: rgba(232,177,95,.075); }
+    .mailin-page .mail-packing-list,
+    .mailin-page .mail-pricing-items { list-style:none; display:grid; gap:.55rem; padding:0; margin:.75rem 0 0; }
+    .mailin-page .mail-packing-list li { display:flex; gap:.5rem; align-items:flex-start; }
+    .mailin-page .mail-packing-list .material-symbols-outlined { color: var(--mail-green); font-size:1.05rem; margin-top:.08rem; }
+    .mailin-page .mail-timeline-strip {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(190px, 1fr));
+      gap: .9rem;
+      overflow-x: auto;
+      padding: .45rem .1rem .75rem;
+      margin-top: 2rem;
+      scroll-snap-type: x proximity;
+    }
+    .mailin-page .mail-timeline-day { min-height: 250px; scroll-snap-align: start; }
+    .mailin-page .mail-timeline-day-num {
+      color: var(--mail-amber-2);
+      font-weight: 950;
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .mailin-page .mail-timeline-day-label { color: var(--mail-text); font-weight:900; line-height:1.1; margin:.45rem 0 .55rem; font-size:1.05rem; }
+    .mailin-page .mail-timeline-day-icon { position:absolute; right:.9rem; bottom:.9rem; color:rgba(255,255,255,.12); }
+    .mailin-page .mail-timeline-day-icon .material-symbols-outlined { font-size:3.2rem; }
+    .mailin-page .mail-founder-note {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 1.5rem;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border-radius: 1.7rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      box-shadow: var(--mail-shadow);
+    }
+    .mailin-page .mail-founder-note-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--mail-amber-2);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .76rem;
+      font-weight: 900;
+      border-right: 1px dashed rgba(255,255,255,.16);
+      padding-right: 1rem;
+    }
+    .mailin-page .mail-founder-note-header .material-symbols-outlined { font-size: 2.5rem; }
+    .mailin-page .bench-ledger {
+      width: 100%;
+      display: grid;
+      gap: .55rem;
+      margin-top: auto;
+    }
+    .mailin-page .bench-ledger-row {
+      display: flex;
+      justify-content: space-between;
+      gap: .75rem;
+      padding: .62rem .7rem;
+      border-radius: .78rem;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.09);
+      color: #dce8f7;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: .72rem;
+      line-height: 1.2;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .mailin-page .bench-ledger-row strong { color: var(--mail-amber-2); font-weight: 950; }
+    .mailin-page .mail-final-section { padding-top: clamp(2.4rem, 3.6vw, 3.5rem); padding-bottom: clamp(1rem, 1.8vw, 1.5rem); }
+    .mailin-page .footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      background:
+        radial-gradient(circle at 14% 0%, rgba(232,177,95,.09), transparent 22rem),
+        linear-gradient(180deg, rgba(255,255,255,.035), rgba(6,10,16,.72));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.045);
+    }
+    .mailin-page .footer-bottom { border-top-color: rgba(255,255,255,.09); }
+    .mailin-page .mail-founder-note-body { color:#d8e4f1; font-size:1.04rem; line-height:1.78; display:grid; gap:1rem; }
+    .mailin-page .mail-founder-note-sig { color:var(--mail-text); font-weight:850; }
+    .mailin-page .mail-founder-note-sig span { color: var(--mail-muted); font-weight:650; }
+    .mailin-page .faq-list { display:grid; gap:.75rem; max-width: 920px; margin: 2rem auto 0; }
+    .mailin-page .faq-item {
+      border: 1px solid rgba(255,255,255,.11);
+      background: rgba(255,255,255,.045);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    .mailin-page .faq-question { cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 1.1rem; color:var(--mail-text); font-weight:850; }
+    .mailin-page .faq-answer { padding:0 1.1rem 1.1rem; color:var(--mail-muted); line-height:1.68; }
+    .mailin-page .lp-bottom-cta {
+      position: relative;
+      text-align: center;
+      border-radius: 2rem;
+      border: 1px solid rgba(232,177,95,.22);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(232,177,95,.2), transparent 18rem),
+        linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+      padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+      box-shadow: var(--mail-shadow), inset 0 1px 0 rgba(255,255,255,.1);
+      overflow: hidden;
+    }
+    .mailin-page .lp-bottom-cta::before {
+      content: "PACKED · QUOTED · FIXED · RETURNED";
+      position:absolute;
+      left:50%;
+      top:1rem;
+      transform:translateX(-50%);
+      color:rgba(255,210,138,.18);
+      font-size:.72rem;
+      font-weight:950;
+      letter-spacing:.25em;
+      white-space:nowrap;
+    }
+    .mailin-page [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: transform .28s ease, opacity .28s ease, border-color .25s ease, background .25s ease !important;
+    }
+    .mailin-page .cookie-banner {
+      top: auto !important;
+      bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+      left: auto !important;
+      right: 1rem !important;
+      width: min(330px, calc(100vw - 2rem));
+      max-width: 330px;
+      margin: 0;
+      padding: .55rem .62rem;
+      transform: none !important;
+      border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(13,17,23,.92);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.32);
+      z-index: 80;
+    }
+    .mailin-page .cookie-banner-text { font-size: .68rem; line-height: 1.35; }
+    .mailin-page .cookie-banner-actions { gap: .4rem; }
+    .mailin-page .cookie-banner .btn-accept,
+    .mailin-page .cookie-banner .btn-decline { padding: .38rem .5rem; font-size: .7rem; }
+
+    @keyframes mailOrbit { to { transform: rotate(352deg); } }
+    @keyframes barcodeScan { 0%, 42% { transform: translateX(-115%); } 58%, 100% { transform: translateX(115%); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mailin-page *, .mailin-page *::before, .mailin-page *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+    @media (max-width: 980px) {
+      .mailin-page .mail-hero-grid,
+      .mailin-page .mail-answer-layout,
+      .mailin-page .mail-founder-note { grid-template-columns: 1fr; }
+      .mailin-page .mail-hero-art { min-height: 420px; max-width: 560px; width: 100%; margin: 1.5rem auto 0; }
+      .mailin-page .lp-hero { align-items: flex-start; min-height: auto; }
+      .mailin-page .mail-reality-grid,
+      .mailin-page .lp-info-grid,
+      .mailin-page .mail-cities-grid,
+      .mailin-page .mail-pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .mailin-page .mail-packing-grid,
+      .mailin-page .lp-compare-grid { grid-template-columns: 1fr !important; }
+      .mailin-page .mail-steps-timeline { grid-template-columns: 1fr 1fr; }
+      .mailin-page .mail-steps-timeline::before { display:none; }
+      .mailin-page .mail-founder-note-header { border-right:0; border-bottom:1px dashed rgba(255,255,255,.16); padding-right:0; padding-bottom:1rem; }
+    }
+    @media (max-width: 620px) {
+      .mailin-page .container { padding-inline: 1rem; }
+      .mailin-page .lp-hero { padding-top: 5.25rem; }
+      .mailin-page .breadcrumb { display:none; }
+      .mailin-page .lp-hero-title { font-size: clamp(2.55rem, 16vw, 4.3rem); }
+      .mailin-page .lp-hero-sub { font-size: 1rem; }
+      .mailin-page .hero-actions .btn { width: 100%; justify-content:center; }
+      .mailin-page .mail-trust-row { display:grid; grid-template-columns:1fr; }
+      .mailin-page .mail-hero-art { min-height: 340px; margin-top: 1.25rem; }
+      .mailin-page .mail-parcel { margin-top: .6rem; transform: none; max-width: 100%; padding: .75rem; }
+      .mailin-page .mail-parcel-inner { min-height: 322px; }
+      .mailin-page .mail-floating-note { right: .25rem; top: .8rem; width: 132px; font-size:.68rem; }
+      .mailin-page .device-slab { width: 104px; height: 154px; right: .9rem; bottom: .85rem; }
+      .mailin-page .mail-micro-ledger { width: 158px; left: .85rem; }
+      .mailin-page .ledger-chip { font-size:.61rem; }
+      .mailin-page .mail-reality-grid,
+      .mailin-page .lp-info-grid,
+      .mailin-page .mail-cities-grid,
+      .mailin-page .mail-pricing-grid,
+      .mailin-page .mail-steps-timeline { grid-template-columns: 1fr; }
+      .mailin-page .mail-packing-tip { flex-direction: column; }
+      .mailin-page .section { padding-block: 3.25rem; }
+      .mailin-page .section-title { font-size: clamp(1.8rem, 10vw, 2.55rem); }
+      .mailin-page .lp-table th, .mailin-page .lp-table td { padding:.8rem; }
+      .mailin-page .cookie-banner.visible ~ .floating-theme-toggle,
+      .mailin-page .cookie-banner.visible ~ .back-to-top,
+      .mailin-page .cookie-banner.visible ~ .help-fab { display: none !important; }
+    }
+  </style>
+
 </head>
-<body>
+<body class="mailin-page">
 
   <!-- Page load curtain -->
   <div class="page-curtain" id="pageCurtain">
@@ -430,37 +1341,102 @@ a{color:inherit;text-decoration:none}
   ══════════════════════════════════════════════ -->
   <section class="lp-hero">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span class="material-symbols-outlined breadcrumb-sep" aria-hidden="true">chevron_right</span>
-        <span aria-current="page">Mail-In Repair</span>
-      </nav>
+      <div class="mail-hero-grid">
+        <div class="mail-hero-copy">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="material-symbols-outlined breadcrumb-sep" aria-hidden="true">chevron_right</span>
+            <span aria-current="page">Mail-In Repair</span>
+          </nav>
 
-      <div class="lp-hero-badge">
-        <span class="material-symbols-outlined" aria-hidden="true">local_shipping</span>
-        Free return shipping on every repair
-      </div>
+          <div class="lp-hero-badge">
+            <span class="material-symbols-outlined" aria-hidden="true">local_shipping</span>
+            Free return shipping · Quote before you ship
+          </div>
 
-      <h1 class="lp-hero-title">Can't make it to Hailey?<br /><span class="accent">Ship it. We'll fix it.</span></h1>
-      <p class="lp-hero-sub">Mail-in repair for phones, laptops, tablets, and game consoles from anywhere in Idaho. Text us your issue, get a real quote before you ship, and we'll have it back to you in 3‑5 days — repaired, tested, and ready to go.</p>
+          <h1 class="lp-hero-title">Ship the broken thing.<br /><span class="accent">Get back the working one.</span></h1>
+          <p class="lp-hero-sub">Mail-in repair for phones, laptops, tablets, and game consoles from anywhere in Idaho. Text the model, symptoms, and photos first — Samuel will tell you if shipping makes sense before you spend a dollar on postage.</p>
 
-      <div class="hero-actions">
-        <a href="sms:+12083666111" class="btn btn-primary btn-lg">
-          <span class="material-symbols-outlined" aria-hidden="true">sms</span>
-          Text to Start
-        </a>
-        <a href="#how-it-works" class="btn btn-outline btn-lg">
-          <span class="material-symbols-outlined" aria-hidden="true">arrow_downward</span>
-          See How It Works
-        </a>
+          <div class="hero-actions">
+            <a href="sms:+12083666111" class="btn btn-primary btn-lg">
+              <span class="material-symbols-outlined" aria-hidden="true">sms</span>
+              Text Photos for a Quote
+            </a>
+            <a href="#how-it-works" class="btn btn-outline btn-lg">
+              <span class="material-symbols-outlined" aria-hidden="true">route</span>
+              See the Mail-In Route
+            </a>
+          </div>
+
+          <div class="mail-trust-row" aria-label="Mail-in repair trust signals">
+            <span class="mail-trust-chip"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5 9 17 20 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Text updates at every handoff</span>
+            <span class="mail-trust-chip"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/><path d="M5.5 11h13v9h-13z" stroke="currentColor" stroke-width="2"/><path d="M12 15v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Data stays private</span>
+            <span class="mail-trust-chip"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8h13v8H3z" stroke="currentColor" stroke-width="2"/><path d="M16 11h3l2 2v3h-5" stroke="currentColor" stroke-width="2"/><circle cx="7" cy="18" r="1.5" fill="currentColor"/><circle cx="18" cy="18" r="1.5" fill="currentColor"/></svg>Return shipping included</span>
+          </div>
+        </div>
+
+        <div class="mail-hero-art" aria-hidden="true">
+          <div class="mail-route-orbit"></div>
+          <div class="mail-floating-note"><strong>Bench rule</strong>Quote confirmed before repair. No surprise parts. No mystery inbox.</div>
+          <div class="mail-parcel">
+            <div class="mail-parcel-tape"></div>
+            <div class="mail-parcel-inner">
+              <div class="mail-label">
+                <div class="mail-label-top">
+                  <div>
+                    <div class="mail-label-kicker">Priority Repair Route</div>
+                    <h3>Idaho → Hailey bench → back to you</h3>
+                  </div>
+                  <div class="mail-stamp">Quote<br>First</div>
+                </div>
+                <div class="mail-route-lines">
+                  <div class="mail-route-line"><span class="route-dot"></span><span>FROM: Boise / Twin Falls / Rexburg / anywhere Idaho</span></div>
+                  <div class="mail-route-line"><span class="route-dot route-dot--hot"></span><span>TO: Hailey Device Repair bench</span></div>
+                  <div class="mail-route-line"><span class="route-dot"></span><span>RETURN: tested + tracked + packed clean</span></div>
+                </div>
+                <div class="mail-barcode"></div>
+              </div>
+              <div class="mail-micro-ledger">
+                <div class="ledger-chip"><span>Arrived</span><span>TEXTED</span></div>
+                <div class="ledger-chip"><span>Display test</span><span>PASS</span></div>
+                <div class="ledger-chip"><span>Return label</span><span>FREE</span></div>
+              </div>
+              <div class="device-slab"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-<section class="section section--alt" id="mail-in-answer"><div class="container"><div class="answer-card" style="max-width:980px;margin:0 auto;"><div class="section-eyebrow">Mail-In Answer</div><h2 class="section-title" style="text-align:left;">Mail-in repair should start with a text, not a box.</h2><p>Before shipping a device, text HDR the model, symptoms, damage photos, data importance, and location. Samuel will tell you whether mail-in repair is practical, what to pack, and whether a local option or manufacturer path makes more sense.</p><div class="guide-link-strip"><a href="/phone-repair-hailey-vs-boise">Local vs Boise vs mail-in</a><a href="/broken-phone-what-to-text">What to text</a><a href="/warranty">Warranty</a></div></div></div></section>
+<section class="section section--alt" id="mail-in-answer">
+    <div class="container">
+      <div class="answer-card" style="max-width:1040px;margin:0 auto;">
+        <div class="mail-answer-layout">
+          <div>
+            <div class="section-eyebrow">Mail-In Answer</div>
+            <h2 class="section-title" style="text-align:left;">Mail-in repair should start with a text, not a box.</h2>
+            <p>Before shipping a device, text HDR the model, symptoms, damage photos, data importance, and location. Samuel will tell you whether mail-in repair is practical, what to pack, and whether a local option or manufacturer path makes more sense.</p>
+            <div class="mail-answer-checklist" aria-label="What to send before shipping">
+              <span>Exact model + what happened</span>
+              <span>Photos of the damage or error</span>
+              <span>Whether data matters before repair</span>
+            </div>
+            <div class="guide-link-strip"><a href="/phone-repair-hailey-vs-boise">Local vs Boise vs mail-in</a><a href="/broken-phone-what-to-text">What to text</a><a href="/warranty">Warranty</a></div>
+          </div>
+          <div class="mail-mini-ticket" aria-label="Mail-in intake ticket visual">
+            <div class="mini-ticket-row"><span>HDR Intake</span><strong>MAIL-IN</strong></div>
+            <div class="mini-ticket-row"><span>First move</span><strong>Text photos</strong></div>
+            <div class="mini-ticket-row"><span>Risk check</span><strong>Data? Power? Liquid?</strong></div>
+            <div class="mini-ticket-row"><span>Bench rule</span><strong>Quote before work</strong></div>
+            <div class="mini-ticket-stamp">DO NOT SHIP BLIND</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-  <!-- ═══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════
        WHY MAIL-IN REPAIR EXISTS IN IDAHO
   ══════════════════════════════════════════════ -->
   <section class="section section--alt" id="why-idaho">
@@ -994,13 +1970,19 @@ a{color:inherit;text-decoration:none}
         <div class="mail-founder-note-header">
           <span class="material-symbols-outlined" aria-hidden="true">edit_note</span>
           <span class="mail-founder-note-label">From the bench</span>
+          <div class="bench-ledger" aria-hidden="true">
+            <div class="bench-ledger-row"><span>Bench</span><strong>One person</strong></div>
+            <div class="bench-ledger-row"><span>Rule</span><strong>Quote first</strong></div>
+            <div class="bench-ledger-row"><span>Status</span><strong>Texts sent</strong></div>
+            <div class="bench-ledger-row"><span>Return</span><strong>Packed clean</strong></div>
+          </div>
         </div>
         <div class="mail-founder-note-body">
-          <p>Hey — Sam here. I run this shop out of Hailey, Idaho.</p>
+          <p>Hey — Samuel here. I run this shop out of Hailey, Idaho.</p>
           <p>I started offering mail-in repair because I kept hearing the same thing from people across the state: <em>"There's nobody close enough to make this easy."</em> McCall, Stanley, Salmon, Challis, Driggs — and a lot of smaller Idaho towns in between — people were driving hours, mailing devices out of state, or just living with broken tech longer than they should have.</p>
           <p>That's ridiculous. Most repairs take me under an hour. The shipping takes longer than the fix. So I made it simple: text me, ship it, I'll fix it, I'll ship it back free. You get text updates the whole time so you're not wondering where your stuff is.</p>
           <p>I'm one person, not a call center. If you text me, you're talking to the person who's actually going to open your device and fix it. That matters to me, and I think it'll matter to you too.</p>
-          <p class="mail-founder-note-sig">— Sam Torres<br /><span>Hailey Device Repair · Hailey, Idaho</span></p>
+          <p class="mail-founder-note-sig">— Samuel Torres<br /><span>Hailey Device Repair · Hailey, Idaho</span></p>
         </div>
       </div>
     </div>
@@ -1230,7 +2212,7 @@ a{color:inherit;text-decoration:none}
   <!-- ═══════════════════════════════════════════
        BOTTOM CTA
   ══════════════════════════════════════════════ -->
-  <section class="section">
+  <section class="section mail-final-section">
     <div class="container">
       <div class="lp-bottom-cta" data-animate>
         <h2 class="section-title">Ready to get your device fixed?</h2>
@@ -1305,7 +2287,7 @@ a{color:inherit;text-decoration:none}
   <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
     <p class="cookie-banner-text">
-      We use minimal cookies (theme preference &amp; banner dismissal only). No tracking, no analytics.
+      Minimal cookies for preferences and basic site analytics.
       <a href="/privacy">Learn more</a>
     </p>
     <div class="cookie-banner-actions">
