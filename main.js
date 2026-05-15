@@ -49,15 +49,6 @@
     });
   }
 
-  // Floating theme toggle (available on all pages)
-  const floatingToggle = document.getElementById('floatingThemeToggle');
-  if (floatingToggle) {
-    floatingToggle.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme');
-      setTheme(current === 'dark' ? 'light' : 'dark');
-    });
-  }
-
   // ─── Cookie consent banner ───────────────────────────────
   const cookieBanner = document.getElementById('cookieBanner');
   const cookieAccept = document.getElementById('cookieAccept');
@@ -506,18 +497,6 @@
         });
       }, { passive: true });
     }
-  }
-
-  // ─── Back-to-top button ──────────────────────────────────
-  const backToTop = document.getElementById('backToTop');
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('visible', window.scrollY > 500);
-    }, { passive: true });
-
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
   }
 
   // ─── Review carousel ────────────────────────────────────

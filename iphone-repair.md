@@ -6,12 +6,12 @@ Hailey Device Repair fixes iPhones for Hailey, Ketchum, Sun Valley, Bellevue, th
 
 ## Common iPhone repair paths
 
-- Screen replacement: cracked glass, ghost touch, OLED lines, black display, or touch not responding. Starting at $89 depending on model and display type.
-- Battery replacement: fast drain, random shutdowns, swollen battery, or Battery Health service warning. Starting at $59.
-- Charging port / cleaning: cable works only at an angle, starts and stops, or will not seat fully. Starting at $69, but cleaning may cost less than replacement.
-- Back glass: cracked rear glass, camera lens damage, wireless charging concerns, or sharp exposed glass. Starting at $99.
-- Water damage / no power: wet phone, boot loop, corrosion, no power, or urgent photo/data concerns. Starting at $69 for diagnosis/triage.
-- Camera, speaker, mic, buttons: blurry camera, muffled calls, bad microphone, no speaker, stuck button, or weak vibration. Starting at $65.
+- Screen replacement: cracked glass, ghost touch, OLED lines, black display, or touch not responding. Starting at $109 depending on model and display type.
+- Battery replacement: fast drain, random shutdowns, swollen battery, or Battery Health service warning. Starting at $79.
+- Charging port / cleaning: cable works only at an angle, starts and stops, or will not seat fully. Starting at $89, but cleaning may cost less than replacement.
+- Back glass: cracked rear glass, camera lens damage, wireless charging concerns, or sharp exposed glass. Starting at $129.
+- Water damage / no power: wet phone, boot loop, corrosion, no power, or urgent photo/data concerns. Starting at $89 for diagnosis/triage.
+- Camera, speaker, mic, buttons: blurry camera, muffled calls, bad microphone, no speaker, stuck button, or weak vibration. Starting at $85.
 
 ## What gets checked
 
