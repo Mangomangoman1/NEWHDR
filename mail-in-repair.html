@@ -1233,6 +1233,144 @@ a{color:inherit;text-decoration:none}
     .mailin-page .cookie-banner .btn-accept,
     .mailin-page .cookie-banner .btn-decline { padding: .38rem .5rem; font-size: .7rem; }
 
+
+    /* Detail pass: quieter hero, bespoke Idaho route map, real SMS proof */
+    .mailin-page .lp-hero-title { line-height: .94; max-width: 760px; }
+    .mailin-page .hero-actions { margin-top: 1.8rem; margin-bottom: 1.25rem; }
+    .mailin-page .mail-trust-row { margin-top: 1.15rem; }
+    .mailin-page .mail-hero-art::before {
+      content: "HDR MAIL-IN KIT";
+      position: absolute;
+      left: 1.25rem;
+      bottom: .15rem;
+      color: rgba(255,210,138,.18);
+      font-size: .63rem;
+      font-weight: 900;
+      letter-spacing: .24em;
+      transform: rotate(-4deg);
+    }
+    .mailin-page .mail-label::after {
+      content: "fragile / data matters / quote first";
+      position:absolute;
+      right:1rem;
+      bottom:.65rem;
+      color:rgba(13,17,23,.46);
+      font-size:.58rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .mailin-page .idaho-route-card {
+      margin: 2rem 0 2.1rem;
+      display: grid;
+      grid-template-columns: minmax(280px, .74fr) minmax(0, 1fr);
+      gap: clamp(1rem, 3vw, 2rem);
+      align-items: stretch;
+      background: linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 2rem;
+      padding: clamp(1rem, 2.4vw, 1.45rem);
+      box-shadow: var(--mail-shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .mailin-page .idaho-route-card::before {
+      content:"";
+      position:absolute;
+      inset:-20% -12% auto auto;
+      width: 22rem;
+      height: 22rem;
+      background: radial-gradient(circle, rgba(232,177,95,.14), transparent 66%);
+      pointer-events:none;
+    }
+    .mailin-page .idaho-map-sketch {
+      min-height: 310px;
+      border-radius: 1.45rem;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) 0 0/42px 42px,
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px) 0 0/42px 42px,
+        radial-gradient(circle at 52% 45%, rgba(126,168,223,.18), transparent 14rem),
+        rgba(7,11,18,.45);
+      position: relative;
+      overflow: hidden;
+    }
+    .mailin-page .idaho-map-sketch svg { position:absolute; inset:0; width:100%; height:100%; }
+    .mailin-page .idaho-map-route { stroke-dasharray: 7 8; animation: routeDrift 18s linear infinite; }
+    .mailin-page .map-pin {
+      position:absolute;
+      transform: translate(-50%, -50%);
+      display:inline-flex;
+      align-items:center;
+      gap:.35rem;
+      padding:.28rem .46rem;
+      border-radius:999px;
+      background:rgba(13,17,23,.78);
+      border:1px solid rgba(255,255,255,.14);
+      color:#dfe8f4;
+      font-size:.62rem;
+      font-weight:850;
+      box-shadow:0 12px 32px rgba(0,0,0,.28);
+      white-space:nowrap;
+    }
+    .mailin-page .map-pin::before {
+      content:"";
+      width:.45rem;height:.45rem;border-radius:50%;
+      background:var(--mail-blue);
+      box-shadow:0 0 14px rgba(126,168,223,.7);
+    }
+    .mailin-page .map-pin--hailey::before { background:var(--mail-amber); box-shadow:0 0 16px rgba(232,177,95,.8); }
+    .mailin-page .map-pin--boise { left: 34%; top: 67%; }
+    .mailin-page .map-pin--tf { left: 50%; top: 75%; }
+    .mailin-page .map-pin--if { left: 72%; top: 64%; }
+    .mailin-page .map-pin--cda { left: 50%; top: 16%; }
+    .mailin-page .map-pin--hailey { left: 54%; top: 55%; }
+    .mailin-page .route-detail-panel {
+      display:grid;
+      align-content:center;
+      gap:.85rem;
+      padding: clamp(.65rem, 1.6vw, 1rem);
+      position:relative;
+      z-index:1;
+    }
+    .mailin-page .route-detail-panel h3 { color:var(--mail-text); font-size:clamp(1.35rem, 2.4vw, 2.1rem); line-height:1.05; letter-spacing:-.035em; text-wrap:balance; }
+    .mailin-page .route-detail-panel p { color:var(--mail-muted); line-height:1.72; margin:0; }
+    .mailin-page .route-micro-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.65rem; margin-top:.35rem; }
+    .mailin-page .route-micro { border:1px solid rgba(255,255,255,.1); border-radius:1rem; padding:.78rem; background:rgba(255,255,255,.035); }
+    .mailin-page .route-micro strong { display:block; color:var(--mail-amber-2); font-size:1.05rem; line-height:1; margin-bottom:.28rem; }
+    .mailin-page .route-micro span { color:var(--mail-soft); font-size:.72rem; font-weight:750; text-transform:uppercase; letter-spacing:.06em; }
+    .mailin-page .text-proof-layout { display:grid; grid-template-columns:minmax(0, .9fr) minmax(320px, .72fr); gap:clamp(1.2rem,3vw,2rem); align-items:start; margin-top:2rem; }
+    .mailin-page .sms-proof-card {
+      border-radius:1.65rem;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg, rgba(20,29,43,.92), rgba(9,13,21,.9));
+      box-shadow:0 24px 70px rgba(0,0,0,.34);
+      overflow:hidden;
+      position:sticky;
+      top:5.5rem;
+    }
+    .mailin-page .sms-proof-top { display:flex; align-items:center; gap:.7rem; padding:.85rem 1rem; border-bottom:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.035); }
+    .mailin-page .sms-avatar { width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;background:rgba(232,177,95,.14);color:var(--mail-amber-2);border:1px solid rgba(232,177,95,.24);font-weight:900; }
+    .mailin-page .sms-proof-top strong { display:block; color:var(--mail-text); font-size:.86rem; }
+    .mailin-page .sms-proof-top span { display:block; color:var(--mail-soft); font-size:.72rem; }
+    .mailin-page .sms-thread { padding:1rem; display:grid; gap:.72rem; }
+    .mailin-page .sms-bubble { max-width:88%; padding:.72rem .82rem; border-radius:1rem; font-size:.83rem; line-height:1.45; }
+    .mailin-page .sms-bubble--you { justify-self:end; background:#2f7df0; color:white; border-bottom-right-radius:.28rem; }
+    .mailin-page .sms-bubble--hdr { justify-self:start; background:rgba(255,255,255,.085); color:#dfe8f4; border:1px solid rgba(255,255,255,.09); border-bottom-left-radius:.28rem; }
+    .mailin-page .sms-proof-checks { display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; padding:0 1rem 1rem; }
+    .mailin-page .sms-proof-checks span { border-radius:.85rem; padding:.5rem; background:rgba(126,168,223,.075); color:#dbeafe; font-size:.64rem; font-weight:850; text-align:center; text-transform:uppercase; letter-spacing:.045em; }
+    .mailin-page .lp-info-grid--quote { margin-top:0; }
+    .mailin-page .packing-diagram {
+      margin: 0 0 1.55rem;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:.65rem;
+    }
+    .mailin-page .packing-layer { position:relative; border-radius:1.1rem; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.035); padding:.8rem .65rem; min-height:6.2rem; display:grid; align-content:center; justify-items:center; text-align:center; color:var(--mail-muted); font-size:.72rem; font-weight:800; }
+    .mailin-page .packing-layer strong { color:var(--mail-text); font-size:.82rem; margin-top:.35rem; }
+    .mailin-page .packing-layer svg { width:2rem;height:2rem;color:var(--mail-amber-2); }
+    .mailin-page .packing-layer:not(:last-child)::after { content:"→"; position:absolute; right:-.57rem; top:50%; transform:translateY(-50%); color:rgba(255,210,138,.65); font-weight:900; }
+    @keyframes routeDrift { to { stroke-dashoffset: -180; } }
     @keyframes mailOrbit { to { transform: rotate(352deg); } }
     @keyframes barcodeScan { 0%, 42% { transform: translateX(-115%); } 58%, 100% { transform: translateX(115%); } }
 
@@ -1257,10 +1395,10 @@ a{color:inherit;text-decoration:none}
     }
     @media (max-width: 620px) {
       .mailin-page .container { padding-inline: 1rem; }
-      .mailin-page .lp-hero { padding-top: 5.25rem; }
+      .mailin-page .lp-hero { padding-top: 4.65rem; }
       .mailin-page .breadcrumb { display:none; }
       .mailin-page .lp-hero-title { font-size: clamp(2.55rem, 16vw, 4.3rem); }
-      .mailin-page .lp-hero-sub { font-size: 1rem; }
+      .mailin-page .lp-hero-sub { font-size: .97rem; line-height:1.62; }
       .mailin-page .hero-actions .btn { width: 100%; justify-content:center; }
       .mailin-page .mail-trust-row { display:grid; grid-template-columns:1fr; }
       .mailin-page .mail-hero-art { min-height: 340px; margin-top: 1.25rem; }
@@ -1279,6 +1417,44 @@ a{color:inherit;text-decoration:none}
       .mailin-page .section { padding-block: 3.25rem; }
       .mailin-page .section-title { font-size: clamp(1.8rem, 10vw, 2.55rem); }
       .mailin-page .lp-table th, .mailin-page .lp-table td { padding:.8rem; }
+      .mailin-page .lp-hero-title { line-height: .98; }
+      .mailin-page .mail-floating-note { display:none; }
+      .mailin-page .mail-hero-art::before { display:none; }
+      .mailin-page .idaho-route-card,
+      .mailin-page .text-proof-layout { grid-template-columns:1fr; }
+      .mailin-page .idaho-map-sketch { min-height: 255px; }
+      .mailin-page .route-micro-grid,
+      .mailin-page .sms-proof-checks { grid-template-columns:1fr; }
+      .mailin-page .sms-proof-card { position:relative; top:auto; }
+      .mailin-page .packing-diagram { grid-template-columns:1fr 1fr; }
+      .mailin-page .packing-layer:not(:last-child)::after { display:none; }
+      .mailin-page .lp-table,
+      .mailin-page .lp-table thead,
+      .mailin-page .lp-table tbody,
+      .mailin-page .lp-table tr,
+      .mailin-page .lp-table th,
+      .mailin-page .lp-table td { display:block; width:100%; }
+      .mailin-page .lp-table thead { display:none; }
+      .mailin-page .lp-table tr { border:1px solid rgba(255,255,255,.1); border-radius:1rem; overflow:hidden; margin-bottom:.85rem; background:rgba(255,255,255,.03); }
+      .mailin-page .lp-table td { border:0; padding:.7rem .9rem; }
+      .mailin-page .lp-table td:first-child { color:var(--mail-amber-2); font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; background:rgba(232,177,95,.08); }
+      .mailin-page .cookie-banner {
+        right: .55rem !important;
+        bottom: max(.55rem, env(safe-area-inset-bottom)) !important;
+        width: auto;
+        max-width: calc(100vw - 1.1rem);
+        padding: .34rem .4rem;
+        border-radius: 999px;
+        opacity: .9;
+        align-items:center;
+        flex-direction: row !important;
+        gap:.36rem;
+      }
+      .mailin-page .cookie-banner::before { content:"Cookies"; color:rgba(226,237,243,.78); font-size:.62rem; font-weight:800; padding-left:.2rem; }
+      .mailin-page .cookie-banner-text { display:none; }
+      .mailin-page .cookie-banner-actions { gap:.25rem; }
+      .mailin-page .cookie-banner .btn-accept,
+      .mailin-page .cookie-banner .btn-decline { padding:.28rem .42rem; font-size:.6rem; min-height:28px; border-radius:999px; }
       .mailin-page .cookie-banner.visible ~ .floating-theme-toggle,
       .mailin-page .cookie-banner.visible ~ .back-to-top,
       .mailin-page .cookie-banner.visible ~ .help-fab { display: none !important; }
@@ -1445,6 +1621,32 @@ a{color:inherit;text-decoration:none}
       <h2 class="section-title">A lot of Idaho is still hours from a repair counter</h2>
       <p class="section-sub">Once you're outside Boise, Nampa, Idaho Falls, Twin Falls, and a few pockets like the Wood River Valley, getting a device fixed usually means a long drive, mailing it anyway, or putting it off until the problem gets worse.</p>
 
+      <div class="idaho-route-card" data-animate>
+        <div class="idaho-map-sketch" aria-hidden="true">
+          <svg viewBox="0 0 420 330" role="img" aria-label="Sketch map of Idaho routes to Hailey">
+            <path d="M178 16 L222 25 L216 78 L242 92 L226 138 L256 168 L238 236 L258 312 L126 304 L116 238 L92 210 L108 162 L84 104 L122 74 Z" fill="rgba(126,168,223,.055)" stroke="rgba(223,232,242,.25)" stroke-width="2" />
+            <path class="idaho-map-route" d="M144 222 C174 213 199 198 226 180" fill="none" stroke="rgba(232,177,95,.72)" stroke-width="3" stroke-linecap="round" />
+            <path class="idaho-map-route" d="M210 250 C224 224 227 203 226 180" fill="none" stroke="rgba(117,214,200,.62)" stroke-width="3" stroke-linecap="round" />
+            <path class="idaho-map-route" d="M300 210 C273 203 248 193 226 180" fill="none" stroke="rgba(126,168,223,.72)" stroke-width="3" stroke-linecap="round" />
+            <path class="idaho-map-route" d="M210 54 C216 96 224 136 226 180" fill="none" stroke="rgba(232,177,95,.48)" stroke-width="3" stroke-linecap="round" />
+          </svg>
+          <span class="map-pin map-pin--boise">Boise</span>
+          <span class="map-pin map-pin--tf">Twin Falls</span>
+          <span class="map-pin map-pin--if">Idaho Falls</span>
+          <span class="map-pin map-pin--cda">Coeur d'Alene</span>
+          <span class="map-pin map-pin--hailey">Hailey bench</span>
+        </div>
+        <div class="route-detail-panel">
+          <h3>One practical route: your post office to my bench.</h3>
+          <p>The point is not to make mail-in feel fancy. The point is to make it predictable: quote first, pack clean, text at arrival, repair on the bench, return with tracking.</p>
+          <div class="route-micro-grid" aria-label="Mail-in route details">
+            <div class="route-micro"><strong>$8–$16</strong><span>typical outbound</span></div>
+            <div class="route-micro"><strong>$0</strong><span>return shipping</span></div>
+            <div class="route-micro"><strong>Texted</strong><span>every handoff</span></div>
+          </div>
+        </div>
+      </div>
+
       <div class="mail-reality-grid">
         <div class="mail-reality-stat" data-animate>
           <div class="mail-reality-number">2+ hrs</div>
@@ -1546,32 +1748,41 @@ a{color:inherit;text-decoration:none}
       <h2 class="section-title">What to text me so I can quote it fast</h2>
       <p class="section-sub">A good first message saves time. It lets me tell you whether the repair makes sense, what it'll probably cost, and whether mail-in is the right move.</p>
 
-      <div class="lp-info-grid">
-        <div class="lp-info-card" data-animate>
-          <div class="lp-info-card-icon"><span class="material-symbols-outlined">badge</span></div>
-          <h3>Exact model</h3>
-          <p>"iPhone 13" is good. "Samsung phone" is not. Include the exact model if you know it.</p>
+      <div class="text-proof-layout">
+        <div>
+          <div class="lp-info-grid lp-info-grid--quote">
+            <div class="lp-info-card" data-animate>
+              <div class="lp-info-card-icon"><span class="material-symbols-outlined">badge</span></div>
+              <h3>Exact model</h3>
+              <p>"iPhone 13" is good. "Samsung phone" is not. Include the exact model if you know it.</p>
+            </div>
+            <div class="lp-info-card" data-animate>
+              <div class="lp-info-card-icon lp-info-card-icon--green"><span class="material-symbols-outlined">heart_broken</span></div>
+              <h3>What actually broke</h3>
+              <p>Cracked screen, bad battery, no charge, back glass, water exposure, HDMI issue — be specific.</p>
+            </div>
+            <div class="lp-info-card" data-animate>
+              <div class="lp-info-card-icon lp-info-card-icon--cyan"><span class="material-symbols-outlined">power_settings_new</span></div>
+              <h3>Current symptoms</h3>
+              <p>Does it still turn on? Does touch still work? Any lines, flicker, swelling, or heat?</p>
+            </div>
+            <div class="lp-info-card" data-animate>
+              <div class="lp-info-card-icon lp-info-card-icon--red"><span class="material-symbols-outlined">photo_camera</span></div>
+              <h3>Photo if you can</h3>
+              <p>A quick photo of the damage helps a lot — especially for cracked screens, lifted batteries, and broken ports.</p>
+            </div>
+          </div>
         </div>
-        <div class="lp-info-card" data-animate>
-          <div class="lp-info-card-icon lp-info-card-icon--green"><span class="material-symbols-outlined">heart_broken</span></div>
-          <h3>What actually broke</h3>
-          <p>Cracked screen, bad battery, no charge, back glass, water exposure, HDMI issue — be specific.</p>
-        </div>
-        <div class="lp-info-card" data-animate>
-          <div class="lp-info-card-icon lp-info-card-icon--cyan"><span class="material-symbols-outlined">power_settings_new</span></div>
-          <h3>Current symptoms</h3>
-          <p>Does it still turn on? Does touch still work? Any lines, flicker, swelling, or heat?</p>
-        </div>
-        <div class="lp-info-card" data-animate>
-          <div class="lp-info-card-icon lp-info-card-icon--red"><span class="material-symbols-outlined">photo_camera</span></div>
-          <h3>Photo if you can</h3>
-          <p>A quick photo of the damage helps a lot — especially for cracked screens, lifted batteries, and broken ports.</p>
-        </div>
-      </div>
-
-      <div class="mail-packing-tip" data-animate>
-        <span class="material-symbols-outlined">sms</span>
-        <p><strong>Best first text:</strong> "iPhone 13, front glass shattered but touch still works. Boise. Need it back this week." That's enough for me to tell you whether it makes sense to ship and what range you're probably in.</p>
+        <aside class="sms-proof-card" data-animate aria-label="Example text message for a fast quote">
+          <div class="sms-proof-top"><div class="sms-avatar">HDR</div><div><strong>Quote text example</strong><span>What makes Samuel reply fast</span></div></div>
+          <div class="sms-thread">
+            <div class="sms-bubble sms-bubble--you">iPhone 13, front glass shattered but touch still works. Boise. Need it back this week.</div>
+            <div class="sms-bubble sms-bubble--hdr">That is likely worth shipping. Send a photo of the screen and back glass and I’ll give you the price range before you box it up.</div>
+            <div class="sms-bubble sms-bubble--you">Data matters. No water. Face ID still works.</div>
+            <div class="sms-bubble sms-bubble--hdr">Perfect. Don’t wipe it. Power it off before shipping. I’ll text the packing/address details next.</div>
+          </div>
+          <div class="sms-proof-checks"><span>model</span><span>symptoms</span><span>data risk</span></div>
+        </aside>
       </div>
     </div>
   </section>
@@ -1800,6 +2011,13 @@ a{color:inherit;text-decoration:none}
       <div class="section-eyebrow">Packing Guide</div>
       <h2 class="section-title">How to pack your device for shipping</h2>
       <p class="section-sub">Proper packing = safe device. Here's the quick version.</p>
+
+      <div class="packing-diagram" aria-label="Four-layer packing diagram" data-animate>
+        <div class="packing-layer"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="9" y="5" width="14" height="22" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="23" r="1" fill="currentColor"/></svg><strong>Power off</strong><span>no accessories unless asked</span></div>
+        <div class="packing-layer"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 13c4-6 12-6 16 0v10H8V13Z" stroke="currentColor" stroke-width="2"/><path d="M10 17h12M10 21h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><strong>Wrap</strong><span>two padded layers</span></div>
+        <div class="packing-layer"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 10 16 5l11 5v13l-11 5-11-5V10Z" stroke="currentColor" stroke-width="2"/><path d="m5 10 11 5 11-5M16 15v13" stroke="currentColor" stroke-width="2"/></svg><strong>Box tight</strong><span>no corner movement</span></div>
+        <div class="packing-layer"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 10h14v10H6z" stroke="currentColor" stroke-width="2"/><path d="M20 14h4l2 3v3h-6" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="23" r="2" fill="currentColor"/><circle cx="23" cy="23" r="2" fill="currentColor"/></svg><strong>Track</strong><span>text the tracking number</span></div>
+      </div>
 
       <div class="mail-packing-grid">
         <div class="mail-packing-card" data-animate>
