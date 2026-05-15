@@ -114,6 +114,173 @@ a{color:inherit;text-decoration:none}
   <noscript><link rel="stylesheet" href="style.css?v=perf-20260512" /></noscript>
   <!-- Medium steel-blue accent override — must come after style.css?v=perf-20260512 -->
   <style>:root{--accent:#5B8BCF!important;--accent-hover:#74A4DE!important;--accent-dim:rgba(91,139,207,0.12)!important;--accent-glow:rgba(91,139,207,0.25)!important;--color-blue:#5B8BCF!important;--color-cyan:#8BB8D6!important}</style>
+  <style id="homepage-detail-pass-css">
+    /* Homepage detail pass — operational proof, not decorative polish */
+    .home-page #heroTyper { display:inline-block; transition:opacity .16s ease, filter .16s ease; }
+    .home-page .hero-inner { padding-inline: clamp(1.1rem, 4.6vw, 1.75rem); }
+    .home-page #heroTyper.phrase-switching { opacity:.18; filter:blur(4px); }
+    .home-page #services {
+      position: relative;
+      overflow: clip;
+      background:
+        radial-gradient(circle at 10% 12%, rgba(91,139,207,.1), transparent 26rem),
+        radial-gradient(circle at 84% 20%, rgba(139,184,214,.08), transparent 22rem),
+        linear-gradient(180deg, rgba(13,17,23,1), rgba(15,22,33,.96) 42%, rgba(13,17,23,1));
+      border-block: 1px solid rgba(255,255,255,.05);
+    }
+    .home-page #services::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:.28;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse at center, #000 0%, transparent 74%);
+    }
+    .home-page #services .container { position:relative; z-index:1; }
+    .home-page #services [data-animate] { opacity:1 !important; transform:none !important; }
+    .home-page #services .section-header { max-width: 760px; }
+    .home-page #services .section-title { letter-spacing:-.045em; }
+    .home-page #services .section-sub { max-width: 660px; line-height:1.75; }
+    .service-intake-rail {
+      margin: 1.35rem auto 2rem;
+      max-width: 1040px;
+      display:grid;
+      grid-template-columns: minmax(0, .72fr) minmax(320px, .48fr);
+      gap: clamp(.9rem, 2.4vw, 1.35rem);
+      align-items:stretch;
+    }
+    .service-intake-card,
+    .service-sms-proof {
+      border:1px solid rgba(255,255,255,.11);
+      border-radius: 1.35rem;
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      box-shadow: 0 18px 55px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.08);
+      overflow:hidden;
+    }
+    .service-intake-card { padding: clamp(1rem, 2.2vw, 1.35rem); }
+    .service-intake-card h3 { margin:0 0 .45rem; color:var(--text-primary); font-size: clamp(1.15rem, 2vw, 1.6rem); line-height:1.1; letter-spacing:-.025em; }
+    .service-intake-card p { margin:0; color:var(--text-secondary); line-height:1.65; }
+    .service-intake-steps { display:grid; grid-template-columns:repeat(3, 1fr); gap:.55rem; margin-top:1rem; }
+    .service-intake-step { border:1px solid rgba(255,255,255,.1); border-radius:1rem; padding:.72rem; background:rgba(5,10,16,.28); }
+    .service-intake-step span { display:block; color:var(--accent); font-size:.68rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.25rem; }
+    .service-intake-step strong { display:block; color:var(--text-primary); font-size:.86rem; line-height:1.25; }
+    .service-sms-proof { display:grid; align-content:space-between; }
+    .service-sms-proof-top { display:flex; align-items:center; gap:.65rem; padding:.85rem 1rem; border-bottom:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.035); }
+    .service-sms-proof-top .material-symbols-outlined { color:var(--accent); }
+    .service-sms-proof-top strong { display:block; color:var(--text-primary); font-size:.9rem; }
+    .service-sms-proof-top span:last-child { display:block; color:var(--text-muted); font-size:.72rem; }
+    .service-sms-lines { padding: 1rem; display:grid; gap:.55rem; }
+    .service-sms-bubble { width:fit-content; max-width:92%; padding:.62rem .72rem; border-radius: .95rem; font-size:.78rem; line-height:1.42; }
+    .service-sms-bubble.you { justify-self:end; color:white; background:#2f7df0; border-bottom-right-radius:.25rem; }
+    .service-sms-bubble.hdr { justify-self:start; color:#dfe8f4; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.09); border-bottom-left-radius:.25rem; }
+    .home-page #services .cards-grid { grid-template-columns: repeat(auto-fit, minmax(285px, 1fr)); gap: clamp(1rem, 2vw, 1.35rem); }
+    .home-page #services .service-ticket {
+      min-height: 430px;
+      padding: 1.05rem;
+      display:flex;
+      flex-direction:column;
+      gap:.84rem;
+      border-radius: 1.25rem;
+    }
+    .home-page #services .service-ticket-main { margin-bottom:0; }
+    .home-page #services .card-title { font-size:1.18rem; }
+    .home-page #services .card-desc { margin:0; color:#b9c5d2; line-height:1.62; }
+    .service-ticket-proof {
+      display:grid;
+      gap:.35rem;
+      padding:.7rem .78rem;
+      border-radius:.95rem;
+      border:1px dashed color-mix(in srgb, var(--ticket-accent) 30%, rgba(255,255,255,.12));
+      background: color-mix(in srgb, var(--ticket-accent) 7%, rgba(5,10,16,.38));
+      position:relative;
+      z-index:2;
+      transform: translateZ(16px);
+    }
+    .service-ticket-proof span { color:var(--text-muted); font-size:.62rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+    .service-ticket-proof strong { color:var(--text-primary); font-size:.82rem; line-height:1.35; }
+    .home-page #services .service-ticket .card-features {
+      display:grid;
+      gap:.48rem;
+      padding:.72rem .78rem;
+      margin:0;
+    }
+    .home-page #services .service-ticket .card-features li { display:flex; gap:.42rem; align-items:flex-start; color:#d6e0ea; font-size:.82rem; }
+    .home-page #services .service-ticket .card-link,
+    .service-ticket .service-ticket-action {
+      margin-top:auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:.55rem;
+      width:100%;
+      padding:.72rem .82rem;
+      border:1px solid color-mix(in srgb, var(--ticket-accent) 26%, rgba(255,255,255,.12));
+      border-radius:.95rem;
+      background:rgba(255,255,255,.04);
+      color:#eaf2fb;
+      font-size:.84rem;
+      font-weight:850;
+      text-decoration:none;
+      border-bottom-color: color-mix(in srgb, var(--ticket-accent) 26%, rgba(255,255,255,.12));
+    }
+    .home-page #services .service-ticket .card-link:hover,
+    .service-ticket .service-ticket-action:hover { background:color-mix(in srgb, var(--ticket-accent) 12%, rgba(255,255,255,.05)); transform:translateY(-1px); }
+    .service-ticket-stamp {
+      position:absolute;
+      right:.9rem;
+      bottom:4.25rem;
+      color: color-mix(in srgb, var(--ticket-accent) 34%, transparent);
+      border:1px solid color-mix(in srgb, var(--ticket-accent) 20%, transparent);
+      border-radius:.45rem;
+      padding:.18rem .4rem;
+      font-size:.55rem;
+      font-weight:950;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      transform: rotate(-7deg);
+      pointer-events:none;
+      opacity:.58;
+    }
+    .home-page .cookie-banner {
+      top:auto !important;
+      bottom:max(.85rem, env(safe-area-inset-bottom)) !important;
+      right:.85rem !important;
+      left:auto !important;
+      transform:none !important;
+      width:auto;
+      max-width:calc(100vw - 1.7rem);
+      margin:0;
+      padding:.36rem .44rem;
+      border-radius:999px;
+      opacity:.9;
+      z-index:80;
+      align-items:center;
+      gap:.34rem;
+    }
+    .home-page .cookie-banner::before { content:"Cookies"; color:rgba(226,237,243,.78); font-size:.62rem; font-weight:850; padding-left:.12rem; }
+    .home-page .cookie-banner .cookie-banner-text { display:none; }
+    .home-page .cookie-banner .cookie-banner-actions { gap:.24rem; width:auto !important; flex-direction:row !important; }
+    .home-page .cookie-banner .btn-accept,
+    .home-page .cookie-banner .btn-decline { padding:.29rem .44rem; font-size:.61rem; min-height:28px; border-radius:999px; }
+    .home-page .cookie-banner.visible ~ .help-fab { opacity:.55; transform:scale(.9); }
+    @media (max-width: 768px) {
+      .home-page .hero { padding-top:4.35rem; }
+      .home-page #services { display:block !important; }
+      .home-page .hero-inner,
+      .home-page #hero .hero-inner { padding-left:1.1rem !important; padding-right:1.1rem !important; }
+      .service-intake-rail { grid-template-columns:1fr; }
+      .service-intake-steps { grid-template-columns:1fr; }
+      .home-page #services .cards-grid { display:grid !important; grid-template-columns:1fr !important; overflow:visible !important; }
+      .home-page #services .service-ticket { min-height:0; transform:none !important; }
+      .home-page #services .service-ticket-stamp { display:none; }
+      .home-page .cookie-banner { opacity:.9; flex-direction:row !important; }
+      .home-page .cookie-banner .cookie-banner-actions { width:auto !important; flex-direction:row !important; }
+    }
+  </style>
 
   <!-- Structured Data: LocalBusiness JSON-LD -->
   <script type="application/ld+json">
@@ -581,9 +748,9 @@ a{color:inherit;text-decoration:none}
   <section class="section" id="services">
     <div class="container">
       <div class="section-header">
-        <div class="section-eyebrow">What I Fix</div>
-        <h2 class="section-title">Expert repair for every device</h2>
-        <p class="section-sub">Whether it's a cracked screen, dead battery, or mystery glitch — I've got you covered.</p>
+        <div class="section-eyebrow">Repair Paths</div>
+        <h2 class="section-title">Start with the symptom. I’ll map the repair.</h2>
+        <p class="section-sub">These are not generic “services.” They are the usual paths a broken device takes across my bench: first read, quote, repair, testing, and pickup or return shipping.</p>
       </div>
 
       <div class="trust-badges" data-animate aria-label="Why customers choose Hailey Device Repair">
@@ -610,152 +777,161 @@ a{color:inherit;text-decoration:none}
         </div>
       </div>
 
+      <div class="service-intake-rail" data-animate>
+        <div class="service-intake-card">
+          <h3>Every repair starts like a bench ticket, not a sales script.</h3>
+          <p>Text the model, what happened, and a photo if you can. I’ll tell you the likely path before you spend money on parts, shipping, or replacement.</p>
+          <div class="service-intake-steps" aria-label="Repair intake flow">
+            <div class="service-intake-step"><span>01</span><strong>Identify the device + symptom</strong></div>
+            <div class="service-intake-step"><span>02</span><strong>Quote the likely fix before work</strong></div>
+            <div class="service-intake-step"><span>03</span><strong>Test it before it leaves</strong></div>
+          </div>
+        </div>
+        <aside class="service-sms-proof" aria-label="Example HDR service text">
+          <div class="service-sms-proof-top"><span class="material-symbols-outlined" aria-hidden="true">sms</span><div><strong>Best first move</strong><span>Send the problem, not a paragraph</span></div></div>
+          <div class="service-sms-lines">
+            <div class="service-sms-bubble you">iPhone 13. Dropped it. Screen lights up but touch is spotty.</div>
+            <div class="service-sms-bubble hdr">Worth a quote. Send a photo and I’ll tell you screen path vs deeper damage before you bring it in.</div>
+          </div>
+        </aside>
+      </div>
+
       <div class="cards-grid" id="servicesCardsGrid">
 
         <div class="card card-tilt service-ticket service-ticket--phone" data-animate>
-          <div class="service-ticket-strip"><span>BENCH 01</span><span>Most common</span></div>
+          <div class="service-ticket-strip"><span>BENCH 01</span><span>Same-day common</span></div>
           <div class="service-ticket-main">
-            <div class="card-icon card-icon--blue">
-              <span class="material-symbols-outlined">phone_iphone</span>
-            </div>
-            <h3 class="card-title">iPhone &amp; iPad</h3>
+            <div class="card-icon card-icon--blue"><span class="material-symbols-outlined">phone_iphone</span></div>
+            <h3 class="card-title">iPhone Repair</h3>
           </div>
-          <p class="card-desc">Screen replacements, battery swaps, charging ports, buttons, water damage, and more.</p>
+          <p class="card-desc">Cracked screen, weak battery, charging trouble, camera issues, or water exposure — diagnosed quickly and fixed when repair makes sense.</p>
+          <div class="service-ticket-proof"><span>Typical path</span><strong>Photo first → part match → display/battery test → pickup text</strong></div>
           <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> All models supported</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> OEM-quality parts</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Same-day service</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Screens, batteries, ports, back glass</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Data stays private — no wipe unless discussed</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Tested before it leaves the bench</li>
           </ul>
-          <a href="/iphone-repair" class="card-link">
-            iPhone repair details <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+          <span class="service-ticket-stamp">Quote first</span>
+          <a href="/iphone-repair" class="card-link">Start iPhone repair <span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
 
         <div class="card card-tilt service-ticket service-ticket--android" data-animate>
           <div class="service-ticket-strip"><span>BENCH 02</span><span>Samsung / Pixel</span></div>
           <div class="service-ticket-main">
-            <div class="card-icon card-icon--green">
-              <span class="material-symbols-outlined">android</span>
-            </div>
+            <div class="card-icon card-icon--green"><span class="material-symbols-outlined">android</span></div>
             <h3 class="card-title">Android Phones</h3>
           </div>
-          <p class="card-desc">Samsung, Google Pixel, OnePlus, and more. Screens, batteries, ports — fixed fast.</p>
+          <p class="card-desc">Galaxy, Pixel, OnePlus, Motorola — screens, batteries, charge ports, cameras, and “won’t turn on” mysteries.</p>
+          <div class="service-ticket-proof"><span>Parts check</span><strong>Model number matters — I match the part before quoting</strong></div>
           <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Samsung Galaxy specialist</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Pixel &amp; more</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Quick turnaround</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> OLED/LCD options explained plainly</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Charging and battery triage</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Honest repair-versus-replace advice</li>
           </ul>
-          <a href="/android-repair" class="card-link">
-            Android repair details <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+          <span class="service-ticket-stamp">Model match</span>
+          <a href="/android-repair" class="card-link">Start Android repair <span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
 
         <div class="card card-tilt service-ticket service-ticket--laptop" data-animate>
           <div class="service-ticket-strip"><span>BENCH 03</span><span>Mac + Windows</span></div>
           <div class="service-ticket-main">
-            <div class="card-icon card-icon--purple">
-              <span class="material-symbols-outlined">laptop</span>
-            </div>
-            <h3 class="card-title">Laptop &amp; PC</h3>
+            <div class="card-icon card-icon--purple"><span class="material-symbols-outlined">laptop</span></div>
+            <h3 class="card-title">Laptop &amp; PC Repair</h3>
           </div>
-          <p class="card-desc">Mac and Windows repairs — screens, keyboards, batteries, storage upgrades, and virus removal.</p>
+          <p class="card-desc">Screens, batteries, keyboards, storage, overheating, startup failures, data recovery, and slow machines that need a real diagnosis.</p>
+          <div class="service-ticket-proof"><span>Bench read</span><strong>Power → storage health → thermals → repair plan</strong></div>
           <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Mac &amp; Windows</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Hardware &amp; software</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Data recovery</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> MacBook, Dell, HP, Lenovo, ASUS</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Hardware and software in one place</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Data safety prioritized before resets</li>
           </ul>
-          <a href="/laptop-repair" class="card-link">
-            Laptop repair details <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+          <span class="service-ticket-stamp">Tested</span>
+          <a href="/laptop-repair" class="card-link">Start laptop repair <span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
 
         <div class="card card-tilt service-ticket service-ticket--tablet" data-animate>
           <div class="service-ticket-strip"><span>BENCH 04</span><span>Glass + charge</span></div>
           <div class="service-ticket-main">
-            <div class="card-icon card-icon--cyan">
-              <span class="material-symbols-outlined">tablet</span>
-            </div>
+            <div class="card-icon card-icon--cyan"><span class="material-symbols-outlined">tablet</span></div>
             <h3 class="card-title">iPad &amp; Tablet</h3>
           </div>
-          <p class="card-desc">iPad, Samsung Galaxy Tab, Amazon Fire — cracked screens, dead batteries, charging issues, and more.</p>
+          <p class="card-desc">Dropped iPads, cracked glass, dead batteries, bad charge ports, and kid-proof “can this survive school?” fixes.</p>
+          <div class="service-ticket-proof"><span>Reality check</span><strong>Model + glass type decide price and turnaround</strong></div>
           <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> All brands &amp; models</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Kid-proof options</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Screen protectors included</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> iPad, Galaxy Tab, Amazon Fire</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Glass, LCD, battery, charge port</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Case/screen-protector advice when useful</li>
           </ul>
-          <a href="/tablet-repair" class="card-link">
-            Tablet repair details <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+          <span class="service-ticket-stamp">Protected</span>
+          <a href="/tablet-repair" class="card-link">Start tablet repair <span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
 
         <div class="card card-tilt service-ticket service-ticket--console" data-animate>
           <div class="service-ticket-strip"><span>BENCH 05</span><span>Ports + drift</span></div>
           <div class="service-ticket-main">
-            <div class="card-icon card-icon--red">
-              <span class="material-symbols-outlined">sports_esports</span>
-            </div>
+            <div class="card-icon card-icon--red"><span class="material-symbols-outlined">sports_esports</span></div>
             <h3 class="card-title">Game Consoles</h3>
           </div>
-          <p class="card-desc">Nintendo Switch, PS5, Xbox, Steam Deck — drift fixes, HDMI ports, overheating, disc drives, and controller repair.</p>
+          <p class="card-desc">Switch, PS5, Xbox, Steam Deck — HDMI issues, Joy-Con drift, overheating, fan noise, disc trouble, and controller repair.</p>
+          <div class="service-ticket-proof"><span>Common path</span><strong>Symptom check → port/stick/thermal test → repair</strong></div>
           <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> All platforms</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Controllers too</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Save data preserved</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> HDMI, drift, fans, overheating</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Save data preserved when possible</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Tested with real gameplay/load</li>
           </ul>
-          <a href="/console-repair" class="card-link">
-            Console repair details <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+          <span class="service-ticket-stamp">Load test</span>
+          <a href="/console-repair" class="card-link">Start console repair <span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
 
         <div class="card card-tilt service-ticket service-ticket--diagnostics" data-animate>
           <div class="service-ticket-strip"><span>INTAKE 06</span><span>Quote first</span></div>
           <div class="service-ticket-main">
-            <div class="card-icon card-icon--orange">
-              <span class="material-symbols-outlined">manage_search</span>
-            </div>
+            <div class="card-icon card-icon--orange"><span class="material-symbols-outlined">manage_search</span></div>
             <h3 class="card-title">Diagnostics</h3>
           </div>
-          <p class="card-desc">Not sure what's wrong? I'll figure it out. Every repair starts with a thorough diagnosis to identify the issue before we discuss solutions and pricing.</p>
+          <p class="card-desc">Not sure what failed? I’ll narrow it down before you approve parts or labor. The goal is clarity, not a surprise bill.</p>
+          <div class="service-ticket-proof"><span>Decision rule</span><strong>If repair is not worth it, I’ll say that directly</strong></div>
           <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Free assessment</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Honest quote upfront</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Clear estimate first</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Symptom-to-cause troubleshooting</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Quote before parts are ordered</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Repair-or-replace guidance</li>
           </ul>
+          <span class="service-ticket-stamp">No guessing</span>
+          <a href="/repair-or-replace-phone" class="card-link">Get repair advice <span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
 
         <div class="card card-tilt service-ticket service-ticket--tuneup" data-animate>
           <div class="service-ticket-strip"><span>CLEANUP 07</span><span>Speed pass</span></div>
           <div class="service-ticket-main">
-            <div class="card-icon card-icon--cyan">
-              <span class="material-symbols-outlined">speed</span>
-            </div>
+            <div class="card-icon card-icon--cyan"><span class="material-symbols-outlined">speed</span></div>
             <h3 class="card-title">Tune-ups</h3>
           </div>
-          <p class="card-desc">Sluggish device? I'll clean it up — remove junk, optimize performance, and get it running like new.</p>
+          <p class="card-desc">Slow computer, storage full, popups, malware, startup drag, browser mess — cleaned up without wiping first by default.</p>
+          <div class="service-ticket-proof"><span>Cleanup path</span><strong>Backup risk check → malware/storage scan → speed pass</strong></div>
           <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Software optimization</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Malware removal</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Storage cleanup</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Malware and startup cleanup</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Storage, updates, browser bloat</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Plain-English prevention notes</li>
           </ul>
+          <span class="service-ticket-stamp">Clean pass</span>
+          <a href="/virus-removal" class="card-link">Fix a slow computer <span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
 
         <div class="card card--highlight card-tilt service-ticket service-ticket--mail" data-animate>
           <div class="service-ticket-strip"><span>SHIP 08</span><span>Idaho mail-in</span></div>
           <div class="service-ticket-main">
-            <div class="card-icon card-icon--indigo">
-              <span class="material-symbols-outlined">local_shipping</span>
-            </div>
+            <div class="card-icon card-icon--indigo"><span class="material-symbols-outlined">local_shipping</span></div>
             <h3 class="card-title">Mail-In Repair</h3>
           </div>
-          <p class="card-desc">Not local? No problem. Ship your device to me anywhere in Idaho. Safe, insured, and fast return shipping.</p>
+          <p class="card-desc">Not in the Valley? Text photos first. If shipping makes sense, you get packing instructions, text updates, and free return shipping.</p>
+          <div class="service-ticket-proof"><span>Route</span><strong>Your post office → Hailey bench → tested return</strong></div>
           <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Statewide Idaho</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Insured shipping</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Updates via text</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Statewide Idaho repair access</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Quote before you ship when possible</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Tracking and text updates</li>
           </ul>
-          <a href="#mailin" class="card-link">
-            Learn more <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+          <span class="service-ticket-stamp">Tracked</span>
+          <a href="/mail-in-repair" class="card-link">Open mail-in repair <span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
 
       </div>
@@ -1575,7 +1751,7 @@ a{color:inherit;text-decoration:none}
   </div>
 
   <script src="liquid-btn.js" defer></script>
-  <script src="main.js?v=perf-20260512" defer></script>
+  <script src="main.js?v=home-20260514" defer></script>
 <script defer src="/_vercel/insights/script.js"></script>
 
   <!-- ═══════════════════════════════════════════════════

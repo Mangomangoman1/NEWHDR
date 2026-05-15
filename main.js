@@ -457,7 +457,7 @@
     updateProgress();
   }
 
-  // ─── Hero typing effect (rotating taglines) ─────────────
+  // ─── Hero phrase effect (full phrases only — no broken mid-word states) ─────────────
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const typerEl = document.getElementById('heroTyper');
   if (typerEl && !prefersReducedMotion) {
@@ -468,55 +468,15 @@
       'Text me anytime.'
     ];
     let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let pauseTimer = null;
 
-    const TYPE_SPEED = 60;
-    const DELETE_SPEED = 35;
-    const PAUSE_AFTER = 2500;
-    const PAUSE_BEFORE = 400;
-
-    // Start after page loads and a small delay
-    setTimeout(() => {
-      typerEl.classList.add('typing');
-      typerEl.textContent = '';
-      charIndex = 0;
-      typeLoop();
-    }, 1000);
-
-    function typeLoop() {
-      const current = phrases[phraseIndex];
-
-      if (!isDeleting) {
-        // Typing forward
-        charIndex++;
-        typerEl.textContent = current.slice(0, charIndex);
-
-        if (charIndex === current.length) {
-          // Done typing — pause, then delete
-          pauseTimer = setTimeout(() => {
-            isDeleting = true;
-            typeLoop();
-          }, PAUSE_AFTER);
-          return;
-        }
-        setTimeout(typeLoop, TYPE_SPEED + Math.random() * 30);
-      } else {
-        // Deleting
-        charIndex--;
-        typerEl.textContent = current.slice(0, charIndex);
-
-        if (charIndex === 0) {
-          // Done deleting — move to next phrase
-          isDeleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeLoop, PAUSE_BEFORE);
-          return;
-        }
-        setTimeout(typeLoop, DELETE_SPEED);
-      }
-    }
+    setInterval(() => {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      typerEl.classList.add('phrase-switching');
+      window.setTimeout(() => {
+        typerEl.textContent = phrases[phraseIndex];
+        typerEl.classList.remove('phrase-switching');
+      }, 140);
+    }, 3400);
   }
 
   // ─── Hero accent shimmer (one-shot on load) ─────────────
