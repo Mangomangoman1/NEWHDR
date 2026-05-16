@@ -12132,9 +12132,9 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
 }
 .hdr-service-card:hover img { transform: translate3d(-2px, -2px, 0) scale(1.025); opacity: 1; }
 .hdr-service-card--phone { --asset-width: 50%; --asset-right: -7%; --asset-bottom: -17%; }
-.hdr-service-card--computer { --asset-width: 56%; --asset-right: -15%; --asset-bottom: -4%; }
-.hdr-service-card--console { --asset-width: 58%; --asset-right: -13%; --asset-bottom: -12%; }
-.hdr-service-card--tablet { --asset-width: 52%; --asset-right: -12%; --asset-bottom: -9%; }
+.hdr-service-card--computer { --asset-width: 56%; --asset-right: -8%; --asset-bottom: -4%; }
+.hdr-service-card--console { --asset-width: 58%; --asset-right: -7%; --asset-bottom: -12%; }
+.hdr-service-card--tablet { --asset-width: 52%; --asset-right: -6%; --asset-bottom: -9%; }
 .hdr-service-card--diagnostics { --asset-width: 42%; --asset-right: -1%; --asset-bottom: -10%; }
 .hdr-service-card--mail { --asset-width: 50%; --asset-right: -10%; --asset-bottom: -14%; }
 .hdr-services-bottom {
@@ -12149,18 +12149,25 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
 }
 .hdr-services-bottom div {
   display: grid;
-  grid-template-columns: 44px 1fr;
-  align-items: center;
-  gap: .88rem;
-  min-height: 74px;
-  padding: .95rem clamp(.9rem, 2vw, 1.35rem);
+  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: start;
+  gap: .22rem .88rem;
+  min-height: 82px;
+  padding: 1rem clamp(.95rem, 2vw, 1.45rem);
   border-right: 1px solid rgba(255,255,255,.075);
+}
+.hdr-services-bottom div small {
+  grid-column: 2;
+  max-width: 18ch;
 }
 .hdr-services-bottom div:nth-child(1) { --proof-accent: #557cff; }
 .hdr-services-bottom div:nth-child(2) { --proof-accent: #72df7e; }
 .hdr-services-bottom div:nth-child(3) { --proof-accent: #b064ff; }
 .hdr-services-bottom div:nth-child(4) { --proof-accent: #f0b64b; border-right: 0; }
 .hdr-services-bottom .material-symbols-outlined {
+  grid-row: 1 / span 2;
+  align-self: center;
   width: 42px;
   height: 42px;
   border-radius: 999px;
@@ -12229,6 +12236,7 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
   .service-icon { width: 42px; height: 42px; border-radius: 13px; margin-bottom: .85rem; }
   .hdr-services-bottom { grid-template-columns: 1fr; border-radius: 19px; }
   .hdr-services-bottom div { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.075); }
+  .hdr-services-bottom div small { max-width: none; }
   .hdr-services-bottom div:last-child { border-bottom: 0; }
 }
 @media (max-width: 430px) {
