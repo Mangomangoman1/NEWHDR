@@ -769,190 +769,82 @@ a{color:inherit;text-decoration:none}
         <p class="section-sub">These are not generic “services.” They are the usual paths a broken device takes across my bench: first read, quote, repair, testing, and pickup or return shipping.</p>
       </div>
 
-      <div class="trust-badges" data-animate aria-label="Why customers choose Hailey Device Repair">
-        <div class="trust-badge">
-          <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+      <div class="home-service-board" data-animate aria-label="Hailey Device Repair service paths">
+        <div class="service-board-head">
           <div>
-            <strong>40-day warranty</strong>
-            <span>Clear, honest coverage</span>
+            <span class="service-board-kicker">HDR bench board</span>
+            <h3>Pick the closest problem. I’ll verify the exact path before parts.</h3>
+          </div>
+          <a href="#contact" class="service-board-cta">Text the issue <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        </div>
+
+        <div class="service-board-grid">
+          <article class="service-feature-ticket service-feature-ticket--phone">
+            <div class="ticket-topline"><span>BENCH 01</span><span>Most common</span></div>
+            <div class="ticket-title-row">
+              <span class="ticket-device-icon material-symbols-outlined" aria-hidden="true">phone_iphone</span>
+              <div>
+                <h3>Phones</h3>
+                <p>Cracked glass, battery drain, charging, water, camera, speaker.</p>
+              </div>
+            </div>
+            <div class="ticket-proof-line"><span>First read</span><strong>Photo → model match → quote → test before pickup</strong></div>
+            <div class="ticket-actions">
+              <a href="/iphone-repair">iPhone repair</a>
+              <a href="/android-repair">Android repair</a>
+            </div>
+          </article>
+
+          <article class="service-feature-ticket service-feature-ticket--computer">
+            <div class="ticket-topline"><span>BENCH 02</span><span>Mac + PC</span></div>
+            <div class="ticket-title-row">
+              <span class="ticket-device-icon material-symbols-outlined" aria-hidden="true">laptop_mac</span>
+              <div>
+                <h3>Computers</h3>
+                <p>Slow, infected, no boot, bad screen, battery, storage, overheating.</p>
+              </div>
+            </div>
+            <div class="ticket-proof-line"><span>Bench read</span><strong>Power → drive health → thermals → repair-or-replace call</strong></div>
+            <div class="ticket-actions">
+              <a href="/computer-support">Computer help</a>
+              <a href="/laptop-repair">Laptop repair</a>
+            </div>
+          </article>
+
+          <div class="service-route-list" role="list" aria-label="Other repair routes">
+            <a class="service-route-row" href="/tablet-repair" role="listitem">
+              <span class="route-code">03</span>
+              <span class="route-name">iPad + tablets</span>
+              <span class="route-symptoms">glass, LCD, battery, charge port</span>
+              <span class="route-status">model decides price</span>
+            </a>
+            <a class="service-route-row" href="/console-repair" role="listitem">
+              <span class="route-code">04</span>
+              <span class="route-name">Consoles</span>
+              <span class="route-symptoms">HDMI, drift, fan noise, overheating</span>
+              <span class="route-status">load tested</span>
+            </a>
+            <a class="service-route-row" href="/repair-or-replace-phone" role="listitem">
+              <span class="route-code">05</span>
+              <span class="route-name">Diagnostics</span>
+              <span class="route-symptoms">not sure what failed</span>
+              <span class="route-status">quote before parts</span>
+            </a>
+            <a class="service-route-row service-route-row--mail" href="/mail-in-repair" role="listitem">
+              <span class="route-code">06</span>
+              <span class="route-name">Mail-in repair</span>
+              <span class="route-symptoms">Idaho-wide when shipping makes sense</span>
+              <span class="route-status">tracked return</span>
+            </a>
           </div>
         </div>
-        <div class="trust-badge">
-          <span class="material-symbols-outlined" aria-hidden="true">bolt</span>
-          <div>
-            <strong>Same-day when possible</strong>
-            <span>Fast turnaround, no runaround</span>
-          </div>
-        </div>
-        <div class="trust-badge">
-          <span class="material-symbols-outlined" aria-hidden="true">chat_bubble</span>
-          <div>
-            <strong>Text-first support</strong>
-            <span>Real human help, not a call center</span>
-          </div>
+
+        <div class="service-board-footer" aria-label="Service promises">
+          <span><strong>40-day warranty</strong> on eligible repairs</span>
+          <span><strong>Quote first</strong> before parts are ordered</span>
+          <span><strong>Tested</strong> before it leaves the bench</span>
         </div>
       </div>
-
-      <div class="service-intake-rail" data-animate>
-        <div class="service-intake-card">
-          <h3>Every repair starts like a bench ticket, not a sales script.</h3>
-          <p>Text the model, what happened, and a photo if you can. I’ll tell you the likely path before you spend money on parts, shipping, or replacement.</p>
-          <div class="service-intake-steps" aria-label="Repair intake flow">
-            <div class="service-intake-step"><span>01</span><strong>Identify the device + symptom</strong></div>
-            <div class="service-intake-step"><span>02</span><strong>Quote the likely fix before work</strong></div>
-            <div class="service-intake-step"><span>03</span><strong>Test it before it leaves</strong></div>
-          </div>
-        </div>
-        <aside class="service-sms-proof" aria-label="Example HDR service text">
-          <div class="service-sms-proof-top"><span class="material-symbols-outlined" aria-hidden="true">sms</span><div><strong>Best first move</strong><span>Send the problem, not a paragraph</span></div></div>
-          <div class="service-sms-lines">
-            <div class="service-sms-bubble you">iPhone 13. Dropped it. Screen lights up but touch is spotty.</div>
-            <div class="service-sms-bubble hdr">Worth a quote. Send a photo and I’ll tell you screen path vs deeper damage before you bring it in.</div>
-          </div>
-        </aside>
-      </div>
-
-      <div class="cards-grid" id="servicesCardsGrid">
-
-        <div class="card card-tilt service-ticket service-ticket--phone" data-animate>
-          <div class="service-ticket-strip"><span>BENCH 01</span><span>Same-day common</span></div>
-          <div class="service-ticket-main">
-            <div class="card-icon card-icon--blue"><span class="material-symbols-outlined">phone_iphone</span></div>
-            <h3 class="card-title">iPhone Repair</h3>
-          </div>
-          <p class="card-desc">Cracked screen, weak battery, charging trouble, camera issues, or water exposure — diagnosed quickly and fixed when repair makes sense.</p>
-          <div class="service-ticket-proof"><span>Typical path</span><strong>Photo first → part match → display/battery test → pickup text</strong></div>
-          <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Screens, batteries, ports, back glass</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Data stays private — no wipe unless discussed</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Tested before it leaves the bench</li>
-          </ul>
-          <span class="service-ticket-stamp">Quote first</span>
-          <a href="/iphone-repair" class="card-link">Start iPhone repair <span class="material-symbols-outlined">arrow_forward</span></a>
-        </div>
-
-        <div class="card card-tilt service-ticket service-ticket--android" data-animate>
-          <div class="service-ticket-strip"><span>BENCH 02</span><span>Samsung / Pixel</span></div>
-          <div class="service-ticket-main">
-            <div class="card-icon card-icon--green"><span class="material-symbols-outlined">android</span></div>
-            <h3 class="card-title">Android Phones</h3>
-          </div>
-          <p class="card-desc">Galaxy, Pixel, OnePlus, Motorola — screens, batteries, charge ports, cameras, and “won’t turn on” mysteries.</p>
-          <div class="service-ticket-proof"><span>Parts check</span><strong>Model number matters — I match the part before quoting</strong></div>
-          <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> OLED/LCD options explained plainly</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Charging and battery triage</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Honest repair-versus-replace advice</li>
-          </ul>
-          <span class="service-ticket-stamp">Model match</span>
-          <a href="/android-repair" class="card-link">Start Android repair <span class="material-symbols-outlined">arrow_forward</span></a>
-        </div>
-
-        <div class="card card-tilt service-ticket service-ticket--laptop" data-animate>
-          <div class="service-ticket-strip"><span>BENCH 03</span><span>Mac + Windows</span></div>
-          <div class="service-ticket-main">
-            <div class="card-icon card-icon--purple"><span class="material-symbols-outlined">laptop</span></div>
-            <h3 class="card-title">Laptop &amp; PC Repair</h3>
-          </div>
-          <p class="card-desc">Screens, batteries, keyboards, storage, overheating, startup failures, data recovery, and slow machines that need a real diagnosis.</p>
-          <div class="service-ticket-proof"><span>Bench read</span><strong>Power → storage health → thermals → repair plan</strong></div>
-          <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> MacBook, Dell, HP, Lenovo, ASUS</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Hardware and software in one place</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Data safety prioritized before resets</li>
-          </ul>
-          <span class="service-ticket-stamp">Tested</span>
-          <a href="/laptop-repair" class="card-link">Start laptop repair <span class="material-symbols-outlined">arrow_forward</span></a>
-        </div>
-
-        <div class="card card-tilt service-ticket service-ticket--tablet" data-animate>
-          <div class="service-ticket-strip"><span>BENCH 04</span><span>Glass + charge</span></div>
-          <div class="service-ticket-main">
-            <div class="card-icon card-icon--cyan"><span class="material-symbols-outlined">tablet</span></div>
-            <h3 class="card-title">iPad &amp; Tablet</h3>
-          </div>
-          <p class="card-desc">Dropped iPads, cracked glass, dead batteries, bad charge ports, and kid-proof “can this survive school?” fixes.</p>
-          <div class="service-ticket-proof"><span>Reality check</span><strong>Model + glass type decide price and turnaround</strong></div>
-          <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> iPad, Galaxy Tab, Amazon Fire</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Glass, LCD, battery, charge port</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Case/screen-protector advice when useful</li>
-          </ul>
-          <span class="service-ticket-stamp">Protected</span>
-          <a href="/tablet-repair" class="card-link">Start tablet repair <span class="material-symbols-outlined">arrow_forward</span></a>
-        </div>
-
-        <div class="card card-tilt service-ticket service-ticket--console" data-animate>
-          <div class="service-ticket-strip"><span>BENCH 05</span><span>Ports + drift</span></div>
-          <div class="service-ticket-main">
-            <div class="card-icon card-icon--red"><span class="material-symbols-outlined">sports_esports</span></div>
-            <h3 class="card-title">Game Consoles</h3>
-          </div>
-          <p class="card-desc">Switch, PS5, Xbox, Steam Deck — HDMI issues, Joy-Con drift, overheating, fan noise, disc trouble, and controller repair.</p>
-          <div class="service-ticket-proof"><span>Common path</span><strong>Symptom check → port/stick/thermal test → repair</strong></div>
-          <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> HDMI, drift, fans, overheating</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Save data preserved when possible</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Tested with real gameplay/load</li>
-          </ul>
-          <span class="service-ticket-stamp">Load test</span>
-          <a href="/console-repair" class="card-link">Start console repair <span class="material-symbols-outlined">arrow_forward</span></a>
-        </div>
-
-        <div class="card card-tilt service-ticket service-ticket--diagnostics" data-animate>
-          <div class="service-ticket-strip"><span>INTAKE 06</span><span>Quote first</span></div>
-          <div class="service-ticket-main">
-            <div class="card-icon card-icon--orange"><span class="material-symbols-outlined">manage_search</span></div>
-            <h3 class="card-title">Diagnostics</h3>
-          </div>
-          <p class="card-desc">Not sure what failed? I’ll narrow it down before you approve parts or labor. The goal is clarity, not a surprise bill.</p>
-          <div class="service-ticket-proof"><span>Decision rule</span><strong>If repair is not worth it, I’ll say that directly</strong></div>
-          <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Symptom-to-cause troubleshooting</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Quote before parts are ordered</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Repair-or-replace guidance</li>
-          </ul>
-          <span class="service-ticket-stamp">No guessing</span>
-          <a href="/repair-or-replace-phone" class="card-link">Get repair advice <span class="material-symbols-outlined">arrow_forward</span></a>
-        </div>
-
-        <div class="card card-tilt service-ticket service-ticket--tuneup" data-animate>
-          <div class="service-ticket-strip"><span>CLEANUP 07</span><span>Speed pass</span></div>
-          <div class="service-ticket-main">
-            <div class="card-icon card-icon--cyan"><span class="material-symbols-outlined">speed</span></div>
-            <h3 class="card-title">Tune-ups</h3>
-          </div>
-          <p class="card-desc">Slow computer, storage full, popups, malware, startup drag, browser mess — cleaned up without wiping first by default.</p>
-          <div class="service-ticket-proof"><span>Cleanup path</span><strong>Backup risk check → malware/storage scan → speed pass</strong></div>
-          <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Malware and startup cleanup</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Storage, updates, browser bloat</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Plain-English prevention notes</li>
-          </ul>
-          <span class="service-ticket-stamp">Clean pass</span>
-          <a href="/virus-removal" class="card-link">Fix a slow computer <span class="material-symbols-outlined">arrow_forward</span></a>
-        </div>
-
-        <div class="card card--highlight card-tilt service-ticket service-ticket--mail" data-animate>
-          <div class="service-ticket-strip"><span>SHIP 08</span><span>Idaho mail-in</span></div>
-          <div class="service-ticket-main">
-            <div class="card-icon card-icon--indigo"><span class="material-symbols-outlined">local_shipping</span></div>
-            <h3 class="card-title">Mail-In Repair</h3>
-          </div>
-          <p class="card-desc">Not in the Valley? Text photos first. If shipping makes sense, you get packing instructions, text updates, and free return shipping.</p>
-          <div class="service-ticket-proof"><span>Route</span><strong>Your post office → Hailey bench → tested return</strong></div>
-          <ul class="card-features">
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Statewide Idaho repair access</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Quote before you ship when possible</li>
-            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Tracking and text updates</li>
-          </ul>
-          <span class="service-ticket-stamp">Tracked</span>
-          <a href="/mail-in-repair" class="card-link">Open mail-in repair <span class="material-symbols-outlined">arrow_forward</span></a>
-        </div>
-
-      </div>
-
-      <div class="cards-scroll-indicators" id="cardsScrollIndicators" aria-hidden="true"></div>
     </div>
   </section>
 
