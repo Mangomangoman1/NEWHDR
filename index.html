@@ -110,9 +110,9 @@ a{color:inherit;text-decoration:none}
 .sel-card:hover .sel-arrow .material-symbols-outlined{transform:translateX(4px)}
 .sel-badge{display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:var(--accent);color:#fff;border-radius:100px;padding:0.15rem 0.55rem;margin-left:0.5rem;vertical-align:middle}
 </style>
-  <link rel="preload" href="style.css?v=perf-20260512" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css?v=perf-20260512" /></noscript>
-  <!-- Medium steel-blue accent override — must come after style.css?v=perf-20260512 -->
+  <link rel="preload" href="style.min.css?v=services-20260515" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="style.min.css?v=services-20260515" /></noscript>
+  <!-- Medium steel-blue accent override — must come after style.min.css?v=services-20260515 -->
   <style>:root{--accent:#5B8BCF!important;--accent-hover:#74A4DE!important;--accent-dim:rgba(91,139,207,0.12)!important;--accent-glow:rgba(91,139,207,0.25)!important;--color-blue:#5B8BCF!important;--color-cyan:#8BB8D6!important}</style>
   <style id="homepage-detail-pass-css">
     /* Homepage detail pass — operational proof, not decorative polish */
@@ -761,89 +761,94 @@ a{color:inherit;text-decoration:none}
   <!-- ═══════════════════════════════════════════
        SERVICES GRID
   ══════════════════════════════════════════════ -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">Common Repair Services</div>
-        <h2 class="section-title">Start with the symptom. I’ll map the repair.</h2>
-        <p class="section-sub">Choose the closest device problem below. Each path shows how I sort the issue: first read, quote, repair, testing, and pickup or return shipping.</p>
+  <section class="section hdr-services-showcase" id="services" aria-labelledby="services-title">
+    <div class="container hdr-services-container">
+      <div class="hdr-services-hero" data-animate>
+        <div class="hdr-services-copy">
+          <div class="section-eyebrow">Our Services</div>
+          <h2 class="section-title" id="services-title">Expert repairs.<br>Real solutions.</h2>
+          <p class="section-sub">From phones to high-performance computers, HDR fixes the devices Wood River Valley people actually depend on. Quality parts, transparent pricing, and fast turnaround.</p>
+        </div>
+
+        <div class="hdr-services-stage" aria-hidden="true">
+          <div class="stage-glow stage-glow--blue"></div>
+          <div class="stage-glow stage-glow--violet"></div>
+          <img class="stage-device stage-device--phone" src="/assets/services/hero-phone-cracked.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+          <img class="stage-device stage-device--laptop" src="/assets/services/hero-laptop.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+          <img class="stage-device stage-device--console" src="/assets/services/hero-console-controller.webp" alt="" width="460" height="690" loading="lazy" decoding="async">
+        </div>
       </div>
 
-      <div class="home-service-board" data-animate aria-label="Hailey Device Repair service paths">
-        <div class="service-board-head">
-          <div>
-            <span class="service-board-kicker">HDR services board</span>
-            <h3>Pick the closest problem. I’ll verify the exact path before parts.</h3>
-          </div>
-          <a href="#contact" class="service-board-cta">Text the issue <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+      <div class="hdr-services-proof" aria-label="Service promises">
+        <div class="service-proof-item service-proof-item--blue">
+          <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
+          <div><strong>Quality Parts</strong><small>Tested. Trusted. Guaranteed.</small></div>
         </div>
-
-        <div class="service-board-grid">
-          <article class="service-feature-ticket service-feature-ticket--phone">
-            <div class="ticket-topline"><span>BENCH 01</span><span>Most common</span></div>
-            <div class="ticket-title-row">
-              <span class="ticket-device-icon material-symbols-outlined" aria-hidden="true">phone_iphone</span>
-              <div>
-                <h3>Phones</h3>
-                <p>Cracked glass, battery drain, charging, water, camera, speaker.</p>
-              </div>
-            </div>
-            <div class="ticket-proof-line"><span>First read</span><strong>Photo → model match → quote → test before pickup</strong></div>
-            <div class="ticket-actions">
-              <a href="/iphone-repair">iPhone repair</a>
-              <a href="/android-repair">Android repair</a>
-            </div>
-          </article>
-
-          <article class="service-feature-ticket service-feature-ticket--computer">
-            <div class="ticket-topline"><span>BENCH 02</span><span>Mac + PC</span></div>
-            <div class="ticket-title-row">
-              <span class="ticket-device-icon material-symbols-outlined" aria-hidden="true">laptop_mac</span>
-              <div>
-                <h3>Computers</h3>
-                <p>Slow, infected, no boot, bad screen, battery, storage, overheating.</p>
-              </div>
-            </div>
-            <div class="ticket-proof-line"><span>Bench read</span><strong>Power → drive health → thermals → repair-or-replace call</strong></div>
-            <div class="ticket-actions">
-              <a href="/computer-support">Computer help</a>
-              <a href="/laptop-repair">Laptop repair</a>
-            </div>
-          </article>
-
-          <div class="service-route-list" role="list" aria-label="Other repair routes">
-            <a class="service-route-row" href="/tablet-repair" role="listitem">
-              <span class="route-code">03</span>
-              <span class="route-name">iPad + tablets</span>
-              <span class="route-symptoms">glass, LCD, battery, charge port</span>
-              <span class="route-status">model decides price</span>
-            </a>
-            <a class="service-route-row" href="/console-repair" role="listitem">
-              <span class="route-code">04</span>
-              <span class="route-name">Consoles</span>
-              <span class="route-symptoms">HDMI, drift, fan noise, overheating</span>
-              <span class="route-status">load tested</span>
-            </a>
-            <a class="service-route-row" href="/repair-or-replace-phone" role="listitem">
-              <span class="route-code">05</span>
-              <span class="route-name">Diagnostics</span>
-              <span class="route-symptoms">not sure what failed</span>
-              <span class="route-status">quote before parts</span>
-            </a>
-            <a class="service-route-row service-route-row--mail" href="/mail-in-repair" role="listitem">
-              <span class="route-code">06</span>
-              <span class="route-name">Mail-in repair</span>
-              <span class="route-symptoms">Idaho-wide when shipping makes sense</span>
-              <span class="route-status">tracked return</span>
-            </a>
-          </div>
+        <div class="service-proof-item service-proof-item--violet">
+          <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+          <div><strong>Fast Turnaround</strong><small>Most common repairs same-day.</small></div>
         </div>
-
-        <div class="service-board-footer" aria-label="Service promises">
-          <span><strong>40-day warranty</strong> on eligible repairs</span>
-          <span><strong>Quote first</strong> before parts are ordered</span>
-          <span><strong>Tested</strong> before it leaves the bench</span>
+        <div class="service-proof-item service-proof-item--teal">
+          <span class="material-symbols-outlined" aria-hidden="true">workspace_premium</span>
+          <div><strong>40-Day Warranty</strong><small>On eligible parts and labor.</small></div>
         </div>
+      </div>
+
+      <div class="hdr-service-card-grid" aria-label="Repair service categories">
+        <a class="hdr-service-card hdr-service-card--phone" href="/iphone-repair" style="--card-accent:#5b7cff;">
+          <span class="service-icon material-symbols-outlined" aria-hidden="true">smartphone</span>
+          <h3>Phones</h3>
+          <p>Cracked glass, battery issues, charging problems, water damage, cameras, and speakers.</p>
+          <span class="service-card-link">View services <span aria-hidden="true">→</span></span>
+          <img src="/assets/services/card-phone.webp" alt="" width="520" height="520" loading="lazy" decoding="async">
+        </a>
+
+        <a class="hdr-service-card hdr-service-card--computer" href="/computer-support" style="--card-accent:#39d5bd;">
+          <span class="service-icon material-symbols-outlined" aria-hidden="true">laptop_mac</span>
+          <h3>Computers</h3>
+          <p>Slow performance, overheating, screen issues, storage upgrades, malware, and no-boot problems.</p>
+          <span class="service-card-link">View services <span aria-hidden="true">→</span></span>
+          <img src="/assets/services/card-laptop.webp" alt="" width="560" height="373" loading="lazy" decoding="async">
+        </a>
+
+        <a class="hdr-service-card hdr-service-card--console" href="/console-repair" style="--card-accent:#b064ff;">
+          <span class="service-icon material-symbols-outlined" aria-hidden="true">sports_esports</span>
+          <h3>Consoles</h3>
+          <p>HDMI issues, overheating, disk drive problems, controller drift, fan noise, and general repairs.</p>
+          <span class="service-card-link">View services <span aria-hidden="true">→</span></span>
+          <img src="/assets/services/card-console.webp" alt="" width="560" height="448" loading="lazy" decoding="async">
+        </a>
+
+        <a class="hdr-service-card hdr-service-card--tablet" href="/tablet-repair" style="--card-accent:#f0b64b;">
+          <span class="service-icon material-symbols-outlined" aria-hidden="true">tablet_mac</span>
+          <h3>Tablets</h3>
+          <p>Cracked screens, battery replacement, charging issues, kid-drop damage, and more.</p>
+          <span class="service-card-link">View services <span aria-hidden="true">→</span></span>
+          <img src="/assets/services/card-tablet.webp" alt="" width="560" height="373" loading="lazy" decoding="async">
+        </a>
+
+        <a class="hdr-service-card hdr-service-card--diagnostics" href="/repair-or-replace-phone" style="--card-accent:#ff6b70;">
+          <span class="service-icon material-symbols-outlined" aria-hidden="true">monitor_heart</span>
+          <h3>Diagnostics</h3>
+          <p>Not sure what’s wrong? I’ll run a full diagnostic and explain the repair-or-replace call.</p>
+          <span class="service-card-link">Learn more <span aria-hidden="true">→</span></span>
+          <img src="/assets/services/card-diagnostic-lens.webp" alt="" width="500" height="333" loading="lazy" decoding="async">
+        </a>
+
+        <a class="hdr-service-card hdr-service-card--mail" href="/mail-in-repair" style="--card-accent:#5b9cff;">
+          <span class="service-icon material-symbols-outlined" aria-hidden="true">inventory_2</span>
+          <h3>Mail-In Repairs</h3>
+          <p>Can’t make it in? Ship your device to HDR and I’ll take care of the rest.</p>
+          <span class="service-card-link">Learn more <span aria-hidden="true">→</span></span>
+          <img src="/assets/services/card-shipping-box.webp" alt="" width="560" height="448" loading="lazy" decoding="async">
+        </a>
+      </div>
+
+      <div class="hdr-services-bottom" aria-label="Additional service trust points">
+        <div><span class="material-symbols-outlined" aria-hidden="true">local_shipping</span><strong>Free Shipping</strong><small>On approved mail-in repairs</small></div>
+        <div><span class="material-symbols-outlined" aria-hidden="true">shield_lock</span><strong>Secure Handling</strong><small>Your device stays in safe hands</small></div>
+        <div><span class="material-symbols-outlined" aria-hidden="true">forum</span><strong>Real Support</strong><small>Talk to the actual technician</small></div>
+        <div><span class="material-symbols-outlined" aria-hidden="true">star</span><strong>Trusted Locally</strong><small>Proudly serving the Wood River Valley</small></div>
       </div>
     </div>
   </section>
