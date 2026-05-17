@@ -26,6 +26,7 @@
   <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
   <link rel="manifest" href="/manifest.json" />
+  <link rel="preload" as="image" href="/assets/services/hero-laptop.webp" type="image/webp" fetchpriority="high" />
 
   <script type="application/ld+json">
   {
@@ -119,6 +120,7 @@
     .nav-link { padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); transition: color 0.2s, background 0.2s; }
     .nav-link:hover, .nav-link.active { color: var(--text-primary); background: var(--border-subtle); }
     .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-actions .btn { white-space: nowrap; }
     .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
     .nav-hamburger span { display: block; width: 20px; height: 2px; background: var(--text-primary); margin: 4px 0; transition: all 0.2s; }
     .nav-mobile { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-surface); border-bottom: 1px solid var(--border-default); padding: 1rem; z-index: 99; }
@@ -140,19 +142,44 @@
     .btn-lg { padding: 0.85rem 1.75rem; font-size: 1rem; border-radius: var(--radius-lg); }
 
     /* HERO */
-    .hero { min-height: 88vh; display: flex; align-items: center; padding: 6rem 0 4rem; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); pointer-events: none; }
-    .hero-content { position: relative; z-index: 2; max-width: 700px; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bg-card); border: 1px solid var(--border-default); border-radius: 100px; padding: 0.4rem 1rem; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
-    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-green); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-    .hero-headline { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
-    .hero-headline-accent { background: linear-gradient(135deg, var(--accent), var(--color-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-sub { font-size: clamp(1rem, 2vw, 1.15rem); color: var(--text-secondary); max-width: 540px; line-height: 1.7; margin-bottom: 2rem; }
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-    .hero-trust { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-    .hero-trust-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--text-muted); }
+    .hero { min-height: 92vh; display: flex; align-items: center; padding: 7rem 0 4.5rem; position: relative; overflow: hidden; background:
+      radial-gradient(circle at 78% 18%, rgba(79,142,247,0.26), transparent 34rem),
+      radial-gradient(circle at 92% 78%, rgba(57,197,207,0.13), transparent 28rem),
+      linear-gradient(135deg, rgba(13,17,23,1) 0%, rgba(12,18,31,1) 54%, rgba(7,10,18,1) 100%); }
+    .hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(90deg, rgba(0,0,0,0.9), transparent 78%); pointer-events: none; }
+    .hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 110px; background: linear-gradient(to bottom, transparent, var(--bg-primary)); pointer-events: none; }
+    .hero-shell { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+    .hero-content { position: relative; z-index: 2; max-width: 690px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.55rem; background: rgba(22,27,34,0.74); border: 1px solid rgba(255,255,255,0.13); border-radius: 100px; padding: 0.48rem 1rem; font-size: 0.8rem; color: #b8c7d9; margin-bottom: 1.35rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.06); backdrop-filter: blur(16px); }
+    .hero-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-green); box-shadow: 0 0 0 6px rgba(63,185,80,0.12), 0 0 18px rgba(63,185,80,0.55); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.55; transform: scale(0.86); } }
+    .hero-headline { font-family: var(--font-display); font-size: clamp(2.55rem, 5.4vw, 4.95rem); font-weight: 800; line-height: 0.98; letter-spacing: -0.055em; margin-bottom: 1.4rem; text-wrap: balance; }
+    .hero-headline-accent { color: #83d9ff; text-shadow: 0 0 34px rgba(57,197,207,0.24); }
+    .hero-sub { font-size: clamp(1rem, 2vw, 1.14rem); color: #a9b7c7; max-width: 620px; line-height: 1.72; margin-bottom: 1.75rem; }
+    .hero-cta { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .hero-cta .btn-primary { background: linear-gradient(135deg, #4f8ef7, #39c5cf); color: #07101c; box-shadow: 0 14px 38px rgba(79,142,247,0.28); }
+    .hero-cta .btn-ghost { background: rgba(255,255,255,0.04); color: #dfe8f5; border-color: rgba(255,255,255,0.18); }
+    .hero-risk { color: #8fa1b7; font-size: 0.86rem; margin: 0 0 1.65rem; }
+    .hero-trust { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .hero-trust-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: #a7b4c5; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.09); border-radius: 999px; padding: 0.42rem 0.72rem; }
     .hero-trust-item .material-symbols-outlined { font-size: 1rem; color: var(--color-green); }
+    .hero-visual { position: relative; min-height: 470px; isolation: isolate; }
+    .hero-visual::before { content: ''; position: absolute; width: 88%; aspect-ratio: 1; left: 8%; top: 5%; border-radius: 50%; background: radial-gradient(circle, rgba(79,142,247,0.25), rgba(57,197,207,0.08) 44%, transparent 70%); filter: blur(8px); z-index: -1; }
+    .hero-laptop-frame { position: absolute; inset: 10% 0 auto 0; border: 1px solid rgba(255,255,255,0.12); border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)); box-shadow: 0 34px 90px rgba(0,0,0,0.42), inset 0 1px 0 rgba(255,255,255,0.08); padding: clamp(1rem, 2vw, 1.35rem); transform: rotate(1deg); overflow: hidden; }
+    .hero-laptop-frame::after { content: ''; position: absolute; inset: auto 8% 8% 8%; height: 1px; background: linear-gradient(90deg, transparent, rgba(131,217,255,0.65), transparent); }
+    .hero-laptop { display: block; width: 100%; height: auto; filter: drop-shadow(0 28px 45px rgba(0,0,0,0.45)); }
+    .hero-diagnostic-card { position: absolute; left: -0.25rem; bottom: 1.5rem; width: min(285px, 74%); padding: 1rem; border: 1px solid rgba(255,255,255,0.14); border-radius: 20px; background: rgba(13,17,23,0.84); backdrop-filter: blur(18px); box-shadow: 0 22px 60px rgba(0,0,0,0.38); }
+    .hero-diagnostic-kicker { display: flex; align-items: center; gap: 0.45rem; color: #83d9ff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.7rem; }
+    .hero-diagnostic-line { display: flex; align-items: center; justify-content: space-between; gap: 0.85rem; color: #dfe8f5; font-size: 0.83rem; padding: 0.52rem 0; border-top: 1px solid rgba(255,255,255,0.08); }
+    .hero-diagnostic-line:first-of-type { border-top: 0; }
+    .hero-diagnostic-line span:last-child { color: var(--color-green); font-weight: 700; white-space: nowrap; }
+    .hero-route-card { position: absolute; right: 0.4rem; top: 0.25rem; width: min(240px, 62%); padding: 0.9rem; border-radius: 18px; background: rgba(28,34,48,0.78); border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 18px 44px rgba(0,0,0,0.3); backdrop-filter: blur(16px); }
+    .hero-route-title { color: #f0f6fc; font-weight: 800; font-size: 0.82rem; margin-bottom: 0.35rem; }
+    .hero-route-copy { color: #9fb0c4; font-size: 0.75rem; line-height: 1.45; }
+    .hero-orbit { position: absolute; right: 9%; bottom: 12%; width: 82px; height: 82px; border-radius: 50%; border: 1px solid rgba(131,217,255,0.28); box-shadow: inset 0 0 30px rgba(79,142,247,0.16); }
+    .hero-orbit::before, .hero-orbit::after { content: ''; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #83d9ff; box-shadow: 0 0 18px rgba(131,217,255,0.85); }
+    .hero-orbit::before { top: 8px; left: 12px; }
+    .hero-orbit::after { right: 9px; bottom: 13px; background: var(--color-green); }
 
     /* PROBLEM SECTION */
     .section { padding: 5rem 0; }
@@ -236,15 +263,36 @@
     [data-animate].animated { opacity: 1; transform: translateY(0); }
 
     /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { min-height: auto; padding: 6rem 0 3rem; }
+      .hero-shell { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-content { max-width: 100%; }
+      .hero-visual { min-height: 360px; }
+      .hero-laptop-frame { inset: 3% 0 auto 0; }
+      .hero-route-card { right: 0; top: 0; }
+    }
     @media (max-width: 768px) {
       .nav-links, .nav-actions .btn-ghost, .nav-actions .theme-toggle { display: none; }
       .nav-hamburger { display: block; }
       .split { grid-template-columns: 1fr; }
-      .hero-trust { gap: 1rem; }
+      .hero-trust { gap: 0.55rem; }
     }
     @media (max-width: 480px) {
+      .container { padding: 0 1rem; }
+      .hero { padding-top: 5.2rem; }
+      .hero-badge { font-size: 0.72rem; line-height: 1.35; align-items: flex-start; border-radius: 18px; }
       .hero-cta { flex-direction: column; }
-      .cta-buttons { flex-direction: column; align-items: center; }
+      .hero-cta .btn { width: 100%; justify-content: center; min-height: 56px; }
+      .hero-trust-item { width: 100%; justify-content: flex-start; }
+      .hero-visual { min-height: 318px; margin-top: -0.3rem; }
+      .hero-laptop-frame { border-radius: 22px; padding: 0.7rem; }
+      .hero-diagnostic-card { left: 0; bottom: 0.35rem; width: 86%; padding: 0.82rem; }
+      .hero-route-card { width: 68%; padding: 0.78rem; }
+      .hero-orbit { display: none; }
+      .cta-buttons { flex-direction: column; align-items: stretch; }
+      .cta-buttons .btn { justify-content: center; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-links { width: 100%; flex-wrap: wrap; gap: 0.75rem 1rem; }
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -303,41 +351,60 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Local computer help for Hailey, Ketchum, Sun Valley & Bellevue
+      <div class="hero-shell">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Local computer help for Hailey, Ketchum, Sun Valley & Bellevue
+          </div>
+          <h1 class="hero-headline">
+            Computer acting weird?<br>
+            <span class="hero-headline-accent">Text me the symptom.</span>
+          </h1>
+          <p class="hero-sub">
+            Slow startup, pop-ups, blue screens, no Wi‑Fi, a failed update, or a laptop that will not boot — I’ll help you figure out whether it’s remote support, a tune-up, virus cleanup, data-safe diagnostics, or an in-person repair in Hailey.
+          </p>
+          <div class="hero-cta">
+            <a href="sms:+12083666111" class="btn btn-primary btn-lg">
+              <span class="material-symbols-outlined">sms</span>
+              Text the symptom
+            </a>
+            <a href="tel:+12083666111" class="btn btn-ghost btn-lg">
+              <span class="material-symbols-outlined">call</span>
+              (208) 366-6111
+            </a>
+          </div>
+          <p class="hero-risk">Free first-look guidance. No replacement push if a cleanup or SSD can save it.</p>
+          <div class="hero-trust">
+            <div class="hero-trust-item">
+              <span class="material-symbols-outlined">check_circle</span>
+              Data-safe first
+            </div>
+            <div class="hero-trust-item">
+              <span class="material-symbols-outlined">check_circle</span>
+              Remote support available
+            </div>
+            <div class="hero-trust-item">
+              <span class="material-symbols-outlined">check_circle</span>
+              Same-day on most software jobs
+            </div>
+          </div>
         </div>
-        <h1 class="hero-headline">
-          Computer Help & Repair<br>
-          <span class="hero-headline-accent">in Hailey, Idaho.</span>
-        </h1>
-        <p class="hero-sub">
-          Slow PC, weird pop-ups, startup failure, crashes, or an update that broke everything? I help people figure out whether it’s a quick software fix, a virus problem, failing hardware, or just a computer that needs cleanup — without pushing a replacement if you don’t need one. Local computer help for Hailey, Ketchum, Sun Valley, and Bellevue. Remote support available statewide.
-        </p>
-        <div class="hero-cta">
-          <a href="sms:+12083666111" class="btn btn-primary btn-lg">
-            <span class="material-symbols-outlined">sms</span>
-            Text Me What It’s Doing
-          </a>
-          <a href="tel:+12083666111" class="btn btn-ghost btn-lg">
-            <span class="material-symbols-outlined">call</span>
-            (208) 366-6111
-          </a>
-        </div>
-        <div class="hero-trust">
-          <div class="hero-trust-item">
-            <span class="material-symbols-outlined">check_circle</span>
-            No fix, no fee on diagnostics
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-route-card">
+            <div class="hero-route-title">Quick triage route</div>
+            <div class="hero-route-copy">Send the model, symptom, and a photo of any error. I’ll tell you the safest next step.</div>
           </div>
-          <div class="hero-trust-item">
-            <span class="material-symbols-outlined">check_circle</span>
-            Remote support available
+          <div class="hero-laptop-frame">
+            <img class="hero-laptop" src="/assets/services/hero-laptop.webp" alt="" width="900" height="620" fetchpriority="high" decoding="async">
           </div>
-          <div class="hero-trust-item">
-            <span class="material-symbols-outlined">check_circle</span>
-            Same-day turnaround most jobs
+          <div class="hero-diagnostic-card">
+            <div class="hero-diagnostic-kicker"><span class="material-symbols-outlined">troubleshoot</span> Diagnostic pass</div>
+            <div class="hero-diagnostic-line"><span>Boots / no boot</span><span>check first</span></div>
+            <div class="hero-diagnostic-line"><span>Files at risk?</span><span>protect</span></div>
+            <div class="hero-diagnostic-line"><span>Remote or drop-off</span><span>route it</span></div>
           </div>
+          <div class="hero-orbit"></div>
         </div>
       </div>
     </div>
