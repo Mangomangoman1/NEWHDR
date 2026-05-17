@@ -23,6 +23,7 @@
   <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
   <link rel="manifest" href="/manifest.json" />
+  <link rel="preload" as="image" href="/assets/hero/photoreal-device-cluster-b.webp" type="image/webp" fetchpriority="high" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hailey Device Repair" />
@@ -295,6 +296,177 @@ a{color:inherit;text-decoration:none}
       .home-page #services .service-ticket-stamp { display:none; }
       .home-page .cookie-banner { opacity:.9; flex-direction:row !important; }
       .home-page .cookie-banner .cookie-banner-actions { width:auto !important; flex-direction:row !important; }
+    }
+  </style>
+
+
+  <style id="homepage-photoreal-hero-css">
+    /* Photoreal hero device cluster — staged, masked, and grounded in the hero instead of pasted on */
+    .home-page #hero {
+      min-height: min(920px, calc(100vh - 18px));
+      padding: clamp(5.4rem, 8vw, 7.25rem) 0 clamp(2.4rem, 4vw, 3.6rem);
+      background:
+        radial-gradient(circle at 78% 32%, rgba(91,139,207,.22), transparent 28rem),
+        radial-gradient(circle at 89% 72%, rgba(139,184,214,.13), transparent 22rem),
+        linear-gradient(135deg, rgba(13,17,23,1), rgba(9,13,21,1) 58%, rgba(5,8,14,1));
+    }
+    .home-page #hero .hero-overlay {
+      background:
+        linear-gradient(90deg, rgba(13,17,23,.72) 0%, rgba(13,17,23,.42) 42%, rgba(13,17,23,.12) 100%),
+        radial-gradient(circle at 70% 45%, rgba(91,139,207,.08), transparent 32rem);
+    }
+    .home-page .hero-shell {
+      position:relative;
+      z-index:3;
+      display:grid;
+      grid-template-columns:minmax(0, .92fr) minmax(360px, .78fr);
+      gap:clamp(1.8rem, 4vw, 4.25rem);
+      align-items:center;
+      max-width:1280px;
+    }
+    .home-page #hero .hero-inner {
+      max-width:650px;
+      padding-inline:clamp(1.1rem, 2vw, 1.45rem);
+    }
+    .home-page .hero-visual {
+      position:relative;
+      min-height:clamp(390px, 45vw, 560px);
+      display:grid;
+      place-items:center;
+      isolation:isolate;
+    }
+    .home-page .hero-visual::before {
+      content:"";
+      position:absolute;
+      width:min(92%, 560px);
+      aspect-ratio:1;
+      border-radius:999px;
+      background:radial-gradient(circle, rgba(91,139,207,.23), rgba(139,184,214,.08) 42%, transparent 70%);
+      filter:blur(12px);
+      transform:translate(3%, -2%);
+      z-index:-2;
+    }
+    .home-page .hero-visual::after {
+      content:"";
+      position:absolute;
+      left:8%;
+      right:1%;
+      bottom:6%;
+      height:16%;
+      border-radius:50%;
+      background:radial-gradient(ellipse, rgba(0,0,0,.62), transparent 70%);
+      filter:blur(18px);
+      z-index:-1;
+    }
+    .home-page .hero-device-stage {
+      position:relative;
+      width:min(100%, 610px);
+      padding:clamp(.65rem, 1.5vw, 1rem);
+      border-radius:clamp(1.4rem, 3vw, 2.2rem);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.018)),
+        radial-gradient(circle at 74% 20%, rgba(91,139,207,.13), transparent 19rem);
+      box-shadow:0 32px 86px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.08);
+      transform:translateY(.35rem) rotate(.7deg);
+      overflow:hidden;
+    }
+    .home-page .hero-device-stage::before {
+      content:"";
+      position:absolute;
+      inset:1px;
+      border-radius:inherit;
+      background:
+        linear-gradient(90deg, transparent, rgba(139,184,214,.13), transparent),
+        radial-gradient(circle at 86% 12%, rgba(255,255,255,.13), transparent 8rem);
+      pointer-events:none;
+      mix-blend-mode:screen;
+      z-index:2;
+    }
+    .home-page .hero-device-stage::after {
+      content:"";
+      position:absolute;
+      left:10%;
+      right:10%;
+      bottom:9%;
+      height:1px;
+      background:linear-gradient(90deg, transparent, rgba(139,184,214,.62), transparent);
+      z-index:3;
+    }
+    .home-page .hero-device-cluster {
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:calc(clamp(1.4rem, 3vw, 2.2rem) - .55rem);
+      filter:drop-shadow(0 28px 42px rgba(0,0,0,.42)) saturate(1.04) contrast(1.03);
+      -webkit-mask-image:radial-gradient(ellipse at 56% 48%, #000 58%, rgba(0,0,0,.9) 73%, transparent 100%);
+      mask-image:radial-gradient(ellipse at 56% 48%, #000 58%, rgba(0,0,0,.9) 73%, transparent 100%);
+    }
+    .home-page .hero-repair-note,
+    .home-page .hero-proof-chip {
+      position:absolute;
+      z-index:4;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(13,17,23,.78);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      box-shadow:0 18px 48px rgba(0,0,0,.32);
+    }
+    .home-page .hero-repair-note {
+      left:-.35rem;
+      bottom:2.25rem;
+      width:min(250px, 56%);
+      padding:.88rem .95rem;
+      border-radius:1.05rem;
+    }
+    .home-page .hero-repair-note span {
+      display:block;
+      color:var(--accent);
+      font-size:.64rem;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:.26rem;
+    }
+    .home-page .hero-repair-note strong {
+      display:block;
+      color:#f0f6fc;
+      font-size:.9rem;
+      line-height:1.25;
+    }
+    .home-page .hero-proof-chip {
+      top:1.15rem;
+      right:.15rem;
+      display:flex;
+      align-items:center;
+      gap:.48rem;
+      padding:.55rem .72rem;
+      border-radius:999px;
+      color:#dfe8f4;
+      font-size:.78rem;
+      font-weight:800;
+    }
+    .home-page .hero-proof-chip .material-symbols-outlined { color:var(--color-green); font-size:1rem; }
+    .home-page .service-selector-grid {
+      position:relative;
+      z-index:3;
+      grid-column:1 / -1;
+      width:100%;
+      max-width:980px;
+      margin-top:clamp(1.2rem, 3vw, 2rem);
+    }
+    @media (max-width: 980px) {
+      .home-page .hero-shell { grid-template-columns:1fr; gap:1.35rem; }
+      .home-page .hero-visual { min-height:clamp(300px, 62vw, 460px); order:2; margin-top:.15rem; }
+      .home-page .hero-device-stage { width:min(92vw, 560px); transform:rotate(.4deg); }
+      .home-page .hero-repair-note { bottom:1.2rem; left:.4rem; }
+      .home-page .hero-proof-chip { right:.6rem; }
+      .home-page #hero .hero-inner { max-width:740px; }
+    }
+    @media (max-width: 768px) {
+      .home-page #hero { padding-top:4.35rem; min-height:auto; }
+      .home-page .hero-visual { display:none; }
+      .home-page .service-selector-grid { margin-top:1.25rem; }
     }
   </style>
 
@@ -624,7 +796,8 @@ a{color:inherit;text-decoration:none}
     <canvas id="pcb-canvas" aria-hidden="true"></canvas>
     <div class="hero-overlay" aria-hidden="true"></div>
 
-    <div class="container hero-inner">
+    <div class="container hero-shell">
+      <div class="hero-copy hero-inner">
       <div class="hero-eyebrow">
         <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
         Hailey, Idaho · Ketchum · Sun Valley · Mail-In Statewide
@@ -683,6 +856,16 @@ a{color:inherit;text-decoration:none}
         <div class="hero-trust-item" id="heroOpenStatus" aria-live="polite" aria-label="Business open/closed status">
           <span class="hero-status-dot" id="heroStatusDot" aria-hidden="true"></span>
           <span id="heroClock"></span>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-device-stage">
+          <img class="hero-device-cluster" src="/assets/hero/photoreal-device-cluster-b.webp" width="1536" height="1024" alt="" fetchpriority="high" decoding="async" />
+          <div class="hero-proof-chip"><span class="material-symbols-outlined">verified</span> Phones · laptops · consoles</div>
+          <div class="hero-repair-note"><span>Bench-ready intake</span><strong>Text photos first. I’ll route the repair before you drive.</strong></div>
         </div>
       </div>
 
