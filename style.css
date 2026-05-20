@@ -4765,6 +4765,220 @@ button[type="submit"]:disabled {
   overflow: hidden;
   padding: var(--space-3xl) 0 var(--space-4xl);
 }
+.rexburg-hero {
+  padding: clamp(2.2rem, 5vw, 4.8rem) 0 clamp(2.8rem, 6vw, 5.2rem);
+  background:
+    radial-gradient(circle at 78% 22%, rgba(79,142,247,0.22), transparent 28rem),
+    radial-gradient(circle at 14% 78%, rgba(163,113,247,0.12), transparent 24rem),
+    linear-gradient(135deg, #0b111c 0%, #111827 56%, #0d1117 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.rexburg-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(90deg, rgba(0,0,0,0.72), transparent 78%);
+  pointer-events: none;
+}
+.rexburg-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.68fr);
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+.rexburg-hero-copy {
+  max-width: 760px;
+}
+.rexburg-breadcrumb {
+  margin-bottom: 1.1rem;
+  font-size: 0.88rem;
+}
+.rexburg-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 0.95rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: #dbeafe;
+  font-size: 0.86rem;
+  font-weight: 650;
+  line-height: 1.2;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.rexburg-hero-badge .material-symbols-outlined {
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+.rexburg-hero-title {
+  max-width: 780px;
+  margin: 0 0 1rem;
+  color: #f8fafc;
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 6vw, 5.6rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+}
+.rexburg-hero-sub {
+  max-width: 700px;
+  margin: 0 0 1.55rem;
+  color: #cbd5e1;
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
+  line-height: 1.65;
+}
+.rexburg-hero-actions {
+  margin-bottom: 0;
+}
+.rexburg-hero-actions .btn {
+  box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+}
+.rexburg-phone-cta {
+  color: #f8fafc;
+  border-color: rgba(255,255,255,0.24);
+  background: rgba(255,255,255,0.045);
+}
+.rexburg-route-card {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(1.2rem, 3vw, 1.7rem);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035)),
+    rgba(15,23,42,0.78);
+  box-shadow: 0 28px 90px rgba(0,0,0,0.36), inset 0 1px 0 rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.rexburg-route-card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 22px;
+  border: 1px solid rgba(79,142,247,0.18);
+  pointer-events: none;
+  z-index: -1;
+}
+.rexburg-route-card__topline {
+  margin-bottom: 0.45rem;
+  color: #93c5fd;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.rexburg-route-card__title {
+  margin-bottom: 1.25rem;
+  color: #f8fafc;
+  font-family: var(--font-display);
+  font-size: clamp(1.28rem, 1.7vw, 1.62rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+.rexburg-route-steps {
+  display: grid;
+  gap: 0.5rem;
+}
+.rexburg-route-step {
+  display: grid;
+  grid-template-columns: 2.65rem 1fr;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.78rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px;
+  background: rgba(2,6,23,0.33);
+}
+.rexburg-route-step > .material-symbols-outlined {
+  display: grid;
+  place-items: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 15px;
+  background: rgba(79,142,247,0.14);
+  color: #93c5fd;
+  font-size: 1.3rem;
+}
+.rexburg-route-step strong,
+.rexburg-route-step small {
+  display: block;
+}
+.rexburg-route-step strong {
+  color: #f8fafc;
+  font-size: 0.98rem;
+}
+.rexburg-route-step small {
+  margin-top: 0.16rem;
+  color: #a6b0c2;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+.rexburg-route-line {
+  width: 1px;
+  height: 16px;
+  margin-left: 2.1rem;
+  background: linear-gradient(180deg, rgba(147,197,253,0.55), rgba(147,197,253,0.08));
+}
+@media (max-width: 900px) {
+  .rexburg-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .rexburg-route-card {
+    max-width: 520px;
+  }
+}
+@media (max-width: 560px) {
+  .rexburg-hero {
+    padding: 1.35rem 0 2.1rem;
+  }
+  .rexburg-breadcrumb {
+    margin-bottom: 0.85rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .rexburg-breadcrumb::-webkit-scrollbar { display: none; }
+  .rexburg-hero-badge {
+    font-size: 0.76rem;
+    white-space: normal;
+  }
+  .rexburg-hero-title {
+    font-size: clamp(2.1rem, 13vw, 3rem);
+    line-height: 0.98;
+    letter-spacing: -0.065em;
+  }
+  .rexburg-hero-sub {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+  .rexburg-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .rexburg-route-card {
+    border-radius: 22px;
+  }
+  .rexburg-route-step {
+    grid-template-columns: 2.35rem 1fr;
+    padding: 0.68rem;
+  }
+  .rexburg-route-step > .material-symbols-outlined {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+}
 .lp-hero-inner {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
