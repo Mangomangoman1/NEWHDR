@@ -121,10 +121,18 @@ a{color:inherit;text-decoration:none}
           "Tuesday",
           "Wednesday",
           "Thursday",
-          "Friday",
-          "Saturday"
+          "Friday"
         ],
         "opens": "09:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "11:00",
         "closes": "19:00"
       }
     ],
@@ -483,8 +491,8 @@ a{color:inherit;text-decoration:none}
             <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
             <h3>Repair hours</h3>
             <div class="hours-grid">
-              <span>Monday–Saturday</span><strong>9 AM – 7 PM MT</strong>
-              <span>Sunday</span><strong>Closed</strong>
+              <span>Monday–Friday</span><strong>9 AM – 9 PM MT</strong>
+              <span>Saturday–Sunday</span><strong>11 AM – 7 PM MT</strong>
             </div>
             <p>Messages outside hours usually get a reply the next morning.</p>
           </div>
