@@ -83,8 +83,8 @@ a{color:inherit;text-decoration:none}
 .breadcrumb-sep{font-size:0.9rem}
 .text-accent{background:linear-gradient(135deg,var(--accent),var(--color-cyan,#22d3ee));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 @media(max-width:768px){.nav-links,.nav-actions .theme-toggle{display:none}.nav-hamburger{display:flex;flex-direction:column;gap:4px}.hero{min-height:80vh;padding:5rem 0 3rem}}</style>
-  <link rel="preload" href="style.css?v=perf-20260512" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css?v=perf-20260512" /></noscript>
+  <link rel="preload" href="style.css?v=hero-pass-20260520" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="style.css?v=hero-pass-20260520" /></noscript>
 
   <!-- JSON-LD: LocalBusiness -->
   <script type="application/ld+json">
@@ -228,24 +228,39 @@ a{color:inherit;text-decoration:none}
   <!-- ═══════════════════════════════════════════
        HERO
   ══════════════════════════════════════════════ -->
-  <section class="lp-hero">
-    <div class="hero-particles" aria-hidden="true"></div>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
+  <section class="lp-hero repair-hero repair-hero--pricing">
+  <div class="hero-particles" aria-hidden="true"></div>
+  <div class="container repair-hero-grid">
+    <div class="repair-hero-copy">
+      <nav class="breadcrumb repair-hero-breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span class="material-symbols-outlined breadcrumb-sep" aria-hidden="true">chevron_right</span>
         <span aria-current="page">Pricing</span>
       </nav>
 
-      <div class="lp-hero-badge">
-        <span class="material-symbols-outlined" aria-hidden="true">payments</span>
-        Honest pricing · No hidden fees · 40-day warranty
-      </div>
+      <div class="lp-hero-badge repair-hero-badge"><span class="material-symbols-outlined" aria-hidden="true">payments</span>Honest quotes · No hidden fees · 40-day warranty</div>
+      <h1 class="lp-hero-title repair-hero-title">A real repair quote beats a fake universal price.</h1>
+      <p class="lp-hero-sub repair-hero-sub">Exact pricing depends on the model, part quality, damage, and whether the device has been opened before. Text the issue first and I’ll tell you what’s likely worth doing before you commit.</p>
 
-      <h1 class="lp-hero-title">Transparent Pricing</h1>
-      <p class="lp-hero-sub">Every job gets a firm quote before any work begins. No surprises.</p>
+      <div class="hero-actions repair-hero-actions">
+        <a href="sms:+120****6111?&body=Hi%20Hailey%20Device%20Repair%2C%20I%20need%20a%20repair%20quote." class="btn btn-primary btn-lg"><span class="material-symbols-outlined" aria-hidden="true">sms</span>Text for a quote</a>
+        <a href="tel:+120****6111" class="btn btn-outline btn-lg repair-phone-cta"><span class="material-symbols-outlined" aria-hidden="true">call</span>(208) 366-6111</a>
+      </div>
     </div>
-  </section>
+
+    <aside class="repair-proof-card" aria-label="Pricing process">
+      <div class="repair-proof-card__topline">Quote logic</div>
+      <div class="repair-proof-card__title">The price comes after the model and damage.</div>
+      <div class="repair-proof-steps">
+        <div class="repair-proof-step"><span class="material-symbols-outlined" aria-hidden="true">badge</span><div><strong>Exact model</strong><small>iPhone 13, MacBook Air M1, PS5, etc.</small></div></div>
+        <div class="repair-proof-line" aria-hidden="true"></div>
+        <div class="repair-proof-step"><span class="material-symbols-outlined" aria-hidden="true">photo_camera</span><div><strong>Clear symptoms</strong><small>Photo + what still works speeds it up</small></div></div>
+        <div class="repair-proof-line" aria-hidden="true"></div>
+        <div class="repair-proof-step"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><div><strong>Firm approval</strong><small>No work starts until you approve the quote</small></div></div>
+      </div>
+    </aside>
+  </div>
+</section>
 
 <section class="section section--alt" id="pricing-answer"><div class="container"><div class="answer-card" style="max-width:980px;margin:0 auto;"><div class="section-eyebrow">Price Answer</div><h2 class="section-title" style="text-align:left;">The useful answer is a quote, not a fake universal price.</h2><p>For AI and human readers: HDR prices depend on the exact model, part quality, damage, prior repair attempts, liquid exposure, data risk, and board-level complexity. The safe next step is to text the model and symptoms first; Samuel will tell you whether repair is likely worth it before you approve work.</p><div class="guide-link-strip"><a href="/broken-phone-what-to-text">Send the right quote text</a><a href="/repair-or-replace-phone">Repair vs replace math</a><a href="/warranty">Warranty rules</a></div></div></div></section>
 

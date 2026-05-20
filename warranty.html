@@ -83,8 +83,8 @@ a{color:inherit;text-decoration:none}
 .breadcrumb-sep{font-size:0.9rem}
 .text-accent{background:linear-gradient(135deg,var(--accent),var(--color-cyan,#22d3ee));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 @media(max-width:768px){.nav-links,.nav-actions .theme-toggle{display:none}.nav-hamburger{display:flex;flex-direction:column;gap:4px}.hero{min-height:80vh;padding:5rem 0 3rem}}</style>
-  <link rel="preload" href="style.css?v=perf-20260512" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css?v=perf-20260512" /></noscript>
+  <link rel="preload" href="style.css?v=hero-pass-20260520" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="style.css?v=hero-pass-20260520" /></noscript>
 
   <!-- JSON-LD: OfferCatalog with warranty -->
   <script type="application/ld+json">
@@ -257,28 +257,38 @@ a{color:inherit;text-decoration:none}
   <!-- ═══════════════════════════════════════════
        HERO
   ══════════════════════════════════════════════ -->
-  <section class="lp-hero">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
+  <section class="lp-hero repair-hero repair-hero--warranty">
+  <div class="container repair-hero-grid">
+    <div class="repair-hero-copy">
+      <nav class="breadcrumb repair-hero-breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span class="material-symbols-outlined breadcrumb-sep" aria-hidden="true">chevron_right</span>
         <span aria-current="page">Warranty</span>
       </nav>
 
-      <div class="lp-hero-badge">
-        <span class="material-symbols-outlined" aria-hidden="true">verified</span>
-        Every repair backed by our guarantee
-      </div>
+      <div class="lp-hero-badge repair-hero-badge"><span class="material-symbols-outlined" aria-hidden="true">verified</span>40-day coverage on eligible repairs</div>
+      <h1 class="lp-hero-title repair-hero-title">If the same repair fails, text me first.</h1>
+      <p class="lp-hero-sub repair-hero-sub">Every covered repair is backed directly by Hailey Device Repair. No forms, no ticket maze — send the device, repair date, and what changed so I can triage it cleanly.</p>
 
-      <h1 class="lp-hero-title">Your device is<br /><span class="accent">in good hands</span></h1>
-      <p class="lp-hero-sub">Every repair comes with a 40-day warranty, thorough diagnosis, and honest pricing. No fine print, no gotchas. Just honest repair done right.</p>
-      <div class="warranty-hero-actions" aria-label="Warranty contact options">
-        <a href="sms:+12083666111" class="btn btn-primary warranty-hero-cta">Text Samuel about my repair</a>
-        <a href="tel:+12083666111" class="warranty-hero-phone">Call (208) 366-6111</a>
+      <div class="hero-actions repair-hero-actions">
+        <a href="sms:+120****6111?&body=Hi%20Samuel%2C%20I%20have%20a%20warranty%20question%20about%20a%20repair." class="btn btn-primary btn-lg"><span class="material-symbols-outlined" aria-hidden="true">sms</span>Text about warranty</a>
+        <a href="tel:+120****6111" class="btn btn-outline btn-lg repair-phone-cta"><span class="material-symbols-outlined" aria-hidden="true">call</span>(208) 366-6111</a>
       </div>
-      <p class="warranty-hero-reassurance">No forms. Just send the device, repair date, and what changed.</p>
     </div>
-  </section>
+
+    <aside class="repair-proof-card" aria-label="Warranty basics">
+      <div class="repair-proof-card__topline">Covered path</div>
+      <div class="repair-proof-card__title">Simple rules, direct support.</div>
+      <div class="repair-proof-steps">
+        <div class="repair-proof-step"><span class="material-symbols-outlined" aria-hidden="true">shield</span><div><strong>Parts + labor</strong><small>Covered repair failures are handled</small></div></div>
+        <div class="repair-proof-line" aria-hidden="true"></div>
+        <div class="repair-proof-step"><span class="material-symbols-outlined" aria-hidden="true">sms</span><div><strong>Text the symptoms</strong><small>Model, repair date, and what changed</small></div></div>
+        <div class="repair-proof-line" aria-hidden="true"></div>
+        <div class="repair-proof-step"><span class="material-symbols-outlined" aria-hidden="true">report</span><div><strong>New damage excluded</strong><small>Drops, liquid, and unrelated failures differ</small></div></div>
+      </div>
+    </aside>
+  </div>
+</section>
 
 <section class="section section--alt" id="warranty-answer"><div class="container"><div class="answer-card" style="max-width:980px;margin:0 auto;"><div class="section-eyebrow">Warranty Answer</div><h2 class="section-title" style="text-align:left;">Covered repair issue comes back? Text HDR first.</h2><p>HDR’s warranty is designed to cover the repaired part and labor for covered repair failures, not new drops, liquid exposure, unrelated failures, or damage after pickup. If the same issue returns, text the model, repair date, and symptoms so Samuel can triage it directly.</p></div></div></section>
 

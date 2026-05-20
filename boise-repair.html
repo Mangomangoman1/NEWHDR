@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="/style.css?v=perf-20260512" />
+  <link rel="stylesheet" href="/style.css?v=hero-pass-20260520" />
 
   <script type="application/ld+json">
   {
@@ -253,37 +253,50 @@
   </nav>
 
   <main id="main" role="main">
-    <section class="lp-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span class="material-symbols-outlined breadcrumb-sep" aria-hidden="true">chevron_right</span>
-          <a href="/mail-in-repair">Mail-In Repair</a>
-          <a href="/electronics-recycling">Electronics Recycling</a>
-          <span class="material-symbols-outlined breadcrumb-sep" aria-hidden="true">chevron_right</span>
-          <span aria-current="page">Boise Repair</span>
-        </nav>
+    <section class="lp-hero repair-hero repair-hero--boise">
+  <div class="container repair-hero-grid">
+    <div class="repair-hero-copy">
+      <nav class="breadcrumb repair-hero-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="material-symbols-outlined breadcrumb-sep" aria-hidden="true">chevron_right</span>
+        <a href="/mail-in-repair">Mail-In Repair</a>
+        <span class="material-symbols-outlined breadcrumb-sep" aria-hidden="true">chevron_right</span>
+        <span aria-current="page">Boise Repair</span>
+      </nav>
 
-        <div class="lp-hero-badge">
-          <span class="material-symbols-outlined" aria-hidden="true">route</span>
-          Boise • Meridian • Nampa • Caldwell
-        </div>
-
-        <h1 class="lp-hero-title">Mail-In Device Repair<br /><span class="accent">for Boise &amp; the Treasure Valley</span></h1>
-        <p class="lp-hero-sub">If you’re in Boise, Meridian, Nampa, or Caldwell, this is a simple statewide repair option. Text your device and what’s wrong, get a clear estimate, and follow the repair by text from intake to return shipping.</p>
-
-        <div class="hero-actions">
-          <a href="sms:+12083666111" class="btn btn-primary btn-lg">
-            <span class="material-symbols-outlined" aria-hidden="true">sms</span>
-            Text to Start
-          </a>
-          <a href="#how-it-works" class="btn btn-outline btn-lg">
-            <span class="material-symbols-outlined" aria-hidden="true">arrow_downward</span>
-            See How It Works
-          </a>
-        </div>
+      <div class="lp-hero-badge repair-hero-badge">
+        <span class="material-symbols-outlined" aria-hidden="true">route</span>
+        Boise • Meridian • Nampa • Caldwell
       </div>
-    </section>
+
+      <h1 class="lp-hero-title repair-hero-title">Treasure Valley repairs without the shop runaround.</h1>
+      <p class="lp-hero-sub repair-hero-sub">Text the model, what broke, and the city you’re in. I’ll tell you if mail-in makes sense before you ship, then keep the repair moving by text from intake to return tracking.</p>
+
+      <div class="hero-actions repair-hero-actions">
+        <a href="sms:+120****6111?&body=Hi%20Hailey%20Device%20Repair%2C%20I%27m%20in%20Boise%20or%20the%20Treasure%20Valley%20and%20need%20a%20device%20repair%20quote." class="btn btn-primary btn-lg">
+          <span class="material-symbols-outlined" aria-hidden="true">sms</span>
+          Text a Treasure Valley quote
+        </a>
+        <a href="tel:+120****6111" class="btn btn-outline btn-lg repair-phone-cta">
+          <span class="material-symbols-outlined" aria-hidden="true">call</span>
+          (208) 366-6111
+        </a>
+      </div>
+    </div>
+
+    <aside class="repair-proof-card" aria-label="Boise mail-in repair process">
+      <div class="repair-proof-card__topline">Treasure Valley route</div>
+      <div class="repair-proof-card__title">Boise → Hailey → back with tracking</div>
+      <div class="repair-proof-steps">
+        <div class="repair-proof-step"><span class="material-symbols-outlined" aria-hidden="true">sms</span><div><strong>Quote first</strong><small>Know the likely path before shipping</small></div></div>
+        <div class="repair-proof-line" aria-hidden="true"></div>
+        <div class="repair-proof-step"><span class="material-symbols-outlined" aria-hidden="true">local_shipping</span><div><strong>Fast Idaho shipping</strong><small>Boise, Meridian, Nampa, Caldwell</small></div></div>
+        <div class="repair-proof-line" aria-hidden="true"></div>
+        <div class="repair-proof-step"><span class="material-symbols-outlined" aria-hidden="true">verified</span><div><strong>40-day coverage</strong><small>Covered repairs come back with warranty</small></div></div>
+      </div>
+    </aside>
+  </div>
+</section>
 
     <section class="section section--alt">
       <div class="container">
@@ -291,7 +304,7 @@
         <h2 class="section-title">A simple repair process for Boise and the Treasure Valley</h2>
         <p class="section-sub">Treasure Valley customers usually use this page for three reasons: clear estimates, fast shipping into Hailey, and updates from start to finish.</p>
 
-        <div class="lp-compare-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="lp-compare-grid lp-compare-grid--three">
           <div class="lp-compare-card" data-animate>
             <div class="lp-compare-icon" style="color: var(--accent);">
               <span class="material-symbols-outlined">description</span>
