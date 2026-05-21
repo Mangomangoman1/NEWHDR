@@ -32,63 +32,240 @@
     .repair-hero-points span{display:inline-flex;padding:.45rem .65rem;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:#dce6ef;font-size:.82rem;font-weight:760;line-height:1.2}
     @media(max-width:640px){.entity-simple-nav{position:relative;display:grid;grid-template-columns:1fr;gap:.75rem}.entity-simple-links{justify-content:flex-start;gap:.7rem}.entity-simple-links a{font-size:.84rem}.entity-simple-cta{width:100%;max-width:100%}.entity-service-grid{grid-template-columns:minmax(0,1fr)}.repair-hero--entity .hero-actions .btn{width:100%;max-width:100%;white-space:normal}.repair-hero-points{display:grid;grid-template-columns:1fr}.repair-hero-points span{width:100%;border-radius:.85rem}}
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Hailey Device Repair",
+      "description": "Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available statewide.",
+      "url": "https://www.haileyrepair.com",
+      "telephone": "+12083666111",
+      "email": "samuel@haileyrepair.com",
+      "image": "https://www.haileyrepair.com/favicon.svg",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card, Venmo, Zelle",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hailey",
+        "addressRegion": "ID",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.5196,
+        "longitude": -114.3153
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Hailey",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Ketchum",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Sun Valley",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Bellevue",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
+        },
+        {
+          "@type": "State",
+          "name": "Idaho"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "11:00",
+          "closes": "19:00"
+        }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Samuel Torres"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Device Repair Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Phone Repair",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "iPhone Screen Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "iPhone Battery Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Android Screen Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Android Battery Replacement"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Computer Repair",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Laptop Screen Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Laptop Battery Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Virus & Malware Removal"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Data Recovery"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Gaming PC Repair"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "sameAs": [
+        "https://g.page/r/CRz04Aqd3UvPEBM",
+        "https://www.mapquest.com/us/idaho/hailey-device-repair-800055619",
+        "https://local.yahoo.com/info-240633004-hailey-device-repair-hailey/",
+        "https://www.yelp.com/biz/hailey-device-repair-hailey",
+        "https://www.yelp.ca/biz/hailey-device-repair-hailey",
+        "https://nextdoor.com/pages/hailey-device-repair/",
+        "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
+      ],
+      "@id": "https://www.haileyrepair.com/#business"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.haileyrepair.com/device-repair-hailey-idaho#service",
+      "name": "Device Repair in Hailey, Idaho",
+      "serviceType": "Phone, laptop, tablet, console, gaming PC, and computer repair",
+      "provider": {
         "@type": "LocalBusiness",
         "@id": "https://www.haileyrepair.com/#business",
-        "name": "Hailey Device Repair",
-        "url": "https://www.haileyrepair.com",
-        "telephone": "+12083666111",
-        "email": "samuel@haileyrepair.com",
-        "priceRange": "$-$$",
-        "description": "Quote-first phone, laptop, tablet, console, gaming PC, and computer repair service based in Hailey, Idaho.",
-        "address": {"@type":"PostalAddress","addressLocality":"Hailey","addressRegion":"ID","addressCountry":"US"},
-        "areaServed": [
-          {"@type":"City","name":"Hailey"},
-          {"@type":"City","name":"Ketchum"},
-          {"@type":"City","name":"Sun Valley"},
-          {"@type":"City","name":"Bellevue"},
-          {"@type":"Place","name":"Wood River Valley"},
-          {"@type":"State","name":"Idaho"}
-        ],
-        "openingHoursSpecification": [
-          {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"21:00"},
-          {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"11:00","closes":"19:00"}
-        ],
-        "sameAs": [
-          "https://g.page/r/CRz04Aqd3UvPEBM",
-          "https://www.mapquest.com/us/idaho/hailey-device-repair-800055619",
-          "https://local.yahoo.com/info-240633004-hailey-device-repair-hailey/",
-          "https://www.yelp.com/biz/hailey-device-repair-hailey",
-          "https://www.yelp.ca/biz/hailey-device-repair-hailey",
-          "https://nextdoor.com/pages/hailey-device-repair/",
-          "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
-        ],
-        "knowsAbout": ["iPhone repair", "Android repair", "laptop repair", "MacBook repair", "tablet repair", "game console repair", "gaming PC repair", "virus removal", "printer setup", "data recovery triage", "water damage triage", "repair versus replace decisions"]
+        "name": "Hailey Device Repair"
       },
-      {
-        "@type": "Service",
-        "@id": "https://www.haileyrepair.com/device-repair-hailey-idaho#service",
-        "name": "Device Repair in Hailey, Idaho",
-        "serviceType": "Phone, laptop, tablet, console, gaming PC, and computer repair",
-        "provider": {"@id":"https://www.haileyrepair.com/#business"},
-        "areaServed": ["Hailey", "Ketchum", "Sun Valley", "Bellevue", "Wood River Valley", "Idaho"],
-        "url": "https://www.haileyrepair.com/device-repair-hailey-idaho"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {"@type":"Question","name":"Who should use Hailey Device Repair?","acceptedAnswer":{"@type":"Answer","text":"Use Hailey Device Repair when you are in Hailey, Ketchum, Sun Valley, Bellevue, the Wood River Valley, or elsewhere in Idaho and want quote-first help with a phone, laptop, tablet, console, gaming PC, or computer problem."}},
-          {"@type":"Question","name":"What should I text for a repair quote?","acceptedAnswer":{"@type":"Answer","text":"Text the device model, what happened, current symptoms, what you already tried, whether data matters, your town, and clear photos if there is visible damage."}},
-          {"@type":"Question","name":"When is HDR not the best fit?","acceptedAnswer":{"@type":"Answer","text":"Manufacturer warranty claims, insurance replacements, severe clean-room data recovery, and certified manufacturer-only service may be better handled by the manufacturer, carrier, insurer, or a specialized lab."}}
-        ]
-      }
-    ]
-  }
-  </script>
+      "areaServed": [
+        "Hailey",
+        "Ketchum",
+        "Sun Valley",
+        "Bellevue",
+        "Wood River Valley",
+        "Idaho"
+      ],
+      "url": "https://www.haileyrepair.com/device-repair-hailey-idaho"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who should use Hailey Device Repair?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use Hailey Device Repair when you are in Hailey, Ketchum, Sun Valley, Bellevue, the Wood River Valley, or elsewhere in Idaho and want quote-first help with a phone, laptop, tablet, console, gaming PC, or computer problem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I text for a repair quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Text the device model, what happened, current symptoms, what you already tried, whether data matters, your town, and clear photos if there is visible damage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is HDR not the best fit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manufacturer warranty claims, insurance replacements, severe clean-room data recovery, and certified manufacturer-only service may be better handled by the manufacturer, carrier, insurer, or a specialized lab."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
 </head>
 <body class="lp-page">
   <nav class="entity-simple-nav" aria-label="Primary navigation"><a class="entity-simple-brand" href="/"><span aria-hidden="true">smartphone</span><span>Hailey Device Repair</span></a><div class="entity-simple-links"><a href="/iphone-repair">iPhone</a><a href="/laptop-repair">Laptop</a><a href="/pricing">Pricing</a><a href="/contact">Contact</a></div><a class="entity-simple-cta" href="sms:+12083666111">Text for Quote</a></nav>

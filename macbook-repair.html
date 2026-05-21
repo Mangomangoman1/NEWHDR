@@ -330,26 +330,66 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://www.haileyrepair.com/#business",
       "name": "Hailey Device Repair",
-      "image": "https://www.haileyrepair.com/og-image.svg",
+      "description": "Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available statewide.",
       "url": "https://www.haileyrepair.com",
       "telephone": "+12083666111",
+      "email": "samuel@haileyrepair.com",
+      "image": "https://www.haileyrepair.com/favicon.svg",
       "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card, Venmo, Zelle",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "920 S Main St",
         "addressLocality": "Hailey",
         "addressRegion": "ID",
-        "postalCode": "83333",
         "addressCountry": "US"
       },
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 43.5196,
-        "longitude": -114.315
+        "longitude": -114.3153
       },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Hailey",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Ketchum",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Sun Valley",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Bellevue",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
+        },
+        {
+          "@type": "State",
+          "name": "Idaho"
+        }
+      ],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -361,27 +401,103 @@
             "Friday"
           ],
           "opens": "09:00",
-          "closes": "17:00"
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "11:00",
+          "closes": "19:00"
         }
       ],
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Hailey"
-        },
-        {
-          "@type": "City",
-          "name": "Ketchum"
-        },
-        {
-          "@type": "City",
-          "name": "Sun Valley"
-        },
-        {
-          "@type": "City",
-          "name": "Bellevue"
-        }
-      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Samuel Torres"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Device Repair Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Phone Repair",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "iPhone Screen Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "iPhone Battery Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Android Screen Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Android Battery Replacement"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Computer Repair",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Laptop Screen Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Laptop Battery Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Virus & Malware Removal"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Data Recovery"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Gaming PC Repair"
+                }
+              }
+            ]
+          }
+        ]
+      },
       "sameAs": [
         "https://g.page/r/CRz04Aqd3UvPEBM",
         "https://www.mapquest.com/us/idaho/hailey-device-repair-800055619",
@@ -390,13 +506,16 @@
         "https://www.yelp.ca/biz/hailey-device-repair-hailey",
         "https://nextdoor.com/pages/hailey-device-repair/",
         "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
-      ]
+      ],
+      "@id": "https://www.haileyrepair.com/#business"
     },
     {
       "@type": "Service",
       "serviceType": "MacBook Repair",
       "provider": {
-        "@id": "https://www.haileyrepair.com/#business"
+        "@type": "LocalBusiness",
+        "@id": "https://www.haileyrepair.com/#business",
+        "name": "Hailey Device Repair"
       },
       "areaServed": [
         {
@@ -424,35 +543,60 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "MacBook Screen Repair"
+              "name": "MacBook Screen Repair",
+              "provider": {
+                "@type": "LocalBusiness",
+                "@id": "https://www.haileyrepair.com/#business",
+                "name": "Hailey Device Repair"
+              }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "MacBook Battery Replacement"
+              "name": "MacBook Battery Replacement",
+              "provider": {
+                "@type": "LocalBusiness",
+                "@id": "https://www.haileyrepair.com/#business",
+                "name": "Hailey Device Repair"
+              }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "MacBook Keyboard Repair"
+              "name": "MacBook Keyboard Repair",
+              "provider": {
+                "@type": "LocalBusiness",
+                "@id": "https://www.haileyrepair.com/#business",
+                "name": "Hailey Device Repair"
+              }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "MacBook Logic Board Repair"
+              "name": "MacBook Logic Board Repair",
+              "provider": {
+                "@type": "LocalBusiness",
+                "@id": "https://www.haileyrepair.com/#business",
+                "name": "Hailey Device Repair"
+              }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "MacBook Liquid Damage Repair"
+              "name": "MacBook Liquid Damage Repair",
+              "provider": {
+                "@type": "LocalBusiness",
+                "@id": "https://www.haileyrepair.com/#business",
+                "name": "Hailey Device Repair"
+              }
             }
           }
         ]
@@ -537,7 +681,7 @@
 <div aria-hidden="true" class="scroll-progress" id="scrollProgress"></div>
 <div aria-hidden="true" class="page-curtain" id="pageCurtain">
 <div class="page-curtain-logo">
-<span class="material-symbols-outlined">build_circle</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="build_circle"></span>
       Hailey Device Repair
     </div>
 </div>
@@ -545,7 +689,7 @@
 <nav aria-label="Main" class="nav" role="navigation">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair home" class="nav-logo" href="/">
-<span class="material-symbols-outlined nav-logo-icon">build_circle</span>
+<span class="material-symbols-outlined nav-logo-icon" aria-hidden="true" data-icon="build_circle"></span>
 <span class="nav-logo-text"><strong>Hailey</strong> Device Repair</span>
 </a>
 <ul class="nav-links">
@@ -557,11 +701,11 @@
 </ul>
 <div class="nav-actions">
 <button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
-<span class="material-symbols-outlined theme-icon-dark">dark_mode</span>
-<span class="material-symbols-outlined theme-icon-light">light_mode</span>
+<span class="material-symbols-outlined theme-icon-dark" aria-hidden="true" data-icon="dark_mode"></span>
+<span class="material-symbols-outlined theme-icon-light" aria-hidden="true" data-icon="light_mode"></span>
 </button>
 <a class="btn btn-primary btn-sm nav-cta" href="tel:+12083666111" style="display:flex;">
-<span class="material-symbols-outlined">phone</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="phone"></span>
 <span class="nav-cta-text">Call</span>
 </a>
 <button aria-expanded="false" aria-label="Open menu" class="nav-hamburger" id="navToggle">
@@ -604,16 +748,16 @@
 <p class="hero-sub">Screen, battery, keyboard, logic board &amp; liquid damage repair for MacBook Air and MacBook Pro. Walk-ins welcome at 920 S Main St, or mail it in from anywhere.</p>
 <div class="hero-actions">
 <a class="btn btn-primary btn-lg" href="tel:+12083666111">
-<span class="material-symbols-outlined">phone</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="phone"></span>
               Call (208) 366-6111
             </a>
 <a class="btn btn-ghost btn-lg" href="sms:+12083666111">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
               Text for Quote
             </a>
 </div>
 <p class="hero-phone">
-<span class="material-symbols-outlined">location_on</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="location_on"></span>
             920 S Main St, Hailey, ID 83333
           </p>
 </div>
@@ -654,25 +798,25 @@
 <div class="xray-mobile-cards container">
 <div class="service-grid" style="margin-top:0">
 <div class="service-card">
-<div class="service-card-icon"><span class="material-symbols-outlined">desktop_windows</span></div>
+<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="desktop_windows"></span></div>
 <div class="service-card-title">Display Assembly</div>
 <div class="service-card-desc">Cracked glass, dead pixels, backlight bleed, display lines, and hinge damage. Full assembly replacement available.</div>
 <div class="service-card-meta">2–4 day turnaround</div>
 </div>
 <div class="service-card">
-<div class="service-card-icon"><span class="material-symbols-outlined">keyboard</span></div>
+<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="keyboard"></span></div>
 <div class="service-card-title">Keyboard &amp; Trackpad</div>
 <div class="service-card-desc">Stuck keys, unresponsive butterfly switches, liquid spills under keys, and trackpad clicking issues.</div>
 <div class="service-card-meta">1–3 day turnaround</div>
 </div>
 <div class="service-card">
-<div class="service-card-icon"><span class="material-symbols-outlined">battery_charging_full</span></div>
+<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="battery_charging_full"></span></div>
 <div class="service-card-title">Battery</div>
 <div class="service-card-desc">Swelling, fast drain, "service recommended" warning, and sudden shutdowns. OEM-quality cells.</div>
 <div class="service-card-meta">Same day if in stock</div>
 </div>
 <div class="service-card">
-<div class="service-card-icon"><span class="material-symbols-outlined">memory</span></div>
+<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="memory"></span></div>
 <div class="service-card-title">Logic Board &amp; Ports</div>
 <div class="service-card-desc">No power, charging issues, liquid damage, failed USB-C ports, and graphics glitches. Board-level repair.</div>
 <div class="service-card-meta">2–5 day turnaround</div>
@@ -691,37 +835,37 @@
 </div>
 <div class="service-grid">
 <div class="service-card" data-animate="">
-<div class="service-card-icon"><span class="material-symbols-outlined">desktop_windows</span></div>
+<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="desktop_windows"></span></div>
 <div class="service-card-title">Screen &amp; Display Repair</div>
 <div class="service-card-desc">Cracked glass, dead pixels, backlight bleed, display lines, and hinge damage. I replace the full display assembly on MacBook Air and Pro models. Your screen looks factory-new when I am done.</div>
 <div class="service-card-meta">MacBook Air &amp; Pro</div>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-card-icon"><span class="material-symbols-outlined">battery_charging_full</span></div>
+<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="battery_charging_full"></span></div>
 <div class="service-card-title">Battery Replacement</div>
 <div class="service-card-desc">Swelling, fast drain, "service recommended" warnings, and sudden shutdowns. I use high-quality cells that match OEM specs. Battery calibration included so your cycle count reads accurately.</div>
 <div class="service-card-meta">Same day if in stock</div>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-card-icon"><span class="material-symbols-outlined">keyboard</span></div>
+<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="keyboard"></span></div>
 <div class="service-card-title">Keyboard &amp; Trackpad</div>
 <div class="service-card-desc">Stuck keys, unresponsive butterfly switches, liquid spills under keys, and trackpad clicking issues. Top case replacement or individual key repair depending on the damage and model.</div>
 <div class="service-card-meta">Butterfly &amp; scissor models</div>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-card-icon"><span class="material-symbols-outlined">memory</span></div>
+<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="memory"></span></div>
 <div class="service-card-title">Logic Board Repair</div>
 <div class="service-card-desc">No power, charging issues, failed USB-C ports, graphics glitches, and kernel panics. I diagnose at the component level and replace chips, capacitors, and power rails when possible.</div>
 <div class="service-card-meta">Board-level diagnostics</div>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-card-icon"><span class="material-symbols-outlined">water_drop</span></div>
+<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="water_drop"></span></div>
 <div class="service-card-title">Liquid Damage Recovery</div>
 <div class="service-card-desc">Spilled coffee, water, wine — I have seen it all. Fast disassembly, ultrasonic cleaning, and corrosion treatment. The sooner you bring it in, the better the odds of full recovery.</div>
 <div class="service-card-meta">Emergency priority</div>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-card-icon"><span class="material-symbols-outlined">storage</span></div>
+<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="storage"></span></div>
 <div class="service-card-title">SSD &amp; Storage Upgrades</div>
 <div class="service-card-desc">Running out of space? Slow boot times? I upgrade SSDs on compatible MacBook models and clone your data so nothing is lost. Some newer models require specific part matching.</div>
 <div class="service-card-meta">Data migration included</div>
@@ -740,42 +884,42 @@
 <div class="symptom-grid">
 <div class="symptom-card" data-animate="">
 <div class="symptom-card-header">
-<div class="symptom-icon"><span class="material-symbols-outlined">broken_image</span></div>
+<div class="symptom-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="broken_image"></span></div>
 <div class="symptom-name">Screen is cracked or black</div>
 </div>
 <div class="symptom-desc">If the glass is shattered but you still see the image, it may just need a display replacement. If it is completely black, the issue could be the display cable or logic board.</div>
 </div>
 <div class="symptom-card" data-animate="">
 <div class="symptom-card-header">
-<div class="symptom-icon"><span class="material-symbols-outlined">battery_alert</span></div>
+<div class="symptom-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="battery_alert"></span></div>
 <div class="symptom-name">Won't hold a charge</div>
 </div>
 <div class="symptom-desc">Batteries degrade after 500–1000 cycles. If your MacBook dies at 30% or swells against the trackpad, it is time for a replacement. Swelling can damage the trackpad and chassis.</div>
 </div>
 <div class="symptom-card" data-animate="">
 <div class="symptom-card-header">
-<div class="symptom-icon"><span class="material-symbols-outlined">vibration</span></div>
+<div class="symptom-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="vibration"></span></div>
 <div class="symptom-name">Keyboard keys stuck or repeating</div>
 </div>
 <div class="symptom-desc">Butterfly keyboards are notorious for stuck and double-typing keys. Dust, crumbs, or liquid can cause this. Some models qualify for Apple's program — I can check and advise.</div>
 </div>
 <div class="symptom-card" data-animate="">
 <div class="symptom-card-header">
-<div class="symptom-icon"><span class="material-symbols-outlined">power_off</span></div>
+<div class="symptom-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="power_off"></span></div>
 <div class="symptom-name">Won't turn on at all</div>
 </div>
 <div class="symptom-desc">No power can mean a dead battery, failed logic board, damaged charging port, or liquid corrosion. I run a full diagnostic to pinpoint the exact component before quoting.</div>
 </div>
 <div class="symptom-card" data-animate="">
 <div class="symptom-card-header">
-<div class="symptom-icon"><span class="material-symbols-outlined">water_drop</span></div>
+<div class="symptom-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="water_drop"></span></div>
 <div class="symptom-name">Liquid spilled on it</div>
 </div>
 <div class="symptom-desc">Turn it off immediately and do not charge it. Bring it in as fast as possible — corrosion starts within hours. The sooner I clean it, the higher the chance of full recovery.</div>
 </div>
 <div class="symptom-card" data-animate="">
 <div class="symptom-card-header">
-<div class="symptom-icon"><span class="material-symbols-outlined">fan_speed</span></div>
+<div class="symptom-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="fan_speed"></span></div>
 <div class="symptom-name">Loud fans / overheating</div>
 </div>
 <div class="symptom-desc">Thermal issues often mean dust-clogged vents, dried thermal paste, or a runaway process. I deep-clean the cooling system and reapply thermal paste when needed.</div>
@@ -798,9 +942,9 @@
 <div class="pricing-card-price">$149–$289</div>
 <div class="pricing-card-note">OEM-quality cells · 40-day warranty</div>
 <ul class="pricing-card-perks">
-<li><span class="material-symbols-outlined">check_circle</span> Cycle count calibration</li>
-<li><span class="material-symbols-outlined">check_circle</span> Chassis inspection for swelling</li>
-<li><span class="material-symbols-outlined">check_circle</span> Same day if part in stock</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Cycle count calibration</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Chassis inspection for swelling</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Same day if part in stock</li>
 </ul>
 </div>
 <div class="pricing-card pricing-card--featured" data-animate="">
@@ -810,9 +954,9 @@
 <div class="pricing-card-price">$249–$549</div>
 <div class="pricing-card-note">Full assembly · Retina &amp; True Tone</div>
 <ul class="pricing-card-perks">
-<li><span class="material-symbols-outlined">check_circle</span> Full display assembly swap</li>
-<li><span class="material-symbols-outlined">check_circle</span> Hinge &amp; cable inspection</li>
-<li><span class="material-symbols-outlined">check_circle</span> Color calibration check</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Full display assembly swap</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Hinge &amp; cable inspection</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Color calibration check</li>
 </ul>
 </div>
 <div class="pricing-card" data-animate="">
@@ -821,9 +965,9 @@
 <div class="pricing-card-price">$179–$399</div>
 <div class="pricing-card-note">Butterfly &amp; scissor mechanisms</div>
 <ul class="pricing-card-perks">
-<li><span class="material-symbols-outlined">check_circle</span> Individual key or full top case</li>
-<li><span class="material-symbols-outlined">check_circle</span> Trackpad included if needed</li>
-<li><span class="material-symbols-outlined">check_circle</span> Apple program eligibility check</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Individual key or full top case</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Trackpad included if needed</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Apple program eligibility check</li>
 </ul>
 </div>
 <div class="pricing-card" data-animate="">
@@ -832,9 +976,9 @@
 <div class="pricing-card-price">$199–$499</div>
 <div class="pricing-card-note">Diagnostic required · Quote first</div>
 <ul class="pricing-card-perks">
-<li><span class="material-symbols-outlined">check_circle</span> Component-level diagnosis</li>
-<li><span class="material-symbols-outlined">check_circle</span> Ultrasonic cleaning</li>
-<li><span class="material-symbols-outlined">check_circle</span> No fix, no charge policy</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Component-level diagnosis</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Ultrasonic cleaning</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> No fix, no charge policy</li>
 </ul>
 </div>
 </div>
@@ -883,19 +1027,19 @@
 <div class="textme-box" data-animate="">
 <div class="textme-grid">
 <div class="textme-item">
-<span class="material-symbols-outlined">laptop_mac</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop_mac"></span>
 <div><strong>Model number</strong>Flip your MacBook over and find the "A" number (e.g., A2338, A2141). This tells me the exact part I need.</div>
 </div>
 <div class="textme-item">
-<span class="material-symbols-outlined">report_problem</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="report_problem"></span>
 <div><strong>What happened</strong>Drop? Spill? Sudden failure? The story matters — it tells me where to look first.</div>
 </div>
 <div class="textme-item">
-<span class="material-symbols-outlined">photo_camera</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="photo_camera"></span>
 <div><strong>Photos if visible</strong>A photo of the damage, error screen, or swollen battery helps me quote without seeing it first.</div>
 </div>
 <div class="textme-item">
-<span class="material-symbols-outlined">schedule</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="schedule"></span>
 <div><strong>Timeline</strong>When did it start? Did it get worse? Urgency helps me prioritize and give honest turnaround.</div>
 </div>
 </div>
@@ -922,10 +1066,10 @@
 <!-- Trust bar -->
 <div class="container">
 <div class="trust-bar">
-<div class="trust-item"><span class="material-symbols-outlined">verified</span>40-Day Warranty</div>
-<div class="trust-item"><span class="material-symbols-outlined">schedule</span>Same-Day Diagnostics</div>
-<div class="trust-item"><span class="material-symbols-outlined">local_shipping</span>Statewide Mail-In</div>
-<div class="trust-item"><span class="material-symbols-outlined">thumb_up</span>No Fix, No Charge</div>
+<div class="trust-item"><span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span>40-Day Warranty</div>
+<div class="trust-item"><span class="material-symbols-outlined" aria-hidden="true" data-icon="schedule"></span>Same-Day Diagnostics</div>
+<div class="trust-item"><span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span>Statewide Mail-In</div>
+<div class="trust-item"><span class="material-symbols-outlined" aria-hidden="true" data-icon="thumb_up"></span>No Fix, No Charge</div>
 </div>
 </div>
 <!-- FAQ -->
@@ -939,42 +1083,42 @@
 <div class="faq-item">
 <button aria-expanded="false" class="faq-q">
               How long does MacBook screen repair take?
-              <span class="material-symbols-outlined faq-q-icon">expand_more</span>
+              <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">Most MacBook screen repairs take 2–4 business days depending on part availability. If I have the display assembly in stock, turnaround can be as fast as 24–48 hours. I always confirm the timeline when you text me your model number.</div>
 </div>
 <div class="faq-item">
 <button aria-expanded="false" class="faq-q">
               Do you repair MacBook logic boards?
-              <span class="material-symbols-outlined faq-q-icon">expand_more</span>
+              <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">Yes. I handle logic board-level repairs including no-power issues, liquid damage recovery, failed charging circuits, and graphics problems. Not every logic board is recoverable, but I give honest assessments upfront and only proceed with your approval.</div>
 </div>
 <div class="faq-item">
 <button aria-expanded="false" class="faq-q">
               Is it worth replacing a MacBook battery?
-              <span class="material-symbols-outlined faq-q-icon">expand_more</span>
+              <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">If your MacBook is otherwise working well, battery replacement is usually worth it. A new battery restores portability and can extend useful life by 2–3 years. For MacBooks older than 8–10 years, I will give you an honest opinion on whether replacement or upgrade makes more sense.</div>
 </div>
 <div class="faq-item">
 <button aria-expanded="false" class="faq-q">
               Can you fix MacBook liquid damage?
-              <span class="material-symbols-outlined faq-q-icon">expand_more</span>
+              <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">Yes. I specialize in liquid damage recovery for MacBooks. The key is getting it to me fast — do not try to turn it on or charge it. I disassemble the machine, clean corrosion from the logic board, replace damaged components, and test thoroughly before returning it.</div>
 </div>
 <div class="faq-item">
 <button aria-expanded="false" class="faq-q">
               Do you offer mail-in MacBook repair?
-              <span class="material-symbols-outlined faq-q-icon">expand_more</span>
+              <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">Absolutely. I accept mail-in MacBook repairs from anywhere in Idaho and surrounding states. You ship it to my Hailey shop, I diagnose and repair it, then ship it back insured. Most mail-in repairs ship back within 3–5 business days.</div>
 </div>
 <div class="faq-item">
 <button aria-expanded="false" class="faq-q">
               Will I lose my data?
-              <span class="material-symbols-outlined faq-q-icon">expand_more</span>
+              <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">Most repairs — screen, battery, keyboard — do not touch your data. For logic board or storage repairs, I always attempt data recovery first. If your drive is failing, I will clone it before replacing anything. I never wipe a machine without explicit permission.</div>
 </div>
@@ -988,11 +1132,11 @@
 <p class="section-sub">Text me your model number and what is wrong. I will reply with a quote and turnaround time.</p>
 <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
 <a class="btn btn-primary btn-lg" href="tel:+12083666111">
-<span class="material-symbols-outlined">phone</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="phone"></span>
             Call (208) 366-6111
           </a>
 <a class="btn btn-outline btn-lg" href="sms:+12083666111">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
             Text for Quote
           </a>
 </div>
@@ -1049,10 +1193,10 @@
 <!-- Mobile CTA -->
 <div class="mobile-cta">
 <a class="btn btn-primary btn-sm" href="tel:+12083666111">
-<span class="material-symbols-outlined">phone</span> Call
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="phone"></span> Call
     </a>
 <a class="btn btn-outline btn-sm" href="sms:+12083666111">
-<span class="material-symbols-outlined">sms</span> Text
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span> Text
     </a>
 </div>
 <script>

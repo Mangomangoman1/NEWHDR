@@ -93,10 +93,174 @@ a{color:inherit;text-decoration:none}
   "description": "Practical device repair and maintenance guides from Hailey Device Repair",
   "url": "https://www.haileyrepair.com/tips",
   "publisher": {
+    "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Hailey Device Repair",
+    "description": "Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available statewide.",
     "url": "https://www.haileyrepair.com",
-    "@id": "https://www.haileyrepair.com/#business",
+    "telephone": "+12083666111",
+    "email": "samuel@haileyrepair.com",
+    "image": "https://www.haileyrepair.com/favicon.svg",
+    "priceRange": "$",
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Credit Card, Venmo, Zelle",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hailey",
+      "addressRegion": "ID",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.5196,
+      "longitude": -114.3153
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Hailey",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Idaho"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Ketchum",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Idaho"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Sun Valley",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Idaho"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Bellevue",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Idaho"
+        }
+      },
+      {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "11:00",
+        "closes": "19:00"
+      }
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Samuel Torres"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Device Repair Services",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Phone Repair",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "iPhone Screen Replacement"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "iPhone Battery Replacement"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Android Screen Replacement"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Android Battery Replacement"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Computer Repair",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Laptop Screen Replacement"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Laptop Battery Replacement"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Virus & Malware Removal"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Data Recovery"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Gaming PC Repair"
+              }
+            }
+          ]
+        }
+      ]
+    },
     "sameAs": [
       "https://g.page/r/CRz04Aqd3UvPEBM",
       "https://www.mapquest.com/us/idaho/hailey-device-repair-800055619",
@@ -105,7 +269,8 @@ a{color:inherit;text-decoration:none}
       "https://www.yelp.ca/biz/hailey-device-repair-hailey",
       "https://nextdoor.com/pages/hailey-device-repair/",
       "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
-    ]
+    ],
+    "@id": "https://www.haileyrepair.com/#business"
   },
   "blogPost": [
     {
@@ -166,16 +331,24 @@ a{color:inherit;text-decoration:none}
   ]
 }</script>
 <!-- JSON-LD: BreadcrumbList -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.haileyrepair.com" },
-      { "@type": "ListItem", "position": 2, "name": "Tips & Guides", "item": "https://www.haileyrepair.com/tips" }
-    ]
-  }
-  </script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.haileyrepair.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tips & Guides",
+      "item": "https://www.haileyrepair.com/tips"
+    }
+  ]
+}</script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SGQ617V748"></script>
 <script>
@@ -190,7 +363,7 @@ a{color:inherit;text-decoration:none}
 <!-- Page load curtain -->
 <div class="page-curtain" id="pageCurtain">
 <div class="page-curtain-logo">
-<span aria-hidden="true" class="material-symbols-outlined">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="smartphone"></span>
       Hailey Device Repair
     </div>
 </div>
@@ -201,7 +374,7 @@ a{color:inherit;text-decoration:none}
 <nav class="nav" id="nav" role="navigation">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
-<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
 <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
 </a>
 <ul class="nav-links" role="list">
@@ -213,8 +386,8 @@ a{color:inherit;text-decoration:none}
 </ul>
 <div class="nav-actions">
 <button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
-<span aria-hidden="true" class="material-symbols-outlined theme-icon-dark">dark_mode</span>
-<span class="material-symbols-outlined theme-icon-light">light_mode</span>
+<span aria-hidden="true" class="material-symbols-outlined theme-icon-dark" data-icon="dark_mode"></span>
+<span class="material-symbols-outlined theme-icon-light" aria-hidden="true" data-icon="light_mode"></span>
 </button>
 <a class="btn btn-primary btn-sm" href="/contact">Get a Quote</a>
 </div>
@@ -261,35 +434,35 @@ a{color:inherit;text-decoration:none}
 <ul class="tips-toc-list">
 <li>
 <a class="tips-toc-item" href="#water-damage">
-<span class="material-symbols-outlined tips-toc-icon" style="color:var(--color-blue)">water_drop</span>
+<span class="material-symbols-outlined tips-toc-icon" style="color:var(--color-blue)" aria-hidden="true" data-icon="water_drop"></span>
 <span class="tips-toc-label">Phone Got Wet?</span>
 <span class="tips-toc-tag tips-toc-tag--emergency">Emergency</span>
 </a>
 </li>
 <li>
 <a class="tips-toc-item" href="#lcd-vs-oled">
-<span class="material-symbols-outlined tips-toc-icon" style="color:var(--color-purple)">compare</span>
+<span class="material-symbols-outlined tips-toc-icon" style="color:var(--color-purple)" aria-hidden="true" data-icon="compare"></span>
 <span class="tips-toc-label">LCD vs OLED</span>
 <span class="tips-toc-tag">Know Your Screen</span>
 </a>
 </li>
 <li>
 <a class="tips-toc-item" href="#battery-signs">
-<span class="material-symbols-outlined tips-toc-icon" style="color:var(--color-orange)">battery_alert</span>
+<span class="material-symbols-outlined tips-toc-icon" style="color:var(--color-orange)" aria-hidden="true" data-icon="battery_alert"></span>
 <span class="tips-toc-label">5 Signs Your Battery Is Dying</span>
 <span class="tips-toc-tag">Laptop</span>
 </a>
 </li>
 <li>
 <a class="tips-toc-item" href="#repair-vs-replace">
-<span class="material-symbols-outlined tips-toc-icon" style="color:var(--color-green)">calculate</span>
+<span class="material-symbols-outlined tips-toc-icon" style="color:var(--color-green)" aria-hidden="true" data-icon="calculate"></span>
 <span class="tips-toc-label">Repair or Replace?</span>
 <span class="tips-toc-tag">The Real Math</span>
 </a>
 </li>
 <li>
 <a class="tips-toc-item" href="#slow-laptop">
-<span class="material-symbols-outlined tips-toc-icon" style="color:var(--color-cyan)">speed</span>
+<span class="material-symbols-outlined tips-toc-icon" style="color:var(--color-cyan)" aria-hidden="true" data-icon="speed"></span>
 <span class="tips-toc-label">Speed Up a Slow Laptop</span>
 <span class="tips-toc-tag">7 Free Fixes</span>
 </a>
@@ -320,13 +493,13 @@ a{color:inherit;text-decoration:none}
 <span class="tips-article-reading">4 min read</span>
 </div>
 <h2 class="tips-article-title">
-<span class="material-symbols-outlined tips-article-title-icon" style="color:var(--color-blue)">water_drop</span>
+<span class="material-symbols-outlined tips-article-title-icon" style="color:var(--color-blue)" aria-hidden="true" data-icon="water_drop"></span>
         Phone got wet? Here's what to do <span class="text-accent">(and what NOT to do)</span>
 </h2>
 <div class="tips-article-body">
 <p class="tips-article-intro">I get at least one water-damaged phone per week. Toilet drops, puddle splashes, rain, even washing machines. The first 30 minutes make the biggest difference between a phone that recovers and one that doesn't.</p>
 <div class="tips-callout tips-callout--danger">
-<span class="material-symbols-outlined tips-callout-icon">warning</span>
+<span class="material-symbols-outlined tips-callout-icon" aria-hidden="true" data-icon="warning"></span>
 <div>
 <strong>The #1 myth: DO NOT put your phone in rice.</strong>
 <p>Rice doesn't absorb moisture fast enough to matter, and starch dust can clog your ports and speaker grills. It's folk wisdom that sounds logical but doesn't work.</p>
@@ -353,7 +526,7 @@ a{color:inherit;text-decoration:none}
 <h3>When to bring it to me</h3>
 <p>If your phone won't turn on after 48 hours, or it powers on but the screen looks weird (lines, discoloration, ghost touches), bring it in. I can open it up, clean the corrosion with isopropyl alcohol, and check for damaged components. The sooner the better — corrosion spreads over time.</p>
 <div class="tips-callout tips-callout--tip">
-<span class="material-symbols-outlined tips-callout-icon">lightbulb</span>
+<span class="material-symbols-outlined tips-callout-icon" aria-hidden="true" data-icon="lightbulb"></span>
 <div>
 <strong>Pro tip:</strong> If you're near salt water (hot tub, ocean, pool), time is even more critical. Salt water corrodes 10× faster than fresh water. Get it to a repair tech within hours, not days.
           </div>
@@ -361,7 +534,7 @@ a{color:inherit;text-decoration:none}
 <div class="tips-cta-inline">
 <p>Got a wet phone right now?</p>
 <a class="btn btn-primary btn-sm" href="sms:+12083666111">
-<span aria-hidden="true" class="material-symbols-outlined">sms</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>
             Text me — I'll walk you through it
           </a>
 </div>
@@ -378,7 +551,7 @@ a{color:inherit;text-decoration:none}
 <span class="tips-article-reading">3 min read</span>
 </div>
 <h2 class="tips-article-title">
-<span class="material-symbols-outlined tips-article-title-icon" style="color:var(--color-purple)">compare</span>
+<span class="material-symbols-outlined tips-article-title-icon" style="color:var(--color-purple)" aria-hidden="true" data-icon="compare"></span>
         LCD vs OLED: how to tell what screen your phone has
       </h2>
 <div class="tips-article-body">
@@ -424,7 +597,7 @@ a{color:inherit;text-decoration:none}
 <h3>Why OLED costs more</h3>
 <p>OLED screens are manufactured differently — each pixel is an organic compound that emits its own light. The manufacturing process has lower yields and the panels themselves cost 2–3× more than LCD. I'm not marking up — the part genuinely costs more. I always quote you the exact repair cost before starting.</p>
 <div class="tips-callout tips-callout--tip">
-<span class="material-symbols-outlined tips-callout-icon">lightbulb</span>
+<span class="material-symbols-outlined tips-callout-icon" aria-hidden="true" data-icon="lightbulb"></span>
 <div>
 <strong>Not sure?</strong> Text me your phone model and I'll tell you what screen type it has and what a replacement would cost. No commitment, just info.
           </div>
@@ -442,7 +615,7 @@ a{color:inherit;text-decoration:none}
 <span class="tips-article-reading">3 min read</span>
 </div>
 <h2 class="tips-article-title">
-<span class="material-symbols-outlined tips-article-title-icon" style="color:var(--color-orange)">battery_alert</span>
+<span class="material-symbols-outlined tips-article-title-icon" style="color:var(--color-orange)" aria-hidden="true" data-icon="battery_alert"></span>
         5 signs your laptop battery is dying
       </h2>
 <div class="tips-article-body">
@@ -475,7 +648,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 <div class="tips-callout tips-callout--danger">
-<span class="material-symbols-outlined tips-callout-icon">warning</span>
+<span class="material-symbols-outlined tips-callout-icon" aria-hidden="true" data-icon="warning"></span>
 <div>
 <strong>Swollen batteries are not a "wait and see" situation.</strong>
 <p>If your laptop case is warped, the trackpad is raised, or you see bulging near the bottom — don't use it, don't charge it. Bring it in. Battery replacement is $69 for most laptops.</p>
@@ -484,7 +657,7 @@ a{color:inherit;text-decoration:none}
 <div class="tips-cta-inline">
 <p>Battery acting up?</p>
 <a class="btn btn-primary btn-sm" href="/laptop-repair">
-<span aria-hidden="true" class="material-symbols-outlined">laptop</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span>
             See laptop repair pricing
           </a>
 </div>
@@ -501,7 +674,7 @@ a{color:inherit;text-decoration:none}
 <span class="tips-article-reading">4 min read</span>
 </div>
 <h2 class="tips-article-title">
-<span class="material-symbols-outlined tips-article-title-icon" style="color:var(--color-green)">calculate</span>
+<span class="material-symbols-outlined tips-article-title-icon" style="color:var(--color-green)" aria-hidden="true" data-icon="calculate"></span>
         Repair or replace? <span class="text-accent">The real math.</span>
 </h2>
 <div class="tips-article-body">
@@ -510,13 +683,13 @@ a{color:inherit;text-decoration:none}
 <p>If the repair costs more than 50% of what a replacement device would cost, it's usually not worth it. But "replacement" doesn't mean buying brand new — it means what a comparable used/refurbished device costs today.</p>
 <div class="tips-math-examples">
 <div class="tips-math-card tips-math-card--yes">
-<span class="material-symbols-outlined tips-math-verdict">check_circle</span>
+<span class="material-symbols-outlined tips-math-verdict" aria-hidden="true" data-icon="check_circle"></span>
 <h3>Worth repairing ✓</h3>
 <p><strong>iPhone 13 cracked screen:</strong> Repair is $89. A used iPhone 13 is $400+. That's 22% — easy yes.</p>
 <p><strong>MacBook Air battery swap:</strong> Repair is $69. Replacement MacBook is $700+. No brainer.</p>
 </div>
 <div class="tips-math-card tips-math-card--no">
-<span class="material-symbols-outlined tips-math-verdict">cancel</span>
+<span class="material-symbols-outlined tips-math-verdict" aria-hidden="true" data-icon="cancel"></span>
 <h3>Probably not ✗</h3>
 <p><strong>iPhone 8 with motherboard damage:</strong> Repair is $150+. A used iPhone 8 is $80. Buy a used one instead.</p>
 <p><strong>2015 laptop with dead GPU:</strong> Repair is $200+. Similar used laptop is $250. Put that money toward something newer.</p>
@@ -538,7 +711,7 @@ a{color:inherit;text-decoration:none}
           </li>
 </ul>
 <div class="tips-callout tips-callout--tip">
-<span class="material-symbols-outlined tips-callout-icon">lightbulb</span>
+<span class="material-symbols-outlined tips-callout-icon" aria-hidden="true" data-icon="lightbulb"></span>
 <div>
 <strong>I'll always be straight with you.</strong>
 <p>If a repair doesn't make sense, I'll tell you. A thorough diagnosis means you can find out what's wrong without committing to anything. I'd rather earn your trust than charge you for a repair that isn't worth it.</p>
@@ -557,7 +730,7 @@ a{color:inherit;text-decoration:none}
 <span class="tips-article-reading">5 min read</span>
 </div>
 <h2 class="tips-article-title">
-<span class="material-symbols-outlined tips-article-title-icon" style="color:var(--color-cyan)">speed</span>
+<span class="material-symbols-outlined tips-article-title-icon" style="color:var(--color-cyan)" aria-hidden="true" data-icon="speed"></span>
         7 free ways to speed up a slow laptop
       </h2>
 <div class="tips-article-body">
@@ -614,7 +787,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 <div class="tips-callout tips-callout--tip">
-<span class="material-symbols-outlined tips-callout-icon">lightbulb</span>
+<span class="material-symbols-outlined tips-callout-icon" aria-hidden="true" data-icon="lightbulb"></span>
 <div>
 <strong>Still slow after all that?</strong>
 <p>The #1 hardware upgrade for any slow laptop is an SSD. If you're still on a spinning hard drive, swapping to an SSD makes your laptop feel brand new — boot time goes from 3 minutes to 15 seconds. I do SSD upgrades for $49 (including data transfer).</p>
@@ -623,7 +796,7 @@ a{color:inherit;text-decoration:none}
 <div class="tips-cta-inline">
 <p>Tried everything and it's still slow?</p>
 <a class="btn btn-primary btn-sm" href="/laptop-repair">
-<span aria-hidden="true" class="material-symbols-outlined">laptop</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span>
             Laptop tune-up from $49
           </a>
 </div>
@@ -639,11 +812,11 @@ a{color:inherit;text-decoration:none}
 <p class="section-sub" style="margin-bottom:var(--space-xl)">Text me your situation and I'll give you honest advice — even if the answer is "you don't need a repair."</p>
 <div style="display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap">
 <a class="btn btn-primary btn-lg" href="sms:+12083666111">
-<span aria-hidden="true" class="material-symbols-outlined">sms</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>
           Text (208) 366-6111
         </a>
 <a class="btn btn-outline btn-lg" href="/contact">
-<span aria-hidden="true" class="material-symbols-outlined">mail</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="mail"></span>
           Contact Form
         </a>
 </div>
@@ -657,7 +830,7 @@ a{color:inherit;text-decoration:none}
 <div class="container footer-inner">
 <div class="footer-brand" data-animate="">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
-<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
 <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
 </a>
 <p class="footer-tagline">Don't replace it. Let me fix it.</p>
@@ -726,7 +899,7 @@ a{color:inherit;text-decoration:none}
 <div class="help-fab-options">
 <a class="help-fab-option" href="sms:+12083666111">
 <div class="help-fab-option-icon help-fab-option-icon--text">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
 </div>
 <div class="help-fab-option-info">
 <strong>Text me</strong>
@@ -735,7 +908,7 @@ a{color:inherit;text-decoration:none}
 </a>
 <a class="help-fab-option" href="tel:+12083666111">
 <div class="help-fab-option-icon help-fab-option-icon--call">
-<span class="material-symbols-outlined">call</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>
 </div>
 <div class="help-fab-option-info">
 <strong>Call</strong>
@@ -744,7 +917,7 @@ a{color:inherit;text-decoration:none}
 </a>
 <a class="help-fab-option" href="/contact">
 <div class="help-fab-option-icon help-fab-option-icon--quote">
-<span class="material-symbols-outlined">description</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="description"></span>
 </div>
 <div class="help-fab-option-info">
 <strong>Request a quote</strong>
@@ -759,7 +932,7 @@ a{color:inherit;text-decoration:none}
 <button aria-label="Get help" class="help-fab-trigger" id="helpFabTrigger">
 <span class="help-fab-dot"></span>
 <span class="help-fab-label-text">Need help?</span>
-<span class="material-symbols-outlined">close</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span>
 </button>
 </div>
 <script defer="" src="main.js?v=home-20260514"></script>

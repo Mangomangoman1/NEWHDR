@@ -91,26 +91,8 @@ a{color:inherit;text-decoration:none}
   "url": "https://www.haileyrepair.com/mail-in-repair",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "Hailey Device Repair",
-    "telephone": "+12083666111",
-    "email": "samuel@haileyrepair.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Hailey",
-      "addressRegion": "ID",
-      "addressCountry": "US"
-    },
     "@id": "https://www.haileyrepair.com/#business",
-    "url": "https://www.haileyrepair.com",
-    "sameAs": [
-      "https://g.page/r/CRz04Aqd3UvPEBM",
-      "https://www.mapquest.com/us/idaho/hailey-device-repair-800055619",
-      "https://local.yahoo.com/info-240633004-hailey-device-repair-hailey/",
-      "https://www.yelp.com/biz/hailey-device-repair-hailey",
-      "https://www.yelp.ca/biz/hailey-device-repair-hailey",
-      "https://nextdoor.com/pages/hailey-device-repair/",
-      "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
-    ]
+    "name": "Hailey Device Repair"
   },
   "areaServed": {
     "@type": "State",
@@ -128,42 +110,171 @@ a{color:inherit;text-decoration:none}
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://www.haileyrepair.com#business",
   "name": "Hailey Device Repair",
-  "description": "Consumer electronics repair shop in Hailey, Idaho. iPhone, Android, laptop, tablet, and game console repair. Walk-in and mail-in service available.",
+  "description": "Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available statewide.",
   "url": "https://www.haileyrepair.com",
   "telephone": "+12083666111",
   "email": "samuel@haileyrepair.com",
+  "image": "https://www.haileyrepair.com/favicon.svg",
+  "priceRange": "$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card, Venmo, Zelle",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Hailey",
     "addressRegion": "ID",
-    "postalCode": "83333",
     "addressCountry": "US"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "43.5199",
-    "longitude": "-114.3154"
+    "latitude": 43.5196,
+    "longitude": -114.3153
   },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "09:00",
-    "closes": "19:00"
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Hailey",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Ketchum",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Sun Valley",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Bellevue",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "State",
+      "name": "Idaho"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "11:00",
+      "closes": "19:00"
+    }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Samuel Torres"
   },
-  "priceRange": "$",
-  "areaServed": {
-    "@type": "State",
-    "name": "Idaho"
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Device Repair Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Phone Repair",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "iPhone Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "iPhone Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Android Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Android Battery Replacement"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Computer Repair",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laptop Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laptop Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Virus & Malware Removal"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Data Recovery"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gaming PC Repair"
+            }
+          }
+        ]
+      }
+    ]
   },
   "sameAs": [
     "https://g.page/r/CRz04Aqd3UvPEBM",
@@ -173,212 +284,217 @@ a{color:inherit;text-decoration:none}
     "https://www.yelp.ca/biz/hailey-device-repair-hailey",
     "https://nextdoor.com/pages/hailey-device-repair/",
     "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
-  ]
+  ],
+  "@id": "https://www.haileyrepair.com/#business"
 }</script>
 <!-- JSON-LD: FAQ -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How does mail-in repair work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Text or email us to describe your issue. We'll confirm the repair and give you a shipping address. Pack your device securely and ship it. We'll text you when it arrives, when the repair starts, and when we ship it back. Free return shipping included."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does mail-in repair take?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most repairs are completed within 24 hours of receiving your device. With shipping each way, total turnaround is typically 3-5 business days depending on your location in Idaho. Boise/Nampa customers often get devices back in 2-3 days."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is return shipping free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Return shipping via USPS Priority Mail is always free. You only pay for shipping your device to us. We can also provide a prepaid shipping label for an additional $8 if you'd prefer."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does mail-in repair usually cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most common mail-in jobs fall into these ranges: phones $79-$279+, tablets $89-$249+, laptops $99-$349+, and game consoles $59-$149+. Exact price depends on your model, the part needed, and whether the damage is limited to one component or not."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What should I text to get a fast quote?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Send the exact model, what broke, whether it still powers on, and a photo if you can. Example: iPhone 13, front glass shattered but touch still works. Boise. Need it back this week. That is enough for us to tell you whether it makes sense to ship and what price range you are probably in."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if you can't fix my device?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Every repair starts with a thorough diagnosis. We'll explain what we found and give you a clear quote before any work begins. If the repair isn't feasible, we'll let you know honestly and ship your device back at no charge."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How should I pack my device for shipping?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use a sturdy box with plenty of padding — bubble wrap, packing paper, or even crumpled newspaper works. Remove any cases or accessories. For phones, you can use a small USPS Priority Mail box ($8.15). Power off the device before shipping."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you repair devices from outside Idaho?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Currently we focus on Idaho to keep turnaround times fast. If you're in a neighboring state (Montana, Wyoming, Utah, Oregon, Washington, Nevada), text us and we can probably work something out."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is my data safe? Will you wipe my phone?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Never without asking you first. We don't wipe data as part of any standard repair. Screen replacements, battery swaps, charging port fixes — none of these require touching your data. If a repair does require a reset (rare), we'll contact you first."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I use my own shipping label?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. Ship via USPS, FedEx, or UPS — whatever's easiest for you. USPS Priority Mail is the cheapest option for most devices and arrives in 1 day from anywhere in Idaho."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer a warranty on mail-in repairs?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. All repairs come with a warranty covering parts and labor. If the same issue comes back, get in touch and we'll make it right."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What about water-damaged devices?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We can assess water damage by mail, but results depend on how long it's been wet and whether the device was powered on after exposure. Text us your situation before shipping for an honest assessment."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer student or military discounts?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. We offer student and military discounts on most repairs. Mention it when you text us."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the cheapest way to ship my device?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For phones and small tablets: USPS Small Flat Rate Box ($8.15). For laptops and consoles: USPS Medium Flat Rate Box ($16.10). Both arrive within 1-2 days in Idaho."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you fix cracked back glass on iPhone?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Back glass repair is one of our most common mail-in jobs, especially for iPhone 11 and newer models. Text us your exact iPhone model for a quote."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if my device gets damaged during shipping?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "This is extremely rare when devices are packed properly. USPS Priority Mail includes $100 of insurance by default. For higher-value devices, you can add extra coverage at the counter."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need to include my passcode?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — include your passcode on a note inside the box. We need it to test the device after repair. We only use it to verify the repair worked."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I pay for the repair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We'll send you a payment link by text once the repair is done and tested. You can pay by card or Apple Pay. Payment happens after the repair is complete, not before."
-        }
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does mail-in repair work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Text or email us to describe your issue. We'll confirm the repair and give you a shipping address. Pack your device securely and ship it. We'll text you when it arrives, when the repair starts, and when we ship it back. Free return shipping included."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "How long does mail-in repair take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most repairs are completed within 24 hours of receiving your device. With shipping each way, total turnaround is typically 3-5 business days depending on your location in Idaho. Boise/Nampa customers often get devices back in 2-3 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is return shipping free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Return shipping via USPS Priority Mail is always free. You only pay for shipping your device to us. We can also provide a prepaid shipping label for an additional $8 if you'd prefer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does mail-in repair usually cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most common mail-in jobs fall into these ranges: phones $79-$279+, tablets $89-$249+, laptops $99-$349+, and game consoles $59-$149+. Exact price depends on your model, the part needed, and whether the damage is limited to one component or not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I text to get a fast quote?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Send the exact model, what broke, whether it still powers on, and a photo if you can. Example: iPhone 13, front glass shattered but touch still works. Boise. Need it back this week. That is enough for us to tell you whether it makes sense to ship and what price range you are probably in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if you can't fix my device?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every repair starts with a thorough diagnosis. We'll explain what we found and give you a clear quote before any work begins. If the repair isn't feasible, we'll let you know honestly and ship your device back at no charge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should I pack my device for shipping?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use a sturdy box with plenty of padding — bubble wrap, packing paper, or even crumpled newspaper works. Remove any cases or accessories. For phones, you can use a small USPS Priority Mail box ($8.15). Power off the device before shipping."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair devices from outside Idaho?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Currently we focus on Idaho to keep turnaround times fast. If you're in a neighboring state (Montana, Wyoming, Utah, Oregon, Washington, Nevada), text us and we can probably work something out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data safe? Will you wipe my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never without asking you first. We don't wipe data as part of any standard repair. Screen replacements, battery swaps, charging port fixes — none of these require touching your data. If a repair does require a reset (rare), we'll contact you first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use my own shipping label?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Ship via USPS, FedEx, or UPS — whatever's easiest for you. USPS Priority Mail is the cheapest option for most devices and arrives in 1 day from anywhere in Idaho."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer a warranty on mail-in repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All repairs come with a warranty covering parts and labor. If the same issue comes back, get in touch and we'll make it right."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about water-damaged devices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can assess water damage by mail, but results depend on how long it's been wet and whether the device was powered on after exposure. Text us your situation before shipping for an honest assessment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer student or military discounts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We offer student and military discounts on most repairs. Mention it when you text us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the cheapest way to ship my device?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For phones and small tablets: USPS Small Flat Rate Box ($8.15). For laptops and consoles: USPS Medium Flat Rate Box ($16.10). Both arrive within 1-2 days in Idaho."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you fix cracked back glass on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Back glass repair is one of our most common mail-in jobs, especially for iPhone 11 and newer models. Text us your exact iPhone model for a quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my device gets damaged during shipping?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This is extremely rare when devices are packed properly. USPS Priority Mail includes $100 of insurance by default. For higher-value devices, you can add extra coverage at the counter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to include my passcode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — include your passcode on a note inside the box. We need it to test the device after repair. We only use it to verify the repair worked."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I pay for the repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We'll send you a payment link by text once the repair is done and tested. You can pay by card or Apple Pay. Payment happens after the repair is complete, not before."
+      }
+    }
+  ]
+}</script>
 <!-- JSON-LD: HowTo -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Mail In Your Device for Repair in Idaho",
-    "description": "Step-by-step guide to shipping your phone, laptop, tablet, or game console to Hailey Device Repair for mail-in service from anywhere in Idaho.",
-    "totalTime": "PT120H",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Text or email your issue",
-        "text": "Contact Hailey Device Repair by text at (208) 366-6111 or email samuel@haileyrepair.com. Describe your device (make, model) and the problem. You'll get a repair estimate within 2 hours, usually faster.",
-        "url": "https://www.haileyrepair.com/mail-in-repair#how-it-works"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Pack and ship your device",
-        "text": "Power off your device, remove cases, wrap in bubble wrap (2+ layers), and place in a sturdy box. USPS Priority Mail Small Flat Rate ($8.15) works for phones; Medium Flat Rate ($16.10) for laptops. Drop off at any post office.",
-        "url": "https://www.haileyrepair.com/mail-in-repair#packing"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "We repair it (usually same day)",
-        "text": "Your device arrives at our shop in Hailey, ID. We text you when it arrives, diagnose the issue, confirm the quote, and complete most repairs within 24 hours. You get text updates throughout.",
-        "url": "https://www.haileyrepair.com/mail-in-repair#how-it-works"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "Free return shipping",
-        "text": "Once repaired and tested, we ship your device back via USPS Priority Mail at no charge. Tracking number sent by text. Most Idaho addresses receive it in 1-2 business days.",
-        "url": "https://www.haileyrepair.com/mail-in-repair#how-it-works"
-      }
-    ]
-  }
-  </script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Mail In Your Device for Repair in Idaho",
+  "description": "Step-by-step guide to shipping your phone, laptop, tablet, or game console to Hailey Device Repair for mail-in service from anywhere in Idaho.",
+  "totalTime": "PT120H",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Text or email your issue",
+      "text": "Contact Hailey Device Repair by text at (208) 366-6111 or email samuel@haileyrepair.com. Describe your device (make, model) and the problem. You'll get a repair estimate within 2 hours, usually faster.",
+      "url": "https://www.haileyrepair.com/mail-in-repair#how-it-works"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Pack and ship your device",
+      "text": "Power off your device, remove cases, wrap in bubble wrap (2+ layers), and place in a sturdy box. USPS Priority Mail Small Flat Rate ($8.15) works for phones; Medium Flat Rate ($16.10) for laptops. Drop off at any post office.",
+      "url": "https://www.haileyrepair.com/mail-in-repair#packing"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "We repair it (usually same day)",
+      "text": "Your device arrives at our shop in Hailey, ID. We text you when it arrives, diagnose the issue, confirm the quote, and complete most repairs within 24 hours. You get text updates throughout.",
+      "url": "https://www.haileyrepair.com/mail-in-repair#how-it-works"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Free return shipping",
+      "text": "Once repaired and tested, we ship your device back via USPS Priority Mail at no charge. Tracking number sent by text. Most Idaho addresses receive it in 1-2 business days.",
+      "url": "https://www.haileyrepair.com/mail-in-repair#how-it-works"
+    }
+  ]
+}</script>
 <!-- JSON-LD: Breadcrumb -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.haileyrepair.com" },
-      { "@type": "ListItem", "position": 2, "name": "Mail-In Repair", "item": "https://www.haileyrepair.com/mail-in-repair" }
-    ]
-  }
-  </script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.haileyrepair.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mail-In Repair",
+      "item": "https://www.haileyrepair.com/mail-in-repair"
+    }
+  ]
+}</script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SGQ617V748"></script>
 <script>
@@ -1478,7 +1594,7 @@ a{color:inherit;text-decoration:none}
 <!-- Page load curtain -->
 <div class="page-curtain" id="pageCurtain">
 <div class="page-curtain-logo">
-<span aria-hidden="true" class="material-symbols-outlined">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="smartphone"></span>
       Hailey Device Repair
     </div>
 </div>
@@ -1488,7 +1604,7 @@ a{color:inherit;text-decoration:none}
 <nav aria-label="Main navigation" class="nav" id="mainNav" role="navigation">
 <div class="container nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
-<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
 <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
 </a>
 <ul class="nav-links" id="navLinks" role="menubar">
@@ -1527,22 +1643,22 @@ a{color:inherit;text-decoration:none}
 <div class="mail-hero-copy">
 <nav aria-label="Breadcrumb" class="breadcrumb">
 <a href="/">Home</a>
-<span aria-hidden="true" class="material-symbols-outlined breadcrumb-sep">chevron_right</span>
+<span aria-hidden="true" class="material-symbols-outlined breadcrumb-sep" data-icon="chevron_right"></span>
 <span aria-current="page">Mail-In Repair</span>
 </nav>
 <div class="lp-hero-badge">
-<span aria-hidden="true" class="material-symbols-outlined">local_shipping</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span>
             Free return shipping · Quote before you ship
           </div>
 <h1 class="lp-hero-title">Mail-In Device Repair for Idaho</h1>
 <p class="lp-hero-sub">Mail-in repair for phones, laptops, tablets, and game consoles from anywhere in Idaho. Text the model, symptoms, and photos first — Samuel will tell you if shipping makes sense before you spend a dollar on postage.</p>
 <div class="hero-actions">
 <a class="btn btn-primary btn-lg" href="sms:+12083666111">
-<span aria-hidden="true" class="material-symbols-outlined">sms</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>
               Text Photos for a Quote
             </a>
 <a class="btn btn-outline btn-lg" href="#how-it-works">
-<span aria-hidden="true" class="material-symbols-outlined">route</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="route"></span>
               See the Mail-In Route
             </a>
 </div>
@@ -1678,48 +1794,48 @@ a{color:inherit;text-decoration:none}
 <div class="mail-steps-timeline">
 <div class="mail-step" data-animate="">
 <div class="mail-step-number">1</div>
-<div class="mail-step-icon"><span class="material-symbols-outlined">chat</span></div>
+<div class="mail-step-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="chat"></span></div>
 <div class="mail-step-content">
 <h3>Text or email us</h3>
 <p>Describe what's going on with your device. Include the make, model, and what broke. We'll reply within 2 hours with a repair estimate — usually faster.</p>
 <div class="mail-step-detail">
-<span aria-hidden="true" class="material-symbols-outlined">schedule</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="schedule"></span>
               Avg. response: under 45 minutes
             </div>
 </div>
 </div>
 <div class="mail-step" data-animate="">
 <div class="mail-step-number">2</div>
-<div class="mail-step-icon"><span class="material-symbols-outlined">inventory_2</span></div>
+<div class="mail-step-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="inventory_2"></span></div>
 <div class="mail-step-content">
 <h3>Pack &amp; ship your device</h3>
 <p>We'll give you the shipping address. Grab a small box, wrap your device in bubble wrap or padding, and drop it at USPS, FedEx, or UPS. A small USPS Priority Mail box works great for phones.</p>
 <div class="mail-step-detail">
-<span aria-hidden="true" class="material-symbols-outlined">lightbulb</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="lightbulb"></span>
               Pro tip: Power off the device. Remove any case.
             </div>
 </div>
 </div>
 <div class="mail-step" data-animate="">
 <div class="mail-step-number">3</div>
-<div class="mail-step-icon"><span class="material-symbols-outlined">build</span></div>
+<div class="mail-step-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="build"></span></div>
 <div class="mail-step-content">
 <h3>We fix it (usually same day)</h3>
 <p>The moment your device arrives, we text you. Most repairs are done within 24 hours. If we find anything unexpected, we'll text you before doing extra work — no surprise charges.</p>
 <div class="mail-step-detail">
-<span aria-hidden="true" class="material-symbols-outlined">notifications_active</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="notifications_active"></span>
               Text updates: received → repairing → done → shipped
             </div>
 </div>
 </div>
 <div class="mail-step" data-animate="">
 <div class="mail-step-number">4</div>
-<div class="mail-step-icon"><span class="material-symbols-outlined">local_shipping</span></div>
+<div class="mail-step-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span></div>
 <div class="mail-step-content">
 <h3>We ship it back — free</h3>
 <p>Repaired, tested, and shipped back via USPS Priority Mail at no extra charge. You'll get a tracking number by text. Most Idaho addresses receive it in 1-2 business days.</p>
 <div class="mail-step-detail">
-<span aria-hidden="true" class="material-symbols-outlined">verified</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="verified"></span>
               Return shipping: always free
             </div>
 </div>
@@ -1739,22 +1855,22 @@ a{color:inherit;text-decoration:none}
 <div>
 <div class="lp-info-grid lp-info-grid--quote">
 <div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon"><span class="material-symbols-outlined">badge</span></div>
+<div class="lp-info-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="badge"></span></div>
 <h3>Exact model</h3>
 <p>"iPhone 13" is good. "Samsung phone" is not. Include the exact model if you know it.</p>
 </div>
 <div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--green"><span class="material-symbols-outlined">heart_broken</span></div>
+<div class="lp-info-card-icon lp-info-card-icon--green"><span class="material-symbols-outlined" aria-hidden="true" data-icon="heart_broken"></span></div>
 <h3>What actually broke</h3>
 <p>Cracked screen, bad battery, no charge, back glass, water exposure, HDMI issue — be specific.</p>
 </div>
 <div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--cyan"><span class="material-symbols-outlined">power_settings_new</span></div>
+<div class="lp-info-card-icon lp-info-card-icon--cyan"><span class="material-symbols-outlined" aria-hidden="true" data-icon="power_settings_new"></span></div>
 <h3>Current symptoms</h3>
 <p>Does it still turn on? Does touch still work? Any lines, flicker, swelling, or heat?</p>
 </div>
 <div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--red"><span class="material-symbols-outlined">photo_camera</span></div>
+<div class="lp-info-card-icon lp-info-card-icon--red"><span class="material-symbols-outlined" aria-hidden="true" data-icon="photo_camera"></span></div>
 <h3>Photo if you can</h3>
 <p>A quick photo of the damage helps a lot — especially for cracked screens, lifted batteries, and broken ports.</p>
 </div>
@@ -1784,45 +1900,45 @@ a{color:inherit;text-decoration:none}
 <div class="lp-info-grid">
 <div class="lp-info-card" data-animate="">
 <div class="lp-info-card-icon">
-<span class="material-symbols-outlined">smartphone</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span>
 </div>
 <h3>Phones</h3>
 <p>iPhone, Samsung Galaxy, Google Pixel, OnePlus, Motorola. Screens, batteries, charging ports, water damage, cameras. <a href="/mail-in/iphone">See our iPhone mail-in guide</a>, or view <a href="/iphone-repair">walk-in iPhone repair</a> and <a href="/android-repair">Android repair</a> details.</p>
 <div class="mail-turnaround">
-<span class="material-symbols-outlined">timer</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="timer"></span>
             3-4 days total
           </div>
 </div>
 <div class="lp-info-card" data-animate="">
 <div class="lp-info-card-icon lp-info-card-icon--green">
-<span class="material-symbols-outlined">laptop</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop"></span>
 </div>
 <h3>Laptops</h3>
 <p>MacBook, Dell, HP, Lenovo, ASUS, Acer. Screens, batteries, keyboards, charging issues, SSD upgrades, fan replacement, virus removal. <a href="/mail-in/macbook">See our MacBook mail-in guide</a>, or view the full <a href="/laptop-repair">laptop repair</a> page for walk-in and model-specific details.</p>
 <div class="mail-turnaround">
-<span class="material-symbols-outlined">timer</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="timer"></span>
             4-5 days total
           </div>
 </div>
 <div class="lp-info-card" data-animate="">
 <div class="lp-info-card-icon lp-info-card-icon--cyan">
-<span class="material-symbols-outlined">tablet</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="tablet"></span>
 </div>
 <h3>Tablets</h3>
 <p>iPad (all models), Samsung Galaxy Tab, Amazon Fire. Screen replacement, battery swap, charging port, and button repair. <a href="/mail-in/ipad">See our iPad mail-in guide</a>, or view the full <a href="/tablet-repair">tablet repair</a> page for walk-in and model-specific details.</p>
 <div class="mail-turnaround">
-<span class="material-symbols-outlined">timer</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="timer"></span>
             3-4 days total
           </div>
 </div>
 <div class="lp-info-card" data-animate="">
 <div class="lp-info-card-icon lp-info-card-icon--red">
-<span class="material-symbols-outlined">sports_esports</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sports_esports"></span>
 </div>
 <h3>Game Consoles</h3>
 <p>Nintendo Switch, PS5, Xbox, Steam Deck. Joy-Con drift, HDMI ports, overheating, disc drives, stick replacement. Fast <a href="/console-repair">game console repair</a> — most issues fixed within 24 hours of arrival.</p>
 <div class="mail-turnaround">
-<span class="material-symbols-outlined">timer</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="timer"></span>
             3-5 days total
           </div>
 </div>
@@ -1891,21 +2007,21 @@ a{color:inherit;text-decoration:none}
 <div class="lp-compare-grid" style="grid-template-columns: repeat(3, 1fr);">
 <div class="lp-compare-card" data-animate="">
 <div class="lp-compare-icon" style="color: var(--color-green);">
-<span class="material-symbols-outlined">money_off</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="money_off"></span>
 </div>
 <h3>Honest Assessment</h3>
 <p>Every repair starts with a thorough diagnosis. We'll tell you exactly what we found and give you a clear quote before any work begins.</p>
 </div>
 <div class="lp-compare-card" data-animate="">
 <div class="lp-compare-icon" style="color: var(--accent);">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
 </div>
 <h3>Text updates at every step</h3>
 <p>You'll never wonder "where's my device?" We text you when it arrives, when we start the repair, when it's done, and when it ships — with a tracking number.</p>
 </div>
 <div class="lp-compare-card" data-animate="">
 <div class="lp-compare-icon" style="color: #f0b429;">
-<span class="material-symbols-outlined">local_shipping</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span>
 </div>
 <h3>Free return shipping</h3>
 <p>Return shipping via USPS Priority Mail is always on us. No surprises at the end. What we quote is what you pay — plus only the cost of shipping it to us.</p>
@@ -1994,56 +2110,56 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="mail-packing-grid">
 <div class="mail-packing-card" data-animate="">
-<div class="mail-packing-icon"><span class="material-symbols-outlined">smartphone</span></div>
+<div class="mail-packing-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span></div>
 <h3>Phones &amp; Tablets</h3>
 <ul class="mail-packing-list">
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Power off the device</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Remove case and screen protector</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Wrap in bubble wrap (2+ layers)</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Use a small USPS Priority box ($8.15 at any post office)</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Fill gaps with packing paper or crumpled newspaper</li>
-<li><span class="material-symbols-outlined" style="color: #ef4444;">cancel</span> <em>Don't</em> include chargers or accessories</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Power off the device</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Remove case and screen protector</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Wrap in bubble wrap (2+ layers)</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Use a small USPS Priority box ($8.15 at any post office)</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Fill gaps with packing paper or crumpled newspaper</li>
+<li><span class="material-symbols-outlined" style="color: #ef4444;" aria-hidden="true" data-icon="cancel"></span> <em>Don't</em> include chargers or accessories</li>
 </ul>
 <div class="mail-packing-cost">
-<span class="material-symbols-outlined">local_shipping</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span>
 <strong>USPS Small Flat Rate:</strong> $8.15 · Arrives next day in Idaho
           </div>
 </div>
 <div class="mail-packing-card" data-animate="">
-<div class="mail-packing-icon"><span class="material-symbols-outlined">laptop</span></div>
+<div class="mail-packing-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop"></span></div>
 <h3>Laptops</h3>
 <ul class="mail-packing-list">
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Power off and close the lid</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Wrap in bubble wrap or foam</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Use a box at least 2" larger on all sides</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Pad all sides, especially corners</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Include charger in a separate bag</li>
-<li><span class="material-symbols-outlined" style="color: #ef4444;">cancel</span> <em>Don't</em> ship in a laptop bag (not enough protection)</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Power off and close the lid</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Wrap in bubble wrap or foam</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Use a box at least 2" larger on all sides</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Pad all sides, especially corners</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Include charger in a separate bag</li>
+<li><span class="material-symbols-outlined" style="color: #ef4444;" aria-hidden="true" data-icon="cancel"></span> <em>Don't</em> ship in a laptop bag (not enough protection)</li>
 </ul>
 <div class="mail-packing-cost">
-<span class="material-symbols-outlined">local_shipping</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span>
 <strong>USPS Medium Flat Rate:</strong> $16.10 · 1–2 days in Idaho
           </div>
 </div>
 <div class="mail-packing-card" data-animate="">
-<div class="mail-packing-icon"><span class="material-symbols-outlined">sports_esports</span></div>
+<div class="mail-packing-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sports_esports"></span></div>
 <h3>Game Consoles</h3>
 <ul class="mail-packing-list">
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Power off and unplug everything</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Remove discs and cartridges</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Wrap in bubble wrap</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Original box is ideal if you have it</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Joy-Cons: ship detached, wrap individually</li>
-<li><span class="material-symbols-outlined" style="color: #ef4444;">cancel</span> <em>Don't</em> include power cables unless asked</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Power off and unplug everything</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Remove discs and cartridges</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Wrap in bubble wrap</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Original box is ideal if you have it</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Joy-Cons: ship detached, wrap individually</li>
+<li><span class="material-symbols-outlined" style="color: #ef4444;" aria-hidden="true" data-icon="cancel"></span> <em>Don't</em> include power cables unless asked</li>
 </ul>
 <div class="mail-packing-cost">
-<span class="material-symbols-outlined">local_shipping</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span>
 <strong>USPS Medium Flat Rate:</strong> $16.10 · 1–2 days in Idaho
           </div>
 </div>
 </div>
 <div class="mail-packing-tip" data-animate="">
-<span class="material-symbols-outlined">info</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="info"></span>
 <p><strong>Don't want to deal with shipping?</strong> We can send you a prepaid shipping label for $8. Just ask when you text us. We'll email you a label, you drop the box off — that's it. <a href="sms:+12083666111">Text us to get one.</a></p>
 </div>
 </div>
@@ -2058,7 +2174,7 @@ a{color:inherit;text-decoration:none}
 <p class="section-sub">These are realistic mail-in ranges for common jobs — not bait prices. Final quote depends on the exact model, part quality, and whether the damage is limited to one part or not.</p>
 <div class="mail-pricing-grid">
 <div class="mail-pricing-card" data-animate="">
-<div class="mail-pricing-device"><span class="material-symbols-outlined">smartphone</span> Phones</div>
+<div class="mail-pricing-device"><span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span> Phones</div>
 <div class="mail-pricing-price"><strong>$79–$279+</strong></div>
 <ul class="mail-pricing-items">
 <li>iPhone, Samsung, Pixel, Motorola</li>
@@ -2067,7 +2183,7 @@ a{color:inherit;text-decoration:none}
 </ul>
 </div>
 <div class="mail-pricing-card" data-animate="">
-<div class="mail-pricing-device"><span class="material-symbols-outlined">laptop</span> Laptops / MacBooks</div>
+<div class="mail-pricing-device"><span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop"></span> Laptops / MacBooks</div>
 <div class="mail-pricing-price"><strong>$99–$349+</strong></div>
 <ul class="mail-pricing-items">
 <li>Screens, batteries, keyboards, charging issues</li>
@@ -2076,7 +2192,7 @@ a{color:inherit;text-decoration:none}
 </ul>
 </div>
 <div class="mail-pricing-card" data-animate="">
-<div class="mail-pricing-device"><span class="material-symbols-outlined">tablet</span> Tablets / iPads</div>
+<div class="mail-pricing-device"><span class="material-symbols-outlined" aria-hidden="true" data-icon="tablet"></span> Tablets / iPads</div>
 <div class="mail-pricing-price"><strong>$89–$249+</strong></div>
 <ul class="mail-pricing-items">
 <li>Glass, display, battery, charging port repairs</li>
@@ -2085,7 +2201,7 @@ a{color:inherit;text-decoration:none}
 </ul>
 </div>
 <div class="mail-pricing-card" data-animate="">
-<div class="mail-pricing-device"><span class="material-symbols-outlined">sports_esports</span> Game Consoles / Handhelds</div>
+<div class="mail-pricing-device"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sports_esports"></span> Game Consoles / Handhelds</div>
 <div class="mail-pricing-price"><strong>$59–$149+</strong></div>
 <ul class="mail-pricing-items">
 <li>Joy-Con drift, HDMI ports, overheating, fan issues</li>
@@ -2113,31 +2229,31 @@ a{color:inherit;text-decoration:none}
 <div class="mail-timeline-day-num">Day 0</div>
 <div class="mail-timeline-day-label">You text us</div>
 <p>You describe what's broken: make, model, what happened. We reply with a repair estimate and our shipping address. Usually within 45 minutes.</p>
-<div class="mail-timeline-day-icon"><span class="material-symbols-outlined">chat</span></div>
+<div class="mail-timeline-day-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="chat"></span></div>
 </div>
 <div class="mail-timeline-day" data-animate="">
 <div class="mail-timeline-day-num">Day 1</div>
 <div class="mail-timeline-day-label">You ship it</div>
 <p>Drop your packed device at USPS, FedEx, or UPS. USPS Priority Mail from most Idaho cities reaches Hailey in 1 day. You're out $8–$16 for shipping.</p>
-<div class="mail-timeline-day-icon"><span class="material-symbols-outlined">inventory_2</span></div>
+<div class="mail-timeline-day-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="inventory_2"></span></div>
 </div>
 <div class="mail-timeline-day" data-animate="">
 <div class="mail-timeline-day-num">Day 2</div>
 <div class="mail-timeline-day-label">It arrives · We text you</div>
 <p>Your package lands on our bench. We text you: "Got it." We open it, confirm the issue matches what you described, and give you a final quote before starting any work.</p>
-<div class="mail-timeline-day-icon"><span class="material-symbols-outlined">notifications_active</span></div>
+<div class="mail-timeline-day-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="notifications_active"></span></div>
 </div>
 <div class="mail-timeline-day" data-animate="">
 <div class="mail-timeline-day-num">Day 2–3</div>
 <div class="mail-timeline-day-label">We fix it</div>
 <p>Most repairs are done same-day. We text you when repair starts and when it's finished. If we find something unexpected, we text before doing extra work — no surprise charges, ever.</p>
-<div class="mail-timeline-day-icon"><span class="material-symbols-outlined">build</span></div>
+<div class="mail-timeline-day-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="build"></span></div>
 </div>
 <div class="mail-timeline-day" data-animate="">
 <div class="mail-timeline-day-num">Day 3–5</div>
 <div class="mail-timeline-day-label">Back in your hands</div>
 <p>We ship it back via USPS Priority Mail at no charge. Tracking number sent by text. Most Idaho addresses receive it in 1–2 business days. Done.</p>
-<div class="mail-timeline-day-icon"><span class="material-symbols-outlined">verified</span></div>
+<div class="mail-timeline-day-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span></div>
 </div>
 </div>
 </div>
@@ -2149,7 +2265,7 @@ a{color:inherit;text-decoration:none}
 <div class="container">
 <div class="mail-founder-note" data-animate="">
 <div class="mail-founder-note-header">
-<span aria-hidden="true" class="material-symbols-outlined">edit_note</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="edit_note"></span>
 <span class="mail-founder-note-label">From the bench</span>
 <div aria-hidden="true" class="bench-ledger">
 <div class="bench-ledger-row"><span>Bench</span><strong>One person</strong></div>
@@ -2178,17 +2294,17 @@ a{color:inherit;text-decoration:none}
 <p class="section-sub">Most people use this route for the same simple reasons: they can start by text, ship on their own schedule, and follow the repair without guessing what’s happening.</p>
 <div class="lp-info-grid">
 <div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon"><span class="material-symbols-outlined">sms</span></div>
+<div class="lp-info-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span></div>
 <h3>Start with a clear estimate</h3>
 <p>Text the model, the issue, and a photo if you can. You get a realistic range and next steps before you box anything up.</p>
 </div>
 <div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--green"><span class="material-symbols-outlined">local_shipping</span></div>
+<div class="lp-info-card-icon lp-info-card-icon--green"><span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span></div>
 <h3>Ship from almost anywhere in Idaho</h3>
 <p>Most customers just use USPS Priority Mail, which keeps the process simple whether you’re in Boise, Twin Falls, Rexburg, or farther out.</p>
 </div>
 <div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--cyan"><span class="material-symbols-outlined">verified</span></div>
+<div class="lp-info-card-icon lp-info-card-icon--cyan"><span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span></div>
 <h3>Get updates through return shipping</h3>
 <p>You’ll know when it arrives, when work starts, and when it ships back. Return shipping is included on completed repairs.</p>
 </div>
@@ -2206,7 +2322,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>How does mail-in repair work?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Text or email us to describe your issue. We'll confirm the repair and give you a shipping address. Pack your device securely and ship it. We'll text you when it arrives, when the repair starts, and when we ship it back. Free return shipping included.</p>
@@ -2215,7 +2331,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>How long does the whole process take?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Most repairs are completed within 24 hours of receiving your device. With shipping each way, total turnaround is typically 3-5 business days depending on your location in Idaho. Boise/Nampa customers often get devices back in 2-3 days.</p>
@@ -2224,7 +2340,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>Is return shipping really free?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Yes. Return shipping via USPS Priority Mail is always free. You only pay for shipping your device to us. We can also provide a prepaid shipping label for an additional $8 if you'd prefer not to arrange your own shipping.</p>
@@ -2233,7 +2349,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>How much does mail-in repair usually cost?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Most common mail-in jobs fall into these ranges: <strong>phones $79-$279+</strong>, <strong>tablets $89-$249+</strong>, <strong>laptops $99-$349+</strong>, and <strong>game consoles $59-$149+</strong>. Exact price depends on your model, the part needed, and whether the damage is limited to one component or not. <a href="#pricing">See the pricing section above</a> for realistic ranges.</p>
@@ -2242,7 +2358,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>What should I text you to get a fast quote?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Send the exact model, what broke, whether it still powers on, and a photo if you can. Example: <strong>"iPhone 13, front glass shattered but touch still works. Boise. Need it back this week."</strong> That's enough for me to tell you whether it makes sense to ship and what price range you're probably in.</p>
@@ -2251,7 +2367,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>What if you can't fix my device?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Every repair starts with a thorough diagnosis. We'll explain what we found and give you a clear quote before any work begins. If the repair isn't feasible, we'll let you know honestly — and ship your device back at no charge. No hard feelings.</p>
@@ -2260,7 +2376,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>How should I pack my device?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Use a sturdy box with plenty of padding — bubble wrap, packing paper, or even crumpled newspaper works. Remove any cases or accessories. For phones, a small USPS Priority Mail box ($8.15 at any post office) is perfect. Power off the device before shipping. <a href="#packing">See our full packing guide above.</a></p>
@@ -2269,7 +2385,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>Do you repair devices from outside Idaho?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Currently we focus on Idaho to keep turnaround times fast. If you're in a neighboring state (Montana, Wyoming, Utah, Oregon, Washington, Nevada), text us and we can probably work something out. Shipping is just a day or two longer.</p>
@@ -2278,7 +2394,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>Is my data safe? Will you wipe my phone?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Never without asking you first. We don't wipe data as part of any standard repair. Screen replacements, battery swaps, charging port fixes — none of these require touching your data. If a repair does require a reset (rare), we'll contact you first and make sure you have a backup.</p>
@@ -2287,7 +2403,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>Can I use my own shipping label?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Absolutely. Ship via USPS, FedEx, or UPS — whatever's easiest for you. USPS Priority Mail is the cheapest option for most devices and arrives in 1 day from anywhere in Idaho. We can also email you a prepaid label for $8 if you'd rather skip the post office counter.</p>
@@ -2296,7 +2412,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>Do you offer a warranty on mail-in repairs?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Yes. All repairs come with a warranty covering parts and labor. If the same issue comes back, get in touch and we'll make it right. <a href="/warranty">See our full warranty details.</a></p>
@@ -2305,7 +2421,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>What about water-damaged devices?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>We can assess water damage by mail, but results depend on how long it's been wet and whether the device was powered on after exposure. Text us your situation before shipping and we'll give you an honest assessment of whether it's worth sending. <a href="/tips#water-damage">See our water damage first-aid guide.</a></p>
@@ -2314,7 +2430,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>I'm a college student. Any discounts?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Yes. We offer student and military discounts on most repairs. Mention it when you text us. <a href="/student-military">See details on our student &amp; military page.</a></p>
@@ -2323,7 +2439,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>What's the cheapest way to ship my device?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>For phones and small tablets: <strong>USPS Small Flat Rate Box</strong> ($8.15) — fits most phones wrapped in bubble wrap, arrives next day in Idaho. For laptops and consoles: <strong>USPS Medium Flat Rate Box</strong> ($16.10). You can also use any sturdy box you already have and ship Priority Mail by weight — often similarly priced.</p>
@@ -2332,7 +2448,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>Can you fix a cracked back glass on iPhone?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Yes. Back glass repair is one of our most common mail-in jobs, especially for iPhone 11 and newer models. Pricing varies by model — text us your exact iPhone model and we'll give you a quote in minutes. <a href="/iphone-repair">See iPhone repair details.</a></p>
@@ -2341,7 +2457,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>What if my device gets damaged during shipping?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>This is extremely rare when devices are packed properly, but it's why we include detailed <a href="#packing">packing instructions</a>. Use enough padding, use a sturdy box, and you'll be fine. USPS Priority Mail includes $100 of insurance by default. For higher-value devices, you can add extra coverage at the counter.</p>
@@ -2350,7 +2466,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>Do I need to include my passcode?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>We need to be able to test the device after repair, so yes — include your passcode on a note inside the box (not written on the outside). We only use it to verify the repair worked. Your data stays private.</p>
@@ -2359,7 +2475,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span>How do I pay for the repair?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>We'll send you a payment link by text once the repair is done and tested. You can pay by card or Apple Pay. Payment happens after the repair is complete, not before — so you know it's actually fixed before you pay.</p>
@@ -2378,11 +2494,11 @@ a{color:inherit;text-decoration:none}
 <p class="section-sub">Text us right now. Describe the problem. We'll have a quote and shipping instructions back to you within the hour.</p>
 <div class="hero-actions" style="justify-content: center;">
 <a class="btn btn-primary btn-lg" href="sms:+12083666111">
-<span aria-hidden="true" class="material-symbols-outlined">sms</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>
             Text (208) 366-6111
           </a>
 <a class="btn btn-outline btn-lg" href="mailto:samuel@haileyrepair.com">
-<span aria-hidden="true" class="material-symbols-outlined">mail</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="mail"></span>
             Email Us
           </a>
 </div>
@@ -2395,7 +2511,7 @@ a{color:inherit;text-decoration:none}
 <div class="container footer-inner">
 <div class="footer-brand" data-animate="">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
-<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
 <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
 </a>
 <p class="footer-tagline">Don't replace it. Let me fix it.</p>
@@ -2460,7 +2576,7 @@ a{color:inherit;text-decoration:none}
 <div class="help-fab-options">
 <a class="help-fab-option" href="sms:+12083666111">
 <div class="help-fab-option-icon help-fab-option-icon--text">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
 </div>
 <div class="help-fab-option-info">
 <strong>Text me</strong>
@@ -2469,7 +2585,7 @@ a{color:inherit;text-decoration:none}
 </a>
 <a class="help-fab-option" href="tel:+12083666111">
 <div class="help-fab-option-icon help-fab-option-icon--call">
-<span class="material-symbols-outlined">call</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>
 </div>
 <div class="help-fab-option-info">
 <strong>Call</strong>
@@ -2478,7 +2594,7 @@ a{color:inherit;text-decoration:none}
 </a>
 <a class="help-fab-option" href="/contact">
 <div class="help-fab-option-icon help-fab-option-icon--quote">
-<span class="material-symbols-outlined">description</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="description"></span>
 </div>
 <div class="help-fab-option-info">
 <strong>Request a quote</strong>
@@ -2493,7 +2609,7 @@ a{color:inherit;text-decoration:none}
 <button aria-label="Get help" class="help-fab-trigger" id="helpFabTrigger">
 <span class="help-fab-dot"></span>
 <span class="help-fab-label-text">Need help?</span>
-<span class="material-symbols-outlined">close</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span>
 </button>
 </div>
 <script defer="" src="main.js?v=home-20260514"></script>

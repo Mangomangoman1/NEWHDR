@@ -32,32 +32,171 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Hailey Device Repair",
-  "description": "Local computer help and repair in Hailey, Idaho. Slow computers, virus problems, startup issues, crash diagnosis, tune-ups, and remote support statewide.",
-  "url": "https://www.haileyrepair.com/computer-support",
+  "description": "Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available statewide.",
+  "url": "https://www.haileyrepair.com",
   "telephone": "+12083666111",
+  "email": "samuel@haileyrepair.com",
+  "image": "https://www.haileyrepair.com/favicon.svg",
+  "priceRange": "$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card, Venmo, Zelle",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Hailey",
     "addressRegion": "ID",
     "addressCountry": "US"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.5196,
+    "longitude": -114.3153
+  },
   "areaServed": [
-    "Hailey",
-    "Ketchum",
-    "Sun Valley",
-    "Bellevue",
-    "Wood River Valley",
-    "Idaho"
+    {
+      "@type": "City",
+      "name": "Hailey",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Ketchum",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Sun Valley",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Bellevue",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "State",
+      "name": "Idaho"
+    }
   ],
-  "serviceType": [
-    "Computer Repair",
-    "Virus Removal",
-    "Remote Computer Support",
-    "Slow Computer Fix",
-    "Bootloop Repair",
-    "Crash Diagnosis"
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "11:00",
+      "closes": "19:00"
+    }
   ],
-  "@id": "https://www.haileyrepair.com/#business",
+  "founder": {
+    "@type": "Person",
+    "name": "Samuel Torres"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Device Repair Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Phone Repair",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "iPhone Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "iPhone Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Android Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Android Battery Replacement"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Computer Repair",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laptop Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laptop Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Virus & Malware Removal"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Data Recovery"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gaming PC Repair"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "sameAs": [
     "https://g.page/r/CRz04Aqd3UvPEBM",
     "https://www.mapquest.com/us/idaho/hailey-device-repair-800055619",
@@ -66,7 +205,8 @@
     "https://www.yelp.ca/biz/hailey-device-repair-hailey",
     "https://nextdoor.com/pages/hailey-device-repair/",
     "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
-  ]
+  ],
+  "@id": "https://www.haileyrepair.com/#business"
 }</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -330,7 +470,7 @@
 <nav class="nav" id="nav" role="navigation">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
-<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
 <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
 </a>
 <ul class="nav-links" role="list">
@@ -342,8 +482,8 @@
 </ul>
 <div class="nav-actions">
 <button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
-<span aria-hidden="true" class="material-symbols-outlined theme-icon-dark">dark_mode</span>
-<span class="material-symbols-outlined theme-icon-light">light_mode</span>
+<span aria-hidden="true" class="material-symbols-outlined theme-icon-dark" data-icon="dark_mode"></span>
+<span class="material-symbols-outlined theme-icon-light" aria-hidden="true" data-icon="light_mode"></span>
 </button>
 <a class="btn btn-primary btn-sm" href="sms:+12083666111">Text Me</a>
 </div>
@@ -377,26 +517,26 @@
           </p>
 <div class="hero-cta">
 <a class="btn btn-primary btn-lg" href="sms:+12083666111">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
               Text the symptom
             </a>
 <a class="btn btn-ghost btn-lg" href="tel:+12083666111">
-<span class="material-symbols-outlined">call</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>
               (208) 366-6111
             </a>
 </div>
 <p class="hero-risk">Free first-look guidance. No replacement push if a cleanup or SSD can save it.</p>
 <div class="hero-trust">
 <div class="hero-trust-item">
-<span class="material-symbols-outlined">check_circle</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>
               Data-safe first
             </div>
 <div class="hero-trust-item">
-<span class="material-symbols-outlined">check_circle</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>
               Remote support available
             </div>
 <div class="hero-trust-item">
-<span class="material-symbols-outlined">check_circle</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>
               Same-day on most software jobs
             </div>
 </div>
@@ -410,7 +550,7 @@
 <img alt="" class="hero-laptop" decoding="async" fetchpriority="high" height="620" src="/assets/services/hero-laptop.webp" width="900"/>
 </div>
 <div class="hero-diagnostic-card">
-<div class="hero-diagnostic-kicker"><span class="material-symbols-outlined">troubleshoot</span> Diagnostic pass</div>
+<div class="hero-diagnostic-kicker"><span class="material-symbols-outlined" aria-hidden="true" data-icon="troubleshoot"></span> Diagnostic pass</div>
 <div class="hero-diagnostic-line"><span>Boots / no boot</span><span>check first</span></div>
 <div class="hero-diagnostic-line"><span>Files at risk?</span><span>protect</span></div>
 <div class="hero-diagnostic-line"><span>Remote or drop-off</span><span>route it</span></div>
@@ -430,7 +570,7 @@
 </div>
 <div class="services-grid">
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">devices</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="devices"></span></div>
 <div class="service-title">1) The computer model</div>
 <div class="service-desc">Send the brand and model if you know it. “Dell Inspiron 15,” “iMac,” or “MacBook Air M1” is enough.</div>
 <ul class="service-list">
@@ -439,7 +579,7 @@
 </ul>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">error</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="error"></span></div>
 <div class="service-title">2) What it is doing</div>
 <div class="service-desc">Tell me the actual symptom: slow startup, blue screen, weird pop-ups, black screen, stuck spinning circle, random shutdowns, no internet, or something else.</div>
 <ul class="service-list">
@@ -448,7 +588,7 @@
 </ul>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">schedule</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="schedule"></span></div>
 <div class="service-title">3) When it started</div>
 <div class="service-desc">Did it happen after an update, a spill, a fall, a download, a power outage, or just slowly get worse over time?</div>
 <ul class="service-list">
@@ -457,7 +597,7 @@
 </ul>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">checklist</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="checklist"></span></div>
 <div class="service-title">4) What you already tried</div>
 <div class="service-desc">Tell me if you rebooted it, ran an update, tried another charger, restored something, or followed random internet advice.</div>
 <ul class="service-list">
@@ -466,7 +606,7 @@
 </ul>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">wifi</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="wifi"></span></div>
 <div class="service-title">5) Whether it still boots or gets online</div>
 <div class="service-desc">That tells me right away whether remote support is realistic or whether this needs to come in for proper diagnosis.</div>
 <ul class="service-list">
@@ -475,7 +615,7 @@
 </ul>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">forum</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="forum"></span></div>
 <div class="service-title">6) What you need back fastest</div>
 <div class="service-desc">If the priority is work files, email, QuickBooks, printing, or just getting online again, say that up front.</div>
 <ul class="service-list">
@@ -499,37 +639,37 @@
 </div>
 <div class="problem-grid">
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">speed</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="speed"></span></div>
 <div class="problem-title">Running Slow</div>
 <div class="problem-desc">Takes forever to start up, apps lag, browser freezes. Usually fixable without replacing anything.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">coronavirus</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="coronavirus"></span></div>
 <div class="problem-title">Virus or Malware</div>
 <div class="problem-desc">Pop-ups, redirects, strange behavior, or a scareware popup telling you to call a number.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">restart_alt</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="restart_alt"></span></div>
 <div class="problem-title">Bootloop / Won't Start</div>
 <div class="problem-desc">Stuck on startup, loops back to a blue screen, or just shows a spinning circle forever.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">report</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="report"></span></div>
 <div class="problem-title">Random Crashing</div>
 <div class="problem-desc">Blue screen of death, random shutdowns, freezes mid-use. Could be hardware or software — I'll find out.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">storage</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="storage"></span></div>
 <div class="problem-title">Storage Full</div>
 <div class="problem-desc">No space left, everything running slow because of it. I'll clean it up and get you room back.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">warning</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="warning"></span></div>
 <div class="problem-title">Strange Pop-ups / Scareware</div>
 <div class="problem-desc">"Your computer has a virus, call Microsoft now." It's fake. I'll remove whatever installed it.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">system_update</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="system_update"></span></div>
 <div class="problem-title">Updates Breaking Things</div>
 <div class="problem-desc">Windows update killed your printer, broke your software, or something just stopped working after an update.</div>
 </div>
@@ -547,7 +687,7 @@
 <div class="services-grid">
 <div class="service-card service-card-featured" data-animate="">
 <div class="service-card-badge">Most Common</div>
-<div class="service-icon"><span class="material-symbols-outlined">speed</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="speed"></span></div>
 <div class="service-title">Tune-Up &amp; Cleanup</div>
 <div class="service-desc">The #1 reason people come in. A sluggish computer is usually fixable in an hour — no new hardware needed.</div>
 <ul class="service-list">
@@ -559,7 +699,7 @@
 </ul>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">security</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="security"></span></div>
 <div class="service-title">Virus &amp; Malware Removal</div>
 <div class="service-desc">Full scan, full removal. No bloatware "security software" left behind — just a clean machine.</div>
 <ul class="service-list">
@@ -571,7 +711,7 @@
 </ul>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">restart_alt</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="restart_alt"></span></div>
 <div class="service-title">Bootloop &amp; Crash Repair</div>
 <div class="service-desc">Won't start, loops forever, blue screens — I'll run diagnostics and find the root cause before touching anything.</div>
 <ul class="service-list">
@@ -583,7 +723,7 @@
 </ul>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">wifi</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="wifi"></span></div>
 <div class="service-title">Remote Support</div>
 <div class="service-desc">Can't make it in? I connect to your computer securely and fix it from wherever you are. Works anywhere in Idaho.</div>
 <ul class="service-list">
@@ -595,7 +735,7 @@
 </ul>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">memory</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="memory"></span></div>
 <div class="service-title">Hardware Upgrades</div>
 <div class="service-desc">Sometimes the fix is cheap new hardware. RAM and SSD upgrades can make a 5-year-old computer feel brand new.</div>
 <ul class="service-list">
@@ -607,7 +747,7 @@
 </ul>
 </div>
 <div class="service-card" data-animate="">
-<div class="service-icon"><span class="material-symbols-outlined">devices</span></div>
+<div class="service-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="devices"></span></div>
 <div class="service-title">New Computer Setup</div>
 <div class="service-desc">Just got a new computer and don't want to deal with setup? I'll get it ready — apps, accounts, data transfer, all of it.</div>
 <ul class="service-list">
@@ -691,28 +831,28 @@
 <div class="split" data-animate="">
 <div class="split-card">
 <div class="split-card-title">
-<span class="material-symbols-outlined" style="color:var(--accent)">wifi</span>
+<span class="material-symbols-outlined" style="color:var(--accent)" aria-hidden="true" data-icon="wifi"></span>
             Remote Support
           </div>
 <div class="split-card-desc">I connect to your computer securely over the internet and fix it while you watch. No driving, no waiting. Works anywhere you have internet.</div>
 <ul class="split-list">
-<li><span class="material-symbols-outlined">check</span>No need to leave home</li>
-<li><span class="material-symbols-outlined">check</span>Available statewide — not just Hailey</li>
-<li><span class="material-symbols-outlined">check</span>Great for software issues, virus removal, tune-ups</li>
-<li><span class="material-symbols-outlined">check</span>You see everything I do in real time</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>No need to leave home</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Available statewide — not just Hailey</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Great for software issues, virus removal, tune-ups</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>You see everything I do in real time</li>
 </ul>
 </div>
 <div class="split-card">
 <div class="split-card-title">
-<span class="material-symbols-outlined" style="color:var(--color-green)">storefront</span>
+<span class="material-symbols-outlined" style="color:var(--color-green)" aria-hidden="true" data-icon="storefront"></span>
             In-Person (Hailey)
           </div>
 <div class="split-card-desc">Drop it off in Hailey. Most jobs are same-day. Hardware issues — crashes, bootloops, upgrades — need in-person diagnosis.</div>
 <ul class="split-list">
-<li><span class="material-symbols-outlined">check</span>Required for hardware issues</li>
-<li><span class="material-symbols-outlined">check</span>Same-day turnaround most jobs</li>
-<li><span class="material-symbols-outlined">check</span>Serving Hailey, Ketchum, Sun Valley, Bellevue</li>
-<li><span class="material-symbols-outlined">check</span>Text (208) 366-6111 to arrange drop-off</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Required for hardware issues</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Same-day turnaround most jobs</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Serving Hailey, Ketchum, Sun Valley, Bellevue</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Text (208) 366-6111 to arrange drop-off</li>
 </ul>
 </div>
 </div>
@@ -758,27 +898,27 @@
 </div>
 <div class="faq-list">
 <div class="faq-item" data-animate="">
-<button class="faq-q">How much does computer repair cost?<span class="material-symbols-outlined">expand_more</span></button>
+<button class="faq-q">How much does computer repair cost?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Diagnostics are free — you pay nothing until you know what's wrong and approve the work. Most tune-ups and virus removals run $75–$100. Hardware repairs depend on parts. I'll always quote before I start.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Can you fix my computer remotely?<span class="material-symbols-outlined">expand_more</span></button>
+<button class="faq-q">Can you fix my computer remotely?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Yes — for most software problems. Virus removal, tune-ups, Windows issues, software installs, account problems — all doable remotely. If it's hardware (won't turn on, broken screen, bad drive) it needs to come in.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">How long does it take?<span class="material-symbols-outlined">expand_more</span></button>
+<button class="faq-q">How long does it take?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Most software jobs — tune-ups, virus removal, Windows fixes — are same day, often within a few hours. Hardware jobs depend on whether I have parts on hand. I'll give you an honest timeline upfront.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Is it worth repairing or should I just buy a new computer?<span class="material-symbols-outlined">expand_more</span></button>
+<button class="faq-q">Is it worth repairing or should I just buy a new computer?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Depends on the computer and the problem. If it's slow — usually worth a $75 tune-up that makes it feel new. If the hard drive is dying on a 10-year-old machine — might be time to replace. I'll give you an honest answer after diagnosis, not push unnecessary repairs.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Do you work on Macs too?<span class="material-symbols-outlined">expand_more</span></button>
+<button class="faq-q">Do you work on Macs too?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Yes, though most Mac repairs are more limited than Windows. Software issues, diagnostics, and some hardware I can handle. Macs with soldered components (most post-2016 models) have fewer repair options — I'll tell you upfront what's possible.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Will you lose my files?<span class="material-symbols-outlined">expand_more</span></button>
+<button class="faq-q">Will you lose my files?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">No. Data safety is the first priority. I always assess the risk to your files before doing anything, and for anything that could affect your data, I'll recommend a backup first. If your drive is failing, I'll tell you before it dies completely.</div>
 </div>
 </div>
@@ -792,11 +932,11 @@
 <p class="cta-sub">Text or call — describe what's happening and I'll let you know if I can help and what it'll cost. No pressure, no commitment.</p>
 <div class="cta-buttons">
 <a class="btn btn-primary btn-lg" href="tel:+12083666111">
-<span class="material-symbols-outlined">call</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>
             (208) 366-6111
           </a>
 <a class="btn btn-ghost btn-lg" href="sms:+12083666111">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
             Send a Text
           </a>
 </div>

@@ -33,30 +33,171 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Hailey Device Repair",
-  "description": "Virus and malware removal in Hailey, Idaho. Cleanup for infected, slow, or compromised computers.",
-  "url": "https://www.haileyrepair.com/virus-removal",
+  "description": "Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available statewide.",
+  "url": "https://www.haileyrepair.com",
   "telephone": "+12083666111",
+  "email": "samuel@haileyrepair.com",
+  "image": "https://www.haileyrepair.com/favicon.svg",
+  "priceRange": "$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card, Venmo, Zelle",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Hailey",
     "addressRegion": "ID",
     "addressCountry": "US"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.5196,
+    "longitude": -114.3153
+  },
   "areaServed": [
-    "Hailey",
-    "Ketchum",
-    "Sun Valley",
-    "Bellevue",
-    "Wood River Valley"
+    {
+      "@type": "City",
+      "name": "Hailey",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Ketchum",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Sun Valley",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Bellevue",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "State",
+      "name": "Idaho"
+    }
   ],
-  "serviceType": [
-    "Virus Removal",
-    "Malware Removal",
-    "Scareware Cleanup",
-    "Browser Hijacker Removal",
-    "Computer Cleanup"
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "11:00",
+      "closes": "19:00"
+    }
   ],
-  "@id": "https://www.haileyrepair.com/#business",
+  "founder": {
+    "@type": "Person",
+    "name": "Samuel Torres"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Device Repair Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Phone Repair",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "iPhone Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "iPhone Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Android Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Android Battery Replacement"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Computer Repair",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laptop Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laptop Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Virus & Malware Removal"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Data Recovery"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gaming PC Repair"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "sameAs": [
     "https://g.page/r/CRz04Aqd3UvPEBM",
     "https://www.mapquest.com/us/idaho/hailey-device-repair-800055619",
@@ -65,68 +206,65 @@
     "https://www.yelp.ca/biz/hailey-device-repair-hailey",
     "https://nextdoor.com/pages/hailey-device-repair/",
     "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
+  ],
+  "@id": "https://www.haileyrepair.com/#business"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does virus removal cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most virus and malware cleanup jobs land in the same general range as a tune-up, depending on how infected the machine is and whether anything else is broken. I’ll tell you what it looks like before you’re on the hook for anything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you need to wipe my computer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually no. Most cleanups do not require a wipe. If a reset is the smartest move, I’ll tell you first, explain why, and talk through backup options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you tell if it’s actually a virus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sometimes it really is malware. Sometimes it’s just a bloated browser, bad extensions, a rough Windows install, or failing hardware. I’ll tell you which one it is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I just ignore the popups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If it’s fake browser scareware, maybe for a minute. If the machine keeps redirecting, installing junk, or logging you out of stuff, no. That’s how bad gets worse."
+      }
+    }
   ]
 }</script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much does virus removal cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most virus and malware cleanup jobs land in the same general range as a tune-up, depending on how infected the machine is and whether anything else is broken. I’ll tell you what it looks like before you’re on the hook for anything."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will you need to wipe my computer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Usually no. Most cleanups do not require a wipe. If a reset is the smartest move, I’ll tell you first, explain why, and talk through backup options."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you tell if it’s actually a virus?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Sometimes it really is malware. Sometimes it’s just a bloated browser, bad extensions, a rough Windows install, or failing hardware. I’ll tell you which one it is."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I just ignore the popups?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If it’s fake browser scareware, maybe for a minute. If the machine keeps redirecting, installing junk, or logging you out of stuff, no. That’s how bad gets worse."
-        }
-      }
-    ]
-  }
-  </script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.haileyrepair.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Virus Removal",
-        "item": "https://www.haileyrepair.com/virus-removal"
-      }
-    ]
-  }
-  </script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.haileyrepair.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Virus Removal",
+      "item": "https://www.haileyrepair.com/virus-removal"
+    }
+  ]
+}</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -186,7 +324,7 @@
 <nav class="nav" id="nav" role="navigation">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
-<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
 <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
 </a>
 <ul class="nav-links" role="list">
@@ -198,8 +336,8 @@
 </ul>
 <div class="nav-actions">
 <button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
-<span aria-hidden="true" class="material-symbols-outlined theme-icon-dark">dark_mode</span>
-<span class="material-symbols-outlined theme-icon-light">light_mode</span>
+<span aria-hidden="true" class="material-symbols-outlined theme-icon-dark" data-icon="dark_mode"></span>
+<span class="material-symbols-outlined theme-icon-light" aria-hidden="true" data-icon="light_mode"></span>
 </button>
 <a class="btn btn-primary btn-sm" href="sms:+12083666111">Text Me</a>
 </div>
@@ -231,18 +369,18 @@
         </p>
 <div class="hero-cta">
 <a class="btn btn-primary btn-lg" href="sms:+12083666111">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
             Text Me a Screenshot
           </a>
 <a class="btn btn-ghost btn-lg" href="tel:+12083666111">
-<span class="material-symbols-outlined">call</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>
             (208) 366-6111
           </a>
 </div>
 <div class="hero-trust">
-<div class="hero-trust-item"><span class="material-symbols-outlined">check_circle</span>Same-day cleanup on many software jobs</div>
-<div class="hero-trust-item"><span class="material-symbols-outlined">check_circle</span>Remote support if it still boots and gets online</div>
-<div class="hero-trust-item"><span class="material-symbols-outlined">check_circle</span>Honest diagnosis before paid work</div>
+<div class="hero-trust-item"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Same-day cleanup on many software jobs</div>
+<div class="hero-trust-item"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Remote support if it still boots and gets online</div>
+<div class="hero-trust-item"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Honest diagnosis before paid work</div>
 </div>
 </div>
 </div>
@@ -258,21 +396,21 @@
 <div class="copy-card" data-animate="">
 <h3>Send these first</h3>
 <ul class="check-list">
-<li><span class="material-symbols-outlined">check</span>A screenshot or photo of the popup, warning, or weird tab</li>
-<li><span class="material-symbols-outlined">check</span>What link, attachment, download, or website you clicked right before it started</li>
-<li><span class="material-symbols-outlined">check</span>Whether the computer still boots normally and gets online</li>
-<li><span class="material-symbols-outlined">check</span>Whether your browser changed search engines, keeps redirecting, or opens tabs on its own</li>
-<li><span class="material-symbols-outlined">check</span>The computer brand/model and whether it is Windows or Mac</li>
-<li><span class="material-symbols-outlined">check</span>Any logins, work files, email, or banking access you are most worried about</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>A screenshot or photo of the popup, warning, or weird tab</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>What link, attachment, download, or website you clicked right before it started</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Whether the computer still boots normally and gets online</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Whether your browser changed search engines, keeps redirecting, or opens tabs on its own</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>The computer brand/model and whether it is Windows or Mac</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Any logins, work files, email, or banking access you are most worried about</li>
 </ul>
 </div>
 <div>
 <div class="sidebar-card" data-animate="">
 <div class="sidebar-title">Best screenshots to send</div>
 <ul class="check-list">
-<li><span class="material-symbols-outlined">check</span>The full popup, with the web address visible if possible</li>
-<li><span class="material-symbols-outlined">check</span>Any weird new “security” app or subscription warning</li>
-<li><span class="material-symbols-outlined">check</span>The browser extensions page if something suspicious appeared there</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>The full popup, with the web address visible if possible</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Any weird new “security” app or subscription warning</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>The browser extensions page if something suspicious appeared there</li>
 </ul>
 </div>
 <div class="sidebar-card" data-animate="">
@@ -292,22 +430,22 @@
 </div>
 <div class="problem-grid">
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">warning</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="warning"></span></div>
 <div class="problem-title">Fake Virus Warnings</div>
 <div class="problem-desc">Scareware popups telling you to call Microsoft, renew something fake, or install more junk.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">open_in_new</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="open_in_new"></span></div>
 <div class="problem-title">Weird Tabs &amp; Redirects</div>
 <div class="problem-desc">Your browser keeps opening random pages, changing your search engine, or sending you somewhere sketchy.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">speed</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="speed"></span></div>
 <div class="problem-title">Sudden Slowdown</div>
 <div class="problem-desc">Boot takes forever, fans run nonstop, apps freeze, and basic stuff feels miserable for no clear reason.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">extension</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="extension"></span></div>
 <div class="problem-title">Browser Hijackers</div>
 <div class="problem-desc">Extensions, toolbars, fake coupons, or mystery “helpers” you never meant to install.</div>
 </div>
@@ -323,22 +461,22 @@
 <p>Then I clean it up, remove what shouldn’t be there, and make sure the machine is stable again. If the problem turns out to be something else, like a failing drive, bad RAM, or a Windows issue, I’ll tell you that too. I’m not going to call everything a virus just to sell a cleanup — and if this belongs under broader <a class="body-link" href="/computer-support">computer help</a>, I’ll say that plainly.</p>
 <h3>This page is for you if:</h3>
 <ul class="check-list">
-<li><span class="material-symbols-outlined">check</span>Your computer suddenly feels unsafe to use</li>
-<li><span class="material-symbols-outlined">check</span>You clicked something sketchy and now things are weird</li>
-<li><span class="material-symbols-outlined">check</span>A family member installed “helpful” software and now the machine is a mess</li>
-<li><span class="material-symbols-outlined">check</span>Your browser is full of junk and you want it properly cleaned up</li>
-<li><span class="material-symbols-outlined">check</span>You want an honest answer before spending money on a replacement computer</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Your computer suddenly feels unsafe to use</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>You clicked something sketchy and now things are weird</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>A family member installed “helpful” software and now the machine is a mess</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Your browser is full of junk and you want it properly cleaned up</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>You want an honest answer before spending money on a replacement computer</li>
 </ul>
 </div>
 <div>
 <div class="sidebar-card" data-animate="">
 <div class="sidebar-title">What gets cleaned up</div>
 <ul class="check-list">
-<li><span class="material-symbols-outlined">check</span>Malware and adware</li>
-<li><span class="material-symbols-outlined">check</span>Browser redirects and hijackers</li>
-<li><span class="material-symbols-outlined">check</span>Fake antivirus and scareware</li>
-<li><span class="material-symbols-outlined">check</span>Suspicious startup apps</li>
-<li><span class="material-symbols-outlined">check</span>Junk software dragging down performance</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Malware and adware</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Browser redirects and hijackers</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Fake antivirus and scareware</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Suspicious startup apps</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check"></span>Junk software dragging down performance</li>
 </ul>
 </div>
 <div class="sidebar-card" data-animate="">
@@ -365,22 +503,22 @@
 </div>
 <div class="problem-grid">
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">call</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span></div>
 <div class="problem-title">Do not call the number in the popup</div>
 <div class="problem-desc">Microsoft, Google, and Apple do not throw random browser warnings telling you to call a support number. That is the scam.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">download</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="download"></span></div>
 <div class="problem-title">Do not install another random cleaner</div>
 <div class="problem-desc">A lot of “fix it now” tools are just more junk, more scare tactics, or another subscription trap layered on top.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">password</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="password"></span></div>
 <div class="problem-title">Do not keep logging into important accounts</div>
 <div class="problem-desc">If the browser is redirecting, loading weird pages, or acting hijacked, stop entering passwords until it is cleaned up.</div>
 </div>
 <div class="problem-card" data-animate="">
-<div class="problem-icon"><span class="material-symbols-outlined">shopping_cart</span></div>
+<div class="problem-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="shopping_cart"></span></div>
 <div class="problem-title">Do not assume you need a new computer</div>
 <div class="problem-desc">A messy browser hijack or scareware problem is often cheaper to fix than people think. Get a diagnosis before replacing hardware.</div>
 </div>
@@ -395,19 +533,19 @@
 </div>
 <div class="faq-list">
 <div class="faq-item" data-animate="">
-<button class="faq-q">How much does virus removal cost?<span class="material-symbols-outlined">expand_more</span></button>
+<button class="faq-q">How much does virus removal cost?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Most virus and malware cleanup jobs land in the same general range as a tune-up, depending on how infected the machine is and whether anything else is broken. I’ll tell you what it looks like before you’re on the hook for anything.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Will you need to wipe my computer?<span class="material-symbols-outlined">expand_more</span></button>
+<button class="faq-q">Will you need to wipe my computer?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Usually no. Most cleanups do not require a wipe. If a reset is the smartest move, I’ll tell you first, explain why, and talk through backup options.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Can you tell if it’s actually a virus?<span class="material-symbols-outlined">expand_more</span></button>
+<button class="faq-q">Can you tell if it’s actually a virus?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Yes. Sometimes it really is malware. Sometimes it’s just a bloated browser, bad extensions, a rough Windows install, or failing hardware. I’ll tell you which one it is.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Can I just ignore the popups?<span class="material-symbols-outlined">expand_more</span></button>
+<button class="faq-q">Can I just ignore the popups?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">If it’s fake browser scareware, maybe for a minute. If the machine keeps redirecting, installing junk, or logging you out of stuff, no. That’s how bad gets worse.</div>
 </div>
 </div>
@@ -420,11 +558,11 @@
 <p class="cta-sub">Text me what it’s doing, or send a photo of the popup. I’ll tell you if it sounds like malware, browser junk, or something deeper.</p>
 <div class="cta-buttons">
 <a class="btn btn-primary btn-lg" href="sms:+12083666111">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
             Send a Text
           </a>
 <a class="btn btn-ghost btn-lg" href="/contact">
-<span class="material-symbols-outlined">arrow_forward</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span>
             Contact Page
           </a>
 </div>

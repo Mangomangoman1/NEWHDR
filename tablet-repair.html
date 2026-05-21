@@ -93,33 +93,8 @@ a{color:inherit;text-decoration:none}
   "description": "Professional iPad and tablet repair service in Hailey, Idaho. Screen replacement, battery replacement, charging port repair, and more for Apple iPad, Samsung Galaxy Tab, Amazon Fire, and other tablets.",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "Hailey Device Repair",
-    "telephone": "+12083666111",
-    "email": "samuel@haileyrepair.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Hailey",
-      "addressRegion": "ID",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      "Hailey",
-      "Ketchum",
-      "Sun Valley",
-      "Bellevue",
-      "Idaho"
-    ],
     "@id": "https://www.haileyrepair.com/#business",
-    "url": "https://www.haileyrepair.com",
-    "sameAs": [
-      "https://g.page/r/CRz04Aqd3UvPEBM",
-      "https://www.mapquest.com/us/idaho/hailey-device-repair-800055619",
-      "https://local.yahoo.com/info-240633004-hailey-device-repair-hailey/",
-      "https://www.yelp.com/biz/hailey-device-repair-hailey",
-      "https://www.yelp.ca/biz/hailey-device-repair-hailey",
-      "https://nextdoor.com/pages/hailey-device-repair/",
-      "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
-    ]
+    "name": "Hailey Device Repair"
   },
   "offers": {
     "@type": "AggregateOffer",
@@ -132,7 +107,12 @@ a{color:inherit;text-decoration:none}
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "iPad Screen Replacement"
+          "name": "iPad Screen Replacement",
+          "provider": {
+            "@type": "LocalBusiness",
+            "@id": "https://www.haileyrepair.com/#business",
+            "name": "Hailey Device Repair"
+          }
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
@@ -144,7 +124,12 @@ a{color:inherit;text-decoration:none}
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Tablet Battery Replacement"
+          "name": "Tablet Battery Replacement",
+          "provider": {
+            "@type": "LocalBusiness",
+            "@id": "https://www.haileyrepair.com/#business",
+            "name": "Hailey Device Repair"
+          }
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
@@ -156,7 +141,12 @@ a{color:inherit;text-decoration:none}
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Tablet Charging Port Repair"
+          "name": "Tablet Charging Port Repair",
+          "provider": {
+            "@type": "LocalBusiness",
+            "@id": "https://www.haileyrepair.com/#business",
+            "name": "Hailey Device Repair"
+          }
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
@@ -190,83 +180,79 @@ a{color:inherit;text-decoration:none}
   ]
 }</script>
 <!-- FAQPage -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "How much does iPad screen repair cost in Hailey, Idaho?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "iPad screen replacement starts at $79 depending on the model and generation. iPad Pro models with Liquid Retina displays cost more than standard iPads. You get an exact quote before any work starts."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Can you fix a cracked iPad that still works?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Absolutely. If the LCD underneath is fine and only the glass is cracked, the repair is simpler and cheaper. Even if the display has lines or dead spots, I can usually replace just the screen assembly. Text me a photo of the damage for a quick assessment."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Do you repair Samsung tablets and Amazon Fire tablets?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. I repair all major tablet brands including Samsung Galaxy Tab (S series, A series, FE), Amazon Fire (7, HD 8, HD 10, Max), Lenovo, and more. Same thorough diagnosis process and 40-day warranty."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How long does a tablet screen replacement take?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Most tablet screen replacements take 1-2 hours. iPad screens are adhered with strong adhesive and require careful heat separation, so they take a bit longer than phone screens. I'll give you a time estimate when you drop it off."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Is it worth repairing an older iPad?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "For iPads still receiving software updates (iPad 7th gen and newer, all iPad Air 3+, all iPad Pro 2018+), repair almost always makes sense — a $79 screen fix vs a $329+ replacement is easy math. For older models, I'll give you an honest recommendation."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "My kid dropped the iPad and the screen is shattered. Can you fix it today?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Most likely yes. I keep common iPad screens in stock. Text me the iPad model (Settings → General → About) and I'll confirm same-day availability. Drop-off available in Hailey."
-            }
-        }
-    ]
-}
-  </script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does iPad screen repair cost in Hailey, Idaho?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "iPad screen replacement starts at $79 depending on the model and generation. iPad Pro models with Liquid Retina displays cost more than standard iPads. You get an exact quote before any work starts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you fix a cracked iPad that still works?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. If the LCD underneath is fine and only the glass is cracked, the repair is simpler and cheaper. Even if the display has lines or dead spots, I can usually replace just the screen assembly. Text me a photo of the damage for a quick assessment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair Samsung tablets and Amazon Fire tablets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I repair all major tablet brands including Samsung Galaxy Tab (S series, A series, FE), Amazon Fire (7, HD 8, HD 10, Max), Lenovo, and more. Same thorough diagnosis process and 40-day warranty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a tablet screen replacement take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most tablet screen replacements take 1-2 hours. iPad screens are adhered with strong adhesive and require careful heat separation, so they take a bit longer than phone screens. I'll give you a time estimate when you drop it off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it worth repairing an older iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For iPads still receiving software updates (iPad 7th gen and newer, all iPad Air 3+, all iPad Pro 2018+), repair almost always makes sense — a $79 screen fix vs a $329+ replacement is easy math. For older models, I'll give you an honest recommendation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My kid dropped the iPad and the screen is shattered. Can you fix it today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most likely yes. I keep common iPad screens in stock. Text me the iPad model (Settings → General → About) and I'll confirm same-day availability. Drop-off available in Hailey."
+      }
+    }
+  ]
+}</script>
 <!-- BreadcrumbList -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://www.haileyrepair.com"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Tablet Repair",
-            "item": "https://www.haileyrepair.com/tablet-repair"
-        }
-    ]
-}
-  </script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.haileyrepair.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tablet Repair",
+      "item": "https://www.haileyrepair.com/tablet-repair"
+    }
+  ]
+}</script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SGQ617V748"></script>
 <script>
@@ -281,7 +267,7 @@ a{color:inherit;text-decoration:none}
 <!-- Page load curtain -->
 <div class="page-curtain" id="pageCurtain">
 <div class="page-curtain-logo">
-<span aria-hidden="true" class="material-symbols-outlined">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="smartphone"></span>
       Hailey Device Repair
     </div>
 </div>
@@ -292,7 +278,7 @@ a{color:inherit;text-decoration:none}
 <nav class="nav" id="nav" role="navigation">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
-<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
 <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
 </a>
 <ul class="nav-links" role="list">
@@ -304,8 +290,8 @@ a{color:inherit;text-decoration:none}
 </ul>
 <div class="nav-actions">
 <button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
-<span aria-hidden="true" class="material-symbols-outlined theme-icon-dark">dark_mode</span>
-<span class="material-symbols-outlined theme-icon-light">light_mode</span>
+<span aria-hidden="true" class="material-symbols-outlined theme-icon-dark" data-icon="dark_mode"></span>
+<span class="material-symbols-outlined theme-icon-light" aria-hidden="true" data-icon="light_mode"></span>
 </button>
 <a class="btn btn-primary btn-sm" href="sms:+12083666111">Text Me</a>
 </div>
@@ -355,29 +341,29 @@ a{color:inherit;text-decoration:none}
           </p>
 <div class="lp-hero-highlights">
 <div class="lp-highlight">
-<span aria-hidden="true" class="material-symbols-outlined">schedule</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="schedule"></span>
 <span>Same-day service</span>
 </div>
 <div class="lp-highlight">
-<span aria-hidden="true" class="material-symbols-outlined">verified</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="verified"></span>
 <span>40-day warranty</span>
 </div>
 <div class="lp-highlight">
-<span aria-hidden="true" class="material-symbols-outlined">money_off</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="money_off"></span>
 <span>Thorough diagnosis included</span>
 </div>
 <div class="lp-highlight">
-<span aria-hidden="true" class="material-symbols-outlined">child_care</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="child_care"></span>
 <span>Kid-proof options</span>
 </div>
 </div>
 <div class="hero-actions">
 <a class="btn btn-primary btn-lg" href="sms:+12083666111">
-<span aria-hidden="true" class="material-symbols-outlined">sms</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>
               Text for a Quote
             </a>
 <a class="btn btn-outline btn-lg" href="tel:+12083666111">
-<span class="material-symbols-outlined">call</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>
               (208) 366-6111
             </a>
 </div>
@@ -385,16 +371,16 @@ a{color:inherit;text-decoration:none}
 <div class="lp-hero-visual" data-animate="">
 <div class="lp-price-card">
 <div class="lp-price-card-header">
-<span aria-hidden="true" class="material-symbols-outlined">tablet</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="tablet"></span>
 <span>Tablet Repairs from</span>
 </div>
 <div class="lp-price-card-amount">$49</div>
 <div class="lp-price-card-sub">Charging port repair starting price</div>
 <div class="lp-price-card-divider"></div>
 <ul class="lp-price-card-perks">
-<li><span class="material-symbols-outlined">check_circle</span> iPad, Samsung, Amazon Fire</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> OEM-quality parts</li>
-<li><span aria-hidden="true" class="material-symbols-outlined">check_circle</span> Screen protector install available</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> iPad, Samsung, Amazon Fire</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> OEM-quality parts</li>
+<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Screen protector install available</li>
 </ul>
 </div>
 </div>
@@ -414,21 +400,21 @@ a{color:inherit;text-decoration:none}
 <div class="lp-info-cards" data-animate="">
 <div class="lp-info-card">
 <div class="lp-info-card-icon">
-<span class="material-symbols-outlined" style="color:var(--color-green)">savings</span>
+<span class="material-symbols-outlined" style="color:var(--color-green)" aria-hidden="true" data-icon="savings"></span>
 </div>
 <h3>Save $250+</h3>
 <p>A cracked iPad screen costs $79–$129 to repair. A new iPad starts at $329. Even with Apple's own repair pricing ($199–$499), I'm cheaper — and faster.</p>
 </div>
 <div class="lp-info-card">
 <div class="lp-info-card-icon">
-<span class="material-symbols-outlined" style="color:var(--color-blue)">child_care</span>
+<span class="material-symbols-outlined" style="color:var(--color-blue)" aria-hidden="true" data-icon="child_care"></span>
 </div>
 <h3>Their stuff stays</h3>
 <p>All their apps, games, schoolwork, and saved progress — untouched. Screen repair doesn't affect data. No re-downloading, no lost Minecraft worlds.</p>
 </div>
 <div class="lp-info-card">
 <div class="lp-info-card-icon">
-<span class="material-symbols-outlined" style="color:var(--color-orange)">shield</span>
+<span class="material-symbols-outlined" style="color:var(--color-orange)" aria-hidden="true" data-icon="shield"></span>
 </div>
 <h3>Protect it better next time</h3>
 <p>After every screen repair, I'll install a tempered glass screen protector and recommend the best case for your specific tablet. Prevention &gt; repair.</p>
@@ -454,7 +440,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-pricing-row">
 <div class="lp-pricing-col lp-pricing-col--name">
-<span class="material-symbols-outlined">screenshot</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="screenshot"></span>
             iPad Screen Replacement
           </div>
 <div class="lp-pricing-col lp-pricing-col--price" data-label="Starting at"><strong>$79</strong></div>
@@ -462,7 +448,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-pricing-row">
 <div class="lp-pricing-col lp-pricing-col--name">
-<span class="material-symbols-outlined">screenshot</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="screenshot"></span>
             iPad Pro Screen (Liquid Retina)
           </div>
 <div class="lp-pricing-col lp-pricing-col--price" data-label="Starting at"><strong>$129</strong></div>
@@ -470,7 +456,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-pricing-row">
 <div class="lp-pricing-col lp-pricing-col--name">
-<span aria-hidden="true" class="material-symbols-outlined">screenshot</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="screenshot"></span>
             Samsung / Android Tablet Screen
           </div>
 <div class="lp-pricing-col lp-pricing-col--price" data-label="Starting at"><strong>$69</strong></div>
@@ -478,7 +464,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-pricing-row">
 <div class="lp-pricing-col lp-pricing-col--name">
-<span aria-hidden="true" class="material-symbols-outlined">battery_full</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="battery_full"></span>
             Battery Replacement
           </div>
 <div class="lp-pricing-col lp-pricing-col--price" data-label="Starting at"><strong>$59</strong></div>
@@ -486,7 +472,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-pricing-row">
 <div class="lp-pricing-col lp-pricing-col--name">
-<span aria-hidden="true" class="material-symbols-outlined">power</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="power"></span>
             Charging Port
           </div>
 <div class="lp-pricing-col lp-pricing-col--price" data-label="Starting at"><strong>$49</strong></div>
@@ -494,7 +480,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-pricing-row">
 <div class="lp-pricing-col lp-pricing-col--name">
-<span aria-hidden="true" class="material-symbols-outlined">volume_up</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="volume_up"></span>
             Speaker / Headphone Jack
           </div>
 <div class="lp-pricing-col lp-pricing-col--price" data-label="Starting at"><strong>$45</strong></div>
@@ -502,7 +488,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-pricing-row">
 <div class="lp-pricing-col lp-pricing-col--name">
-<span aria-hidden="true" class="material-symbols-outlined">touch_app</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="touch_app"></span>
             Home Button / Touch ID
           </div>
 <div class="lp-pricing-col lp-pricing-col--price" data-label="Starting at"><strong>$55</strong></div>
@@ -510,7 +496,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-pricing-row">
 <div class="lp-pricing-col lp-pricing-col--name">
-<span aria-hidden="true" class="material-symbols-outlined">water_drop</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="water_drop"></span>
             Water Damage Recovery
           </div>
 <div class="lp-pricing-col lp-pricing-col--price" data-label="Starting at"><strong>$59</strong></div>
@@ -518,7 +504,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-pricing-row lp-pricing-row--free">
 <div class="lp-pricing-col lp-pricing-col--name">
-<span aria-hidden="true" class="material-symbols-outlined">manage_search</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="manage_search"></span>
             Diagnostics
           </div>
 <div class="lp-pricing-col lp-pricing-col--price" data-label="Starting at"><strong>FREE</strong></div>
@@ -526,7 +512,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 <div class="pricing-note">
-<span class="material-symbols-outlined">info</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="info"></span>
 <p>* Water damage depends on severity. iPad Pro/Air repairs cost more than standard iPad due to parts. </p>
 </div>
 </div>
@@ -544,7 +530,7 @@ a{color:inherit;text-decoration:none}
 <div class="lp-models-grid" data-animate="">
 <div class="lp-model-group">
 <h3 class="lp-model-group-title">
-<span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px">tablet_mac</span>
+<span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px" aria-hidden="true" data-icon="tablet_mac"></span>
             Apple iPad
           </h3>
 <div class="lp-model-tags">
@@ -562,7 +548,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-model-group">
 <h3 class="lp-model-group-title">
-<span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px">tablet_android</span>
+<span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px" aria-hidden="true" data-icon="tablet_android"></span>
             Samsung Galaxy Tab
           </h3>
 <div class="lp-model-tags">
@@ -575,7 +561,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-model-group">
 <h3 class="lp-model-group-title">
-<span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px">devices_other</span>
+<span class="material-symbols-outlined" style="font-size:1rem;vertical-align:-2px" aria-hidden="true" data-icon="devices_other"></span>
             Other Brands
           </h3>
 <div class="lp-model-tags">
@@ -602,7 +588,7 @@ a{color:inherit;text-decoration:none}
 <div class="lp-info-cards" data-animate="">
 <div class="lp-info-card">
 <div class="lp-info-card-icon">
-<span class="material-symbols-outlined" style="color:var(--color-blue)">tablet_mac</span>
+<span class="material-symbols-outlined" style="color:var(--color-blue)" aria-hidden="true" data-icon="tablet_mac"></span>
 </div>
 <h3>Apple iPad</h3>
 <p><strong>Screen:</strong> Most iPads use a fused glass+LCD/LED assembly held by strong adhesive. Removal requires precise heat application. iPad Pro uses Liquid Retina (more expensive panel).</p>
@@ -611,7 +597,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-info-card">
 <div class="lp-info-card-icon">
-<span class="material-symbols-outlined" style="color:var(--color-green)">tablet_android</span>
+<span class="material-symbols-outlined" style="color:var(--color-green)" aria-hidden="true" data-icon="tablet_android"></span>
 </div>
 <h3>Samsung Galaxy Tab</h3>
 <p><strong>Screen:</strong> S-series uses Super AMOLED (gorgeous but pricey). A-series and FE use LCD (more affordable). AMOLED screens cost 2× what LCD screens cost.</p>
@@ -620,7 +606,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-info-card">
 <div class="lp-info-card-icon">
-<span class="material-symbols-outlined" style="color:var(--color-orange)">local_fire_department</span>
+<span class="material-symbols-outlined" style="color:var(--color-orange)" aria-hidden="true" data-icon="local_fire_department"></span>
 </div>
 <h3>Amazon Fire</h3>
 <p><strong>Screen:</strong> LCD screens across the board. Generally the most affordable tablet screens to replace. Build quality is simpler — designed for value.</p>
@@ -643,29 +629,29 @@ a{color:inherit;text-decoration:none}
 <div class="process-step" data-animate="">
 <div class="process-number">01</div>
 <div class="process-icon">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
 </div>
 <h3 class="process-title">Text Me</h3>
 <p class="process-desc">Text (208) 366-6111 with your tablet model and what happened. A photo of the damage helps me quote faster. I reply within 2 hours.</p>
 </div>
 <div aria-hidden="true" class="process-connector">
-<span class="material-symbols-outlined">arrow_forward</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span>
 </div>
 <div class="process-step" data-animate="">
 <div class="process-number">02</div>
 <div class="process-icon">
-<span class="material-symbols-outlined">handshake</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="handshake"></span>
 </div>
 <h3 class="process-title">Drop Off or Ship</h3>
 <p class="process-desc">In the Wood River Valley? Drop it off in Hailey. Elsewhere in Idaho? Ship it with my free packing instructions.</p>
 </div>
 <div aria-hidden="true" class="process-connector">
-<span class="material-symbols-outlined">arrow_forward</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span>
 </div>
 <div class="process-step" data-animate="">
 <div class="process-number">03</div>
 <div class="process-icon">
-<span class="material-symbols-outlined">done_all</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="done_all"></span>
 </div>
 <h3 class="process-title">Get It Back</h3>
 <p class="process-desc">Most tablet repairs are done same-day. I text when it's ready. 40-day warranty on every repair, parts and labor.</p>
@@ -686,7 +672,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span class="faq-q-text">How much does iPad screen repair cost in Hailey?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>iPad screen replacement starts at <strong>$79</strong> for standard iPad models. iPad Air is typically $89–$109, and iPad Pro with Liquid Retina display starts at $129. I'll give you an exact quote based on your specific model — <strong>every repair starts with a thorough diagnosis</strong>.</p>
@@ -695,7 +681,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span class="faq-q-text">Can you fix a cracked iPad that still works?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Yes — and it's usually cheaper when the LCD underneath is fine. The glass digitizer (the part you touch) can sometimes be replaced separately from the display. Even if you see lines or dead spots, the display assembly can usually be replaced. <strong>Text me a photo</strong> and I'll give you a quick assessment.</p>
@@ -704,7 +690,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span class="faq-q-text">Do you repair Samsung tablets and Amazon Fire?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Absolutely. Samsung Galaxy Tab (S-series, A-series, FE), Amazon Fire (7, HD 8, HD 10, Max 11), Lenovo, Microsoft Surface Go — I repair all major brands. Same thorough diagnosis, same 40-day warranty, same commitment to honest assessment.</p>
@@ -713,7 +699,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span class="faq-q-text">How long does a tablet screen replacement take?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Most tablet screens take <strong>1–2 hours</strong>. Tablet screens are adhered with strong adhesive (unlike phones that use clips), so careful heat separation is needed. The precision work takes time, but it's worth it — a rushed tablet screen repair leads to dust under the glass.</p>
@@ -722,7 +708,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span class="faq-q-text">Is it worth repairing an older iPad?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>If it still gets software updates (iPad 7th gen+, iPad Air 3+, all iPad Pro 2018+), repair almost always makes sense. <strong>$79 for a screen vs $329+ for a new iPad</strong> is easy math. For iPads no longer getting updates (iPad 6th gen and older), I'll give you an honest recommendation — sometimes the money is better spent toward a newer model.</p>
@@ -731,7 +717,7 @@ a{color:inherit;text-decoration:none}
 <details class="faq-item" data-animate="">
 <summary class="faq-question">
 <span class="faq-q-text">My kid dropped the iPad — can you fix it today?</span>
-<span class="material-symbols-outlined faq-chevron">expand_more</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
 </summary>
 <div class="faq-answer">
 <p>Probably yes. I keep common iPad screens in stock. <strong>Text me the model</strong> (go to Settings → General → About) and I'll confirm same-day availability. I also sell tempered glass screen protectors and can recommend the best kid-proof case — so next time it survives the drop.</p>
@@ -750,11 +736,11 @@ a{color:inherit;text-decoration:none}
 <p class="section-sub">Text me your tablet model and what happened. I'll reply with a quote — usually within an hour.</p>
 <div class="hero-actions" style="justify-content: center;">
 <a class="btn btn-primary btn-lg" href="sms:+12083666111">
-<span aria-hidden="true" class="material-symbols-outlined">sms</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>
             Text (208) 366-6111
           </a>
 <a class="btn btn-outline btn-lg" href="mailto:samuel@haileyrepair.com">
-<span aria-hidden="true" class="material-symbols-outlined">mail</span>
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="mail"></span>
             Email Me
           </a>
 </div>
@@ -771,17 +757,17 @@ a{color:inherit;text-decoration:none}
 <h2 class="section-title" data-animate="" style="font-size: 1.3rem; text-align: center;">I also repair…</h2>
 <div class="related-cards">
 <a class="related-card" href="/iphone-repair">
-<span aria-hidden="true" class="material-symbols-outlined related-card-icon">phone_iphone</span>
+<span aria-hidden="true" class="material-symbols-outlined related-card-icon" data-icon="phone_iphone"></span>
 <strong>iPhone Repair</strong>
 <span>All models, same-day service</span>
 </a>
 <a class="related-card" href="/android-repair">
-<span aria-hidden="true" class="material-symbols-outlined related-card-icon">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined related-card-icon" data-icon="smartphone"></span>
 <strong>Android Repair</strong>
 <span>Samsung, Pixel, OnePlus &amp; more</span>
 </a>
 <a class="related-card" href="/laptop-repair">
-<span aria-hidden="true" class="material-symbols-outlined related-card-icon">laptop</span>
+<span aria-hidden="true" class="material-symbols-outlined related-card-icon" data-icon="laptop"></span>
 <strong>Laptop &amp; PC</strong>
 <span>Mac, Windows, Chromebook</span>
 </a>
@@ -793,7 +779,7 @@ a{color:inherit;text-decoration:none}
 <div class="container footer-inner">
 <div class="footer-brand" data-animate="">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
-<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon">smartphone</span>
+<span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
 <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
 </a>
 <p class="footer-tagline">Don't replace it. Let me fix it.</p>
@@ -860,7 +846,7 @@ a{color:inherit;text-decoration:none}
 <div class="help-fab-options">
 <a class="help-fab-option" href="sms:+12083666111">
 <div class="help-fab-option-icon help-fab-option-icon--text">
-<span class="material-symbols-outlined">sms</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
 </div>
 <div class="help-fab-option-info">
 <strong>Text me</strong>
@@ -869,7 +855,7 @@ a{color:inherit;text-decoration:none}
 </a>
 <a class="help-fab-option" href="tel:+12083666111">
 <div class="help-fab-option-icon help-fab-option-icon--call">
-<span class="material-symbols-outlined">call</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>
 </div>
 <div class="help-fab-option-info">
 <strong>Call</strong>
@@ -878,7 +864,7 @@ a{color:inherit;text-decoration:none}
 </a>
 <a class="help-fab-option" href="/contact">
 <div class="help-fab-option-icon help-fab-option-icon--quote">
-<span class="material-symbols-outlined">description</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="description"></span>
 </div>
 <div class="help-fab-option-info">
 <strong>Request a quote</strong>
@@ -893,7 +879,7 @@ a{color:inherit;text-decoration:none}
 <button aria-label="Get help" class="help-fab-trigger" id="helpFabTrigger">
 <span class="help-fab-dot"></span>
 <span class="help-fab-label-text">Need help?</span>
-<span class="material-symbols-outlined">close</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span>
 </button>
 </div>
 <script defer="" src="main.js?v=home-20260514"></script>

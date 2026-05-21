@@ -84,36 +84,60 @@
       ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://www.haileyrepair.com/#business",
       "name": "Hailey Device Repair",
+      "description": "Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available statewide.",
       "url": "https://www.haileyrepair.com",
       "telephone": "+12083666111",
       "email": "samuel@haileyrepair.com",
-      "priceRange": "$-$$",
-      "image": "https://www.haileyrepair.com/og-image.svg",
+      "image": "https://www.haileyrepair.com/favicon.svg",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card, Venmo, Zelle",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Hailey",
         "addressRegion": "ID",
         "addressCountry": "US"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.5196,
+        "longitude": -114.3153
+      },
       "areaServed": [
         {
           "@type": "City",
-          "name": "Hailey"
+          "name": "Hailey",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
         },
         {
           "@type": "City",
-          "name": "Ketchum"
+          "name": "Ketchum",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
         },
         {
           "@type": "City",
-          "name": "Sun Valley"
+          "name": "Sun Valley",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
         },
         {
           "@type": "City",
-          "name": "Bellevue"
+          "name": "Bellevue",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
         },
         {
           "@type": "State",
@@ -143,6 +167,91 @@
           "closes": "19:00"
         }
       ],
+      "founder": {
+        "@type": "Person",
+        "name": "Samuel Torres"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Device Repair Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Phone Repair",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "iPhone Screen Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "iPhone Battery Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Android Screen Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Android Battery Replacement"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Computer Repair",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Laptop Screen Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Laptop Battery Replacement"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Virus & Malware Removal"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Data Recovery"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Gaming PC Repair"
+                }
+              }
+            ]
+          }
+        ]
+      },
       "sameAs": [
         "https://g.page/r/CRz04Aqd3UvPEBM",
         "https://www.mapquest.com/us/idaho/hailey-device-repair-800055619",
@@ -151,7 +260,8 @@
         "https://www.yelp.ca/biz/hailey-device-repair-hailey",
         "https://nextdoor.com/pages/hailey-device-repair/",
         "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
-      ]
+      ],
+      "@id": "https://www.haileyrepair.com/#business"
     },
     {
       "@type": "Service",
@@ -160,7 +270,9 @@
       "serviceType": "No-power laptop diagnostic and repair",
       "url": "https://www.haileyrepair.com/laptop-wont-turn-on",
       "provider": {
-        "@id": "https://www.haileyrepair.com/#business"
+        "@type": "LocalBusiness",
+        "@id": "https://www.haileyrepair.com/#business",
+        "name": "Hailey Device Repair"
       },
       "areaServed": [
         "Hailey",
@@ -291,7 +403,7 @@
 <a class="skip-link" href="#main">Skip to main content</a>
 <nav class="nav" id="nav" role="navigation">
 <div class="nav-inner">
-<a aria-label="Hailey Device Repair Home" class="nav-logo" href="/"><span aria-hidden="true" class="material-symbols-outlined">handyman</span><span>Hailey Device <strong>Repair</strong></span></a>
+<a aria-label="Hailey Device Repair Home" class="nav-logo" href="/"><span aria-hidden="true" class="material-symbols-outlined" data-icon="handyman"></span><span>Hailey Device <strong>Repair</strong></span></a>
 <ul class="nav-links" role="list">
 <li><a class="nav-link" href="/laptop-repair">Laptop Repair</a></li>
 <li><a class="nav-link" href="#diagnostic">Diagnostic</a></li>
@@ -300,10 +412,10 @@
 <li><a class="nav-link" href="/contact">Contact</a></li>
 </ul>
 <div class="nav-actions">
-<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle"><span aria-hidden="true" class="material-symbols-outlined theme-icon-dark">dark_mode</span><span aria-hidden="true" class="material-symbols-outlined theme-icon-light">light_mode</span></button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle"><span aria-hidden="true" class="material-symbols-outlined theme-icon-dark" data-icon="dark_mode"></span><span aria-hidden="true" class="material-symbols-outlined theme-icon-light" data-icon="light_mode"></span></button>
 <a class="btn btn-primary btn-small" href="sms:+12083666111">Text Me</a>
 </div>
-<button aria-expanded="false" aria-label="Open menu" class="nav-hamburger" id="navHamburger"><span class="material-symbols-outlined">menu</span></button>
+<button aria-expanded="false" aria-label="Open menu" class="nav-hamburger" id="navHamburger"><span class="material-symbols-outlined" aria-hidden="true" data-icon="menu"></span></button>
 </div>
 <div aria-hidden="true" class="nav-mobile" id="navMobile">
 <ul role="list">
@@ -325,14 +437,14 @@
 <h1>No-Power Laptop Repair in Hailey, Idaho</h1>
 <p class="hero-lede">Dead MacBook, Windows laptop, Chromebook, or gaming laptop? Use the bench rail below to get safe first steps, avoid making it worse, and send me a repair brief that actually helps diagnose it.</p>
 <div class="hero-actions">
-<a class="btn btn-primary" href="sms:+12083666111?body=Hi%20Samuel%20-%20my%20laptop%20won't%20turn%20on.%20Model%3A%20%0AWhat%20happens%20when%20I%20press%20power%3A%20%0ACharger%20behavior%3A%20%0AAny%20spill%2Fheat%2Fswelling%3A%20%0AIs%20the%20data%20important%3A%20"><span aria-hidden="true" class="material-symbols-outlined">sms</span>Text a no-power brief</a>
-<a class="btn btn-ghost" href="#diagnostic"><span aria-hidden="true" class="material-symbols-outlined">offline_bolt</span>Run the bench rail</a>
+<a class="btn btn-primary" href="sms:+12083666111?body=Hi%20Samuel%20-%20my%20laptop%20won't%20turn%20on.%20Model%3A%20%0AWhat%20happens%20when%20I%20press%20power%3A%20%0ACharger%20behavior%3A%20%0AAny%20spill%2Fheat%2Fswelling%3A%20%0AIs%20the%20data%20important%3A%20"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>Text a no-power brief</a>
+<a class="btn btn-ghost" href="#diagnostic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="offline_bolt"></span>Run the bench rail</a>
 </div>
 <div class="phone-strip"><span>Fastest path:</span><a href="tel:+12083666111">(208) 366-6111</a><span>Hailey drop-off + Idaho mail-in</span></div>
 <div aria-label="Service highlights" class="trust-row">
-<span class="trust-chip"><span aria-hidden="true" class="material-symbols-outlined">diagnosis</span>Diagnosis before parts</span>
-<span class="trust-chip"><span aria-hidden="true" class="material-symbols-outlined">shield</span>40-day warranty</span>
-<span class="trust-chip"><span aria-hidden="true" class="material-symbols-outlined">folder_copy</span>Data-first thinking</span>
+<span class="trust-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="diagnosis"></span>Diagnosis before parts</span>
+<span class="trust-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="shield"></span>40-day warranty</span>
+<span class="trust-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="folder_copy"></span>Data-first thinking</span>
 </div>
 </div>
 <div class="rail-card" data-animate="" id="diagnostic">
@@ -374,9 +486,9 @@
 <p class="section-sub">A dead laptop can still be recoverable. The trick is knowing when a safe reset helps and when another power attempt can make the repair harder.</p>
 </div>
 <div class="grid grid-3">
-<div class="card" data-animate=""><span aria-hidden="true" class="icon red material-symbols-outlined">power_off</span><h3>Stop if it is wet, hot, swollen, or smells burnt</h3><p>Unplug it. Do not charge it. Do not use rice, heat, a hair dryer, or repeated power attempts. Put a swollen battery device on a hard surface.</p></div>
-<div class="card" data-animate=""><span aria-hidden="true" class="icon material-symbols-outlined">cable</span><h3>Remove docks, hubs, drives, and extras</h3><p>Disconnect monitors, printers, USB drives, docks, hubs, SD cards, and external gear. A bad accessory can keep a laptop from booting cleanly.</p></div>
-<div class="card" data-animate=""><span aria-hidden="true" class="icon green material-symbols-outlined">saved_search</span><h3>Try one safe reset, not ten</h3><p>If there are no danger signs, one power-drain attempt is fine. Repeated cycling is not diagnosis, especially if your files matter.</p></div>
+<div class="card" data-animate=""><span aria-hidden="true" class="icon red material-symbols-outlined" data-icon="power_off"></span><h3>Stop if it is wet, hot, swollen, or smells burnt</h3><p>Unplug it. Do not charge it. Do not use rice, heat, a hair dryer, or repeated power attempts. Put a swollen battery device on a hard surface.</p></div>
+<div class="card" data-animate=""><span aria-hidden="true" class="icon material-symbols-outlined" data-icon="cable"></span><h3>Remove docks, hubs, drives, and extras</h3><p>Disconnect monitors, printers, USB drives, docks, hubs, SD cards, and external gear. A bad accessory can keep a laptop from booting cleanly.</p></div>
+<div class="card" data-animate=""><span aria-hidden="true" class="icon green material-symbols-outlined" data-icon="saved_search"></span><h3>Try one safe reset, not ten</h3><p>If there are no danger signs, one power-drain attempt is fine. Repeated cycling is not diagnosis, especially if your files matter.</p></div>
 </div>
 <div aria-label="Related laptop safety pages" class="related-links">
 <span>Related:</span>
@@ -497,9 +609,9 @@
 <p class="section-sub">Based in Hailey and built for the Wood River Valley. If you are elsewhere in Idaho, text first and I will tell you whether this is a good mail-in case.</p>
 </div>
 <div class="grid grid-3">
-<div class="card" data-animate=""><span class="icon material-symbols-outlined">location_on</span><h3>Wood River Valley</h3><p>Hailey, Ketchum, Sun Valley, and Bellevue customers can coordinate local drop-off by text.</p></div>
-<div class="card" data-animate=""><span class="icon material-symbols-outlined">local_shipping</span><h3>Idaho mail-in</h3><p>Boise, Twin Falls, Idaho Falls, Rexburg, Moscow, Coeur d'Alene, and rural Idaho can text before shipping.</p></div>
-<div class="card" data-animate=""><span class="icon green material-symbols-outlined">rule</span><h3>Honest repair filter</h3><p>If a low-value Chromebook has a board failure, I will tell you. If the data matters, we change the plan.</p></div>
+<div class="card" data-animate=""><span class="icon material-symbols-outlined" aria-hidden="true" data-icon="location_on"></span><h3>Wood River Valley</h3><p>Hailey, Ketchum, Sun Valley, and Bellevue customers can coordinate local drop-off by text.</p></div>
+<div class="card" data-animate=""><span class="icon material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span><h3>Idaho mail-in</h3><p>Boise, Twin Falls, Idaho Falls, Rexburg, Moscow, Coeur d'Alene, and rural Idaho can text before shipping.</p></div>
+<div class="card" data-animate=""><span class="icon green material-symbols-outlined" aria-hidden="true" data-icon="rule"></span><h3>Honest repair filter</h3><p>If a low-value Chromebook has a board failure, I will tell you. If the data matters, we change the plan.</p></div>
 </div>
 <div aria-label="Related Idaho repair routes" class="related-links">
 <span>Idaho routes:</span>
@@ -536,20 +648,20 @@ I can bring/mail the charger: yes/no</code>
 <h2 class="section-title">Straight answers before you bring it in.</h2>
 </div>
 <div class="faq-list">
-<details class="faq-item" data-animate=""><summary><span>Why won't my laptop turn on even when it is plugged in?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>It can be as simple as a charger or as serious as a board short. The main suspects are outlet, charger, cable, USB-C/DC port, battery, embedded controller, power button, liquid damage, or motherboard/logic board rails.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>Should I keep pressing the power button?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>No. One controlled reset attempt is enough if there are no hazard signs. Repeated power cycling is especially risky after liquid, heat, swelling, or burning smells.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>My laptop has no lights at all. Is it the charger or motherboard?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>Maybe either. No lights can point to charger/cable, port, battery protection, or board-level failure. Bring the charger so I can test the full path.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>My keyboard lights up but the screen is black. Is that no power?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>Usually not. That may be a display, backlight, RAM, GPU, firmware, or boot issue. It is still diagnosable, but the repair path is different from a totally dead laptop.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>Can you fix a MacBook that won't turn on?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>Yes. MacBook Air and MacBook Pro no-power work can involve USB-C charging, battery, liquid damage, top case, firmware, or logic board diagnosis. For newer MacBooks with soldered storage, getting the board alive can matter for data access.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>Can you fix Dell, HP, Lenovo, ASUS, Acer, and Surface laptops?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>Yes. Windows laptop no-power cases often involve charger wattage, DC jack or USB-C port, battery, screen-vs-power confusion, motherboard faults, or firmware problems.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>Can a bad battery stop a laptop from turning on?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>Yes. Some laptops will run from charger with a bad battery, and some will not behave normally until the battery path is isolated. Swollen batteries should not be used or charged.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>How do I know if the charging port is broken?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>Common signs are a loose cable, charging only at an angle, no charger light, intermittent charging, warmth near the port, or visible debris/damage. Do not force the plug.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>Can my files be saved from a dead laptop?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>Often. A dead laptop does not always mean dead data. Recovery depends on drive health, encryption, model design, and whether storage is removable or soldered. Tell me if data matters first.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>Will no-power repair erase my data?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>Normal hardware diagnosis does not require erasing data. If any repair path risks data, I will tell you before proceeding.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>How much does it cost to fix a laptop that won't turn on?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>It depends on where power stops. Charger, battery, and port issues are usually simpler; board-level or liquid damage cases need diagnosis before a real quote. I give the quote before parts or repair work.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>Should I bring or mail the charger?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>Yes, if the problem involves power or charging. Charger behavior is part of the diagnosis, especially for USB-C laptops and high-wattage gaming laptops.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>Do you offer no-power laptop repair by mail in Idaho?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>Yes, when it makes sense for the device and symptom. Text first with the model and problem before shipping anything.</p></div></details>
-<details class="faq-item" data-animate=""><summary><span>What if the laptop is not worth fixing?</span><span class="material-symbols-outlined">expand_more</span></summary><div class="faq-answer"><p>I will say so. If the repair costs too much compared to replacement, we can focus on data recovery, migration, or replacement advice instead.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>Why won't my laptop turn on even when it is plugged in?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>It can be as simple as a charger or as serious as a board short. The main suspects are outlet, charger, cable, USB-C/DC port, battery, embedded controller, power button, liquid damage, or motherboard/logic board rails.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>Should I keep pressing the power button?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>No. One controlled reset attempt is enough if there are no hazard signs. Repeated power cycling is especially risky after liquid, heat, swelling, or burning smells.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>My laptop has no lights at all. Is it the charger or motherboard?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>Maybe either. No lights can point to charger/cable, port, battery protection, or board-level failure. Bring the charger so I can test the full path.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>My keyboard lights up but the screen is black. Is that no power?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>Usually not. That may be a display, backlight, RAM, GPU, firmware, or boot issue. It is still diagnosable, but the repair path is different from a totally dead laptop.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>Can you fix a MacBook that won't turn on?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>Yes. MacBook Air and MacBook Pro no-power work can involve USB-C charging, battery, liquid damage, top case, firmware, or logic board diagnosis. For newer MacBooks with soldered storage, getting the board alive can matter for data access.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>Can you fix Dell, HP, Lenovo, ASUS, Acer, and Surface laptops?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>Yes. Windows laptop no-power cases often involve charger wattage, DC jack or USB-C port, battery, screen-vs-power confusion, motherboard faults, or firmware problems.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>Can a bad battery stop a laptop from turning on?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>Yes. Some laptops will run from charger with a bad battery, and some will not behave normally until the battery path is isolated. Swollen batteries should not be used or charged.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>How do I know if the charging port is broken?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>Common signs are a loose cable, charging only at an angle, no charger light, intermittent charging, warmth near the port, or visible debris/damage. Do not force the plug.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>Can my files be saved from a dead laptop?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>Often. A dead laptop does not always mean dead data. Recovery depends on drive health, encryption, model design, and whether storage is removable or soldered. Tell me if data matters first.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>Will no-power repair erase my data?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>Normal hardware diagnosis does not require erasing data. If any repair path risks data, I will tell you before proceeding.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>How much does it cost to fix a laptop that won't turn on?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>It depends on where power stops. Charger, battery, and port issues are usually simpler; board-level or liquid damage cases need diagnosis before a real quote. I give the quote before parts or repair work.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>Should I bring or mail the charger?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>Yes, if the problem involves power or charging. Charger behavior is part of the diagnosis, especially for USB-C laptops and high-wattage gaming laptops.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>Do you offer no-power laptop repair by mail in Idaho?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>Yes, when it makes sense for the device and symptom. Text first with the model and problem before shipping anything.</p></div></details>
+<details class="faq-item" data-animate=""><summary><span>What if the laptop is not worth fixing?</span><span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></summary><div class="faq-answer"><p>I will say so. If the repair costs too much compared to replacement, we can focus on data recovery, migration, or replacement advice instead.</p></div></details>
 </div>
 </div>
 </section>
@@ -558,14 +670,14 @@ I can bring/mail the charger: yes/no</code>
 <div class="cta-panel" data-animate="">
 <h2>Dead laptop on the bench?</h2>
 <p>Text me the symptom, charger behavior, and whether the data matters. If you do not know the model, send photos of the bottom label, charger, and port.</p>
-<div class="hero-actions" style="justify-content:center"><a class="btn btn-primary" href="sms:+12083666111"><span class="material-symbols-outlined">sms</span>Text (208) 366-6111</a><a class="btn btn-ghost" href="tel:+12083666111"><span class="material-symbols-outlined">call</span>Call now</a></div>
+<div class="hero-actions" style="justify-content:center"><a class="btn btn-primary" href="sms:+12083666111"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>Text (208) 366-6111</a><a class="btn btn-ghost" href="tel:+12083666111"><span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>Call now</a></div>
 </div>
 </div>
 </section>
 </main>
 <footer class="footer" role="contentinfo">
 <div class="container footer-inner">
-<div><a class="nav-logo" href="/"><span class="material-symbols-outlined">handyman</span><span>Hailey Device <strong>Repair</strong></span></a><p class="footer-tagline">Don't replace it. Let me fix it.</p></div>
+<div><a class="nav-logo" href="/"><span class="material-symbols-outlined" aria-hidden="true" data-icon="handyman"></span><span>Hailey Device <strong>Repair</strong></span></a><p class="footer-tagline">Don't replace it. Let me fix it.</p></div>
 <div class="footer-links">
 <div class="footer-col"><strong>Services</strong><a href="/laptop-repair">Laptop &amp; PC Repair</a><a aria-current="page" href="/laptop-wont-turn-on">Laptop Won't Turn On</a><a href="/macbook-repair">MacBook Repair</a><a href="/data-recovery">Data Recovery</a><a href="/gaming-pc-repair">Gaming PC Repair</a></div>
 <div class="footer-col"><strong>Resources</strong><a href="/repair-sos">Repair SOS</a><a href="/tips">Tips &amp; Guides</a><a href="/faq">FAQ</a><a href="/warranty">Warranty</a><a href="/contact">Contact</a></div>
@@ -574,7 +686,7 @@ I can bring/mail the charger: yes/no</code>
 </div>
 <div class="footer-bottom"><p>© 2026 Hailey Device Repair · Hailey, Idaho · <a href="/privacy">Privacy Policy</a></p><p>Wood River Valley + Idaho mail-in</p></div>
 </footer>
-<button class="floating-ticket" id="ticketOpen" type="button"><span class="material-symbols-outlined">receipt_long</span><span>Bench ticket</span></button>
+<button class="floating-ticket" id="ticketOpen" type="button"><span class="material-symbols-outlined" aria-hidden="true" data-icon="receipt_long"></span><span>Bench ticket</span></button>
 <div aria-hidden="true" aria-label="Bench ticket summary" class="ticket-panel" id="ticketPanel" role="dialog">
 <button aria-label="Close bench ticket" class="close-panel" id="ticketClose" type="button">×</button>
 <h3>Your repair brief</h3>

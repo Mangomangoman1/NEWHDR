@@ -275,7 +275,7 @@
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.dataset.originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span class="material-symbols-outlined spin-icon">progress_activity</span> Sending…';
+        submitBtn.innerHTML = '<span class="material-symbols-outlined spin-icon" data-icon="progress_activity" aria-hidden="true"></span> Sending…';
       }
 
       if (FORMSPREE_ID) {
@@ -341,7 +341,7 @@
       function restoreSubmitBtn() {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = submitBtn.dataset.originalText || '<span class="material-symbols-outlined">send</span> Send Quote Request';
+          submitBtn.innerHTML = submitBtn.dataset.originalText || '<span class="material-symbols-outlined" data-icon="send" aria-hidden="true"></span> Send Quote Request';
         }
       }
     });
@@ -1032,12 +1032,12 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         btn.className = 'dc-option';
         btn.dataset.problem = p.id;
         btn.innerHTML = `
-          <span class="material-symbols-outlined">${p.icon}</span>
+          <span class="material-symbols-outlined" data-icon="${p.icon}" aria-hidden="true"></span>
           <span class="dc-option-text">
             <strong>${p.label}</strong>
             <span class="dc-option-sub">${p.sub}</span>
           </span>
-          <span class="dc-check"><span class="material-symbols-outlined">check</span></span>
+          <span class="dc-check"><span class="material-symbols-outlined" data-icon="check" aria-hidden="true"></span></span>
         `;
         btn.addEventListener('click', () => {
           btn.classList.toggle('selected');
@@ -1090,7 +1090,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         rowsHTML += `
           <div class="dc-estimate-row">
             <span class="dc-estimate-label">
-              <span class="material-symbols-outlined">${p.icon}</span>
+              <span class="material-symbols-outlined" data-icon="${p.icon}" aria-hidden="true"></span>
               ${p.label}
             </span>
             <span class="dc-estimate-value">$${p.price[0]}–$${p.price[1]}</span>
@@ -1119,24 +1119,24 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
 
       dcResults.innerHTML = `
         <div class="dc-results-header">
-          <span class="material-symbols-outlined">check_circle</span>
+          <span class="material-symbols-outlined" data-icon="check_circle" aria-hidden="true"></span>
           <h2>Here's your estimate</h2>
           <p>${data.label} — ${selected.length} repair${selected.length > 1 ? 's' : ''}</p>
           <span class="dc-urgency-badge dc-urgency-badge--${urgClass}">
-            <span class="material-symbols-outlined">schedule</span> ${urgText}
+            <span class="material-symbols-outlined" data-icon="schedule" aria-hidden="true"></span> ${urgText}
           </span>
         </div>
 
         <div class="dc-estimate-card">
           <div class="dc-estimate-card-header">
-            <span class="material-symbols-outlined">description</span>
+            <span class="material-symbols-outlined" data-icon="description" aria-hidden="true"></span>
             Repair Breakdown
           </div>
           <div class="dc-estimate-rows">
             ${rowsHTML}
             <div class="dc-estimate-row">
               <span class="dc-estimate-label">
-                <span class="material-symbols-outlined">timer</span>
+                <span class="material-symbols-outlined" data-icon="timer" aria-hidden="true"></span>
                 Estimated time
               </span>
               <span class="dc-estimate-time">${timeStr}</span>
@@ -1155,10 +1155,10 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
 
         <div class="dc-results-cta">
           <a href="sms:+12083666111?body=${smsBody}" class="btn btn-primary">
-            <span class="material-symbols-outlined">sms</span> Text This Estimate to Samuel
+            <span class="material-symbols-outlined" data-icon="sms" aria-hidden="true"></span> Text This Estimate to Samuel
           </a>
           <a href="/contact" class="btn btn-outline">
-            <span class="material-symbols-outlined">description</span> Request Full Quote
+            <span class="material-symbols-outlined" data-icon="description" aria-hidden="true"></span> Request Full Quote
           </a>
         </div>
       `;
@@ -2275,7 +2275,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     sosNext.style.display = '';
     sosPrev.disabled = true;
     sosNext.textContent = 'Next Step';
-    sosNext.innerHTML = 'Next Step <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>';
+    sosNext.innerHTML = 'Next Step <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span>';
     sosNext.disabled = false;
     sosNext.className = 'sos-nav-btn sos-nav-btn--next btn btn-primary';
 
@@ -2318,7 +2318,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
           '<div class="sos-step-title">' + step.title + '</div>' +
           '<div class="sos-step-desc">' + step.desc + '</div>' +
           '<div class="sos-step-timer">' +
-            '<span class="material-symbols-outlined" aria-hidden="true">timer</span> ' +
+            '<span class="material-symbols-outlined" aria-hidden="true" data-icon="timer"></span> ' +
             step.timer +
           '</div>' +
           '<div class="sos-step-check" data-action="done">' +

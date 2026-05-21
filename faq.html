@@ -137,141 +137,397 @@ a{color:inherit;text-decoration:none}
 </style>
 
   <!-- JSON-LD: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+  <!-- HDR canonical business entity: shared LocalBusiness node for Google/AI parsers -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Hailey Device Repair",
+  "description": "Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available statewide.",
+  "url": "https://www.haileyrepair.com",
+  "telephone": "+12083666111",
+  "email": "samuel@haileyrepair.com",
+  "image": "https://www.haileyrepair.com/favicon.svg",
+  "priceRange": "$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card, Venmo, Zelle",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hailey",
+    "addressRegion": "ID",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.5196,
+    "longitude": -114.3153
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Hailey",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Ketchum",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Sun Valley",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Bellevue",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Idaho"
+      }
+    },
+    {
+      "@type": "State",
+      "name": "Idaho"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "11:00",
+      "closes": "19:00"
+    }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Samuel Torres"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Device Repair Services",
+    "itemListElement": [
       {
-        "@type": "Question",
-        "name": "How long does a typical repair take?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Most phone repairs (screens, batteries, charging ports) are done same day, often within 1-2 hours. Laptop repairs typically take 1-2 business days depending on parts availability." }
+        "@type": "OfferCatalog",
+        "name": "Phone Repair",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "iPhone Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "iPhone Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Android Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Android Battery Replacement"
+            }
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": "Do you offer a warranty on repairs?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. All repairs come with a 40-day warranty covering parts and labor. If the same issue comes back, I'll fix it free of charge." }
-      },
-      {
-        "@type": "Question",
-        "name": "Is my data safe during repair?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. I never access personal data during repairs. Your photos, messages, and files stay private. For repairs that require a wipe, I'll always warn you first so you can back up." }
-      },
-      {
-        "@type": "Question",
-        "name": "What if you can't fix my device?",
-        "acceptedAnswer": { "@type": "Answer", "text": "If I can't fix it, I'll tell you what I found, what your best next option is, and return the device with no pressure to proceed." }
-      },
-      {
-        "@type": "Question",
-        "name": "How does mail-in repair work?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Text or email me to describe the issue and get a quote. I'll send packing instructions, you ship it to me, I repair it, and ship it back with tracking. I text updates the whole way through." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you fix water-damaged devices?",
-        "acceptedAnswer": { "@type": "Answer", "text": "I can try. Water damage success depends on severity and how quickly you bring it in. The sooner the better — don't put it in rice, just text me." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does iPhone screen repair cost in Hailey, Idaho?",
-        "acceptedAnswer": { "@type": "Answer", "text": "iPhone screen replacement starts at $59 depending on the model. You'll get an exact quote before any work begins. Every repair starts with a thorough diagnosis." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you use genuine iPhone parts?",
-        "acceptedAnswer": { "@type": "Answer", "text": "I use OEM-quality parts that match Apple's specifications for fit, function, and display quality. Every repair comes with a 40-day warranty on parts and labor." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you repair all iPhone models?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. I repair all iPhone models from iPhone 6 through the latest iPhone 16 series, including iPhone SE, Plus, Pro, and Pro Max variants." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does Samsung Galaxy screen repair cost?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Samsung Galaxy screen replacement starts at $69 depending on the model. AMOLED screens on newer Galaxy S and Note models cost more than LCD screens. You'll get an exact quote before any work — every repair starts with a thorough diagnosis." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you repair Google Pixel phones?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, I repair all Google Pixel models from Pixel 3 through Pixel 9 Pro. Common repairs include screen replacement, battery swap, and charging port fix." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does laptop screen replacement cost?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Laptop screen replacement starts at $99. Price varies by make and model — MacBook Retina screens cost more than standard Windows laptop LCDs. You'll get an exact quote after a thorough diagnosis." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you repair MacBooks?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. MacBook Air, MacBook Pro (all years), and older MacBooks. Common repairs include screen replacement, battery swap, keyboard fix, and SSD upgrade. I handle both Intel and Apple Silicon Macs." }
-      },
-      {
-        "@type": "Question",
-        "name": "Will an SSD upgrade make my old laptop faster?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Almost always yes — dramatically. Swapping a mechanical hard drive for an SSD is the single biggest speed boost you can give an older laptop. Boot times drop from minutes to seconds. SSD upgrades start at $49 plus the cost of the drive." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does iPad screen repair cost in Hailey, Idaho?",
-        "acceptedAnswer": { "@type": "Answer", "text": "iPad screen replacement starts at $79 depending on the model and generation. iPad Pro models with Liquid Retina displays cost more than standard iPads. You get an exact quote before any work starts." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does Joy-Con drift repair cost?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Joy-Con drift repair starts at $29 per Joy-Con. I replace the analog stick module entirely — not just a temporary calibration fix. Most drift repairs take under an hour and come with a 40-day warranty." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you repair Steam Decks?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes! Steam Deck repairs include joystick drift ($35), screen replacement ($79), battery swap ($59), and SSD upgrades (from $49 + cost of SSD). The Steam Deck is actually one of the most repairable handhelds — Valve designed it with maintenance in mind." }
-      },
-      {
-        "@type": "Question",
-        "name": "Is there an extra charge for emergency or after-hours repair?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Same prices, day or night. The only exception is if a part needs overnight shipping — in that case, you can opt for rush shipping at cost, but the repair labor stays the same." }
-      },
-      {
-        "@type": "Question",
-        "name": "Is return shipping free for mail-in repairs?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Return shipping via USPS Priority Mail is always free. You only pay for shipping your device to us." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much is the student/military discount?",
-        "acceptedAnswer": { "@type": "Answer", "text": "15% off the total repair cost, applied to every service with no exclusions and no minimum spend." }
-      },
-      {
-        "@type": "Question",
-        "name": "What does the 40-day warranty cover?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Our 40-day warranty covers the specific repair performed — both parts and labor. If the same issue comes back within 40 days of the original repair date, we'll fix it again at no charge." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you charge for diagnostics?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Diagnosis is free. I'll tell you exactly what's wrong and give you a firm quote before any work begins. You only pay if you approve the repair." }
-      },
-      {
-        "@type": "Question",
-        "name": "Why are your prices lower than Apple?",
-        "acceptedAnswer": { "@type": "Answer", "text": "We use high-quality aftermarket parts instead of OEM, and we don't have the overhead of a retail store. Lower overhead = lower prices. The parts we use are thoroughly tested and come with our 40-day warranty." }
+        "@type": "OfferCatalog",
+        "name": "Computer Repair",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laptop Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laptop Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Virus & Malware Removal"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Data Recovery"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gaming PC Repair"
+            }
+          }
+        ]
       }
     ]
-  }
-  </script>
+  },
+  "sameAs": [
+    "https://g.page/r/CRz04Aqd3UvPEBM",
+    "https://www.mapquest.com/us/idaho/hailey-device-repair-800055619",
+    "https://local.yahoo.com/info-240633004-hailey-device-repair-hailey/",
+    "https://www.yelp.com/biz/hailey-device-repair-hailey",
+    "https://www.yelp.ca/biz/hailey-device-repair-hailey",
+    "https://nextdoor.com/pages/hailey-device-repair/",
+    "https://www.bbb.org/us/id/hailey/profile/computer-repair/hailey-device-repair-1296-1000195941"
+  ],
+  "@id": "https://www.haileyrepair.com/#business"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does a typical repair take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most phone repairs (screens, batteries, charging ports) are done same day, often within 1-2 hours. Laptop repairs typically take 1-2 business days depending on parts availability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer a warranty on repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All repairs come with a 40-day warranty covering parts and labor. If the same issue comes back, I'll fix it free of charge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data safe during repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. I never access personal data during repairs. Your photos, messages, and files stay private. For repairs that require a wipe, I'll always warn you first so you can back up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if you can't fix my device?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If I can't fix it, I'll tell you what I found, what your best next option is, and return the device with no pressure to proceed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does mail-in repair work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Text or email me to describe the issue and get a quote. I'll send packing instructions, you ship it to me, I repair it, and ship it back with tracking. I text updates the whole way through."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you fix water-damaged devices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I can try. Water damage success depends on severity and how quickly you bring it in. The sooner the better — don't put it in rice, just text me."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does iPhone screen repair cost in Hailey, Idaho?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "iPhone screen replacement starts at $59 depending on the model. You'll get an exact quote before any work begins. Every repair starts with a thorough diagnosis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you use genuine iPhone parts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I use OEM-quality parts that match Apple's specifications for fit, function, and display quality. Every repair comes with a 40-day warranty on parts and labor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair all iPhone models?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I repair all iPhone models from iPhone 6 through the latest iPhone 16 series, including iPhone SE, Plus, Pro, and Pro Max variants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Samsung Galaxy screen repair cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Samsung Galaxy screen replacement starts at $69 depending on the model. AMOLED screens on newer Galaxy S and Note models cost more than LCD screens. You'll get an exact quote before any work — every repair starts with a thorough diagnosis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you repair Google Pixel phones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, I repair all Google Pixel models from Pixel 3 through Pixel 9 Pro. Common repairs include screen replacement, battery swap, and charging port fix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does laptop screen replacement cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Laptop screen replacement starts at $99. Price varies by make and model — MacBook Retina screens cost more than standard Windows laptop LCDs. You'll get an exact quote after a thorough diagnosis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you repair MacBooks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. MacBook Air, MacBook Pro (all years), and older MacBooks. Common repairs include screen replacement, battery swap, keyboard fix, and SSD upgrade. I handle both Intel and Apple Silicon Macs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will an SSD upgrade make my old laptop faster?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost always yes — dramatically. Swapping a mechanical hard drive for an SSD is the single biggest speed boost you can give an older laptop. Boot times drop from minutes to seconds. SSD upgrades start at $49 plus the cost of the drive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does iPad screen repair cost in Hailey, Idaho?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "iPad screen replacement starts at $79 depending on the model and generation. iPad Pro models with Liquid Retina displays cost more than standard iPads. You get an exact quote before any work starts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Joy-Con drift repair cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Joy-Con drift repair starts at $29 per Joy-Con. I replace the analog stick module entirely — not just a temporary calibration fix. Most drift repairs take under an hour and come with a 40-day warranty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair Steam Decks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Steam Deck repairs include joystick drift ($35), screen replacement ($79), battery swap ($59), and SSD upgrades (from $49 + cost of SSD). The Steam Deck is actually one of the most repairable handhelds — Valve designed it with maintenance in mind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an extra charge for emergency or after-hours repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Same prices, day or night. The only exception is if a part needs overnight shipping — in that case, you can opt for rush shipping at cost, but the repair labor stays the same."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is return shipping free for mail-in repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Return shipping via USPS Priority Mail is always free. You only pay for shipping your device to us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much is the student/military discount?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "15% off the total repair cost, applied to every service with no exclusions and no minimum spend."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the 40-day warranty cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our 40-day warranty covers the specific repair performed — both parts and labor. If the same issue comes back within 40 days of the original repair date, we'll fix it again at no charge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you charge for diagnostics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Diagnosis is free. I'll tell you exactly what's wrong and give you a firm quote before any work begins. You only pay if you approve the repair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are your prices lower than Apple?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We use high-quality aftermarket parts instead of OEM, and we don't have the overhead of a retail store. Lower overhead = lower prices. The parts we use are thoroughly tested and come with our 40-day warranty."
+      }
+    }
+  ]
+}</script>
 
   <!-- JSON-LD: BreadcrumbList -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.haileyrepair.com" },
-      { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://www.haileyrepair.com/faq" }
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.haileyrepair.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "FAQ",
+      "item": "https://www.haileyrepair.com/faq"
+    }
+  ]
+}</script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGQ617V748"></script>
   <script>
@@ -285,7 +541,7 @@ a{color:inherit;text-decoration:none}
 <body>
   <div class="page-curtain" id="pageCurtain">
     <div class="page-curtain-logo">
-      <span class="material-symbols-outlined" aria-hidden="true">smartphone</span>
+      <span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span>
       Hailey Device Repair
     </div>
   </div>
@@ -296,7 +552,7 @@ a{color:inherit;text-decoration:none}
   <nav class="nav" role="navigation" id="mainNav" aria-label="Main navigation">
     <div class="container nav-inner">
       <a href="/" class="nav-logo" aria-label="Hailey Device Repair Home">
-        <span class="material-symbols-outlined nav-logo-icon" aria-hidden="true">smartphone</span>
+        <span class="material-symbols-outlined nav-logo-icon" aria-hidden="true" data-icon="smartphone"></span>
         <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
       </a>
       <ul class="nav-links" id="navLinks" role="menubar">
@@ -329,18 +585,18 @@ a{color:inherit;text-decoration:none}
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="/">Home</a>
-          <span class="material-symbols-outlined breadcrumb-sep" aria-hidden="true">chevron_right</span>
+          <span class="material-symbols-outlined breadcrumb-sep" aria-hidden="true" data-icon="chevron_right"></span>
           <span aria-current="page">FAQ</span>
         </nav>
 
         <div class="faq-hero-grid">
           <div class="faq-hero-copy" data-animate>
-            <div class="faq-hero-kicker"><span class="material-symbols-outlined" aria-hidden="true">quiz</span>Pricing, turnaround, warranty, mail-in, and emergency answers</div>
+            <div class="faq-hero-kicker"><span class="material-symbols-outlined" aria-hidden="true" data-icon="quiz"></span>Pricing, turnaround, warranty, mail-in, and emergency answers</div>
             <h1 class="hero-headline">Hailey Device Repair FAQ</h1>
             <p class="hero-sub">If you are trying to figure out what a repair might cost, how long it takes, whether it is worth fixing, or what happens if you are in a hurry, this page covers the questions people usually ask before they hand over a device. And if your exact question is not here, just text me.</p>
             <div class="faq-hero-actions">
-              <a href="sms:+12083666111" class="btn btn-primary btn-lg"><span class="material-symbols-outlined" aria-hidden="true">sms</span>Text me your question</a>
-              <a href="tel:+12083666111" class="btn btn-outline btn-lg"><span class="material-symbols-outlined" aria-hidden="true">call</span>(208) 366-6111</a>
+              <a href="sms:+12083666111" class="btn btn-primary btn-lg"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>Text me your question</a>
+              <a href="tel:+12083666111" class="btn btn-outline btn-lg"><span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>(208) 366-6111</a>
             </div>
             <div class="faq-jump-links" aria-label="Popular FAQ jumps">
               <a href="#pricing-faq" class="faq-jump-link">Pricing</a>
@@ -355,10 +611,10 @@ a{color:inherit;text-decoration:none}
           <aside class="faq-hero-panel" data-animate>
             <div class="faq-panel-title">Quick answers people want first</div>
             <div class="faq-stat-grid">
-              <div class="faq-stat-card"><span class="material-symbols-outlined" aria-hidden="true">bolt</span><strong>Same-day on many phone repairs</strong><span>Screens, batteries, and ports are often done in 1–2 hours.</span></div>
-              <div class="faq-stat-card"><span class="material-symbols-outlined" aria-hidden="true">verified</span><strong>40-day repair warranty</strong><span>Parts and labor are covered for the specific repair performed.</span></div>
-              <div class="faq-stat-card"><span class="material-symbols-outlined" aria-hidden="true">manage_search</span><strong>Free diagnosis first</strong><span>You get the problem and the quote before any work starts.</span></div>
-              <div class="faq-stat-card"><span class="material-symbols-outlined" aria-hidden="true">sms</span><strong>Text-first support</strong><span>Most questions get a reply in about 15 minutes.</span></div>
+              <div class="faq-stat-card"><span class="material-symbols-outlined" aria-hidden="true" data-icon="bolt"></span><strong>Same-day on many phone repairs</strong><span>Screens, batteries, and ports are often done in 1–2 hours.</span></div>
+              <div class="faq-stat-card"><span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span><strong>40-day repair warranty</strong><span>Parts and labor are covered for the specific repair performed.</span></div>
+              <div class="faq-stat-card"><span class="material-symbols-outlined" aria-hidden="true" data-icon="manage_search"></span><strong>Free diagnosis first</strong><span>You get the problem and the quote before any work starts.</span></div>
+              <div class="faq-stat-card"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span><strong>Text-first support</strong><span>Most questions get a reply in about 15 minutes.</span></div>
             </div>
           </aside>
         </div>
@@ -416,47 +672,47 @@ a{color:inherit;text-decoration:none}
             <p>Use the search bar if you already know what you need, or tap a category to narrow the list. Pricing, turnaround, warranty, mail-in, emergencies, and device-specific answers are all here.</p>
           </div>
           <div class="faq-search-wrap" data-animate>
-            <span class="material-symbols-outlined faq-search-icon">search</span>
+            <span class="material-symbols-outlined faq-search-icon" aria-hidden="true" data-icon="search"></span>
             <label for="faqSearch" class="sr-only">Search frequently asked questions</label>
             <input type="search" class="faq-search-input" id="faqSearch" placeholder="Search pricing, warranty, mail-in, iPhone, laptop, emergency…" autocomplete="off" />
             <span class="faq-search-count" id="faqSearchCount"></span>
           </div>
           <div class="faq-hub-filters" id="faqFilters" role="tablist" aria-label="FAQ categories">
         <button class="faq-hub-filter active" data-category="all" role="tab" aria-selected="true">
-          <span class="material-symbols-outlined" aria-hidden="true">apps</span> All <span class="faq-hub-filter-count">58</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="apps"></span> All <span class="faq-hub-filter-count">58</span>
         </button>
         <button class="faq-hub-filter" data-category="general" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined" aria-hidden="true">help</span> General <span class="faq-hub-filter-count">6</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="help"></span> General <span class="faq-hub-filter-count">6</span>
         </button>
         <button class="faq-hub-filter" data-category="iphone" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined">phone_iphone</span> iPhone <span class="faq-hub-filter-count">5</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="phone_iphone"></span> iPhone <span class="faq-hub-filter-count">5</span>
         </button>
         <button class="faq-hub-filter" data-category="android" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined" aria-hidden="true">smartphone</span> Android <span class="faq-hub-filter-count">5</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span> Android <span class="faq-hub-filter-count">5</span>
         </button>
         <button class="faq-hub-filter" data-category="laptop" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined" aria-hidden="true">laptop</span> Laptop <span class="faq-hub-filter-count">5</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop"></span> Laptop <span class="faq-hub-filter-count">5</span>
         </button>
         <button class="faq-hub-filter" data-category="tablet" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined" aria-hidden="true">tablet</span> Tablet <span class="faq-hub-filter-count">6</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="tablet"></span> Tablet <span class="faq-hub-filter-count">6</span>
         </button>
         <button class="faq-hub-filter" data-category="console" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined" aria-hidden="true">sports_esports</span> Console <span class="faq-hub-filter-count">6</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="sports_esports"></span> Console <span class="faq-hub-filter-count">6</span>
         </button>
         <button class="faq-hub-filter" data-category="pricing" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined" aria-hidden="true">payments</span> Pricing <span class="faq-hub-filter-count">4</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="payments"></span> Pricing <span class="faq-hub-filter-count">4</span>
         </button>
         <button class="faq-hub-filter" data-category="mail-in" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined" aria-hidden="true">local_shipping</span> Mail-In <span class="faq-hub-filter-count">6</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span> Mail-In <span class="faq-hub-filter-count">6</span>
         </button>
         <button class="faq-hub-filter" data-category="emergency" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined" aria-hidden="true">bolt</span> Emergency <span class="faq-hub-filter-count">5</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="bolt"></span> Emergency <span class="faq-hub-filter-count">5</span>
         </button>
         <button class="faq-hub-filter" data-category="warranty" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined" aria-hidden="true">verified</span> Warranty <span class="faq-hub-filter-count">5</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span> Warranty <span class="faq-hub-filter-count">5</span>
         </button>
         <button class="faq-hub-filter" data-category="discount" role="tab" aria-selected="false">
-          <span class="material-symbols-outlined" aria-hidden="true">school</span> Discounts <span class="faq-hub-filter-count">5</span>
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="school"></span> Discounts <span class="faq-hub-filter-count">5</span>
         </button>
       </div>
       </div>
@@ -465,14 +721,14 @@ a{color:inherit;text-decoration:none}
     <section class="section faq-hub-content" style="padding-top: 0;">
       <div class="container" style="max-width: 880px;">
         <div class="faq-hub-no-results" id="faqNoResults" hidden>
-          <span class="material-symbols-outlined" style="font-size: 3rem; color: var(--text-muted);">search_off</span>
+          <span class="material-symbols-outlined" style="font-size: 3rem; color: var(--text-muted);" aria-hidden="true" data-icon="search_off"></span>
           <p>No questions match your search.</p>
           <p class="faq-summary-note">Try different keywords, or <a href="sms:+12083666111">text me</a> your question directly.</p>
         </div>
 
       <div class="faq-hub-category" data-cat="general" id="general-faq">
         <h2 class="faq-hub-category-title" data-animate>
-          <span class="material-symbols-outlined" aria-hidden="true">help</span> General Questions
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="help"></span> General Questions
         </h2>
 
         <details class="faq-hub-item" data-category="general">
@@ -527,7 +783,7 @@ a{color:inherit;text-decoration:none}
       <!-- ─── iPHONE ─── -->
       <div class="faq-hub-category" data-cat="iphone" id="iphone-faq">
         <h2 class="faq-hub-category-title" data-animate>
-          <span class="material-symbols-outlined">phone_iphone</span> iPhone Repair
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="phone_iphone"></span> iPhone Repair
         </h2>
 
         <details class="faq-hub-item" data-category="iphone">
@@ -572,7 +828,7 @@ a{color:inherit;text-decoration:none}
       <!-- ─── ANDROID ─── -->
       <div class="faq-hub-category" data-cat="android" id="android-faq">
         <h2 class="faq-hub-category-title" data-animate>
-          <span class="material-symbols-outlined" aria-hidden="true">smartphone</span> Android Repair
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span> Android Repair
         </h2>
 
         <details class="faq-hub-item" data-category="android">
@@ -616,7 +872,7 @@ a{color:inherit;text-decoration:none}
       <!-- ─── LAPTOP ─── -->
       <div class="faq-hub-category" data-cat="laptop" id="laptop-faq">
         <h2 class="faq-hub-category-title" data-animate>
-          <span class="material-symbols-outlined" aria-hidden="true">laptop</span> Laptop &amp; PC Repair
+          <span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop"></span> Laptop &amp; PC Repair
         </h2>
 
         <details class="faq-hub-item" data-category="laptop">
@@ -651,7 +907,7 @@ a{color:inherit;text-decoration:none}
 
       <!-- ─── TABLET ─── -->
       <div class="faq-hub-category" data-cat="tablet" id="tablet-faq">
-        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined">tablet</span> iPad &amp; Tablet Repair</h2>
+        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true" data-icon="tablet"></span> iPad &amp; Tablet Repair</h2>
         <details class="faq-hub-item" data-category="tablet">
           <summary>How much does iPad screen repair cost?</summary>
           <div class="faq-hub-answer"><p>Starts at <strong>$79</strong>. iPad Pro with Liquid Retina costs more. Thorough diagnosis included.</p>
@@ -682,7 +938,7 @@ a{color:inherit;text-decoration:none}
 
       <!-- ─── CONSOLE ─── -->
       <div class="faq-hub-category" data-cat="console" id="console-faq">
-        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true">sports_esports</span> Game Console Repair</h2>
+        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true" data-icon="sports_esports"></span> Game Console Repair</h2>
         <details class="faq-hub-item" data-category="console">
           <summary>How much does Joy-Con drift repair cost?</summary>
           <div class="faq-hub-answer"><p><strong>$29 per Joy-Con.</strong> Full analog stick module replacement. Under an hour, 40-day warranty.</p>
@@ -712,7 +968,7 @@ a{color:inherit;text-decoration:none}
 
       <!-- ─── PRICING ─── -->
       <div class="faq-hub-category" data-cat="pricing" id="pricing-faq">
-        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true">payments</span> Pricing &amp; Payment</h2>
+        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true" data-icon="payments"></span> Pricing &amp; Payment</h2>
         <details class="faq-hub-item" data-category="pricing">
           <summary>Why are your prices lower than Apple?</summary>
           <div class="faq-hub-answer"><p>Quality aftermarket parts, no retail overhead. <strong>Lower overhead = lower prices.</strong> All parts tested with 40-day warranty.</p>
@@ -734,7 +990,7 @@ a{color:inherit;text-decoration:none}
 
       <!-- ─── MAIL-IN ─── -->
       <div class="faq-hub-category" data-cat="mail-in" id="mail-in-faq">
-        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true">local_shipping</span> Mail-In Repair</h2>
+        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span> Mail-In Repair</h2>
         <details class="faq-hub-item" data-category="mail-in">
           <summary>How does mail-in repair work?</summary>
           <div class="faq-hub-answer"><p>Text/email → I confirm + send address → Ship securely → I text updates → <strong>Free return shipping.</strong></p>
@@ -764,7 +1020,7 @@ a{color:inherit;text-decoration:none}
 
       <!-- ─── EMERGENCY ─── -->
       <div class="faq-hub-category" data-cat="emergency" id="emergency-faq">
-        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true">bolt</span> Emergency &amp; After-Hours</h2>
+        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true" data-icon="bolt"></span> Emergency &amp; After-Hours</h2>
         <details class="faq-hub-item" data-category="emergency">
           <summary>What are your emergency repair hours?</summary>
           <div class="faq-hub-answer"><p><strong>Text anytime, 24/7.</strong> In-person generally 8 AM–10 PM, 7 days.</p>
@@ -790,7 +1046,7 @@ a{color:inherit;text-decoration:none}
 
       <!-- ─── WARRANTY ─── -->
       <div class="faq-hub-category" data-cat="warranty" id="warranty-faq">
-        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true">verified</span> Warranty &amp; Guarantees</h2>
+        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span> Warranty &amp; Guarantees</h2>
         <details class="faq-hub-item" data-category="warranty">
           <summary>What does the 40-day warranty cover?</summary>
           <div class="faq-hub-answer"><p>The specific repair — <strong>parts and labor</strong>. Same issue within 40 days = fixed free.</p>
@@ -816,7 +1072,7 @@ a{color:inherit;text-decoration:none}
 
       <!-- ─── DISCOUNT ─── -->
       <div class="faq-hub-category" data-cat="discount" id="discount-faq">
-        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true">school</span> Student &amp; Military Discounts</h2>
+        <h2 class="faq-hub-category-title" data-animate><span class="material-symbols-outlined" aria-hidden="true" data-icon="school"></span> Student &amp; Military Discounts</h2>
         <details class="faq-hub-item" data-category="discount">
           <summary>How much is the student/military discount?</summary>
           <div class="faq-hub-answer"><p><strong>15% off</strong> every repair. No exclusions, no minimum.</p>
@@ -853,8 +1109,8 @@ a{color:inherit;text-decoration:none}
           <h2 class="section-title">Still have a question?</h2>
           <p class="section-sub">Text me directly. If the answer is not on this page, I would rather give you a straight answer than make you guess.</p>
           <div class="hero-actions" style="justify-content: center;">
-            <a href="sms:+12083666111" class="btn btn-primary btn-lg"><span class="material-symbols-outlined" aria-hidden="true">sms</span>Text me</a>
-            <a href="/contact" class="btn btn-outline btn-lg"><span class="material-symbols-outlined" aria-hidden="true">description</span>Use the contact form</a>
+            <a href="sms:+12083666111" class="btn btn-primary btn-lg"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>Text me</a>
+            <a href="/contact" class="btn btn-outline btn-lg"><span class="material-symbols-outlined" aria-hidden="true" data-icon="description"></span>Use the contact form</a>
           </div>
         </div>
       </div>
@@ -865,7 +1121,7 @@ a{color:inherit;text-decoration:none}
     <div class="container footer-inner">
       <div class="footer-brand" data-animate>
         <a href="/" class="nav-logo" aria-label="Hailey Device Repair Home">
-          <span class="material-symbols-outlined nav-logo-icon" aria-hidden="true">smartphone</span>
+          <span class="material-symbols-outlined nav-logo-icon" aria-hidden="true" data-icon="smartphone"></span>
           <span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
         </a>
         <p class="footer-tagline">Don't replace it. Let me fix it.</p>
@@ -921,15 +1177,15 @@ a{color:inherit;text-decoration:none}
       </div>
       <div class="help-fab-options">
         <a href="sms:+12083666111" class="help-fab-option">
-          <div class="help-fab-option-icon help-fab-option-icon--text"><span class="material-symbols-outlined">sms</span></div>
+          <div class="help-fab-option-icon help-fab-option-icon--text"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span></div>
           <div class="help-fab-option-info"><strong>Text me</strong><span>Fastest way to reach me</span></div>
         </a>
         <a href="tel:+12083666111" class="help-fab-option">
-          <div class="help-fab-option-icon help-fab-option-icon--call"><span class="material-symbols-outlined">call</span></div>
+          <div class="help-fab-option-icon help-fab-option-icon--call"><span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span></div>
           <div class="help-fab-option-info"><strong>Call</strong><span>(208) 366-6111</span></div>
         </a>
         <a href="/contact" class="help-fab-option">
-          <div class="help-fab-option-icon help-fab-option-icon--quote"><span class="material-symbols-outlined">description</span></div>
+          <div class="help-fab-option-icon help-fab-option-icon--quote"><span class="material-symbols-outlined" aria-hidden="true" data-icon="description"></span></div>
           <div class="help-fab-option-info"><strong>Request a quote</strong><span>Diagnosis before every repair</span></div>
         </a>
       </div>
@@ -938,7 +1194,7 @@ a{color:inherit;text-decoration:none}
     <button class="help-fab-trigger" aria-label="Get help" id="helpFabTrigger">
       <span class="help-fab-dot"></span>
       <span class="help-fab-label-text">Need help?</span>
-      <span class="material-symbols-outlined">close</span>
+      <span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span>
     </button>
   </div>
 
