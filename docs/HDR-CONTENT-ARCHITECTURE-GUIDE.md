@@ -349,3 +349,11 @@ Each tier addresses a different query intent. Each tier links to the next at the
 ### 2026-05-20
 - Saved architecture as repo document.
 - Started Phase 1 foundation.
+### 2026-05-20 — Repair Guides Foundation started
+- Built `/guides` hub page.
+- Built first four repair guide spokes:
+  - `/guides/iphone-screen-repair`
+  - `/guides/iphone-battery-replacement`
+  - `/guides/laptop-battery-replacement`
+  - `/guides/data-recovery-what-to-expect`
+- Wired `_redirects`, `sitemap.xml`, and `llms.txt`.
