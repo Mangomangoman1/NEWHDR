@@ -31,3 +31,8 @@
 /laptop-wont-turn-on /laptop-wont-turn-on.html 200
 /dead-laptop         /laptop-wont-turn-on      301
 /no-power-laptop     /laptop-wont-turn-on      301
+/tips/water-damaged-phone /tips/water-damaged-phone.html 200
+/tips/lcd-vs-oled /tips/lcd-vs-oled.html 200
+/tips/laptop-battery-dying /tips/laptop-battery-dying.html 200
+/tips/repair-or-replace /tips/repair-or-replace.html 200
+/tips/speed-up-slow-laptop /tips/speed-up-slow-laptop.html 200

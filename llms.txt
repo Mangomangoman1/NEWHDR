@@ -89,3 +89,11 @@ These public profiles help identify Hailey Device Repair as the same local busin
 - [Laptop repair markdown](/laptop-repair.md): Laptop repair summary and quote guidance.
 - [MacBook repair markdown](/macbook-repair.md): MacBook repair summary and quote guidance.
 - [Mail-in repair markdown](/mail-in-repair.md): Idaho mail-in repair process.
+## Tips and educational repair resources
+
+- [Device care tips hub](/tips): Top-of-funnel emergency, preventive, battery, screen, performance, and repair decision tips from HDR.
+- [Water-damaged phone first steps](/tips/water-damaged-phone): Power off, avoid rice, dry with airflow, and know when corrosion inspection matters.
+- [LCD vs OLED screen guide](/tips/lcd-vs-oled): How to tell phone screen type and why it affects repair cost.
+- [Laptop battery dying signs](/tips/laptop-battery-dying): Signs of failing or swollen batteries and when to stop charging.
+- [Repair or replace decision guide](/tips/repair-or-replace): Practical repair math before spending money.
+- [Speed up a slow laptop](/tips/speed-up-slow-laptop): Free steps to try before paying for a tune-up or SSD upgrade.
