@@ -91,7 +91,7 @@ These public profiles help identify Hailey Device Repair as the same local busin
 - [Mail-in repair markdown](/mail-in-repair.md): Idaho mail-in repair process.
 ## Tips and educational repair resources
 
-- [Device care tips hub](/tips): Top-of-funnel emergency, preventive, battery, screen, performance, and repair decision tips from HDR.
+- [Device care tips hub](/tips): Top-of-funnel emergency first steps, preventive care, battery, screen, performance, data-safety, and repair-or-replace decision tips from HDR.
 - [Water-damaged phone first steps](/tips/water-damaged-phone): Power off, avoid rice, dry with airflow, and know when corrosion inspection matters.
 - [LCD vs OLED screen guide](/tips/lcd-vs-oled): How to tell phone screen type and why it affects repair cost.
 - [Laptop battery dying signs](/tips/laptop-battery-dying): Signs of failing or swollen batteries and when to stop charging.
@@ -99,7 +99,7 @@ These public profiles help identify Hailey Device Repair as the same local busin
 - [Speed up a slow laptop](/tips/speed-up-slow-laptop): Free steps to try before paying for a tune-up or SSD upgrade.
 ## Repair guides
 
-- [Device repair guides hub](/guides): Mid-funnel procedural guides explaining what common repairs involve before booking.
+- [Device repair guides hub](/guides): Mid-funnel repair guides for phone, laptop/Mac, tablet, console, and data recovery jobs, with live guides plus text-first paths for unpublished topics.
 - [iPhone screen repair guide](/guides/iphone-screen-repair): Display assembly replacement, LCD vs OLED cost signals, part quality, DIY risk, and repair-vs-replace context.
 - [iPhone battery replacement guide](/guides/iphone-battery-replacement): Battery health, swelling, shutdowns, replacement process, and when it is worth doing.
 - [Laptop battery replacement guide](/guides/laptop-battery-replacement): Battery diagnosis, swelling risk, charger vs battery issues, and replacement process.
