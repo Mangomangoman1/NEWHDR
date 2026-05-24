@@ -34,7 +34,7 @@ Hailey Device Repair is run by Samuel, a local repair technician in the Wood Riv
 - [Tablet repair](/tablet-repair): iPad and tablet screen, battery, charging, and setup help.
 - [Computer help](/computer-support): Slow computer, crash, startup, Windows, Mac, basic IT, and small-business tech help.
 - [Virus removal](/virus-removal): Pop-ups, browser hijacks, fake alerts, malware scares, and cleanup guidance.
-- [Printer setup](/printer-setup): Wi-Fi printer, driver, scanning, and home-office setup help.
+- [Printer setup](/printer-setup): Source-backed Wi-Fi printer setup, offline error troubleshooting, AirPrint, Windows/Mac queues, HP/Canon/Epson/Brother notes, scanning, and home-office help.
 - [Data recovery](/data-recovery): Practical first steps for dead phones, failed drives, and important files.
 
 ## Decision and emergency guides
