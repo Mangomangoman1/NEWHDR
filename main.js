@@ -145,6 +145,7 @@
 
   // ─── Scroll animations (IntersectionObserver) ────────────
   const animEls = document.querySelectorAll('[data-animate]');
+  if (animEls.length) document.documentElement.classList.add('animate-ready');
 
   if ('IntersectionObserver' in window && animEls.length) {
     // Track per-parent stagger counters so concurrent siblings animate in sequence

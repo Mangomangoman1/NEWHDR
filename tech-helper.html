@@ -413,8 +413,8 @@
     .footer-links a { font-size: 0.85rem; color: var(--text-muted); transition: color 0.2s; }
     .footer-links a:hover { color: var(--text-primary); }
     .footer-copy { font-size: 0.8rem; color: var(--text-muted); }
-    [data-animate] { opacity: 0; transform: translateY(20px); transition: opacity .5s, transform .5s; }
-    [data-animate].animated { opacity: 1; transform: translateY(0); }
+    .animate-ready [data-animate] { opacity: 0; transform: translateY(20px); transition: opacity .5s, transform .5s; }
+    .animate-ready [data-animate].animated { opacity: 1; transform: translateY(0); }
     @media (max-width: 980px) {
       .hero-grid, .split { grid-template-columns: 1fr; }
       .hero { min-height: auto; }
@@ -809,15 +809,21 @@
       });
     }
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    const animatedEls = document.querySelectorAll('[data-animate]');
+    document.documentElement.classList.add('animate-ready');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      animatedEls.forEach(el => observer.observe(el));
+    } else {
+      animatedEls.forEach(el => el.classList.add('animated'));
+    }
   </script>
 
 

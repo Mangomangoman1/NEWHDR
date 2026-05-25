@@ -297,7 +297,7 @@
 
     /* Animations */
     .animate-ready [data-animate]{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.4,0,0.2,1),transform 0.6s cubic-bezier(0.4,0,0.2,1)}
-    .animate-ready [data-animate].animated{opacity:1;transform:translateY(0)}
+    .animate-ready .animate-ready [data-animate].animated{opacity:1;transform:translateY(0)}
 
     /* Reduced motion */
     @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}[data-animate]{opacity:1;transform:none}}
@@ -1272,9 +1272,11 @@
     const navToggle=document.getElementById('navToggle');
     const navMobile=document.getElementById('navMobile');
     const navBackdrop=document.getElementById('navBackdrop');
-    function toggleNav(){const open=navMobile.classList.toggle('active');navBackdrop.classList.toggle('active');navToggle.setAttribute('aria-expanded',open)}
-    navToggle.addEventListener('click',toggleNav);
-    navBackdrop.addEventListener('click',toggleNav);
+    if(navToggle&&navMobile&&navBackdrop){
+      function toggleNav(){const open=navMobile.classList.toggle('active');navBackdrop.classList.toggle('active');navToggle.setAttribute('aria-expanded',open)}
+      navToggle.addEventListener('click',toggleNav);
+      navBackdrop.addEventListener('click',toggleNav);
+    }
 
     // Scroll animations
     const animatedEls=document.querySelectorAll('[data-animate]');document.documentElement.classList.add('animate-ready');
