@@ -297,8 +297,8 @@
     }
 
     /* SCROLL ANIMATIONS */
-    [data-animate] { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    [data-animate].animated { opacity: 1; transform: translateY(0); }
+    .animate-ready [data-animate] { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .animate-ready [data-animate].animated { opacity: 1; transform: translateY(0); }
   </style>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SGQ617V748"></script>
@@ -765,23 +765,33 @@
     const html = document.documentElement;
     const saved = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', saved);
-    themeToggle.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    });
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    }
 
     // Mobile nav
     const hamburger = document.getElementById('navHamburger');
     const mobileNav = document.getElementById('navMobile');
-    hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
-    document.querySelectorAll('.nav-mobile .nav-link').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+      document.querySelectorAll('.nav-mobile .nav-link').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+    }
 
     // Scroll animations
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animated'); observer.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    const animatedEls = document.querySelectorAll('[data-animate]');
+    html.classList.add('animate-ready');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animated'); observer.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      animatedEls.forEach(el => observer.observe(el));
+    } else {
+      animatedEls.forEach(el => el.classList.add('animated'));
+    }
 
     // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
