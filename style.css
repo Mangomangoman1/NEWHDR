@@ -4816,7 +4816,7 @@ button[type="submit"]:disabled {
   gap: 0.45rem;
   width: fit-content;
   max-width: 100%;
-  margin-bottom: 0.95rem;
+  margin-bottom: 0.7rem;
   padding: 0.45rem 0.75rem;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 999px;
@@ -6308,7 +6308,7 @@ body:not(.menu-open) .hero {
   align-items: stretch;
   padding: clamp(1.1rem, 3vw, 2rem);
   border: 1px solid rgba(255,255,255,0.105);
-  border-radius: 30px;
+  border-radius: 28px;
   background:
     linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.012)),
     rgba(22,27,34,0.78);
@@ -6323,7 +6323,7 @@ body:not(.menu-open) .hero {
   position: relative;
   display: grid;
   gap: 1rem;
-  padding: clamp(1rem, 2vw, 1.35rem);
+  padding: clamp(0.95rem, 1.6vw, 1.18rem);
   border: 1px solid rgba(79,142,247,0.22);
   border-radius: 24px;
   background:
@@ -12454,7 +12454,7 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
   .hdr-service-card-grid { grid-template-columns: 1fr; }
   .hdr-service-card {
     min-height: 182px;
-    border-radius: 19px;
+    border-radius: 17px;
     padding: 1.12rem;
   }
   .hdr-service-card p { max-width: 67%; font-size: .86rem; }
@@ -12714,10 +12714,11 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
   position: relative;
   overflow: hidden;
   min-height: auto;
+  padding-block: clamp(2.6rem, 4.8vw, 4.5rem) clamp(2.4rem, 4.5vw, 4rem);
   background:
-    radial-gradient(ellipse 70% 60% at 80% 10%, rgba(79,142,247,0.20), transparent 62%),
-    radial-gradient(ellipse 60% 75% at 10% 6%, rgba(57,197,207,0.12), transparent 58%),
-    linear-gradient(180deg, rgba(13,17,23,0.98), rgba(17,24,39,0.94));
+    radial-gradient(ellipse 54% 70% at 76% 18%, rgba(79,142,247,0.26), transparent 60%),
+    radial-gradient(ellipse 48% 62% at 12% 6%, rgba(57,197,207,0.13), transparent 58%),
+    linear-gradient(180deg, rgba(13,17,23,0.99), rgba(15,22,35,0.95));
 }
 .mail-iphone-page .lp-hero::before {
   content: "";
@@ -12725,139 +12726,257 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.026) 1px, transparent 1px);
-  background-size: 54px 54px;
-  mask-image: radial-gradient(circle at 62% 26%, #000 0 46%, transparent 76%);
+    linear-gradient(rgba(255,255,255,0.038) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px),
+    radial-gradient(circle at 78% 30%, rgba(57,197,207,0.12), transparent 26%);
+  background-size: 54px 54px, 54px 54px, 100% 100%;
+  mask-image: radial-gradient(circle at 58% 30%, #000 0 54%, transparent 82%);
+  opacity: 0.68;
+}
+.mail-iphone-page .lp-hero::after {
+  content: "";
+  position: absolute;
+  left: 43%;
+  right: 14%;
+  top: 52%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(57,197,207,0.36), transparent);
   opacity: 0.55;
+  pointer-events: none;
 }
 .mail-iphone-page .lp-hero .container {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(330px, 0.62fr);
-  gap: clamp(1.3rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.70fr);
+  gap: clamp(1.4rem, 3.2vw, 2.8rem);
   align-items: center;
 }
-.mail-iphone-page .breadcrumb,
-.mail-iphone-page .lp-hero-badge,
-.mail-iphone-page .lp-hero-title,
-.mail-iphone-page .lp-hero-sub,
-.mail-iphone-page .hero-actions,
-.mail-iphone-page .mail-iphone-risk { grid-column: 1; }
+.mail-iphone-copy {
+  grid-column: 1;
+  display: grid;
+  gap: clamp(0.85rem, 1.6vw, 1.15rem);
+  align-content: center;
+}
 .mail-iphone-page .lp-hero-badge {
   width: fit-content;
   max-width: 100%;
-  border-color: rgba(57,197,207,0.26);
-  background: rgba(57,197,207,0.08);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  padding: 0.48rem 0.72rem;
+  border: 1px solid rgba(57,197,207,0.30);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(57,197,207,0.12), rgba(79,142,247,0.08));
+  box-shadow: 0 10px 28px rgba(57,197,207,0.10), inset 0 1px 0 rgba(255,255,255,0.10);
+  backdrop-filter: blur(10px);
 }
 .mail-iphone-page .lp-hero-title {
-  max-width: 760px;
+  max-width: 780px;
   text-wrap: balance;
+  letter-spacing: -0.058em;
+  font-size: clamp(3.7rem, 6.25vw, 5.65rem);
+  line-height: 0.94;
 }
 .mail-iphone-page .lp-hero-sub {
-  max-width: 680px;
-  font-size: clamp(1.02rem, 1.4vw, 1.18rem);
+  max-width: 650px;
+  font-size: clamp(1.02rem, 1.35vw, 1.16rem);
+  line-height: 1.62;
+}
+.mail-iphone-page .hero-actions { align-items: center; }
+.mail-iphone-page .hero-actions .btn-primary {
+  box-shadow: 0 18px 40px rgba(79,142,247,0.28), 0 0 0 1px rgba(255,255,255,0.08) inset;
+}
+.mail-iphone-action-note {
+  grid-column: 1;
+  max-width: 620px;
+  margin: -0.35rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 .mail-iphone-risk {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  margin: 0.85rem 0 0;
-  color: var(--text-secondary);
-  font-size: 0.92rem;
+  width: fit-content;
+  margin: -0.2rem 0 0;
+  padding: 0.48rem 0.68rem;
+  border: 1px solid rgba(53,208,127,0.22);
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--text-secondary) 88%, #fff);
+  background: rgba(53,208,127,0.055);
+  font-size: 0.9rem;
 }
-.mail-iphone-risk .material-symbols-outlined { color: var(--color-green); font-size: 1.1rem; }
+.mail-iphone-risk .material-symbols-outlined { color: var(--color-green); font-size: 1.05rem; }
+.mail-iphone-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: -0.15rem;
+}
+.mail-iphone-trust-row span {
+  padding: 0.55rem 0.72rem;
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  color: var(--text-secondary);
+  background: rgba(255,255,255,0.035);
+  font-size: 0.86rem;
+}
+.mail-iphone-trust-row strong { color: var(--text-primary); }
 .mail-iphone-ticket {
   grid-column: 2;
-  grid-row: 1 / span 6;
+  align-self: center;
   position: relative;
   padding: clamp(1rem, 2vw, 1.35rem);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 30px;
   background:
-    radial-gradient(circle at 100% 0%, rgba(79,142,247,0.22), transparent 35%),
-    linear-gradient(180deg, rgba(26,32,51,0.96), rgba(13,17,23,0.92));
-  box-shadow: 0 28px 80px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.08);
+    radial-gradient(circle at 105% -6%, rgba(79,142,247,0.28), transparent 34%),
+    linear-gradient(180deg, rgba(28,36,58,0.98), rgba(12,17,28,0.96));
+  box-shadow: 0 30px 90px rgba(0,0,0,0.42), 0 0 0 1px rgba(79,142,247,0.08), inset 0 1px 0 rgba(255,255,255,0.09);
   overflow: hidden;
+}
+.mail-iphone-ticket::before {
+  content: "APPROVED AFTER QUOTE";
+  position: absolute;
+  right: 12px;
+  top: 88px;
+  transform: rotate(8deg);
+  padding: 0.38rem 0.8rem;
+  border: 1px solid rgba(53,208,127,0.34);
+  border-radius: 999px;
+  color: rgba(154,255,198,0.74);
+  background: rgba(53,208,127,0.055);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
 }
 .mail-iphone-ticket::after {
   content: "";
   position: absolute;
-  inset: auto -20% -34% 18%;
-  height: 180px;
+  inset: auto -20% -34% 10%;
+  height: 210px;
   border-radius: 999px;
-  background: rgba(57,197,207,0.10);
-  filter: blur(30px);
+  background: linear-gradient(90deg, rgba(57,197,207,0.12), rgba(79,142,247,0.16));
+  filter: blur(34px);
 }
 .ticket-topline,
+.ticket-barcode,
 .ticket-device,
+.ticket-chips,
 .ticket-stats,
+.ticket-flow,
 .ticket-route { position: relative; z-index: 1; }
 .ticket-topline {
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
   align-items: center;
-  padding-bottom: 0.9rem;
+  padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(255,255,255,0.10);
   color: var(--text-muted);
-  font-size: 0.76rem;
-  letter-spacing: 0.09em;
+  font-size: 0.72rem;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
 }
 .ticket-topline strong { color: var(--text-primary); letter-spacing: 0; text-transform: none; }
+.ticket-barcode {
+  display: flex;
+  align-items: end;
+  gap: 3px;
+  height: 22px;
+  margin: 0.72rem 0 0.05rem;
+  opacity: 0.6;
+}
+.ticket-barcode span { width: 4px; border-radius: 3px; background: rgba(255,255,255,0.34); }
+.ticket-barcode span:nth-child(1) { height: 20px; }
+.ticket-barcode span:nth-child(2) { height: 28px; width: 7px; }
+.ticket-barcode span:nth-child(3) { height: 14px; }
+.ticket-barcode span:nth-child(4) { height: 25px; width: 5px; }
+.ticket-barcode span:nth-child(5) { height: 18px; width: 9px; }
+.ticket-barcode span:nth-child(6) { height: 30px; }
 .ticket-device {
   display: grid;
-  grid-template-columns: 56px 1fr;
+  grid-template-columns: 58px 1fr;
   gap: 0.9rem;
   align-items: center;
-  margin: 1.1rem 0;
+  margin: 0.62rem 0 0.72rem;
 }
 .ticket-device > .material-symbols-outlined {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
-  border-radius: 18px;
+  border-radius: 19px;
   color: #fff;
   background: linear-gradient(135deg, var(--accent), var(--accent-cyan));
-  box-shadow: 0 14px 34px rgba(79,142,247,0.28);
+  box-shadow: 0 14px 34px rgba(79,142,247,0.30);
 }
-.ticket-device strong { display: block; color: var(--text-primary); }
+.ticket-status {
+  display: inline-flex;
+  margin-bottom: 0.28rem;
+  padding: 0.22rem 0.48rem;
+  border-radius: 999px;
+  color: var(--accent-cyan);
+  background: rgba(57,197,207,0.08);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.ticket-device strong { display: block; color: var(--text-primary); font-size: 1.04rem; }
 .ticket-device p { margin: 0.22rem 0 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.45; }
-.ticket-stats {
-  display: grid;
-  gap: 0.65rem;
-  margin: 0;
-}
-.ticket-stats div {
+.ticket-chips {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.75rem 0.85rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  background: rgba(255,255,255,0.035);
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin-bottom: 0.95rem;
 }
-.ticket-stats dt { color: var(--text-muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; }
-.ticket-stats dd { margin: 0; color: var(--text-primary); font-weight: 700; text-align: right; }
+.ticket-chips span {
+  padding: 0.36rem 0.52rem;
+  border: 1px solid rgba(79,142,247,0.20);
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--text-secondary) 86%, #fff);
+  background: rgba(79,142,247,0.07);
+  font-size: 0.76rem;
+}
+.ticket-stats { display: grid; gap: 0.65rem; margin: 0; }
+.ticket-stats div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.62rem 0.78rem;
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.052), rgba(255,255,255,0.026));
+}
+.ticket-stats .ticket-stat-highlight {
+  border-color: rgba(57,197,207,0.24);
+  background: linear-gradient(90deg, rgba(57,197,207,0.10), rgba(79,142,247,0.05));
+}
+.ticket-stats dt { color: var(--text-muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.ticket-stats dd { margin: 0; color: var(--text-primary); font-weight: 800; text-align: right; }
+.ticket-flow {
+  display: grid;
+  grid-template-columns: 1fr 14px 1fr 14px 1fr 14px 1fr;
+  align-items: center;
+  gap: 0.28rem;
+  margin-top: 0.72rem;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  text-align: center;
+}
+.ticket-flow i { display:block; height: 2px; border-radius:999px; background: rgba(57,197,207,0.38); }
 .ticket-route {
   display: grid;
   gap: 0.5rem;
-  margin-top: 1rem;
-  padding: 0.9rem;
+  margin-top: 0.72rem;
+  padding: 0.72rem;
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: 18px;
   color: var(--text-secondary);
-  background: rgba(0,0,0,0.18);
+  background: rgba(0,0,0,0.20);
 }
-.route-line {
-  display: block;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(57,197,207,0.15), var(--accent-cyan), rgba(79,142,247,0.18));
-}
+.route-line { display: block; height: 2px; border-radius: 999px; background: linear-gradient(90deg, rgba(57,197,207,0.15), var(--accent-cyan), rgba(79,142,247,0.18)); }
 .ticket-route strong { color: var(--accent-cyan); }
 .mail-iphone-page .lp-compare-card,
 .mail-iphone-page .lp-info-card,
@@ -12871,33 +12990,24 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
 }
 .mail-iphone-page .lp-compare-card:hover,
 .mail-iphone-page .lp-info-card:hover,
-.mail-iphone-page .process-step:hover {
-  transform: translateY(-3px);
-  border-color: rgba(79,142,247,0.34);
-}
-.mail-iphone-page .lp-pricing-row--header {
-  background: linear-gradient(90deg, rgba(79,142,247,0.14), rgba(57,197,207,0.08));
-}
-.mail-iphone-page .lp-bottom-cta {
-  background:
-    radial-gradient(ellipse 70% 90% at 85% 0%, rgba(57,197,207,0.16), transparent 58%),
-    linear-gradient(135deg, rgba(79,142,247,0.14), rgba(26,32,51,0.94));
-}
-@media (max-width: 860px) {
-  .mail-iphone-page .lp-hero .container {
-    display: block;
-  }
-  .mail-iphone-ticket {
-    margin-top: 1.35rem;
-  }
+.mail-iphone-page .process-step:hover { transform: translateY(-3px); border-color: rgba(79,142,247,0.34); }
+.mail-iphone-page .lp-pricing-row--header { background: linear-gradient(90deg, rgba(79,142,247,0.14), rgba(57,197,207,0.08)); }
+.mail-iphone-page .lp-bottom-cta { background: radial-gradient(ellipse 70% 90% at 85% 0%, rgba(57,197,207,0.16), transparent 58%), linear-gradient(135deg, rgba(79,142,247,0.14), rgba(26,32,51,0.94)); }
+@media (max-width: 980px) {
+  .mail-iphone-page .lp-hero .container { grid-template-columns: minmax(0, 1fr); }
+  .mail-iphone-copy,
+  .mail-iphone-ticket { grid-column: 1; grid-row: auto; }
+  .mail-iphone-ticket { margin-top: 1.35rem; max-width: 560px; }
 }
 @media (max-width: 560px) {
-  .mail-iphone-page .lp-hero {
-    padding-top: 3.85rem;
-  }
+  .mail-iphone-page .lp-hero { padding-top: 3.2rem; }
   .mail-iphone-page .lp-hero .container { padding-inline: 1.2rem; }
   .mail-iphone-page .lp-hero-title { font-size: clamp(2rem, 11vw, 2.65rem); }
-  .mail-iphone-ticket { border-radius: 22px; }
-  .ticket-stats div { display: grid; gap: 0.25rem; }
+  .mail-iphone-page .hero-actions .btn { width: 100%; }
+  .mail-iphone-ticket { max-width: none; border-radius: 22px; }
+  .mail-iphone-ticket::before { right: 10px; top: 104px; font-size: 0.52rem; }
+  .ticket-stats div { grid-template-columns: 1fr; gap: 0.25rem; }
   .ticket-stats dd { text-align: left; }
+  .ticket-flow { grid-template-columns: 1fr; text-align: left; }
+  .ticket-flow i { width: 2px; height: 12px; margin-left: 0.35rem; }
 }
