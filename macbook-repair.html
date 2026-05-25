@@ -296,8 +296,8 @@
     .mobile-cta .btn{flex:1;max-width:200px}
 
     /* Animations */
-    [data-animate]{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.4,0,0.2,1),transform 0.6s cubic-bezier(0.4,0,0.2,1)}
-    [data-animate].animated{opacity:1;transform:translateY(0)}
+    .animate-ready [data-animate]{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.4,0,0.2,1),transform 0.6s cubic-bezier(0.4,0,0.2,1)}
+    .animate-ready [data-animate].animated{opacity:1;transform:translateY(0)}
 
     /* Reduced motion */
     @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}[data-animate]{opacity:1;transform:none}}
@@ -1265,7 +1265,7 @@
 
     // Theme toggle
     const themeToggle=document.getElementById('themeToggle');
-    themeToggle.addEventListener('click',()=>{const h=document.documentElement;const t=h.getAttribute('data-theme');const n=t==='light'?'dark':'light';h.setAttribute('data-theme',n);localStorage.setItem('theme',n)});
+    if(themeToggle){themeToggle.addEventListener('click',()=>{const h=document.documentElement;const t=h.getAttribute('data-theme');const n=t==='light'?'dark':'light';h.setAttribute('data-theme',n);localStorage.setItem('theme',n)});}
     (function(){const s=localStorage.getItem('theme');if(s)document.documentElement.setAttribute('data-theme',s)})();
 
     // Mobile nav
@@ -1277,8 +1277,8 @@
     navBackdrop.addEventListener('click',toggleNav);
 
     // Scroll animations
-    const animObserver=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('animated');animObserver.unobserve(e.target)}})},{threshold:0.1});
-    document.querySelectorAll('[data-animate]').forEach(el=>animObserver.observe(el));
+    const animatedEls=document.querySelectorAll('[data-animate]');document.documentElement.classList.add('animate-ready');
+    if('IntersectionObserver' in window){const animObserver=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('animated');animObserver.unobserve(e.target)}})},{threshold:0.1});animatedEls.forEach(el=>animObserver.observe(el));}else{animatedEls.forEach(el=>el.classList.add('animated'));}
 
     // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(q=>{
