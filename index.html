@@ -460,10 +460,165 @@ a{color:inherit;text-decoration:none}
       .home-page .hero-proof-chip { right:.6rem; }
       .home-page #hero .hero-inner { max-width:740px; }
     }
+    .home-page .mobile-quote-card { display:none; }
     @media (max-width: 768px) {
-      .home-page #hero { padding-top:4.35rem; min-height:auto; }
-      .home-page .hero-visual { display:none; }
-      .home-page .service-selector-grid { margin-top:1.25rem; }
+      .home-page #hero {
+        min-height:calc(100svh - 0px);
+        padding:calc(3.15rem + env(safe-area-inset-top)) 0 max(1.05rem, env(safe-area-inset-bottom));
+        align-items:flex-start;
+        background:
+          radial-gradient(ellipse 92% 44% at 50% -8%, rgba(79,142,247,.2), transparent 64%),
+          radial-gradient(ellipse 70% 28% at 92% 12%, rgba(57,213,189,.1), transparent 62%),
+          linear-gradient(180deg, #0d1117 0%, #101722 56%, #0d1117 100%);
+      }
+      .home-page #hero::before {
+        content:"";
+        position:absolute;
+        inset:0;
+        pointer-events:none;
+        opacity:.18;
+        background-image:linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+        background-size:28px 28px;
+        mask-image:linear-gradient(#000, transparent 72%);
+      }
+      .home-page #hero .hero-shell { display:block; }
+      .home-page #hero .hero-inner { max-width:none; padding:0 1rem !important; }
+      .home-page #hero .hero-eyebrow {
+        max-width:100%;
+        margin-bottom:.8rem;
+        padding:.42rem .68rem;
+        border-radius:999px;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        color:#cbd7e7;
+        background:rgba(255,255,255,.055);
+        border:1px solid rgba(255,255,255,.1);
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+      }
+      .home-page #hero .hero-headline {
+        max-width:10.8ch;
+        margin:.32rem 0 .82rem !important;
+        font-size:clamp(2.92rem, 14.6vw, 4rem) !important;
+        line-height:.82 !important;
+        letter-spacing:-.062em !important;
+        text-wrap:balance;
+      }
+      .home-page #hero .hero-headline-accent { display:inline-block; }
+      .home-page #hero .hero-tagline {
+        display:block;
+        max-width:27ch;
+        margin:0 0 .85rem;
+        padding:0;
+        border:0;
+        background:transparent;
+        color:#f2f7ff;
+        font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
+        font-size:1.02rem;
+        font-weight:760;
+        line-height:1.28;
+        letter-spacing:-.012em;
+      }
+      .home-page #hero .hero-sub { display:none; }
+      .home-page .mobile-quote-card {
+        display:grid;
+        gap:.62rem;
+        margin:.12rem 0 .78rem;
+        padding:.68rem;
+        border-radius:22px;
+        border:1px solid rgba(255,255,255,.11);
+        background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+        box-shadow:0 18px 44px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.09);
+        backdrop-filter:blur(18px);
+        -webkit-backdrop-filter:blur(18px);
+      }
+      .home-page .mobile-quote-top { display:flex; align-items:center; justify-content:space-between; gap:.75rem; color:#dfe8f6; }
+      .home-page .mobile-quote-top span { color:var(--accent); font-size:.65rem; font-weight:950; letter-spacing:.14em; text-transform:uppercase; }
+      .home-page .mobile-quote-top strong { font-size:.78rem; font-weight:850; }
+      .home-page .mobile-quote-bubble {
+        padding:.74rem .82rem;
+        border-radius:18px 18px 18px 6px;
+        color:#eef6ff;
+        background:rgba(255,255,255,.07);
+        border:1px solid rgba(255,255,255,.08);
+        font-size:.88rem;
+        line-height:1.38;
+      }
+      .home-page .mobile-quote-points { display:grid; grid-template-columns:repeat(3,1fr); gap:.42rem; }
+      .home-page .mobile-quote-points span {
+        min-height:36px;
+        display:grid;
+        place-items:center;
+        text-align:center;
+        padding:.38rem .32rem;
+        border-radius:13px;
+        color:#c8d5e6;
+        background:rgba(0,0,0,.18);
+        border:1px solid rgba(255,255,255,.07);
+        font-size:.72rem;
+        font-weight:780;
+        line-height:1.12;
+      }
+      .home-page #hero .hero-actions,
+      .home-page #hero .hero-visual,
+      .home-page #hero .service-selector-grid,
+      .home-page #hero .hero-scroll-hint { display:none !important; }
+      .home-page #hero .hero-mobile-actions {
+        display:grid;
+        grid-template-columns:1fr;
+        gap:.62rem;
+        margin:.75rem 0 .72rem;
+      }
+      .home-page #hero .hero-mobile-actions .btn {
+        width:100%;
+        min-height:56px;
+        justify-content:center;
+        border-radius:18px;
+        font-size:.95rem;
+        font-weight:850;
+      }
+      .home-page #hero .hero-mobile-actions .btn-primary { box-shadow:0 16px 36px rgba(79,142,247,.28); }
+      .home-page #hero .hero-trust {
+        display:flex;
+        gap:.45rem;
+        margin-top:.74rem;
+        padding-bottom:.15rem;
+        overflow-x:auto;
+        scrollbar-width:none;
+        -webkit-overflow-scrolling:touch;
+      }
+      .home-page #hero .hero-trust::-webkit-scrollbar { display:none; }
+      .home-page #hero .hero-trust-sep { display:none; }
+      .home-page #hero .hero-trust-item {
+        flex:0 0 auto;
+        min-height:34px;
+        padding:.42rem .56rem;
+        border-radius:999px;
+        background:rgba(255,255,255,.045);
+        border:1px solid rgba(255,255,255,.08);
+        color:#cbd7e7;
+        font-size:.72rem;
+        line-height:1;
+        white-space:nowrap;
+      }
+      .home-page .cookie-banner.visible {
+        left:.75rem !important;
+        right:.75rem !important;
+        bottom:max(.62rem, env(safe-area-inset-bottom)) !important;
+        width:auto !important;
+        max-width:none !important;
+        padding:.46rem .5rem;
+        border-radius:16px;
+        opacity:.82 !important;
+      }
+      .home-page .cookie-banner .cookie-banner-text { font-size:.62rem; line-height:1.22; }
+      .home-page .cookie-banner .btn-accept,
+      .home-page .cookie-banner .btn-decline { min-height:28px; padding:.32rem .46rem; font-size:.64rem; }
+    }
+    @media (max-width: 380px) {
+      .home-page #hero .hero-headline { font-size:clamp(2.72rem, 15vw, 3.55rem) !important; }
+      .home-page .mobile-quote-bubble { font-size:.84rem; }
+      .home-page .mobile-quote-points span { font-size:.64rem; }
     }
   </style>
 <!-- Structured Data: LocalBusiness JSON-LD -->
@@ -1071,17 +1226,26 @@ a{color:inherit;text-decoration:none}
 <div class="hero-copy hero-inner">
 <div class="hero-eyebrow">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="location_on"></span>
-        Hailey, Idaho · Ketchum · Sun Valley · Mail-In Statewide
+        Wood River Valley · Mail-in available
       </div>
 <h1 class="hero-headline">
-        Phone, Laptop &amp; Device Repair<br/>
-<span aria-label="in Hailey, Idaho" class="hero-headline-accent">in Hailey, Idaho</span>
+        iPhone &amp; MacBook<br/>
+<span aria-label="repair in Hailey, Idaho" class="hero-headline-accent">Repair in Hailey</span>
 </h1>
-<h2 class="hero-tagline">Phone repair, laptop repair, computer help, and mail-in device repair for the Wood River Valley.</h2>
+<h2 class="hero-tagline">Phones, laptops, tablets, consoles — text photos first for a quote.</h2>
 <p class="hero-sub">
         Fast, fair repair for iPhone, Android, laptop, MacBook, tablet, console, gaming PC, and small-business tech problems.
         Text the device model, what happened, symptoms, and photos for a quote-first repair path.
       </p>
+<div aria-label="Quote-first mobile repair promise" class="mobile-quote-card">
+<div class="mobile-quote-top"><span>Repair brief</span><strong>Direct to Samuel</strong></div>
+<div class="mobile-quote-bubble">“Send photos + symptoms. I’ll tell you repair vs. replace before you drive.”</div>
+<div class="mobile-quote-points">
+<span>Quote first</span>
+<span>Data stays private</span>
+<span>40-day warranty</span>
+</div>
+</div>
 <div class="hero-actions">
 <a class="btn btn-primary btn-lg btn-magnetic" data-magnetic="" href="#contact">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="chat"></span>
@@ -1095,7 +1259,7 @@ a{color:inherit;text-decoration:none}
 <div aria-label="Fast mobile contact options" class="hero-mobile-actions">
 <a class="btn btn-primary btn-lg" href="sms:+12083666111">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>
-          Text a photo or issue
+          Text Photos for a Quote
         </a>
 <a class="btn btn-outline btn-lg" href="tel:+12083666111">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="call"></span>
@@ -1965,7 +2129,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 <script defer="" src="liquid-btn.js"></script>
-<script defer="" src="main.js?v=home-20260514"></script>
+<script defer="" src="main.js?v=home-mobile-hero-20260527"></script>
 <script defer="" src="/_vercel/insights/script.js"></script>
 <!-- ═══════════════════════════════════════════════════
        QUICK FIND — Site-wide command palette

@@ -54,7 +54,8 @@
   const cookieAccept = document.getElementById('cookieAccept');
   const cookieDecline = document.getElementById('cookieDecline');
   if (cookieBanner && !localStorage.getItem('hdr_cookie_consent')) {
-    setTimeout(() => cookieBanner.classList.add('visible'), 1500);
+    const homeMobileDelay = document.body.classList.contains('home-page') && window.matchMedia('(max-width: 768px)').matches;
+    setTimeout(() => cookieBanner.classList.add('visible'), homeMobileDelay ? 6500 : 1500);
   }
   function dismissCookie(choice) {
     localStorage.setItem('hdr_cookie_consent', choice);
@@ -1854,7 +1855,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     });
     var { open, closingSoon } = isOpen();
 
-    clockEl.textContent = timeStr + ' MT — ' + (open ? 'Open' : 'Closed');
+    clockEl.textContent = closingSoon ? 'Closing soon' : (open ? 'Open now' : 'Closed now');
 
     dotEl.classList.remove('closed', 'closing-soon');
     if (!open) {
