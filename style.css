@@ -51,8 +51,8 @@
 
   /* Type */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-display: 'Fraunces', 'Plus Jakarta Sans', 'Inter', serif;
-  --font-heading: 'Fraunces', 'Plus Jakarta Sans', 'Inter', serif;
+  --font-display: 'MuseoModerno', 'Fraunces', 'Plus Jakarta Sans', 'Inter', serif;
+  --font-heading: 'MuseoModerno', 'Fraunces', 'Plus Jakarta Sans', 'Inter', serif;
 
   /* Radii */
   --radius-sm:  6px;
@@ -13012,3 +13012,5 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
   .ticket-flow { grid-template-columns: 1fr; text-align: left; }
   .ticket-flow i { width: 2px; height: 12px; margin-left: 0.35rem; }
 }
+
+/* HDR sitewide H1/title font split */h2,h3,h4,h5,h6,.section-title,.card-title,.sel-title,.service-card-title,.diag-title,.pricing-card-service,.footer-brand-name,.page-curtain-logo,.article h2,.article h3{font-family:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif!important}h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{font-family:'Darker Grotesque','MuseoModerno','Inter',sans-serif!important;font-weight:900!important;letter-spacing:-0.045em;line-height:.92}.hero-headline{margin-bottom:1.75rem!important}@media(max-width:480px){h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{line-height:.9}}
