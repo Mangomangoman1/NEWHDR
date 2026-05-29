@@ -10,4 +10,4 @@ Local drop-off: Hailey, Ketchum, Sun Valley, Bellevue, Wood River Valley. Statew
 
 ## Contact
 
-Text (208) 366-6111 for the fastest reply.
+Text (208) 450-1606 for the fastest reply.

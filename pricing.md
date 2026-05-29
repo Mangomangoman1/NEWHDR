@@ -8,4 +8,4 @@ Device model, part quality, availability, labor complexity, prior repair attempt
 
 ## Best next step
 
-Text (208) 366-6111 with the model, symptoms, what happened, and photos. HDR will say whether the repair is likely worth it before you spend money.
+Text (208) 450-1606 with the model, symptoms, what happened, and photos. HDR will say whether the repair is likely worth it before you spend money.

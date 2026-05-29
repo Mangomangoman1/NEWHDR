@@ -31,7 +31,7 @@
   <!-- Location -->
   <text x="80" y="475" font-family="system-ui,-apple-system,sans-serif" font-weight="500" font-size="22" fill="#8b949e">📍 Hailey, Idaho · Wood River Valley</text>
   <!-- Phone -->
-  <text x="80" y="520" font-family="system-ui,-apple-system,sans-serif" font-weight="600" font-size="22" fill="#06b6d4">📱 (208) 366-6111</text>
+  <text x="80" y="520" font-family="system-ui,-apple-system,sans-serif" font-weight="600" font-size="22" fill="#06b6d4">📱 (208) 450-1606</text>
   <!-- Decorative dots -->
   <circle cx="1050" cy="200" r="80" fill="rgba(124,58,237,0.08)"/>
   <circle cx="1100" cy="350" r="120" fill="rgba(6,182,212,0.06)"/>

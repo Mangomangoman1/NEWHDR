@@ -1156,7 +1156,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         </p>
 
         <div class="dc-results-cta">
-          <a href="sms:+12083666111?body=${smsBody}" class="btn btn-primary">
+          <a href="sms:+12084501606?body=${smsBody}" class="btn btn-primary">
             <span class="material-symbols-outlined" data-icon="sms" aria-hidden="true"></span> Text This Estimate to Samuel
           </a>
           <a href="/contact" class="btn btn-outline">
@@ -1907,7 +1907,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         {
           title: 'Text me a photo and the model',
           desc: 'Water damage is time-sensitive. The sooner I can start drying, cleaning, and checking corrosion, the better the odds of saving the phone.',
-          timer: 'Text: (208) 366-6111'
+          timer: 'Text: (208) 450-1606'
         }
       ]
     },
@@ -1943,7 +1943,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         {
           title: 'Text me a photo and your model',
           desc: 'Front photo + device model lets me tell you the likely repair and whether it looks like glass-only damage or full display damage.',
-          timer: 'Text: (208) 366-6111'
+          timer: 'Text: (208) 450-1606'
         }
       ]
     },
@@ -1980,7 +1980,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         {
           title: 'Text the model and what happens on charge',
           desc: 'Tell me if you get no icon, intermittent charging, cable wiggle, heat, vibration, or only wireless power. That narrows it down fast.',
-          timer: 'Text: (208) 366-6111'
+          timer: 'Text: (208) 450-1606'
         }
       ]
     },
@@ -2018,7 +2018,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         {
           title: 'Text me if it keeps happening',
           desc: 'Overheating can be a battery problem, charging issue, thermal paste issue, software loop, or board-level fault. Repeats mean it needs hands-on diagnosis.',
-          timer: 'Text: (208) 366-6111'
+          timer: 'Text: (208) 450-1606'
         }
       ]
     },
@@ -2053,7 +2053,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         {
           title: 'Text me what happened before it went dark',
           desc: 'Drop, update, heat, water, battery drain, bad charger, or random blackout — all of that helps. Most black-screen phones are not truly dead.',
-          timer: 'Text: (208) 366-6111'
+          timer: 'Text: (208) 450-1606'
         }
       ]
     },
@@ -2089,7 +2089,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         {
           title: 'Text me the device and symptoms',
           desc: 'Tell me if it clicks, loops, gets hot, shows a logo, vibrates, or does absolutely nothing. Even “it just died” is useful information here.',
-          timer: 'Text: (208) 366-6111'
+          timer: 'Text: (208) 450-1606'
         }
       ]
     },
@@ -2125,7 +2125,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         {
           title: 'Text me a side photo of the lift',
           desc: 'A side-angle photo usually tells me immediately whether the battery is swelling and how urgent the handoff needs to be.',
-          timer: 'Text: (208) 366-6111'
+          timer: 'Text: (208) 450-1606'
         }
       ]
     },
@@ -2160,7 +2160,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         {
           title: 'Text me the model and what you see',
           desc: 'Tell me whether it is stuck on the Apple logo, Samsung splash screen, spinning wheel, update bar, or repeated restart. That changes the repair path.',
-          timer: 'Text: (208) 366-6111'
+          timer: 'Text: (208) 450-1606'
         }
       ]
     },
@@ -2196,7 +2196,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         {
           title: 'Text me what spilled and how much',
           desc: 'Water, coffee, soda, tea, wine, energy drink — the type of liquid matters because sticky or acidic spills need more aggressive cleanup.',
-          timer: 'Text: (208) 366-6111'
+          timer: 'Text: (208) 450-1606'
         }
       ]
     },
@@ -2232,7 +2232,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         {
           title: 'Text me a photo of the port or setup',
           desc: 'A close photo of the HDMI port, dock, cable fit, or “no signal” screen gives me a much better guess before you bring it in.',
-          timer: 'Text: (208) 366-6111'
+          timer: 'Text: (208) 450-1606'
         }
       ]
     }
@@ -2268,7 +2268,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     document.getElementById('sosOverlayTitle').textContent = data.title;
     if (sosCtaLink) {
       var sosBody = encodeURIComponent('Hi Samuel — I need SOS help with ' + data.title + '. Device: . What happened: . Current symptoms: . I am in [city/area].');
-      sosCtaLink.href = 'sms:+12083666111?body=' + sosBody;
+      sosCtaLink.href = 'sms:+12084501606?body=' + sosBody;
     }
 
     renderSosSteps();

@@ -1,6 +1,6 @@
 # Contact Hailey Device Repair
 
-Fastest contact: text or call (208) 366-6111.
+Fastest contact: text or call (208) 450-1606.
 Email: samuel@haileyrepair.com.
 
 ## What to send

@@ -4,4 +4,4 @@ HDR helps with MacBook screen, battery, keyboard, charging, no-power, liquid, an
 
 ## Contact
 
-Text (208) 366-6111 with MacBook model/year if known, symptoms, and photos.
+Text (208) 450-1606 with MacBook model/year if known, symptoms, and photos.

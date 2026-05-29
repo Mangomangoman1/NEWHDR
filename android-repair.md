@@ -4,4 +4,4 @@ HDR repairs Samsung Galaxy, Google Pixel, Motorola, and other Android phones. Co
 
 ## Contact
 
-Text (208) 366-6111 with Android model, what happened, symptoms, and photos.
+Text (208) 450-1606 with Android model, what happened, symptoms, and photos.
