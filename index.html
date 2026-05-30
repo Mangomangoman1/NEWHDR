@@ -708,14 +708,26 @@ a{color:inherit;text-decoration:none}
       position:absolute;
       top:50%;
       left:50%;
-      width:290px;
-      height:320px;
+      width:300px;
+      height:330px;
       border-radius:50%;
       transform:translate(-50%,-50%);
-      filter:blur(20px);
-      background:radial-gradient(circle at 50% 42%, rgba(96,134,247,.55), rgba(138,124,240,.30) 40%, rgba(6,182,212,.16) 62%, transparent 74%);
+      filter:blur(22px);
+      background:radial-gradient(circle at 50% 42%, rgba(96,134,247,.5), rgba(138,124,240,.26) 40%, rgba(6,182,212,.16) 62%, transparent 74%);
       animation:hdr-mobile-hero-bloom 9.5s ease-in-out infinite;
     }
+    .hdr-mobile-asset {
+      position:relative;
+      z-index:1;
+      display:block;
+      width:min(78vw, 360px);
+      max-width:360px;
+      height:auto;
+      margin:-12px auto -8px;
+      filter:drop-shadow(0 28px 46px rgba(13,32,96,.48)) saturate(1.04) contrast(1.03);
+      transform:translateZ(0);
+    }
+    .hdr-mobile-asset--poster { display:none; }
     .hdr-mobile-scene { position:relative; width:150px; height:320px; perspective:1150px; z-index:1; }
     .hdr-mobile-flip {
       position:relative;
@@ -777,14 +789,15 @@ a{color:inherit;text-decoration:none}
     @keyframes hdr-mobile-hero-drift { 0%,100%{transform:rotate(-18deg) translateX(-10%)} 50%{transform:rotate(-18deg) translateX(18%)} }
     @keyframes hdr-mobile-hero-bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
     @media (prefers-reduced-motion:reduce) {
-      .hdr-mobile-flip{animation:none;transform:rotateY(180deg);}
       .hdr-mobile-stage-glow{animation:none;opacity:.9;}
-      .hdr-mobile-sheen,.hdr-mobile-cue{animation:none;}
+      .hdr-mobile-asset--animated{display:none;}
+      .hdr-mobile-asset--poster{display:block;}
+      .hdr-mobile-cue{animation:none;}
     }
     @media (max-width: 380px) {
       .hdr-mobile-import-hero { padding-top:64px; }
       .hdr-mobile-import-title { margin-top:12px; font-size:clamp(29px, 9.6vw, 38px); font-weight:780; }
-      .hdr-mobile-scene { width:138px; height:294px; }
+      .hdr-mobile-asset { width:min(80vw, 330px); margin-top:-10px; margin-bottom:-10px; }
       .hdr-mobile-stage { margin-top:8px; }
       .hdr-mobile-stars { margin-bottom:12px; }
     }
@@ -1394,34 +1407,8 @@ a{color:inherit;text-decoration:none}
     <h1 class="hdr-mobile-import-title">Phone &amp; Computer<br><span class="grad">Repair in Hailey</span></h1>
     <div class="hdr-mobile-stage" aria-hidden="true">
       <div class="hdr-mobile-stage-glow"></div>
-      <div class="hdr-mobile-scene">
-        <div class="hdr-mobile-flip">
-          <div class="hdr-mobile-face">
-            <span class="hdr-mobile-sidebtn" style="left:-2px;top:96px;width:3px;height:20px;"></span>
-            <span class="hdr-mobile-sidebtn" style="left:-2px;top:126px;width:3px;height:34px;"></span>
-            <span class="hdr-mobile-sidebtn" style="left:-2px;top:168px;width:3px;height:34px;"></span>
-            <span class="hdr-mobile-sidebtn" style="right:-2px;top:140px;width:3px;height:46px;"></span>
-            <div class="hdr-mobile-screen hdr-mobile-screen--cracked">
-              <div class="hdr-mobile-island"><span class="cam"></span></div>
-              <svg width="138" height="308" viewBox="0 0 138 308" style="position:absolute;inset:0;" aria-hidden="true">
-                <rect x="118.4" y="0" width="1.7" height="308" fill="rgba(72,102,172,.34)"/><rect x="121.4" y="0" width="0.8" height="308" fill="rgba(120,150,210,.18)"/>
-                <g fill="rgba(150,182,236,.09)" stroke="rgba(206,223,250,.55)" stroke-width="0.7" stroke-linejoin="round"><path d="M86,112 L90,90 L104,98 Z"/><path d="M86,112 L100,134 L88,138 Z"/><path d="M86,112 L66,108 L72,94 Z"/><path d="M86,112 L110,114 L100,134 Z"/></g>
-                <g fill="none" stroke="rgba(202,220,248,.5)" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path d="M86,112 L94,80 L88,46 L96,16 L92,0"/><path d="M86,112 L110,92 L120,58 L138,34"/><path d="M86,112 L114,116 L138,124"/><path d="M86,112 L106,150 L122,206 L138,300"/><path d="M86,112 L84,170 L92,236 L86,308"/><path d="M86,112 L60,152 L38,216 L16,308"/><path d="M86,112 L50,118 L18,122 L0,126"/><path d="M86,112 L60,90 L38,56 L12,18"/><path d="M60,152 L42,160 L24,156"/><path d="M106,150 L126,158 L138,166"/><path d="M60,90 L52,68 L34,60"/><path d="M94,80 L106,70 L116,48"/><path d="M94,62 L116,86 L120,118 L112,156 L90,168 L58,150 L40,112 L58,78 Z"/></g>
-                <g fill="none" stroke="rgba(214,228,252,.72)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round"><path d="M90,90 L104,98 L110,114 L100,134 L88,138 L70,128 L66,108 L72,94 Z"/></g>
-                <path d="M86,112 L91,108 L94,114 L88,119 L82,116 L83,109 Z" fill="rgba(8,12,22,.92)" stroke="rgba(220,234,255,.6)" stroke-width="0.6"/>
-                <g fill="rgba(224,236,255,.78)"><circle cx="86" cy="112" r="1.1"/><circle cx="104" cy="98" r="0.9"/><circle cx="116" cy="86" r="0.8"/><circle cx="112" cy="156" r="0.8"/><circle cx="40" cy="112" r="0.7"/><circle cx="94" cy="62" r="0.7"/></g>
-              </svg>
-            </div>
-          </div>
-          <div class="hdr-mobile-face hdr-mobile-face--back">
-            <span class="hdr-mobile-sidebtn" style="left:-2px;top:96px;width:3px;height:20px;"></span>
-            <span class="hdr-mobile-sidebtn" style="left:-2px;top:126px;width:3px;height:34px;"></span>
-            <span class="hdr-mobile-sidebtn" style="left:-2px;top:168px;width:3px;height:34px;"></span>
-            <span class="hdr-mobile-sidebtn" style="right:-2px;top:140px;width:3px;height:46px;"></span>
-            <div class="hdr-mobile-screen hdr-mobile-screen--fixed"><div class="hdr-mobile-sheen"></div><div class="hdr-mobile-glare"></div><div class="hdr-mobile-island"><span class="cam"></span></div></div>
-          </div>
-        </div>
-      </div>
+      <img class="hdr-mobile-asset hdr-mobile-asset--animated" src="/assets/hero/phone-flip-v16-mobile.webp" alt="" width="360" height="360" decoding="async" fetchpriority="high"/>
+      <img class="hdr-mobile-asset hdr-mobile-asset--poster" src="/assets/hero/phone-flip-v16-mobile-poster.webp" alt="" width="360" height="360" decoding="async"/>
     </div>
     <p class="hdr-mobile-stars"><span class="glyphs">★★★★★</span> <span>5.0 · Wood River Valley</span></p>
     <a class="hdr-mobile-cta" href="sms:+12084501606"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>Text Photos for a Quote</a>
