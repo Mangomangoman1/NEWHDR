@@ -93,8 +93,10 @@ These public profiles help identify Hailey Device Repair as the same local busin
 
 - [Device care tips hub](/tips): Top-of-funnel emergency first steps, preventive care, battery, screen, performance, data-safety, and repair-or-replace decision tips from HDR.
 - [Water-damaged phone first steps](/tips/water-damaged-phone): Power off, avoid rice, dry with airflow, and know when corrosion inspection matters.
+- [Black phone screen but still on](/tips/phone-screen-black-but-on): How to separate display failure from no-power behavior, with safe first tests and data-risk warnings.
 - [LCD vs OLED screen guide](/tips/lcd-vs-oled): How to tell phone screen type and why it affects repair cost.
 - [Laptop battery dying signs](/tips/laptop-battery-dying): Signs of failing or swollen batteries and when to stop charging.
+- [Phone charges slowly](/tips/phone-charges-slowly): Cable, power brick, port debris, heat, battery wear, water damage, and board-fault clues.
 - [Repair or replace decision guide](/tips/repair-or-replace): Practical repair math before spending money.
 - [Speed up a slow laptop](/tips/speed-up-slow-laptop): Free steps to try before paying for a tune-up or SSD upgrade.
 ## Repair guides
