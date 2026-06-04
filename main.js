@@ -9,12 +9,25 @@
 
   // ─── Theme toggle ────────────────────────────────────────
   const html = document.documentElement;
-  const themeToggle = document.getElementById('themeToggle');
+  const themeToggles = Array.from(document.querySelectorAll('.theme-toggle'));
   const THEME_KEY = 'hdr-theme';
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+  function syncThemeControls(theme) {
+    const isLight = theme === 'light';
+    themeToggles.forEach((toggle) => {
+      toggle.setAttribute('aria-pressed', String(isLight));
+      toggle.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+      const label = toggle.querySelector('.theme-toggle-label');
+      if (label) label.textContent = isLight ? 'Dark' : 'Light';
+    });
+    if (themeColorMeta) themeColorMeta.setAttribute('content', isLight ? '#f5f6f3' : '#0d1117');
+  }
 
   function setTheme(theme, announce) {
     html.setAttribute('data-theme', theme);
     localStorage.setItem(THEME_KEY, theme);
+    syncThemeControls(theme);
     if (announce !== false) announceToSR(theme === 'dark' ? 'Dark theme enabled' : 'Light theme enabled');
   }
 
@@ -42,12 +55,12 @@
     setTheme('dark', false);
   }
 
-  if (themeToggle) {
+  themeToggles.forEach((themeToggle) => {
     themeToggle.addEventListener('click', () => {
       const current = html.getAttribute('data-theme');
       setTheme(current === 'dark' ? 'light' : 'dark');
     });
-  }
+  });
 
   // ─── Cookie consent banner ───────────────────────────────
   const cookieBanner = document.getElementById('cookieBanner');
