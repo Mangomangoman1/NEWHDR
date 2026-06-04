@@ -47,13 +47,10 @@
     requestAnimationFrame(() => { el.textContent = msg; });
   }
 
-  // Init: always dark — ignore system preference
-  const saved = localStorage.getItem(THEME_KEY);
-  if (saved) {
-    setTheme(saved, false);
-  } else {
-    setTheme('dark', false);
-  }
+  // Init: keep the public site dark while the light theme is still being polished.
+  // Also clear any earlier light-theme choice so returning customers do not stay in the experiment.
+  localStorage.removeItem(THEME_KEY);
+  setTheme('dark', false);
 
   themeToggles.forEach((themeToggle) => {
     themeToggle.addEventListener('click', () => {
