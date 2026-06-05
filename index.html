@@ -1538,6 +1538,194 @@ a{color:inherit;text-decoration:none}
     html[data-theme="light"] .hero-trust-item{background:rgba(255,255,255,.72)!important;}
   }
 </style>
+<style id="hdr-mobile-menu-polish">
+  @media (max-width: 640px) {
+    body.menu-open .nav { box-shadow: 0 18px 54px rgba(0,0,0,.34) !important; }
+    .nav-mobile {
+      align-items: center !important;
+      gap: 0 !important;
+      padding: 1.15rem clamp(1.05rem, 5vw, 1.55rem) 1.35rem !important;
+      background:
+        radial-gradient(circle at 50% -28%, rgba(91,139,207,.13), transparent 12rem),
+        linear-gradient(180deg, rgba(10,14,23,.985), rgba(7,10,17,.985)) !important;
+      border-top: 1px solid rgba(255,255,255,.07) !important;
+      border-bottom: 1px solid rgba(255,255,255,.08) !important;
+      box-shadow: 0 28px 70px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.035) !important;
+    }
+    .nav-mobile ul {
+      width: min(100%, 330px) !important;
+      margin: .1rem auto 1.05rem !important;
+      display: grid !important;
+      gap: .12rem !important;
+    }
+    .nav-mobile .nav-link {
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 49px !important;
+      padding: .72rem 1rem !important;
+      border-radius: 16px !important;
+      text-align: center !important;
+      color: rgba(221,229,239,.68) !important;
+      font-size: 1.01rem !important;
+      font-weight: 760 !important;
+      letter-spacing: -.015em !important;
+      background: transparent !important;
+    }
+    .nav-mobile .nav-link:hover,
+    .nav-mobile .nav-link:focus-visible {
+      color: #e9f1ff !important;
+      background: rgba(91,139,207,.08) !important;
+    }
+    .nav-mobile .nav-link.active {
+      color: #9fbdf2 !important;
+      background: transparent !important;
+    }
+    .nav-mobile .nav-link.active::after {
+      content: "" !important;
+      position: absolute !important;
+      left: 50% !important;
+      bottom: .1rem !important;
+      width: min(58%, 210px) !important;
+      height: 2px !important;
+      transform: translateX(-50%) !important;
+      border-radius: 999px !important;
+      background: linear-gradient(90deg, transparent, rgba(91,139,207,.22), #7fb0ff, rgba(139,184,214,.42), transparent) !important;
+      box-shadow: 0 0 18px rgba(91,139,207,.55) !important;
+    }
+    #qfTriggerMobile {
+      width: min(100%, 330px) !important;
+      min-height: 54px !important;
+      margin: .6rem auto 0 !important;
+      padding: .58rem .72rem !important;
+      justify-content: flex-start !important;
+      gap: .72rem !important;
+      border-radius: 18px !important;
+      background:
+        linear-gradient(135deg, rgba(20,31,47,.96), rgba(13,21,34,.92)),
+        radial-gradient(circle at 14% 0%, rgba(91,139,207,.22), transparent 8rem) !important;
+      border: 1px solid rgba(91,139,207,.30) !important;
+      color: #dce9ff !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.075), 0 14px 30px rgba(0,0,0,.24) !important;
+    }
+    #qfTriggerMobile .qf-mobile-icon {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(91,139,207,.14);
+      color: #aecdff;
+      font-size: 1.08rem;
+      box-shadow: inset 0 0 0 1px rgba(91,139,207,.18);
+    }
+    #qfTriggerMobile .qf-mobile-copy {
+      display: grid;
+      gap: .08rem;
+      min-width: 0;
+      flex: 1;
+      text-align: left;
+      line-height: 1.05;
+    }
+    #qfTriggerMobile .qf-mobile-copy strong {
+      font-size: .95rem;
+      font-weight: 880;
+      letter-spacing: -.01em;
+      color: #edf4ff;
+    }
+    #qfTriggerMobile .qf-mobile-copy em {
+      font-style: normal;
+      font-size: .68rem;
+      font-weight: 760;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(174,205,255,.66);
+    }
+    #qfTriggerMobile .qf-mobile-arrow {
+      color: rgba(174,205,255,.62);
+      font-size: 1.02rem;
+    }
+    #water-wrapper-mobile {
+      width: min(100%, 330px) !important;
+      height: 56px !important;
+      margin: 1.2rem auto 0 !important;
+      display: flex !important;
+      position: relative !important;
+    }
+    #water-wrapper-mobile .ambient-shadow {
+      inset: 18% 8% !important;
+      background: rgba(91,139,207,.30) !important;
+      filter: blur(22px) !important;
+      opacity: .65 !important;
+    }
+    #water-wrapper-mobile .caustic { display: none !important; }
+    #water-wrapper-mobile .mobile-quote-btn {
+      position: absolute !important;
+      inset: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      overflow: hidden !important;
+      border-radius: 18px !important;
+      cursor: pointer !important;
+      filter: none !important;
+      transform: none !important;
+      box-shadow: 0 18px 38px rgba(33,80,143,.30), inset 0 1px 0 rgba(255,255,255,.28) !important;
+    }
+    #water-wrapper-mobile .rectangle-volume {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.20), rgba(255,255,255,0) 45%),
+        linear-gradient(135deg, #7eaceb 0%, #5b8bcf 45%, #36679f 100%) !important;
+      border: 1px solid rgba(183,211,255,.42) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.30), inset 0 -14px 28px rgba(13,42,84,.22) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    #water-wrapper-mobile .rectangle-volume::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 17px;
+      background: radial-gradient(circle at 24% 0%, rgba(255,255,255,.34), transparent 36%), linear-gradient(90deg, transparent, rgba(255,255,255,.09), transparent);
+      pointer-events: none;
+    }
+    #water-wrapper-mobile .btn-text {
+      position: relative !important;
+      inset: auto !important;
+      transform: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: .5rem !important;
+      width: 100% !important;
+      height: 100% !important;
+      color: #fbfdff !important;
+      text-shadow: 0 1px 1px rgba(10,25,45,.22) !important;
+      font-size: .98rem !important;
+      font-weight: 920 !important;
+      letter-spacing: -.01em !important;
+    }
+    #water-wrapper-mobile .btn-text .material-symbols-outlined { font-size: 1.08rem !important; color: #f7fbff !important; }
+
+    html[data-theme="light"] .nav-mobile {
+      background: linear-gradient(180deg, rgba(255,255,252,.985), rgba(239,244,247,.985)) !important;
+      border-color: rgba(36,48,63,.13) !important;
+    }
+    html[data-theme="light"] .nav-mobile .nav-link { color: #5d6877 !important; }
+    html[data-theme="light"] .nav-mobile .nav-link.active { color: #245d98 !important; background: rgba(55,110,169,.08) !important; }
+    html[data-theme="light"] #qfTriggerMobile {
+      background: linear-gradient(135deg, #ffffff, #eef4f8) !important;
+      border-color: rgba(55,110,169,.22) !important;
+      color: #243244 !important;
+      box-shadow: 0 14px 34px rgba(35,48,65,.10), inset 0 1px 0 #fff !important;
+    }
+    html[data-theme="light"] #qfTriggerMobile .qf-mobile-copy strong { color: #1f3044 !important; }
+    html[data-theme="light"] #qfTriggerMobile .qf-mobile-copy em { color: #667485 !important; }
+  }
+</style>
 </head>
 <body class="home-page">
 <nav class="nav" id="nav" role="navigation">
@@ -1584,16 +1772,17 @@ a{color:inherit;text-decoration:none}
 <li><a class="nav-link" href="/about">About</a></li>
 <li><a class="nav-link" href="/contact">Contact</a></li>
 </ul>
-<button aria-label="Quick Find — search all pages" class="qf-trigger" id="qfTriggerMobile" type="button">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="search"></span>
-        Quick Find
-      </button>
-<div class="water-wrapper" id="water-wrapper-mobile" style="width:100%;">
+<button aria-label="Quick Find — search all pages" class="qf-trigger qf-trigger--mobile" id="qfTriggerMobile" type="button">
+<span aria-hidden="true" class="material-symbols-outlined qf-mobile-icon" data-icon="search"></span>
+<span class="qf-mobile-copy"><strong>Quick Find</strong><em>Search pages</em></span>
+<span aria-hidden="true" class="material-symbols-outlined qf-mobile-arrow" data-icon="arrow_forward"></span>
+</button>
+<div class="water-wrapper mobile-quote-wrapper" id="water-wrapper-mobile" style="width:100%;">
 <div class="ambient-shadow"></div>
 <div class="caustic"></div>
-<a aria-label="Get a Quote" class="water-btn" href="/contact">
+<a aria-label="Get a Quote" class="water-btn mobile-quote-btn" href="/contact">
 <div class="rectangle-volume"></div>
-<span class="btn-text">Get a Quote</span>
+<span class="btn-text"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span><span>Get a Quote</span></span>
 <div class="glare-radial" style="display:none"></div>
 <div class="glare-sharp" style="display:none"></div>
 </a>
