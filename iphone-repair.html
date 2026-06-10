@@ -414,7 +414,15 @@ a{color:inherit;text-decoration:none}
 /* ── 7. Price count-up ── */
 .ipr-count{font-variant-numeric:tabular-nums}
 .iphone-price-line strong .ipr-count{color:var(--text-primary);font-size:inherit}
+
+/* ── 8. Three.js hero iPhone (SVG remains as fallback) ── */
+.ipr-3d{display:none;position:relative;width:min(310px,100%);aspect-ratio:300/520;margin:0 auto}
+.ipr-3d canvas{display:block;width:100%!important;height:100%!important}
+.iphone-device-card.has3d .ipr-3d{display:block}
+.iphone-device-card.has3d .iphone-bite-svg{display:none}
 </style>
+<!-- Three.js import map for the hero iPhone render (loaded lazily by the module below) -->
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
 <!-- HDR sitewide H1/title font split -->
 <style id="hdr-h1-title-font-split">h2,h3,h4,h5,h6,.section-title,.card-title,.sel-title,.service-card-title,.diag-title,.pricing-card-service,.footer-brand-name,.page-curtain-logo,.article h2,.article h3{font-family:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif!important}h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{font-family:'Darker Grotesque','MuseoModerno','Inter',sans-serif!important;font-weight:900!important;letter-spacing:-0.045em;line-height:.92}.hero-headline{margin-bottom:1.75rem!important}@media(max-width:480px){h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{line-height:.9}}</style>
 </head>
@@ -557,6 +565,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="lp-hero-visual iphone-hero-visual" data-animate="">
 <div aria-label="Animated iPhone diagnostic illustration" class="lp-iphone-art iphone-device-card">
+<div aria-hidden="true" class="ipr-3d" id="ipr3d"></div>
 <svg aria-labelledby="iphone-art-title iphone-art-desc" class="lp-iphone-svg iphone-bite-svg" fill="none" role="img" viewbox="0 0 300 520" xmlns="http://www.w3.org/2000/svg">
 <title id="iphone-art-title">iPhone repair diagnostic animation</title>
 <desc id="iphone-art-desc">A repaired iPhone screen with a refined apple bite animation, crack lines, diagnostic pulses, and a warranty check.</desc>
@@ -1092,6 +1101,312 @@ a{color:inherit;text-decoration:none}
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
+})();
+</script>
+<script type="module">
+/* Hero iPhone — real-time Three.js render. SVG below stays as the fallback
+   for reduced-motion, missing WebGL, or a failed CDN import. */
+(async function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var host = document.getElementById('ipr3d');
+  if (!host) return;
+  var probe = document.createElement('canvas');
+  if (!probe.getContext('webgl2') && !probe.getContext('webgl')) return;
+  try {
+    const THREE = await import('three');
+    const [{ RoundedBoxGeometry }, { RoomEnvironment }] = await Promise.all([
+      import('three/addons/geometries/RoundedBoxGeometry.js'),
+      import('three/addons/environments/RoomEnvironment.js')
+    ]);
+
+    // ── Renderer / scene / camera ──
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(32, 300 / 520, 0.1, 50);
+    camera.position.set(0, 0.1, 9.2);
+    camera.lookAt(0, 0, 0);
+
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+
+    const key = new THREE.DirectionalLight(0xeaf2ff, 1.4);
+    key.position.set(2.5, 4, 5);
+    scene.add(key);
+    const rimViolet = new THREE.PointLight(0x8b5cf6, 30, 0, 2);
+    rimViolet.position.set(-4, -0.5, -2.5);
+    scene.add(rimViolet);
+    const rimBlue = new THREE.PointLight(0x4f8ef7, 22, 0, 2);
+    rimBlue.position.set(4, 2.5, 2.5);
+    scene.add(rimBlue);
+
+    // ── Screen texture: live lock screen + crack→scan→repair story ──
+    const SW = 512, SH = 1024;
+    const scr = document.createElement('canvas');
+    scr.width = SW; scr.height = SH;
+    const sctx = scr.getContext('2d');
+    function rr(c, x, y, w, h, r) {
+      c.beginPath();
+      if (c.roundRect) { c.roundRect(x, y, w, h, r); return; }
+      c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r);
+      c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath();
+    }
+    const CRACKS = [
+      [[64, 60], [150, 190], [118, 300], [210, 430], [180, 520]],
+      [[150, 190], [248, 168], [330, 260]],
+      [[118, 300], [40, 372]],
+      [[210, 430], [322, 470]]
+    ];
+    function drawScreen(t) {
+      const c = sctx;
+      c.clearRect(0, 0, SW, SH);
+      c.save();
+      // cover glass: corner radius matches the body frame, black bezel ring
+      rr(c, 3, 3, SW - 6, SH - 6, 104);
+      c.fillStyle = '#04060a';
+      c.fill();
+      c.clip();
+      rr(c, 19, 19, SW - 38, SH - 38, 88);
+      c.clip();
+      // wallpaper
+      const lg = c.createLinearGradient(0, 0, 0, SH);
+      lg.addColorStop(0, '#0a101e'); lg.addColorStop(.55, '#0d1830'); lg.addColorStop(1, '#150f2c');
+      c.fillStyle = lg; c.fillRect(0, 0, SW, SH);
+      let g = c.createRadialGradient(372, 250, 10, 372, 250, 430);
+      g.addColorStop(0, 'rgba(79,142,247,.36)'); g.addColorStop(1, 'rgba(79,142,247,0)');
+      c.fillStyle = g; c.fillRect(0, 0, SW, SH);
+      g = c.createRadialGradient(120, 780, 10, 120, 780, 460);
+      g.addColorStop(0, 'rgba(139,92,246,.32)'); g.addColorStop(1, 'rgba(139,92,246,0)');
+      c.fillStyle = g; c.fillRect(0, 0, SW, SH);
+      // dynamic island + front camera
+      c.fillStyle = '#04060a';
+      rr(c, SW / 2 - 86, 46, 172, 52, 26); c.fill();
+      c.fillStyle = '#11161f';
+      c.beginPath(); c.arc(SW / 2 + 52, 72, 11, 0, Math.PI * 2); c.fill();
+      // clock (real time = lifelike)
+      const now = new Date();
+      c.textAlign = 'center';
+      c.fillStyle = 'rgba(230,237,243,.85)';
+      c.font = '600 30px Inter, -apple-system, sans-serif';
+      c.fillText(now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }), SW / 2, 212);
+      c.fillStyle = '#eef4fb';
+      c.font = '700 132px Inter, -apple-system, sans-serif';
+      let hh = now.getHours() % 12; if (hh === 0) hh = 12;
+      c.fillText(hh + ':' + String(now.getMinutes()).padStart(2, '0'), SW / 2, 338);
+      // brand footer
+      c.fillStyle = 'rgba(183,220,255,.55)';
+      c.font = '800 19px Inter, sans-serif';
+      c.save(); c.translate(SW / 2, SH - 86);
+      c.fillText('H A I L E Y   D E V I C E   R E P A I R', 0, 0);
+      c.restore();
+      // story loop: cracked → scan → heal → repaired ✓
+      const p = t % 7;
+      let crackA = 1;
+      if (p >= 3.1 && p < 4.1) crackA = 1 - (p - 3.1);
+      else if (p >= 4.1 && p < 6.6) crackA = 0;
+      else if (p >= 6.6) crackA = (p - 6.6) / 0.4;
+      if (crackA > 0.01) {
+        c.strokeStyle = 'rgba(214,232,255,' + (0.8 * crackA) + ')';
+        c.lineCap = 'round';
+        CRACKS.forEach(function (seg, i) {
+          c.lineWidth = i === 0 ? 5 : 3;
+          c.beginPath();
+          seg.forEach(function (pt, j) { j ? c.lineTo(pt[0], pt[1]) : c.moveTo(pt[0], pt[1]); });
+          c.stroke();
+        });
+      }
+      if (p > 1.1 && p < 3.3) {
+        const sp = (p - 1.1) / 2.2, sy = 130 + sp * (SH - 290);
+        g = c.createLinearGradient(0, sy - 110, 0, sy);
+        g.addColorStop(0, 'rgba(111,168,255,0)'); g.addColorStop(1, 'rgba(111,168,255,.30)');
+        c.fillStyle = g; c.fillRect(14, sy - 110, SW - 28, 110);
+        c.fillStyle = 'rgba(170,210,255,.95)'; c.fillRect(14, sy, SW - 28, 4);
+        const pa = Math.min(1, Math.min(sp, 1 - sp) * 4);
+        c.fillStyle = 'rgba(8,14,26,' + (0.85 * pa) + ')';
+        rr(c, SW / 2 - 158, 600, 316, 62, 31); c.fill();
+        c.strokeStyle = 'rgba(111,168,255,' + (0.55 * pa) + ')'; c.lineWidth = 2;
+        rr(c, SW / 2 - 158, 600, 316, 62, 31); c.stroke();
+        c.fillStyle = 'rgba(183,220,255,' + pa + ')';
+        c.font = '800 22px Inter, sans-serif';
+        c.fillText('QUOTE BEFORE PARTS', SW / 2, 640);
+      }
+      if (p > 4.3 && p < 6.6) {
+        const ca = Math.min(1, (p - 4.3) * 3, (6.6 - p) * 2.5);
+        const pop = 1 + Math.max(0, 0.25 - (p - 4.3)) * 1.4;
+        c.save(); c.translate(SW / 2, 600); c.scale(pop, pop);
+        c.fillStyle = 'rgba(63,185,80,' + (0.16 * ca) + ')';
+        c.beginPath(); c.arc(0, 0, 64, 0, Math.PI * 2); c.fill();
+        c.strokeStyle = 'rgba(117,225,138,' + ca + ')'; c.lineWidth = 7; c.lineCap = 'round'; c.lineJoin = 'round';
+        c.beginPath(); c.arc(0, 0, 64, 0, Math.PI * 2); c.stroke();
+        c.beginPath(); c.moveTo(-26, 2); c.lineTo(-7, 22); c.lineTo(30, -20); c.stroke();
+        c.restore();
+        c.fillStyle = 'rgba(117,225,138,' + ca + ')';
+        c.font = '800 24px Inter, sans-serif';
+        c.fillText('REPAIRED · TESTED', SW / 2, 716);
+      }
+      c.restore();
+    }
+    drawScreen(0);
+    const tex = new THREE.CanvasTexture(scr);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+
+    // ── Phone ──
+    // Modern iPhone frame: flat sides, large rounded corners in plan view,
+    // small contour where the band meets the glass — an extruded rounded
+    // rect with a slight bevel, NOT an all-edges-rounded box.
+    const phone = new THREE.Group();
+    const bodyMat = new THREE.MeshPhysicalMaterial({ color: 0x59616f, metalness: 1, roughness: 0.32, clearcoat: 0.5, clearcoatRoughness: 0.25 });
+    function roundedRectShape(w, h, r) {
+      const s = new THREE.Shape();
+      const x = -w / 2, y = -h / 2;
+      s.moveTo(x + r, y);
+      s.lineTo(x + w - r, y);
+      s.absarc(x + w - r, y + r, r, -Math.PI / 2, 0);
+      s.lineTo(x + w, y + h - r);
+      s.absarc(x + w - r, y + h - r, r, 0, Math.PI / 2);
+      s.lineTo(x + r, y + h);
+      s.absarc(x + r, y + h - r, r, Math.PI / 2, Math.PI);
+      s.lineTo(x, y + r);
+      s.absarc(x + r, y + r, r, Math.PI, Math.PI * 1.5);
+      return s;
+    }
+    const bodyGeo = new THREE.ExtrudeGeometry(roundedRectShape(2.22, 4.62, 0.46), {
+      depth: 0.2, bevelEnabled: true, bevelThickness: 0.04, bevelSize: 0.038, bevelSegments: 6, curveSegments: 40
+    });
+    bodyGeo.translate(0, 0, -0.1);
+    phone.add(new THREE.Mesh(bodyGeo, bodyMat));
+    const glassMat = new THREE.MeshPhysicalMaterial({ color: 0x10141d, metalness: 0.2, roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.12 });
+    // back glass panel with the logo
+    const backCan = document.createElement('canvas');
+    backCan.width = SW; backCan.height = SH;
+    const bctx = backCan.getContext('2d');
+    rr(bctx, 3, 3, SW - 6, SH - 6, 104);
+    const bg = bctx.createLinearGradient(0, 0, SW, SH);
+    bg.addColorStop(0, '#222a38'); bg.addColorStop(.5, '#161c28'); bg.addColorStop(1, '#10141d');
+    bctx.fillStyle = bg; bctx.fill();
+    const logoCan = document.createElement('canvas');
+    logoCan.width = logoCan.height = 256;
+    const lc = logoCan.getContext('2d');
+    lc.setTransform(1.4, 0, 0, 1.4, 128 - 160 * 1.4, 128 - 257 * 1.4);
+    lc.fillStyle = '#e8eef8';
+    lc.fill(new Path2D('M151 224C115 221 99 244 100 270C101 302 123 319 151 321C180 319 201 302 201 270C202 244 187 221 151 224Z'));
+    lc.fill(new Path2D('M151 217C145 201 131 194 124 200C120 204 127 217 138 223C145 226 151 223 151 217Z'));
+    lc.globalCompositeOperation = 'destination-out';
+    lc.beginPath(); lc.arc(207, 262, 28, 0, Math.PI * 2); lc.fill();
+    bctx.globalAlpha = 0.18;
+    bctx.drawImage(logoCan, SW / 2 - 105, 400, 210, 210);
+    bctx.globalAlpha = 1;
+    const backTex = new THREE.CanvasTexture(backCan);
+    backTex.colorSpace = THREE.SRGBColorSpace;
+    const back = new THREE.Mesh(
+      new THREE.PlaneGeometry(2.16, 4.56),
+      new THREE.MeshPhysicalMaterial({ map: backTex, transparent: true, metalness: 0.55, roughness: 0.38, clearcoat: 1, clearcoatRoughness: 0.18 })
+    );
+    back.rotation.y = Math.PI;
+    back.position.z = -0.142;
+    phone.add(back);
+    const island = new THREE.Mesh(new RoundedBoxGeometry(0.98, 0.98, 0.12, 4, 0.2), glassMat.clone());
+    island.position.set(-0.5, 1.7, -0.19);
+    phone.add(island);
+    const lensMat = new THREE.MeshPhysicalMaterial({ color: 0x05070c, metalness: 0.4, roughness: 0.05, clearcoat: 1 });
+    const ringMat = new THREE.MeshPhysicalMaterial({ color: 0x3a414d, metalness: 1, roughness: 0.25 });
+    [[-0.71, 1.93], [-0.71, 1.47], [-0.27, 1.7]].forEach(function (pos) {
+      const lens = new THREE.Mesh(new THREE.CylinderGeometry(0.155, 0.155, 0.08, 32), lensMat);
+      lens.rotation.x = Math.PI / 2;
+      lens.position.set(pos[0], pos[1], -0.27);
+      phone.add(lens);
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(0.155, 0.028, 12, 36), ringMat);
+      ring.position.set(pos[0], pos[1], -0.3);
+      phone.add(ring);
+    });
+    const screen = new THREE.Mesh(
+      new THREE.PlaneGeometry(2.16, 4.56),
+      new THREE.MeshPhysicalMaterial({ color: 0x000000, map: tex, emissive: 0xffffff, emissiveMap: tex, emissiveIntensity: 0.95, roughness: 0.16, metalness: 0, transparent: true, clearcoat: 1, clearcoatRoughness: 0.1 })
+    );
+    screen.position.z = 0.143;
+    phone.add(screen);
+    [[-1.165, 1.36, 0.26], [-1.165, 0.82, 0.44], [-1.165, 0.28, 0.44], [1.165, 0.9, 0.66]].forEach(function (b) {
+      const btn = new THREE.Mesh(new RoundedBoxGeometry(0.05, b[2], 0.12, 2, 0.02), bodyMat);
+      btn.position.set(b[0], b[1], 0);
+      phone.add(btn);
+    });
+    phone.scale.setScalar(0.95);
+    scene.add(phone);
+
+    // contact shadow blob
+    const sCan = document.createElement('canvas');
+    sCan.width = sCan.height = 128;
+    const sg = sCan.getContext('2d').createRadialGradient(64, 64, 4, 64, 64, 62);
+    sg.addColorStop(0, 'rgba(0,0,0,.85)'); sg.addColorStop(1, 'rgba(0,0,0,0)');
+    sCan.getContext('2d').fillStyle = sg;
+    sCan.getContext('2d').fillRect(0, 0, 128, 128);
+    const shadow = new THREE.Mesh(
+      new THREE.PlaneGeometry(3.4, 3.4),
+      new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(sCan), transparent: true, opacity: 0.5, depthWrite: false })
+    );
+    shadow.rotation.x = -Math.PI / 2;
+    shadow.position.y = -2.5;
+    scene.add(shadow);
+
+    // ── Mount, parallax, loop ──
+    host.appendChild(renderer.domElement);
+    function fit() {
+      const w = host.clientWidth || 300, h = host.clientHeight || 520;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+    fit();
+    if ('ResizeObserver' in window) new ResizeObserver(fit).observe(host);
+    document.querySelector('.iphone-device-card').classList.add('has3d');
+
+    let mx = 0, my = 0, smx = 0, smy = 0;
+    const hero = document.getElementById('iphone-hero') || document.body;
+    hero.addEventListener('pointermove', function (e) {
+      const r = hero.getBoundingClientRect();
+      mx = (e.clientX - r.left) / r.width - 0.5;
+      my = (e.clientY - r.top) / r.height - 0.5;
+    });
+    hero.addEventListener('pointerleave', function () { mx = 0; my = 0; });
+
+    let running = true;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { running = en.isIntersecting; });
+      }, { rootMargin: '80px' }).observe(host);
+    }
+
+    const BASE_Y = -0.32;
+    const clock = new THREE.Clock();
+    let elapsed = 0;
+    renderer.setAnimationLoop(function () {
+      const dt = clock.getDelta();
+      if (!running) return;
+      elapsed += dt;
+      const t = elapsed;
+      // entrance ease
+      const e = Math.min(t / 1.5, 1);
+      const ease = 1 - Math.pow(1 - e, 3);
+      smx += (mx - smx) * 0.06;
+      smy += (my - smy) * 0.06;
+      const bob = Math.sin(t * 1.15) * 0.07;
+      phone.position.y = bob + (1 - ease) * -0.55;
+      phone.rotation.y = BASE_Y + Math.sin(t * 0.45) * 0.17 + smx * 0.55 + (1 - ease) * -0.9;
+      phone.rotation.x = Math.sin(t * 0.7) * 0.035 + smy * 0.22;
+      phone.rotation.z = Math.sin(t * 0.32) * 0.02;
+      shadow.material.opacity = (0.52 - bob * 1.6) * ease;
+      const ss = 1 - bob * 0.35;
+      shadow.scale.set(ss, ss, 1);
+      drawScreen(t);
+      tex.needsUpdate = true;
+      renderer.render(scene, camera);
+    });
+  } catch (err) {
+    /* CDN or WebGL failure — the SVG fallback stays visible */
+  }
 })();
 </script>
 
