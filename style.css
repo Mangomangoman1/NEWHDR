@@ -13014,3 +13014,20 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
 }
 
 /* HDR sitewide H1/title font split */h2,h3,h4,h5,h6,.section-title,.card-title,.sel-title,.service-card-title,.diag-title,.pricing-card-service,.footer-brand-name,.page-curtain-logo,.article h2,.article h3{font-family:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif!important}h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{font-family:'Darker Grotesque','MuseoModerno','Inter',sans-serif!important;font-weight:900!important;letter-spacing:-0.045em;line-height:.92}.hero-headline{margin-bottom:1.75rem!important}@media(max-width:480px){h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{line-height:.9}}
+
+/* ── Google reviews (hand-curated quotes, no schema by design) ── */
+.hdr-reviews-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;border:1px solid var(--border-default);border-radius:999px;background:var(--bg-card);font-size:.85rem;color:var(--text-secondary);font-weight:600}
+.hdr-reviews-badge strong{color:var(--text-primary);font-size:.95rem}
+.hdr-stars{color:#f8c84a;letter-spacing:.12em;font-size:.88rem;white-space:nowrap}
+.hdr-reviews-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:2rem}
+.hdr-review-card{display:flex;flex-direction:column;gap:.7rem;padding:1.15rem;border:1px solid var(--border-subtle);border-radius:20px;background:var(--bg-card);box-shadow:var(--shadow-card);min-width:0}
+.hdr-review-card blockquote{margin:0;color:var(--text-secondary);font-size:.9rem;line-height:1.62;flex:1}
+.hdr-review-meta{display:flex;align-items:center;gap:.6rem;border-top:1px solid var(--border-subtle);padding-top:.75rem}
+.hdr-review-avatar{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--accent-dim);color:var(--accent);font-weight:800;font-size:.85rem;flex-shrink:0}
+.hdr-review-meta strong{display:block;font-size:.85rem;color:var(--text-primary);line-height:1.2}
+.hdr-review-meta span{display:block;font-size:.7rem;color:var(--text-muted)}
+.hdr-reviews-actions{display:flex;justify-content:center;gap:1rem;margin-top:1.75rem;flex-wrap:wrap}
+.hdr-reviews-strip{display:grid;grid-template-columns:minmax(170px,auto) 1fr 1fr;gap:1rem;align-items:stretch;margin:0 auto;max-width:1020px}
+.hdr-reviews-strip .hdr-reviews-badge{flex-direction:column;justify-content:center;gap:.35rem;border-radius:20px;padding:1.1rem;text-align:center}
+@media(max-width:980px){.hdr-reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hdr-reviews-strip{grid-template-columns:1fr}}
+@media(max-width:640px){.hdr-reviews-grid{grid-template-columns:1fr}}
