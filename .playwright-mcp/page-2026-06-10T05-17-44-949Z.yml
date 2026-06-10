@@ -1,0 +1,490 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Hailey Device Repair Home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: smartphone
+        - generic [ref=e6]:
+          - text: Hailey Device
+          - strong [ref=e7]: Repair
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "iPhone" [ref=e10] [cursor=pointer]:
+            - /url: /iphone-repair
+        - listitem [ref=e11]:
+          - link "Android" [ref=e12] [cursor=pointer]:
+            - /url: /android-repair
+        - listitem [ref=e13]:
+          - link "Pricing" [ref=e14] [cursor=pointer]:
+            - /url: /pricing
+        - listitem [ref=e15]:
+          - link "Repair SOS" [ref=e16] [cursor=pointer]:
+            - /url: /repair-sos
+        - listitem [ref=e17]:
+          - link "Guides" [ref=e18] [cursor=pointer]:
+            - /url: /guides
+        - listitem [ref=e19]:
+          - link "Contact" [ref=e20] [cursor=pointer]:
+            - /url: /contact
+      - generic [ref=e21]:
+        - button "Quick Find — search all pages" [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]: search
+          - generic [ref=e24]: Quick Find
+          - generic [ref=e25]: ⌘K
+        - link "Get a Quote" [ref=e27] [cursor=pointer]:
+          - /url: /contact
+          - generic:
+            - generic: request_quote
+            - text: Get a Quote
+    - text: search
+  - link "Skip to main content" [ref=e28] [cursor=pointer]:
+    - /url: "#main"
+  - main [ref=e29]:
+    - navigation "Breadcrumb" [ref=e32]:
+      - list [ref=e33]:
+        - listitem [ref=e34]:
+          - link "Home" [ref=e35] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e36]: / iPhone Repair
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: iPhone repair in Hailey, Idaho
+        - heading "iPhone Repair in Hailey, Idaho" [level=1] [ref=e42]
+        - paragraph [ref=e43]:
+          - text: Screens, batteries, charging ports, cameras, speakers, water damage, and data-risk repairs — quoted before parts are ordered and backed by a
+          - strong [ref=e44]: 40-day warranty
+          - text: . Local in
+          - strong [ref=e45]: Hailey
+          - text: ; nearby help for
+          - strong [ref=e46]: Ketchum, Sun Valley, Bellevue
+          - text: .
+        - generic [ref=e47]:
+          - link "Text iPhone Model + Problem" [ref=e48] [cursor=pointer]:
+            - /url: sms:+12084501606?&body=Hi%20Samuel%2C%20I%20need%20an%20iPhone%20repair.%20Model%3A%20%20Problem%3A%20
+            - generic [ref=e49]: sms
+            - text: Text iPhone Model + Problem
+          - link "See Starting Prices" [ref=e50] [cursor=pointer]:
+            - /url: "#iphone-pricing"
+            - generic [ref=e51]: receipt_long
+            - text: See Starting Prices
+        - paragraph [ref=e52]: "Fastest quote: model name + photo of the damage + what stopped working."
+        - generic "iPhone repair proof points" [ref=e53]:
+          - generic [ref=e54]:
+            - generic [ref=e55]: "01"
+            - strong [ref=e56]: Model first
+            - emphasis [ref=e57]: iPhone 11 through 16 Pro Max pricing changes by part type.
+          - generic [ref=e58]:
+            - generic [ref=e59]: "02"
+            - strong [ref=e60]: Quote before work
+            - emphasis [ref=e61]: No surprise part order. No mystery bench fee.
+          - generic [ref=e62]:
+            - generic [ref=e63]: "03"
+            - strong [ref=e64]: Tested before pickup
+            - emphasis [ref=e65]: Touch, Face ID risk, cameras, speakers, charging, battery health.
+      - generic "Animated iPhone diagnostic illustration" [ref=e67]:
+        - text: QUOTE-FIRST IPHONE REPAIR
+        - img "iPhone repair diagnostic animation A repaired iPhone screen with a refined apple bite animation, crack lines, diagnostic pulses, and a warranty check." [ref=e68]:
+          - generic [ref=e92]:
+            - generic [ref=e94]: QUOTE BEFORE PARTS
+            - generic [ref=e96]: Touch • Face ID • Data
+        - 'img "Example quote conversation: customer texts the model and problem, Samuel replies with a quote-first plan" [ref=e97]':
+          - generic [ref=e98]: Live text thread
+          - generic [ref=e100]: iPhone 13 Pro — cracked screen, touch still works. Photo attached 📷
+          - generic [ref=e106]: Got it — I can quote that exactly from the photo. Part gets matched to your model before anything is ordered.
+          - generic [ref=e107]: Most screens are 30–60 min once the part’s ready. Tested before pickup, 40-day warranty. 👍
+          - generic [ref=e108]: Usually replies in ~15 min
+        - generic [ref=e109]:
+          - strong [ref=e110]: Opened only after approval.
+          - generic [ref=e111]: Part match → careful open → transfer seals/brackets → function test.
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - generic [ref=e116]: The honest answer
+        - heading "Most iPhones are worth quoting before replacing." [level=2] [ref=e117]
+        - paragraph [ref=e118]: If your iPhone still fits your life, a screen, battery, charging port, camera, speaker, button, or data-risk issue is usually worth pricing first. Replacement makes more sense when the phone has multiple major failures, severe liquid damage, or the quote gets too close to the value of the device.
+      - generic [ref=e119]:
+        - strong [ref=e120]: "What to text:"
+        - generic [ref=e121]: “iPhone 13 Pro, cracked screen, touch still works, Face ID works, photo attached.”
+        - link "See the short template →" [ref=e122] [cursor=pointer]:
+          - /url: /broken-phone-what-to-text
+    - generic [ref=e125]:
+      - generic [ref=e126]:
+        - generic [ref=e127]: Local iPhone repair details
+        - heading "iPhone screen, battery, charging port, and water damage repair in Hailey" [level=2] [ref=e128]
+        - paragraph [ref=e129]: Hailey Device Repair helps Wood River Valley customers decide whether an iPhone is worth fixing before they replace it. The most common iPhone repairs are cracked screen replacement, weak battery replacement, charging-port cleaning or repair, back glass repair, camera/speaker issues, and water-damage or no-power triage where photos and data may matter more than cosmetics.
+      - generic "Related iPhone repair help" [ref=e130]:
+        - link "Compare repair pricing" [ref=e131] [cursor=pointer]:
+          - /url: /pricing
+        - link "Read the 40-day warranty" [ref=e132] [cursor=pointer]:
+          - /url: /warranty
+        - link "Wet iPhone first steps" [ref=e133] [cursor=pointer]:
+          - /url: /phone-water-damage-hailey
+        - link "Repair or replace?" [ref=e134] [cursor=pointer]:
+          - /url: /repair-or-replace-phone
+        - link "Idaho mail-in repair" [ref=e135] [cursor=pointer]:
+          - /url: /mail-in-repair
+        - link "Ask about your model" [ref=e136] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e138]:
+      - generic [ref=e139]:
+        - generic [ref=e140]: Repair menu
+        - heading "Starting prices, with the catch explained." [level=2] [ref=e141]
+        - paragraph [ref=e142]: iPhone pricing changes by model, display type, and part availability. These are starting points; the quote you approve is the number that matters.
+      - generic [ref=e143]:
+        - article [ref=e144]:
+          - generic [ref=e145]: Most common
+          - heading "Screen replacement" [level=3] [ref=e146]
+          - generic [ref=e147]:
+            - strong [ref=e148]: from $109
+            - generic [ref=e149]: 30–60 min when part is ready
+          - paragraph [ref=e150]: Cracked glass, ghost touch, OLED lines, black display, or touch not responding.
+          - list [ref=e151]:
+            - listitem [ref=e152]: Display quality matched to your model
+            - listitem [ref=e153]: Face ID risk checked before opening
+            - listitem [ref=e154]: Touch, brightness, camera, speaker test after
+        - article [ref=e155]:
+          - generic [ref=e156]: Battery health
+          - heading "Battery replacement" [level=3] [ref=e157]
+          - generic [ref=e158]:
+            - strong [ref=e159]: from $79
+            - generic [ref=e160]: 20–40 min
+          - paragraph [ref=e161]: Fast drain, random shutdowns, swelling, or “Service” message in Battery Health.
+          - list [ref=e162]:
+            - listitem [ref=e163]: Battery health checked first
+            - listitem [ref=e164]: Charging behavior tested
+            - listitem [ref=e165]: No data wipe for normal swaps
+        - article [ref=e166]:
+          - generic [ref=e167]: Before replacing port
+          - heading "Charging port / cleaning" [level=3] [ref=e168]
+          - generic [ref=e169]:
+            - strong [ref=e170]: from $89
+            - generic [ref=e171]: cleaning may be less
+          - paragraph [ref=e172]: If the cable only works at an angle, starts and stops, or won’t seat fully.
+          - list [ref=e173]:
+            - listitem [ref=e174]: Lint/debris check first
+            - listitem [ref=e175]: Cable + brick ruled out
+            - listitem [ref=e176]: Mic/speaker function checked
+        - article [ref=e177]:
+          - generic [ref=e178]: Back housing
+          - heading "Back glass" [level=3] [ref=e179]
+          - generic [ref=e180]:
+            - strong [ref=e181]: from $129
+            - generic [ref=e182]: 1–2 hours typical
+          - paragraph [ref=e183]: Sharp cracked back glass, wireless charging concerns, or camera lens damage.
+          - list [ref=e184]:
+            - listitem [ref=e185]: Camera lens inspected
+            - listitem [ref=e186]: Wireless charging tested
+            - listitem [ref=e187]: Case-fit check after repair
+        - article [ref=e188]:
+          - generic [ref=e189]: Data risk
+          - heading "Water damage / no power" [level=3] [ref=e190]
+          - generic [ref=e191]:
+            - strong [ref=e192]: from $89
+            - generic [ref=e193]: diagnosis depends on severity
+          - paragraph [ref=e194]: Wet phone, boot looping, no power, corrosion, or urgent photo/data concerns.
+          - list [ref=e195]:
+            - listitem [ref=e196]: Do not plug it in
+            - listitem [ref=e197]: Board-level triage when needed
+            - listitem [ref=e198]: Data preservation prioritized
+        - article [ref=e199]:
+          - generic [ref=e200]: Small parts
+          - heading "Camera, speaker, mic, buttons" [level=3] [ref=e201]
+          - generic [ref=e202]:
+            - strong [ref=e203]: from $85
+            - generic [ref=e204]: same/next day
+          - paragraph [ref=e205]: Blurry camera, muffled calls, bad microphone, no speaker, stuck button, weak vibration.
+          - list [ref=e206]:
+            - listitem [ref=e207]: Part or cleaning diagnosis
+            - listitem [ref=e208]: All related functions tested
+            - listitem [ref=e209]: Exact quote before order
+      - generic [ref=e210]:
+        - generic [ref=e211]:
+          - strong [ref=e212]: "Exact quote rule:"
+          - text: send the model + problem + photo. If a cheaper cleaning or reset solves it, I’ll tell you before selling a part.
+        - link "Text for exact price" [ref=e213] [cursor=pointer]:
+          - /url: sms:+12084501606?&body=Hi%20Samuel%2C%20can%20you%20quote%20this%20iPhone%20repair%3F%20Model%3A%20%20Issue%3A%20
+    - generic [ref=e215]:
+      - generic [ref=e216]:
+        - generic [ref=e217]: What actually gets checked
+        - heading "A repair path for the problem you have." [level=2] [ref=e218]
+        - paragraph [ref=e219]: A cracked screen, weak battery, and water-damaged phone should not be treated like the same job. Each one has a different risk.
+      - generic [ref=e220]:
+        - article [ref=e221]:
+          - generic [ref=e222]: "01"
+          - heading "Cracked screen" [level=3] [ref=e223]
+          - paragraph [ref=e224]: Check touch response, Face ID behavior, display type, frame bend, and whether the phone still backs up.
+          - emphasis [ref=e225]: "Proof point: tested before and after the display swap."
+        - article [ref=e226]:
+          - generic [ref=e227]: "02"
+          - heading "Battery drain" [level=3] [ref=e228]
+          - paragraph [ref=e229]: Check battery health, cycle symptoms, charging behavior, background heat, and whether the issue is actually software.
+          - emphasis [ref=e230]: "Proof point: charge test before pickup."
+        - article [ref=e231]:
+          - generic [ref=e232]: "03"
+          - heading "Won’t charge" [level=3] [ref=e233]
+          - paragraph [ref=e234]: Rule out pocket lint, bad cable, damaged pins, charge IC symptoms, and microphone/speaker side effects.
+          - emphasis [ref=e235]: "Proof point: port is cleaned before replacement is sold."
+        - article [ref=e236]:
+          - generic [ref=e237]: "04"
+          - heading "Wet / no power" [level=3] [ref=e238]
+          - paragraph [ref=e239]: Stop power first. Then inspect corrosion, triage the board, protect data, and quote based on what survives.
+          - emphasis [ref=e240]: "Proof point: data comes before cosmetics."
+      - generic "More repair guidance" [ref=e241]:
+        - link "What to text for a quote" [ref=e242] [cursor=pointer]:
+          - /url: /broken-phone-what-to-text
+        - link "Run a quick device check" [ref=e243] [cursor=pointer]:
+          - /url: /device-check
+        - link "More iPhone questions" [ref=e244] [cursor=pointer]:
+          - /url: /faq#iphone-faq
+        - link "LCD vs OLED screens" [ref=e245] [cursor=pointer]:
+          - /url: /tips#lcd-vs-oled
+    - generic [ref=e247]:
+      - generic [ref=e248]:
+        - generic [ref=e249]: Model coverage
+        - heading "From older daily drivers to the newest Pro models." [level=2] [ref=e250]
+        - paragraph [ref=e251]: Text the exact model if you know it. If not, send a screenshot of Settings → General → About or a photo of the phone.
+      - generic [ref=e253]:
+        - generic [ref=e254]:
+          - text: iPhone 16 Pro Max
+          - generic [ref=e255]: ✦
+          - text: iPhone 16 Pro
+          - generic [ref=e256]: ✦
+          - text: iPhone 16 Plus
+          - generic [ref=e257]: ✦
+          - text: iPhone 16
+          - generic [ref=e258]: ✦
+          - text: iPhone 15 Pro
+          - generic [ref=e259]: ✦
+          - text: iPhone 15
+          - generic [ref=e260]: ✦
+          - text: iPhone 14 Pro Max
+          - generic [ref=e261]: ✦
+          - text: iPhone 14
+          - generic [ref=e262]: ✦
+          - text: iPhone 13 Pro
+          - generic [ref=e263]: ✦
+          - text: iPhone 13
+          - generic [ref=e264]: ✦
+          - text: iPhone 12
+          - generic [ref=e265]: ✦
+          - text: iPhone 11
+          - generic [ref=e266]: ✦
+          - text: iPhone XR
+          - generic [ref=e267]: ✦
+          - text: iPhone XS
+          - generic [ref=e268]: ✦
+          - text: iPhone X
+          - generic [ref=e269]: ✦
+          - text: iPhone SE
+          - generic [ref=e270]: ✦
+        - generic [ref=e271]:
+          - text: iPhone 16 Pro Max
+          - generic [ref=e272]: ✦
+          - text: iPhone 16 Pro
+          - generic [ref=e273]: ✦
+          - text: iPhone 16 Plus
+          - generic [ref=e274]: ✦
+          - text: iPhone 16
+          - generic [ref=e275]: ✦
+          - text: iPhone 15 Pro
+          - generic [ref=e276]: ✦
+          - text: iPhone 15
+          - generic [ref=e277]: ✦
+          - text: iPhone 14 Pro Max
+          - generic [ref=e278]: ✦
+          - text: iPhone 14
+          - generic [ref=e279]: ✦
+          - text: iPhone 13 Pro
+          - generic [ref=e280]: ✦
+          - text: iPhone 13
+          - generic [ref=e281]: ✦
+          - text: iPhone 12
+          - generic [ref=e282]: ✦
+          - text: iPhone 11
+          - generic [ref=e283]: ✦
+          - text: iPhone XR
+          - generic [ref=e284]: ✦
+          - text: iPhone XS
+          - generic [ref=e285]: ✦
+          - text: iPhone X
+          - generic [ref=e286]: ✦
+          - text: iPhone SE
+          - generic [ref=e287]: ✦
+      - generic [ref=e288]:
+        - generic [ref=e289]:
+          - heading "Current / premium" [level=3] [ref=e290]
+          - paragraph [ref=e291]: iPhone 16, 16 Plus, 16 Pro, 16 Pro Max, 15 series, 14 Pro / Pro Max.
+          - generic [ref=e292]: OLED + Face ID handling matters most.
+        - generic [ref=e293]:
+          - heading "Common repairs" [level=3] [ref=e294]
+          - paragraph [ref=e295]: iPhone 14, 13, 12, 11, XR, XS, X, SE 2/3.
+          - generic [ref=e296]: Best repair-value zone for screens and batteries.
+        - generic [ref=e297]:
+          - heading "Older models" [level=3] [ref=e298]
+          - paragraph [ref=e299]: iPhone 8, 7, 6s, 6, SE 1st gen.
+          - generic [ref=e300]: Quoted honestly against replacement value.
+    - generic [ref=e302]:
+      - generic [ref=e303]:
+        - generic [ref=e304]: Simple process
+        - heading "Text, quote, repair, test." [level=2] [ref=e305]
+      - generic [ref=e306]:
+        - generic [ref=e307]:
+          - generic [ref=e308]: "01"
+          - heading "Text the model + issue" [level=3] [ref=e309]
+          - paragraph [ref=e310]: Photos help. Tell me if touch, Face ID, charging, cameras, or data access still work.
+        - generic [ref=e311]:
+          - generic [ref=e312]: "02"
+          - heading "Approve the quote" [level=3] [ref=e313]
+          - paragraph [ref=e314]: You get the part/repair path before anything is ordered or opened.
+        - generic [ref=e315]:
+          - generic [ref=e316]: "03"
+          - heading "Drop off or mail in" [level=3] [ref=e317]
+          - paragraph [ref=e318]: Hailey local drop-off, Wood River Valley coordination, or Idaho mail-in with tracking.
+        - generic [ref=e319]:
+          - generic [ref=e320]: "04"
+          - heading "Pickup after test" [level=3] [ref=e321]
+          - paragraph [ref=e322]: I test the repair path, then text when it is ready. 40-day warranty included.
+    - generic [ref=e324]:
+      - generic [ref=e325]:
+        - generic [ref=e326]: iPhone FAQ
+        - heading "The questions people ask before handing over their phone." [level=2] [ref=e327]
+      - generic [ref=e328]:
+        - group [ref=e329]:
+          - generic "How much does iPhone screen repair cost in Hailey?" [ref=e330] [cursor=pointer]:
+            - generic [ref=e331]: How much does iPhone screen repair cost in Hailey?
+            - generic [ref=e332]: expand_more
+          - paragraph [ref=e335]:
+            - text: iPhone screen repair starts at
+            - strong [ref=e336]: $109
+            - text: ", but the exact quote depends on model, display type, frame condition, and part availability. Send the model and a photo of the damage first; I’ll quote the repair before parts are ordered or the phone is opened."
+        - group [ref=e337]:
+          - generic "Will I lose photos, messages, or apps?" [ref=e338] [cursor=pointer]:
+            - generic [ref=e339]: Will I lose photos, messages, or apps?
+            - generic [ref=e340]: expand_more
+        - group [ref=e341]:
+          - generic "Do you use genuine Apple parts?" [ref=e342] [cursor=pointer]:
+            - generic [ref=e343]: Do you use genuine Apple parts?
+            - generic [ref=e344]: expand_more
+        - group [ref=e345]:
+          - generic "My iPhone got wet. What should I do first?" [ref=e346] [cursor=pointer]:
+            - generic [ref=e347]: My iPhone got wet. What should I do first?
+            - generic [ref=e348]: expand_more
+        - group [ref=e349]:
+          - generic "Can I mail in an iPhone from outside Hailey?" [ref=e350] [cursor=pointer]:
+            - generic [ref=e351]: Can I mail in an iPhone from outside Hailey?
+            - generic [ref=e352]: expand_more
+    - generic [ref=e355]:
+      - heading "Not sure what it needs? Start with a text." [level=2] [ref=e356]
+      - paragraph [ref=e357]: Send the model, what happened, and a photo if there is visible damage. I'll tell you the likely repair path before you spend money.
+      - generic [ref=e358]:
+        - link "Text the iPhone problem" [ref=e359] [cursor=pointer]:
+          - /url: sms:+12084501606
+          - generic [ref=e360]: sms
+          - text: Text the iPhone problem
+        - link "Email Me" [ref=e361] [cursor=pointer]:
+          - /url: mailto:samuel@haileyrepair.com
+          - generic [ref=e362]: mail
+          - text: Email Me
+      - paragraph [ref=e363]: Mon–Fri 9am–9pm · Sat–Sun 11am–7pm MT · Updated May 2026
+    - generic [ref=e365]:
+      - heading "I also repair…" [level=2] [ref=e366]
+      - generic [ref=e367]:
+        - link "Android Repair Samsung, Pixel, OnePlus & more" [ref=e368] [cursor=pointer]:
+          - /url: /android-repair
+          - generic [ref=e369]: smartphone
+          - strong [ref=e370]: Android Repair
+          - generic [ref=e371]: Samsung, Pixel, OnePlus & more
+        - link "iPad & Tablet iPads, Galaxy Tabs, Fire tablets" [ref=e372] [cursor=pointer]:
+          - /url: /tablet-repair
+          - generic [ref=e373]: tablet
+          - strong [ref=e374]: iPad & Tablet
+          - generic [ref=e375]: iPads, Galaxy Tabs, Fire tablets
+        - link "Laptop & PC Mac, Windows, Chromebook" [ref=e376] [cursor=pointer]:
+          - /url: /laptop-repair
+          - generic [ref=e377]: laptop
+          - strong [ref=e378]: Laptop & PC
+          - generic [ref=e379]: Mac, Windows, Chromebook
+  - contentinfo [ref=e380]:
+    - generic [ref=e381]:
+      - generic [ref=e382]:
+        - link "Hailey Device Repair Home" [ref=e383] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e384]: smartphone
+          - generic [ref=e385]:
+            - text: Hailey Device
+            - strong [ref=e386]: Repair
+        - paragraph [ref=e387]: Don't replace it. Let me fix it.
+      - generic [ref=e388]:
+        - generic [ref=e389]:
+          - strong [ref=e390]: Services
+          - link "All Services" [ref=e391] [cursor=pointer]:
+            - /url: /#services
+          - link "iPhone Repair" [ref=e392] [cursor=pointer]:
+            - /url: /iphone-repair
+          - link "Android Repair" [ref=e393] [cursor=pointer]:
+            - /url: /android-repair
+          - link "Laptop & PC" [ref=e394] [cursor=pointer]:
+            - /url: /laptop-repair
+          - link "iPad & Tablet" [ref=e395] [cursor=pointer]:
+            - /url: /tablet-repair
+          - link "Game Consoles" [ref=e396] [cursor=pointer]:
+            - /url: /console-repair
+          - link "Mail-In Repair" [ref=e397] [cursor=pointer]:
+            - /url: /mail-in-repair
+          - link "Electronics Recycling" [ref=e398] [cursor=pointer]:
+            - /url: /electronics-recycling
+          - link "Computer Help" [ref=e399] [cursor=pointer]:
+            - /url: /computer-support
+          - link "Virus Removal" [ref=e400] [cursor=pointer]:
+            - /url: /virus-removal
+          - link "Printer Setup" [ref=e401] [cursor=pointer]:
+            - /url: /printer-setup
+          - link "Mail-In" [ref=e402] [cursor=pointer]:
+            - /url: /#mailin
+          - link "Pricing" [ref=e403] [cursor=pointer]:
+            - /url: /pricing
+          - link "FAQ" [ref=e404] [cursor=pointer]:
+            - /url: /#faq
+        - generic [ref=e405]:
+          - strong [ref=e406]: Resources
+          - link "Tips & Guides" [ref=e407] [cursor=pointer]:
+            - /url: /tips
+          - link "Warranty" [ref=e408] [cursor=pointer]:
+            - /url: /warranty
+          - link "About" [ref=e409] [cursor=pointer]:
+            - /url: /about
+          - link "Student & Military" [ref=e410] [cursor=pointer]:
+            - /url: /student-military
+          - link "Device Check" [ref=e411] [cursor=pointer]:
+            - /url: /device-check
+          - link "FAQ" [ref=e412] [cursor=pointer]:
+            - /url: /faq
+          - link "Water Damage Guide" [ref=e413] [cursor=pointer]:
+            - /url: /tips#water-damage
+          - link "LCD vs OLED" [ref=e414] [cursor=pointer]:
+            - /url: /tips#lcd-vs-oled
+          - link "Repair vs Replace" [ref=e415] [cursor=pointer]:
+            - /url: /tips#repair-vs-replace
+        - generic [ref=e416]:
+          - strong [ref=e417]: Contact
+          - link "+1 (208) 450-1606" [ref=e418] [cursor=pointer]:
+            - /url: sms:+12084501606
+          - link "samuel@haileyrepair.com" [ref=e419] [cursor=pointer]:
+            - /url: mailto:samuel@haileyrepair.com
+          - link "Leave a Review ↗" [ref=e420] [cursor=pointer]:
+            - /url: https://g.page/r/CRz04Aqd3UvPEBM/review
+    - generic [ref=e421]:
+      - paragraph [ref=e422]:
+        - text: © 2026 Hailey Device Repair · Hailey, Idaho ·
+        - link "Privacy Policy" [ref=e423] [cursor=pointer]:
+          - /url: /privacy
+      - paragraph [ref=e424]:
+        - text: Built with
+        - generic [ref=e425]: ❤️
+        - text: for the Wood River Valley
+  - dialog "Cookie consent" [ref=e426]:
+    - generic [ref=e427]:
+      - button "Got it" [ref=e428] [cursor=pointer]
+      - button "Decline" [ref=e429] [cursor=pointer]
+  - button "Get help" [ref=e431] [cursor=pointer]:
+    - generic [ref=e433]: Need help?
+    - generic [ref=e434]: close
