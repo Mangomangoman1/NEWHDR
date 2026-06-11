@@ -13031,3 +13031,7 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
 .hdr-reviews-strip .hdr-reviews-badge{flex-direction:column;justify-content:center;gap:.35rem;border-radius:20px;padding:1.1rem;text-align:center}
 @media(max-width:980px){.hdr-reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hdr-reviews-strip{grid-template-columns:1fr}}
 @media(max-width:640px){.hdr-reviews-grid{grid-template-columns:1fr}}
+
+/* Illustrated "peep" review avatars (homepage) */
+.hdr-review-avatar--peep{width:38px;height:38px;overflow:hidden;background:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.hdr-review-avatar--peep svg{display:block;width:100%;height:100%;border-radius:50%}
