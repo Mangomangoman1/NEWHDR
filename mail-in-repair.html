@@ -1602,6 +1602,114 @@ a{color:inherit;text-decoration:none}
 </style>
 <!-- HDR sitewide H1/title font split -->
 <style id="hdr-h1-title-font-split">h2,h3,h4,h5,h6,.section-title,.card-title,.sel-title,.service-card-title,.diag-title,.pricing-card-service,.footer-brand-name,.page-curtain-logo,.article h2,.article h3{font-family:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif!important}h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{font-family:'Darker Grotesque','MuseoModerno','Inter',sans-serif!important;font-weight:900!important;letter-spacing:-0.045em;line-height:.92}.hero-headline{margin-bottom:1.75rem!important}@media(max-width:480px){h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{line-height:.9}}</style>
+<style id="hdr-first-class">
+/* ── Desktop polish: gradient keyword, hero aurora, cursor spotlight ── */
+.hdr-grad{background:linear-gradient(118deg,#6aa8ff 5%,#39c5cf 52%,#a371f7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.repair-hero--ketchum,.mailin-page .lp-hero{position:relative;overflow:hidden}
+.repair-hero--ketchum>.container,.mailin-page .lp-hero>.container{position:relative;z-index:1}
+.hdr-aur{position:absolute;border-radius:50%;filter:blur(64px);pointer-events:none;opacity:.55;z-index:0}
+.hdr-aur--a{width:44rem;height:44rem;top:-20rem;right:-13rem;background:radial-gradient(circle,rgba(79,142,247,.26),transparent 62%)}
+.hdr-aur--b{width:34rem;height:34rem;bottom:-15rem;left:-10rem;background:radial-gradient(circle,rgba(163,113,247,.18),transparent 60%)}
+@media (prefers-reduced-motion: no-preference){
+  .hdr-aur--a{animation:hdr-drift-a 24s ease-in-out infinite alternate}
+  .hdr-aur--b{animation:hdr-drift-b 30s ease-in-out infinite alternate}
+}
+@keyframes hdr-drift-a{to{transform:translate(-5rem,3rem) scale(1.1)}}
+@keyframes hdr-drift-b{to{transform:translate(4rem,-3rem) scale(1.07)}}
+@media (hover:hover){
+  .hdr-spot{position:relative;transition:transform .3s cubic-bezier(.22,.9,.3,1),border-color .3s ease,box-shadow .3s ease}
+  .hdr-spot::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(210px circle at var(--mx,50%) var(--my,50%),rgba(106,168,255,.12),transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:1}
+  .hdr-spot:hover{transform:translateY(-3px);border-color:rgba(106,168,255,.35);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+  .hdr-spot:hover::before{opacity:1}
+}
+.hdr-swipe-hint{display:none}
+
+/* ── Sticky mobile CTA dock ── */
+.hdr-mcta{position:fixed;left:.8rem;right:.8rem;bottom:.8rem;z-index:95;display:none;gap:.5rem;padding:.45rem;border-radius:18px;background:rgba(10,14,21,.93);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border-default);box-shadow:0 14px 40px rgba(0,0,0,.55);transform:translateY(150%);transition:transform .4s cubic-bezier(.22,.9,.3,1)}
+.hdr-mcta.show{transform:none}
+.hdr-mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.72rem .5rem;border-radius:13px;font-weight:700;font-size:.9rem;text-decoration:none;white-space:nowrap}
+.hdr-mcta-text{background:var(--accent);color:#fff}
+.hdr-mcta-call{background:var(--bg-elevated);color:var(--text-primary);border:1px solid var(--border-default)}
+.hdr-mcta .material-symbols-outlined{font-size:1.1rem}
+
+/* ── True mobile build (≤768px): tight rhythm, dense cards, swipe rails ── */
+@media (max-width:768px){
+  .ketchum-page .section,.mailin-page .section{padding:2.1rem 0 !important}
+  .ketchum-page .lp-hero,.mailin-page .lp-hero{padding-top:1.25rem !important;padding-bottom:2rem !important}
+  h1.lp-hero-title,.repair-hero-title{font-size:2.15rem !important;line-height:.95 !important;margin-bottom:.9rem !important}
+  .lp-hero-sub,.repair-hero-sub{font-size:.93rem !important;line-height:1.55 !important;margin-bottom:1.1rem !important}
+  .lp-hero-badge{font-size:.68rem !important;padding:.3rem .7rem !important;margin-bottom:.8rem !important}
+  .section-title{font-size:1.32rem !important;line-height:1.22 !important;margin-bottom:.5rem !important}
+  .section-sub{font-size:.9rem !important;line-height:1.55 !important}
+  .section-eyebrow{font-size:.66rem !important;margin-bottom:.45rem !important}
+  .hero-actions .btn-lg{padding:.75rem 1rem !important;font-size:.9rem !important;min-height:48px !important}
+  .repair-hero-grid{gap:1.25rem !important}
+  .repair-proof-card{padding:1rem !important}
+
+  /* info/compare cards: giant centered slabs → dense icon-left rows */
+  .lp-info-card,.lp-compare-card{display:grid !important;grid-template-columns:38px minmax(0,1fr) !important;column-gap:.8rem !important;row-gap:.2rem !important;padding:.85rem .9rem !important;text-align:left !important;align-items:start !important}
+  .lp-info-card-icon,.lp-compare-icon{width:38px !important;height:38px !important;min-width:0 !important;grid-row:1 / span 2 !important;margin:0 !important;display:flex !important;align-items:center !important;justify-content:center !important}
+  .lp-info-card-icon .material-symbols-outlined,.lp-compare-icon .material-symbols-outlined{font-size:1.3rem !important}
+  .lp-info-card h3,.lp-compare-card h3{font-size:.95rem !important;margin:0 !important;line-height:1.3 !important}
+  .lp-info-card > :not(.lp-info-card-icon),.lp-compare-card > :not(.lp-compare-icon){grid-column:2 !important}
+  .lp-info-card p,.lp-compare-card p,.lp-info-card ul{margin:0 !important;font-size:.84rem !important;line-height:1.5 !important}
+  .lp-info-grid,.lp-compare-grid{gap:.6rem !important;grid-template-columns:1fr !important}
+  .mail-packing-list{display:grid !important;gap:.35rem !important}
+  .mail-packing-list li{font-size:.84rem !important}
+
+  /* timeline + cities: vertical stack → horizontal swipe rail */
+  .mail-timeline-strip,.mailin-page .mail-cities-grid{display:flex !important;grid-template-columns:none !important;overflow-x:auto !important;scroll-snap-type:x mandatory !important;gap:.7rem !important;margin-left:calc(-1 * var(--space-lg,1.5rem)) !important;margin-right:calc(-1 * var(--space-lg,1.5rem)) !important;padding-left:var(--space-lg,1.5rem) !important;padding-right:var(--space-lg,1.5rem) !important;padding-bottom:.6rem !important;scrollbar-width:none !important}
+  .mail-timeline-strip::-webkit-scrollbar,.mail-cities-grid::-webkit-scrollbar{display:none}
+  .mail-timeline-day,.mail-city-card{min-width:76% !important;max-width:76% !important;scroll-snap-align:center !important;flex-shrink:0 !important}
+  .hdr-swipe-hint{display:flex;align-items:center;gap:.35rem;justify-content:center;color:var(--text-muted);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;margin-top:.45rem}
+  .hdr-swipe-hint .material-symbols-outlined{font-size:.95rem}
+
+  /* hub-specific density */
+  .mailin-page .mail-packing-card,.mailin-page .mail-pricing-card{padding:1rem !important}
+  .mailin-page .mail-packing-grid,.mailin-page .mail-pricing-grid,.mailin-page .mail-reality-grid{gap:.7rem !important}
+
+  /* FAQ, founder note, reviews */
+  .faq-question{font-size:.9rem !important;padding:.85rem .9rem !important}
+  .faq-answer p{font-size:.86rem !important}
+  .faq-list{gap:.5rem !important}
+  .mail-founder-note{padding:1.1rem !important}
+  .mail-founder-note-body p{font-size:.88rem !important;line-height:1.6 !important}
+  .hdr-reviews-strip{gap:.6rem !important}
+  .hdr-review-card{padding:.85rem !important}
+  .lp-bottom-cta{padding:1.5rem 1.1rem !important}
+
+  /* cookie banner → compact pill above the CTA dock; help fab replaced by dock */
+  .ketchum-page .cookie-banner,.mailin-page .cookie-banner{left:auto !important;right:.8rem !important;bottom:5.4rem !important;width:auto !important;max-width:172px !important;padding:.5rem !important;border-radius:999px !important;gap:.4rem !important}
+  .ketchum-page .cookie-banner-text,.mailin-page .cookie-banner-text{display:none !important}
+  .ketchum-page .cookie-banner-actions,.mailin-page .cookie-banner-actions{flex-direction:row !important;gap:.35rem !important;margin:0 !important}
+  .ketchum-page .cookie-banner .btn-accept,.ketchum-page .cookie-banner .btn-decline,.mailin-page .cookie-banner .btn-accept,.mailin-page .cookie-banner .btn-decline{padding:.45rem .7rem !important;border-radius:999px !important;font-size:.75rem !important}
+  .ketchum-page .help-fab,.mailin-page .help-fab{display:none !important}
+  .hdr-mcta{display:flex}
+}
+
+/* ── hub deep-density pass (mobile) ── */
+@media (max-width:768px){
+  .mailin-page .idaho-route-card{padding:1rem !important}
+  .mailin-page .route-micro-grid{gap:.6rem !important}
+  .mailin-page .mail-reality-grid > *{padding:.9rem !important}
+  .mailin-page .mail-reality-grid p,.mailin-page .idaho-route-card p{font-size:.85rem !important;line-height:1.5 !important}
+  .mailin-page .mail-step{gap:.7rem !important}
+  .mailin-page .mail-step-icon{width:40px !important;height:40px !important}
+  .mailin-page .mail-step-content h3{font-size:1rem !important}
+  .mailin-page .mail-step-content p{font-size:.85rem !important;line-height:1.5 !important}
+  .mailin-page .mail-step-detail{padding:.6rem .7rem !important;font-size:.8rem !important}
+  .mailin-page .mail-packing-card,.mailin-page .mail-pricing-card{padding:.95rem !important}
+  .mailin-page .mail-packing-card h3,.mailin-page .mail-pricing-card h3{font-size:1rem !important}
+  .mailin-page .mail-packing-card p,.mailin-page .mail-packing-card li,.mailin-page .mail-pricing-card p,.mailin-page .mail-pricing-items li{font-size:.84rem !important;line-height:1.5 !important}
+  .mailin-page .lp-table{font-size:.8rem !important}
+  .mailin-page .lp-table th,.mailin-page .lp-table td{padding:.5rem .55rem !important}
+  .mailin-page .mail-timeline-day{padding:.9rem !important}
+  .mailin-page .mail-timeline-day p{font-size:.83rem !important}
+  .mailin-page .mail-city-card{padding:.95rem !important}
+  .mailin-page .mail-city-card p{font-size:.84rem !important}
+  .mailin-page .mail-hero-grid{gap:1.25rem !important}
+}
+</style>
 </head>
 <body class="mailin-page">
 <nav class="nav" id="nav" role="navigation">
@@ -1694,6 +1802,9 @@ a{color:inherit;text-decoration:none}
        HERO
   ══════════════════════════════════════════════ -->
 <section class="lp-hero">
+<div aria-hidden="true" class="hdr-aur hdr-aur--a"></div>
+<div aria-hidden="true" class="hdr-aur hdr-aur--b"></div>
+
 <div class="container">
 <div class="mail-hero-grid">
 <div class="mail-hero-copy">
@@ -1706,7 +1817,7 @@ a{color:inherit;text-decoration:none}
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span>
             Free return shipping · Quote before you ship
           </div>
-<h1 class="lp-hero-title">Mail-In Device Repair for Idaho</h1>
+<h1 class="lp-hero-title">Mail-In Device Repair <span class="hdr-grad">for Idaho</span></h1>
 <p class="lp-hero-sub">Mail-in repair for phones, laptops, tablets, and game consoles from anywhere in Idaho. Text the model, symptoms, and photos first — Samuel will tell you if shipping makes sense before you spend a dollar on postage.</p>
 <div class="hero-actions">
 <a class="btn btn-primary btn-lg" href="sms:+12084501606">
@@ -2017,8 +2128,8 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="mail-city-card" data-animate="">
 <h3 class="mail-city-name">Twin Falls</h3>
-<div class="mail-city-time">3-4 day turnaround</div>
-<p>Southern Idaho hub. Regular mail-in customers from the Magic Valley area.</p>
+<div class="mail-city-time">3-4 days by mail — or drive up once</div>
+<p>Close enough to choose: mail it, or drive 80 minutes with the part staged before you leave. <a href="/twin-falls-repair">See the Twin Falls &amp; Magic Valley repair page.</a></p>
 </div>
 <div class="mail-city-card" data-animate="">
 <h3 class="mail-city-name">Idaho Falls</h3>
@@ -2049,6 +2160,11 @@ a{color:inherit;text-decoration:none}
 <h3 class="mail-city-name">Rexburg / Sugar City</h3>
 <div class="mail-city-time">3-4 day turnaround</div>
 <p>Strong fit for BYU-Idaho students, roommates, and nearby East Idaho families. <a href="/rexburg-repair">See the Rexburg &amp; Upper Valley repair page.</a></p>
+</div>
+<div class="mail-city-card" data-animate="">
+<h3 class="mail-city-name">Ketchum / Sun Valley</h3>
+<div class="mail-city-time">Don't mail it — you're 20 minutes away</div>
+<p>North-valley neighbors skip the box entirely: text first, part staged, usually fixed same-day. <a href="/ketchum-repair">See the Ketchum &amp; Sun Valley page.</a></p>
 </div>
 </div>
 </div>
@@ -2847,7 +2963,7 @@ a{color:inherit;text-decoration:none}
         </div>
 </div>
 <div class="qf-footer">
-<span>20 pages</span>
+<span>22 pages</span>
 <div class="qf-footer-keys">
 <span><kbd>↑↓</kbd> Navigate</span>
 <span><kbd>↵</kbd> Open</span>
@@ -2856,5 +2972,48 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 </div>
+<div class="hdr-mcta" id="hdrMcta">
+<a class="hdr-mcta-text" href="sms:+12084501606?&amp;body=Hi%20Hailey%20Device%20Repair%2C%20I%20want%20to%20mail%20in%20a%20device%20for%20repair."><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span> Text for a quote</a>
+<a class="hdr-mcta-call" href="tel:+12084501606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="call"></span> Call</a>
+</div>
+<script>
+/* HDR first-class pass: sticky CTA dock, cursor spotlight, swipe hints */
+(function () {
+  'use strict';
+  var init = function () {
+    var bar = document.getElementById('hdrMcta');
+    if (bar) {
+      var tick = function () {
+        var y = window.scrollY;
+        var nearBottom = y + window.innerHeight > document.body.scrollHeight - 700;
+        bar.classList.toggle('show', y > 520 && !nearBottom);
+      };
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    }
+    if (window.matchMedia('(hover:hover)').matches) {
+      document.querySelectorAll('.lp-info-card,.lp-compare-card,.mail-city-card,.mail-packing-card,.mail-pricing-card,.repair-proof-card,.hdr-review-card').forEach(function (el) {
+        el.classList.add('hdr-spot');
+        el.addEventListener('pointermove', function (e) {
+          var r = el.getBoundingClientRect();
+          el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+      });
+    }
+    if (window.matchMedia('(max-width:768px)').matches) {
+      document.querySelectorAll('.mail-timeline-strip,.mail-cities-grid').forEach(function (g) {
+        var h = document.createElement('div');
+        h.className = 'hdr-swipe-hint';
+        h.setAttribute('aria-hidden', 'true');
+        h.innerHTML = '<span class="material-symbols-outlined" data-icon="swipe"></span> swipe';
+        g.insertAdjacentElement('afterend', h);
+      });
+    }
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 </body>
 </html>
