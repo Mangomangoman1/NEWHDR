@@ -70,7 +70,11 @@
     {"@type": "Question", "name": "What about Jerome, Burley, Kimberly, Filer, or Rupert?", "acceptedAnswer": {"@type": "Answer", "text": "The whole Magic Valley uses the same process: text the model and the problem, get a quote before any work, then drive up or mail in - whichever fits your week."}},
     {"@type": "Question", "name": "What should I text to get a quote?", "acceptedAnswer": {"@type": "Answer", "text": "Text the exact model, what broke, whether it still powers on, and a photo if possible. Example: iPhone 13, cracked screen, touch still works, Twin Falls."}},
     {"@type": "Question", "name": "Is return shipping really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Return shipping is included on every completed repair, whether you mailed the device or dropped it off in person."}},
-    {"@type": "Question", "name": "Twin Falls has repair shops - why use Hailey Device Repair?", "acceptedAnswer": {"@type": "Answer", "text": "If you already have a local shop you trust, use it. This page is for people who want quote-first pricing by text, a part staged before they drive, a 40-day warranty, or a mail-in option with updates the whole way."}}
+    {"@type": "Question", "name": "Twin Falls has repair shops - why use Hailey Device Repair?", "acceptedAnswer": {"@type": "Answer", "text": "If you already have a local shop you trust, use it. This page is for people who want quote-first pricing by text, a part staged before they drive, a 40-day warranty, or a mail-in option with updates the whole way."}},
+    {"@type": "Question", "name": "How much does an iPhone screen repair cost from Twin Falls?", "acceptedAnswer": {"@type": "Answer", "text": "Most iPhone screens start from $109 and take 30-60 minutes once the part is staged. The exact price depends on your model and display type, so you get a firm quote by text before driving up or shipping. CSI students get 15% off."}},
+    {"@type": "Question", "name": "Can you replace a MacBook or laptop battery I mail from Twin Falls?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Laptop batteries start from $69 and MacBook batteries vary by model, so text the exact model for a firm quote. Battery and screen repairs ship well and almost always beat buying a new machine, and the device comes back tested with free return shipping."}},
+    {"@type": "Question", "name": "Do you fix Samsung and Pixel phones for the Magic Valley?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Samsung Galaxy and Google Pixel screens, batteries, and USB-C charging ports are common jobs, along with OnePlus and Motorola. Text the model and the problem, get a quote, then drive up or mail it in."}},
+    {"@type": "Question", "name": "What is the cheapest way to get my device fixed from Twin Falls?", "acceptedAnswer": {"@type": "Answer", "text": "Mail-in skips the gas and the round trip - USPS Priority is 1-2 days each way and return shipping is free. Add the 15% CSI student, military, and veteran discount, and because every job is quoted before any work, you never pay for a trip or repair you did not agree to."}}
   ]
 }</script>
 <script type="application/ld+json">{
@@ -114,8 +118,97 @@
 </style>
 <!-- HDR sitewide H1/title font split -->
 <style id="hdr-h1-title-font-split">h2,h3,h4,h5,h6,.section-title,.card-title,.sel-title,.service-card-title,.diag-title,.pricing-card-service,.footer-brand-name,.page-curtain-logo,.article h2,.article h3{font-family:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif!important}h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{font-family:'Darker Grotesque','MuseoModerno','Inter',sans-serif!important;font-weight:900!important;letter-spacing:-0.045em;line-height:.92}.hero-headline{margin-bottom:1.75rem!important}@media(max-width:480px){h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{line-height:.9}}</style>
+<style id="hdr-first-class">
+/* ── Desktop polish: gradient keyword, hero aurora, cursor spotlight ── */
+.hdr-grad{background:linear-gradient(118deg,#6aa8ff 5%,#39c5cf 52%,#a371f7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.repair-hero--twinfalls{position:relative;overflow:hidden}
+.repair-hero--twinfalls>.container{position:relative;z-index:1}
+.hdr-aur{position:absolute;border-radius:50%;filter:blur(64px);pointer-events:none;opacity:.55;z-index:0}
+.hdr-aur--a{width:44rem;height:44rem;top:-20rem;right:-13rem;background:radial-gradient(circle,rgba(79,142,247,.26),transparent 62%)}
+.hdr-aur--b{width:34rem;height:34rem;bottom:-15rem;left:-10rem;background:radial-gradient(circle,rgba(163,113,247,.18),transparent 60%)}
+@media (prefers-reduced-motion: no-preference){
+  .hdr-aur--a{animation:hdr-drift-a 24s ease-in-out infinite alternate}
+  .hdr-aur--b{animation:hdr-drift-b 30s ease-in-out infinite alternate}
+}
+@keyframes hdr-drift-a{to{transform:translate(-5rem,3rem) scale(1.1)}}
+@keyframes hdr-drift-b{to{transform:translate(4rem,-3rem) scale(1.07)}}
+@media (hover:hover){
+  .hdr-spot{position:relative;transition:transform .3s cubic-bezier(.22,.9,.3,1),border-color .3s ease,box-shadow .3s ease}
+  .hdr-spot::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(210px circle at var(--mx,50%) var(--my,50%),rgba(106,168,255,.12),transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:1}
+  .hdr-spot:hover{transform:translateY(-3px);border-color:rgba(106,168,255,.35);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+  .hdr-spot:hover::before{opacity:1}
+}
+.hdr-swipe-hint{display:none}
+
+/* ── Pricing board ── */
+.tf-price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.9rem;margin-top:1.5rem}
+.tf-price-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:14px;padding:1.1rem 1.15rem}
+.tf-price-card h3{font-size:1rem;margin:0 0 .35rem}
+.tf-price-amt{font-size:1.5rem;font-weight:800;color:var(--text-primary);line-height:1;letter-spacing:-.02em}
+.tf-price-amt small{font-size:.7rem;font-weight:600;color:var(--text-muted);letter-spacing:.04em;text-transform:uppercase;margin-right:.35rem}
+.tf-price-card p{font-size:.82rem;color:var(--text-secondary);margin:.5rem 0 0;line-height:1.5}
+.tf-price-note{margin-top:1.25rem;font-size:.84rem;color:var(--text-muted);text-align:center;line-height:1.6}
+.tf-price-note a{color:var(--accent)}
+
+/* ── Related-page link strip ── */
+.tf-link-strip{display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center}
+.tf-link-strip a{font-size:.8rem;padding:.3rem .75rem;border-radius:99px;border:1px solid var(--border-default);color:var(--text-secondary);text-decoration:none;white-space:nowrap;transition:border-color .2s,color .2s}
+.tf-link-strip a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── Sticky mobile CTA dock ── */
+.hdr-mcta{position:fixed;left:.8rem;right:.8rem;bottom:.8rem;z-index:95;display:none;gap:.5rem;padding:.45rem;border-radius:18px;background:rgba(10,14,21,.93);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border-default);box-shadow:0 14px 40px rgba(0,0,0,.55);transform:translateY(150%);transition:transform .4s cubic-bezier(.22,.9,.3,1)}
+.hdr-mcta.show{transform:none}
+.hdr-mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.72rem .5rem;border-radius:13px;font-weight:700;font-size:.9rem;text-decoration:none;white-space:nowrap}
+.hdr-mcta-text{background:var(--accent);color:#fff}
+.hdr-mcta-call{background:var(--bg-elevated);color:var(--text-primary);border:1px solid var(--border-default)}
+.hdr-mcta .material-symbols-outlined{font-size:1.1rem}
+
+/* ── True mobile build (≤768px): tight rhythm, dense cards, swipe rails ── */
+@media (max-width:768px){
+  .twinfalls-page .section{padding:2.1rem 0 !important}
+  .twinfalls-page .lp-hero{padding-top:1.25rem !important;padding-bottom:2rem !important}
+  h1.lp-hero-title,.repair-hero-title{font-size:2.15rem !important;line-height:.95 !important;margin-bottom:.9rem !important}
+  .lp-hero-sub,.repair-hero-sub{font-size:.93rem !important;line-height:1.55 !important;margin-bottom:1.1rem !important}
+  .lp-hero-badge{font-size:.68rem !important;padding:.3rem .7rem !important;margin-bottom:.8rem !important}
+  .section-title{font-size:1.32rem !important;line-height:1.22 !important;margin-bottom:.5rem !important}
+  .section-sub{font-size:.9rem !important;line-height:1.55 !important}
+  .section-eyebrow{font-size:.66rem !important;margin-bottom:.45rem !important}
+  .hero-actions .btn-lg{padding:.75rem 1rem !important;font-size:.9rem !important;min-height:48px !important}
+  .repair-hero-grid{gap:1.25rem !important}
+  .repair-proof-card{padding:1rem !important}
+  .lp-info-card,.lp-compare-card{display:grid !important;grid-template-columns:38px minmax(0,1fr) !important;column-gap:.8rem !important;row-gap:.2rem !important;padding:.85rem .9rem !important;text-align:left !important;align-items:start !important}
+  .lp-info-card-icon,.lp-compare-icon{width:38px !important;height:38px !important;min-width:0 !important;grid-row:1 / span 2 !important;margin:0 !important;display:flex !important;align-items:center !important;justify-content:center !important}
+  .lp-info-card-icon .material-symbols-outlined,.lp-compare-icon .material-symbols-outlined{font-size:1.3rem !important}
+  .lp-info-card h3,.lp-compare-card h3{font-size:.95rem !important;margin:0 !important;line-height:1.3 !important}
+  .lp-info-card > :not(.lp-info-card-icon),.lp-compare-card > :not(.lp-compare-icon){grid-column:2 !important}
+  .lp-info-card p,.lp-compare-card p,.lp-info-card ul{margin:0 !important;font-size:.84rem !important;line-height:1.5 !important}
+  .lp-info-grid,.lp-compare-grid{gap:.6rem !important;grid-template-columns:1fr !important}
+  .mail-packing-list{display:grid !important;gap:.35rem !important}
+  .mail-packing-list li{font-size:.84rem !important}
+  .mail-timeline-strip{display:flex !important;grid-template-columns:none !important;overflow-x:auto !important;scroll-snap-type:x mandatory !important;gap:.7rem !important;margin-left:calc(-1 * var(--space-lg,1.5rem)) !important;margin-right:calc(-1 * var(--space-lg,1.5rem)) !important;padding-left:var(--space-lg,1.5rem) !important;padding-right:var(--space-lg,1.5rem) !important;padding-bottom:.6rem !important;scrollbar-width:none !important}
+  .mail-timeline-strip::-webkit-scrollbar{display:none}
+  .mail-timeline-day{min-width:76% !important;max-width:76% !important;scroll-snap-align:center !important;flex-shrink:0 !important}
+  .hdr-swipe-hint{display:flex;align-items:center;gap:.35rem;justify-content:center;color:var(--text-muted);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;margin-top:.45rem}
+  .hdr-swipe-hint .material-symbols-outlined{font-size:.95rem}
+  .faq-question{font-size:.9rem !important;padding:.85rem .9rem !important}
+  .faq-answer p{font-size:.86rem !important}
+  .faq-list{gap:.5rem !important}
+  .mail-founder-note{padding:1.1rem !important}
+  .mail-founder-note-body p{font-size:.88rem !important;line-height:1.6 !important}
+  .hdr-reviews-strip{gap:.6rem !important}
+  .hdr-review-card{padding:.85rem !important}
+  .lp-bottom-cta{padding:1.5rem 1.1rem !important}
+  .tf-price-amt{font-size:1.35rem !important}
+  .twinfalls-page .cookie-banner{left:auto !important;right:.8rem !important;bottom:5.4rem !important;width:auto !important;max-width:172px !important;padding:.5rem !important;border-radius:999px !important;gap:.4rem !important}
+  .twinfalls-page .cookie-banner-text{display:none !important}
+  .twinfalls-page .cookie-banner-actions{flex-direction:row !important;gap:.35rem !important;margin:0 !important}
+  .twinfalls-page .cookie-banner .btn-accept,.twinfalls-page .cookie-banner .btn-decline{padding:.45rem .7rem !important;border-radius:999px !important;font-size:.75rem !important}
+  .twinfalls-page .help-fab{display:none !important}
+  .hdr-mcta{display:flex}
+}
+</style>
 </head>
-<body>
+<body class="twinfalls-page">
 <nav class="nav" id="nav" role="navigation">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
@@ -200,6 +293,8 @@
 
 <main id="main" role="main">
 <section class="lp-hero repair-hero repair-hero--twinfalls">
+<div aria-hidden="true" class="hdr-aur hdr-aur--a"></div>
+<div aria-hidden="true" class="hdr-aur hdr-aur--b"></div>
 <div class="container repair-hero-grid">
 <div class="repair-hero-copy">
 <nav aria-label="Breadcrumb" class="breadcrumb repair-hero-breadcrumb">
@@ -213,7 +308,7 @@
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="route"></span>
         Twin Falls • Jerome • Burley • Magic Valley
       </div>
-<h1 class="lp-hero-title repair-hero-title">Twin Falls Device Repair — Drive Up or Mail It In</h1>
+<h1 class="lp-hero-title repair-hero-title">Twin Falls Device Repair — <span class="hdr-grad">Drive Up or Mail It In</span></h1>
 <p class="lp-hero-sub repair-hero-sub">You’re 80 minutes from my bench in Hailey — close enough to drive up US-93 once, easy enough to skip the drive and mail it. Text the model and what broke; I’ll quote it before you do either.</p>
 <div class="hero-actions repair-hero-actions">
 <a class="btn btn-primary btn-lg" href="sms:+12084501606?&amp;body=Hi%20Hailey%20Device%20Repair%2C%20I%27m%20in%20Twin%20Falls%20%2F%20the%20Magic%20Valley%20and%20need%20a%20repair%20quote.">
@@ -364,33 +459,97 @@
 </div>
 </div>
 </section>
-<section class="section section--alt">
+<section class="section section--alt" id="what-gets-fixed">
 <div class="container">
-<div class="section-eyebrow">Device Paths</div>
-<h2 class="section-title">What Magic Valley customers usually bring or ship</h2>
-<p class="section-sub">If you already know what you’ve got, the device page has the deeper detail.</p>
+<div class="section-eyebrow">What Gets Fixed</div>
+<h2 class="section-title">Every device Magic Valley customers drive up or ship</h2>
+<p class="section-sub">If it has a screen or a battery, it can be quoted by text and either driven up or mailed in. Here are the repairs that come from Twin Falls, Jerome, Burley and the rest of the valley most often — with the specific issues worth fixing instead of replacing the whole device.</p>
 <div class="lp-info-grid">
 <div class="lp-info-card" data-animate="">
 <div class="lp-info-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="phone_iphone"></span></div>
 <h3><a href="/iphone-repair">iPhone repair</a></h3>
-<p>Cracked screens, batteries, back glass, charging ports — the most common drive-up jobs, often same-day with a staged part.</p>
+<ul class="mail-packing-list">
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Screen &amp; glass replacement — the most common drive-up job</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Battery swap for fast drain &amp; random shutdowns</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Charging port — when the cable only works at an angle</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Back glass, cameras, speakers &amp; buttons</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Water damage &amp; no-power triage</li>
+</ul>
 </div>
 <div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--green"><span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop_mac"></span></div>
-<h3><a href="/mail-in/macbook">MacBook mail-in</a></h3>
-<p>Battery, screen, keyboard, and charging problems — MacBooks ship well and beat replacing the whole machine.</p>
+<div class="lp-info-card-icon lp-info-card-icon--green"><span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span></div>
+<h3><a href="/android-repair">Android repair</a></h3>
+<ul class="mail-packing-list">
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Samsung Galaxy screen &amp; back glass</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Pixel screen &amp; battery</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>USB-C charging port repair</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Battery replacement</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>OnePlus, Motorola &amp; more</li>
+</ul>
 </div>
 <div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--cyan"><span class="material-symbols-outlined" aria-hidden="true" data-icon="tablet_mac"></span></div>
-<h3><a href="/mail-in/ipad">iPad mail-in</a></h3>
-<p>School iPads, cracked glass, batteries, charge ports. Family devices come back tested and tracked.</p>
+<div class="lp-info-card-icon lp-info-card-icon--cyan"><span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop_mac"></span></div>
+<h3><a href="/macbook-repair">MacBook &amp; laptop repair</a></h3>
+<ul class="mail-packing-list">
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Battery replacement — beats buying a new machine</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Screen &amp; display replacement</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Keyboard &amp; trackpad repair</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Liquid damage &amp; won't-charge diagnosis</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Windows laptops &amp; Chromebooks too</li>
+</ul>
 </div>
 <div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--red"><span class="material-symbols-outlined" aria-hidden="true" data-icon="devices"></span></div>
-<h3><a href="/mail-in-repair">Android, consoles &amp; everything else</a></h3>
-<p>Samsung, Pixel, Switch, PS5, gaming laptops — if it fits in a box or a back seat, it fits the process.</p>
+<div class="lp-info-card-icon lp-info-card-icon--red"><span class="material-symbols-outlined" aria-hidden="true" data-icon="tablet_mac"></span></div>
+<h3><a href="/tablet-repair">iPad, tablet &amp; console</a></h3>
+<ul class="mail-packing-list">
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>iPad screen &amp; glass replacement</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>iPad &amp; tablet battery, charge ports</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Nintendo Switch drift &amp; screen</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>PS5, Xbox, Steam Deck</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>School &amp; family iPads, tracked both ways</li>
+</ul>
 </div>
 </div>
+</div>
+</section>
+<section class="section" id="pricing">
+<div class="container">
+<div class="section-eyebrow">What It Costs</div>
+<h2 class="section-title">Magic Valley repair prices start here</h2>
+<p class="section-sub">Real starting prices on the most common repairs — the same numbers whether you drive up or mail in. Exact cost depends on your model, the part, and the display type, so you always get a firm quote by text before any work.</p>
+<div class="tf-price-grid">
+<div class="tf-price-card" data-animate="">
+<h3>iPhone screen</h3>
+<div class="tf-price-amt"><small>from</small>$109</div>
+<p>Cracked glass, dead display, or ghost touch. 30–60 min once the part is staged.</p>
+</div>
+<div class="tf-price-card" data-animate="">
+<h3>iPhone battery</h3>
+<div class="tf-price-amt"><small>from</small>$79</div>
+<p>Fast drain, random shutdowns, or a "Service" battery message. 20–40 min.</p>
+</div>
+<div class="tf-price-card" data-animate="">
+<h3>iPhone charging port</h3>
+<div class="tf-price-amt"><small>from</small>$89</div>
+<p>If the cable only charges at an angle or won't seat. Cleaning may cost less.</p>
+</div>
+<div class="tf-price-card" data-animate="">
+<h3>Laptop / MacBook screen</h3>
+<div class="tf-price-amt"><small>from</small>$99</div>
+<p>Cracked or dead panels matched to your exact model — matte or glossy.</p>
+</div>
+<div class="tf-price-card" data-animate="">
+<h3>Laptop battery</h3>
+<div class="tf-price-amt"><small>from</small>$69</div>
+<p>Swollen or short-life batteries, installed and charge-tested.</p>
+</div>
+<div class="tf-price-card" data-animate="">
+<h3>Android &amp; everything else</h3>
+<div class="tf-price-amt"><small>text</small>quote</div>
+<p>Samsung, Pixel, iPad, Switch, PS5 — text the model for a firm number.</p>
+</div>
+</div>
+<p class="tf-price-note">These are starting points; the quote you approve is the number that matters. <strong>CSI students, military &amp; veterans get 15% off.</strong> See the full <a href="/pricing">pricing page</a> for more.</p>
 </div>
 </section>
 <section class="section">
@@ -506,6 +665,39 @@
 <summary class="faq-question"><span>Twin Falls has repair shops — why use you?</span><span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span></summary>
 <div class="faq-answer"><p>If you already have a local shop you trust, use it — honestly. This page is for people who want <strong>quote-first pricing by text</strong>, a part staged before they drive, a <strong>40-day warranty</strong>, or a mail-in option with updates the whole way.</p></div>
 </details>
+<details class="faq-item" data-animate="">
+<summary class="faq-question"><span>How much does an iPhone screen repair cost from Twin Falls?</span><span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span></summary>
+<div class="faq-answer"><p>Most iPhone screens start <strong>from $109</strong> and run 30–60 minutes once the part is on the bench — the exact price depends on your model and display type. Text the model and you'll get a firm number before you drive up or ship. <strong>CSI students get 15% off.</strong></p></div>
+</details>
+<details class="faq-item" data-animate="">
+<summary class="faq-question"><span>Can you replace a MacBook or laptop battery I mail from Twin Falls?</span><span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span></summary>
+<div class="faq-answer"><p>Yes — laptop batteries start <strong>from $69</strong> and MacBook batteries vary by model, so text the exact model for a firm quote. Battery and screen jobs ship well and almost always beat buying a new machine. It comes back tested with <strong>free return shipping</strong>.</p></div>
+</details>
+<details class="faq-item" data-animate="">
+<summary class="faq-question"><span>Do you fix Samsung and Pixel phones for the Magic Valley?</span><span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span></summary>
+<div class="faq-answer"><p>Yes. Samsung Galaxy and Google Pixel screens, batteries, and USB-C charging ports are common jobs — plus OnePlus and Motorola. Same process as any device: text the model, get a quote, then drive up or mail it in. See the <a href="/android-repair">Android repair page</a> for detail.</p></div>
+</details>
+<details class="faq-item" data-animate="">
+<summary class="faq-question"><span>What's the cheapest way to get my device fixed from Twin Falls?</span><span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span></summary>
+<div class="faq-answer"><p>Mail-in skips the gas and the half-day round trip — USPS Priority is 1–2 days each way and return shipping is free. Stack the <strong>15% CSI student, military &amp; veteran discount</strong> on top, and because every job is quoted before any work, you never pay for a trip or repair you didn't agree to.</p></div>
+</details>
+</div>
+<p style="text-align:center;margin-top:1.5rem;font-size:.9rem;"><a href="/why-hdr">Why choose HDR over the chain stores? →</a></p>
+</div>
+</section>
+<section class="section">
+<div class="container" style="padding-top:1.25rem;padding-bottom:1.25rem;">
+<p style="text-align:center;font-size:.8rem;color:var(--text-muted);margin-bottom:.75rem;letter-spacing:.07em;text-transform:uppercase;font-weight:600;">Also on this site</p>
+<div class="tf-link-strip">
+<a href="/iphone-repair">iPhone Repair</a>
+<a href="/android-repair">Android Repair</a>
+<a href="/macbook-repair">MacBook Repair</a>
+<a href="/laptop-repair">Laptop Repair</a>
+<a href="/mail-in-repair">Mail-In Repair</a>
+<a href="/pricing">Pricing</a>
+<a href="/warranty">40-Day Warranty</a>
+<a href="/student-military">CSI &amp; Military Discount</a>
+<a href="/repair-sos">Repair SOS</a>
 </div>
 </div>
 </section>
@@ -585,7 +777,7 @@
 <div class="help-fab" id="helpFab">
 <div class="help-fab-panel">
 <div class="help-fab-panel-header">
-<strong>Need help from Boise?</strong>
+<strong>Repair for Twin Falls &amp; the Magic Valley</strong>
 <div class="help-fab-status">
 <span class="help-fab-status-dot"></span>
 <span>Usually replies in ~15 min</span>
@@ -598,7 +790,7 @@
 </div>
 <div class="help-fab-option-info">
 <strong>Text me</strong>
-<span>Fastest way to get a Boise-area quote</span>
+<span>Fastest way to get a Magic Valley quote</span>
 </div>
 </a>
 <a class="help-fab-option" href="tel:+12084501606">
@@ -830,5 +1022,48 @@
 </div>
 </div>
 </div>
+<div class="hdr-mcta" id="hdrMcta">
+<a class="hdr-mcta-text" href="sms:+12084501606?&amp;body=Hi%20Hailey%20Device%20Repair%2C%20I%27m%20in%20Twin%20Falls%20%2F%20the%20Magic%20Valley%20and%20need%20a%20repair%20quote."><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span> Text for a quote</a>
+<a class="hdr-mcta-call" href="tel:+12084501606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="call"></span> Call</a>
+</div>
+<script>
+/* HDR first-class pass: sticky CTA dock, cursor spotlight, swipe hints */
+(function () {
+  'use strict';
+  var init = function () {
+    var bar = document.getElementById('hdrMcta');
+    if (bar) {
+      var tick = function () {
+        var y = window.scrollY;
+        var nearBottom = y + window.innerHeight > document.body.scrollHeight - 700;
+        bar.classList.toggle('show', y > 520 && !nearBottom);
+      };
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    }
+    if (window.matchMedia('(hover:hover)').matches) {
+      document.querySelectorAll('.lp-info-card,.lp-compare-card,.tf-price-card,.repair-proof-card,.hdr-review-card').forEach(function (el) {
+        el.classList.add('hdr-spot');
+        el.addEventListener('pointermove', function (e) {
+          var r = el.getBoundingClientRect();
+          el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+      });
+    }
+    if (window.matchMedia('(max-width:768px)').matches) {
+      document.querySelectorAll('.mail-timeline-strip').forEach(function (g) {
+        var h = document.createElement('div');
+        h.className = 'hdr-swipe-hint';
+        h.setAttribute('aria-hidden', 'true');
+        h.innerHTML = '<span class="material-symbols-outlined" data-icon="swipe"></span> swipe';
+        g.insertAdjacentElement('afterend', h);
+      });
+    }
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 </body>
 </html>

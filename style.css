@@ -12249,9 +12249,9 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
   border-radius: 999px;
   font-size: 1.28rem;
 }
-.service-proof-item--blue { --proof-accent: #557cff; }
-.service-proof-item--violet { --proof-accent: #8f5dff; }
-.service-proof-item--teal { --proof-accent: #35d4bd; }
+.service-proof-item--blue { --proof-accent: #6f86cc; }
+.service-proof-item--violet { --proof-accent: #9072cf; }
+.service-proof-item--teal { --proof-accent: #4fb6a4; }
 .service-proof-item strong,
 .hdr-services-bottom strong {
   display: block;
