@@ -2413,34 +2413,55 @@ ul { list-style: none; }
 }
 .area-map.visible .area-hwy-label { opacity: 0.75; }
 
-/* Town dots: stagger pop-in south to north */
+/* Town dots: stagger pop-in south to north.
+   Entrance is a keyframe animation (not a transition) so the stagger
+   delays never apply to hover/focus feedback. transform-box: fill-box
+   makes each town scale around its own dot, not the viewBox center. */
 .area-town {
   cursor: pointer;
   opacity: 0;
-  transform: scale(0.6);
+  transform-box: fill-box;
   transform-origin: center;
   transition:
-    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1),
     filter 200ms;
 }
-.area-town--bellevue  { transition-delay: 1.2s; }
-.area-town--hailey    { transition-delay: 1.5s; }
-.area-town--ketchum   { transition-delay: 1.8s; }
-.area-town--sunvalley { transition-delay: 2.0s; }
-
 .area-map.visible .area-town {
   opacity: 1;
-  transform: scale(1);
+  animation: area-town-pop 500ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+.area-map.visible .area-town--bellevue  { animation-delay: 1.2s; }
+.area-map.visible .area-town--hailey    { animation-delay: 1.5s; }
+.area-map.visible .area-town--ketchum   { animation-delay: 1.8s; }
+.area-map.visible .area-town--sunvalley { animation-delay: 2.0s; }
+
+@keyframes area-town-pop {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
-/* Town hover: glow + scale + accent color */
-.area-town:hover {
-  transform: scale(1.15) !important;
+/* Town hover/focus: glow + scale + accent color */
+.area-town:hover,
+.area-town:focus-visible {
+  transform: scale(1.15);
   filter: drop-shadow(0 0 6px var(--accent));
+  outline: none;
 }
-.area-town:hover text {
-  fill: var(--accent) !important;
+.area-town:hover text,
+.area-town:focus-visible text {
+  fill: var(--accent);
+}
+
+/* Hailey home-base halo pulse (CSS instead of SMIL so
+   prefers-reduced-motion can disable it) */
+.area-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: area-pulse 3s ease-in-out infinite;
+}
+@keyframes area-pulse {
+  0%, 100% { transform: scale(0.9); opacity: 0.12; }
+  50%      { transform: scale(1.2); opacity: 0.06; }
 }
 
 /* Distance markers and labels fade in last */
@@ -2455,6 +2476,20 @@ ul { list-style: none; }
   transition: opacity 600ms 2.5s;
 }
 .area-map.visible .area-distance-label { opacity: 0.7; }
+
+@media (prefers-reduced-motion: reduce) {
+  .area-mountain,
+  .area-highway,
+  .area-river,
+  .area-hwy-label,
+  .area-town,
+  .area-distance,
+  .area-distance-label {
+    transition: none;
+  }
+  .area-map.visible .area-town { animation: none; }
+  .area-pulse { animation: none; }
+}
 
 .area-info {
   display: flex;
