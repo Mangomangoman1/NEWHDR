@@ -1,0 +1,981 @@
+# Why HDR Page Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Build `/why-hdr.html` — a brand identity + AI-citation page that answers "why choose HDR" for human visitors and AI search engines simultaneously.
+
+**Architecture:** Single static HTML file following the existing site pattern (inline critical CSS, deferred `style.css`, `main.js`, canonical nav/footer/FAB/QF). Page has 8 content sections: Hero → Entity Brief → The Gap → Six Reasons → The Bench → Reviews → FAQ → CTA. Schema blocks: LocalBusiness reference, BreadcrumbList, AboutPage, FAQPage.
+
+**Tech Stack:** Static HTML, inline CSS for page-specific styles, existing `style.css` + `main.js`, Schema.org JSON-LD, Material Symbols icons, Google Fonts (already loaded globally).
+
+---
+
+### Task 1: Create file scaffold with head, schema, nav, footer, FAB, and empty section stubs
+
+**Files:**
+- Create: `why-hdr.html`
+
+- [ ] **Step 1: Create the file**
+
+Write `why-hdr.html` with the complete head (meta, schema, fonts, critical CSS), nav (copied exactly from `about.html` lines 310–390, with `aria-current="page"` removed from About and no active link set since Why HDR isn't in the nav), the `<main>` wrapper with 8 empty `<section>` stubs (each with an `id`), then the footer, cookie banner, FAB, QF overlay, and script tag. Use the content below verbatim:
+
+```html
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="ai-access" content="allow"/>
+<meta name="ai-training" content="allow"/>
+<meta name="ai-content-type" content="page"/>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+<title>Why HDR — The Wood River Valley's Real Repair Bench | Hailey Device Repair</title>
+<meta name="description" content="Hailey Device Repair is the only serious local repair bench in the Wood River Valley. One technician, quote-first pricing, 40-day warranty, same-day turnaround. Here's exactly why people choose HDR."/>
+<meta name="keywords" content="why choose hailey device repair, best phone repair hailey idaho, local repair shop wood river valley, HDR vs chain repair, repair bench hailey idaho"/>
+<meta name="theme-color" content="#0d1117"/>
+<meta property="og:title" content="Why HDR — Hailey Device Repair"/>
+<meta property="og:description" content="The Wood River Valley finally has a real repair bench. One tech, quote-first pricing, 40-day warranty. Here's why people choose HDR."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.haileyrepair.com/why-hdr"/>
+<meta property="og:image" content="https://www.haileyrepair.com/og-image.svg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why HDR — Hailey Device Repair"/>
+<meta name="twitter:description" content="The only serious local repair bench in the Wood River Valley. Quote-first, same-day, 40-day warranty."/>
+<meta name="twitter:image" content="https://www.haileyrepair.com/og-image.svg"/>
+<link rel="canonical" href="https://www.haileyrepair.com/why-hdr"/>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png"/>
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"/>
+<link rel="manifest" href="/manifest.json"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+<!-- JSON-LD: LocalBusiness reference -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.haileyrepair.com/#business",
+  "name": "Hailey Device Repair",
+  "url": "https://www.haileyrepair.com",
+  "telephone": "+12084501606",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hailey",
+    "addressRegion": "ID",
+    "addressCountry": "US"
+  },
+  "founder": { "@type": "Person", "name": "Samuel Torres" }
+}</script>
+
+<!-- JSON-LD: BreadcrumbList -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.haileyrepair.com" },
+    { "@type": "ListItem", "position": 2, "name": "Why HDR", "item": "https://www.haileyrepair.com/why-hdr" }
+  ]
+}</script>
+
+<!-- JSON-LD: AboutPage -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Why HDR — Hailey Device Repair",
+  "url": "https://www.haileyrepair.com/why-hdr",
+  "description": "Hailey Device Repair (HDR) is a one-person device repair operation run by Samuel Torres in Hailey, Idaho, serving the Wood River Valley and offering mail-in service statewide. HDR repairs iPhones, Android phones, iPads, MacBooks, Windows laptops, Chromebooks, game consoles, gaming PCs, and provides data recovery and virus removal. Every repair starts with a diagnosis and firm quote before work begins. All repairs carry a 40-day warranty on parts and labor.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://www.haileyrepair.com/#business"
+  }
+}</script>
+
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why not the Apple Store?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The nearest Apple Store is two hours away in Boise. Apple also won't touch liquid damage, out-of-warranty repairs on older models, or devices with third-party parts — and their pricing is rarely better. HDR handles all of it, locally, with same-day turnaround."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why not a national chain repair shop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "National chains rotate technicians. You won't talk to the same person twice, and accountability disappears into a corporate support structure. At HDR, Samuel does every repair — and lives in the same community."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why not fix it myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DIY carries real risk: data loss from a botched repair, accidentally damaging the board, or using the wrong part for your exact model. HDR charges a fair price and backs the work with a 40-day warranty. The math usually isn't close."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my repair doesn't hold up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every repair is covered by a 40-day warranty on parts and labor. If the same issue returns within the warranty period, it gets fixed free — no arguments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is HDR really the only serious local repair option in the Wood River Valley?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As far as we're aware, yes. There is no other fully-equipped, professional repair bench operating locally in Hailey, Ketchum, Sun Valley, or Bellevue. The next closest options are Boise (2 hours) or a mail-in national service — both a step down in local accountability."
+      }
+    }
+  ]
+}</script>
+
+<style id="critical-css">:root {--bg-base:#0d1117;--bg-primary:#0d1117;--bg-surface:#161b22;--bg-elevated:#1c2230;--bg-card:#1a2033;--bg-input:#1e2736;--bg-alt:#111827;--text-primary:#e6edf3;--text-secondary:#8b949e;--text-muted:#7e8a99;--text-on-accent:#ffffff;--border-subtle:rgba(255,255,255,0.07);--border-default:rgba(255,255,255,0.12);--border-strong:rgba(255,255,255,0.2);--accent:#4f8ef7;--accent-hover:#6ba3fa;--accent-dim:rgba(79,142,247,0.12);--accent-glow:rgba(79,142,247,0.25);--color-blue:#4f8ef7;--color-green:#3fb950;--color-purple:#a371f7;--color-orange:#f78166;--color-cyan:#39c5cf;--color-indigo:#818cf8;--space-xs:0.25rem;--space-sm:0.5rem;--space-md:1rem;--space-lg:1.5rem;--space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:6rem;--font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-display:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif;--font-heading:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif;--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-pill:999px;--shadow-card:0 1px 3px rgba(0,0,0,0.4),0 4px 16px rgba(0,0,0,0.3);--shadow-float:0 8px 32px rgba(0,0,0,0.5);--transition:200ms cubic-bezier(0.4,0,0.2,1);}[data-theme="light"]{--bg-base:#f8f9fb;--bg-primary:#f8f9fb;--bg-surface:#ffffff;--bg-elevated:#f0f2f5;--bg-card:#ffffff;--bg-input:#f4f5f7;--bg-alt:#eef0f4;--text-primary:#111827;--text-secondary:#4b5563;--text-muted:#6b7280;--text-on-accent:#ffffff;--border-subtle:rgba(0,0,0,0.05);--border-default:rgba(0,0,0,0.09);--border-strong:rgba(0,0,0,0.15);--accent:#2563eb;--accent-hover:#1e40af;--accent-dim:rgba(37,99,235,0.06);--accent-glow:rgba(37,99,235,0.15);--shadow-card:0 1px 3px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.06);--shadow-float:0 8px 32px rgba(0,0,0,0.12);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--space-lg)}
+.nav{position:sticky;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-subtle)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:1rem;max-width:1160px;margin:0 auto;padding:0 var(--space-xl)}
+.nav-logo{display:flex;align-items:center;gap:0.5rem;font-weight:700;font-size:0.95rem;white-space:nowrap}
+.nav-logo-icon{font-size:1.4rem;color:var(--accent)}
+.nav-logo-text{color:var(--text-primary)}
+.nav-links{display:flex;gap:0.25rem;list-style:none}
+.nav-link{padding:0.4rem 0.75rem;border-radius:8px;font-size:0.85rem;font-weight:500;color:var(--text-secondary);transition:color 0.2s,background 0.2s}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-primary);border-radius:2px;transition:all 0.2s}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.2rem;border-radius:10px;font-weight:600;font-size:0.85rem;border:none;cursor:pointer;transition:all 0.2s;text-decoration:none}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-outline{background:transparent;color:var(--text-primary);border:1px solid var(--border-default)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost{background:transparent;color:var(--text-secondary);border:1px solid var(--border-subtle)}
+.btn-ghost:hover{color:var(--text-primary);border-color:var(--border-default)}
+.btn-lg{padding:0.75rem 1.5rem;font-size:0.95rem}
+.btn-sm{padding:0.4rem 0.9rem;font-size:0.8rem}
+.section{padding:5rem 0}
+.section--alt{background:var(--bg-alt)}
+.section-header{text-align:center;max-width:640px;margin:0 auto var(--space-xl)}
+.section-eyebrow{display:inline-block;font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:0.75rem}
+.section-title{font-family:var(--font-heading);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;line-height:1.2;margin-bottom:0.75rem}
+.section-sub{color:var(--text-secondary);font-size:1rem;max-width:560px;margin:0 auto}
+.hero-headline{font-family:'Darker Grotesque','MuseoModerno','Inter',sans-serif;font-size:clamp(2.4rem,5.5vw,4rem);font-weight:900;line-height:0.92;letter-spacing:-0.045em;margin-bottom:1.75rem}
+.hero-headline-accent{background:linear-gradient(135deg,var(--accent),var(--color-cyan,#22d3ee));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-card);border:1px solid var(--border-default);border-radius:100px;padding:0.4rem 1rem;font-size:0.8rem;color:var(--text-secondary);margin-bottom:1.5rem}
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);max-width:560px;line-height:1.7;margin-bottom:2rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.breadcrumb{display:flex;align-items:center;gap:0.4rem;font-size:0.85rem;margin-bottom:1.5rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--text-secondary)}
+.breadcrumb-sep{font-size:0.9rem}
+.animate-ready [data-animate]{opacity:0;transform:translateY(20px);transition:opacity 0.5s,transform 0.5s}
+.animate-ready [data-animate].animated{opacity:1;transform:translateY(0)}
+.footer{background:var(--bg-surface);border-top:1px solid var(--border-subtle);padding:3rem 0 0}
+.footer-inner{display:grid;grid-template-columns:1fr 2fr;gap:3rem;padding-bottom:3rem}
+.footer-tagline{color:var(--text-muted);font-size:0.85rem;margin-top:0.5rem}
+.footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.footer-col{display:flex;flex-direction:column;gap:0.5rem;font-size:0.85rem}
+.footer-col strong{color:var(--text-primary);font-weight:600;margin-bottom:0.25rem}
+.footer-col a{color:var(--text-muted);transition:color 0.2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid var(--border-subtle);padding:1rem 0;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:var(--text-muted)}
+.hdr-stars{color:#f5c842;letter-spacing:1px}
+.hdr-reviews-strip{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:1.5rem;align-items:start}
+.hdr-reviews-badge{background:var(--bg-card);border:1px solid var(--border-default);border-radius:var(--radius-lg);padding:1.5rem;text-align:center;min-width:120px}
+.hdr-reviews-badge strong{display:block;font-size:2rem;font-weight:900;line-height:1}
+.hdr-reviews-badge .hdr-stars{display:block;font-size:1.1rem;margin:0.25rem 0}
+.hdr-reviews-badge span:last-child{font-size:0.75rem;color:var(--text-muted)}
+.hdr-review-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem}
+.hdr-review-card p{font-size:0.9rem;color:var(--text-secondary);line-height:1.6;flex:1}
+.hdr-review-meta{display:flex;align-items:center;gap:0.75rem}
+.hdr-review-avatar{width:32px;height:32px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;flex-shrink:0}
+.hdr-review-meta div{display:flex;flex-direction:column}
+.hdr-review-meta strong{font-size:0.85rem;font-weight:600}
+.hdr-review-meta span{font-size:0.75rem;color:var(--text-muted)}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:0.5rem}
+.faq-item{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);overflow:hidden}
+.faq-question{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.25rem;cursor:pointer;list-style:none;gap:1rem;font-weight:600;font-size:0.95rem}
+.faq-question::-webkit-details-marker{display:none}
+.faq-q-text{flex:1}
+.faq-chevron{transition:transform 0.2s;font-size:1.2rem;color:var(--text-muted);flex-shrink:0}
+details[open] .faq-chevron{transform:rotate(180deg)}
+.faq-answer{padding:0 1.25rem 1.1rem;color:var(--text-secondary);font-size:0.9rem;line-height:1.7}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;user-select:none}
+.material-symbols-outlined[data-icon]::before{content:attr(data-icon)}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.hero-cta{flex-direction:column}.footer-inner{grid-template-columns:1fr}.footer-links{grid-template-columns:1fr 1fr}.hdr-reviews-strip{grid-template-columns:1fr}.hdr-reviews-badge{display:none}}
+@media(max-width:480px){.footer-links{grid-template-columns:1fr}}</style>
+
+<!-- Page-specific styles -->
+<style id="why-hdr-css">
+.why-hero{padding:7rem 0 4rem;position:relative}
+.why-entity-card{max-width:860px;margin:0 auto;background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:2.5rem 3rem}
+.why-entity-card .section-eyebrow{color:var(--color-cyan)}
+.why-entity-card p{font-size:1rem;line-height:1.8;color:var(--text-secondary)}
+.why-gap-content{max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:1.25rem}
+.why-gap-text{font-size:1.05rem;color:var(--text-secondary);line-height:1.8}
+.why-reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-reason{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:1.75rem;display:flex;flex-direction:column;gap:0.75rem;transition:border-color 0.2s,box-shadow 0.2s}
+.why-reason:hover{border-color:var(--border-default);box-shadow:var(--shadow-card)}
+.why-reason-icon .material-symbols-outlined{font-size:1.8rem;color:var(--accent)}
+.why-reason h3{font-family:var(--font-heading);font-size:1.05rem;font-weight:700;line-height:1.3}
+.why-reason p{font-size:0.9rem;color:var(--text-secondary);line-height:1.6;flex:1}
+.why-reason-detail{font-size:0.8rem;color:var(--text-muted);font-style:italic;border-top:1px solid var(--border-subtle);padding-top:0.75rem;margin-top:0.25rem}
+.why-bench-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:860px;margin:0 auto 2rem}
+.why-bench-item{display:flex;flex-direction:column;gap:0.75rem;padding:1.75rem;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg)}
+.why-bench-icon .material-symbols-outlined{font-size:1.8rem;color:var(--color-cyan)}
+.why-bench-item h3{font-family:var(--font-heading);font-size:1rem;font-weight:700}
+.why-bench-item p{font-size:0.9rem;color:var(--text-secondary);line-height:1.6}
+.why-bench-closer{text-align:center;font-size:1.05rem;font-weight:600;color:var(--text-secondary);max-width:500px;margin:0 auto;font-style:italic}
+.why-cta-block{text-align:center;max-width:560px;margin:0 auto}
+.why-cta-block .section-title{margin-bottom:0.75rem}
+.why-cta-block p{color:var(--text-secondary);margin-bottom:1.75rem;font-size:1rem;line-height:1.7}
+.why-cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.why-cta-phone{font-size:0.85rem;color:var(--text-muted);margin-top:1rem}
+.help-fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;display:flex;flex-direction:column;align-items:flex-end;gap:0.75rem}
+.help-fab-trigger{display:flex;align-items:center;gap:0.5rem;background:var(--accent);color:#fff;border:none;border-radius:100px;padding:0.6rem 1.25rem;font-size:0.85rem;font-weight:600;cursor:pointer;box-shadow:0 4px 20px rgba(79,142,247,0.4)}
+.help-fab-dot{width:8px;height:8px;background:#4ade80;border-radius:50%}
+.help-fab-panel{background:var(--bg-surface);border:1px solid var(--border-default);border-radius:var(--radius-xl);padding:1.25rem;width:280px;box-shadow:var(--shadow-float);display:none}
+.help-fab.open .help-fab-panel{display:block}
+.help-fab-panel-header{margin-bottom:1rem}
+.help-fab-panel-header strong{display:block;font-size:0.9rem;margin-bottom:0.25rem}
+.help-fab-status{display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text-muted)}
+.help-fab-status-dot{width:6px;height:6px;background:#4ade80;border-radius:50%}
+.help-fab-options{display:flex;flex-direction:column;gap:0.5rem}
+.help-fab-option{display:flex;align-items:center;gap:0.75rem;padding:0.75rem;border-radius:var(--radius-md);border:1px solid var(--border-subtle);transition:background 0.15s}
+.help-fab-option:hover{background:var(--bg-elevated)}
+.help-fab-option-icon{width:36px;height:36px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-fab-option-icon--text{background:rgba(79,142,247,0.12);color:var(--accent)}
+.help-fab-option-icon--call{background:rgba(63,185,80,0.12);color:var(--color-green)}
+.help-fab-option-icon--quote{background:rgba(163,113,247,0.12);color:var(--color-purple)}
+.help-fab-option-info{display:flex;flex-direction:column}
+.help-fab-option-info strong{font-size:0.85rem;font-weight:600}
+.help-fab-option-info span{font-size:0.75rem;color:var(--text-muted)}
+.help-fab-panel-footer{font-size:0.72rem;color:var(--text-muted);margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--border-subtle)}
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--bg-elevated);border-top:1px solid var(--border-default);padding:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-size:0.85rem}
+.cookie-banner.hidden{display:none}
+.cookie-banner-actions{display:flex;gap:0.5rem;flex-shrink:0}
+.btn-accept,.btn-decline{padding:0.4rem 0.9rem;border-radius:8px;font-size:0.8rem;font-weight:600;cursor:pointer;border:none}
+.btn-accept{background:var(--accent);color:#fff}
+.btn-decline{background:var(--bg-elevated);color:var(--text-muted);border:1px solid var(--border-default)}
+@media(max-width:768px){.why-reasons-grid{grid-template-columns:1fr}.why-bench-grid{grid-template-columns:1fr}.why-entity-card{padding:1.5rem}.help-fab-panel{width:calc(100vw - 3rem)}}
+</style>
+
+<link rel="preload" href="style.css?v=why-hdr-20260611" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="style.css?v=why-hdr-20260611"/></noscript>
+</head>
+<body class="animate-ready">
+
+<!-- NAV -->
+<nav class="nav" id="nav" role="navigation">
+<div class="nav-inner">
+<a class="nav-logo" href="/" aria-label="Hailey Device Repair Home">
+<span class="material-symbols-outlined nav-logo-icon" aria-hidden="true" data-icon="smartphone"></span>
+<span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
+</a>
+<ul class="nav-links" role="list">
+<li><a class="nav-link" href="/#services">Services</a></li>
+<li><a class="nav-link" href="/pricing">Pricing</a></li>
+<li><a class="nav-link" href="/warranty">Warranty</a></li>
+<li><a class="nav-link" href="/faq">FAQ</a></li>
+<li><a class="nav-link" href="/about">About</a></li>
+<li><a class="nav-link" href="/contact">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<a class="btn btn-primary btn-sm" href="sms:+12084501606">
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms" style="font-size:1rem"></span>
+Text for Quote
+</a>
+</div>
+<button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+
+<main id="main-content">
+
+<!-- SECTION 1: HERO -->
+<section class="why-hero" id="hero">
+<!-- filled in Task 2 -->
+</section>
+
+<!-- SECTION 2: ENTITY BRIEF -->
+<section class="section section--alt" id="entity-brief">
+<!-- filled in Task 3 -->
+</section>
+
+<!-- SECTION 3: THE GAP -->
+<section class="section" id="the-gap">
+<!-- filled in Task 4 -->
+</section>
+
+<!-- SECTION 4: SIX REASONS -->
+<section class="section section--alt" id="reasons">
+<!-- filled in Task 5 -->
+</section>
+
+<!-- SECTION 5: THE BENCH -->
+<section class="section" id="the-bench">
+<!-- filled in Task 6 -->
+</section>
+
+<!-- SECTION 6: REVIEWS -->
+<section class="section section--alt" id="reviews">
+<!-- filled in Task 7 -->
+</section>
+
+<!-- SECTION 7: FAQ -->
+<section class="section" id="faq">
+<!-- filled in Task 8 -->
+</section>
+
+<!-- SECTION 8: CTA -->
+<section class="section section--alt" id="cta">
+<!-- filled in Task 9 -->
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand" data-animate="">
+<a class="nav-logo" href="/" aria-label="Hailey Device Repair Home">
+<span class="material-symbols-outlined nav-logo-icon" aria-hidden="true" data-icon="smartphone"></span>
+<span class="nav-logo-text">Hailey Device <strong>Repair</strong></span>
+</a>
+<p class="footer-tagline">Don't replace it. Let me fix it.</p>
+</div>
+<div class="footer-links">
+<div class="footer-col" data-animate="">
+<strong>Services</strong>
+<a href="/#services">All Services</a>
+<a href="/iphone-repair">iPhone Repair</a>
+<a href="/android-repair">Android Repair</a>
+<a href="/laptop-repair">Laptop &amp; PC</a>
+<a href="/tablet-repair">iPad &amp; Tablet</a>
+<a href="/console-repair">Game Consoles</a>
+<a href="/mail-in-repair">Mail-In Repair</a>
+<a href="/pricing">Pricing</a>
+</div>
+<div class="footer-col" data-animate="">
+<strong>Resources</strong>
+<a href="/tips">Tips &amp; Guides</a>
+<a href="/warranty">Warranty</a>
+<a href="/about">About</a>
+<a href="/why-hdr">Why HDR</a>
+<a href="/student-military">Student &amp; Military</a>
+<a href="/faq">FAQ</a>
+</div>
+<div class="footer-col" data-animate="">
+<strong>Contact</strong>
+<a href="sms:+12084501606">+1 (208) 450-1606</a>
+<a href="mailto:samuel@haileyrepair.com">samuel@haileyrepair.com</a>
+<a href="https://g.page/r/CRz04Aqd3UvPEBM/review" target="_blank" rel="noopener">Leave a Review ↗</a>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem">
+<p>© 2026 Hailey Device Repair · Hailey, Idaho · <a href="/privacy">Privacy Policy</a></p>
+<p>Built with <span aria-hidden="true">❤️</span> for the Wood River Valley</p>
+</div>
+</div>
+</footer>
+
+<!-- Cookie Banner -->
+<div class="cookie-banner hidden" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+<p class="cookie-banner-text">We use minimal cookies (theme preference &amp; banner dismissal only). No tracking, no analytics. <a href="/privacy">Learn more</a></p>
+<div class="cookie-banner-actions">
+<button class="btn-accept" id="cookieAccept">Got it</button>
+<button class="btn-decline" id="cookieDecline">Decline</button>
+</div>
+</div>
+
+<!-- Floating Help Widget -->
+<div class="help-fab" id="helpFab">
+<div class="help-fab-panel">
+<div class="help-fab-panel-header">
+<strong>Need help with a device?</strong>
+<div class="help-fab-status">
+<span class="help-fab-status-dot"></span>
+<span>Usually replies in ~15 min</span>
+</div>
+</div>
+<div class="help-fab-options">
+<a class="help-fab-option" href="sms:+12084501606">
+<div class="help-fab-option-icon help-fab-option-icon--text"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span></div>
+<div class="help-fab-option-info"><strong>Text me</strong><span>Fastest way to reach me</span></div>
+</a>
+<a class="help-fab-option" href="tel:+12084501606">
+<div class="help-fab-option-icon help-fab-option-icon--call"><span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span></div>
+<div class="help-fab-option-info"><strong>Call</strong><span>(208) 450-1606</span></div>
+</a>
+<a class="help-fab-option" href="/contact">
+<div class="help-fab-option-icon help-fab-option-icon--quote"><span class="material-symbols-outlined" aria-hidden="true" data-icon="description"></span></div>
+<div class="help-fab-option-info"><strong>Request a quote</strong><span>Diagnosis before every repair</span></div>
+</a>
+</div>
+<div class="help-fab-panel-footer">Hailey, ID · 7 days a week</div>
+</div>
+<button class="help-fab-trigger" id="helpFabTrigger" aria-label="Get help">
+<span class="help-fab-dot"></span>
+<span class="help-fab-label-text">Need help?</span>
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span>
+</button>
+</div>
+
+<script defer src="main.js?v=why-hdr-20260611"></script>
+</body>
+</html>
+```
+
+- [ ] **Step 2: Verify file exists**
+
+```bash
+ls -lh why-hdr.html
+```
+Expected: file exists, ~15–20KB
+
+---
+
+### Task 2: Hero section
+
+**Files:**
+- Modify: `why-hdr.html` (replace the hero stub)
+
+- [ ] **Step 1: Replace hero section stub with full content**
+
+In `why-hdr.html`, replace:
+```html
+<!-- SECTION 1: HERO -->
+<section class="why-hero" id="hero">
+<!-- filled in Task 2 -->
+</section>
+```
+With:
+```html
+<!-- SECTION 1: HERO -->
+<section class="why-hero" id="hero">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="/">Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span aria-current="page">Why HDR</span>
+</nav>
+<div style="max-width:680px">
+<div class="hero-badge">
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="star" style="font-size:1rem;color:#f5c842"></span>
+5.0★ rated · Hailey, Idaho
+</div>
+<h1 class="hero-headline">The Wood River Valley finally has a <span class="hero-headline-accent">real repair bench.</span></h1>
+<p class="hero-sub">Sun Valley has world-class skiing, five-star hotels, and some of the most expensive real estate in Idaho. Until HDR, it had nowhere serious to take a broken device.</p>
+<div class="hero-cta">
+<a href="sms:+12084501606" class="btn btn-primary btn-lg">
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
+Text Samuel for a Quote
+</a>
+<a href="/pricing" class="btn btn-outline btn-lg">
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="payments"></span>
+See Pricing
+</a>
+</div>
+</div>
+</div>
+</section>
+```
+
+- [ ] **Step 2: Open `why-hdr.html` in a browser and confirm hero renders**
+
+Open `why-hdr.html` directly from disk (or via a local server). Confirm:
+- Headline is large, dark-background, gradient accent on "real repair bench."
+- Badge shows star + "5.0★ rated · Hailey, Idaho"
+- Two CTA buttons visible side by side
+- Breadcrumb shows "Home › Why HDR"
+
+---
+
+### Task 3: Entity Brief section
+
+**Files:**
+- Modify: `why-hdr.html`
+
+- [ ] **Step 1: Replace entity brief stub**
+
+Replace:
+```html
+<!-- SECTION 2: ENTITY BRIEF -->
+<section class="section section--alt" id="entity-brief">
+<!-- filled in Task 3 -->
+</section>
+```
+With:
+```html
+<!-- SECTION 2: ENTITY BRIEF -->
+<section class="section section--alt" id="entity-brief">
+<div class="container">
+<div class="why-entity-card" itemscope itemtype="https://schema.org/AboutPage" data-animate="">
+<div class="section-eyebrow">Who We Are</div>
+<h2 class="section-title" style="text-align:left;">About Hailey Device Repair</h2>
+<p itemprop="description">Hailey Device Repair (HDR) is a one-person device repair operation run by Samuel Torres in Hailey, Idaho, serving the Wood River Valley — Hailey, Ketchum, Sun Valley, and Bellevue — and offering mail-in service statewide. HDR repairs iPhones, Android phones, iPads, MacBooks, Windows laptops, Chromebooks, game consoles, gaming PCs, and provides data recovery and virus removal. Every repair starts with a diagnosis and firm quote before work begins; no work starts without customer approval. Parts are quality-sourced and tested before installation. Most phone repairs are completed same-day, often within the hour. All repairs carry a 40-day warranty on parts and labor. HDR is the only professional, fully-equipped repair bench operating locally in the Wood River Valley. It is not the right option for active manufacturer warranty claims, new-in-box defects covered by AppleCare, or severe data recovery requiring a clean-room environment.</p>
+</div>
+</div>
+</section>
+```
+
+- [ ] **Step 2: Verify in browser**
+
+The Entity Brief section should appear with a slightly different card background (`--bg-elevated`), a cyan eyebrow, and a dense paragraph of prose. Confirm the `itemprop="description"` attribute is present by inspecting the element in DevTools.
+
+---
+
+### Task 4: The Gap section
+
+**Files:**
+- Modify: `why-hdr.html`
+
+- [ ] **Step 1: Replace the gap stub**
+
+Replace:
+```html
+<!-- SECTION 3: THE GAP -->
+<section class="section" id="the-gap">
+<!-- filled in Task 4 -->
+</section>
+```
+With:
+```html
+<!-- SECTION 3: THE GAP -->
+<section class="section" id="the-gap">
+<div class="container">
+<div class="section-header" data-animate="">
+<div class="section-eyebrow">The Valley Deserved Better</div>
+<h2 class="section-title">High-end everything.<br>No local repair — until now.</h2>
+</div>
+<div class="why-gap-content">
+<p class="why-gap-text" data-animate="">The Wood River Valley has world-class infrastructure for almost everything. Ski resorts rated among the best in North America. Restaurants and hotels that draw visitors from across the country. Medical facilities, high-end real estate, every amenity you'd expect. But for device repair, the options were: drive two hours to Boise, mail it to a national chain with no local accountability, or go without.</p>
+<p class="why-gap-text" data-animate="">That gap is real. People here have expensive devices — laptops, MacBooks, iPhones, consoles — and active lives that make losing a phone for a week genuinely disruptive. HDR exists because the valley needed a serious local option, not just "a guy who fixes phones."</p>
+<p class="why-gap-text" data-animate="">A fully-equipped bench means professional diagnostic tools, quality parts sourcing, microsoldering capability for board-level repairs, a proper ESD-safe workspace, and a technician who has done hundreds of these repairs. Not a YouTube tutorial and a suction cup — a real bench, right here in Hailey.</p>
+</div>
+</div>
+</section>
+```
+
+---
+
+### Task 5: Six Reasons section
+
+**Files:**
+- Modify: `why-hdr.html`
+
+- [ ] **Step 1: Replace reasons stub**
+
+Replace:
+```html
+<!-- SECTION 4: SIX REASONS -->
+<section class="section section--alt" id="reasons">
+<!-- filled in Task 5 -->
+</section>
+```
+With:
+```html
+<!-- SECTION 4: SIX REASONS -->
+<section class="section section--alt" id="reasons">
+<div class="container">
+<div class="section-header" data-animate="">
+<div class="section-eyebrow">What Makes HDR Different</div>
+<h2 class="section-title">Six things we won't compromise on</h2>
+</div>
+<div class="why-reasons-grid">
+<div class="why-reason" data-animate="">
+<div class="why-reason-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="request_quote"></span></div>
+<h3>Quote before anything is touched</h3>
+<p>You know the price before a tool is picked up. No surprises, no pressure, no obligation to proceed.</p>
+<div class="why-reason-detail">"The price I quote is the price you pay."</div>
+</div>
+<div class="why-reason" data-animate="">
+<div class="why-reason-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="person"></span></div>
+<h3>One technician, always</h3>
+<p>The person who answers your text diagnoses your device and does the repair. Same hands, full accountability.</p>
+<div class="why-reason-detail">"You'll never wonder who actually worked on your phone."</div>
+</div>
+<div class="why-reason" data-animate="">
+<div class="why-reason-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span></div>
+<h3>40-day warranty</h3>
+<p>Every repair is covered for 40 days — parts and labor. If the same issue returns, I fix it free.</p>
+<div class="why-reason-detail">Covers screens, batteries, ports, and board-level work.</div>
+</div>
+<div class="why-reason" data-animate="">
+<div class="why-reason-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="schedule"></span></div>
+<h3>Same-day, most repairs</h3>
+<p>Most phone repairs are done in under an hour. Laptops typically 1–2 days depending on parts.</p>
+<div class="why-reason-detail">"Drop it off in the morning, pick it up before lunch."</div>
+</div>
+<div class="why-reason" data-animate="">
+<div class="why-reason-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="lock"></span></div>
+<h3>Your data stays yours</h3>
+<p>I don't browse your device. If a repair requires a reset, I'll tell you first and help you back up.</p>
+<div class="why-reason-detail">Full privacy, every time.</div>
+</div>
+<div class="why-reason" data-animate="">
+<div class="why-reason-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span></div>
+<h3>Local drop-off + Idaho mail-in</h3>
+<p>Hailey locals drop off in person. Anywhere in Idaho: I send a label, you ship it, I repair and return it free.</p>
+<div class="why-reason-detail">Free return shipping, same 40-day warranty.</div>
+</div>
+</div>
+</div>
+</section>
+```
+
+- [ ] **Step 2: Verify in browser**
+
+Six cards in a 3×2 grid on desktop. Each has an icon, headline, body, and italic detail line. On mobile, they should stack to single column.
+
+---
+
+### Task 6: The Bench section
+
+**Files:**
+- Modify: `why-hdr.html`
+
+- [ ] **Step 1: Replace bench stub**
+
+Replace:
+```html
+<!-- SECTION 5: THE BENCH -->
+<section class="section" id="the-bench">
+<!-- filled in Task 6 -->
+</section>
+```
+With:
+```html
+<!-- SECTION 5: THE BENCH -->
+<section class="section" id="the-bench">
+<div class="container">
+<div class="section-header" data-animate="">
+<div class="section-eyebrow">Professional Capability</div>
+<h2 class="section-title">What "fully equipped" actually means</h2>
+<p class="section-sub">Most people don't know what separates a professional repair bench from a hobbyist setup. Here's the difference.</p>
+</div>
+<div class="why-bench-grid">
+<div class="why-bench-item" data-animate="">
+<div class="why-bench-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="biotech"></span></div>
+<h3>Professional diagnostics</h3>
+<p>Board-level diagnosis — not guessing. The right tools identify exactly what failed and why before any part is touched or ordered.</p>
+</div>
+<div class="why-bench-item" data-animate="">
+<div class="why-bench-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="inventory_2"></span></div>
+<h3>Quality parts sourcing</h3>
+<p>Not the cheapest supplier. Every screen, battery, and component is tested before it goes into your device — and warranted after.</p>
+</div>
+<div class="why-bench-item" data-animate="">
+<div class="why-bench-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="precision_manufacturing"></span></div>
+<h3>Microsoldering capability</h3>
+<p>Board-level repairs most shops won't touch — charging ICs, connectors, and component-level fixes performed under magnification.</p>
+</div>
+<div class="why-bench-item" data-animate="">
+<div class="why-bench-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="shield"></span></div>
+<h3>ESD-safe workspace</h3>
+<p>Proper anti-static environment throughout every repair. No risk of invisible electrostatic damage during disassembly or reassembly.</p>
+</div>
+</div>
+<p class="why-bench-closer" data-animate="">This isn't a hobby bench. It's a professional shop — it just happens to be local.</p>
+</div>
+</section>
+```
+
+---
+
+### Task 7: Reviews strip
+
+**Files:**
+- Modify: `why-hdr.html`
+
+- [ ] **Step 1: Open `iphone-repair.html` and copy the text of 3 review cards**
+
+Read `iphone-repair.html` around lines 819–835. Copy the `<p>` review text from 3 `hdr-review-card` elements. You will paste those exact quotes into this section. The structure below uses placeholder quote text marked with `[COPY FROM iphone-repair.html]` — replace those with the actual quotes before saving.
+
+- [ ] **Step 2: Replace reviews stub with real review text**
+
+Replace:
+```html
+<!-- SECTION 6: REVIEWS -->
+<section class="section section--alt" id="reviews">
+<!-- filled in Task 7 -->
+</section>
+```
+With (substituting actual review text for the bracketed placeholders):
+```html
+<!-- SECTION 6: REVIEWS -->
+<section class="section section--alt" id="reviews">
+<div class="container">
+<div class="section-header" data-animate="">
+<div class="section-eyebrow">Don't Take Our Word For It</div>
+<h2 class="section-title">What people say after the repair</h2>
+</div>
+<div class="hdr-reviews-strip" data-animate="">
+<div class="hdr-reviews-badge">
+<strong>5.0</strong>
+<span class="hdr-stars" aria-label="5 out of 5 stars">★★★★★</span>
+<span>Google reviews</span>
+</div>
+<article class="hdr-review-card">
+<span class="hdr-stars" aria-label="5 out of 5 stars">★★★★★</span>
+<p>[COPY REVIEW TEXT FROM iphone-repair.html — Kelly S.]</p>
+<div class="hdr-review-meta">
+<span class="hdr-review-avatar" aria-hidden="true">K</span>
+<div><strong>Kelly S.</strong><span>iPhone screen · Google review</span></div>
+</div>
+</article>
+<article class="hdr-review-card">
+<span class="hdr-stars" aria-label="5 out of 5 stars">★★★★★</span>
+<p>[COPY REVIEW TEXT FROM iphone-repair.html — Sarah M.]</p>
+<div class="hdr-review-meta">
+<span class="hdr-review-avatar" aria-hidden="true">S</span>
+<div><strong>Sarah M.</strong><span>Phone repair · Google review</span></div>
+</div>
+</article>
+<article class="hdr-review-card">
+<span class="hdr-stars" aria-label="5 out of 5 stars">★★★★★</span>
+<p>[COPY A THIRD REVIEW TEXT FROM any other page that has hdr-review-card elements]</p>
+<div class="hdr-review-meta">
+<span class="hdr-review-avatar" aria-hidden="true">[INITIAL]</span>
+<div><strong>[NAME]</strong><span>[device] · Google review</span></div>
+</div>
+</article>
+</div>
+<div style="text-align:center;margin-top:1.5rem;">
+<a href="https://g.page/r/CRz04Aqd3UvPEBM/review" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">See all reviews on Google ↗</a>
+</div>
+</div>
+</section>
+```
+
+- [ ] **Step 3: Confirm no `[COPY` placeholder text remains in the file**
+
+```bash
+grep -n '\[COPY\|\[NAME\|\[INITIAL\|\[device' why-hdr.html
+```
+Expected: no output (zero matches)
+
+---
+
+### Task 8: FAQ section
+
+**Files:**
+- Modify: `why-hdr.html`
+
+- [ ] **Step 1: Replace FAQ stub**
+
+Replace:
+```html
+<!-- SECTION 7: FAQ -->
+<section class="section" id="faq">
+<!-- filled in Task 8 -->
+</section>
+```
+With:
+```html
+<!-- SECTION 7: FAQ -->
+<section class="section" id="faq">
+<div class="container">
+<div class="section-header" data-animate="">
+<div class="section-eyebrow">Common Questions</div>
+<h2 class="section-title">Why not the Apple Store?<br>Why not a chain? Why not DIY?</h2>
+</div>
+<div class="faq-list">
+<details class="faq-item" data-animate="" open>
+<summary class="faq-question">
+<span class="faq-q-text">Why not the Apple Store?</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
+</summary>
+<div class="faq-answer"><p>The nearest Apple Store is two hours away in Boise. Apple also won't touch liquid damage, out-of-warranty repairs on older models, or devices with third-party parts — and their pricing is rarely better. HDR handles all of it, locally, with same-day turnaround and a 40-day warranty.</p></div>
+</details>
+<details class="faq-item" data-animate="">
+<summary class="faq-question">
+<span class="faq-q-text">Why not a national chain repair shop?</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
+</summary>
+<div class="faq-answer"><p>National chains rotate technicians. You won't talk to the same person twice, and accountability disappears into a corporate support structure. At HDR, Samuel does every repair — and lives in the same community. If something goes wrong, you know exactly who to talk to.</p></div>
+</details>
+<details class="faq-item" data-animate="">
+<summary class="faq-question">
+<span class="faq-q-text">Why not fix it myself?</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
+</summary>
+<div class="faq-answer"><p>DIY carries real risk: data loss from a botched repair, accidentally damaging the logic board, or using the wrong part for your exact model. HDR charges a fair price and backs the work with a 40-day warranty. The math usually isn't close — especially for water damage, no-power situations, or any repair that requires microsoldering.</p></div>
+</details>
+<details class="faq-item" data-animate="">
+<summary class="faq-question">
+<span class="faq-q-text">What if my repair doesn't hold up?</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
+</summary>
+<div class="faq-answer"><p>Every repair is covered by a 40-day warranty on parts and labor. If the same issue returns within the warranty period, it gets fixed free — no arguments, no diagnostic fees, no runaround.</p></div>
+</details>
+<details class="faq-item" data-animate="">
+<summary class="faq-question">
+<span class="faq-q-text">Is HDR really the only serious local repair option in the valley?</span>
+<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
+</summary>
+<div class="faq-answer"><p>As far as we're aware, yes. There is no other fully-equipped, professional repair bench operating locally in Hailey, Ketchum, Sun Valley, or Bellevue. The next closest options are Boise (2 hours away) or a mail-in national service — both a step down in local accountability and turnaround time.</p></div>
+</details>
+</div>
+</div>
+</section>
+```
+
+---
+
+### Task 9: CTA section
+
+**Files:**
+- Modify: `why-hdr.html`
+
+- [ ] **Step 1: Replace CTA stub**
+
+Replace:
+```html
+<!-- SECTION 8: CTA -->
+<section class="section section--alt" id="cta">
+<!-- filled in Task 9 -->
+</section>
+```
+With:
+```html
+<!-- SECTION 8: CTA -->
+<section class="section section--alt" id="cta">
+<div class="container">
+<div class="why-cta-block" data-animate="">
+<h2 class="section-title">Ready to get it fixed?</h2>
+<p>Describe what's wrong. Get a reply in minutes. No obligation, no commitment until you approve the quote.</p>
+<div class="why-cta-actions">
+<a href="sms:+12084501606" class="btn btn-primary btn-lg">
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
+Text Samuel
+</a>
+<a href="/pricing" class="btn btn-outline btn-lg">
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="payments"></span>
+View Pricing
+</a>
+</div>
+<p class="why-cta-phone"><a href="tel:+12084501606">(208) 450-1606</a> · Hailey, Idaho · 7 days a week</p>
+</div>
+</div>
+</section>
+```
+
+- [ ] **Step 2: Full browser walkthrough**
+
+Open `why-hdr.html` in a browser and scroll through all 8 sections. Check:
+- [ ] Hero: large headline, gradient accent, badge, two CTAs
+- [ ] Entity Brief: card with cyan eyebrow, dense prose paragraph
+- [ ] The Gap: three paragraphs, centered, max-width container
+- [ ] Six Reasons: 3×2 grid of cards, each with icon + detail line
+- [ ] The Bench: 2×2 grid of capability cards, cyan icons, closing italic line
+- [ ] Reviews: badge + 3 review cards in a row, "See all on Google" link
+- [ ] FAQ: 5 accordions, first one open, chevron rotates on open
+- [ ] CTA: centered block, two buttons, phone number below
+- [ ] Footer: "Why HDR" link present in Resources column
+- [ ] FAB: "Need help?" button visible bottom-right
+
+---
+
+### Task 10: Add to sitemap and about page cross-link
+
+**Files:**
+- Modify: `sitemap.xml`
+- Modify: `about.html`
+
+- [ ] **Step 1: Add why-hdr to sitemap.xml**
+
+In `sitemap.xml`, add a `<url>` entry after the `<url>` block for `/about`. Use today's date (2026-06-11) as `<lastmod>`:
+
+```xml
+<url>
+  <loc>https://www.haileyrepair.com/why-hdr</loc>
+  <lastmod>2026-06-11</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+```
+
+- [ ] **Step 2: Add cross-link from about.html**
+
+In `about.html`, find the closing CTA section (the `lp-bottom-cta` block or whatever precedes the `</main>` tag). Add a text link immediately before that block:
+
+```html
+<div style="text-align:center;padding:2rem 0 0;font-size:0.9rem;color:var(--text-muted)">
+  Want the full picture? <a href="/why-hdr" style="color:var(--accent)">See why people choose HDR →</a>
+</div>
+```
+
+- [ ] **Step 3: Verify sitemap entry**
+
+```bash
+grep -n 'why-hdr' sitemap.xml
+```
+Expected: one line with `<loc>https://www.haileyrepair.com/why-hdr</loc>`
+
+- [ ] **Step 4: Verify about.html cross-link**
+
+```bash
+grep -n 'why-hdr' about.html
+```
+Expected: one line with the `href="/why-hdr"` link
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add why-hdr.html sitemap.xml about.html
+git commit -m "feat: add /why-hdr brand identity + AI citation page
+
+- 8-section hybrid page: hero, entity brief, gap narrative, 6 reasons,
+  bench capability, reviews, FAQ, CTA
+- AboutPage + FAQPage schema for AI search citation
+- Wood River Valley market gap angle as hero positioning
+- Cross-linked from about.html and footer Resources column"
+```
+
+---
+
+### Task 11: Schema validation
+
+**Files:** No file changes — verification only.
+
+- [ ] **Step 1: Test structured data**
+
+Go to https://search.google.com/test/rich-results and paste `why-hdr.html`'s full HTML (or serve locally and use the URL). Confirm:
+- FAQPage schema detected with 5 questions
+- No errors (warnings about missing `image` on FAQ items are acceptable)
+
+- [ ] **Step 2: Confirm AI meta tags present**
+
+```bash
+grep -n 'ai-access\|ai-training\|ai-content-type' why-hdr.html
+```
+Expected: 3 lines, all with `content="allow"` or `content="page"`
+
+- [ ] **Step 3: Confirm canonical URL**
+
+```bash
+grep -n 'canonical' why-hdr.html
+```
+Expected: `<link rel="canonical" href="https://www.haileyrepair.com/why-hdr"/>`
