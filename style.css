@@ -10447,6 +10447,50 @@ body:not(.menu-open) .hero {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Trigger — refined pill. Scoped under .nav (specificity 0,2,0) to beat
+   the inline hdr-canonical-nav-css `.qf-trigger{…!important}` block, which
+   loads after style.min.css in source order. */
+.nav .qf-trigger {
+  background: linear-gradient(180deg, rgba(91,139,207,.16), rgba(91,139,207,.08)) !important;
+  border: 1px solid rgba(91,139,207,.35) !important;
+  box-shadow: 0 0 0 0 rgba(91,139,207,0) !important;
+  transition: box-shadow .2s, border-color .2s, transform .2s, background .2s !important;
+}
+.nav .qf-trigger:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 16px rgba(91,139,207,.35) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Light theme */
+html[data-theme="light"] .qf-overlay.qf-hdr .qf-backdrop {
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(37,99,235,.12), transparent 55%),
+    rgba(20,28,40,.4);
+}
+html[data-theme="light"] .qf-overlay.qf-hdr .qf-tile { background: #f3f6fb; border-color: #d7e0ee; }
+html[data-theme="light"] .qf-overlay.qf-hdr .qf-panel { background: #ffffff; }
+
+/* Mobile — bottom sheet (mirror base behavior under .qf-hdr) */
+@media (max-width: 640px) {
+  .qf-overlay.qf-hdr .qf-tiles { grid-template-columns: repeat(2, 1fr); }
+  .qf-overlay.qf-hdr .qf-panel { border-radius: 18px 18px 0 0; transform: translateY(100%); }
+  .qf-overlay.qf-hdr.open .qf-panel { transform: translateY(0); }
+  /* Route hints overflow the narrow sheet — hide them on mobile */
+  .qf-overlay.qf-hdr .qf-route { display: none; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .qf-overlay.qf-hdr .qf-panel,
+  .qf-overlay.qf-hdr .qf-tile,
+  .qf-overlay.qf-hdr .qf-cursor,
+  .qf-trigger { transition: none !important; }
+  .qf-overlay.qf-hdr.open .qf-tile,
+  .qf-overlay.qf-hdr.open .qf-link { animation: none !important; }
+  .qf-overlay.qf-hdr .qf-panel::after { transition: none !important; }
+}
+
 /* Responsive */
 @media (max-width: 640px) {
   .qf-overlay {
