@@ -83,20 +83,20 @@ Keyboard: preserve and extend current support — `⌘/Ctrl+K` toggle, `Esc` clo
 ### Approach: self-contained Quick Find module in `main.js`
 1. **Data:** a `QF_DATA` structure — `featured: [...]` and `categories: [{ title, icon, links: [{ name, desc, href, icon, keywords }] }]`. This is the only place content is edited.
 2. **Render:** a `renderQuickFind()` builds the panel markup from `QF_DATA` and sets `#qfOverlay.innerHTML` on load. The existing hardcoded markup acts as a no-JS fallback that JS replaces. `#qfOverlay` already exists on every page → **zero per-page HTML edits**.
-3. **CSS:** the redesign stylesheet is injected at runtime as a `<style id="qf-hdr-bench-css">` appended to `<head>` (or end of `<body>`). Because it loads last, it cleanly overrides the stale inline `hdr-canonical-nav-css` qf rules (which use no `!important` on `.qf-overlay/.qf-panel`). Trigger rules that currently use `!important` are matched with `!important` where needed.
+3. **CSS:** all redesign styles live in **`style.css`** (the maintained, minified, themeable stylesheet) — *not* in a JS string. To win the cascade over the inline `hdr-canonical-nav-css` block (which loads after `style.min.css` in document order), the injected panel root carries a **marker class** (`qf-hdr`) and all new rules are scoped under it, e.g. `.qf-overlay.qf-hdr .qf-panel { … }`. Two classes out-specify the inline block's single-class rules, so `style.css` wins regardless of source order. The marker class is the documented mechanism that makes this work. Trigger rules that currently use `!important` are matched with `!important` where needed.
 4. **Behavior:** refactor the existing IIFE to (a) render first, then (b) bind the same open/close/filter/keyboard handlers against the freshly rendered nodes, extended for the featured row, cascade, sliding indicator, and match highlighting.
-5. **Build:** edit `main.js`; the redesign CSS lives in the JS string (self-contained). Run `./build.sh` to regenerate `main.min.js` (and `style.min.css`, unchanged here). The deployed site uses the `.min` files.
+5. **Build:** edit `main.js` (markup/data/behavior) and `style.css` (styles). Run `./build.sh` to regenerate both `main.min.js` and `style.min.css`. The deployed site uses the `.min` files.
 
-### Why CSS-in-JS here (accepted tradeoff)
-Quick Find is a hidden modal opened by click/`⌘K`, so there is no flash-of-unstyled-content risk, and it is a progressive enhancement (nav still works without JS). Injecting at runtime guarantees the redesign wins the cascade without editing or rebuilding 38 HTML files, keeping the entire feature in one maintainable place.
+### Why hybrid (CSS in style.css + JS-rendered markup)
+This keeps styling where styling belongs — in `style.css`, where it is minified by the build pipeline, themeable, and easy to tweak — while centralizing the duplicated markup into a single JS source. It is more maintainable than CSS-in-JS (no styling buried in a JS string) and avoids editing or rebuilding 38 HTML files. The one piece of "magic" — the `qf-hdr` marker class doing cascade work — is documented here and in a comment in `style.css`. Centralizing the markup also **removes 38 duplicate copies** of the Quick Find markup, a down payment on de-duplicating the site. Tradeoff: the feature spans two files (`main.js` + `style.css`) rather than one, which is normal separation of concerns. The panel is JS-rendered, so it won't appear with JS disabled — but Quick Find already requires JS to open/search/navigate, and the nav links work without it, so there is no functional regression.
 
 ### Units / boundaries
-- `QF_DATA` — content only; no logic.
-- `renderQuickFind(data)` → returns/sets markup; pure-ish, no event wiring.
-- `injectQuickFindStyles()` → idempotent `<style>` injection.
-- `initQuickFind()` → renders, injects styles, binds behavior. Replaces the current IIFE.
+- `QF_DATA` — content only (featured + categories); no logic. The single place content is edited.
+- `renderQuickFind(data)` → builds and sets `#qfOverlay` markup (with the `qf-hdr` marker class on the root); no event wiring.
+- `initQuickFind()` → renders, then binds behavior. Replaces the current IIFE.
+- Styles: a clearly-delimited `Quick Find — HDR Bench` section in `style.css`, all scoped under `.qf-hdr`.
 
-Each unit is independently understandable and testable; content edits never touch logic.
+Each unit is independently understandable and testable; content edits never touch logic, and style edits never touch markup.
 
 ---
 
