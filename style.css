@@ -10501,6 +10501,44 @@ body:not(.menu-open) .hero {
   .nav .qf-trigger { transition: none !important; }
 }
 
+/* ── Light theme → Workshop Notebook palette (matches tips pages) ── */
+html[data-theme="light"] .qf-overlay.qf-hdr {
+  --qf-acc: #a8480c;
+  --qf-acc-bright: #c2611a;
+  --qf-wash: rgba(168,72,12,.09);
+  --qf-bg: #f4eee2;
+  --qf-card: #fbf7ef;
+  --qf-card2: #efe7d7;
+  --qf-txt: #2b2520;
+  --qf-soft: #6e6456;
+  --qf-faint: #9b9080;
+  --qf-line: #e2d9c8;
+  --qf-line2: #d3c7af;
+}
+html[data-theme="light"] .qf-overlay.qf-hdr .qf-backdrop { background: rgba(43,37,32,.28); }
+html[data-theme="light"] .qf-overlay.qf-hdr .qf-drawer-count { background: var(--qf-bg); }
+html[data-theme="light"] .qf-overlay.qf-hdr .qf-drawer:hover { background: rgba(43,37,32,.05); }
+
+/* ── Mobile: rail nav becomes a horizontal chip row; symptoms 2×2 ── */
+@media (max-width: 640px) {
+  .qf-overlay.qf-hdr .qf-symptoms { grid-template-columns: repeat(2, 1fr); }
+  .qf-overlay.qf-hdr .qf-rail { display: block; }
+  .qf-overlay.qf-hdr .qf-railnav {
+    flex-direction: row; border-right: none; border-bottom: 1px solid var(--qf-line);
+    overflow-x: auto; gap: .4rem; padding: .5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .qf-overlay.qf-hdr .qf-drawer {
+    flex: 0 0 auto; border-radius: 20px; padding: .4rem .7rem;
+  }
+  .qf-overlay.qf-hdr .qf-drawer.qf-on { box-shadow: none; background: var(--qf-wash); color: var(--qf-acc); }
+  .qf-overlay.qf-hdr .qf-drawer-title { max-width: 40vw; }
+  .qf-overlay.qf-hdr .qf-railpanels { min-height: 0; }
+  /* Bottom-sheet entrance (mirror base behavior under the skin) */
+  .qf-overlay.qf-hdr .qf-panel { border-radius: 16px 16px 0 0; transform: translateY(100%); }
+  .qf-overlay.qf-hdr.open .qf-panel { transform: translateY(0); }
+}
+
 /* Responsive */
 @media (max-width: 640px) {
   .qf-overlay {
