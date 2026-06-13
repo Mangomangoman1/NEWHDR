@@ -2646,6 +2646,8 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     document.body.style.overflow = 'hidden';
     if (searchInput) { searchInput.value = ''; searchInput.focus(); }
     showAll();
+    var staggerItems = overlay.querySelectorAll('.qf-tile, .qf-link');
+    for (var s = 0; s < staggerItems.length; s++) { staggerItems[s].style.setProperty('--i', s % 22); }
     activeIndex = -1;
     activeItems = activeList();
   }
