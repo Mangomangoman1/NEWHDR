@@ -2548,22 +2548,34 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   // highlight and keyboard-nav logic work unchanged.
   function linkHTML(l) {
     return '<a class="qf-link" data-qf="' + esc(l.kw) + '" data-name="' + esc(l.name) + '" href="' + esc(l.href) + '">' +
-      '<span class="qf-card-icon">' + icon(l.icon) + '</span>' +
-      '<span class="qf-link-name">' + esc(l.name) + '</span>' +
-      '<span class="qf-link-desc">' + esc(l.desc) + '</span></a>';
+      '<span class="qf-link-icon">' + icon(l.icon) + '</span>' +
+      '<span class="qf-link-text">' +
+        '<span class="qf-link-name">' + esc(l.name) + '</span>' +
+        '<span class="qf-link-desc">' + esc(l.desc) + '</span>' +
+      '</span></a>';
   }
 
-  function categoryHTML(c) {
-    var cards = c.links.map(linkHTML).join('');
-    return '<div class="qf-category">' +
-      '<div class="qf-category-title">' + icon(c.icon) + ' ' + esc(c.title) + '</div>' +
-      '<div class="qf-cardgrid">' + cards + '</div></div>';
+  function symptomHTML(s) {
+    return '<a class="qf-sym" href="' + esc(s.href) + '">' +
+      '<span class="qf-sym-emoji" aria-hidden="true">' + s.emoji + '</span>' +
+      '<span class="qf-sym-name">' + esc(s.name) + '</span>' +
+      '<span class="qf-sym-sub">' + esc(s.sub) + '</span></a>';
   }
 
-  function tileHTML(t) {
-    return '<a class="qf-tile" href="' + esc(t.href) + '">' +
-      '<span class="qf-tile-icon">' + icon(t.icon) + '</span>' +
-      '<span class="qf-tile-name">' + esc(t.name) + '</span></a>';
+  function drawerBtnHTML(c, i) {
+    var on = i === 0;
+    return '<button type="button" class="qf-drawer' + (on ? ' qf-on' : '') + '" role="tab"' +
+      ' aria-selected="' + (on ? 'true' : 'false') + '" data-drawer="' + i + '">' +
+      '<span class="qf-drawer-ic">' + icon(c.icon) + '</span>' +
+      '<span class="qf-drawer-title">' + esc(c.title) + '</span>' +
+      '<span class="qf-drawer-count">' + c.links.length + '</span></button>';
+  }
+
+  function drawerPanelHTML(c, i) {
+    var on = i === 0;
+    return '<div class="qf-drawerpanel' + (on ? ' qf-on' : '') + '" role="tabpanel"' +
+      ' data-drawer="' + i + '"' + (on ? '' : ' hidden') + '>' +
+      c.links.map(linkHTML).join('') + '</div>';
   }
 
   // Flattened page list (used for search) + symptom-keyword fold-in.
@@ -2584,35 +2596,42 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   });
 
   function render() {
-    var featured = QF_DATA.featured.map(tileHTML).join('');
-    // Visual Board: each category is a full-width section whose pages flow as
-    // a responsive card grid (no cramped two-column rows).
-    var cats = QF_DATA.categories.map(categoryHTML).join('');
     overlay.classList.add('qf-hdr');
+    var syms = QF_DATA.symptoms.map(symptomHTML).join('');
+    var drawerBtns = QF_DATA.categories.map(drawerBtnHTML).join('');
+    var drawerPanels = QF_DATA.categories.map(drawerPanelHTML).join('');
     overlay.innerHTML =
       '<div class="qf-backdrop" id="qfBackdrop"></div>' +
       '<div class="qf-panel" role="document">' +
         '<div class="qf-header">' +
           icon('search') +
-          '<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages…" type="text" aria-label="Search pages"/>' +
+          '<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search or describe a problem…" type="text" aria-label="Search pages"/>' +
           '<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>' +
         '</div>' +
         '<div class="qf-body" id="qfBody">' +
-          '<div class="qf-cursor" id="qfCursor" aria-hidden="true"></div>' +
-          '<div class="qf-featured" id="qfFeatured">' +
-            '<div class="qf-section-label">// most wanted</div>' +
-            '<div class="qf-tiles">' + featured + '</div>' +
+          '<div class="qf-browse" id="qfBrowse">' +
+            '<div class="qf-section-label">what&rsquo;s wrong?</div>' +
+            '<div class="qf-symptoms" id="qfSymptoms">' + syms + '</div>' +
+            '<div class="qf-section-label qf-browse-label">browse all pages</div>' +
+            '<div class="qf-rail" id="qfRail">' +
+              '<div class="qf-railnav" id="qfRailNav" role="tablist" aria-label="Page categories">' + drawerBtns + '</div>' +
+              '<div class="qf-railpanels" id="qfRailPanels">' + drawerPanels + '</div>' +
+            '</div>' +
           '</div>' +
-          '<div class="qf-all" id="qfAll">' +
-            '<div class="qf-section-label" id="qfAllLabel">// all pages</div>' +
-            '<div class="qf-columns" id="qfColumns">' + cats + '</div>' +
+          '<div class="qf-results" id="qfResults" role="listbox" aria-label="Search results" hidden></div>' +
+          '<div class="qf-empty" id="qfEmpty">' + icon('search_off') +
+            '<span class="qf-empty-title">No pages match that.</span>' +
+            '<span class="qf-empty-actions">' +
+              '<a href="/contact">Text us</a>' +
+              '<a href="/device-check">Run Device Check</a>' +
+              '<a href="/#services">See all services</a>' +
+            '</span>' +
           '</div>' +
-          '<div class="qf-empty" id="qfEmpty">' + icon('search_off') + ' No pages match your search.</div>' +
         '</div>' +
         '<div class="qf-footer">' +
-          '<span>' + countLinks() + ' pages</span>' +
+          '<span>' + ALL_ITEMS.length + ' pages</span>' +
           '<div class="qf-footer-keys">' +
-            '<span><kbd>↑↓</kbd> Navigate</span><span><kbd>↵</kbd> Open</span><span><kbd>ESC</kbd> Close</span>' +
+            '<span><kbd>↑↓</kbd> Navigate</span><span><kbd>↵</kbd> Open</span><span><kbd>esc</kbd> Close</span>' +
           '</div>' +
         '</div>' +
       '</div>';
