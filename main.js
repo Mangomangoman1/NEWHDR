@@ -2644,56 +2644,116 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   var closeBtn    = document.getElementById('qfClose');
   var backdrop    = document.getElementById('qfBackdrop');
   var emptyState  = document.getElementById('qfEmpty');
-  var columns     = document.getElementById('qfColumns');
-  var featured    = document.getElementById('qfFeatured');
-  var allLabel    = document.getElementById('qfAllLabel');
-  var body        = document.getElementById('qfBody');
-  var cursor      = document.getElementById('qfCursor');
-  var allLinks    = overlay.querySelectorAll('.qf-link');
-  var allCats     = overlay.querySelectorAll('.qf-category');
-  var activeIndex = -1;
-  var activeItems = [];
+  var browseZone  = document.getElementById('qfBrowse');
+  var resultsZone = document.getElementById('qfResults');
+  var railNav     = document.getElementById('qfRailNav');
+  var drawerEls   = Array.prototype.slice.call(overlay.querySelectorAll('.qf-drawer'));
+  var panelEls    = Array.prototype.slice.call(overlay.querySelectorAll('.qf-drawerpanel'));
 
-  function activeList() {
-    // Featured tiles are navigable only when the featured row is visible.
-    var sel = featured.classList.contains('hidden')
-      ? '.qf-link:not(.hidden)'
-      : '.qf-tile, .qf-link:not(.hidden)';
-    return Array.prototype.slice.call(overlay.querySelectorAll(sel));
+  var currentDrawer = 0;
+  var searching     = false;
+  var activeIndex   = -1;
+  var activeItems   = [];
+  var lastTrigger   = null;
+
+  function activeListNodes() {
+    if (searching) return Array.prototype.slice.call(resultsZone.querySelectorAll('.qf-link'));
+    var p = panelEls[currentDrawer];
+    return p ? Array.prototype.slice.call(p.querySelectorAll('.qf-link')) : [];
   }
 
   function clearActive() {
     activeItems.forEach(function(el) { el.classList.remove('qf-active'); });
-    if (cursor) cursor.style.opacity = '0';
   }
 
   function setActive(index) {
-    activeItems.forEach(function(el) { el.classList.remove('qf-active'); });
-    if (index < 0 || index >= activeItems.length) { if (cursor) cursor.style.opacity = '0'; return; }
+    clearActive();
+    if (index < 0 || index >= activeItems.length) return;
     var el = activeItems[index];
     el.classList.add('qf-active');
     el.scrollIntoView({ block: 'nearest' });
-    if (cursor && body) {
-      var br = body.getBoundingClientRect();
-      var er = el.getBoundingClientRect();
-      cursor.style.opacity = '1';
-      cursor.style.transform = 'translateY(' + (er.top - br.top + body.scrollTop) + 'px)';
-      cursor.style.height = er.height + 'px';
-      cursor.style.left = (er.left - br.left) + 'px';
-      cursor.style.width = er.width + 'px';
-    }
   }
 
-  function open() {
+  function refreshActive() {
+    activeItems = activeListNodes();
+    activeIndex = -1;
+    clearActive();
+  }
+
+  function setDrawer(i) {
+    if (i < 0 || i >= drawerEls.length) return;
+    currentDrawer = i;
+    drawerEls.forEach(function(b, bi) {
+      var on = bi === i;
+      b.classList.toggle('qf-on', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panelEls.forEach(function(p, pi) {
+      var on = pi === i;
+      p.classList.toggle('qf-on', on);
+      if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden', ''); }
+    });
+    refreshActive();
+  }
+
+  function showBrowse() {
+    searching = false;
+    resultsZone.setAttribute('hidden', '');
+    resultsZone.innerHTML = '';
+    browseZone.removeAttribute('hidden');
+    emptyState.classList.remove('visible');
+    refreshActive();
+  }
+
+  function highlightName(name, q) {
+    var i = name.toLowerCase().indexOf(q);
+    if (i === -1) return esc(name);
+    return esc(name.slice(0, i)) +
+      '<mark class="qf-hl">' + esc(name.slice(i, i + q.length)) + '</mark>' +
+      esc(name.slice(i + q.length));
+  }
+
+  function resultHTML(it, q) {
+    return '<a class="qf-link" role="option" data-name="' + esc(it.name) + '" href="' + esc(it.href) + '">' +
+      '<span class="qf-link-icon">' + icon(it.icon) + '</span>' +
+      '<span class="qf-link-text">' +
+        '<span class="qf-link-name">' + highlightName(it.name, q) + '</span>' +
+        '<span class="qf-link-desc">' + esc(it.desc) + '</span>' +
+      '</span></a>';
+  }
+
+  function runSearch(q) {
+    searching = true;
+    browseZone.setAttribute('hidden', '');
+    var matches = ALL_ITEMS.filter(function(it) { return it.hay.indexOf(q) !== -1; });
+    if (!matches.length) {
+      resultsZone.setAttribute('hidden', '');
+      resultsZone.innerHTML = '';
+      emptyState.classList.add('visible');
+      refreshActive();
+      return;
+    }
+    emptyState.classList.remove('visible');
+    resultsZone.innerHTML = matches.map(function(it) { return resultHTML(it, q); }).join('');
+    resultsZone.removeAttribute('hidden');
+    refreshActive();
+  }
+
+  function onInput(val) {
+    var q = (val || '').toLowerCase().trim();
+    if (!q) { showBrowse(); return; }
+    runSearch(q);
+  }
+
+  function open(opener) {
+    lastTrigger = opener || null;
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    if (searchInput) { searchInput.value = ''; searchInput.focus(); }
-    showAll();
-    var staggerItems = overlay.querySelectorAll('.qf-tile, .qf-link');
-    for (var s = 0; s < staggerItems.length; s++) { staggerItems[s].style.setProperty('--i', s % 22); }
-    activeIndex = -1;
-    activeItems = activeList();
+    if (searchInput) { searchInput.value = ''; }
+    showBrowse();
+    setDrawer(0);
+    if (searchInput) searchInput.focus();
   }
 
   function close() {
@@ -2702,100 +2762,60 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     document.body.style.overflow = '';
     activeIndex = -1;
     clearActive();
-  }
-
-  function showAll() {
-    allLinks.forEach(function(link) {
-      link.classList.remove('hidden');
-      var nameEl = link.querySelector('.qf-link-name');
-      if (nameEl) nameEl.textContent = link.getAttribute('data-name');
-    });
-    allCats.forEach(function(cat) { cat.classList.remove('hidden'); });
-    featured.classList.remove('hidden');
-    if (allLabel) allLabel.textContent = '// all pages';
-    if (emptyState) emptyState.classList.remove('visible');
-    if (columns) columns.classList.remove('hidden');
-    clearActive();
-  }
-
-  function highlight(nameEl, name, q) {
-    var i = name.toLowerCase().indexOf(q);
-    if (i === -1) { nameEl.textContent = name; return; }
-    nameEl.innerHTML = esc(name.slice(0, i)) +
-      '<mark class="qf-hl">' + esc(name.slice(i, i + q.length)) + '</mark>' +
-      esc(name.slice(i + q.length));
-  }
-
-  function filter(query) {
-    var q = (query || '').toLowerCase().trim();
-    if (!q) { showAll(); activeIndex = -1; activeItems = activeList(); return; }
-
-    featured.classList.add('hidden');
-    if (allLabel) allLabel.textContent = '// matches';
-    var any = false;
-
-    allLinks.forEach(function(link) {
-      var name = link.getAttribute('data-name') || '';
-      var desc = (link.querySelector('.qf-link-desc') || {}).textContent || '';
-      var kw = link.getAttribute('data-qf') || '';
-      var hay = (name + ' ' + desc + ' ' + kw).toLowerCase();
-      var nameEl = link.querySelector('.qf-link-name');
-      if (hay.indexOf(q) !== -1) {
-        link.classList.remove('hidden');
-        if (nameEl) highlight(nameEl, name, q);
-        any = true;
-      } else {
-        link.classList.add('hidden');
-        if (nameEl) nameEl.textContent = name;
-      }
-    });
-
-    allCats.forEach(function(cat) {
-      var has = cat.querySelectorAll('.qf-link:not(.hidden)').length > 0;
-      cat.classList.toggle('hidden', !has);
-    });
-
-    if (emptyState) emptyState.classList.toggle('visible', !any);
-    if (columns) columns.classList.toggle('hidden', !any);
-    activeIndex = -1;
-    clearActive();
-    activeItems = activeList();
+    if (lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus();
   }
 
   // Triggers
   var trigger = document.getElementById('qfTrigger');
   var triggerMobile = document.getElementById('qfTriggerMobile');
-  if (trigger) trigger.addEventListener('click', open);
+  if (trigger) trigger.addEventListener('click', function() { open(trigger); });
   if (triggerMobile) triggerMobile.addEventListener('click', function() {
     var mobileNav = document.getElementById('navMobile');
     if (mobileNav) mobileNav.setAttribute('aria-hidden', 'true');
-    open();
+    open(triggerMobile);
   });
 
   if (closeBtn) closeBtn.addEventListener('click', close);
   if (backdrop) backdrop.addEventListener('click', close);
-  if (searchInput) searchInput.addEventListener('input', function() { filter(this.value); });
+  if (searchInput) searchInput.addEventListener('input', function() { onInput(this.value); });
+
+  if (railNav) railNav.addEventListener('click', function(e) {
+    var btn = e.target.closest('.qf-drawer');
+    if (!btn) return;
+    setDrawer(parseInt(btn.getAttribute('data-drawer'), 10) || 0);
+    if (searchInput) searchInput.focus();
+  });
 
   document.addEventListener('keydown', function(e) {
     if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
       e.preventDefault();
-      if (overlay.classList.contains('open')) { close(); } else { open(); }
+      if (overlay.classList.contains('open')) { close(); } else { open(trigger); }
       return;
     }
     if (!overlay.classList.contains('open')) return;
     if (e.key === 'Escape') { e.preventDefault(); close(); return; }
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      activeItems = activeList();
+      activeItems = activeListNodes();
       activeIndex = Math.min(activeIndex + 1, activeItems.length - 1);
       setActive(activeIndex);
       return;
     }
     if (e.key === 'ArrowUp') {
       e.preventDefault();
-      activeItems = activeList();
+      activeItems = activeListNodes();
       activeIndex = Math.max(activeIndex - 1, 0);
       setActive(activeIndex);
+      return;
+    }
+    if (!searching && e.key === 'ArrowRight') {
+      e.preventDefault();
+      setDrawer(Math.min(currentDrawer + 1, drawerEls.length - 1));
+      return;
+    }
+    if (!searching && e.key === 'ArrowLeft') {
+      e.preventDefault();
+      setDrawer(Math.max(currentDrawer - 1, 0));
       return;
     }
     if (e.key === 'Enter') {
@@ -2807,8 +2827,8 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     }
   });
 
-  // Close on any link/tile click
+  // Close after navigating to a page (symptom card or list row).
   overlay.addEventListener('click', function(e) {
-    if (e.target.closest('.qf-link') || e.target.closest('.qf-tile')) close();
+    if (e.target.closest('.qf-link') || e.target.closest('.qf-sym')) close();
   });
 })();
