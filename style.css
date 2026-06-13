@@ -10349,7 +10349,12 @@ body:not(.menu-open) .hero {
   filter: blur(20px); pointer-events: none; opacity: 0; transition: opacity .4s; z-index: 0;
 }
 .qf-overlay.qf-hdr.open .qf-panel { transform: scale(1) translateY(0); }
-.qf-overlay.qf-hdr.open .qf-panel::after { opacity: 1; }
+.qf-overlay.qf-hdr.open .qf-panel::after { opacity: 1; animation: qf-aurora 8s ease-in-out infinite; }
+@keyframes qf-aurora {
+  0%   { transform: translateX(-50%) translateY(0)   scale(1);    opacity: .85; }
+  50%  { transform: translateX(-44%) translateY(6px) scale(1.18); opacity: 1; }
+  100% { transform: translateX(-56%) translateY(0)   scale(1);    opacity: .8; }
+}
 
 /* Header — glowing glyph, spectrum hairline */
 .qf-overlay.qf-hdr .qf-header { position: relative; border-bottom: none; padding: 1rem 1.1rem; }
@@ -10413,43 +10418,66 @@ body:not(.menu-open) .hero {
   filter: drop-shadow(0 0 8px rgba(91,139,207,.8));
 }
 
-/* Two packed columns — minmax(0,1fr) lets tracks shrink below min-content
-   (the nowrap route hints would otherwise force horizontal overflow). */
-.qf-overlay.qf-hdr .qf-columns {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: start;
-}
-.qf-overlay.qf-hdr .qf-col { min-width: 0; }
-
-/* Category + links */
+/* Visual Board — categories stack full-width; pages flow as a card grid */
+.qf-overlay.qf-hdr .qf-columns { display: block; }
+.qf-overlay.qf-hdr .qf-category { margin-bottom: 1.1rem; }
 .qf-overlay.qf-hdr .qf-category.hidden { display: none; }
 .qf-overlay.qf-hdr .qf-category-title {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   text-transform: none; letter-spacing: 0; color: var(--text-muted);
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle); margin-bottom: 0;
 }
-.qf-overlay.qf-hdr .qf-link { position: relative; z-index: 1; gap: .6rem; min-width: 0; }
-.qf-overlay.qf-hdr .qf-link:hover {
-  background: transparent; transform: none;
+.qf-overlay.qf-hdr .qf-cardgrid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+  gap: .55rem; margin-top: .6rem;
 }
+
+/* The sliding cursor was a list affordance; the board uses per-card bloom */
+.qf-overlay.qf-hdr .qf-cursor { display: none; }
+
+/* Page card */
+.qf-overlay.qf-hdr .qf-link {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: flex-start; gap: .3rem;
+  padding: .7rem .7rem .75rem; min-width: 0; min-height: 90px;
+  border-radius: 12px; background: #13171d; border: 1px solid #262d36;
+  overflow: hidden;
+  transition: transform .18s, box-shadow .18s, border-color .18s, background .18s;
+}
+.qf-overlay.qf-hdr .qf-card-icon { display: inline-flex; margin-bottom: .1rem; }
+.qf-overlay.qf-hdr .qf-card-icon .material-symbols-outlined {
+  font-size: 1.2rem; color: var(--accent); transition: filter .18s;
+}
+.qf-overlay.qf-hdr .qf-link-name {
+  font-size: .82rem; font-weight: 650; line-height: 1.2; white-space: normal;
+  overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+.qf-overlay.qf-hdr .qf-link-desc {
+  font-size: .67rem; line-height: 1.25; color: var(--text-muted); white-space: normal;
+  overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+
+/* Hover / keyboard-active card — bloom */
 .qf-overlay.qf-hdr .qf-link:hover,
+.qf-overlay.qf-hdr .qf-link:focus-visible,
 .qf-overlay.qf-hdr .qf-link.qf-active {
-  background: linear-gradient(90deg, rgba(91,139,207,.14), transparent);
+  transform: translateY(-2px); border-color: var(--accent); outline: none;
+  background: linear-gradient(160deg, rgba(91,139,207,.22), rgba(91,139,207,.04));
+  box-shadow: 0 0 18px rgba(91,139,207,.30);
 }
-.qf-overlay.qf-hdr .qf-link.qf-active { box-shadow: inset 2px 0 0 var(--qf-gold); }
-.qf-overlay.qf-hdr .qf-route {
-  margin-left: auto; padding-left: .5rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: .58rem; color: var(--text-muted); opacity: .55;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  flex-shrink: 1; min-width: 0; max-width: 45%; text-align: right;
+.qf-overlay.qf-hdr .qf-link.qf-active {
+  box-shadow: 0 0 22px rgba(91,139,207,.42), inset 0 2px 0 var(--qf-gold);
+}
+.qf-overlay.qf-hdr .qf-link:hover .qf-card-icon .material-symbols-outlined,
+.qf-overlay.qf-hdr .qf-link.qf-active .qf-card-icon .material-symbols-outlined {
+  filter: drop-shadow(0 0 8px rgba(91,139,207,.85));
 }
 .qf-overlay.qf-hdr .qf-hl { background: transparent; color: var(--qf-gold); font-weight: 700; }
 
 /* Cascade reveal — JS sets --i per item */
 .qf-overlay.qf-hdr.open .qf-tile,
 .qf-overlay.qf-hdr.open .qf-link {
-  animation: qf-rise .34s both;
+  animation: qf-rise .34s backwards;
   animation-delay: calc(var(--i, 0) * 16ms);
 }
 @keyframes qf-rise {
@@ -10498,7 +10526,7 @@ html[data-theme="light"] .qf-overlay.qf-hdr .qf-panel { background: #ffffff; }
   .qf-trigger { transition: none !important; }
   .qf-overlay.qf-hdr.open .qf-tile,
   .qf-overlay.qf-hdr.open .qf-link { animation: none !important; }
-  .qf-overlay.qf-hdr .qf-panel::after { transition: none !important; }
+  .qf-overlay.qf-hdr .qf-panel::after { transition: none !important; animation: none !important; }
 }
 
 /* Responsive */

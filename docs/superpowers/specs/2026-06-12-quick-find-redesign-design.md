@@ -41,11 +41,13 @@ The design must read correctly in both dark (default) and light themes (`[data-t
 - Refined pill: subtle gradient border, soft glow on hover/focus, search glyph + label + `⌘K` hint badge.
 - **Markup unchanged** (it lives in nav on all pages); restyled via injected CSS. Mobile/compact variants preserved (icon-only under 1099px, hidden under 768px with a full-width variant in the mobile menu — matching current behavior).
 
-### Panel (on open)
-1. **Header** — search glyph (glowing), input with a blinking caret, spectrum gradient hairline beneath, `ESC` button.
+### Panel (on open) — "Visual Board"
+1. **Header** — search glyph (glowing), input, spectrum gradient hairline beneath, `ESC` button.
 2. **Featured row** — label `// most wanted`; a grid of large tiles for the highest-intent destinations. Default set (configurable in the data structure):
    - iPhone Repair, Laptop & PC Repair, Android Repair, Data Recovery, Pricing, Book a Repair (Contact).
-3. **Full list** — label `// all pages`; the existing categorized link list (Device Repair, Computer Help, Locations, Guides, etc.), beautified with hover/active states and route hints.
+3. **All pages** — label `// all pages`; each category is a full-width section whose pages flow as a **responsive card gallery** (icon + name + desc per card, ~4 cards/row on desktop, auto-fill `minmax(158px,1fr)`), not a list of rows. This is the change that distinguishes the panel from a generic command palette.
+
+> **Design iteration:** the first build used dense two-column list rows with monospace route hints; it read as "the same list with gold trim" and the route hints forced horizontal overflow. Pivoted to the card gallery ("Visual Board") for a clearly premium, board-like feel. Route hints were dropped. A slow **living aurora** drifts behind the glass panel.
 
 ### Behavior while typing
 - Featured row hides; results become a single flat list of matches.
@@ -61,9 +63,10 @@ All motion is gated behind `@media (prefers-reduced-motion: reduce)` (instant, n
 | Trigger | Animation |
 |---|---|
 | Panel open | backdrop blur fades in; panel spring-scales in; aurora halo fades up |
-| Items appear | featured tiles + list rows **cascade** in with a short stagger (~15–25ms) |
-| Hover / keyboard focus | tile/row **bloom**: accent glow + slight lift |
-| Arrow up/down | active indicator (gold left-bar + soft glow) **slides** between rows |
+| Panel open | a slow **living aurora** drifts behind the glass (8s loop) |
+| Items appear | featured tiles + cards **cascade** in with a short stagger (~16ms; `fill-mode: backwards` so it never pins the hover transform) |
+| Hover / keyboard focus | card **bloom**: accent glow + lift + icon glow; active card adds a gold top bar |
+| Arrow up/down | active card highlighted (bloom); moves in 2-D across the gallery. (The list-style sliding cursor was dropped — redundant with per-card bloom.) |
 | Typing | non-matches fade/collapse; matched text highlights |
 | Close | reverse fade + scale-down |
 

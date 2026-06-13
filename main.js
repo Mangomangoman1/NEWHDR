@@ -2533,19 +2533,21 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     return '<span aria-hidden="true" class="material-symbols-outlined" data-icon="' + esc(name) + '"></span>';
   }
 
+  // A page is rendered as a card (icon + name + desc). Keeps the class names
+  // .qf-link / .qf-link-name / .qf-link-desc and data-* so the filter,
+  // highlight and keyboard-nav logic work unchanged.
   function linkHTML(l) {
     return '<a class="qf-link" data-qf="' + esc(l.kw) + '" data-name="' + esc(l.name) + '" href="' + esc(l.href) + '">' +
-      '<div class="qf-link-icon">' + icon(l.icon) + '</div>' +
-      '<div class="qf-link-text"><span class="qf-link-name">' + esc(l.name) + '</span>' +
-      '<span class="qf-link-desc">' + esc(l.desc) + '</span></div>' +
-      '<span class="qf-route">' + esc(l.href) + '</span></a>';
+      '<span class="qf-card-icon">' + icon(l.icon) + '</span>' +
+      '<span class="qf-link-name">' + esc(l.name) + '</span>' +
+      '<span class="qf-link-desc">' + esc(l.desc) + '</span></a>';
   }
 
   function categoryHTML(c) {
-    var links = c.links.map(linkHTML).join('');
+    var cards = c.links.map(linkHTML).join('');
     return '<div class="qf-category">' +
       '<div class="qf-category-title">' + icon(c.icon) + ' ' + esc(c.title) + '</div>' +
-      links + '</div>';
+      '<div class="qf-cardgrid">' + cards + '</div></div>';
   }
 
   function tileHTML(t) {
@@ -2562,12 +2564,9 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
 
   function render() {
     var featured = QF_DATA.featured.map(tileHTML).join('');
-    // Two packed columns (vertical stacks) so categories don't leave large
-    // grid-row gaps. Column 1: first 3 categories, column 2: the rest.
-    var half = Math.ceil(QF_DATA.categories.length / 2);
-    var col1 = QF_DATA.categories.slice(0, half).map(categoryHTML).join('');
-    var col2 = QF_DATA.categories.slice(half).map(categoryHTML).join('');
-    var cats = '<div class="qf-col">' + col1 + '</div><div class="qf-col">' + col2 + '</div>';
+    // Visual Board: each category is a full-width section whose pages flow as
+    // a responsive card grid (no cramped two-column rows).
+    var cats = QF_DATA.categories.map(categoryHTML).join('');
     overlay.classList.add('qf-hdr');
     overlay.innerHTML =
       '<div class="qf-backdrop" id="qfBackdrop"></div>' +
