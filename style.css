@@ -10413,6 +10413,14 @@ body:not(.menu-open) .hero {
   filter: drop-shadow(0 0 8px rgba(91,139,207,.8));
 }
 
+/* Two packed columns — minmax(0,1fr) lets tracks shrink below min-content
+   (the nowrap route hints would otherwise force horizontal overflow). */
+.qf-overlay.qf-hdr .qf-columns {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+.qf-overlay.qf-hdr .qf-col { min-width: 0; }
+
 /* Category + links */
 .qf-overlay.qf-hdr .qf-category.hidden { display: none; }
 .qf-overlay.qf-hdr .qf-category-title {
@@ -10420,7 +10428,7 @@ body:not(.menu-open) .hero {
   text-transform: none; letter-spacing: 0; color: var(--text-muted);
   border-bottom: 1px solid var(--border-subtle);
 }
-.qf-overlay.qf-hdr .qf-link { position: relative; z-index: 1; gap: .6rem; }
+.qf-overlay.qf-hdr .qf-link { position: relative; z-index: 1; gap: .6rem; min-width: 0; }
 .qf-overlay.qf-hdr .qf-link:hover {
   background: transparent; transform: none;
 }
@@ -10430,9 +10438,11 @@ body:not(.menu-open) .hero {
 }
 .qf-overlay.qf-hdr .qf-link.qf-active { box-shadow: inset 2px 0 0 var(--qf-gold); }
 .qf-overlay.qf-hdr .qf-route {
-  margin-left: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  margin-left: auto; padding-left: .5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: .58rem; color: var(--text-muted); opacity: .55;
-  white-space: nowrap; flex-shrink: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  flex-shrink: 1; min-width: 0; max-width: 45%; text-align: right;
 }
 .qf-overlay.qf-hdr .qf-hl { background: transparent; color: var(--qf-gold); font-weight: 700; }
 

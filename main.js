@@ -2562,7 +2562,12 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
 
   function render() {
     var featured = QF_DATA.featured.map(tileHTML).join('');
-    var cats = QF_DATA.categories.map(categoryHTML).join('');
+    // Two packed columns (vertical stacks) so categories don't leave large
+    // grid-row gaps. Column 1: first 3 categories, column 2: the rest.
+    var half = Math.ceil(QF_DATA.categories.length / 2);
+    var col1 = QF_DATA.categories.slice(0, half).map(categoryHTML).join('');
+    var col2 = QF_DATA.categories.slice(half).map(categoryHTML).join('');
+    var cats = '<div class="qf-col">' + col1 + '</div><div class="qf-col">' + col2 + '</div>';
     overlay.classList.add('qf-hdr');
     overlay.innerHTML =
       '<div class="qf-backdrop" id="qfBackdrop"></div>' +
