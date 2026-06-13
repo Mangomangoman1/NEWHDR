@@ -2466,6 +2466,16 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
 
   // ---- Content (the only place to edit pages) -------------------
   var QF_DATA = {
+    symptoms: [
+      { name: 'Cracked screen', sub: 'Phone or tablet', emoji: '📱', href: '/iphone-repair',
+        kw: 'cracked screen broken glass shattered display crack phone tablet ipad' },
+      { name: "Won't turn on", sub: 'No power at all', emoji: '🔌', href: '/laptop-wont-turn-on',
+        kw: "won't turn on dead no power black screen boot loop wont start unresponsive" },
+      { name: 'Water damage', sub: 'Spill or got wet', emoji: '💧', href: '/phone-water-damage-hailey',
+        kw: 'water damage wet liquid spill submerged moisture dropped in toilet rain' },
+      { name: 'Not sure?', sub: 'Run Device Check', emoji: '❓', href: '/device-check',
+        kw: 'not sure unknown diagnose help estimate device check what is wrong something else' }
+    ],
     featured: [
       { name: 'iPhone Repair',      href: '/iphone-repair', icon: 'phone_iphone' },
       { name: 'Laptop & PC Repair', href: '/laptop-repair', icon: 'laptop' },
@@ -2556,11 +2566,22 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
       '<span class="qf-tile-name">' + esc(t.name) + '</span></a>';
   }
 
-  function countLinks() {
-    var n = 0;
-    QF_DATA.categories.forEach(function(c) { n += c.links.length; });
-    return n;
-  }
+  // Flattened page list (used for search) + symptom-keyword fold-in.
+  // Symptom words like "cracked"/"wet" aren't in the page kw strings, so we
+  // attach each symptom's kw to its target page's search haystack by href.
+  var SYM_KW_BY_HREF = {};
+  QF_DATA.symptoms.forEach(function(s) {
+    SYM_KW_BY_HREF[s.href] = (SYM_KW_BY_HREF[s.href] || '') + ' ' + s.kw + ' ' + s.name;
+  });
+  var ALL_ITEMS = [];
+  QF_DATA.categories.forEach(function(c) {
+    c.links.forEach(function(l) {
+      ALL_ITEMS.push({
+        name: l.name, desc: l.desc, href: l.href, icon: l.icon,
+        hay: (l.name + ' ' + l.desc + ' ' + l.kw + ' ' + (SYM_KW_BY_HREF[l.href] || '')).toLowerCase()
+      });
+    });
+  });
 
   function render() {
     var featured = QF_DATA.featured.map(tileHTML).join('');
