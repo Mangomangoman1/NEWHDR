@@ -1764,20 +1764,8 @@ a{color:inherit;text-decoration:none}
 .hh-phone:hover{border-color:rgba(120,150,255,.5);color:#fff}
 
 .hh-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:520px}
-.hh-orbits{position:absolute;top:45%;left:51%;width:660px;height:660px;transform:translate(-50%,-50%);z-index:0;pointer-events:none}
-.hh-orbits svg{width:100%;height:100%;overflow:visible;animation:hhDrift 24s ease-in-out infinite;transform-origin:50% 50%}
-.hh-orbits .spin{transform-box:view-box;transform-origin:50% 50%}
-.hh-orbits .ringline{fill:none;stroke:rgba(135,170,255,.14)}
-.hh-orbits .ringfaint{fill:none;stroke:rgba(135,170,255,.08)}
-.hh-orbits .odot{fill:#7d9bff;opacity:.82}
-.hh-orbits .odot-faint{fill:#56699e;opacity:.72}
-.hh-orbits .odot-bright{fill:#a9c6ff;filter:drop-shadow(0 0 1.1px rgba(150,185,255,.65))}
-.hh-orbits .spin-a{animation:hhCW 98s linear infinite}
-.hh-orbits .spin-b{animation:hhCCW 134s linear infinite}
-.hh-orbits .spin-c{animation:hhCW 176s linear infinite}
-@keyframes hhCW{to{transform:rotate(360deg)}}@keyframes hhCCW{to{transform:rotate(-360deg)}}
-@keyframes hhDrift{0%,100%{transform:rotate(-.9deg) scale(1)}50%{transform:rotate(.9deg) scale(1.018)}}
-@media(prefers-reduced-motion:reduce){.hh-orbits svg,.hh-orbits .spin{animation:none!important}}
+.hh-orbits{position:absolute;top:46%;left:51%;width:720px;height:720px;transform:translate(-50%,-50%);z-index:0;pointer-events:none}
+.hh-orbits canvas{width:100%;height:100%;display:block}
 .hh-cluster{position:relative;z-index:2;width:min(108%,640px);height:auto;filter:drop-shadow(0 40px 70px rgba(0,0,0,.6))}
 .hh-callout{position:absolute;z-index:3;display:flex;gap:.6rem;align-items:flex-start;width:208px;padding:.8rem .9rem;border-radius:15px;border:1px solid rgba(255,255,255,.10);background:rgba(13,16,24,.82);backdrop-filter:blur(12px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
 .hh-callout .ic{flex:0 0 34px;height:34px;border-radius:10px;background:rgba(96,128,240,.14);border:1px solid rgba(96,128,240,.28);display:flex;align-items:center;justify-content:center;color:#8aa3ff}
@@ -1926,7 +1914,7 @@ a{color:inherit;text-decoration:none}
 <!-- ═══════════════════════════════════════════
        HERO
   ══════════════════════════════════════════════ -->
-<section class="hh-hero" id="home-hero"><div class="hh-shell"><div class="hh-grid"><div class="hh-left"><div class="hh-badge"><span aria-hidden="true" class="material-symbols-outlined" data-icon="location_on"></span>Wood River Valley &middot; Mail-in available</div><h1 class="hh-title">Phone &amp; Computer<br/>Repair <span class="hh-accent">in Hailey</span></h1><p class="hh-tagline">Phones, laptops, tablets, consoles &mdash; text photos first for a quote.</p><p class="hh-sub">Fast, fair repair for iPhone, Android, laptop, MacBook, tablet, console, gaming PC, and small-business tech problems. Text the device model, what happened, symptoms, and photos for a quote-first repair path.</p><div class="hh-actions"><a class="hh-btn hh-btn-primary" href="/contact"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>Text Photos for a Quote <span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-btn hh-btn-ghost" href="#services"><span aria-hidden="true" class="material-symbols-outlined" data-icon="grid_view"></span>See Services</a></div><div class="hh-stats"><div class="hh-stat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="forum"></span><div><strong>&lt; 2 hr</strong>response</div></div><div class="hh-sep"></div><div class="hh-stat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="star"></span><div><strong>5-star</strong>rated</div></div><div class="hh-sep"></div><div class="hh-stat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span><div><strong>Mail-in</strong>available</div></div><div class="hh-sep"></div><div class="hh-stat"><span class="dot" id="heroStatusDot"></span><div><strong id="heroClock">Open now</strong>Mon&ndash;Fri 9&ndash;9</div></div></div><a class="hh-phone" href="tel:+12084501606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="call"></span>(208) 450-1606</a></div><div class="hh-right"><div class="hh-stage"><div class="hh-orbits" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"><g class="spin spin-a"><circle class="ringline" cx="50" cy="50" r="42" stroke-width="0.26"/><circle class="odot odot-bright" cx="50" cy="8" r="0.62"/><circle class="odot" cx="84.5" cy="64" r="0.5"/><circle class="odot" cx="22" cy="73" r="0.48"/></g><g class="spin spin-b"><circle class="ringline" cx="50" cy="50" r="31" stroke-width="0.26" stroke-dasharray="1.3 4"/><circle class="odot" cx="73" cy="27" r="0.5"/><circle class="odot odot-bright" cx="26" cy="40" r="0.55"/></g><g class="spin spin-c"><circle class="ringfaint" cx="50" cy="50" r="48" stroke-width="0.3" stroke-dasharray="150 205" transform="rotate(-34 50 50)"/></g><circle class="odot-faint" cx="30" cy="5" r="0.5"/><circle class="odot odot-bright" cx="52" cy="2.5" r="0.55"/><circle class="odot-faint" cx="68" cy="8" r="0.5"/><circle class="odot-faint" cx="16" cy="25" r="0.5"/><circle class="odot odot-bright" cx="8.5" cy="46" r="0.62"/><circle class="odot-faint" cx="6.5" cy="63" r="0.46"/><circle class="odot-faint" cx="87" cy="21" r="0.5"/><circle class="odot-faint" cx="91" cy="42" r="0.46"/><circle class="odot-faint" cx="62" cy="93" r="0.46"/><circle class="odot-faint" cx="41" cy="96" r="0.42"/></svg></div><img class="hh-cluster" src="/assets/hero/hero-cluster.png" alt="Phone, laptop, game console, controller and gaming PC on a repair bench" width="1090" height="819" decoding="async" fetchpriority="high"/><div class="hh-callout c1"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="bolt"></span></div><div><strong>Fast Turnaround</strong><span>Most repairs done same day when possible.</span></div></div><div class="hh-callout c2"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="shield"></span></div><div><strong>Bench-Tested</strong><span>Every device tested before return.</span></div></div><div class="hh-callout c3"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="schedule"></span></div><div><strong>Local &amp; Trusted</strong><span>Hailey local. Real people, real help.</span></div></div></div></div></div><div class="hh-services"><a class="hh-svc" href="/iphone-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="phone_iphone"></span></div><h3>Phones</h3><p>Cracked screens, battery, charging, water damage</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/laptop-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span></div><h3>Laptops</h3><p>Performance, battery, screens, keyboards</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/tablet-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="tablet"></span></div><h3>Tablets</h3><p>Screens, charging, battery, software</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/console-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sports_esports"></span></div><h3>Consoles</h3><p>PS5, Xbox, Switch repairs &amp; cleaning</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/gaming-pc-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="dvr"></span></div><h3>Custom PC</h3><p>Diagnostics, builds, upgrades, fixes</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/computer-support"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="business_center"></span></div><h3>Business Tech</h3><p>Small business IT support &amp; repair</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a></div></div></section>
+<section class="hh-hero" id="home-hero"><div class="hh-shell"><div class="hh-grid"><div class="hh-left"><div class="hh-badge"><span aria-hidden="true" class="material-symbols-outlined" data-icon="location_on"></span>Wood River Valley &middot; Mail-in available</div><h1 class="hh-title">Phone &amp; Computer<br/>Repair <span class="hh-accent">in Hailey</span></h1><p class="hh-tagline">Phones, laptops, tablets, consoles &mdash; text photos first for a quote.</p><p class="hh-sub">Fast, fair repair for iPhone, Android, laptop, MacBook, tablet, console, gaming PC, and small-business tech problems. Text the device model, what happened, symptoms, and photos for a quote-first repair path.</p><div class="hh-actions"><a class="hh-btn hh-btn-primary" href="/contact"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>Text Photos for a Quote <span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-btn hh-btn-ghost" href="#services"><span aria-hidden="true" class="material-symbols-outlined" data-icon="grid_view"></span>See Services</a></div><div class="hh-stats"><div class="hh-stat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="forum"></span><div><strong>&lt; 2 hr</strong>response</div></div><div class="hh-sep"></div><div class="hh-stat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="star"></span><div><strong>5-star</strong>rated</div></div><div class="hh-sep"></div><div class="hh-stat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span><div><strong>Mail-in</strong>available</div></div><div class="hh-sep"></div><div class="hh-stat"><span class="dot" id="heroStatusDot"></span><div><strong id="heroClock">Open now</strong>Mon&ndash;Fri 9&ndash;9</div></div></div><a class="hh-phone" href="tel:+12084501606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="call"></span>(208) 450-1606</a></div><div class="hh-right"><div class="hh-stage"><div class="hh-orbits" aria-hidden="true"><canvas id="hhOrbit"></canvas></div><img class="hh-cluster" src="/assets/hero/hero-cluster.png" alt="Phone, laptop, game console, controller and gaming PC on a repair bench" width="1090" height="819" decoding="async" fetchpriority="high"/><div class="hh-callout c1"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="bolt"></span></div><div><strong>Fast Turnaround</strong><span>Most repairs done same day when possible.</span></div></div><div class="hh-callout c2"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="shield"></span></div><div><strong>Bench-Tested</strong><span>Every device tested before return.</span></div></div><div class="hh-callout c3"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="schedule"></span></div><div><strong>Local &amp; Trusted</strong><span>Hailey local. Real people, real help.</span></div></div></div></div></div><div class="hh-services"><a class="hh-svc" href="/iphone-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="phone_iphone"></span></div><h3>Phones</h3><p>Cracked screens, battery, charging, water damage</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/laptop-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span></div><h3>Laptops</h3><p>Performance, battery, screens, keyboards</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/tablet-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="tablet"></span></div><h3>Tablets</h3><p>Screens, charging, battery, software</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/console-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sports_esports"></span></div><h3>Consoles</h3><p>PS5, Xbox, Switch repairs &amp; cleaning</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/gaming-pc-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="dvr"></span></div><h3>Custom PC</h3><p>Diagnostics, builds, upgrades, fixes</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/computer-support"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="business_center"></span></div><h3>Business Tech</h3><p>Small business IT support &amp; repair</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a></div></div></section>
 
 <!-- ═══════════════════════════════════════════
        REPAIR LEDGER + TEXT GUIDE
@@ -2933,5 +2921,63 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 </div>
+<script id="hh-orbit-js">
+(function(){
+  var canvas=document.getElementById('hhOrbit'); if(!canvas) return;
+  if(window.matchMedia('(max-width:1040px)').matches) return;
+  var ctx=canvas.getContext('2d');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W=0,H=0,cx=0,cy=0,dpr=1,dots=[],rings=[];
+  var mx=0,my=0,px=0,py=0,running=false,raf=0;
+  function rnd(a,b){return a+Math.random()*(b-a);}
+  function setup(){
+    var r=canvas.getBoundingClientRect(); if(!r.width) return false;
+    dpr=Math.min(window.devicePixelRatio||1,2); W=r.width; H=r.height; cx=W/2; cy=H/2;
+    canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);
+    var base=Math.min(W,H)*0.5;
+    rings=[{r:base*0.44,op:0.11,dash:0,spd:0.00003},{r:base*0.62,op:0.07,dash:1,spd:-0.00002},{r:base*0.8,op:0.05,arc:0.5,spd:0.000016}];
+    dots=[]; var N=window.innerWidth>1600?40:32;
+    for(var i=0;i<N;i++){
+      var rad; if(Math.random()<0.58){var rr=[0.44,0.62,0.8][(Math.random()*3)|0]; rad=base*rr*rnd(0.97,1.03);} else {rad=base*rnd(0.16,0.86);}
+      dots.push({rad:rad,ang:rnd(0,6.2832),spd:(Math.random()<0.5?-1:1)*rnd(0.00005,0.00016),size:rnd(0.6,1.9),bright:Math.random()<0.16,twp:rnd(0,6.2832),tws:rnd(0.0005,0.0013)});
+    }
+    return true;
+  }
+  function draw(ts){
+    ctx.clearRect(0,0,W,H);
+    px+=(mx-px)*0.045; py+=(my-py)*0.045;
+    var ox=cx+px, oy=cy+py, g=ts*0.000011, i, j;
+    for(i=0;i<rings.length;i++){var rg=rings[i]; ctx.beginPath(); var a0=g+ts*rg.spd;
+      if(rg.arc){ctx.arc(ox,oy,rg.r,a0,a0+6.2832*rg.arc);}else{ctx.arc(ox,oy,rg.r,0,6.2832);}
+      ctx.strokeStyle='rgba(140,172,255,'+rg.op+')'; ctx.lineWidth=1; ctx.setLineDash(rg.dash?[2,7]:[]); ctx.stroke();}
+    ctx.setLineDash([]);
+    var pts=[];
+    for(i=0;i<dots.length;i++){var d=dots[i]; var a=d.ang+ts*d.spd+g;
+      pts.push({x:ox+Math.cos(a)*d.rad,y:oy+Math.sin(a)*d.rad,s:d.size,b:d.bright,a:0.55+0.45*Math.sin(d.twp+ts*d.tws)});}
+    var md=96,md2=md*md;
+    for(i=0;i<pts.length;i++)for(j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,q=dx*dx+dy*dy;
+      if(q<md2){var o=(1-Math.sqrt(q)/md)*0.07; ctx.strokeStyle='rgba(120,158,255,'+o+')'; ctx.lineWidth=0.6;
+        ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke();}}
+    for(i=0;i<pts.length;i++){var p=pts[i]; ctx.beginPath(); ctx.arc(p.x,p.y,p.s,0,6.2832);
+      if(p.b){ctx.fillStyle='rgba(175,205,255,'+(0.9*p.a)+')'; ctx.shadowColor='rgba(150,185,255,.85)'; ctx.shadowBlur=7;}
+      else{ctx.fillStyle='rgba(120,150,235,'+(0.5*p.a)+')'; ctx.shadowBlur=0;}
+      ctx.fill(); ctx.shadowBlur=0;}
+  }
+  function loop(ts){draw(ts); raf=requestAnimationFrame(loop);}
+  function start(){if(running||reduce)return; running=true; raf=requestAnimationFrame(loop);}
+  function stop(){running=false; if(raf)cancelAnimationFrame(raf); raf=0;}
+  function begin(){
+    if(reduce){draw(0); return;}
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting&&!document.hidden?start():stop();});},{threshold:0.01}); io.observe(canvas);} else {start();}
+    document.addEventListener('visibilitychange',function(){if(document.hidden)stop();});
+    window.addEventListener('mousemove',function(e){var r=canvas.getBoundingClientRect();
+      mx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/r.width))*16;
+      my=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/r.height))*16;},{passive:true});
+    var rt; window.addEventListener('resize',function(){clearTimeout(rt); rt=setTimeout(function(){
+      if(window.matchMedia('(max-width:1040px)').matches){stop(); return;} if(setup()&&reduce)draw(0);},180);},{passive:true});
+  }
+  if(setup()) begin(); else window.addEventListener('load',function(){if(setup())begin();});
+})();
+</script>
 </body>
 </html>
