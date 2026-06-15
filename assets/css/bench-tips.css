@@ -122,3 +122,8 @@ body.bench-tips-page::after{
 .bench-card-footer span:last-child{transition:transform .26s cubic-bezier(.2,.7,.2,1)}
 .bench-card:hover .bench-card-footer span:last-child{transform:translateX(5px)}
 @media(prefers-reduced-motion:reduce){.bench-card,.bench-card::after,.bench-card-footer span:last-child{transition:none!important}}
+
+/* jump feedback — glow the targeted section card (mobile TOC) */
+.bench-article-card:target{animation:benchTargetGlow 1.8s ease}
+@keyframes benchTargetGlow{0%,12%{box-shadow:0 0 0 1px rgba(139,211,255,.5),0 0 34px rgba(116,164,222,.28)}100%{box-shadow:var(--bench-shadow)}}
+@media(prefers-reduced-motion:reduce){.bench-article-card:target{animation:none}}
