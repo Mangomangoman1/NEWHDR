@@ -305,6 +305,23 @@ a{color:inherit;text-decoration:none}
 </style>
 <!-- HDR sitewide H1/title font split -->
 <style id="hdr-h1-title-font-split">h2,h3,h4,h5,h6,.section-title,.card-title,.sel-title,.service-card-title,.diag-title,.pricing-card-service,.footer-brand-name,.page-curtain-logo,.article h2,.article h3{font-family:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif!important}h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{font-family:'MuseoModerno','Fraunces','Inter',sans-serif!important;font-weight:600!important;letter-spacing:-0.02em;line-height:1.0}.hero-headline{margin-bottom:1.75rem!important}@media(max-width:480px){h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{line-height:.9}}</style>
+<style id="about-hero-css">
+.about-aside{display:grid;gap:1rem;justify-items:center}
+.about-photo{position:relative;width:100%;max-width:330px;aspect-ratio:4/5;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:radial-gradient(120% 80% at 50% 0,rgba(113,132,255,.2),transparent 62%),#10141e;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.about-photo::after{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;background:linear-gradient(135deg,rgba(113,132,255,.5),transparent 45%,rgba(139,211,255,.3));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.6;z-index:3}
+.about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.about-photo-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:#6b76a0;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.about-photo-ph .material-symbols-outlined{font-size:2.6rem;color:rgba(139,160,255,.5)}
+.about-photo-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1.1rem 1rem .9rem;background:linear-gradient(0deg,rgba(8,11,17,.94),rgba(8,11,17,.45) 60%,transparent);display:flex;flex-direction:column}
+.about-photo-cap strong{font-family:'MuseoModerno',sans-serif;font-size:1.3rem;color:#fff;line-height:1}
+.about-photo-cap span{font-size:.82rem;color:#aab3c2;margin-top:.2rem}
+.about-points{display:grid;gap:.55rem;width:100%;max-width:330px}
+.about-point{display:flex;align-items:center;gap:.65rem;padding:.6rem .75rem;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08)}
+.about-point .material-symbols-outlined{font-size:1.25rem;color:#7da3ff;flex:none}
+.about-point strong{display:block;color:#fff;font-size:.9rem;line-height:1.15}
+.about-point small{color:#9aa3b3;font-size:.76rem}
+@media(max-width:900px){.about-aside{margin-top:1.3rem}}
+</style>
 </head>
 <body>
 <nav class="nav" id="nav" role="navigation">
@@ -416,17 +433,7 @@ a{color:inherit;text-decoration:none}
 <a class="btn btn-outline btn-lg repair-phone-cta" href="tel:+12084501606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="call"></span>(208) 450-1606</a>
 </div>
 </div>
-<aside aria-label="About Hailey Device Repair" class="repair-proof-card">
-<div class="repair-proof-card__topline">How HDR works</div>
-<div class="repair-proof-card__title">Small-town accountability, modern repair bench.</div>
-<div class="repair-proof-steps">
-<div class="repair-proof-step"><span aria-hidden="true" class="material-symbols-outlined" data-icon="location_on"></span><div><strong>Hailey based</strong><small>Serving Wood River Valley + Idaho mail-in</small></div></div>
-<div aria-hidden="true" class="repair-proof-line"></div>
-<div class="repair-proof-step"><span aria-hidden="true" class="material-symbols-outlined" data-icon="fact_check"></span><div><strong>Quote before work</strong><small>You approve the path before repair starts</small></div></div>
-<div aria-hidden="true" class="repair-proof-line"></div>
-<div class="repair-proof-step"><span aria-hidden="true" class="material-symbols-outlined" data-icon="verified"></span><div><strong>40-day warranty</strong><small>Covered repairs are backed directly</small></div></div>
-</div>
-</aside>
+<!-- About photo: drop a portrait of Samuel at /assets/about/samuel.webp (4:5 ratio) to replace the placeholder --><aside aria-label="About Hailey Device Repair" class="about-aside"><div class="about-photo"><img src="/assets/about/samuel.webp" alt="Samuel, owner and technician at Hailey Device Repair" loading="lazy" onerror="this.style.display=&apos;none&apos;"/><span class="about-photo-ph" aria-hidden="true"><span aria-hidden="true" class="material-symbols-outlined" data-icon="add_a_photo"></span>Photo of Samuel</span><div class="about-photo-cap"><strong>Samuel</strong><span>Owner &amp; technician · Hailey, Idaho</span></div></div><div class="about-points"><div class="about-point"><span aria-hidden="true" class="material-symbols-outlined" data-icon="location_on"></span><div><strong>Hailey based</strong><small>Wood River Valley + Idaho mail-in</small></div></div><div class="about-point"><span aria-hidden="true" class="material-symbols-outlined" data-icon="fact_check"></span><div><strong>Quote before work</strong><small>You approve before repair starts</small></div></div><div class="about-point"><span aria-hidden="true" class="material-symbols-outlined" data-icon="verified"></span><div><strong>40-day warranty</strong><small>Covered repairs backed directly</small></div></div></div></aside>
 </div>
 </section>
 <section class="section section--alt" id="entity-brief"><div class="container"><div class="answer-card" style="max-width:980px;margin:0 auto;"><div class="section-eyebrow">Entity Brief</div><h2 class="section-title" style="text-align:left;">Who HDR is best for</h2><p>HDR is best for Hailey, Ketchum, Sun Valley, Bellevue, and Idaho mail-in customers who want a real technician to look at the problem, explain whether repair makes sense, quote before work begins, and stand behind covered repairs. It is not the right path for manufacturer warranty claims, severe clean-room data recovery, or repairs that require guaranteed parts before diagnosis.</p></div></div></section>
