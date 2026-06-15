@@ -321,6 +321,51 @@
 </style>
 <!-- HDR sitewide H1/title font split -->
 <style id="hdr-h1-title-font-split">h2,h3,h4,h5,h6,.section-title,.card-title,.sel-title,.service-card-title,.diag-title,.pricing-card-service,.footer-brand-name,.page-curtain-logo,.article h2,.article h3{font-family:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif!important}h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{font-family:'Darker Grotesque','MuseoModerno','Inter',sans-serif!important;font-weight:900!important;letter-spacing:-0.045em;line-height:.92}.hero-headline{margin-bottom:1.75rem!important}@media(max-width:480px){h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{line-height:.9}}</style>
+<style id="dr-hero-css">
+.dr-hero{position:relative;overflow:hidden;padding:5.4rem 0 4rem;background:radial-gradient(46% 52% at 80% 28%,rgba(91,140,255,.17),transparent 60%),radial-gradient(40% 40% at 6% 0,rgba(91,140,255,.05),transparent 60%),linear-gradient(180deg,#0a0e17,#0b0f18 70%,#0d1117)}
+.dr-wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+.dr-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:2.4rem;align-items:center}
+.dr-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(113,132,255,.1);border:1px solid rgba(113,132,255,.28);border-radius:100px;padding:.4rem .9rem;font-size:.8rem;color:#aeb8ff;margin-bottom:1.4rem}
+.dr-badge .dot{width:7px;height:7px;border-radius:50%;background:#70d68a;box-shadow:0 0 10px rgba(112,214,138,.8);animation:drpulse 2.4s infinite}
+.dr-title{font-family:'MuseoModerno','Fraunces',sans-serif!important;font-weight:600!important;font-size:clamp(2.4rem,4.6vw,3.85rem)!important;line-height:1.03!important;letter-spacing:-.02em!important;color:#fff;margin:0 0 1.1rem}
+.dr-title .grad{background:linear-gradient(100deg,#6f8cff,#8bd3ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.dr-sub{font-size:clamp(1rem,1.5vw,1.14rem);color:#aab3c2;line-height:1.7;max-width:34rem;margin:0 0 1.7rem}
+.dr-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1rem}
+.dr-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.25rem;border-radius:13px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .18s,filter .18s,border-color .18s}
+.dr-btn .material-symbols-outlined{font-size:1.15rem}
+.dr-btn-primary{background:linear-gradient(180deg,#7d8cff,#5a63e8);color:#fff;box-shadow:0 12px 30px rgba(90,99,232,.34);border:1px solid rgba(160,170,255,.4)}
+.dr-btn-primary:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.dr-btn-ghost{background:rgba(255,255,255,.04);color:#e9edf5;border:1px solid rgba(255,255,255,.14)}
+.dr-btn-ghost:hover{border-color:rgba(113,132,255,.5);transform:translateY(-1px)}
+.dr-resp{display:inline-flex;align-items:center;gap:.45rem;color:#9aa3b3;font-size:.9rem;margin-bottom:1.4rem}
+.dr-resp .material-symbols-outlined{font-size:1.1rem;color:#70d68a}
+.dr-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.dr-chip{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.4rem .75rem;font-size:.8rem;color:#c4ccd8}
+.dr-chip .material-symbols-outlined{font-size:.95rem;color:#7da3ff}
+.dr-right{display:flex;justify-content:center}
+.dr-console{position:relative;width:100%;max-width:420px;background:linear-gradient(180deg,rgba(18,24,36,.92),rgba(11,15,23,.94));border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:1.3rem;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.dr-console::before{content:"";position:absolute;inset:0;border-radius:22px;padding:1px;background:linear-gradient(135deg,rgba(113,132,255,.45),transparent 42%,rgba(139,211,255,.22));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.65}
+.dr-con-head{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem}
+.dr-con-head .led{width:8px;height:8px;border-radius:50%;background:#70d68a;box-shadow:0 0 10px rgba(112,214,138,.9);animation:drpulse 1.8s infinite}
+.dr-con-head .lab{font-family:ui-monospace,Menlo,monospace;font-size:.7rem;letter-spacing:.16em;color:#8b95a6;font-weight:700}
+.dr-con-head .material-symbols-outlined{margin-left:auto;color:#7da3ff;font-size:1.2rem}
+.dr-drive{position:relative;height:96px;border-radius:14px;background:repeating-linear-gradient(0deg,rgba(139,180,255,.05) 0 1px,transparent 1px 9px),radial-gradient(120% 100% at 50% 0,rgba(113,132,255,.14),transparent 60%),#0c1019;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:1rem}
+.dr-drive .material-symbols-outlined{font-size:2.6rem;color:rgba(139,180,255,.5)}
+.dr-scan{position:absolute;top:-34%;left:0;right:0;height:34%;background:linear-gradient(180deg,rgba(139,211,255,.22),transparent);border-bottom:1px solid rgba(139,211,255,.5);animation:drscan 2.8s ease-in-out infinite}
+.dr-bar{height:7px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-bottom:.55rem}
+.dr-bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#5b8cff,#8bd3ff);width:30%;animation:drfill 3.6s ease-in-out infinite}
+.dr-status{font-family:ui-monospace,Menlo,monospace;font-size:.7rem;color:#7da3ff;margin-bottom:1rem;letter-spacing:.02em}
+.dr-cats{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+.dr-cat{display:flex;align-items:center;gap:.5rem;padding:.6rem .7rem;border-radius:11px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);font-size:.82rem;color:#c4ccd8;animation:drcat 3.6s ease-in-out infinite}
+.dr-cat:nth-child(1){animation-delay:.2s}.dr-cat:nth-child(2){animation-delay:.7s}.dr-cat:nth-child(3){animation-delay:1.2s}.dr-cat:nth-child(4){animation-delay:1.7s}
+.dr-cat .material-symbols-outlined{font-size:1.05rem;color:#70d68a}
+@keyframes drpulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes drscan{0%,100%{top:-34%}50%{top:100%}}
+@keyframes drfill{0%{width:8%}60%{width:86%}100%{width:96%}}
+@keyframes drcat{0%,38%{opacity:.45}48%,100%{opacity:1}}
+@media(max-width:900px){.dr-grid{grid-template-columns:1fr;gap:1.6rem}.dr-console{max-width:380px}}
+@media(prefers-reduced-motion:reduce){.dr-badge .dot,.dr-con-head .led,.dr-scan,.dr-bar span,.dr-cat{animation:none!important}.dr-bar span{width:80%}}
+</style>
 </head>
 <body>
 <nav class="nav" id="nav" role="navigation">
@@ -400,43 +445,7 @@
 <!-- NAV -->
 
 <!-- HERO -->
-<section class="hero" id="hero">
-<div class="container">
-<div class="hero-content">
-<div class="hero-badge">
-<span class="hero-badge-dot"></span>
-          Based in Hailey · Serving Idaho statewide
-        </div>
-<h1 class="hero-headline">Data Recovery Help in Hailey and Idaho</h1>
-<p class="hero-sub">
-          Deleted files, failed hard drive, phone won’t boot, or water damage? 
-          This page gives you the safest next steps — and honest help when DIY stops making sense.
-        </p>
-<div class="hero-cta">
-<a class="btn btn-primary btn-lg" href="tel:+12084501606">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>
-            Call (208) 450-1606
-          </a>
-<a class="btn btn-ghost btn-lg" href="sms:+12084501606">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
-            Text for Help
-          </a>
-</div>
-<div class="hero-phone">
-<span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--color-green)" aria-hidden="true" data-icon="schedule"></span>
-          Response usually under 2 hours
-        </div>
-<div class="hero-chips">
-<span class="hero-chip"><span class="material-symbols-outlined" aria-hidden="true" data-icon="delete"></span>Deleted files</span>
-<span class="hero-chip"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sd_card"></span>SD cards</span>
-<span class="hero-chip"><span class="material-symbols-outlined" aria-hidden="true" data-icon="hard_drive"></span>Hard drives</span>
-<span class="hero-chip"><span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span>Phones</span>
-<span class="hero-chip"><span class="material-symbols-outlined" aria-hidden="true" data-icon="water_drop"></span>Water damage</span>
-<span class="hero-chip"><span class="material-symbols-outlined" aria-hidden="true" data-icon="cloud_off"></span>No backup</span>
-</div>
-</div>
-</div>
-</section>
+<section class="dr-hero" id="hero"><div class="dr-wrap"><div class="dr-grid"><div class="dr-left"><div class="dr-badge"><span class="dot"></span>Based in Hailey · Serving Idaho statewide</div><h1 class="dr-title"><span class="grad">Data Recovery</span> Help in Hailey and Idaho</h1><p class="dr-sub">Deleted files, failed hard drive, phone won’t boot, or water damage? This page gives you the safest next steps — and honest help when DIY stops making sense.</p><div class="dr-actions"><a class="dr-btn dr-btn-primary" href="tel:+12084501606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="call"></span>Call (208) 450-1606</a><a class="dr-btn dr-btn-ghost" href="sms:+12084501606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>Text for Help</a></div><div class="dr-resp"><span aria-hidden="true" class="material-symbols-outlined" data-icon="schedule"></span>Response usually under 2 hours</div><div class="dr-chips"><span class="dr-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="delete"></span>Deleted files</span><span class="dr-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sd_card"></span>SD cards</span><span class="dr-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="hard_drive"></span>Hard drives</span><span class="dr-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="smartphone"></span>Phones</span><span class="dr-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="water_drop"></span>Water damage</span><span class="dr-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="cloud_off"></span>No backup</span></div></div><div class="dr-right"><div class="dr-console" aria-hidden="true"><div class="dr-con-head"><span class="led"></span><span class="lab">RECOVERY SCAN</span><span aria-hidden="true" class="material-symbols-outlined" data-icon="hard_drive"></span></div><div class="dr-drive"><div class="dr-scan"></div><span aria-hidden="true" class="material-symbols-outlined" data-icon="database"></span></div><div class="dr-bar"><span></span></div><div class="dr-status">Scanning sectors… looking for recoverable files</div><div class="dr-cats"><div class="dr-cat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="photo_library"></span>Photos</div><div class="dr-cat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="description"></span>Documents</div><div class="dr-cat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="movie"></span>Videos</div><div class="dr-cat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="forum"></span>Messages</div></div></div></div></div></div></section>
 <!-- FIRST 10 MINUTES -->
 <section class="section section-alt" id="first-steps">
 <div class="container">
