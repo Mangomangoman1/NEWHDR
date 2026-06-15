@@ -113,3 +113,12 @@ body.bench-tips-page::after{
 /* readable utility CTA on long articles */
 .bench-utility-cta .bench-btn{min-width:190px;white-space:nowrap}
 @media(max-width:620px){.bench-utility-cta .bench-btn{min-width:0;white-space:normal}}
+
+/* hover polish — premium bench-card interaction */
+.bench-card{transition:transform .2s ease,border-color .22s ease,box-shadow .26s ease,background .2s ease}
+.bench-card:hover{border-color:rgba(139,211,255,.34);box-shadow:0 18px 44px rgba(0,0,0,.42),0 0 0 1px rgba(139,211,255,.12)}
+.bench-card::after{transition:opacity .26s ease,transform .32s cubic-bezier(.2,.7,.2,1);opacity:.65;transform:scaleX(.66);transform-origin:center}
+.bench-card:hover::after{opacity:1;transform:scaleX(1)}
+.bench-card-footer span:last-child{transition:transform .26s cubic-bezier(.2,.7,.2,1)}
+.bench-card:hover .bench-card-footer span:last-child{transform:translateX(5px)}
+@media(prefers-reduced-motion:reduce){.bench-card,.bench-card::after,.bench-card-footer span:last-child{transition:none!important}}
