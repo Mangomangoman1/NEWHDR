@@ -415,37 +415,152 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 <!-- HERO -->
-<section class="section lp-hero" id="main">
-<div aria-hidden="true" class="hero-bg-grid"></div>
-<div aria-hidden="true" class="hero-glow hero-glow-1"></div>
+<style id="spectre-hero-css">
+.spectre-hero{
+  --amber:#ff9e3d; --amber-deep:#f97316; --amber-lite:#ffce8a;
+  position:relative; overflow:hidden; isolation:isolate;
+  padding:clamp(2.6rem,6vw,5.2rem) 0 clamp(3rem,7vw,6rem);
+  background:
+    radial-gradient(115% 90% at 80% 36%, rgba(255,140,42,.17), transparent 56%),
+    radial-gradient(90% 85% at 10% 6%, rgba(79,142,247,.14), transparent 60%),
+    linear-gradient(162deg,#0b0f17 0%,#0d1117 52%,#090d14 100%);
+}
+.spectre-hero__tex{
+  position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.55;
+  background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(120% 100% at 72% 42%, #000 32%, transparent 80%);
+  mask-image:radial-gradient(120% 100% at 72% 42%, #000 32%, transparent 80%);
+}
+.spectre-hero__ember{
+  position:absolute; z-index:0; pointer-events:none;
+  top:14%; right:4%; width:min(58vw,620px); aspect-ratio:1;
+  background:radial-gradient(circle at 50% 50%, rgba(255,152,46,.36), rgba(255,108,28,.13) 38%, transparent 68%);
+  filter:blur(20px); animation:spectreEmber 7s ease-in-out infinite;
+}
+@keyframes spectreEmber{0%,100%{opacity:.72;transform:scale(1)}50%{opacity:1;transform:scale(1.07)}}
+.spectre-hero__inner{
+  position:relative; z-index:2; display:grid;
+  grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+  align-items:center; gap:clamp(1.5rem,4vw,4rem);
+}
+.spectre-copy{max-width:600px}
+.spectre-eyebrow{
+  display:inline-flex; align-items:center; gap:.6rem; position:relative;
+  font-size:.74rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:#ffd9a8; margin-bottom:1.25rem;
+}
+.spectre-eyebrow::before{content:""; width:1.7rem; height:2px; border-radius:2px; background:linear-gradient(90deg,var(--amber),transparent)}
+.spectre-title{
+  font-size:clamp(2.45rem,5.4vw,4.15rem)!important; line-height:.98!important;
+  margin:0 0 1.35rem!important; color:#f6f8fc;
+}
+.spectre-title .spectre-accent{
+  background:linear-gradient(120deg,var(--amber-lite) 0%,var(--amber) 42%,var(--amber-deep) 100%);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;
+}
+.spectre-sub{font-size:clamp(1.02rem,1.5vw,1.18rem); line-height:1.65; color:#aeb8c4; max-width:500px; margin:0 0 1.9rem}
+.spectre-sub strong{color:#e6edf3; font-weight:650}
+.spectre-highlights{display:grid; grid-template-columns:1fr 1fr; gap:.55rem .9rem; margin-bottom:2rem; max-width:480px}
+.spectre-hl{display:flex; align-items:center; gap:.6rem; font-size:.9rem; color:#c2cbd6}
+.spectre-hl .material-symbols-outlined{font-size:1.15rem; color:var(--amber); flex-shrink:0; font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 20}
+.spectre-actions{display:flex; gap:.85rem; flex-wrap:wrap}
+.spectre-actions .btn-primary{
+  background:linear-gradient(135deg,var(--amber) 0%,var(--amber-deep) 100%); border:none; color:#1a0f02;
+  box-shadow:0 12px 34px rgba(249,115,22,.34), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.spectre-actions .btn-primary:hover{filter:brightness(1.06); transform:translateY(-2px)}
+.spectre-actions .btn-outline{border-color:rgba(255,255,255,.18); color:#e6edf3; background:rgba(255,255,255,.03)}
+.spectre-stage{position:relative; z-index:2; display:flex; justify-content:center}
+.spectre-stage__inner{position:relative; width:min(100%,640px)}
+.spectre-laptop{
+  display:block; width:100%; height:auto; position:relative; z-index:2;
+  filter:drop-shadow(0 38px 50px rgba(0,0,0,.6)) drop-shadow(0 0 42px rgba(255,140,40,.22));
+  animation:spectreFloat 6s ease-in-out infinite;
+}
+@keyframes spectreFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.spectre-stage__shadow{
+  position:absolute; left:50%; bottom:-3%; transform:translateX(-50%); z-index:1;
+  width:62%; height:6%; border-radius:50%; filter:blur(9px);
+  background:radial-gradient(ellipse, rgba(0,0,0,.55), transparent 70%);
+  animation:spectreShadow 6s ease-in-out infinite;
+}
+@keyframes spectreShadow{0%,100%{opacity:.55;transform:translateX(-50%) scale(1)}50%{opacity:.4;transform:translateX(-50%) scale(.92)}}
+.spectre-price{
+  position:absolute; left:-3%; bottom:5%; z-index:3; width:min(70%,248px);
+  padding:1.05rem 1.15rem; border-radius:18px; border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(180deg,rgba(28,34,48,.93),rgba(17,21,32,.93));
+  box-shadow:0 24px 60px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+}
+.spectre-price__top{display:flex; align-items:center; gap:.4rem; font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; color:#9aa6b4; margin-bottom:.35rem}
+.spectre-price__top .material-symbols-outlined{font-size:1rem; color:var(--amber)}
+.spectre-price__amount{font-family:var(--font-display); font-weight:800; font-size:2.55rem; line-height:1; background:linear-gradient(120deg,var(--amber-lite),var(--amber-deep)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+.spectre-price__sub{font-size:.73rem; color:#7e8a99; margin-top:.28rem}
+.spectre-price__perks{list-style:none; margin:.8rem 0 0; padding:.8rem 0 0; border-top:1px solid rgba(255,255,255,.08); display:grid; gap:.45rem}
+.spectre-price__perks li{display:flex; align-items:center; gap:.5rem; font-size:.8rem; color:#c2cbd6}
+.spectre-price__perks .material-symbols-outlined{font-size:.95rem; color:var(--color-green); flex-shrink:0; font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 20}
+.spectre-badge{
+  position:absolute; top:1%; right:-1%; z-index:3; display:inline-flex; align-items:center; gap:.45rem;
+  padding:.5rem .85rem; border-radius:999px; border:1px solid rgba(255,158,61,.32);
+  background:rgba(26,18,9,.72); color:#ffd9a8; font-size:.78rem; font-weight:600;
+  box-shadow:0 10px 30px rgba(0,0,0,.4); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  animation:spectreFloat 6s ease-in-out infinite; animation-delay:-3s;
+}
+.spectre-badge .material-symbols-outlined{font-size:1rem; color:var(--amber); font-variation-settings:'FILL' 1}
+.spectre-anim{opacity:0; transform:translateY(18px); animation:spectreIn .8s cubic-bezier(.2,.7,.3,1) forwards}
+.spectre-anim.d1{animation-delay:.05s}.spectre-anim.d2{animation-delay:.15s}.spectre-anim.d3{animation-delay:.25s}.spectre-anim.d4{animation-delay:.35s}.spectre-anim.d5{animation-delay:.45s}
+@keyframes spectreIn{to{opacity:1; transform:none}}
+.spectre-stage{opacity:0; animation:spectreStageIn 1s .2s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes spectreStageIn{to{opacity:1}}
+@media (max-width:900px){
+  .spectre-hero__inner{grid-template-columns:1fr; gap:2.25rem}
+  .spectre-stage__inner{width:min(100%,470px)}
+  .spectre-price{position:static; width:100%; left:auto; bottom:auto; margin-top:1.2rem}
+  .spectre-badge{right:1%; top:0}
+}
+@media (max-width:560px){
+  .spectre-badge{display:none}
+  .spectre-highlights{grid-template-columns:1fr; gap:.45rem}
+  .spectre-actions{flex-direction:column}
+  .spectre-actions .btn{width:100%; justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .spectre-laptop,.spectre-badge,.spectre-hero__ember,.spectre-stage__shadow{animation:none!important}
+  .spectre-anim,.spectre-stage{opacity:1!important; transform:none!important; animation:none!important}
+}
+</style>
+<section class="section spectre-hero">
+<div aria-hidden="true" class="spectre-hero__tex"></div>
+<div aria-hidden="true" class="spectre-hero__ember"></div>
 <div class="container">
-<div class="lp-hero-inner">
-<div class="lp-hero-text">
-<div class="section-eyebrow">Laptop &amp; PC Repair</div>
-<h1 class="hero-headline" style="margin-bottom: var(--space-lg);">Laptop and PC Repair in Hailey, Idaho</h1>
-<p class="hero-sub">
+<div class="spectre-hero__inner">
+<div class="spectre-copy">
+<div class="spectre-eyebrow spectre-anim d1">Laptop &amp; PC Repair</div>
+<h1 class="hero-headline spectre-title spectre-anim d2">Laptop and PC <span class="spectre-accent">Repair</span> in Hailey, Idaho</h1>
+<p class="spectre-sub spectre-anim d3">
             MacBook, Windows, Chromebook — screen repairs, SSD upgrades, virus removal, and everything in between.
             Serving <strong>Hailey, Ketchum, Sun Valley</strong>, and all of Idaho via mail-in.
           </p>
-<div class="lp-hero-highlights">
-<div class="lp-highlight">
+<div class="spectre-highlights spectre-anim d4">
+<div class="spectre-hl">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="schedule"></span>
 <span>Same-day most repairs</span>
 </div>
-<div class="lp-highlight">
+<div class="spectre-hl">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="verified"></span>
 <span>40-day warranty</span>
 </div>
-<div class="lp-highlight">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="money_off"></span>
+<div class="spectre-hl">
+<span aria-hidden="true" class="material-symbols-outlined" data-icon="biotech"></span>
 <span>Thorough diagnosis included</span>
 </div>
-<div class="lp-highlight">
+<div class="spectre-hl">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop_mac"></span>
 <span>Mac &amp; Windows</span>
 </div>
 </div>
-<div class="hero-actions">
+<div class="spectre-actions spectre-anim d5">
 <a class="btn btn-primary btn-lg" href="sms:+12084501606">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>
               Text for a Quote
@@ -456,20 +571,26 @@ a{color:inherit;text-decoration:none}
             </a>
 </div>
 </div>
-<div class="lp-hero-visual" data-animate="">
-<div class="lp-price-card">
-<div class="lp-price-card-header">
+<div class="spectre-stage">
+<div class="spectre-stage__inner">
+<span class="spectre-badge" aria-hidden="true">
+<span class="material-symbols-outlined" data-icon="verified_user"></span> 40-day warranty
+            </span>
+<img class="spectre-laptop" src="assets/hero/spectre-laptop.webp" width="640" height="435" alt="HP Spectre laptop with glowing screen, repaired by Hailey Device Repair" decoding="async" fetchpriority="high"/>
+<div aria-hidden="true" class="spectre-stage__shadow"></div>
+<div class="spectre-price">
+<div class="spectre-price__top">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span>
-<span>Laptop Repairs from</span>
+<span>Repairs from</span>
 </div>
-<div class="lp-price-card-amount">$39</div>
-<div class="lp-price-card-sub">Virus removal starting price</div>
-<div class="lp-price-card-divider"></div>
-<ul class="lp-price-card-perks">
+<div class="spectre-price__amount">$39</div>
+<div class="spectre-price__sub">Virus removal starting price</div>
+<ul class="spectre-price__perks">
 <li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> MacBook &amp; Windows</li>
 <li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Hardware &amp; software</li>
 <li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Data recovery available</li>
 </ul>
+</div>
 </div>
 </div>
 </div>
