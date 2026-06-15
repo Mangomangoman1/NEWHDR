@@ -494,6 +494,41 @@ a{color:inherit;text-decoration:none}
   }
 }
 </style>
+<style id="iphone-paths-mobile">
+/* Repair paths -> compact numbered rows on phones (all copy kept, just denser) */
+@media(max-width:640px){
+  .iphone-paths-section .iphone-path-grid{gap:.55rem}
+  .iphone-paths-section .iphone-path-card{
+    display:grid;
+    grid-template-columns:1.6rem 1fr;
+    column-gap:.7rem;
+    align-items:start;
+    padding:.85rem .95rem;
+    border-radius:15px;
+  }
+  .iphone-paths-section .iphone-path-card>span{
+    grid-column:1;grid-row:1;
+    margin:0;
+    font-size:.92rem;line-height:1.25;letter-spacing:.01em;
+    opacity:.85;
+  }
+  .iphone-paths-section .iphone-path-card h3{
+    grid-column:2;grid-row:1;
+    margin:0;
+    font-size:1.02rem;line-height:1.2;
+  }
+  .iphone-paths-section .iphone-path-card p{
+    grid-column:2;grid-row:2;
+    margin:.32rem 0 0;
+    font-size:.85rem;line-height:1.45;
+  }
+  .iphone-paths-section .iphone-path-card em{
+    grid-column:2;grid-row:3;
+    margin-top:.5rem;padding-top:.5rem;
+    font-size:.75rem;line-height:1.35;
+  }
+}
+</style>
 </head>
 <body class="iphone-page">
 <nav class="nav" id="nav" role="navigation">
