@@ -1830,6 +1830,10 @@ a{color:inherit;text-decoration:none}
 .hh-btn-primary:hover::after{left:150%}
 @media(prefers-reduced-motion:reduce){.hh-btn-primary::after{transition:none;display:none}}
 </style>
+<style id="hh-cluster-tilt">
+.hh-stage{perspective:1100px}
+.hh-cluster{will-change:transform;transform-style:preserve-3d}
+</style>
 </head>
 <body class="home-page">
 <nav class="nav" id="nav" role="navigation">
@@ -3004,5 +3008,6 @@ a{color:inherit;text-decoration:none}
   if(setup()) begin(); else window.addEventListener('load',function(){if(setup())begin();});
 })();
 </script>
+<script id="hh-cluster-tilt-js">(function(){var hero=document.querySelector('.hh-hero'),stage=document.querySelector('.hh-stage'),cl=document.querySelector('.hh-cluster');if(!hero||!stage||!cl)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||window.matchMedia('(max-width:1040px)').matches)return;var tx=0,ty=0,cx=0,cy=0,raf=0;function loop(){cx+=(tx-cx)*0.08;cy+=(ty-cy)*0.08;cl.style.transform='rotateY('+(cx*5).toFixed(2)+'deg) rotateX('+(-cy*4).toFixed(2)+'deg) translateZ(0)';if(Math.abs(tx-cx)>0.001||Math.abs(ty-cy)>0.001){raf=requestAnimationFrame(loop);}else{raf=0;}}function kick(){if(!raf)raf=requestAnimationFrame(loop);}hero.addEventListener('mousemove',function(e){var r=stage.getBoundingClientRect();tx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/r.width));ty=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/r.height));kick();},{passive:true});hero.addEventListener('mouseleave',function(){tx=0;ty=0;kick();});})();</script>
 </body>
 </html>
