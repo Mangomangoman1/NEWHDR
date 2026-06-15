@@ -177,6 +177,20 @@ body.bench-tips-page::after{opacity:.10!important}
 @media(max-width:560px){.lbd-signs{grid-template-columns:1fr}.lbd-h1{font-size:clamp(2.6rem,12vw,3.4rem)}.lbd-wrap{padding:0 1.1rem}}
 @media(prefers-reduced-motion:reduce){.lbd-ring.dot{animation:none}}
 </style>
+<style id="lbd-entrance">
+@keyframes lbdRise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@keyframes lbdFade{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+.lbd-left>*{animation:lbdRise .7s cubic-bezier(.2,.7,.2,1) both}
+.lbd-left>*:nth-child(1){animation-delay:.05s}
+.lbd-left>*:nth-child(2){animation-delay:.13s}
+.lbd-left>*:nth-child(3){animation-delay:.22s}
+.lbd-left>*:nth-child(4){animation-delay:.31s}
+.lbd-left>*:nth-child(5){animation-delay:.4s}
+.lbd-left>*:nth-child(6){animation-delay:.5s}
+.lbd-left>*:nth-child(7){animation-delay:.6s}
+.lbd-stage{animation:lbdFade 1s ease both;animation-delay:.22s}
+@media(prefers-reduced-motion:reduce){.lbd-left>*,.lbd-stage{animation:none!important}}
+</style>
 </head><body class="bench-tips-page">
 <nav class="nav" id="nav" role="navigation">
 <div class="nav-inner">
