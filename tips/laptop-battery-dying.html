@@ -164,7 +164,8 @@ body.bench-tips-page::after{opacity:.10!important}
 
 .lbd-connectors{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}.lbd-connectors line{stroke:rgba(146,167,255,.4);stroke-width:1;vector-effect:non-scaling-stroke}.lbd-dot{position:absolute;width:7px;height:7px;border-radius:50%;background:#9aa7ff;box-shadow:0 0 9px rgba(146,167,255,.85);z-index:3;transform:translate(-50%,-50%)}.lbd-dot.d1{left:40%;top:27%}.lbd-dot.d2{left:58%;top:42%}.lbd-dot.d3{left:40%;top:55%}.lbd-dot.d4{left:49%;top:66%}
 @media(max-width:1040px){
-  .lbd-hero-grid{grid-template-columns:1fr;gap:1.4rem}
+  .lbd-hero-grid{grid-template-columns:minmax(0,1fr);gap:1.4rem}
+  .lbd-left{min-width:0}
   .lbd-stage{min-height:0;margin-top:.5rem;padding-bottom:1rem}
   .lbd-laptop{width:min(86%,460px)}
   .lbd-callout,.lbd-connectors,.lbd-dot{display:none}
