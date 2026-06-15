@@ -1806,6 +1806,18 @@ a{color:inherit;text-decoration:none}
 }
 </style>
 <style id="hh-title-fraunces">.hh-title{font-family:'Fraunces','Georgia',serif!important;font-weight:600!important;font-optical-sizing:auto;font-variation-settings:'opsz' 144;letter-spacing:-.012em!important;line-height:1.0!important}.hh-title .hh-accent{font-style:italic;font-weight:500!important;letter-spacing:-.005em}</style>
+<style id="hh-svc-fx">
+.hh-svc{position:relative;transition:background .25s ease}
+.hh-svc::before{content:"";position:absolute;top:0;left:.6rem;right:.6rem;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#6f8cff,#8bd3ff,transparent);opacity:0;transform:scaleX(.35);transform-origin:center;transition:opacity .3s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
+.hh-svc:hover{background:linear-gradient(180deg,rgba(96,128,240,.11),rgba(96,128,240,.03))}
+.hh-svc:hover::before{opacity:.95;transform:scaleX(1)}
+.hh-svc .ic{transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .25s,background .25s,box-shadow .3s,color .25s}
+.hh-svc:hover .ic{transform:translateY(-2px) scale(1.06);border-color:rgba(122,150,255,.6);background:rgba(96,128,240,.17);color:#bcd0ff;box-shadow:0 8px 22px rgba(96,128,240,.28)}
+.hh-svc .arr{display:inline-flex;transition:transform .3s cubic-bezier(.2,.7,.2,1),color .25s}
+.hh-svc:hover .arr{transform:translateX(5px);color:#9db4ff}
+.hh-svc h3{transition:color .25s}.hh-svc:hover h3{color:#fff}
+@media(prefers-reduced-motion:reduce){.hh-svc::before,.hh-svc .ic,.hh-svc .arr{transition:none!important}}
+</style>
 </head>
 <body class="home-page">
 <nav class="nav" id="nav" role="navigation">
