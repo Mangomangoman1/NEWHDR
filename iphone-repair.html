@@ -435,6 +435,65 @@ a{color:inherit;text-decoration:none}
   .iphone-visual-caption{margin-top:.7rem!important}
 }
 </style>
+<style id="iphone-menu-mobile">
+/* Pricing "menu" -> scannable menu-row cards on phones (layout only; prices unchanged, all copy kept in DOM) */
+@media(max-width:640px){
+  .iphone-menu-section .iphone-price-board{gap:.6rem}
+  .iphone-menu-section .iphone-price-card{
+    display:grid;
+    grid-template-columns:1fr auto;
+    column-gap:.8rem;
+    align-items:start;
+    padding:.95rem 1rem;
+    border-radius:18px;
+  }
+  .iphone-menu-section .iphone-price-card.is-featured::before{border-radius:19px}
+  .iphone-menu-section .iphone-price-kicker{
+    grid-column:1/-1;
+    margin-bottom:.4rem;
+    padding:.16rem .48rem;
+    font-size:.56rem;
+  }
+  .iphone-menu-section .iphone-price-card h3{
+    grid-column:1;grid-row:2;
+    margin:0;
+    font-size:1.06rem;
+    align-self:center;
+  }
+  .iphone-menu-section .iphone-price-line{
+    grid-column:2;grid-row:2;
+    margin:0;
+    justify-items:end;
+    text-align:right;
+  }
+  .iphone-menu-section .iphone-price-line strong{font-size:1.2rem;white-space:nowrap}
+  .iphone-menu-section .iphone-price-line span{font-size:.66rem;line-height:1.25;max-width:8.5rem}
+  .iphone-menu-section .iphone-price-card p{
+    grid-column:1/-1;
+    margin:.55rem 0 0;
+    font-size:.85rem;line-height:1.5;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .iphone-menu-section .iphone-price-card ul{
+    grid-column:1/-1;
+    margin-top:.55rem;
+    padding-left:0;
+    list-style:none;
+    gap:.3rem;
+    font-size:.76rem;
+  }
+  .iphone-menu-section .iphone-price-card li{
+    position:relative;
+    padding-left:1.05rem;
+    line-height:1.35;
+  }
+  .iphone-menu-section .iphone-price-card li::before{
+    content:'';position:absolute;left:.18rem;top:.52em;
+    width:5px;height:5px;border-radius:50%;
+    background:var(--iphone-blue,#6aa8ff);
+  }
+}
+</style>
 </head>
 <body class="iphone-page">
 <nav class="nav" id="nav" role="navigation">
