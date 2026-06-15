@@ -5260,7 +5260,7 @@ button[type="submit"]:disabled {
 /* LP Symptom Cards (Laptop "Sound familiar?") */
 .symptoms-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-lg);
   max-width: 960px;
   margin: 0 auto;
@@ -5300,7 +5300,7 @@ button[type="submit"]:disabled {
 
 @media (max-width: 900px) {
   .symptoms-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (max-width: 640px) {
