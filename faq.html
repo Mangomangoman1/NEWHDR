@@ -550,6 +550,16 @@ a{color:inherit;text-decoration:none}
 </style>
 <!-- HDR sitewide H1/title font split -->
 <style id="hdr-h1-title-font-split">h2,h3,h4,h5,h6,.section-title,.card-title,.sel-title,.service-card-title,.diag-title,.pricing-card-service,.footer-brand-name,.page-curtain-logo,.article h2,.article h3{font-family:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif!important}h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{font-family:'MuseoModerno','Fraunces','Inter',sans-serif!important;font-weight:600!important;letter-spacing:-0.02em;line-height:1.0}.hero-headline{margin-bottom:1.75rem!important}@media(max-width:480px){h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{line-height:.9}}</style>
+<style id="faq-acc-fx">
+.faq-hub-item summary{list-style:none;cursor:pointer;position:relative;padding-right:2rem;transition:color .2s ease}
+.faq-hub-item summary::-webkit-details-marker{display:none}
+.faq-hub-item summary::after{content:"";position:absolute;right:.35rem;top:50%;width:8px;height:8px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:translateY(-70%) rotate(45deg);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.faq-hub-item[open] summary::after{transform:translateY(-25%) rotate(-135deg)}
+.faq-hub-item summary:hover{color:var(--accent)}
+.faq-hub-item[open] .faq-hub-answer{animation:faqReveal .34s cubic-bezier(.2,.7,.2,1)}
+@keyframes faqReveal{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.faq-hub-item summary::after{transition:none}.faq-hub-item[open] .faq-hub-answer{animation:none}}
+</style>
 </head>
 <body>
 <nav class="nav" id="nav" role="navigation">
