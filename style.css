@@ -13321,3 +13321,8 @@ html[data-theme="light"] .home-page #reviews .hdr-review-card{background:linear-
 html[data-theme="light"] .home-page #reviews .hdr-review-card blockquote{color:#26384b}
 html[data-theme="light"] .home-page #reviews .hdr-review-meta{border-top-color:rgba(36,48,63,.1)}
 html[data-theme="light"] .home-page #reviews .hdr-review-meta span{color:#647383}
+
+/* branded text selection */
+::selection{background:rgba(111,140,255,.30);color:#fff;text-shadow:none}
+::-moz-selection{background:rgba(111,140,255,.30);color:#fff;text-shadow:none}
+[data-theme="light"] ::selection{background:rgba(91,139,207,.26);color:#0b1220}
