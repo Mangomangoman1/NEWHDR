@@ -1843,6 +1843,13 @@ a{color:inherit;text-decoration:none}
 .hh-stat .dot.closed::after{display:none}
 @media(prefers-reduced-motion:reduce){.hh-stat .dot::after{display:none}}
 </style>
+<style id="hh-svc-spotlight">
+.hh-services{position:relative}
+.hh-services::before{content:"";position:absolute;inset:0;background:radial-gradient(250px circle at var(--sx,50%) var(--sy,50%),rgba(122,150,255,.15),transparent 62%);opacity:0;transition:opacity .35s ease;pointer-events:none;z-index:0}
+.hh-services:hover::before{opacity:1}
+.hh-svc{z-index:1}
+@media(prefers-reduced-motion:reduce){.hh-services::before{display:none}}
+</style>
 </head>
 <body class="home-page">
 <nav class="nav" id="nav" role="navigation">
@@ -3018,5 +3025,6 @@ a{color:inherit;text-decoration:none}
 })();
 </script>
 <script id="hh-cluster-tilt-js">(function(){var hero=document.querySelector('.hh-hero'),stage=document.querySelector('.hh-stage'),cl=document.querySelector('.hh-cluster');if(!hero||!stage||!cl)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||window.matchMedia('(max-width:1040px)').matches)return;var tx=0,ty=0,cx=0,cy=0,raf=0;function loop(){cx+=(tx-cx)*0.08;cy+=(ty-cy)*0.08;cl.style.transform='rotateY('+(cx*5).toFixed(2)+'deg) rotateX('+(-cy*4).toFixed(2)+'deg) translateZ(0)';if(Math.abs(tx-cx)>0.001||Math.abs(ty-cy)>0.001){raf=requestAnimationFrame(loop);}else{raf=0;}}function kick(){if(!raf)raf=requestAnimationFrame(loop);}hero.addEventListener('mousemove',function(e){var r=stage.getBoundingClientRect();tx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/r.width));ty=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/r.height));kick();},{passive:true});hero.addEventListener('mouseleave',function(){tx=0;ty=0;kick();});})();</script>
+<script id="hh-svc-spotlight-js">(function(){var g=document.querySelector('.hh-services');if(!g)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;g.addEventListener('mousemove',function(e){var r=g.getBoundingClientRect();g.style.setProperty('--sx',(e.clientX-r.left).toFixed(0)+'px');g.style.setProperty('--sy',(e.clientY-r.top).toFixed(0)+'px');},{passive:true});})();</script>
 </body>
 </html>
