@@ -331,6 +331,52 @@
 </style>
 <!-- HDR sitewide H1/title font split -->
 <style id="hdr-h1-title-font-split">h2,h3,h4,h5,h6,.section-title,.card-title,.sel-title,.service-card-title,.diag-title,.pricing-card-service,.footer-brand-name,.page-curtain-logo,.article h2,.article h3{font-family:'MuseoModerno','Fraunces','Plus Jakarta Sans','Inter',serif!important}h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{font-family:'Darker Grotesque','MuseoModerno','Inter',sans-serif!important;font-weight:900!important;letter-spacing:-0.045em;line-height:.92}.hero-headline{margin-bottom:1.75rem!important}@media(max-width:480px){h1,.hero-headline,.page-title,.lp-hero-title,.repair-hero-title,.article-hero h1,.guide-hero h1,.article h1{line-height:.9}}</style>
+<style id="vr-hero-css">
+.vr-hero{position:relative;overflow:hidden;padding:5.4rem 0 4rem;background:radial-gradient(48% 52% at 80% 26%,rgba(91,140,255,.15),transparent 60%),radial-gradient(38% 42% at 78% 60%,rgba(112,214,138,.08),transparent 60%),linear-gradient(180deg,#0a0e17,#0b0f18 70%,#0d1117)}
+.vr-wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+.vr-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:2.4rem;align-items:center}
+.vr-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(113,132,255,.1);border:1px solid rgba(113,132,255,.28);border-radius:100px;padding:.4rem .9rem;font-size:.8rem;color:#aeb8ff;margin-bottom:1.4rem}
+.vr-badge .dot{width:7px;height:7px;border-radius:50%;background:#f4b35e;box-shadow:0 0 10px rgba(244,179,94,.8);animation:vrpulse 2.2s infinite}
+.vr-title{font-family:'MuseoModerno','Fraunces',sans-serif!important;font-weight:600!important;font-size:clamp(2.3rem,4.4vw,3.7rem)!important;line-height:1.04!important;letter-spacing:-.02em!important;color:#fff;margin:0 0 1.1rem}
+.vr-title .grad{background:linear-gradient(100deg,#6f8cff,#8bd3ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.vr-sub{font-size:clamp(1rem,1.5vw,1.12rem);color:#aab3c2;line-height:1.7;max-width:35rem;margin:0 0 1.7rem}
+.vr-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1.5rem}
+.vr-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.25rem;border-radius:13px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .18s,filter .18s,border-color .18s}
+.vr-btn .material-symbols-outlined{font-size:1.15rem}
+.vr-btn-primary{background:linear-gradient(180deg,#7d8cff,#5a63e8);color:#fff;box-shadow:0 12px 30px rgba(90,99,232,.34);border:1px solid rgba(160,170,255,.4)}
+.vr-btn-primary:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.vr-btn-ghost{background:rgba(255,255,255,.04);color:#e9edf5;border:1px solid rgba(255,255,255,.14)}
+.vr-btn-ghost:hover{border-color:rgba(113,132,255,.5);transform:translateY(-1px)}
+.vr-trust{display:grid;gap:.55rem}
+.vr-trust-item{display:flex;align-items:center;gap:.5rem;font-size:.86rem;color:#9aa3b3}
+.vr-trust-item .material-symbols-outlined{font-size:1.05rem;color:#70d68a}
+.vr-right{display:flex;justify-content:center}
+.vr-card{position:relative;width:100%;max-width:420px;background:linear-gradient(180deg,rgba(18,24,36,.92),rgba(11,15,23,.94));border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:1.3rem;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.vr-card::before{content:"";position:absolute;inset:0;border-radius:22px;padding:1px;background:linear-gradient(135deg,rgba(112,214,138,.4),transparent 42%,rgba(113,132,255,.3));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.6}
+.vr-sc-head{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem}
+.vr-sc-head .led{width:8px;height:8px;border-radius:50%;background:#70d68a;box-shadow:0 0 10px rgba(112,214,138,.9);animation:vrpulse 1.8s infinite}
+.vr-sc-head .lab{font-family:ui-monospace,Menlo,monospace;font-size:.7rem;letter-spacing:.16em;color:#8b95a6;font-weight:700}
+.vr-sc-head .material-symbols-outlined{margin-left:auto;color:#70d68a;font-size:1.2rem}
+.vr-radar{position:relative;width:148px;height:148px;margin:.2rem auto 1.1rem;border-radius:50%;overflow:hidden;background:radial-gradient(circle,rgba(112,214,138,.05),transparent 72%);border:1px solid rgba(112,214,138,.2)}
+.vr-radar::before{content:"";position:absolute;inset:0;background:conic-gradient(from 0deg,rgba(112,214,138,.30),transparent 28%);animation:vrsweep 3.4s linear infinite}
+.vr-ring{position:absolute;border-radius:50%;border:1px solid rgba(112,214,138,.13);top:50%;left:50%;transform:translate(-50%,-50%)}
+.vr-ring.a{width:62%;height:62%}.vr-ring.b{width:30%;height:30%}
+.vr-radar .core{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8ee0a6;font-size:2.5rem;filter:drop-shadow(0 0 10px rgba(112,214,138,.55));z-index:2}
+.vr-threats{display:grid;gap:.5rem}
+.vr-threat{display:flex;align-items:center;gap:.6rem;padding:.55rem .7rem;border-radius:11px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);font-size:.84rem;color:#c4ccd8;animation:vrrow 3.6s ease-in-out infinite}
+.vr-threat:nth-child(1){animation-delay:.1s}.vr-threat:nth-child(2){animation-delay:.7s}.vr-threat:nth-child(3){animation-delay:1.3s}.vr-threat:nth-child(4){animation-delay:1.9s}
+.vr-threat .ti{font-size:1.05rem;color:#7da3ff}
+.vr-threat .name{flex:1}
+.vr-threat .st{font-family:ui-monospace,Menlo,monospace;font-size:.62rem;font-weight:700;letter-spacing:.08em;color:#70d68a;display:inline-flex;align-items:center;gap:.25rem}
+.vr-threat .st .material-symbols-outlined{font-size:.9rem}
+.vr-clean{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.9rem;padding:.6rem;border-radius:12px;background:rgba(112,214,138,.1);border:1px solid rgba(112,214,138,.28);color:#8ee0a6;font-weight:700;font-size:.84rem}
+.vr-clean .material-symbols-outlined{font-size:1.1rem}
+@keyframes vrpulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes vrsweep{to{transform:rotate(360deg)}}
+@keyframes vrrow{0%,72%{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.08)}8%,20%{background:rgba(112,214,138,.1);border-color:rgba(112,214,138,.32)}}
+@media(max-width:900px){.vr-grid{grid-template-columns:1fr;gap:1.6rem}.vr-card{max-width:380px}}
+@media(prefers-reduced-motion:reduce){.vr-badge .dot,.vr-sc-head .led,.vr-radar::before,.vr-threat{animation:none!important}}
+</style>
 </head>
 <body>
 <nav class="nav" id="nav" role="navigation">
@@ -408,35 +454,7 @@
 
 
 
-<section class="hero">
-<div class="container">
-<div class="hero-content">
-<div class="hero-badge">
-<span class="hero-badge-dot"></span>
-          Pop-ups, fake alerts, redirects, and browser junk
-        </div>
-<h1 class="hero-headline">Virus and Malware Removal in Hailey, Idaho</h1>
-<p class="hero-sub">
-          If your computer suddenly feels unsafe, keeps opening weird tabs, or throws fake Microsoft warnings, I’ll figure out whether it’s real malware, browser junk, or a bigger Windows problem — then clean it up without loading your machine with more junk software. Serving Hailey, Ketchum, Sun Valley, and Bellevue, with remote help available for many cases.
-        </p>
-<div class="hero-cta">
-<a class="btn btn-primary btn-lg" href="sms:+12084501606">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
-            Text Me a Screenshot
-          </a>
-<a class="btn btn-ghost btn-lg" href="tel:+12084501606">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>
-            (208) 450-1606
-          </a>
-</div>
-<div class="hero-trust">
-<div class="hero-trust-item"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Same-day cleanup on many software jobs</div>
-<div class="hero-trust-item"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Remote support if it still boots and gets online</div>
-<div class="hero-trust-item"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Honest diagnosis before paid work</div>
-</div>
-</div>
-</div>
-</section>
+<section class="vr-hero" id="hero"><div class="vr-wrap"><div class="vr-grid"><div class="vr-left"><div class="vr-badge"><span class="dot"></span>Pop-ups, fake alerts, redirects, and browser junk</div><h1 class="vr-title"><span class="grad">Virus and Malware</span> Removal in Hailey, Idaho</h1><p class="vr-sub">If your computer suddenly feels unsafe, keeps opening weird tabs, or throws fake Microsoft warnings, I’ll figure out whether it’s real malware, browser junk, or a bigger Windows problem — then clean it up without loading your machine with more junk software. Serving Hailey, Ketchum, Sun Valley, and Bellevue, with remote help available for many cases.</p><div class="vr-actions"><a class="vr-btn vr-btn-primary" href="sms:+12084501606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>Text Me a Screenshot</a><a class="vr-btn vr-btn-ghost" href="tel:+12084501606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="call"></span>(208) 450-1606</a></div><div class="vr-trust"><div class="vr-trust-item"><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span>Same-day cleanup on many software jobs</div><div class="vr-trust-item"><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span>Remote support if it still boots and gets online</div><div class="vr-trust-item"><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span>Honest diagnosis before paid work</div></div></div><div class="vr-right"><div class="vr-card" aria-hidden="true"><div class="vr-sc-head"><span class="led"></span><span class="lab">SECURITY SCAN</span><span aria-hidden="true" class="material-symbols-outlined" data-icon="verified_user"></span></div><div class="vr-radar"><span class="vr-ring a"></span><span class="vr-ring b"></span><span class="core"><span aria-hidden="true" class="material-symbols-outlined" data-icon="shield"></span></span></div><div class="vr-threats"><div class="vr-threat"><span class="ti material-symbols-outlined" data-icon="ad_units"></span><span class="name">Pop-up ads &amp; redirects</span><span class="st"><span aria-hidden="true" class="material-symbols-outlined" data-icon="check"></span>CLEARED</span></div><div class="vr-threat"><span class="ti material-symbols-outlined" data-icon="warning"></span><span class="name">Fake virus alerts</span><span class="st"><span aria-hidden="true" class="material-symbols-outlined" data-icon="check"></span>CLEARED</span></div><div class="vr-threat"><span class="ti material-symbols-outlined" data-icon="travel_explore"></span><span class="name">Browser hijack</span><span class="st"><span aria-hidden="true" class="material-symbols-outlined" data-icon="check"></span>CLEARED</span></div><div class="vr-threat"><span class="ti material-symbols-outlined" data-icon="restart_alt"></span><span class="name">Malicious startup items</span><span class="st"><span aria-hidden="true" class="material-symbols-outlined" data-icon="check"></span>CLEARED</span></div></div><div class="vr-clean"><span aria-hidden="true" class="material-symbols-outlined" data-icon="verified_user"></span>System clean · no threats remaining</div></div></div></div></div></section>
 <section class="section">
 <div class="container">
 <div class="section-header" data-animate="">
