@@ -366,6 +366,19 @@
 @media(max-width:900px){.dr-grid{grid-template-columns:1fr;gap:1.6rem}.dr-console{max-width:380px}}
 @media(prefers-reduced-motion:reduce){.dr-badge .dot,.dr-con-head .led,.dr-scan,.dr-bar span,.dr-cat{animation:none!important}.dr-bar span{width:80%}}
 </style>
+<style id="dr-entrance">
+@keyframes drRise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@keyframes drFade{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+.dr-left>*{animation:drRise .7s cubic-bezier(.2,.7,.2,1) both}
+.dr-left>*:nth-child(1){animation-delay:0.05s}
+.dr-left>*:nth-child(2){animation-delay:0.14s}
+.dr-left>*:nth-child(3){animation-delay:0.22s}
+.dr-left>*:nth-child(4){animation-delay:0.30s}
+.dr-left>*:nth-child(5){animation-delay:0.39s}
+.dr-left>*:nth-child(6){animation-delay:0.48s}
+.dr-right{animation:drFade 1s ease both;animation-delay:.22s}
+@media(prefers-reduced-motion:reduce){.dr-left>*,.dr-right{animation:none!important}}
+</style>
 </head>
 <body>
 <nav class="nav" id="nav" role="navigation">

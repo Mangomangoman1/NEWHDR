@@ -377,6 +377,19 @@
 @media(max-width:900px){.vr-grid{grid-template-columns:1fr;gap:1.6rem}.vr-card{max-width:380px}}
 @media(prefers-reduced-motion:reduce){.vr-badge .dot,.vr-sc-head .led,.vr-radar::before,.vr-threat{animation:none!important}}
 </style>
+<style id="vr-entrance">
+@keyframes vrRise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@keyframes vrFade{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+.vr-left>*{animation:vrRise .7s cubic-bezier(.2,.7,.2,1) both}
+.vr-left>*:nth-child(1){animation-delay:0.05s}
+.vr-left>*:nth-child(2){animation-delay:0.14s}
+.vr-left>*:nth-child(3){animation-delay:0.22s}
+.vr-left>*:nth-child(4){animation-delay:0.30s}
+.vr-left>*:nth-child(5){animation-delay:0.39s}
+.vr-left>*:nth-child(6){animation-delay:0.48s}
+.vr-right{animation:vrFade 1s ease both;animation-delay:.22s}
+@media(prefers-reduced-motion:reduce){.vr-left>*,.vr-right{animation:none!important}}
+</style>
 </head>
 <body>
 <nav class="nav" id="nav" role="navigation">
