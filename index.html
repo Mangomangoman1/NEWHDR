@@ -1890,6 +1890,15 @@ a{color:inherit;text-decoration:none}
   .hdr-service-card>img{display:none!important}
 }
 </style>
+<style id="hdr-reviews-mobile">
+@media(max-width:680px){
+  .hdr-reviews-grid{display:grid!important;grid-auto-flow:column;grid-auto-columns:84%;grid-template-columns:none!important;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -1.1rem;padding:.2rem 1.1rem .8rem;scrollbar-width:none}
+  .hdr-reviews-grid::-webkit-scrollbar{display:none}
+  .hdr-reviews-grid>.hdr-review-card{scroll-snap-align:center;min-width:0;height:auto}
+  .hdr-reviews-swipe-hint{display:flex;align-items:center;justify-content:center;gap:.4rem;margin-top:.2rem;color:#7e8a99;font-size:.74rem;font-weight:600;letter-spacing:.04em}
+}
+@media(min-width:681px){.hdr-reviews-swipe-hint{display:none}}
+</style>
 </head>
 <body class="home-page">
 <nav class="nav" id="nav" role="navigation">
@@ -2537,7 +2546,7 @@ a{color:inherit;text-decoration:none}
 <div class="hdr-review-meta"><span aria-hidden="true" class="hdr-review-avatar hdr-review-avatar--peep"><svg viewBox="0 0 48 48" focusable="false"><rect width="48" height="48" fill="#553527"/><path d="M9 48c0-8.5 6.7-13 15-13s15 4.5 15 13z" fill="#f78166"/><circle cx="24" cy="20" r="10.8" fill="#b8bfc9"/><circle cx="24" cy="22.5" r="9.5" fill="#f0c39b"/><path d="M14.8 21c1.2-5 4.4-7.5 9.2-7.5s8 2.5 9.2 7.5c-2.6-2.2-5.6-3.3-9.2-3.3s-6.6 1.1-9.2 3.3z" fill="#b8bfc9"/><circle cx="20.4" cy="23" r="3.2" fill="none" stroke="#2b2330" stroke-width="1.4"/><circle cx="27.6" cy="23" r="3.2" fill="none" stroke="#2b2330" stroke-width="1.4"/><path d="M23.6 23h.8" stroke="#2b2330" stroke-width="1.4" stroke-linecap="round"/><circle cx="20.4" cy="23" r="1.3" fill="#2b2330"/><circle cx="27.6" cy="23" r="1.3" fill="#2b2330"/><path d="M21.4 28c1.5 1.5 3.7 1.5 5.2 0" stroke="#2b2330" stroke-width="1.7" stroke-linecap="round" fill="none"/></svg></span><div><strong>John B.</strong><span>Google review</span></div></div>
 </article>
 </div>
-<div class="hdr-reviews-actions">
+<div class="hdr-reviews-swipe-hint" aria-hidden="true"><span class="material-symbols-outlined" data-icon="swipe">swipe</span>Swipe for more reviews</div><div class="hdr-reviews-actions">
 <a class="btn btn-outline" href="https://g.page/r/CRz04Aqd3UvPEBM" rel="noopener" target="_blank">Read all reviews on Google ↗</a>
 <a class="btn btn-primary" href="https://g.page/r/CRz04Aqd3UvPEBM/review" rel="noopener" target="_blank">Leave a review</a>
 </div>
