@@ -786,90 +786,186 @@
 </div>
 </div>
 <!-- Hero -->
-<section aria-label="MacBook repair hero" class="hero">
-<div aria-hidden="true" class="hero-bg-aura"></div>
-<div class="hero-inner">
-<div class="hero-content">
-<div class="hero-badge">
-<span class="hero-badge-dot"></span>
-            Same-day diagnostics in Hailey, Idaho
-          </div>
-<h1 class="hero-headline">MacBook Repair in <em>Hailey, Idaho</em></h1>
-<p class="hero-sub">Screen, battery, keyboard, logic board &amp; liquid damage repair for MacBook Air and MacBook Pro. Local Hailey drop-off is available by appointment, or mail it in from anywhere.</p>
-<div class="hero-actions">
-<a class="btn btn-primary btn-lg" href="tel:+12084501606">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="phone"></span>
-              Call (208) 450-1606
-            </a>
-<a class="btn btn-ghost btn-lg" href="sms:+12084501606">
+<style id="mbp-hero-css">
+.mbp-hero{
+  --mb-blue:#4f8ef7; --mb-cyan:#39c5cf; --mb-ice:#a9d4ff;
+  position:relative; overflow:hidden; isolation:isolate;
+  padding:clamp(2.4rem,5.5vw,4.6rem) 0 clamp(3rem,7vw,5.6rem);
+  background:
+    radial-gradient(118% 90% at 78% 30%, rgba(79,142,247,.20), transparent 56%),
+    radial-gradient(80% 80% at 12% 4%, rgba(57,197,207,.10), transparent 60%),
+    linear-gradient(165deg,#0a0e16 0%,#0d1117 54%,#080b12 100%);
+}
+.mbp-hero__tex{
+  position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.5;
+  background-image:radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(120% 100% at 72% 40%, #000 30%, transparent 80%);
+  mask-image:radial-gradient(120% 100% at 72% 40%, #000 30%, transparent 80%);
+}
+.mbp-hero__glow{
+  position:absolute; z-index:0; pointer-events:none;
+  top:16%; right:6%; width:min(56vw,580px); aspect-ratio:1.2;
+  background:radial-gradient(circle at 50% 50%, rgba(79,142,247,.34), rgba(57,197,207,.12) 40%, transparent 70%);
+  filter:blur(22px); animation:mbpGlow 8s ease-in-out infinite;
+}
+@keyframes mbpGlow{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+.mbp-hero__inner{
+  position:relative; z-index:2; display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  align-items:center; gap:clamp(1.5rem,4vw,3.8rem);
+}
+.mbp-copy{max-width:600px}
+.mbp-eyebrow{
+  display:inline-flex; align-items:center; gap:.55rem;
+  font-size:.74rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:#bcd8ff; margin-bottom:1.2rem;
+  padding:.42rem .8rem; border-radius:999px;
+  border:1px solid rgba(79,142,247,.28); background:rgba(79,142,247,.08);
+}
+.mbp-eyebrow .dot{width:.5rem; height:.5rem; border-radius:50%; background:var(--mb-cyan); box-shadow:0 0 10px var(--mb-cyan); animation:mbpPulse 2.4s ease-in-out infinite}
+@keyframes mbpPulse{0%,100%{opacity:1}50%{opacity:.45}}
+.mbp-title{
+  font-size:clamp(2.5rem,5.6vw,4.3rem)!important; line-height:.98!important;
+  margin:0 0 1.3rem!important; color:#f6f8fc;
+}
+.mbp-title .mbp-accent{
+  background:linear-gradient(115deg,var(--mb-ice) 0%,var(--mb-blue) 50%,var(--mb-cyan) 100%);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;
+}
+.mbp-sub{font-size:clamp(1.02rem,1.5vw,1.18rem); line-height:1.65; color:#aeb8c4; max-width:520px; margin:0 0 1.6rem}
+.mbp-sub strong{color:#e6edf3; font-weight:650}
+.mbp-pills{display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.7rem}
+.mbp-pill{display:inline-flex; align-items:center; gap:.4rem; font-size:.82rem; color:#cdd6e2; padding:.42rem .8rem; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.035)}
+.mbp-pill .material-symbols-outlined{font-size:1.05rem; color:var(--mb-cyan); font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 20}
+.mbp-actions{display:flex; gap:.85rem; flex-wrap:wrap; align-items:center}
+.mbp-actions .btn-primary{
+  background:linear-gradient(135deg,var(--mb-blue) 0%,#3b6fd4 100%); border:none; color:#fff;
+  box-shadow:0 12px 34px rgba(79,142,247,.34), inset 0 1px 0 rgba(255,255,255,.25);
+}
+.mbp-actions .btn-primary:hover{filter:brightness(1.07); transform:translateY(-2px)}
+.mbp-actions .btn-ghost{border:1px solid rgba(255,255,255,.16); color:#e6edf3; background:rgba(255,255,255,.03)}
+.mbp-reassure{display:flex; align-items:center; gap:.45rem; margin-top:1rem; font-size:.84rem; color:#8b97a6}
+.mbp-reassure .material-symbols-outlined{font-size:1.05rem; color:var(--mb-cyan)}
+
+/* stage */
+.mbp-stage{position:relative; z-index:2; display:flex; justify-content:center}
+.mbp-stage__inner{position:relative; width:min(100%,620px)}
+.mbp-laptop{
+  display:block; width:100%; height:auto; position:relative; z-index:2;
+  filter:drop-shadow(0 40px 55px rgba(0,0,0,.62)) drop-shadow(0 0 44px rgba(79,142,247,.24));
+  animation:mbpFloat 6.5s ease-in-out infinite;
+}
+@keyframes mbpFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+.mbp-stage__shadow{
+  position:absolute; left:50%; bottom:-2%; transform:translateX(-50%); z-index:1;
+  width:66%; height:6%; border-radius:50%; filter:blur(10px);
+  background:radial-gradient(ellipse, rgba(0,0,0,.58), transparent 70%);
+  animation:mbpShadow 6.5s ease-in-out infinite;
+}
+@keyframes mbpShadow{0%,100%{opacity:.55;transform:translateX(-50%) scale(1)}50%{opacity:.4;transform:translateX(-50%) scale(.92)}}
+.mbp-rating{
+  position:absolute; top:4%; right:-2%; z-index:3;
+  display:flex; flex-direction:column; gap:.15rem; align-items:flex-start;
+  padding:.6rem .9rem; border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(180deg,rgba(28,34,48,.94),rgba(17,21,32,.94));
+  box-shadow:0 18px 44px rgba(0,0,0,.46), inset 0 1px 0 rgba(255,255,255,.07);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  animation:mbpFloat 6.5s ease-in-out infinite; animation-delay:-3.2s;
+}
+.mbp-rating__stars{color:#ffc83d; font-size:.82rem; letter-spacing:.06em}
+.mbp-rating__txt{font-size:.74rem; color:#9aa6b4}
+.mbp-rating__txt b{color:#e6edf3; font-weight:700}
+.mbp-quote{
+  position:absolute; left:-3%; bottom:4%; z-index:3; width:min(72%,256px);
+  padding:1.05rem 1.15rem; border-radius:18px; border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(180deg,rgba(28,34,48,.93),rgba(17,21,32,.93));
+  box-shadow:0 24px 60px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+}
+.mbp-quote__top{display:flex; align-items:center; gap:.4rem; font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; color:#9aa6b4; margin-bottom:.3rem}
+.mbp-quote__top .material-symbols-outlined{font-size:1rem; color:var(--mb-blue)}
+.mbp-quote__amount{font-family:var(--font-display); font-weight:800; font-size:2.4rem; line-height:1; background:linear-gradient(120deg,var(--mb-ice),var(--mb-blue)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+.mbp-quote__sub{font-size:.73rem; color:#7e8a99; margin-top:.28rem}
+.mbp-quote__perks{list-style:none; margin:.8rem 0 0; padding:.8rem 0 0; border-top:1px solid rgba(255,255,255,.08); display:grid; gap:.42rem}
+.mbp-quote__perks li{display:flex; align-items:center; gap:.5rem; font-size:.8rem; color:#c2cbd6}
+.mbp-quote__perks .material-symbols-outlined{font-size:.95rem; color:var(--mb-cyan); flex-shrink:0; font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 20}
+
+.mbp-anim{opacity:0; transform:translateY(18px); animation:mbpIn .8s cubic-bezier(.2,.7,.3,1) forwards}
+.mbp-anim.d1{animation-delay:.05s}.mbp-anim.d2{animation-delay:.14s}.mbp-anim.d3{animation-delay:.23s}.mbp-anim.d4{animation-delay:.32s}.mbp-anim.d5{animation-delay:.41s}
+@keyframes mbpIn{to{opacity:1; transform:none}}
+.mbp-stage{opacity:0; animation:mbpStageIn 1s .2s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes mbpStageIn{to{opacity:1}}
+
+@media (max-width:900px){
+  .mbp-hero__inner{grid-template-columns:1fr; gap:2.25rem}
+  .mbp-stage{order:2}
+  .mbp-stage__inner{width:min(100%,460px)}
+  .mbp-quote{position:static; width:100%; left:auto; bottom:auto; margin-top:1.2rem}
+  .mbp-rating{right:1%; top:1%}
+}
+@media (max-width:560px){
+  .mbp-rating{display:none}
+  .mbp-actions{flex-direction:column; align-items:stretch}
+  .mbp-actions .btn{width:100%; justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .mbp-laptop,.mbp-rating,.mbp-hero__glow,.mbp-stage__shadow,.mbp-eyebrow .dot{animation:none!important}
+  .mbp-anim,.mbp-stage{opacity:1!important; transform:none!important; animation:none!important}
+}
+</style>
+<section aria-label="MacBook repair hero" class="mbp-hero">
+<div aria-hidden="true" class="mbp-hero__tex"></div>
+<div aria-hidden="true" class="mbp-hero__glow"></div>
+<div class="container">
+<div class="mbp-hero__inner">
+<div class="mbp-copy">
+<div class="mbp-eyebrow mbp-anim d1"><span class="dot" aria-hidden="true"></span> Same-day diagnostics · Hailey, Idaho</div>
+<h1 class="hero-headline mbp-title mbp-anim d2">MacBook Repair in <span class="mbp-accent">Hailey, Idaho</span></h1>
+<p class="mbp-sub mbp-anim d3">Screen, battery, keyboard, logic board &amp; liquid damage repair for <strong>MacBook Air and MacBook Pro</strong>. Board-level work most shops send away — done locally, with a quote before anything is touched.</p>
+<div class="mbp-pills mbp-anim d3">
+<span class="mbp-pill"><span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span> 40-day warranty</span>
+<span class="mbp-pill"><span class="material-symbols-outlined" aria-hidden="true" data-icon="thumb_up"></span> No fix, no charge</span>
+<span class="mbp-pill"><span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span> Statewide mail-in</span>
+</div>
+<div class="mbp-actions mbp-anim d4">
+<a class="btn btn-primary btn-lg" href="sms:+12084501606">
 <span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
-              Text for Quote
-            </a>
+            Text for a Quote
+          </a>
+<a class="btn btn-ghost btn-lg" href="tel:+12084501606">
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="phone"></span>
+            (208) 450-1606
+          </a>
 </div>
-<p class="hero-phone">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="location_on"></span>
-            Hailey drop-off by appointment
-          </p>
+<p class="mbp-reassure mbp-anim d5">
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="lock"></span>
+          Your data stays on your machine · Hailey drop-off by appointment
+        </p>
 </div>
-<!-- Interactive MacBook X-Ray -->
-<div aria-label="Interactive MacBook diagnostic diagram" class="xray-wrap" id="xrayWrap">
-<svg aria-hidden="true" class="xray-svg" viewbox="0 0 340 440">
-<!-- MacBook body -->
-<rect fill="var(--bg-surface)" height="400" rx="18" ry="18" stroke="var(--border-strong)" stroke-width="2" width="300" x="20" y="20"></rect>
-<!-- Screen bezel -->
-<rect fill="var(--bg-base)" height="220" rx="10" ry="10" stroke="var(--border-default)" stroke-width="1.5" width="284" x="28" y="28"></rect>
-<!-- Screen area -->
-<rect fill="#14110e" height="188" rx="4" ry="4" stroke="none" width="268" x="36" y="44"></rect>
-<!-- Camera notch -->
-<rect fill="var(--bg-base)" height="10" rx="5" ry="5" width="44" x="148" y="30"></rect>
-<!-- Interactive zones -->
-<!-- Display zone -->
-<rect class="xray-zone xray-pulse" data-zone="display" height="188" id="zone-display" rx="4" style="animation-delay:0s" width="268" x="36" y="44"></rect>
-<text class="xray-label" data-zone="display" x="170" y="142">DISPLAY</text>
-<!-- Keyboard zone -->
-<rect class="xray-zone xray-pulse" data-zone="keyboard" height="100" id="zone-keyboard" rx="6" style="animation-delay:0.6s" width="260" x="40" y="260"></rect>
-<text class="xray-label" data-zone="keyboard" x="170" y="312">KEYBOARD &amp; TRACKPAD</text>
-<!-- Battery zone -->
-<rect class="xray-zone xray-pulse" data-zone="battery" height="40" id="zone-battery" rx="6" style="animation-delay:1.2s" width="180" x="40" y="368"></rect>
-<text class="xray-label" data-zone="battery" x="130" y="393">BATTERY</text>
-<!-- Ports / logic board zone -->
-<rect class="xray-zone xray-pulse" data-zone="ports" height="40" id="zone-ports" rx="6" style="animation-delay:1.8s" width="70" x="230" y="368"></rect>
-<text class="xray-label" data-zone="ports" x="265" y="393">PORTS</text>
-<!-- Scan line -->
-<line class="xray-scanline animating" x1="28" x2="312" y1="30" y2="30"></line>
-</svg>
-<div class="xray-tooltip" id="xrayTooltip" role="tooltip">
-<div class="xray-tooltip-title" id="xrayTooltipTitle"></div>
-<div class="xray-tooltip-body" id="xrayTooltipBody"></div>
+<div class="mbp-stage">
+<div class="mbp-stage__inner">
+<div class="mbp-rating" aria-hidden="true">
+<span class="mbp-rating__stars">★★★★★</span>
+<span class="mbp-rating__txt"><b>5.0</b> · Google reviews</span>
+</div>
+<img class="mbp-laptop" src="assets/hero/macbook-pro.webp" width="620" height="469" alt="Space-gray MacBook Pro repaired by Hailey Device Repair" decoding="async" fetchpriority="high"/>
+<div aria-hidden="true" class="mbp-stage__shadow"></div>
+<div class="mbp-quote">
+<div class="mbp-quote__top">
+<span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop_mac"></span>
+<span>MacBook repairs from</span>
+</div>
+<div class="mbp-quote__amount">$149</div>
+<div class="mbp-quote__sub">Quote before any work begins</div>
+<ul class="mbp-quote__perks">
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Screen · battery · keyboard</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Logic board &amp; liquid damage</li>
+<li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Free diagnostic on most repairs</li>
+</ul>
 </div>
 </div>
-</div>
-<!-- Mobile fallback cards for X-ray zones -->
-<div class="xray-mobile-cards container">
-<div class="service-grid" style="margin-top:0">
-<div class="service-card">
-<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="desktop_windows"></span></div>
-<div class="service-card-title">Display Assembly</div>
-<div class="service-card-desc">Cracked glass, dead pixels, backlight bleed, display lines, and hinge damage. Full assembly replacement available.</div>
-<div class="service-card-meta">2–4 day turnaround</div>
-</div>
-<div class="service-card">
-<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="keyboard"></span></div>
-<div class="service-card-title">Keyboard &amp; Trackpad</div>
-<div class="service-card-desc">Stuck keys, unresponsive butterfly switches, liquid spills under keys, and trackpad clicking issues.</div>
-<div class="service-card-meta">1–3 day turnaround</div>
-</div>
-<div class="service-card">
-<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="battery_charging_full"></span></div>
-<div class="service-card-title">Battery</div>
-<div class="service-card-desc">Swelling, fast drain, "service recommended" warning, and sudden shutdowns. OEM-quality cells.</div>
-<div class="service-card-meta">Same day if in stock</div>
-</div>
-<div class="service-card">
-<div class="service-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="memory"></span></div>
-<div class="service-card-title">Logic Board &amp; Ports</div>
-<div class="service-card-desc">No power, charging issues, liquid damage, failed USB-C ports, and graphics glitches. Board-level repair.</div>
-<div class="service-card-meta">2–5 day turnaround</div>
 </div>
 </div>
 </div>
@@ -977,6 +1073,88 @@
 </div>
 </div>
 </section>
+<!-- Why HDR (comparison) -->
+<style id="mbp-compare-css">
+.mbp-compare-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1.1rem; max-width:1040px; margin:0 auto; align-items:stretch}
+.mbp-cmp{
+  position:relative; display:flex; flex-direction:column;
+  padding:1.5rem 1.4rem; border-radius:var(--radius-xl);
+  border:1px solid var(--border-subtle); background:var(--bg-card);
+}
+.mbp-cmp--hdr{
+  border:1px solid rgba(79,142,247,.5);
+  background:linear-gradient(180deg, rgba(79,142,247,.10), rgba(79,142,247,.02)), var(--bg-card);
+  box-shadow:0 24px 60px rgba(79,142,247,.16);
+}
+.mbp-cmp__tag{
+  position:absolute; top:-.7rem; left:1.4rem;
+  font-size:.66rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+  color:#fff; background:linear-gradient(135deg,#4f8ef7,#3b6fd4);
+  padding:.28rem .7rem; border-radius:999px; box-shadow:0 8px 20px rgba(79,142,247,.4);
+}
+.mbp-cmp__name{font-family:var(--font-display); font-size:1.18rem; font-weight:800; color:var(--text-primary); margin-bottom:.2rem; letter-spacing:-.02em}
+.mbp-cmp__price{font-size:.84rem; color:var(--text-muted); margin-bottom:1.05rem}
+.mbp-cmp--hdr .mbp-cmp__price{color:#9cc1ff}
+.mbp-cmp__list{list-style:none; margin:0; padding:0; display:grid; gap:.7rem}
+.mbp-cmp__list li{display:flex; gap:.6rem; font-size:.88rem; line-height:1.45; color:var(--text-secondary)}
+.mbp-cmp__list .material-symbols-outlined{font-size:1.15rem; flex-shrink:0; margin-top:.05rem; font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 20}
+.mbp-cmp__list .ok{color:var(--color-green)}
+.mbp-cmp__list .no{color:#e06c6c}
+.mbp-cmp__list .meh{color:var(--text-muted)}
+.mbp-cmp__foot{margin-top:auto; padding-top:1.2rem}
+.mbp-cmp__foot .btn{width:100%; justify-content:center}
+.mbp-compare-note{max-width:1040px; margin:1.1rem auto 0; text-align:center; font-size:.8rem; color:var(--text-muted)}
+@media (max-width:860px){
+  .mbp-compare-grid{grid-template-columns:1fr; max-width:460px}
+  .mbp-cmp--hdr{order:-1}
+}
+</style>
+<section aria-labelledby="why-hdr-title" class="section">
+<div class="container">
+<div class="section-header">
+<span class="section-eyebrow">Your Options</span>
+<h2 class="section-title" id="why-hdr-title">Repair it, or replace it?</h2>
+<p class="section-sub">Most MacBook problems don't need a $1,500 replacement or a two-week mail-away. Here's how the three honest options actually compare.</p>
+</div>
+<div class="mbp-compare-grid">
+<div class="mbp-cmp" data-animate="">
+<div class="mbp-cmp__name">Apple Store</div>
+<div class="mbp-cmp__price">Out-of-warranty · premium pricing</div>
+<ul class="mbp-cmp__list">
+<li><span class="material-symbols-outlined meh" aria-hidden="true" data-icon="swap_horiz"></span> Often swaps the whole assembly, not just the broken part</li>
+<li><span class="material-symbols-outlined no" aria-hidden="true" data-icon="event"></span> Appointment required; many repairs mail away for 1–2 weeks</li>
+<li><span class="material-symbols-outlined no" aria-hidden="true" data-icon="block"></span> Won't do board-level or liquid-damage recovery</li>
+<li><span class="material-symbols-outlined meh" aria-hidden="true" data-icon="payments"></span> Screen repairs frequently run $400–$600+</li>
+</ul>
+</div>
+<div class="mbp-cmp mbp-cmp--hdr" data-animate="">
+<span class="mbp-cmp__tag">Recommended</span>
+<div class="mbp-cmp__name">Hailey Device Repair</div>
+<div class="mbp-cmp__price">From $149 · quote before any work</div>
+<ul class="mbp-cmp__list">
+<li><span class="material-symbols-outlined ok" aria-hidden="true" data-icon="check_circle"></span> Component &amp; board-level repair — I fix the actual fault</li>
+<li><span class="material-symbols-outlined ok" aria-hidden="true" data-icon="check_circle"></span> Local Hailey drop-off, same-day diagnostics, mail-in statewide</li>
+<li><span class="material-symbols-outlined ok" aria-hidden="true" data-icon="check_circle"></span> Liquid damage &amp; no-power jobs most shops send away</li>
+<li><span class="material-symbols-outlined ok" aria-hidden="true" data-icon="check_circle"></span> 40-day warranty · no fix, no charge · your data stays put</li>
+</ul>
+<div class="mbp-cmp__foot">
+<a class="btn btn-primary" href="sms:+12084501606"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span> Text for a Quote</a>
+</div>
+</div>
+<div class="mbp-cmp" data-animate="">
+<div class="mbp-cmp__name">Buy New</div>
+<div class="mbp-cmp__price">$1,000–$2,500 for a comparable Mac</div>
+<ul class="mbp-cmp__list">
+<li><span class="material-symbols-outlined no" aria-hidden="true" data-icon="payments"></span> The most expensive fix for a single failed part</li>
+<li><span class="material-symbols-outlined meh" aria-hidden="true" data-icon="sync"></span> Migrate data, reinstall apps, relearn your setup</li>
+<li><span class="material-symbols-outlined meh" aria-hidden="true" data-icon="schedule"></span> Your current Mac is often fixable for a fraction of that</li>
+<li><span class="material-symbols-outlined no" aria-hidden="true" data-icon="delete"></span> Perfectly good hardware ends up as e-waste</li>
+</ul>
+</div>
+</div>
+<p class="mbp-compare-note">Not sure which way to go? Text me the model and symptom — I'll give you a straight answer, even if that answer is "replace it."</p>
+</div>
+</section>
 <!-- Pricing -->
 <section aria-labelledby="pricing-title" class="section section--alt">
 <div class="container">
@@ -1030,6 +1208,122 @@
 <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> Ultrasonic cleaning</li>
 <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span> No fix, no charge policy</li>
 </ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<style id="mbp-trust-css">
+.mbp-reviews-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1rem; max-width:980px; margin:0 auto}
+.mbp-rev{
+  display:flex; flex-direction:column; gap:.7rem;
+  padding:1.4rem 1.5rem; border-radius:var(--radius-xl);
+  border:1px solid var(--border-subtle); background:var(--bg-card);
+}
+.mbp-rev__stars{color:#ffc83d; font-size:.92rem; letter-spacing:.08em}
+.mbp-rev__quote{font-size:.95rem; line-height:1.6; color:var(--text-primary); margin:0; font-style:normal}
+.mbp-rev__meta{display:flex; align-items:center; gap:.65rem; margin-top:.2rem}
+.mbp-rev__avatar{
+  width:2.1rem; height:2.1rem; border-radius:50%; flex-shrink:0;
+  display:grid; place-items:center; font-weight:800; font-size:.85rem; color:#fff;
+  background:linear-gradient(135deg,#4f8ef7,#39c5cf);
+}
+.mbp-rev__who{display:flex; flex-direction:column; line-height:1.25}
+.mbp-rev__who strong{font-size:.86rem; color:var(--text-primary)}
+.mbp-rev__who span{font-size:.74rem; color:var(--text-muted)}
+.mbp-reviews-badge{display:flex; align-items:center; justify-content:center; gap:.6rem; margin-bottom:1.4rem; font-size:.92rem; color:var(--text-secondary)}
+.mbp-reviews-badge strong{font-size:1.35rem; color:var(--text-primary); font-family:var(--font-display)}
+.mbp-reviews-badge .s{color:#ffc83d; letter-spacing:.06em}
+@media (max-width:720px){.mbp-reviews-grid{grid-template-columns:1fr; max-width:480px}}
+
+/* Meet Samuel */
+.mbp-tech{
+  max-width:980px; margin:0 auto; display:grid;
+  grid-template-columns:auto 1fr; gap:clamp(1.2rem,3vw,2.4rem); align-items:center;
+  padding:clamp(1.6rem,3vw,2.4rem); border-radius:var(--radius-xl);
+  border:1px solid var(--border-subtle);
+  background:linear-gradient(180deg, rgba(79,142,247,.06), transparent), var(--bg-card);
+}
+.mbp-tech__avatar{
+  position:relative; width:clamp(96px,13vw,140px); height:clamp(96px,13vw,140px); border-radius:26px;
+  display:grid; place-items:center; flex-shrink:0;
+  background:linear-gradient(140deg,#1c2230,#11151f);
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 20px 50px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.mbp-tech__monogram{font-family:var(--font-display); font-weight:800; font-size:clamp(2.4rem,5vw,3.4rem); background:linear-gradient(135deg,#a9d4ff,#4f8ef7); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+.mbp-tech__ring{position:absolute; inset:-1px; border-radius:26px; border:1px solid rgba(79,142,247,.3); pointer-events:none}
+.mbp-tech__name{font-family:var(--font-display); font-size:1.4rem; font-weight:800; color:var(--text-primary); letter-spacing:-.02em}
+.mbp-tech__role{font-size:.82rem; color:var(--mb-cyan,#39c5cf); font-weight:600; margin-bottom:.85rem}
+.mbp-tech__bio{font-size:.96rem; line-height:1.65; color:var(--text-secondary); margin:0 0 1.1rem}
+.mbp-tech__chips{display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.1rem}
+.mbp-tech__chips span{display:inline-flex; align-items:center; gap:.35rem; font-size:.78rem; color:var(--text-secondary); padding:.35rem .7rem; border-radius:999px; border:1px solid var(--border-subtle); background:var(--bg-elevated)}
+.mbp-tech__chips .material-symbols-outlined{font-size:1rem; color:#4f8ef7; font-variation-settings:'FILL' 1}
+.mbp-tech__links{display:flex; gap:.7rem; flex-wrap:wrap}
+@media (max-width:640px){
+  .mbp-tech{grid-template-columns:1fr; text-align:center; justify-items:center}
+  .mbp-tech__chips{justify-content:center}
+}
+</style>
+<section aria-labelledby="reviews-title" class="section section--alt">
+<div class="container">
+<div class="section-header">
+<span class="section-eyebrow">Reviews</span>
+<h2 class="section-title" id="reviews-title">What the Wood River Valley says</h2>
+</div>
+<div class="mbp-reviews-badge">
+<strong>5.0</strong><span class="s" aria-label="5 out of 5 stars">★★★★★</span><span>from Google reviews</span>
+</div>
+<div class="mbp-reviews-grid">
+<article class="mbp-rev" data-animate="">
+<span class="mbp-rev__stars" aria-label="5 out of 5 stars">★★★★★</span>
+<blockquote class="mbp-rev__quote">“Sam was absolutely amazing. He was diligent, friendly, professional, and incredibly quick with the repair. He took the time to explain everything… It's hard to find customer service this good these days. 10/10.”</blockquote>
+<div class="mbp-rev__meta"><span class="mbp-rev__avatar" aria-hidden="true">S</span><div class="mbp-rev__who"><strong>Sarah M.</strong><span>Google review</span></div></div>
+</article>
+<article class="mbp-rev" data-animate="">
+<span class="mbp-rev__stars" aria-label="5 out of 5 stars">★★★★★</span>
+<blockquote class="mbp-rev__quote">“Samuel was professional and gave me a very competitive price with the added benefit of being right here in the Wood River Valley. He was responsive, even after I had unrelated issues with my phone. I would highly recommend.”</blockquote>
+<div class="mbp-rev__meta"><span class="mbp-rev__avatar" aria-hidden="true">A</span><div class="mbp-rev__who"><strong>Aimee P.</strong><span>Google review</span></div></div>
+</article>
+<article class="mbp-rev" data-animate="">
+<span class="mbp-rev__stars" aria-label="5 out of 5 stars">★★★★★</span>
+<blockquote class="mbp-rev__quote">“Sam has worked on my computer, and phone. I was well pleased with both jobs. He works fast, and at a reasonable rate. He is guaranteed my repeat business.”</blockquote>
+<div class="mbp-rev__meta"><span class="mbp-rev__avatar" aria-hidden="true">J</span><div class="mbp-rev__who"><strong>John B.</strong><span>Google review</span></div></div>
+</article>
+<article class="mbp-rev" data-animate="">
+<span class="mbp-rev__stars" aria-label="5 out of 5 stars">★★★★★</span>
+<blockquote class="mbp-rev__quote">“I recently had my screen replaced here. The service from beginning to end was exceptional and quick. In a day of scams and ripoffs, it's refreshing to get quality service at a reasonable price… Hailey Device Repair is THE place to go!”</blockquote>
+<div class="mbp-rev__meta"><span class="mbp-rev__avatar" aria-hidden="true">A</span><div class="mbp-rev__who"><strong>Ari S.</strong><span>Google review</span></div></div>
+</article>
+</div>
+</div>
+</section>
+<!-- Meet Samuel -->
+<section aria-labelledby="tech-title" class="section">
+<div class="container">
+<div class="section-header">
+<span class="section-eyebrow">Your Technician</span>
+<h2 class="section-title" id="tech-title">One person. My name on the bench.</h2>
+</div>
+<div class="mbp-tech" data-animate="">
+<div class="mbp-tech__avatar">
+<span class="mbp-tech__monogram" aria-hidden="true">S</span>
+<span class="mbp-tech__ring" aria-hidden="true"></span>
+</div>
+<div>
+<div class="mbp-tech__name">Samuel Torres</div>
+<div class="mbp-tech__role">Owner &amp; technician · Hailey, Idaho</div>
+<p class="mbp-tech__bio">I'm Samuel, the one-person operation behind Hailey Device Repair. No call center, no mystery counter, no handoff chain — just careful diagnosis, clear quotes, and repair work I'm willing to put my name on. When you text, you're texting the person who actually fixes your MacBook.</p>
+<div class="mbp-tech__chips">
+<span><span class="material-symbols-outlined" aria-hidden="true" data-icon="memory"></span> Board-level repair</span>
+<span><span class="material-symbols-outlined" aria-hidden="true" data-icon="lock"></span> Your data stays local</span>
+<span><span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span> 40-day warranty</span>
+<span><span class="material-symbols-outlined" aria-hidden="true" data-icon="thumb_up"></span> No fix, no charge</span>
+</div>
+<div class="mbp-tech__links">
+<a class="btn btn-primary" href="sms:+12084501606"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span> Text Samuel</a>
+<a class="btn btn-outline" href="/about">More about HDR</a>
+</div>
 </div>
 </div>
 </div>
@@ -1285,64 +1579,7 @@
       });
     });
 
-    // X-Ray interactive zones
-    const zoneData={
-      display:{title:'Display Assembly',body:'Cracked glass, dead pixels, backlight bleed, display lines, and hinge damage. Full assembly replacement available for MacBook Air and Pro models.'},
-      keyboard:{title:'Keyboard & Trackpad',body:'Stuck keys, unresponsive butterfly switches, liquid spills under keys, and trackpad clicking issues. Top case or individual key repair.'},
-      battery:{title:'Battery',body:'Swelling, fast drain, "service recommended" warning, and sudden shutdowns. OEM-quality cells with cycle count calibration.'},
-      ports:{title:'Logic Board & Ports',body:'No power, charging issues, failed USB-C ports, and graphics glitches. Board-level diagnostics and component repair.'}
-    };
-    const tooltip=document.getElementById('xrayTooltip');
-    const ttTitle=document.getElementById('xrayTooltipTitle');
-    const ttBody=document.getElementById('xrayTooltipBody');
-    let activeZone=null;
-    document.querySelectorAll('.xray-zone').forEach(zone=>{
-      zone.addEventListener('mouseenter',(e)=>{
-        const key=zone.getAttribute('data-zone');
-        const data=zoneData[key];
-        if(!data)return;
-        ttTitle.textContent=data.title;
-        ttBody.textContent=data.body;
-        tooltip.classList.add('visible');
-        zone.classList.add('active');
-        activeZone=zone;
-      });
-      zone.addEventListener('mouseleave',()=>{
-        tooltip.classList.remove('visible');
-        zone.classList.remove('active');
-        activeZone=null;
-      });
-      zone.addEventListener('click',(e)=>{
-        e.stopPropagation();
-        const key=zone.getAttribute('data-zone');
-        const data=zoneData[key];
-        if(!data)return;
-        ttTitle.textContent=data.title;
-        ttBody.textContent=data.body;
-        tooltip.classList.add('visible');
-        document.querySelectorAll('.xray-zone').forEach(z=>z.classList.remove('active'));
-        zone.classList.add('active');
-        activeZone=zone;
-      });
-    });
-    document.addEventListener('click',()=>{tooltip.classList.remove('visible');document.querySelectorAll('.xray-zone').forEach(z=>z.classList.remove('active'));activeZone=null;});
-
-    // Position tooltip near zone on desktop
-    const xrayWrap=document.getElementById('xrayWrap');
-    if(xrayWrap){
-      xrayWrap.addEventListener('mousemove',(e)=>{
-        if(!activeZone)return;
-        const rect=xrayWrap.getBoundingClientRect();
-        const x=e.clientX-rect.left;
-        const y=e.clientY-rect.top;
-        let tx=x+16,ty=y+16;
-        if(tx+260>rect.width)tx=x-276;
-        if(ty+120>rect.height)ty=y-130;
-        tooltip.style.left=tx+'px';
-        tooltip.style.top=ty+'px';
-      });
-    }
-  </script>
+</script>
 
 
 
