@@ -775,27 +775,18 @@
 
 
 <main id="main">
-<!-- Breadcrumb -->
-<div class="breadcrumb-bar">
-<div class="container">
-<nav aria-label="Breadcrumb" class="breadcrumb">
-<a href="/">Home</a>
-<span aria-hidden="true" class="breadcrumb-sep">/</span>
-<span aria-current="page">MacBook Repair</span>
-</nav>
-</div>
-</div>
-<!-- Hero -->
+<!-- Hero (breadcrumb lives inside, on the hero background) -->
 <style id="mbp-hero-css">
 .mbp-hero{
   --mb-blue:#4f8ef7; --mb-cyan:#39c5cf; --mb-ice:#a9d4ff;
   position:relative; overflow:hidden; isolation:isolate;
-  padding:clamp(2.4rem,5.5vw,4.6rem) 0 clamp(3rem,7vw,5.6rem);
+  padding:clamp(1.1rem,2.5vw,1.9rem) 0 clamp(3rem,7vw,5.6rem);
   background:
     radial-gradient(118% 90% at 78% 30%, rgba(79,142,247,.20), transparent 56%),
     radial-gradient(80% 80% at 12% 4%, rgba(57,197,207,.10), transparent 60%),
     linear-gradient(165deg,#0a0e16 0%,#0d1117 54%,#080b12 100%);
 }
+.mbp-hero__crumb{position:relative; z-index:2; margin-bottom:clamp(1.4rem,3.5vw,2.4rem); font-size:.85rem}
 .mbp-hero__tex{
   position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.5;
   background-image:radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
@@ -919,6 +910,11 @@
 <div aria-hidden="true" class="mbp-hero__tex"></div>
 <div aria-hidden="true" class="mbp-hero__glow"></div>
 <div class="container">
+<nav aria-label="Breadcrumb" class="breadcrumb mbp-hero__crumb">
+<a href="/">Home</a>
+<span aria-hidden="true" class="breadcrumb-sep">/</span>
+<span aria-current="page">MacBook Repair</span>
+</nav>
 <div class="mbp-hero__inner">
 <div class="mbp-copy">
 <div class="mbp-eyebrow mbp-anim d1"><span class="dot" aria-hidden="true"></span> Same-day diagnostics · Hailey, Idaho</div>
