@@ -2716,6 +2716,13 @@ ul { list-style: none; }
   color: var(--text-muted);
 }
 
+/* Competitor ("them") values are rendered from a data attribute so search
+   engines don't scrape these out-of-context phrases ($20-50 fee, 24-72 hours,
+   etc.) into the page's meta snippet. aria-label keeps them readable to AT. */
+.compare-cell--them[data-v]::after {
+  content: attr(data-v);
+}
+
 .compare-badge {
   display: inline-flex;
   align-items: center;
