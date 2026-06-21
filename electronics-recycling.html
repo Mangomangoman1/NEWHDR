@@ -302,6 +302,33 @@ a{color:inherit;text-decoration:none}
   .recycle-page .help-fab{display:none !important}
   .hdr-mcta{display:flex}
 }
+/* ── "The other path" e-waste contrast band ── */
+.ewaste-band{position:relative;overflow:hidden;background:#0d1117}
+.ewaste-photo{position:relative;min-height:clamp(360px,46vw,520px);display:flex;align-items:flex-end}
+.ewaste-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:grayscale(.25) contrast(1.05) brightness(.8)}
+.ewaste-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,23,.8) 0%,rgba(13,17,23,.34) 38%,rgba(13,17,23,.6) 78%,rgba(13,17,23,.94) 100%)}
+.ewaste-photo-inner{position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:clamp(1.6rem,3.5vw,2.6rem) var(--space-lg)}
+.ewaste-kicker{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .8rem;border-radius:999px;border:1px solid rgba(247,129,102,.45);background:rgba(247,129,102,.16);color:#ffd9cd;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1rem;backdrop-filter:blur(6px)}
+.ewaste-kicker .material-symbols-outlined{font-size:1rem}
+.ewaste-photo h2{font-size:clamp(1.8rem,4.3vw,3rem);line-height:1.05;letter-spacing:-.02em;color:#fff;max-width:19ch;margin:0 0 .6rem;text-shadow:0 2px 24px rgba(0,0,0,.55)}
+.ewaste-photo p{font-size:clamp(1rem,1.6vw,1.18rem);color:#e0e6ee;max-width:44ch;margin:0;text-shadow:0 1px 14px rgba(0,0,0,.55)}
+.ewaste-tag{position:absolute;top:clamp(1rem,2.5vw,1.5rem);right:clamp(1rem,2.5vw,1.5rem);z-index:3;display:inline-flex;align-items:center;gap:.4rem;padding:.42rem .7rem;border-radius:10px;background:rgba(10,14,21,.74);border:1px solid rgba(255,255,255,.18);color:#cbd4df;font-size:.74rem;font-weight:700;backdrop-filter:blur(8px)}
+.ewaste-tag .material-symbols-outlined{font-size:.95rem;color:var(--color-orange)}
+.ewaste-flip{position:relative;z-index:2;background:linear-gradient(135deg,rgba(63,185,80,.16),rgba(79,142,247,.08)),#101824;border-top:1px solid rgba(63,185,80,.32)}
+.ewaste-flip-inner{max-width:1100px;margin:0 auto;padding:clamp(1.1rem,2.4vw,1.5rem) var(--space-lg);display:flex;align-items:center;gap:.9rem 1.5rem;flex-wrap:wrap}
+.ewaste-flip-icon{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(63,185,80,.16);border:1px solid rgba(63,185,80,.4);color:var(--color-green)}
+.ewaste-flip-icon .material-symbols-outlined{font-size:1.4rem}
+.ewaste-flip p{flex:1;min-width:240px;margin:0;font-size:clamp(.95rem,1.4vw,1.05rem);line-height:1.5;color:#c7d1dd}
+.ewaste-flip p strong{color:#fff}
+.ewaste-cta{flex:none;display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.1rem;border-radius:12px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 10px 28px rgba(79,142,247,.28)}
+.ewaste-cta:hover{background:var(--accent-hover)}
+.ewaste-cta .material-symbols-outlined{font-size:1.1rem}
+@media(max-width:600px){
+  .ewaste-photo{min-height:330px}
+  .ewaste-photo::after{background:linear-gradient(180deg,rgba(13,17,23,.72) 0%,rgba(13,17,23,.42) 42%,rgba(13,17,23,.85) 100%)}
+  .ewaste-tag{font-size:.66rem;padding:.34rem .54rem;max-width:46%;line-height:1.15}
+  .ewaste-flip .ewaste-cta{width:100%;justify-content:center}
+}
 </style>
 </head>
 <body class="recycle-page">
@@ -421,6 +448,24 @@ a{color:inherit;text-decoration:none}
 <div class="device-chip"><span><span class="material-symbols-outlined" aria-hidden="true" data-icon="memory"></span>Useful components</span><em>parts donor</em></div>
 </div>
 </aside>
+</div>
+</section>
+<section class="ewaste-band" aria-labelledby="ewaste-head">
+<div class="ewaste-photo">
+<img src="/assets/recycle/ewaste-bin.webp" width="1266" height="950" alt="A large cardboard recycling bin overflowing with discarded laptops, iPads, and tablets, waiting to be shredded" decoding="async" loading="lazy"/>
+<span class="ewaste-tag"><span aria-hidden="true" class="material-symbols-outlined" data-icon="warning"></span>A typical e-waste bin — not the HDR bench</span>
+<div class="ewaste-photo-inner">
+<span class="ewaste-kicker"><span aria-hidden="true" class="material-symbols-outlined" data-icon="warning"></span>What &ldquo;recycling&rdquo; usually means</span>
+<h2 id="ewaste-head">Most &ldquo;recycled&rdquo; devices end up in a bin like this.</h2>
+<p>Tossed in, trucked off, and shredded for scrap.</p>
+</div>
+</div>
+<div class="ewaste-flip">
+<div class="ewaste-flip-inner">
+<div class="ewaste-flip-icon" aria-hidden="true"><span class="material-symbols-outlined" data-icon="autorenew"></span></div>
+<p><strong>At Hailey Device Repair, that same phone, iPad, or laptop gets a second life.</strong> Working screens, boards, and batteries become the donor parts that fix someone else&rsquo;s device — kept out of the landfill, kept in the valley.</p>
+<a class="ewaste-cta" href="sms:+12084501606?&amp;body=Hi%20Hailey%20Device%20Repair%2C%20I%20have%20electronics%20I%20need%20to%20recycle."><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>Bring it to the bench</a>
+</div>
 </div>
 </section>
 <section class="section section--alt" id="valley-recycling">
