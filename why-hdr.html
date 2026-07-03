@@ -255,8 +255,14 @@ details[open] .faq-chevron{transform:rotate(180deg)}
 @media(max-width:768px){.why-reasons-grid{grid-template-columns:1fr}.why-bench-grid{grid-template-columns:1fr}.why-entity-card{padding:1.5rem}.help-fab-panel{width:calc(100vw - 3rem)}}
 </style>
 
-<link rel="preload" href="style.css?v=mobile-rhythm-20260615" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="style.css?v=mobile-rhythm-20260615"/></noscript>
+<link rel="preload" href="style.css?v=stage-parallax-20260702" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="style.css?v=stage-parallax-20260702"/></noscript>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
+</style>
 </head>
 <body class="animate-ready">
 

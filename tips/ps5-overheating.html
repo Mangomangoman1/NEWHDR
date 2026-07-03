@@ -41,6 +41,12 @@
 @media(max-width:900px){.ps5-fan-wrap{width:140px;height:140px;top:auto;bottom:.6rem;right:.6rem;opacity:.28}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.ps5-fan{animation:none}}
 </style>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
+</style>
 </head><body class="bench-tips-page">
 <nav class="nav" id="nav" role="navigation">
 <div class="nav-inner">

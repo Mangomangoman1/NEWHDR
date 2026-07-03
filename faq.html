@@ -82,8 +82,8 @@ a{color:inherit;text-decoration:none}
 .breadcrumb-sep{font-size:0.9rem}
 .text-accent{background:linear-gradient(135deg,var(--accent),var(--color-cyan,#22d3ee));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 @media(max-width:768px){.nav-links,.nav-actions .theme-toggle{display:none}.nav-hamburger{display:flex;flex-direction:column;gap:4px}.hero{min-height:80vh;padding:5rem 0 3rem}}</style>
-  <link rel="preload" href="style.css?v=mobile-rhythm-20260615" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css?v=mobile-rhythm-20260615" /></noscript>
+  <link rel="preload" href="style.css?v=stage-parallax-20260702" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="style.css?v=stage-parallax-20260702" /></noscript>
   <style>
   .faq-hero-shell { padding-top: 7rem; padding-bottom: 3rem; }
   .faq-hero-grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr); gap: 1.5rem; align-items: stretch; }
@@ -559,6 +559,12 @@ a{color:inherit;text-decoration:none}
 .faq-hub-item[open] .faq-hub-answer{animation:faqReveal .34s cubic-bezier(.2,.7,.2,1)}
 @keyframes faqReveal{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.faq-hub-item summary::after{transition:none}.faq-hub-item[open] .faq-hub-answer{animation:none}}
+</style>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
 </style>
 </head>
 <body>

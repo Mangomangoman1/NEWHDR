@@ -179,6 +179,12 @@ a:hover{text-decoration-color:var(--accent)}
 .qf-empty.visible{display:block}
 @media(max-width:640px){.qf-overlay{padding-top:0;align-items:flex-end}.qf-panel{width:100%;max-width:100%;max-height:86vh;border-radius:18px 18px 0 0;transform:translateY(100%)}.qf-overlay.open .qf-panel{transform:none}.qf-columns{grid-template-columns:1fr}}
 </style>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
+</style>
 </head><body>
 <a class="skip" href="#content">Skip to content</a>
 <nav class="nav" id="nav" role="navigation">

@@ -390,6 +390,12 @@
 .vr-right{animation:vrFade 1s ease both;animation-delay:.22s}
 @media(prefers-reduced-motion:reduce){.vr-left>*,.vr-right{animation:none!important}}
 </style>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
+</style>
 </head>
 <body>
 <nav class="nav" id="nav" role="navigation">

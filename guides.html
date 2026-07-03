@@ -127,6 +127,12 @@
 .hero h1{font-family:'MuseoModerno','Fraunces',sans-serif!important;font-weight:600!important;letter-spacing:-.025em!important;line-height:1.04!important}
 .hero h1 .grad{background:linear-gradient(100deg,#7184ff,#8bd3ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 </style>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
+</style>
 </head><body>
 <nav class="nav" id="nav" role="navigation">
 <div class="nav-inner">

@@ -51,7 +51,7 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .container{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--space-lg)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg-nav);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
@@ -113,9 +113,9 @@ a{color:inherit;text-decoration:none}
 .sel-card:hover .sel-arrow .material-symbols-outlined{transform:translateX(4px)}
 .sel-badge{display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:var(--accent);color:#fff;border-radius:100px;padding:0.15rem 0.55rem;margin-left:0.5rem;vertical-align:middle}
 </style>
-<link as="style" href="style.min.css?v=mobile-rhythm-20260615" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-<noscript><link href="style.min.css?v=mobile-rhythm-20260615" rel="stylesheet"/></noscript>
-<!-- Medium steel-blue accent override — must come after style.min.css?v=mobile-rhythm-20260615 -->
+<link as="style" href="style.min.css?v=stage-parallax-20260702" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="style.min.css?v=stage-parallax-20260702" rel="stylesheet"/></noscript>
+<!-- Medium steel-blue accent override — must come after style.min.css?v=stage-parallax-20260702 -->
 <style>:root{--accent:#5B8BCF!important;--accent-hover:#74A4DE!important;--accent-dim:rgba(91,139,207,0.12)!important;--accent-glow:rgba(91,139,207,0.25)!important;--color-blue:#5B8BCF!important;--color-cyan:#8BB8D6!important}</style>
 <!-- Homepage-only title font override — keep other pages on Fraunces -->
 <style id="homepage-detail-pass-css">
@@ -1907,6 +1907,12 @@ a{color:inherit;text-decoration:none}
   .area-card h3,.area-card h4{font-size:.9rem!important;hyphens:none;overflow-wrap:normal;word-break:keep-all}
   .area-card p{font-size:.78rem!important;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 }
+</style>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
 </style>
 </head>
 <body class="home-page">

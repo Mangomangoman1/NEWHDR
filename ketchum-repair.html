@@ -35,7 +35,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&amp;family=MuseoModerno:wght@400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link href="/style.css?v=mobile-rhythm-20260615" rel="stylesheet"/>
+<link href="/style.css?v=stage-parallax-20260702" rel="stylesheet"/>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Service",
@@ -205,6 +205,12 @@
   .ketchum-page .help-fab,.mailin-page .help-fab{display:none !important}
   .hdr-mcta{display:flex}
 }
+</style>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
 </style>
 </head>
 <body class="ketchum-page">

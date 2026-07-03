@@ -43,6 +43,12 @@
 @media(max-width:900px){.wf-bars{top:auto;bottom:1rem;right:1rem;height:62px;gap:5px}.wf-bars i{width:11px}}
 @media(prefers-reduced-motion:reduce){.wf-bars i{animation:none;opacity:.85}}
 </style>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
+</style>
 </head><body class="bench-tips-page">
 <nav class="nav" id="nav" role="navigation">
 <div class="nav-inner">

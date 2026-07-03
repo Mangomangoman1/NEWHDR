@@ -82,8 +82,8 @@ a{color:inherit;text-decoration:none}
 .breadcrumb-sep{font-size:0.9rem}
 .text-accent{background:linear-gradient(135deg,var(--accent),var(--color-cyan,#22d3ee));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex;flex-direction:column;gap:4px}.hero{min-height:80vh;padding:5rem 0 3rem}}</style>
-<link as="style" href="/style.css?v=mobile-rhythm-20260615" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-<noscript><link href="/style.css?v=mobile-rhythm-20260615" rel="stylesheet"/></noscript>
+<link as="style" href="/style.css?v=stage-parallax-20260702" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="/style.css?v=stage-parallax-20260702" rel="stylesheet"/></noscript>
 <style>
     .recycle-hero{padding:7.5rem 0 4rem;position:relative;overflow:hidden;background:radial-gradient(circle at 78% 20%,rgba(63,185,80,.18),transparent 28rem),radial-gradient(circle at 20% 10%,rgba(79,142,247,.18),transparent 30rem)}
     .recycle-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.72fr);gap:3rem;align-items:center}
@@ -329,6 +329,12 @@ a{color:inherit;text-decoration:none}
   .ewaste-tag{font-size:.66rem;padding:.34rem .54rem;max-width:46%;line-height:1.15}
   .ewaste-flip .ewaste-cta{width:100%;justify-content:center}
 }
+</style>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
 </style>
 </head>
 <body class="recycle-page">

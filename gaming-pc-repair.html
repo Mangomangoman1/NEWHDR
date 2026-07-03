@@ -488,6 +488,12 @@
    769-1170px. Collapse to the hamburger below 1200px (full nav on standard desktops >=1200). */
 @media(max-width:1199px){.nav .nav-links{display:none!important}.nav .nav-hamburger{display:flex!important}.nav .nav-actions .qf-trigger{display:none!important}.nav .nav-mobile .qf-trigger{display:flex!important}}
 </style>
+<style id="vt-css">
+/* Cross-document view transitions: soft crossfade between pages (Chrome 126+/Safari 18.2+; older browsers ignore) */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
+</style>
 </head>
 <body>
 <nav class="nav" id="nav" role="navigation">

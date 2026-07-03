@@ -11854,7 +11854,7 @@ html[data-theme="light"] .qf-overlay.qf-hdr .qf-drawer:hover { background: rgba(
 /* ─── END CONTACT PAGE POLISH 2026-05-03 ───────────────────── */
 
 /* AI-readable answer/decision modules */
-html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
+html,body{max-width:100%;overflow-x:hidden;overflow-x:clip}.container{min-width:0}
 .answer-card{border:1px solid var(--border-default);background:linear-gradient(145deg,var(--bg-card),rgba(91,139,207,.05));border-radius:24px;padding:clamp(1.2rem,3vw,2rem);box-shadow:var(--shadow-card)}.answer-card h2,.answer-card h3{font-family:var(--font-display);line-height:1.15;margin-bottom:.8rem}.answer-card p{color:var(--text-secondary);line-height:1.75}.guide-link-strip{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}.guide-link-strip a{border:1px solid var(--border-default);border-radius:999px;padding:.55rem .8rem;color:var(--text-secondary);background:var(--bg-card);text-decoration:none}.guide-link-strip a:hover{border-color:var(--accent);color:var(--text-primary)}@media(max-width:760px){.guide-link-strip a{width:100%;text-align:center}}
 
 
@@ -12366,6 +12366,9 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
 .home-page #services.hdr-services-showcase {
   position: relative;
   overflow: hidden;
+  /* clip = same clipping but not a scroll container, so the stage-parallax view() timeline
+     tracks the viewport instead of freezing on this box */
+  overflow: clip;
   padding-block: clamp(4.4rem, 8vw, 7.1rem);
   background:
     radial-gradient(circle at 69% 7%, rgba(114, 90, 255, 0.20), transparent 23rem),
@@ -12491,6 +12494,26 @@ html,body{max-width:100%;overflow-x:hidden}.container{min-width:0}
   right: -1%;
   bottom: 4%;
   z-index: 3;
+}
+/* Scroll-driven depth parallax on the services stage — foreground layers drift faster
+   than background as the section crosses the viewport (Chrome 115+/Safari 26; static elsewhere) */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
+    .stage-device,
+    .stage-glow {
+      animation: stage-parallax linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+    .stage-device--laptop  { --parallax: 22px; }
+    .stage-device--phone   { --parallax: 52px; }
+    .stage-device--console { --parallax: 38px; }
+    .stage-glow            { --parallax: -16px; }
+    @keyframes stage-parallax {
+      from { transform: translateY(var(--parallax)); }
+      to   { transform: translateY(calc(-1 * var(--parallax))); }
+    }
+  }
 }
 .hdr-services-proof {
   display: grid;
