@@ -334,6 +334,7 @@ a{color:inherit;text-decoration:none}
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SGQ617V748"></script>
 <script>
+    try{if(localStorage.getItem('hdr_cookie_consent')==='declined'){window['ga-disable-G-SGQ617V748']=true;}}catch(e){}
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -788,7 +789,7 @@ a{color:inherit;text-decoration:none}
 <a href="/student-military">Student &amp; Military</a>
 <a href="/device-check">Device Check</a>
 <a href="/faq">FAQ</a>
-<a href="/tips#water-damage">Water Damage Guide</a>
+<a href="/tips/water-damaged-phone">Water Damage Guide</a>
 </div>
 <div class="footer-col" data-animate="">
 <strong>Contact</strong>
@@ -806,7 +807,7 @@ a{color:inherit;text-decoration:none}
 <!-- Cookie Banner -->
 <div aria-label="Cookie consent" class="cookie-banner" id="cookieBanner" role="dialog">
 <p class="cookie-banner-text">
-      We use minimal cookies (theme preference &amp; banner dismissal only). No tracking, no analytics.
+      Minimal cookies for preferences and basic site analytics. <a href="/privacy">Learn more</a>
       <a href="/privacy">Learn more</a>
 </p>
 <div class="cookie-banner-actions">
@@ -895,9 +896,13 @@ a{color:inherit;text-decoration:none}
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="smartphone"></span></div>
 <div class="qf-link-text"><span class="qf-link-name">Android Repair</span><span class="qf-link-desc">Samsung, Pixel, OnePlus &amp; more</span></div>
 </a>
-<a class="qf-link" data-qf="laptop repair mac pc computer macbook screen battery" href="/laptop-repair">
+<a class="qf-link" data-qf="laptop repair pc computer windows chromebook screen battery" href="/laptop-repair">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span></div>
 <div class="qf-link-text"><span class="qf-link-name">Laptop &amp; PC Repair</span><span class="qf-link-desc">Windows, Chromebook &amp; PC</span></div>
+</a>
+<a class="qf-link" data-qf="macbook repair mac apple air pro imac screen battery keyboard logic board liquid" href="/macbook-repair">
+<div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop_mac"></span></div>
+<div class="qf-link-text"><span class="qf-link-name">MacBook Repair</span><span class="qf-link-desc">Air, Pro, iMac — screen, battery, board</span></div>
 </a>
 <a class="qf-link" data-qf="laptop won't turn on dead laptop no power black screen no charging light macbook chromebook usb c" href="/laptop-wont-turn-on">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="offline_bolt"></span></div>

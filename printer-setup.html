@@ -292,7 +292,8 @@ details.faq-item{border:1px solid var(--line);border-radius:18px;background:rgba
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGQ617V748"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SGQ617V748');</script>
+<script>try{if(localStorage.getItem('hdr_cookie_consent')==='declined'){window['ga-disable-G-SGQ617V748']=true;}}catch(e){}
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SGQ617V748');</script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 
 
@@ -402,7 +403,7 @@ details.faq-item{border:1px solid var(--line);border-radius:18px;background:rgba
 <section class="section" id="sources"><div class="container"><div class="section-head"><span class="eyebrow">Official sources used</span><h2>This page is built from real vendor guidance, not forum soup</h2><p>I still diagnose the actual device in front of me, but the checklist above is grounded in official support patterns from the major platforms and printer brands.</p></div><div class="source-grid"><a class="source-card" href="https://support.microsoft.com/en-us/windows/troubleshooting-offline-printer-problems-in-windows-9f5e98ed-0ac8-50ff-a13b-d79bf7710061" target="_blank" rel="noopener"><span>Microsoft</span><strong>Windows printer offline guidance: power cycle, same Wi-Fi, default printer, queue, Print Spooler, reinstall.</strong></a>
 <a class="source-card" href="https://support.apple.com/en-us/102895" target="_blank" rel="noopener"><span>Apple</span><strong>AirPrint requires an AirPrint-enabled printer and the Apple device on the same Wi-Fi network.</strong></a>
 <a class="source-card" href="https://support.apple.com/guide/mac-help/solve-printing-problems-on-mac-mh14002/mac" target="_blank" rel="noopener"><span>Apple</span><strong>Mac printing fixes include checking queues, testing another app, adding a new queue, and resetting printing only later.</strong></a>
-<a class="source-card" href="https://support.hp.com/us-en/document/ish_1780623-1698506-16" target="_blank" rel="noopener"><span>HP</span><strong>HP Wi-Fi setup mode, HP app setup, temporary HP=Setup network, and Wi-Fi Direct caveats.</strong></a>
+<a class="source-card" href="https://support.hp.com/us-en/printer" target="_blank" rel="noopener"><span>HP</span><strong>HP Wi-Fi setup mode, HP app setup, temporary HP=Setup network, and Wi-Fi Direct caveats.</strong></a>
 <a class="source-card" href="https://support.usa.canon.com/kb/s/article/ART180034" target="_blank" rel="noopener"><span>Canon</span><strong>Canon offline/not responding guidance: power, correct printer, Wi-Fi, router/computer restart, diagnostics, drivers.</strong></a>
 <a class="source-card" href="https://support.usa.canon.com/kb/s/article/ART180131" target="_blank" rel="noopener"><span>Canon</span><strong>Canon Wi-Fi Connection Assistant reconnect process for supported PIXMA/TR/MAXIFY models.</strong></a>
 <a class="source-card" href="https://epson.com/support/printer-problems" target="_blank" rel="noopener"><span>Epson</span><strong>Epson support points users to model-specific downloads, scan utilities, ink, error, and maintenance guidance.</strong></a>
@@ -424,7 +425,7 @@ details.faq-item{border:1px solid var(--line);border-radius:18px;background:rgba
 <details class="faq-item"><summary>Do you provide business printer support?</summary><p>For small offices, yes when the job is practical setup and troubleshooting: one or a few printers, basic network printing, scanning, and user devices. I am not a managed IT company for large copier fleets, print servers, or complex enterprise environments.</p></details></div></div></section>
 <section class="final-cta"><div class="container"><div class="cta-card"><h2>Printer still refusing to cooperate?</h2><p>Text the model, the exact error, what device you print from, and what changed recently. I’ll tell you if it sounds like a quick setup fix, a network issue, a scan utility problem, or a printer that is not worth more time.</p><div class="cta-row" style="justify-content:center"><a class="btn btn-primary" href="sms:+12084501606">Text (208) 450-1606</a><a class="btn btn-secondary" href="/computer-support">See computer support</a></div></div></div></section>
 </main>
-<footer class="footer"><div class="container footer-inner"><div><strong>Hailey Device Repair</strong><br><span class="muted">Printer setup, computer help, and device repair in Hailey, Idaho.</span></div><ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/computer-support">Computer Help</a></li><li><a href="/printer-setup">Printer Setup</a></li><li><a href="/virus-removal">Virus Removal</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Contact</a></li></ul></div></footer>
+<footer class="footer"><div class="container footer-inner"><div><strong>Hailey Device Repair</strong><br><span class="muted">Printer setup, computer help, and device repair in Hailey, Idaho.</span><br><span class="muted">© 2026 Hailey Device Repair</span></div><ul class="footer-links"><li><a href="/">Home</a></li><li><a href="/computer-support">Computer Help</a></li><li><a href="/printer-setup">Printer Setup</a></li><li><a href="/virus-removal">Virus Removal</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Contact</a></li></ul></div></footer>
 <div class="sticky-call" id="stickyCall" aria-label="Mobile contact shortcuts"><a href="sms:+12084501606">Text</a><a href="tel:+12084501606">Call</a></div>
 <script>const stickyCall=document.getElementById('stickyCall');const toggleSticky=()=>{if(!stickyCall)return;stickyCall.classList.toggle('show',window.scrollY>520)};toggleSticky();window.addEventListener('scroll',toggleSticky,{passive:true});</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -463,9 +464,13 @@ details.faq-item{border:1px solid var(--line);border-radius:18px;background:rgba
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="smartphone"></span></div>
 <div class="qf-link-text"><span class="qf-link-name">Android Repair</span><span class="qf-link-desc">Samsung, Pixel, OnePlus &amp; more</span></div>
 </a>
-<a class="qf-link" data-qf="laptop repair mac pc computer macbook screen battery" href="/laptop-repair">
+<a class="qf-link" data-qf="laptop repair pc computer windows chromebook screen battery" href="/laptop-repair">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span></div>
 <div class="qf-link-text"><span class="qf-link-name">Laptop &amp; PC Repair</span><span class="qf-link-desc">Windows, Chromebook &amp; PC</span></div>
+</a>
+<a class="qf-link" data-qf="macbook repair mac apple air pro imac screen battery keyboard logic board liquid" href="/macbook-repair">
+<div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop_mac"></span></div>
+<div class="qf-link-text"><span class="qf-link-name">MacBook Repair</span><span class="qf-link-desc">Air, Pro, iMac — screen, battery, board</span></div>
 </a>
 <a class="qf-link" data-qf="laptop won't turn on dead laptop no power black screen no charging light macbook chromebook usb c" href="/laptop-wont-turn-on">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="offline_bolt"></span></div>

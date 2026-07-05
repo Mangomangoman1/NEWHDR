@@ -1283,6 +1283,7 @@ a{color:inherit;text-decoration:none}
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SGQ617V748"></script>
 <script>
+    try{if(localStorage.getItem('hdr_cookie_consent')==='declined'){window['ga-disable-G-SGQ617V748']=true;}}catch(e){}
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -2125,7 +2126,7 @@ a{color:inherit;text-decoration:none}
 </a>
 </div>
 <div aria-label="Additional service trust points" class="hdr-services-bottom">
-<div><span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span><strong>Free Shipping</strong><small>On approved mail-in repairs</small></div>
+<div><span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span><strong>Free Return Shipping</strong><small>On approved mail-in repairs</small></div>
 <div><span aria-hidden="true" class="material-symbols-outlined" data-icon="shield_lock"></span><strong>Secure Handling</strong><small>Your device stays in safe hands</small></div>
 <div><span aria-hidden="true" class="material-symbols-outlined" data-icon="forum"></span><strong>Real Support</strong><small>Talk to the actual technician</small></div>
 <div><span aria-hidden="true" class="material-symbols-outlined" data-icon="star"></span><strong>Trusted Locally</strong><small>Proudly serving the Wood River Valley</small></div>
@@ -2696,7 +2697,7 @@ a{color:inherit;text-decoration:none}
 <span class="form-error" id="nameError" role="alert"></span>
 </div>
 <div class="form-group">
-<input aria-describedby="contactError" autocomplete="tel email" id="contact-field" name="contact" placeholder="+1 (208) 555-0100" required="" type="text"/>
+<input aria-describedby="contactError" autocomplete="tel email" id="contact-field" name="contact" placeholder="Your phone number" required="" type="text"/>
 <label for="contact-field">Phone or email</label>
 <span class="form-error" id="contactError" role="alert"></span>
 </div>
@@ -2790,9 +2791,9 @@ a{color:inherit;text-decoration:none}
 <a href="/faq">FAQ</a>
 <a href="/repair-sos">Repair SOS</a>
 <a href="/data-recovery">Data Recovery</a>
-<a href="/tips#water-damage">Water Damage Guide</a>
-<a href="/tips#lcd-vs-oled">LCD vs OLED</a>
-<a href="/tips#repair-vs-replace">Repair vs Replace</a>
+<a href="/tips/water-damaged-phone">Water Damage Guide</a>
+<a href="/tips/lcd-vs-oled">LCD vs OLED</a>
+<a href="/tips/repair-or-replace">Repair vs Replace</a>
 </div>
 <div class="footer-col" data-animate="">
 <strong>Contact</strong>
@@ -2855,9 +2856,13 @@ a{color:inherit;text-decoration:none}
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="smartphone"></span></div>
 <div class="qf-link-text"><span class="qf-link-name">Android Repair</span><span class="qf-link-desc">Samsung, Pixel, OnePlus &amp; more</span></div>
 </a>
-<a class="qf-link" data-qf="laptop repair mac pc computer macbook screen battery" href="/laptop-repair">
+<a class="qf-link" data-qf="laptop repair pc computer windows chromebook screen battery" href="/laptop-repair">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span></div>
 <div class="qf-link-text"><span class="qf-link-name">Laptop &amp; PC Repair</span><span class="qf-link-desc">Windows, Chromebook &amp; PC</span></div>
+</a>
+<a class="qf-link" data-qf="macbook repair mac apple air pro imac screen battery keyboard logic board liquid" href="/macbook-repair">
+<div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop_mac"></span></div>
+<div class="qf-link-text"><span class="qf-link-name">MacBook Repair</span><span class="qf-link-desc">Air, Pro, iMac — screen, battery, board</span></div>
 </a>
 <a class="qf-link" data-qf="laptop won't turn on dead laptop no power black screen no charging light macbook chromebook usb c" href="/laptop-wont-turn-on">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="offline_bolt"></span></div>
