@@ -16,6 +16,26 @@
       "source": "/laptop-repair-wood-river-valley",
       "destination": "/laptop-repair",
       "statusCode": 301
+    },
+    {
+      "source": "/tips/android-wont-charge",
+      "destination": "/tips/phone-charges-slowly",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/mac-running-slow",
+      "destination": "/tips/speed-up-slow-laptop",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/dropped-phone-wont-respond",
+      "destination": "/tips/phone-screen-black-but-on",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/data-recovery-what-to-expect",
+      "destination": "/data-recovery",
+      "statusCode": 301
     }
   ],
   "headers": [

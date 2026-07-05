@@ -107,4 +107,4 @@ These public profiles help identify Hailey Device Repair as the same local busin
 - [iPhone screen repair guide](/guides/iphone-screen-repair): Display assembly replacement, LCD vs OLED cost signals, part quality, DIY risk, and repair-vs-replace context.
 - [iPhone battery replacement guide](/guides/iphone-battery-replacement): Battery health, swelling, shutdowns, replacement process, and when it is worth doing.
 - [Laptop battery replacement guide](/guides/laptop-battery-replacement): Battery diagnosis, swelling risk, charger vs battery issues, and replacement process.
-- [Data recovery expectations](/guides/data-recovery-what-to-expect): What affects recovery odds, what not to do, and when to use a repair bench vs specialist lab.
+- [Data recovery in Idaho](/data-recovery): What affects recovery odds, what not to do first, per-scenario DIY paths, and when to use a repair bench vs specialist lab.
