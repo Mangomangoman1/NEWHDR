@@ -1105,7 +1105,7 @@
 
     // Intersection Observer for animations
     const animatedEls=document.querySelectorAll('[data-animate]');html.classList.add('animate-ready');
-    if('IntersectionObserver' in window){const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('animated');observer.unobserve(entry.target)}})},{threshold:0.1});animatedEls.forEach(el=>observer.observe(el));}else{animatedEls.forEach(el=>el.classList.add('animated'));}
+    if('IntersectionObserver' in window){const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('animated');observer.unobserve(entry.target)}})},{threshold:0.01});animatedEls.forEach(el=>observer.observe(el));setTimeout(()=>animatedEls.forEach(el=>el.classList.add('animated')),2500);}else{animatedEls.forEach(el=>el.classList.add('animated'));}
 
     // Component toggle
     function toggleComponent(card){const wasActive=card.classList.contains('active');document.querySelectorAll('.component-card').forEach(c=>c.classList.remove('active'));if(!wasActive)card.classList.add('active')}
@@ -1275,7 +1275,7 @@
 </a>
 <a class="qf-link" data-qf="laptop repair mac pc computer macbook screen battery" href="/laptop-repair">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span></div>
-<div class="qf-link-text"><span class="qf-link-name">Laptop &amp; PC Repair</span><span class="qf-link-desc">Mac, Windows, Chromebook</span></div>
+<div class="qf-link-text"><span class="qf-link-name">Laptop &amp; PC Repair</span><span class="qf-link-desc">Windows, Chromebook &amp; PC</span></div>
 </a>
 <a class="qf-link" data-qf="laptop won't turn on dead laptop no power black screen no charging light macbook chromebook usb c" href="/laptop-wont-turn-on">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="offline_bolt"></span></div>

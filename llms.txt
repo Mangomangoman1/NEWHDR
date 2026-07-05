@@ -44,7 +44,7 @@ Hailey Device Repair is run by Samuel, a local repair technician in the Wood Riv
 - [Repair or replace a phone?](/repair-or-replace-phone): A decision guide for when phone repair makes financial sense and when replacement is smarter.
 - [What to text for a repair quote](/broken-phone-what-to-text): The exact information and photos to send so HDR can quote faster and avoid guessing.
 - [Repair in Hailey vs Boise vs mail-in](/phone-repair-hailey-vs-boise): When local repair in Hailey is the better path, when Boise makes sense, and when mail-in is practical.
-- [Laptop repair in the Wood River Valley](/laptop-repair-wood-river-valley): Decision-first laptop help for Hailey, Ketchum, Sun Valley, Bellevue, students, remote workers, and small businesses.
+- [Laptop repair in the Wood River Valley](/laptop-repair): Decision-first laptop help for Hailey, Ketchum, Sun Valley, Bellevue, students, remote workers, and small businesses.
 - [Pricing](/pricing): Transparent repair pricing guidance and what changes the final quote.
 - [Warranty](/warranty): Plain-English warranty and support expectations after a repair.
 - [Device check](/device-check): Self-check guidance before booking a repair.

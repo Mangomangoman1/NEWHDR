@@ -779,7 +779,7 @@ I can bring/mail the charger: yes/no</code>
       $('#ticketOpen').addEventListener('click',()=>{$('#ticketPanel').classList.add('open');$('#ticketPanel').setAttribute('aria-hidden','false');updateTicket();});$('#ticketClose').addEventListener('click',()=>{$('#ticketPanel').classList.remove('open');$('#ticketPanel').setAttribute('aria-hidden','true');});$('#copyTicket').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(summary());$('#copyTicket').textContent='Copied';setTimeout(()=>$('#copyTicket').textContent='Copy',1200);}catch(e){$('#copyTicket').textContent='Select text';}});
       const html=document.documentElement;const theme=$('#themeToggle');const saved=localStorage.getItem('hdr-theme');if(saved)html.setAttribute('data-theme',saved);theme&&theme.addEventListener('click',()=>{const next=html.getAttribute('data-theme')==='dark'?'light':'dark';html.setAttribute('data-theme',next);localStorage.setItem('hdr-theme',next);});
       const ham=$('#navHamburger'),mob=$('#navMobile');ham&&ham.addEventListener('click',()=>{const open=mob.classList.toggle('active');mob.setAttribute('aria-hidden',String(!open));ham.setAttribute('aria-expanded',String(open));});$$('.nav-mobile a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('active');mob.setAttribute('aria-hidden','true');ham.setAttribute('aria-expanded','false');}));
-      document.documentElement.classList.add('animate-ready');const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}})},{threshold:.12});$$('[data-animate]').forEach(el=>obs.observe(el));
+      document.documentElement.classList.add('animate-ready');const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}})},{threshold:0.01});$$('[data-animate]').forEach(el=>obs.observe(el));setTimeout(()=>$$('[data-animate]').forEach(el=>el.classList.add('visible')),2500);
       updateTicket();markStop(null);
     })();
   </script>
@@ -820,7 +820,7 @@ I can bring/mail the charger: yes/no</code>
 </a>
 <a class="qf-link" data-qf="laptop repair mac pc computer macbook screen battery" href="/laptop-repair">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span></div>
-<div class="qf-link-text"><span class="qf-link-name">Laptop &amp; PC Repair</span><span class="qf-link-desc">Mac, Windows, Chromebook</span></div>
+<div class="qf-link-text"><span class="qf-link-name">Laptop &amp; PC Repair</span><span class="qf-link-desc">Windows, Chromebook &amp; PC</span></div>
 </a>
 <a class="qf-link" data-qf="laptop won't turn on dead laptop no power black screen no charging light macbook chromebook usb c" href="/laptop-wont-turn-on">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="offline_bolt"></span></div>

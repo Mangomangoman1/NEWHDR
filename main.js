@@ -175,9 +175,10 @@
         }, delay);
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px -32px 0px' });
 
     animEls.forEach(el => observer.observe(el));
+    setTimeout(() => animEls.forEach(el => el.classList.add('visible')), 2500);
   } else {
     // Fallback: show everything immediately
     animEls.forEach(el => el.classList.add('visible'));
