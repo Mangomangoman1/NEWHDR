@@ -1,0 +1,2513 @@
+[
+{
+"cat": "iphone",
+"device": "iPhone 8",
+"job": "Screen",
+"grade": "Incell LCD",
+"price": "$115",
+"mailin": "$130",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 8",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$80",
+"mailin": "$95",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 8",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$125",
+"mailin": "$140",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 8",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$135",
+"mailin": "$150",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 8 Plus",
+"job": "Screen",
+"grade": "Incell LCD",
+"price": "$125",
+"mailin": "$140",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 8 Plus",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$85",
+"mailin": "$100",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 8 Plus",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$135",
+"mailin": "$150",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 8 Plus",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$170",
+"mailin": "$185",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone X",
+"job": "Screen",
+"grade": "Hard OLED",
+"price": "$130",
+"mailin": "$145",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone X",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$85",
+"mailin": "$100",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone X",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$125",
+"mailin": "$140",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone X",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$170",
+"mailin": "$185",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone XR",
+"job": "Screen",
+"grade": "Incell LCD",
+"price": "$120",
+"mailin": "$135",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone XR",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$85",
+"mailin": "$100",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone XR",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$130",
+"mailin": "$145",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone XR",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$170",
+"mailin": "$185",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone XS",
+"job": "Screen",
+"grade": "Hard OLED",
+"price": "$130",
+"mailin": "$145",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone XS",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$85",
+"mailin": "$100",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone XS",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$135",
+"mailin": "$150",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone XS",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$170",
+"mailin": "$185",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone XS Max",
+"job": "Screen",
+"grade": "Hard OLED",
+"price": "$140",
+"mailin": "$155",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone XS Max",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$90",
+"mailin": "$100",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone XS Max",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$135",
+"mailin": "$150",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone XS Max",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$170",
+"mailin": "$185",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 11",
+"job": "Screen",
+"grade": "Incell LCD",
+"price": "$120",
+"mailin": "$135",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 11",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$85",
+"mailin": "$100",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 11",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$135",
+"mailin": "$150",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 11",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$170",
+"mailin": "$185",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 11 Pro",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$135",
+"mailin": "$150",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 11 Pro",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$90",
+"mailin": "$100",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 11 Pro",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$135",
+"mailin": "$150",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 11 Pro",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$170",
+"mailin": "$185",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 11 Pro Max",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$140",
+"mailin": "$155",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 11 Pro Max",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$95",
+"mailin": "$105",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 11 Pro Max",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$135",
+"mailin": "$150",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 11 Pro Max",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$175",
+"mailin": "$185",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone SE (2020)",
+"job": "Screen",
+"grade": "Incell LCD",
+"price": "$100",
+"mailin": "$115",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone SE (2020)",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$70",
+"mailin": "$85",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone SE (2020)",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$125",
+"mailin": "$140",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone SE (2020)",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$165",
+"mailin": "$180",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone SE (2022)",
+"job": "Screen",
+"grade": "Incell LCD",
+"price": "$110",
+"mailin": "$125",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone SE (2022)",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$90",
+"mailin": "$100",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone SE (2022)",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$125",
+"mailin": "$140",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone SE (2022)",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$165",
+"mailin": "$180",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 mini",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$145",
+"mailin": "$160",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 mini",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$85",
+"mailin": "$100",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 mini",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 mini",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$175",
+"mailin": "$185",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$155",
+"mailin": "$170",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$95",
+"mailin": "$110",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 12",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$175",
+"mailin": "$185",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 Pro",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$160",
+"mailin": "$175",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 Pro",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$95",
+"mailin": "$110",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 Pro",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 Pro",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$175",
+"mailin": "$190",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 Pro Max",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$165",
+"mailin": "$180",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 Pro Max",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$100",
+"mailin": "$115",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 Pro Max",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 12 Pro Max",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$175",
+"mailin": "$190",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 mini",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$160",
+"mailin": "$175",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 mini",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$90",
+"mailin": "$105",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 mini",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$130",
+"mailin": "$145",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 mini",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$175",
+"mailin": "$190",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$165",
+"mailin": "$180",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$100",
+"mailin": "$115",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 13",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$175",
+"mailin": "$190",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 Pro",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$185",
+"mailin": "$195",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 Pro",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$105",
+"mailin": "$120",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 Pro",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 Pro",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$175",
+"mailin": "$190",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 Pro Max",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$180",
+"mailin": "$195",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 Pro Max",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$115",
+"mailin": "$130",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 Pro Max",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 13 Pro Max",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$180",
+"mailin": "$195",
+"note": "Fused back glass \u2014 precision removal job"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$170",
+"mailin": "$185",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$115",
+"mailin": "$130",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 14",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$145",
+"mailin": "$160",
+"note": "Removable back panel \u2014 simpler job than earlier models"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Plus",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$175",
+"mailin": "$190",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Plus",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$115",
+"mailin": "$130",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Plus",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Plus",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$145",
+"mailin": "$160",
+"note": "Removable back panel"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Pro",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$205",
+"mailin": "$215",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Pro",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$120",
+"mailin": "$130",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Pro",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Pro",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$180",
+"mailin": "$195",
+"note": "Fused back glass on Pro models"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Pro Max",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$215",
+"mailin": "$230",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Pro Max",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$120",
+"mailin": "$130",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Pro Max",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 14 Pro Max",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$185",
+"mailin": "$195",
+"note": "Fused back glass on Pro models"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$185",
+"mailin": "$200",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$120",
+"mailin": "$135",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 15",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$145",
+"mailin": "$160",
+"note": "Removable back panel"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Plus",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$195",
+"mailin": "$205",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Plus",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$120",
+"mailin": "$135",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Plus",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Plus",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$150",
+"mailin": "$165",
+"note": "Removable back panel"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Pro",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$180",
+"mailin": "$195",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Pro",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$120",
+"mailin": "$135",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Pro",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$160",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Pro",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$155",
+"mailin": "$165",
+"note": "Removable back panel"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Pro Max",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$185",
+"mailin": "$200",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Pro Max",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$120",
+"mailin": "$135",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Pro Max",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$160",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 15 Pro Max",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$155",
+"mailin": "$170",
+"note": "Removable back panel"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16e",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$180",
+"mailin": "$195",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16e",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$125",
+"mailin": "$140",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16e",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$160",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 16e",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$150",
+"mailin": "$165",
+"note": "Removable back panel"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$180",
+"mailin": "$195",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$125",
+"mailin": "$140",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$160",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 16",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$150",
+"mailin": "$165",
+"note": "Removable back panel"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Plus",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$195",
+"mailin": "$205",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Plus",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$125",
+"mailin": "$140",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Plus",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$160",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Plus",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$150",
+"mailin": "$165",
+"note": "Removable back panel"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Pro",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$225",
+"mailin": "$240",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Pro",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$125",
+"mailin": "$140",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Pro",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$160",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Pro",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$155",
+"mailin": "$170",
+"note": "Removable back panel"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Pro Max",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$255",
+"mailin": "$270",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Pro Max",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$125",
+"mailin": "$140",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Pro Max",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$145",
+"mailin": "$160",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 16 Pro Max",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$160",
+"mailin": "$170",
+"note": "Removable back panel"
+},
+{
+"cat": "iphone",
+"device": "iPhone 17",
+"job": "Screen",
+"grade": "Soft OLED 120Hz",
+"price": "$235",
+"mailin": "$250",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 17",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$135",
+"mailin": "$150",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 17",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$150",
+"mailin": "$165",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 17",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$155",
+"mailin": "$165",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone Air",
+"job": "Screen",
+"grade": "Soft OLED",
+"price": "$340",
+"mailin": "$355",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone Air",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$140",
+"mailin": "$155",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone Air",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$150",
+"mailin": "$165",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone Air",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$170",
+"mailin": "$185",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 17 Pro",
+"job": "Screen",
+"grade": "Soft OLED 120Hz",
+"price": "$240",
+"mailin": "$250",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 17 Pro",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$135",
+"mailin": "$150",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 17 Pro",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$150",
+"mailin": "$165",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 17 Pro",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$160",
+"mailin": "$170",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 17 Pro Max",
+"job": "Screen",
+"grade": "Soft OLED 120Hz",
+"price": "$275",
+"mailin": "$290",
+"note": "Genuine Apple part option available \u2014 costs more, ask for a quote"
+},
+{
+"cat": "iphone",
+"device": "iPhone 17 Pro Max",
+"job": "Battery",
+"grade": "Aftermarket cell (health msg on 11+)",
+"price": "$135",
+"mailin": "$150",
+"note": "Quick job \u2014 usually done same day"
+},
+{
+"cat": "iphone",
+"device": "iPhone 17 Pro Max",
+"job": "Charge Port",
+"grade": "Aftermarket flex",
+"price": "$150",
+"mailin": "$165",
+"note": ""
+},
+{
+"cat": "iphone",
+"device": "iPhone 17 Pro Max",
+"job": "Back Glass",
+"grade": "Glass only (no housing swap)",
+"price": "$160",
+"mailin": "$175",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad 5 / 6 (2017\u201318)",
+"job": "Glass / Digitizer",
+"grade": "Aftermarket digitizer",
+"price": "$155",
+"mailin": "$165",
+"note": "Includes home button transfer"
+},
+{
+"cat": "ipad",
+"device": "iPad 5 / 6",
+"job": "Battery",
+"grade": "Aftermarket cell",
+"price": "$150",
+"mailin": "$165",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad 7 / 8 / 9 (10.2\")",
+"job": "Glass / Digitizer",
+"grade": "Aftermarket digitizer",
+"price": "$155",
+"mailin": "$170",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad 7 / 8 / 9",
+"job": "LCD (under glass)",
+"grade": "Aftermarket LCD",
+"price": "$170",
+"mailin": "$185",
+"note": "If glass and LCD are both broken, ask for the combined quote"
+},
+{
+"cat": "ipad",
+"device": "iPad 7 / 8 / 9",
+"job": "Battery",
+"grade": "Aftermarket cell",
+"price": "$155",
+"mailin": "$165",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad 7 / 8 / 9",
+"job": "Charge Port",
+"grade": "Soldered \u2014 micro-solder",
+"price": "$175",
+"mailin": "$190",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad 10 (2022)",
+"job": "Glass / Digitizer",
+"grade": "Aftermarket digitizer",
+"price": "$180",
+"mailin": "$195",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad 10 / 11 (A16)",
+"job": "Battery",
+"grade": "Aftermarket cell",
+"price": "$155",
+"mailin": "$170",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad 11 (A16, 2025)",
+"job": "Glass / Digitizer",
+"grade": "Aftermarket digitizer",
+"price": "$185",
+"mailin": "$200",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad mini 5 (2019)",
+"job": "Screen Assembly",
+"grade": "Laminated assembly",
+"price": "$245",
+"mailin": "$260",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad mini 6 (2021)",
+"job": "Screen Assembly",
+"grade": "Laminated assembly",
+"price": "$280",
+"mailin": "$295",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad mini 7 (A17 Pro)",
+"job": "Screen Assembly",
+"grade": "Laminated assembly",
+"price": "$305",
+"mailin": "$315",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Air 3 (2019)",
+"job": "Screen Assembly",
+"grade": "Laminated assembly",
+"price": "$240",
+"mailin": "$255",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Air 4 / 5 (2020\u201322)",
+"job": "Screen Assembly",
+"grade": "Laminated assembly",
+"price": "$260",
+"mailin": "$275",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Air 11\" (M2/M3/M4)",
+"job": "Screen Assembly",
+"grade": "Laminated assembly",
+"price": "$290",
+"mailin": "$305",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Air 13\" (M2/M3/M4)",
+"job": "Screen Assembly",
+"grade": "Laminated assembly",
+"price": "$345",
+"mailin": "$360",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad mini / Air (any)",
+"job": "Battery",
+"grade": "Aftermarket cell",
+"price": "$170",
+"mailin": "$185",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad mini / Air (any)",
+"job": "Charge Port",
+"grade": "Soldered \u2014 micro-solder",
+"price": "$180",
+"mailin": "$195",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 11\" (1st\u20134th gen)",
+"job": "Screen Assembly",
+"grade": "Laminated assembly",
+"price": "$290",
+"mailin": "$305",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 12.9\" (3rd\u20136th gen)",
+"job": "Screen Assembly",
+"grade": "Laminated assembly",
+"price": "$345",
+"mailin": "$360",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 11\" (M4/M5)",
+"job": "Screen Assembly",
+"grade": "OLED assembly",
+"price": "$780",
+"mailin": "$795",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 13\" (M4/M5)",
+"job": "Screen Assembly",
+"grade": "OLED assembly",
+"price": "$970",
+"mailin": "$985",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro (any)",
+"job": "Battery",
+"grade": "Aftermarket / OEM-pull",
+"price": "$175",
+"mailin": "$190",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro (any)",
+"job": "Charge Port",
+"grade": "Soldered \u2014 micro-solder",
+"price": "$180",
+"mailin": "$195",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 11\" (6th gen, 2025)",
+"job": "Screen Assembly",
+"grade": "",
+"price": "$790",
+"mailin": "$805",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 11\" (4th gen, 2022)",
+"job": "Screen Assembly",
+"grade": "",
+"price": "$350",
+"mailin": "$365",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 11\" (2nd gen, 2020)",
+"job": "Screen Assembly",
+"grade": "",
+"price": "$275",
+"mailin": "$290",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 11\" (3rd gen, 2021)",
+"job": "Screen Assembly",
+"grade": "",
+"price": "$350",
+"mailin": "$360",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 11\" (5th gen, 2024)",
+"job": "Screen Assembly",
+"grade": "",
+"price": "$790",
+"mailin": "$805",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 12.9\" (5th gen, 2022)",
+"job": "Screen Assembly",
+"grade": "",
+"price": "$430",
+"mailin": "$440",
+"note": ""
+},
+{
+"cat": "ipad",
+"device": "iPad Pro 12.9\" (3rd-4th gen, 2020)",
+"job": "Screen Assembly",
+"grade": "",
+"price": "$355",
+"mailin": "$370",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S21",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$240",
+"mailin": "$255",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S21+",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$250",
+"mailin": "$265",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S21 Ultra",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$285",
+"mailin": "$295",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S21 FE",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$220",
+"mailin": "$235",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S22",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$250",
+"mailin": "$265",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S22+",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$260",
+"mailin": "$275",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S22 Ultra",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$295",
+"mailin": "$305",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S23",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$250",
+"mailin": "$265",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S23+",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$265",
+"mailin": "$280",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S23 Ultra",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$305",
+"mailin": "$320",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S23 FE",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$225",
+"mailin": "$240",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S24",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$285",
+"mailin": "$295",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S24+",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$300",
+"mailin": "$315",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S24 Ultra",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$335",
+"mailin": "$350",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S24 FE",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$240",
+"mailin": "$255",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S25",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$315",
+"mailin": "$330",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S25+",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$330",
+"mailin": "$345",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S25 Ultra",
+"job": "Screen",
+"grade": "OEM service pack w/ frame",
+"price": "$365",
+"mailin": "$380",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S21\u2013S25 (any)",
+"job": "Battery",
+"grade": "OEM/premium cell",
+"price": "$120",
+"mailin": "$135",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy S21\u2013S25 (any)",
+"job": "Charge Port",
+"grade": "Sub-board or flex",
+"price": "$140",
+"mailin": "$155",
+"note": "Board swap on most; solder on some"
+},
+{
+"cat": "android",
+"device": "Galaxy A14 / A15 / A16",
+"job": "Screen",
+"grade": "Aftermarket / incell",
+"price": "$145",
+"mailin": "$160",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy A53 / A54",
+"job": "Screen",
+"grade": "OEM service pack",
+"price": "$200",
+"mailin": "$210",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy A55 / A56",
+"job": "Screen",
+"grade": "OEM service pack",
+"price": "$210",
+"mailin": "$220",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy A-series (any)",
+"job": "Battery",
+"grade": "Premium cell",
+"price": "$110",
+"mailin": "$125",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Galaxy A-series (any)",
+"job": "Charge Port",
+"grade": "Sub-board",
+"price": "$125",
+"mailin": "$140",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 7",
+"job": "Screen",
+"grade": "OEM / premium AM",
+"price": "$205",
+"mailin": "$215",
+"note": "Includes fingerprint sensor calibration"
+},
+{
+"cat": "android",
+"device": "Pixel 7 Pro",
+"job": "Screen",
+"grade": "OEM / premium AM",
+"price": "$240",
+"mailin": "$255",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 7a",
+"job": "Screen",
+"grade": "OEM / premium AM",
+"price": "$185",
+"mailin": "$200",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 8",
+"job": "Screen",
+"grade": "OEM / premium AM",
+"price": "$215",
+"mailin": "$230",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 8 Pro",
+"job": "Screen",
+"grade": "OEM / premium AM",
+"price": "$250",
+"mailin": "$265",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 8a",
+"job": "Screen",
+"grade": "OEM / premium AM",
+"price": "$200",
+"mailin": "$210",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 9",
+"job": "Screen",
+"grade": "OEM / premium AM",
+"price": "$240",
+"mailin": "$255",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 9 Pro",
+"job": "Screen",
+"grade": "OEM / premium AM",
+"price": "$285",
+"mailin": "$295",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 9 Pro XL",
+"job": "Screen",
+"grade": "OEM / premium AM",
+"price": "$295",
+"mailin": "$305",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 9a",
+"job": "Screen",
+"grade": "OEM / premium AM",
+"price": "$210",
+"mailin": "$220",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 7\u20139a (any)",
+"job": "Battery",
+"grade": "OEM/premium cell",
+"price": "$120",
+"mailin": "$135",
+"note": ""
+},
+{
+"cat": "android",
+"device": "Pixel 7\u20139a (any)",
+"job": "Charge Port",
+"grade": "Sub-board / flex",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\" Retina (2018\u201319)",
+"job": "Display",
+"grade": "Full assembly, OEM-pull/AM",
+"price": "$360",
+"mailin": "$375",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\" Retina (2018\u201319)",
+"job": "Battery",
+"grade": "Aftermarket",
+"price": "$170",
+"mailin": "$185",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\" (2020, Intel)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$360",
+"mailin": "$375",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\" (2020, Intel)",
+"job": "Battery",
+"grade": "Aftermarket",
+"price": "$170",
+"mailin": "$185",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\" (M1, 2020)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$445",
+"mailin": "$460",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\" (M1, 2020)",
+"job": "Battery",
+"grade": "Aftermarket",
+"price": "$175",
+"mailin": "$190",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\" (M2, 2022)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$570",
+"mailin": "$585",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\" (M2, 2022)",
+"job": "Battery",
+"grade": "Aftermarket",
+"price": "$195",
+"mailin": "$210",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 15\" (M2, 2023)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$615",
+"mailin": "$630",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 15\" (M2, 2023)",
+"job": "Battery",
+"grade": "Aftermarket",
+"price": "$210",
+"mailin": "$220",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\"/15\" (M3, 2024)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$635",
+"mailin": "$650",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\"/15\" (M3, 2024)",
+"job": "Battery",
+"grade": "Aftermarket / OEM",
+"price": "$215",
+"mailin": "$225",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\"/15\" (M4, 2025)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$700",
+"mailin": "$710",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Air 13\"/15\" (M4, 2025)",
+"job": "Battery",
+"grade": "OEM",
+"price": "$225",
+"mailin": "$240",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 13\" (2019\u201320, Intel/M1/M2)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$415",
+"mailin": "$425",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 13\" (2019\u201320, Intel/M1/M2)",
+"job": "Battery",
+"grade": "Aftermarket",
+"price": "$200",
+"mailin": "$215",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 16\" (2019, Intel)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$520",
+"mailin": "$530",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 16\" (2019, Intel)",
+"job": "Battery",
+"grade": "Aftermarket",
+"price": "$235",
+"mailin": "$245",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 14\" (M1 Pro/Max, 2021)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$645",
+"mailin": "$660",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 14\" (M1 Pro/Max, 2021)",
+"job": "Battery",
+"grade": "OEM-pull/AM",
+"price": "$240",
+"mailin": "$250",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 16\" (M1 Pro/Max, 2021)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$710",
+"mailin": "$725",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 16\" (M1 Pro/Max, 2021)",
+"job": "Battery",
+"grade": "OEM-pull/AM",
+"price": "$255",
+"mailin": "$270",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 14\" (M2/M3, 2023)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$665",
+"mailin": "$680",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 14\" (M2/M3, 2023)",
+"job": "Battery",
+"grade": "OEM-pull/AM",
+"price": "$245",
+"mailin": "$260",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 16\" (M2/M3, 2023)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$730",
+"mailin": "$745",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 16\" (M2/M3, 2023)",
+"job": "Battery",
+"grade": "OEM-pull/AM",
+"price": "$260",
+"mailin": "$275",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 14\" (M4, 2024)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$730",
+"mailin": "$745",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 14\" (M4, 2024)",
+"job": "Battery",
+"grade": "OEM",
+"price": "$255",
+"mailin": "$270",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 16\" (M4, 2024)",
+"job": "Display",
+"grade": "Full assembly",
+"price": "$795",
+"mailin": "$810",
+"note": ""
+},
+{
+"cat": "macbook",
+"device": "Pro 16\" (M4, 2024)",
+"job": "Battery",
+"grade": "OEM",
+"price": "$265",
+"mailin": "$280",
+"note": ""
+},
+{
+"cat": "console",
+"device": "PS5 / PS5 Slim / PS5 Pro",
+"job": "HDMI Port",
+"grade": "Premium port, micro-solder",
+"price": "$175",
+"mailin": "$190",
+"note": ""
+},
+{
+"cat": "console",
+"device": "PS5 (all models)",
+"job": "Liquid Metal Repaste",
+"grade": "LM + barrier supplies",
+"price": "$165",
+"mailin": "$180",
+"note": "Fixes liquid-metal migration from vertical storage"
+},
+{
+"cat": "console",
+"device": "PS5 (all models)",
+"job": "Front USB-C Port",
+"grade": "Soldered port",
+"price": "$160",
+"mailin": "$175",
+"note": ""
+},
+{
+"cat": "console",
+"device": "PS5 (disc models)",
+"job": "Disc Drive",
+"grade": "Replacement drive",
+"price": "$175",
+"mailin": "$190",
+"note": "Drive mechanism swap \u2014 your original drive board stays"
+},
+{
+"cat": "console",
+"device": "PS5 (all models)",
+"job": "Power Supply",
+"grade": "OEM-pull PSU",
+"price": "$170",
+"mailin": "$185",
+"note": ""
+},
+{
+"cat": "console",
+"device": "PS4 / Slim / Pro",
+"job": "HDMI Port",
+"grade": "Premium port, micro-solder",
+"price": "$170",
+"mailin": "$185",
+"note": ""
+},
+{
+"cat": "console",
+"device": "PS4 / Slim / Pro",
+"job": "Power Supply",
+"grade": "OEM-pull PSU",
+"price": "$150",
+"mailin": "$165",
+"note": ""
+},
+{
+"cat": "console",
+"device": "PS4 / Slim / Pro",
+"job": "Disc Drive",
+"grade": "Drive mechanism",
+"price": "$165",
+"mailin": "$180",
+"note": "Drive mechanism swap \u2014 your original drive board stays"
+},
+{
+"cat": "console",
+"device": "PS4 / PS5",
+"job": "Thermal Repaste + Deep Clean",
+"grade": "Paste + pads",
+"price": "$130",
+"mailin": "$145",
+"note": "The loud-fan fix"
+},
+{
+"cat": "console",
+"device": "Xbox Series X / S",
+"job": "HDMI Port",
+"grade": "Premium port, micro-solder",
+"price": "$175",
+"mailin": "$190",
+"note": "If the retimer chip is bad, board-level work is quoted after diagnosis"
+},
+{
+"cat": "console",
+"device": "Xbox One / One S / One X",
+"job": "HDMI Port",
+"grade": "Premium port, micro-solder",
+"price": "$170",
+"mailin": "$185",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Xbox Series X / One",
+"job": "Power Supply / Power Issue",
+"grade": "Internal PSU",
+"price": "$165",
+"mailin": "$180",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Xbox (disc models)",
+"job": "Disc Drive",
+"grade": "Drive mechanism",
+"price": "$180",
+"mailin": "$195",
+"note": "Drive mechanism swap \u2014 your original drive board stays"
+},
+{
+"cat": "console",
+"device": "Xbox (all)",
+"job": "Thermal Repaste + Deep Clean",
+"grade": "Paste + pads",
+"price": "$130",
+"mailin": "$145",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Switch (V1 / V2)",
+"job": "Screen (LCD)",
+"grade": "Aftermarket LCD",
+"price": "$150",
+"mailin": "$165",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Switch Lite",
+"job": "Screen (LCD)",
+"grade": "Aftermarket LCD",
+"price": "$150",
+"mailin": "$165",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Switch OLED",
+"job": "Screen (OLED)",
+"grade": "OLED panel",
+"price": "$225",
+"mailin": "$240",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Switch 2",
+"job": "Screen (LCD)",
+"grade": "Aftermarket panel",
+"price": "$280",
+"mailin": "$295",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Switch (all models)",
+"job": "USB-C Charge Port",
+"grade": "Soldered port",
+"price": "$160",
+"mailin": "$175",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Switch (all models)",
+"job": "Battery",
+"grade": "Aftermarket cell",
+"price": "$110",
+"mailin": "$125",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Switch (all models)",
+"job": "Game Card Reader",
+"grade": "Reader board",
+"price": "$140",
+"mailin": "$155",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Switch (all models)",
+"job": "Fan Replacement",
+"grade": "OEM-pull fan",
+"price": "$125",
+"mailin": "$140",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Joy-Con (pair)",
+"job": "Stick Drift Fix",
+"grade": "Hall-effect sticks x2",
+"price": "$70",
+"mailin": "$85",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Joy-Con (single)",
+"job": "Stick Drift Fix",
+"grade": "Hall-effect stick",
+"price": "$45",
+"mailin": "$60",
+"note": ""
+},
+{
+"cat": "console",
+"device": "PS5 DualSense",
+"job": "Stick Drift Fix",
+"grade": "Hall/TMR sticks x2, solder",
+"price": "$90",
+"mailin": "$105",
+"note": ""
+},
+{
+"cat": "console",
+"device": "PS5 DualSense",
+"job": "USB-C Port / Battery",
+"grade": "Port or cell",
+"price": "$60",
+"mailin": "$75",
+"note": ""
+},
+{
+"cat": "console",
+"device": "Xbox Wireless / Elite",
+"job": "Stick Drift Fix",
+"grade": "Hall sticks x2, solder",
+"price": "$90",
+"mailin": "$105",
+"note": "Cheaper than a new Elite controller"
+},
+{
+"cat": "services",
+"device": "",
+"job": "Diagnostic / bench fee",
+"included": "Full inspection + written quote; credited toward any repair we do",
+"price": "$45",
+"mailin": "$60",
+"note": "Credited toward any repair we do"
+},
+{
+"cat": "services",
+"device": "",
+"job": "Water damage treatment",
+"included": "Teardown, ultrasonic clean, corrosion treatment, test; credited toward repair",
+"price": "$95",
+"mailin": "$110",
+"note": "Data recovery not guaranteed \u2014 honest assessment up front"
+},
+{
+"cat": "services",
+"device": "",
+"job": "Virus / malware removal + tune-up",
+"included": "Scan, removal, startup cleanup, updates",
+"price": "$99",
+"mailin": "$115",
+"note": ""
+},
+{
+"cat": "services",
+"device": "",
+"job": "OS reinstall / factory refresh",
+"included": "Clean Windows/macOS install, drivers, updates; data backup extra",
+"price": "$89",
+"mailin": "$105",
+"note": ""
+},
+{
+"cat": "services",
+"device": "",
+"job": "Data transfer (phone to phone)",
+"included": "Full contact/photo/app migration",
+"price": "$49",
+"mailin": "$65",
+"note": ""
+},
+{
+"cat": "services",
+"device": "",
+"job": "Data recovery \u2014 Tier 1 (logical)",
+"included": "Recoverable drive/phone, software-level recovery to customer media",
+"price": "$99",
+"mailin": "$115",
+"note": "No recovery, no fee"
+},
+{
+"cat": "services",
+"device": "",
+"job": "Data recovery \u2014 Tier 2 (board-level)",
+"included": "Dead device, chip-level or donor-board work",
+"price": "$199",
+"mailin": "$215",
+"note": "Starting point \u2014 complex cases quoted by the hour"
+},
+{
+"cat": "services",
+"device": "",
+"job": "Laptop thermal repaste + deep clean",
+"included": "Full teardown, dust-out, new paste/pads",
+"price": "$89",
+"mailin": "$105",
+"note": "The first fix for hot, loud laptops"
+},
+{
+"cat": "services",
+"device": "",
+"job": "Console deep clean + repaste",
+"included": "Teardown, dust-out, new paste",
+"price": "$85",
+"mailin": "$100",
+"note": "Pairs with any console already on the bench"
+},
+{
+"cat": "services",
+"device": "",
+"job": "Software troubleshooting / setup (per hour)",
+"included": "Email, printers, accounts, general tech help",
+"price": "$89",
+"mailin": "$105",
+"note": ""
+}
+]
