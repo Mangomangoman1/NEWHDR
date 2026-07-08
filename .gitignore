@@ -4,3 +4,4 @@ PROJECT-STATE.md
 .playwright-mcp/
 .DS_Store
 HDR-Price-Table.csv
+.pv-*.html
