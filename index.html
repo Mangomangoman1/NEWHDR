@@ -709,20 +709,7 @@ a{color:inherit;text-decoration:none}
       align-items:center;
       justify-content:center;
       margin:10px 0 6px;
-    }
-    .hdr-mobile-stage-glow {
-      position:absolute;
-      top:50%;
-      left:50%;
-      width:300px;
-      height:330px;
-      border-radius:50%;
-      transform:translate(-50%,-50%);
-      filter:blur(22px);
-      background:radial-gradient(circle at 50% 42%, rgba(96,134,247,.5), rgba(138,124,240,.26) 40%, rgba(6,182,212,.16) 62%, transparent 74%);
-      animation:hdr-mobile-hero-bloom 9.5s ease-in-out infinite;
-    }
-    .hdr-mobile-asset {
+    }    .hdr-mobile-asset {
       position:relative;
       z-index:1;
       display:block;
@@ -794,9 +781,7 @@ a{color:inherit;text-decoration:none}
     @keyframes hdr-mobile-hero-bloom { 0%,22%{opacity:.24} 44%,80%{opacity:.96} 96%,100%{opacity:.24} }
     @keyframes hdr-mobile-hero-drift { 0%,100%{transform:rotate(-18deg) translateX(-10%)} 50%{transform:rotate(-18deg) translateX(18%)} }
     @keyframes hdr-mobile-hero-bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
-    @media (prefers-reduced-motion:reduce) {
-      .hdr-mobile-stage-glow{animation:none;opacity:.9;}
-      .hdr-mobile-asset--animated{display:none;}
+    @media (prefers-reduced-motion:reduce) {      .hdr-mobile-asset--animated{display:none;}
       .hdr-mobile-asset--poster{display:block;}
       .hdr-mobile-cue{animation:none;}
     }
@@ -1396,9 +1381,7 @@ a{color:inherit;text-decoration:none}
   html[data-theme="light"] .mobile-quote-top{color:#243142!important;}
   html[data-theme="light"] .mobile-quote-bubble{background:#ffffff!important;color:#2f3c4c!important;border-color:rgba(36,48,63,.12)!important;}
   html[data-theme="light"] .mobile-quote-points span{background:#eef3f6!important;color:#4c5d6c!important;border-color:rgba(36,48,63,.12)!important;}
-  html[data-theme="light"] .hdr-mobile-import-hero{background:radial-gradient(circle at 50% 28%,rgba(105,147,190,.20),transparent 18rem),linear-gradient(180deg,#f8f7f0,#eef3f6 72%,#f8f7f0)!important;}
-  html[data-theme="light"] .hdr-mobile-stage-glow{background:radial-gradient(circle at 50% 42%,rgba(91,139,207,.28),rgba(133,154,169,.18) 48%,transparent 74%)!important;filter:blur(26px);}
-  html[data-theme="light"] .hdr-mobile-asset{filter:drop-shadow(0 26px 42px rgba(35,48,65,.24)) saturate(.96) contrast(.98)!important;}
+  html[data-theme="light"] .hdr-mobile-import-hero{background:radial-gradient(circle at 50% 28%,rgba(105,147,190,.20),transparent 18rem),linear-gradient(180deg,#f8f7f0,#eef3f6 72%,#f8f7f0)!important;}  html[data-theme="light"] .hdr-mobile-asset{filter:drop-shadow(0 26px 42px rgba(35,48,65,.24)) saturate(.96) contrast(.98)!important;}
   html[data-theme="light"] .hdr-mobile-stars,html[data-theme="light"] .hdr-mobile-call{color:#526171!important;}
   html[data-theme="light"] .hdr-mobile-cue{color:#708091!important;}
 
@@ -1448,18 +1431,7 @@ a{color:inherit;text-decoration:none}
       linear-gradient(180deg,#f8f7f0,#eaf0f4 48%,#f8f7f0)!important;
     border-block-color:rgba(36,48,63,.10)!important;
   }
-  html[data-theme="light"] #services::before{opacity:.48;background-image:linear-gradient(rgba(36,48,63,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(36,48,63,.04) 1px,transparent 1px)!important;}
-  html[data-theme="light"] .hdr-services-stage{filter:saturate(.92) contrast(.98);}
-  html[data-theme="light"] .stage-glow{opacity:.42!important;filter:blur(34px)!important;}
-  html[data-theme="light"] .stage-device{filter:drop-shadow(0 28px 32px rgba(35,48,65,.18)) saturate(.94)!important;}
-  html[data-theme="light"] .hdr-services-proof,html[data-theme="light"] .hdr-services-bottom{background:rgba(255,255,255,.70)!important;border-color:rgba(36,48,63,.12)!important;box-shadow:0 14px 36px rgba(35,48,65,.09)!important;}
-  html[data-theme="light"] .service-proof-item{background:rgba(255,255,255,.72)!important;border-color:rgba(36,48,63,.11)!important;color:#233142!important;}
-  html[data-theme="light"] .service-proof-item small,html[data-theme="light"] .hdr-services-bottom small{color:#647383!important;}
-  html[data-theme="light"] .hdr-service-card{background:linear-gradient(145deg,#ffffff 0%,#f0f4f7 100%)!important;border-color:rgba(36,48,63,.13)!important;box-shadow:0 20px 52px rgba(35,48,65,.12)!important;color:#17202b!important;}
-  html[data-theme="light"] .hdr-service-card::before{opacity:.12!important;background:radial-gradient(circle at 50% 0%,var(--card-accent),transparent 64%)!important;}
-  html[data-theme="light"] .hdr-service-card p{color:#526171!important;}
-  html[data-theme="light"] .hdr-service-card img{opacity:.92;filter:drop-shadow(0 18px 24px rgba(35,48,65,.16)) saturate(.95) contrast(.98)!important;}
-  html[data-theme="light"] .service-icon{background:color-mix(in srgb,var(--card-accent) 12%,#fff)!important;border-color:color-mix(in srgb,var(--card-accent) 24%,rgba(36,48,63,.12))!important;}
+  html[data-theme="light"] #services::before{opacity:.48;background-image:linear-gradient(rgba(36,48,63,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(36,48,63,.04) 1px,transparent 1px)!important;}  html[data-theme="light"] .service-icon{background:color-mix(in srgb,var(--card-accent) 12%,#fff)!important;border-color:color-mix(in srgb,var(--card-accent) 24%,rgba(36,48,63,.12))!important;}
   html[data-theme="light"] .wave-fill{fill:#eef2f4!important;}
 
   /* Process / timeline. */
@@ -1877,20 +1849,6 @@ a{color:inherit;text-decoration:none}
 .hh-stage{animation:hhFade .95s ease both;animation-delay:.18s}
 @media(prefers-reduced-motion:reduce){.hh-left>*,.hh-stage{animation:none!important}}
 </style>
-<style id="hdr-services-mobile">
-@media(max-width:680px){
-  .hdr-services-stage{display:none}
-  .hdr-services-hero{margin-bottom:1.1rem}
-  .hdr-service-card-grid{gap:.6rem}
-  .hdr-service-card{display:grid!important;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto;column-gap:.85rem;align-items:center;min-height:0!important;padding:.85rem 1rem!important;border-radius:15px!important}
-  .hdr-service-card>.service-icon{grid-row:1/3;grid-column:1;font-size:1.7rem!important;margin:0!important}
-  .hdr-service-card>h3{grid-row:1;grid-column:2;margin:0!important;font-size:1.06rem!important;line-height:1.12}
-  .hdr-service-card>p{grid-row:2;grid-column:2;margin:.14rem 0 0!important;font-size:.8rem!important;line-height:1.32;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .hdr-service-card>.service-card-link{grid-row:1/3;grid-column:3;font-size:0!important}
-  .hdr-service-card>.service-card-link span{font-size:1.2rem;opacity:.55}
-  .hdr-service-card>img{display:none!important}
-}
-</style>
 <style id="hdr-reviews-mobile">
 @media(max-width:680px){
   .hdr-reviews-grid{display:grid!important;grid-auto-flow:column;grid-auto-columns:84%;grid-template-columns:none!important;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -1.1rem;padding:.2rem 1.1rem .8rem;scrollbar-width:none}
@@ -2051,87 +2009,64 @@ a{color:inherit;text-decoration:none}
 <!-- ═══════════════════════════════════════════
        SERVICES GRID
   ══════════════════════════════════════════════ -->
-<section aria-labelledby="services-title" class="section hdr-services-showcase" id="services">
-<div class="container hdr-services-container">
-<div class="hdr-services-hero" data-animate="">
-<div class="hdr-services-copy">
-<div class="section-eyebrow">Our Services</div>
-<h2 class="section-title" id="services-title">Expert repairs for every device.</h2>
-<p class="section-sub">From phones to high-performance computers, HDR fixes the devices Wood River Valley people actually depend on. Quality parts, transparent pricing, and fast turnaround.</p>
-</div>
-<div aria-hidden="true" class="hdr-services-stage">
-<div class="stage-glow stage-glow--blue"></div>
-<div class="stage-glow stage-glow--violet"></div>
-<img alt="" class="stage-device stage-device--phone" decoding="async" height="630" loading="lazy" src="/assets/services/hero-phone-cracked.webp" width="420"/>
-<img alt="" class="stage-device stage-device--laptop" decoding="async" height="600" loading="lazy" src="/assets/services/hero-laptop.webp" width="900"/>
-<img alt="" class="stage-device stage-device--console" decoding="async" height="690" loading="lazy" src="/assets/services/hero-console-controller.webp" width="460"/>
-</div>
-</div>
-<div aria-label="Service promises" class="hdr-services-proof">
-<div class="service-proof-item service-proof-item--blue">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="verified_user"></span>
-<div><strong>Quality Parts</strong><small>Tested. Trusted. Guaranteed.</small></div>
-</div>
-<div class="service-proof-item service-proof-item--violet">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="schedule"></span>
-<div><strong>Fast Turnaround</strong><small>Most common repairs same-day.</small></div>
-</div>
-<div class="service-proof-item service-proof-item--teal">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="workspace_premium"></span>
-<div><strong>40-Day Warranty</strong><small>On eligible parts and labor.</small></div>
-</div>
-</div>
-<div aria-label="Repair service categories" class="hdr-service-card-grid">
-<a class="hdr-service-card hdr-service-card--phone" href="/iphone-repair" style="--card-accent:#6f86cc;">
-<span aria-hidden="true" class="service-icon material-symbols-outlined" data-icon="smartphone"></span>
+<section aria-labelledby="services-title" class="section svc-quiet" id="services">
+<div class="container">
+<header class="svc-head" data-animate="">
+<h2 class="section-title" id="services-title">What I fix.</h2>
+<p class="svc-sub">Phones, computers, tablets, and consoles — repaired in Hailey, or by mail from anywhere in Idaho.</p>
+<p class="svc-trust">40-day warranty&#8194;·&#8194;Most repairs same-day&#8194;·&#8194;Free return shipping on mail-in</p>
+</header>
+<div aria-label="Repair service categories" class="svc-grid">
+<a class="svc-card" data-animate="" href="/iphone-repair">
 <h3>Phones</h3>
-<p>Cracked glass, battery issues, charging problems, water damage, cameras, and speakers.</p>
-<span class="service-card-link">View services <span aria-hidden="true">→</span></span>
-<img alt="" decoding="async" height="520" loading="lazy" src="/assets/services/card-phone.webp" width="520"/>
+<p>Screens, batteries, charging, water damage.</p>
+<span class="svc-link">View services <span aria-hidden="true">→</span></span>
 </a>
-<a class="hdr-service-card hdr-service-card--computer" href="/laptop-repair" id="computersCard" style="--card-accent:#4fb6a4;">
-<span aria-hidden="true" class="service-icon material-symbols-outlined" data-icon="laptop_mac"></span>
+<a class="svc-card" data-animate="" href="/laptop-repair" id="computersCard">
 <h3>Computers</h3>
-<p>MacBook, Windows laptop, gaming PC, or a tune-up — pick the bench that fits the problem.</p>
-<span class="service-card-link">Choose your repair <span aria-hidden="true">→</span></span>
-<img alt="" decoding="async" height="373" loading="lazy" src="/assets/services/card-laptop.webp?v=clip-20260515" width="560"/>
+<p>MacBook, Windows laptop, gaming PC, or a tune-up.</p>
+<span class="svc-link">Choose your repair <span aria-hidden="true">→</span></span>
 </a>
-<a class="hdr-service-card hdr-service-card--console" href="/console-repair" style="--card-accent:#9072cf;">
-<span aria-hidden="true" class="service-icon material-symbols-outlined" data-icon="sports_esports"></span>
+<a class="svc-card" data-animate="" href="/console-repair">
 <h3>Consoles</h3>
-<p>HDMI issues, overheating, disk drive problems, controller drift, fan noise, and general repairs.</p>
-<span class="service-card-link">View services <span aria-hidden="true">→</span></span>
-<img alt="" decoding="async" height="448" loading="lazy" src="/assets/services/card-console.webp" width="560"/>
+<p>HDMI ports, overheating, drift, disc drives.</p>
+<span class="svc-link">View services <span aria-hidden="true">→</span></span>
 </a>
-<a class="hdr-service-card hdr-service-card--tablet" href="/tablet-repair" style="--card-accent:#c9a25f;">
-<span aria-hidden="true" class="service-icon material-symbols-outlined" data-icon="tablet_mac"></span>
+<a class="svc-card" data-animate="" href="/tablet-repair">
 <h3>Tablets</h3>
-<p>Cracked screens, battery replacement, charging issues, kid-drop damage, and more.</p>
-<span class="service-card-link">View services <span aria-hidden="true">→</span></span>
-<img alt="" decoding="async" height="373" loading="lazy" src="/assets/services/card-tablet.webp?v=clip-20260515" width="560"/>
+<p>Screens, batteries, charging, kid drops.</p>
+<span class="svc-link">View services <span aria-hidden="true">→</span></span>
 </a>
-<a class="hdr-service-card hdr-service-card--diagnostics" href="/repair-or-replace-phone" style="--card-accent:#cf7a82;">
-<span aria-hidden="true" class="service-icon material-symbols-outlined" data-icon="monitor_heart"></span>
+<a class="svc-card" data-animate="" href="/repair-or-replace-phone">
 <h3>Diagnostics</h3>
-<p>Not sure what’s wrong? I’ll run a full diagnostic and explain the repair-or-replace call.</p>
-<span class="service-card-link">Learn more <span aria-hidden="true">→</span></span>
-<img alt="" decoding="async" height="333" loading="lazy" src="/assets/services/card-diagnostic-lens.webp" width="500"/>
+<p>Not sure what’s wrong? I’ll find it and price it.</p>
+<span class="svc-link">Learn more <span aria-hidden="true">→</span></span>
 </a>
-<a class="hdr-service-card hdr-service-card--mail" href="/mail-in-repair" style="--card-accent:#6f9bcb;">
-<span aria-hidden="true" class="service-icon material-symbols-outlined" data-icon="inventory_2"></span>
+<a class="svc-card" data-animate="" href="/mail-in-repair">
 <h3>Mail-In Repairs</h3>
-<p>Can’t make it in? Ship your device to HDR and I’ll take care of the rest.</p>
-<span class="service-card-link">Learn more <span aria-hidden="true">→</span></span>
-<img alt="" decoding="async" height="448" loading="lazy" src="/assets/services/card-shipping-box.webp" width="560"/>
+<p>Ship it from anywhere in Idaho.</p>
+<span class="svc-link">Learn more <span aria-hidden="true">→</span></span>
 </a>
 </div>
-<div aria-label="Additional service trust points" class="hdr-services-bottom">
-<div><span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span><strong>Free Return Shipping</strong><small>On approved mail-in repairs</small></div>
-<div><span aria-hidden="true" class="material-symbols-outlined" data-icon="shield_lock"></span><strong>Secure Handling</strong><small>Your device stays in safe hands</small></div>
-<div><span aria-hidden="true" class="material-symbols-outlined" data-icon="forum"></span><strong>Real Support</strong><small>Talk to the actual technician</small></div>
-<div><span aria-hidden="true" class="material-symbols-outlined" data-icon="star"></span><strong>Trusted Locally</strong><small>Proudly serving the Wood River Valley</small></div>
 </div>
-</div>
+<style id="svc-quiet-css">
+.svc-quiet .svc-head{max-width:640px}
+.svc-quiet .section-title{text-align:left;font-size:clamp(2.1rem,4.2vw,2.7rem);margin-bottom:.9rem}
+.svc-sub{color:var(--text-secondary);font-size:1.06rem;line-height:1.65;margin:0;max-width:56ch}
+.svc-trust{color:var(--text-muted);font-size:.86rem;letter-spacing:.01em;margin:.85rem 0 0}
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:2.4rem}
+.svc-card{display:block;padding:1.9rem 1.7rem 1.6rem;border:1px solid var(--border-subtle);border-radius:18px;background:transparent;color:var(--text-primary);text-decoration:none;transition:background .18s ease,border-color .18s ease}
+.svc-card:hover{background:var(--bg-surface);border-color:var(--border-strong)}
+.svc-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.svc-card h3{font-family:var(--font-body)!important;font-weight:600!important;font-size:1.35rem;letter-spacing:-.015em;line-height:1.15;margin:0 0 .5rem}
+.svc-card p{color:var(--text-secondary);font-size:.95rem;line-height:1.55;margin:0 0 1.35rem}
+.svc-link{display:inline-flex;align-items:center;gap:.3rem;color:var(--accent);font-size:.9rem;font-weight:600}
+.svc-link span{transition:transform .18s ease}
+.svc-card:hover .svc-link span{transform:translateX(2px)}
+@media(max-width:1079px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:639px){.svc-grid{grid-template-columns:minmax(0,1fr);gap:10px}.svc-card{padding:1.35rem 1.25rem 1.2rem}.svc-card h3{font-size:1.2rem}.svc-card p{margin-bottom:1rem}}
+@media(prefers-reduced-motion:reduce){.svc-card,.svc-link span{transition:none}}
+</style>
 </section>
 <!-- ═══════════════════════════════════════════
        PRICING
