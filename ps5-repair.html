@@ -248,6 +248,8 @@ html.ps5-anim .ps5-hero-visual img{animation:ps5rise .9s cubic-bezier(.22,1,.36,
 .ps5-note strong{color:var(--ink)}
 /* mail-in */
 .ps5-mail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:step}
+/* from-the-bench real photo proof grid */
+.ps5-bench-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .ps5-step-card{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:1.35rem}
 .ps5-step-card .n{font-family:var(--mono);color:var(--pulse);font-size:.8rem;letter-spacing:.1em;display:block;margin-bottom:.6rem}
 .ps5-step-card h3{font-family:var(--disp);font-weight:600;font-size:1.08rem;margin:0 0 .45rem;color:var(--ink)}
@@ -270,7 +272,7 @@ html.ps5-anim .ps5-hero-visual img{animation:ps5rise .9s cubic-bezier(.22,1,.36,
 /* reveal (site-safe pattern: gated + safety timer) */
 html.ps5-anim .ps5-page [data-animate]{opacity:0;transform:translateY(18px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
 html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
-@media(max-width:900px){.ps5-hero-grid{grid-template-columns:1fr}.ps5-hero-visual{order:-1}.ps5-hero-visual img{width:min(210px,55%)}.ps5-sym-grid,.ps5-mail-grid{grid-template-columns:1fr}.ps5-hdmi{grid-template-columns:1fr}.ps5-price-card{position:static}}
+@media(max-width:900px){.ps5-hero-grid{grid-template-columns:1fr}.ps5-hero-visual{order:-1}.ps5-hero-visual img{width:min(210px,55%)}.ps5-sym-grid,.ps5-mail-grid,.ps5-bench-grid{grid-template-columns:1fr}.ps5-hdmi{grid-template-columns:1fr}.ps5-price-card{position:static}}
 @media(max-width:640px){.ps5-hero{padding:3.4rem 0 2.4rem}.ps5-sec{padding:2.3rem 0}.ps5-cta-row .ps5-btn{width:100%;justify-content:center}.ps5-final{display:block}.ps5-final .ps5-btn{width:100%;justify-content:center;margin-top:1.1rem}}
 @media(prefers-reduced-motion:reduce){html.ps5-anim .ps5-lightbar,html.ps5-anim .ps5-hero-visual img{animation:none}html.ps5-anim .ps5-page [data-animate]{opacity:1;transform:none;transition:none}.ps5-light.pulse{animation:none}}
 /* bench scope: HDMI pin diagnostic + magnifier */
@@ -286,6 +288,14 @@ html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
 .ps5-scope.has-lens{cursor:none}
 .ps5-scope-cap{color:var(--muted);font-size:.85rem;line-height:1.6;margin:.8rem 0 0}
 @media(hover:none),(pointer:coarse){.ps5-lens{display:none!important}}
+.ps5-scope-photo{margin:1.1rem 0 0;max-width:210px}
+.ps5-scope-photo img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+.ps5-scope-photo figcaption{margin-top:.55rem;font-size:.8rem;color:var(--muted);line-height:1.5}
+.ps5-scope-photo figcaption strong{color:var(--soft)}
+.ps5-bench-photo{border:1px solid var(--line);border-radius:16px;background:var(--panel);overflow:hidden}
+.ps5-bench-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.ps5-bench-photo figcaption{padding:1rem 1.1rem 1.15rem;color:var(--muted);font-size:.88rem;line-height:1.55}
+.ps5-bench-photo figcaption strong{display:block;color:var(--ink);font-family:var(--disp);font-weight:600;margin-bottom:.3rem;font-size:1rem}
 /* repair-ticket stamp on the price card */
 .ps5-price-card{position:relative;overflow:visible}
 .ps5-stamp{position:absolute;top:12px;right:-6px;transform:rotate(-9deg);font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(224,104,90,.9);border:1.5px dashed rgba(224,104,90,.5);border-radius:6px;padding:.22rem .5rem;pointer-events:none;user-select:none;background:rgba(224,104,90,.06)}
@@ -414,6 +424,10 @@ html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
 <div aria-hidden="true" class="ps5-lens" id="ps5Lens"><div class="ps5-lens-inner" id="ps5LensInner"><svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ps5PinTitleZ"><title id="ps5PinTitleZ">Schematic cross-section of an HDMI port showing two bent contact pins</title><defs><linearGradient id="pinGoodZ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe9ff"/><stop offset="1" stop-color="#8fa0b4"/></linearGradient><linearGradient id="pinBadZ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9c86"/><stop offset="1" stop-color="#c8493a"/></linearGradient><radialGradient id="badGlowZ" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="rgba(224,104,90,.38)"/><stop offset="1" stop-color="rgba(224,104,90,0)"/></radialGradient></defs><rect x="16" y="16" width="648" height="168" rx="16" fill="#12161f" stroke="rgba(220,232,255,.16)" stroke-width="2"/><text x="34" y="38" font-family="ui-monospace,Menlo,monospace" font-size="11" letter-spacing="2" fill="rgba(220,232,255,.34)">HDMI CONTACT ROW</text><rect x="36" y="48" width="608" height="78" rx="10" fill="#0a0d13"/><ellipse cx="340.0" cy="123.2" rx="72" ry="44" fill="url(#badGlowZ)"/><rect x="70.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="108.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="146.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="184.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="222.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><g transform="rotate(24 264.0 140.0)"><rect x="260.0" y="80" width="8" height="60" rx="2.4" fill="url(#pinBadZ)" stroke="#3a1410" stroke-width="1"/></g><rect x="298.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="336.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="374.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><g transform="rotate(-20 416.0 140.0)"><rect x="412.0" y="80" width="8" height="60" rx="2.4" fill="url(#pinBadZ)" stroke="#3a1410" stroke-width="1"/></g><rect x="450.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="488.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="526.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="564.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="602.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/></svg></div></div>
 </div>
 <p class="ps5-scope-cap">On desktop, move your cursor over the pins for a closer look. The two in red are what a dropped or yanked HDMI cable usually bends first &mdash; exactly what gets rebuilt during the repair above.</p>
+<figure class="ps5-scope-photo">
+<img alt="Real HDMI port solder joints and contact pins on a PS5 mainboard, photographed under magnification on the bench" decoding="async" height="1100" loading="lazy" src="/assets/services/ps5-hdmi-port-real.webp" width="1002"/>
+<figcaption><strong>The real thing.</strong> Same contact row, mid-repair on my bench.</figcaption>
+</figure>
 </div>
 </div>
 <aside class="ps5-price-card" data-animate="">
@@ -450,6 +464,26 @@ html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
 </tbody>
 </table></div>
 <p class="ps5-note" role="note"><span aria-hidden="true" style="color:var(--pulse);font-weight:700">&#9432;</span><span><strong>These are not binding quotes.</strong> Your exact price depends on your model, part grade, device condition, and parts availability &mdash; you get a firm number by text before any work begins. Full menu on the <a href="/pricing" style="color:var(--pulse)">pricing page</a>.</span></p>
+</div></section>
+
+<section class="ps5-sec"><div class="ps5-wrap">
+<p class="ps5-kicker">From the bench</p>
+<h2 data-animate="">Real consoles. Real repairs.</h2>
+<p class="ps5-lede" data-animate="">Not stock photos &mdash; these came off consoles on my bench in the Wood River Valley.</p>
+<div class="ps5-bench-grid">
+<figure class="ps5-bench-photo" data-animate="">
+<img alt="A PS5 HDMI port with bent internal contact pins and a cracked shell, caused by a yanked cable" decoding="async" height="900" loading="lazy" src="/assets/services/ps5-broken-port.webp" width="708"/>
+<figcaption><strong>What a yanked cable does.</strong> Bent pins, cracked shell &mdash; the exact $175 repair above.</figcaption>
+</figure>
+<figure class="ps5-bench-photo" data-animate="">
+<img alt="Liquid metal thermal compound that has migrated off a PS5 processor die, exposing bare silicon" decoding="async" height="900" loading="lazy" src="/assets/services/ps5-liquid-metal.webp" width="659"/>
+<figcaption><strong>Liquid metal that walked off the die.</strong> The fan-roar cause from above &mdash; maintenance, not failure.</figcaption>
+</figure>
+<figure class="ps5-bench-photo" data-animate="">
+<img alt="A PS5 mainboard fully exposed on the repair bench, showing the HDMI and USB ports, APU, and thermal pad" decoding="async" height="1050" loading="lazy" src="/assets/services/ps5-mainboard.webp" width="1400"/>
+<figcaption><strong>Every board gets fully diagnosed</strong> before anything is touched or quoted.</figcaption>
+</figure>
+</div>
 </div></section>
 
 <section class="ps5-sec alt"><div class="ps5-wrap">
