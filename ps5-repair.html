@@ -35,8 +35,6 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/></noscript>
 <link as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/></noscript>
-<link href="/style.min.css?v=stage-parallax-20260702" media="print" onload="this.media='all'" rel="stylesheet"/>
-<noscript><link href="/style.min.css?v=stage-parallax-20260702" rel="stylesheet"/></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[
 {"@type":"Service","@id":"https://www.haileyrepair.com/ps5-repair#service","name":"PS5 Repair in Idaho","serviceType":"PlayStation 5 console repair","provider":{"@type":"LocalBusiness","@id":"https://www.haileyrepair.com/#business","name":"Hailey Device Repair","telephone":"+12084501606"},"areaServed":[{"@type":"State","name":"Idaho"},{"@type":"City","name":"Hailey"},{"@type":"City","name":"Ketchum"},{"@type":"City","name":"Sun Valley"},{"@type":"City","name":"Bellevue"}],"url":"https://www.haileyrepair.com/ps5-repair","hasOfferCatalog":{"@type":"OfferCatalog","name":"PS5 repair services","itemListElement":[
 {"@type":"Offer","itemOffered":{"@type":"Service","name":"PS5 HDMI port replacement"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","minPrice":175},"description":"Real price for a standard repair, not a binding quote — confirmed by text before any work."},
@@ -159,6 +157,8 @@ section .lp-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;
 
 @media(max-width:900px){.lp-info-cards{grid-template-columns:repeat(2,1fr)}.lp-symptoms-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.lp-symptoms-grid{grid-template-columns:1fr}.lp-info-cards{grid-template-columns:1fr}.lp-compare-grid{grid-template-columns:1fr}.lp-hero-badges{gap:.35rem}.lp-hero-badge{font-size:.72rem;padding:.32rem .7rem}.pricing-table thead{display:none}.pricing-table,.pricing-table tbody,.pricing-table tr,.pricing-table td{display:block;width:100%}.pricing-table tr{border-bottom:1px solid var(--border-subtle);padding:.55rem 0}.pricing-table tr:last-child{border-bottom:none}.pricing-table td{display:flex;justify-content:space-between;gap:1rem;padding:.34rem .9rem;border-bottom:none}.pricing-table td::before{content:attr(data-label);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}.pricing-table td:first-child{min-width:auto}}</style>
+<link href="/style.min.css?v=stage-parallax-20260702" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="/style.min.css?v=stage-parallax-20260702" rel="stylesheet"/></noscript>
 <style id="hdr-canonical-nav-css">
 
 /* HDR canonical homepage nav normalization — injected sitewide 2026-05-24 */
@@ -273,6 +273,22 @@ html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
 @media(max-width:900px){.ps5-hero-grid{grid-template-columns:1fr}.ps5-hero-visual{order:-1}.ps5-hero-visual img{width:min(210px,55%)}.ps5-sym-grid,.ps5-mail-grid{grid-template-columns:1fr}.ps5-hdmi{grid-template-columns:1fr}.ps5-price-card{position:static}}
 @media(max-width:640px){.ps5-hero{padding:3.4rem 0 2.4rem}.ps5-sec{padding:2.3rem 0}.ps5-cta-row .ps5-btn{width:100%;justify-content:center}.ps5-final{display:block}.ps5-final .ps5-btn{width:100%;justify-content:center;margin-top:1.1rem}}
 @media(prefers-reduced-motion:reduce){html.ps5-anim .ps5-lightbar,html.ps5-anim .ps5-hero-visual img{animation:none}html.ps5-anim .ps5-page [data-animate]{opacity:1;transform:none;transition:none}.ps5-light.pulse{animation:none}}
+/* bench scope: HDMI pin diagnostic + magnifier */
+.ps5-scope-wrap{margin-top:1.7rem;max-width:56ch}
+.ps5-scope-label{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 .7rem}
+.ps5-scope-label .dot{width:6px;height:6px;border-radius:99px;background:#e0685a;box-shadow:0 0 8px rgba(224,104,90,.7)}
+.ps5-scope{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a0d13}
+.ps5-scope svg{display:block;width:100%;height:auto}
+.ps5-lens{position:absolute;width:150px;height:150px;border-radius:50%;overflow:hidden;pointer-events:none;opacity:0;transition:opacity .15s ease;box-shadow:0 12px 28px rgba(0,0,0,.55),0 0 0 2px rgba(220,232,255,.55) inset,0 0 0 7px rgba(7,9,14,.92);z-index:3;background:#0a0d13}
+.ps5-lens.active{opacity:1}
+.ps5-lens-inner{position:absolute;top:0;left:0}
+.ps5-lens-inner svg{display:block;max-width:none}
+.ps5-scope.has-lens{cursor:none}
+.ps5-scope-cap{color:var(--muted);font-size:.85rem;line-height:1.6;margin:.8rem 0 0}
+@media(hover:none),(pointer:coarse){.ps5-lens{display:none!important}}
+/* repair-ticket stamp on the price card */
+.ps5-price-card{position:relative;overflow:visible}
+.ps5-stamp{position:absolute;top:12px;right:-6px;transform:rotate(-9deg);font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(224,104,90,.9);border:1.5px dashed rgba(224,104,90,.5);border-radius:6px;padding:.22rem .5rem;pointer-events:none;user-select:none;background:rgba(224,104,90,.06)}
 </style>
 
 </head>
@@ -351,7 +367,7 @@ html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
 </div>
 <div class="ps5-chips"><span><strong>HDMI port $175</strong> &middot; usually same-day on the bench</span><span><strong>40-day warranty</strong></span><span>Replies <strong>under 30 min</strong></span></div>
 </div>
-<div class="ps5-hero-visual"><img alt="PS5 console and DualSense controller on the repair bench" decoding="async" fetchpriority="high" height="690" src="/assets/services/hero-console-controller.webp" width="460"/></div>
+<div class="ps5-hero-visual"><img alt="PS5 console and DualSense controller on the repair bench" decoding="async" fetchpriority="high" height="735" src="/assets/services/hero-ps5-console.webp" width="460"/></div>
 </div></div></section>
 
 <section class="ps5-sec"><div class="ps5-wrap">
@@ -391,8 +407,17 @@ html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
 <li data-animate=""><span class="ps5-light on"></span><span>Every joint is inspected under the microscope, then the console is tested at 4K before it goes home.</span></li>
 <li data-animate=""><span class="ps5-light pulse"></span><span><strong>The honest part:</strong> if the retimer chip behind the port is damaged, that&rsquo;s deeper board-level work. I diagnose first and quote before touching anything &mdash; you never approve blind.</span></li>
 </ul>
+<div class="ps5-scope-wrap" data-animate="">
+<p class="ps5-scope-label"><span class="dot"></span>Under the microscope &mdash; what a bent pin looks like</p>
+<div class="ps5-scope" id="ps5Scope">
+<svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ps5PinTitle"><title id="ps5PinTitle">Schematic cross-section of an HDMI port showing two bent contact pins</title><defs><linearGradient id="pinGood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe9ff"/><stop offset="1" stop-color="#8fa0b4"/></linearGradient><linearGradient id="pinBad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9c86"/><stop offset="1" stop-color="#c8493a"/></linearGradient><radialGradient id="badGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="rgba(224,104,90,.38)"/><stop offset="1" stop-color="rgba(224,104,90,0)"/></radialGradient></defs><rect x="16" y="16" width="648" height="168" rx="16" fill="#12161f" stroke="rgba(220,232,255,.16)" stroke-width="2"/><text x="34" y="38" font-family="ui-monospace,Menlo,monospace" font-size="11" letter-spacing="2" fill="rgba(220,232,255,.34)">HDMI CONTACT ROW</text><rect x="36" y="48" width="608" height="78" rx="10" fill="#0a0d13"/><ellipse cx="340.0" cy="123.2" rx="72" ry="44" fill="url(#badGlow)"/><rect x="70.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="108.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="146.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="184.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="222.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><g transform="rotate(24 264.0 140.0)"><rect x="260.0" y="80" width="8" height="60" rx="2.4" fill="url(#pinBad)" stroke="#3a1410" stroke-width="1"/></g><rect x="298.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="336.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="374.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><g transform="rotate(-20 416.0 140.0)"><rect x="412.0" y="80" width="8" height="60" rx="2.4" fill="url(#pinBad)" stroke="#3a1410" stroke-width="1"/></g><rect x="450.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="488.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="526.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="564.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="602.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGood)" stroke="rgba(10,14,20,.5)" stroke-width="1"/></svg>
+<div aria-hidden="true" class="ps5-lens" id="ps5Lens"><div class="ps5-lens-inner" id="ps5LensInner"><svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ps5PinTitleZ"><title id="ps5PinTitleZ">Schematic cross-section of an HDMI port showing two bent contact pins</title><defs><linearGradient id="pinGoodZ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe9ff"/><stop offset="1" stop-color="#8fa0b4"/></linearGradient><linearGradient id="pinBadZ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9c86"/><stop offset="1" stop-color="#c8493a"/></linearGradient><radialGradient id="badGlowZ" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="rgba(224,104,90,.38)"/><stop offset="1" stop-color="rgba(224,104,90,0)"/></radialGradient></defs><rect x="16" y="16" width="648" height="168" rx="16" fill="#12161f" stroke="rgba(220,232,255,.16)" stroke-width="2"/><text x="34" y="38" font-family="ui-monospace,Menlo,monospace" font-size="11" letter-spacing="2" fill="rgba(220,232,255,.34)">HDMI CONTACT ROW</text><rect x="36" y="48" width="608" height="78" rx="10" fill="#0a0d13"/><ellipse cx="340.0" cy="123.2" rx="72" ry="44" fill="url(#badGlowZ)"/><rect x="70.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="108.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="146.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="184.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="222.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><g transform="rotate(24 264.0 140.0)"><rect x="260.0" y="80" width="8" height="60" rx="2.4" fill="url(#pinBadZ)" stroke="#3a1410" stroke-width="1"/></g><rect x="298.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="336.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="374.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><g transform="rotate(-20 416.0 140.0)"><rect x="412.0" y="80" width="8" height="60" rx="2.4" fill="url(#pinBadZ)" stroke="#3a1410" stroke-width="1"/></g><rect x="450.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="488.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="526.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="564.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/><rect x="602.0" y="84" width="8" height="56" rx="2.4" fill="url(#pinGoodZ)" stroke="rgba(10,14,20,.5)" stroke-width="1"/></svg></div></div>
+</div>
+<p class="ps5-scope-cap">On desktop, move your cursor over the pins for a closer look. The two in red are what a dropped or yanked HDMI cable usually bends first &mdash; exactly what gets rebuilt during the repair above.</p>
+</div>
 </div>
 <aside class="ps5-price-card" data-animate="">
+<span class="ps5-stamp" aria-hidden="true">Estimate</span>
 <span class="lab">HDMI port replacement</span>
 <div class="big">$175</div>
 <p class="sub">PS5, PS5 Slim, PS5 Pro &middot; usually same-day on the bench</p>
@@ -733,6 +758,29 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 els.forEach(function(el){io.observe(el);});
 setTimeout(function(){els.forEach(function(el){el.classList.add('visible');});},2500);
 });})();
+</script>
+<script id="ps5-scope-js">
+(function(){
+var scope=document.getElementById('ps5Scope'),lens=document.getElementById('ps5Lens'),inner=document.getElementById('ps5LensInner');
+if(!scope||!lens||!inner)return;
+if(!matchMedia('(hover: hover) and (pointer: fine)').matches)return;
+scope.classList.add('has-lens');
+var innerSvg=inner.querySelector('svg'),lensSize=150,zoom=2.5;
+function move(e){
+var rect=scope.getBoundingClientRect();
+var x=e.clientX-rect.left,y=e.clientY-rect.top;
+if(x<0||y<0||x>rect.width||y>rect.height){lens.classList.remove('active');return;}
+lens.classList.add('active');
+lens.style.left=(x-lensSize/2)+'px';
+lens.style.top=(y-lensSize/2)+'px';
+var zw=rect.width*zoom,zh=rect.height*zoom;
+innerSvg.style.width=zw+'px';
+innerSvg.style.height=zh+'px';
+inner.style.transform='translate('+(-(x*zoom-lensSize/2))+'px,'+(-(y*zoom-lensSize/2))+'px)';
+}
+scope.addEventListener('mousemove',move);
+scope.addEventListener('mouseleave',function(){lens.classList.remove('active');});
+})();
 </script>
 
 <script defer="" src="/main.min.js?v=home-20260514"></script>
