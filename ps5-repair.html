@@ -249,7 +249,9 @@ html.ps5-anim .ps5-hero-visual img{animation:ps5rise .9s cubic-bezier(.22,1,.36,
 /* mail-in */
 .ps5-mail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:step}
 /* from-the-bench real photo proof grid */
-.ps5-bench-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ps5-bench-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ps5-bench-photo.wide{grid-column:1/-1}
+.ps5-bench-photo.wide img{aspect-ratio:4/3}
 .ps5-step-card{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:1.35rem}
 .ps5-step-card .n{font-family:var(--mono);color:var(--pulse);font-size:.8rem;letter-spacing:.1em;display:block;margin-bottom:.6rem}
 .ps5-step-card h3{font-family:var(--disp);font-weight:600;font-size:1.08rem;margin:0 0 .45rem;color:var(--ink)}
@@ -288,14 +290,30 @@ html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
 .ps5-scope.has-lens{cursor:none}
 .ps5-scope-cap{color:var(--muted);font-size:.85rem;line-height:1.6;margin:.8rem 0 0}
 @media(hover:none),(pointer:coarse){.ps5-lens{display:none!important}}
-.ps5-scope-photo{margin:1.1rem 0 0;max-width:210px}
-.ps5-scope-photo img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+.ps5-scope-photo{margin:1.1rem 0 0;max-width:210px;position:relative}
+.ps5-scope-photo img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block;cursor:zoom-in}
 .ps5-scope-photo figcaption{margin-top:.55rem;font-size:.8rem;color:var(--muted);line-height:1.5}
 .ps5-scope-photo figcaption strong{color:var(--soft)}
-.ps5-bench-photo{border:1px solid var(--line);border-radius:16px;background:var(--panel);overflow:hidden}
-.ps5-bench-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.ps5-bench-photo{position:relative;border:1px solid var(--line);border-radius:16px;background:var(--panel);overflow:hidden}
+.ps5-bench-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:zoom-in}
 .ps5-bench-photo figcaption{padding:1rem 1.1rem 1.15rem;color:var(--muted);font-size:.88rem;line-height:1.55}
 .ps5-bench-photo figcaption strong{display:block;color:var(--ink);font-family:var(--disp);font-weight:600;margin-bottom:.3rem;font-size:1rem}
+/* click-to-enlarge hint badge, shared by scope + bench photos */
+.ps5-zoom-hint{position:absolute;top:.6rem;right:.6rem;width:30px;height:30px;border-radius:50%;background:rgba(7,9,14,.55);border:1px solid var(--line2);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;color:var(--soft);font-size:.95rem;opacity:0;transform:scale(.85);transition:opacity .18s,transform .18s;pointer-events:none}
+.ps5-scope-photo:hover .ps5-zoom-hint,.ps5-bench-photo:hover .ps5-zoom-hint{opacity:1;transform:scale(1)}
+/* lightbox */
+.ps5-lightbox{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:6vh 5vw;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.ps5-lightbox.open{opacity:1;visibility:visible}
+.ps5-lightbox-backdrop{position:absolute;inset:0;background:rgba(4,6,10,.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ps5-lightbox-panel{position:relative;z-index:1;width:auto;max-width:80vw;max-height:80vh;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line2);border-radius:18px;padding:1.1rem 1.1rem 1.3rem;box-shadow:0 30px 90px rgba(0,0,0,.55);transform:scale(.96) translateY(8px);transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.ps5-lightbox.open .ps5-lightbox-panel{transform:scale(1) translateY(0)}
+.ps5-lightbox-cap{font-size:.92rem;color:var(--soft);line-height:1.5;margin:0 0 .85rem;padding-right:2rem}
+.ps5-lightbox-cap strong{display:block;color:var(--ink);font-family:var(--disp);font-weight:600;margin-bottom:.2rem;font-size:1.08rem}
+.ps5-lightbox-img{max-width:100%;max-height:calc(80vh - 5.5rem);border-radius:10px;display:block;margin:0 auto;object-fit:contain}
+.ps5-lightbox-close{position:absolute;top:.85rem;right:.85rem;width:34px;height:34px;border-radius:50%;background:var(--panel2);border:1px solid var(--line2);color:var(--soft);font-size:1.15rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.ps5-lightbox-close:hover{background:var(--pulse-dim);color:var(--pulse);border-color:var(--pulse)}
+@media(max-width:640px){.ps5-lightbox-panel{max-width:92vw;max-height:88vh;padding:.9rem .9rem 1.1rem}.ps5-lightbox-img{max-height:calc(88vh - 6rem)}}
+@media(prefers-reduced-motion:reduce){.ps5-lightbox,.ps5-lightbox-panel,.ps5-zoom-hint{transition:none}}
 /* repair-ticket stamp on the price card */
 .ps5-price-card{position:relative;overflow:visible}
 .ps5-stamp{position:absolute;top:12px;right:-6px;transform:rotate(-9deg);font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(224,104,90,.9);border:1.5px dashed rgba(224,104,90,.5);border-radius:6px;padding:.22rem .5rem;pointer-events:none;user-select:none;background:rgba(224,104,90,.06)}
@@ -426,6 +444,7 @@ html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
 <p class="ps5-scope-cap">On desktop, move your cursor over the pins for a closer look. The two in red are what a dropped or yanked HDMI cable usually bends first &mdash; exactly what gets rebuilt during the repair above.</p>
 <figure class="ps5-scope-photo">
 <img alt="Real HDMI port solder joints and contact pins on a PS5 mainboard, photographed under magnification on the bench" decoding="async" height="1100" loading="lazy" src="/assets/services/ps5-hdmi-port-real.webp" width="1002"/>
+<span aria-hidden="true" class="ps5-zoom-hint">&#10530;</span>
 <figcaption><strong>The real thing.</strong> Same contact row, mid-repair on my bench.</figcaption>
 </figure>
 </div>
@@ -471,17 +490,20 @@ html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
 <h2 data-animate="">Real consoles. Real repairs.</h2>
 <p class="ps5-lede" data-animate="">Not stock photos &mdash; these came off consoles on my bench in the Wood River Valley.</p>
 <div class="ps5-bench-grid">
+<figure class="ps5-bench-photo wide" data-animate="">
+<img alt="A PS5 mainboard fully exposed on the repair bench, showing the HDMI and USB ports, APU, and thermal pad" decoding="async" height="1050" loading="lazy" src="/assets/services/ps5-mainboard.webp" width="1400"/>
+<span aria-hidden="true" class="ps5-zoom-hint">&#10530;</span>
+<figcaption><strong>Every board gets fully diagnosed</strong> before anything is touched or quoted.</figcaption>
+</figure>
 <figure class="ps5-bench-photo" data-animate="">
 <img alt="A PS5 HDMI port with bent internal contact pins and a cracked shell, caused by a yanked cable" decoding="async" height="900" loading="lazy" src="/assets/services/ps5-broken-port.webp" width="708"/>
+<span aria-hidden="true" class="ps5-zoom-hint">&#10530;</span>
 <figcaption><strong>What a yanked cable does.</strong> Bent pins, cracked shell &mdash; the exact $175 repair above.</figcaption>
 </figure>
 <figure class="ps5-bench-photo" data-animate="">
 <img alt="Liquid metal thermal compound that has migrated off a PS5 processor die, exposing bare silicon" decoding="async" height="900" loading="lazy" src="/assets/services/ps5-liquid-metal.webp" width="659"/>
+<span aria-hidden="true" class="ps5-zoom-hint">&#10530;</span>
 <figcaption><strong>Liquid metal that walked off the die.</strong> The fan-roar cause from above &mdash; maintenance, not failure.</figcaption>
-</figure>
-<figure class="ps5-bench-photo" data-animate="">
-<img alt="A PS5 mainboard fully exposed on the repair bench, showing the HDMI and USB ports, APU, and thermal pad" decoding="async" height="1050" loading="lazy" src="/assets/services/ps5-mainboard.webp" width="1400"/>
-<figcaption><strong>Every board gets fully diagnosed</strong> before anything is touched or quoted.</figcaption>
 </figure>
 </div>
 </div></section>
@@ -782,6 +804,16 @@ html.ps5-anim .ps5-page [data-animate].visible{opacity:1;transform:none}
 <span><kbd>ESC</kbd> Close</span>
 </div>
 </div>
+</div>
+</div>
+<div aria-hidden="true" aria-label="Enlarged photo" aria-modal="true" class="ps5-lightbox" id="ps5Lightbox" role="dialog">
+<div class="ps5-lightbox-backdrop" data-lightbox-close=""></div>
+<div class="ps5-lightbox-panel">
+<button aria-label="Close" class="ps5-lightbox-close" data-lightbox-close="" type="button">&times;</button>
+<p class="ps5-lightbox-cap"></p>
+<img alt="" class="ps5-lightbox-img" src=""/>
+</div>
+</div>
 <script id="ps5-anim-js">
 (function(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 if(!('IntersectionObserver' in window))return;
@@ -814,6 +846,38 @@ inner.style.transform='translate('+(-(x*zoom-lensSize/2))+'px,'+(-(y*zoom-lensSi
 }
 scope.addEventListener('mousemove',move);
 scope.addEventListener('mouseleave',function(){lens.classList.remove('active');});
+})();
+</script>
+<script id="ps5-lightbox-js">
+(function(){
+var lb=document.getElementById('ps5Lightbox');
+if(!lb)return;
+var img=lb.querySelector('.ps5-lightbox-img'),cap=lb.querySelector('.ps5-lightbox-cap'),lastFocus=null;
+function open(trigger){
+lastFocus=trigger;
+img.src=trigger.currentSrc||trigger.src;
+img.alt=trigger.alt||'';
+var fig=trigger.closest('figure'),figcap=fig?fig.querySelector('figcaption'):null;
+cap.innerHTML=figcap?figcap.innerHTML:'';
+lb.classList.add('open');
+lb.setAttribute('aria-hidden','false');
+document.body.style.overflow='hidden';
+lb.querySelector('.ps5-lightbox-close').focus();
+}
+function close(){
+lb.classList.remove('open');
+lb.setAttribute('aria-hidden','true');
+document.body.style.overflow='';
+if(lastFocus)lastFocus.focus();
+}
+document.querySelectorAll('.ps5-bench-photo img,.ps5-scope-photo img').forEach(function(el){
+el.setAttribute('tabindex','0');
+el.setAttribute('role','button');
+el.addEventListener('click',function(){open(el);});
+el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(el);}});
+});
+lb.querySelectorAll('[data-lightbox-close]').forEach(function(el){el.addEventListener('click',close);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
 })();
 </script>
 
