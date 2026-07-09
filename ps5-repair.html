@@ -250,8 +250,8 @@ html.ps5-anim .ps5-hero-visual img{animation:ps5rise .9s cubic-bezier(.22,1,.36,
 .ps5-mail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:step}
 /* from-the-bench real photo proof grid */
 .ps5-bench-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.ps5-bench-photo.wide{grid-column:1/-1}
-.ps5-bench-photo.wide img{aspect-ratio:4/3}
+.ps5-bench-photo.wide{grid-column:1/-1;justify-self:center;width:min(100%,780px)}
+.ps5-bench-photo.wide img{aspect-ratio:auto;height:auto;object-fit:contain}
 .ps5-step-card{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:1.35rem}
 .ps5-step-card .n{font-family:var(--mono);color:var(--pulse);font-size:.8rem;letter-spacing:.1em;display:block;margin-bottom:.6rem}
 .ps5-step-card h3{font-family:var(--disp);font-weight:600;font-size:1.08rem;margin:0 0 .45rem;color:var(--ink)}
