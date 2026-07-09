@@ -30,6 +30,7 @@ Hailey Device Repair is run by Samuel, a local repair technician in the Wood Riv
 - [Laptop repair](/laptop-repair): Windows laptop, Chromebook, charging, battery, SSD, slow computer, and no-power diagnostics.
 - [MacBook repair](/macbook-repair): MacBook screen, battery, charging, keyboard, liquid, and no-power triage from Hailey.
 - [Gaming PC repair](/gaming-pc-repair): Custom PC no-boot, thermal, upgrade, performance, and cleanup help.
+- [PS5 repair](/ps5-repair): Board-level PS5 repair for Idaho — HDMI ports, liquid-metal service, disc drives, power supplies, DualSense drift; mail-in statewide.
 - [Console repair](/console-repair): PlayStation, Xbox, Nintendo Switch, HDMI, power, cleaning, drift, and no-signal triage.
 - [Tablet repair](/tablet-repair): iPad and tablet screen, battery, charging, and setup help.
 - [Computer help](/computer-support): Slow computer, crash, startup, Windows, Mac, basic IT, and small-business tech help.
