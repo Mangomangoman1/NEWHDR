@@ -1934,7 +1934,7 @@ a{color:inherit;text-decoration:none}
 .hiw-pin{padding-block:clamp(4.2rem,7vw,6.4rem)}
 .hiw-shell{max-width:1160px}
 .hiw-header{margin-bottom:clamp(2.2rem,4vw,3.2rem)}
-.hiw-meter,.hiw-ghosts,.hiw-ring,.hiw-hint{display:none}
+.hiw-meter,.hiw-ghosts,.hiw-count,.hiw-hint{display:none}
 /* static timeline (base) */
 .hiw-drum{list-style:none;margin:0 auto;padding:0;max-width:640px;position:relative}
 .hiw-drum::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,transparent,rgba(var(--hiw-slate),.30) 10%,rgba(var(--hiw-slate),.30) 90%,transparent)}
@@ -1959,8 +1959,11 @@ a{color:inherit;text-decoration:none}
 /* ghost timestamps */
 .hiw-3d .hiw-ghosts{display:flex;position:absolute;inset:0;align-items:center;justify-content:center;pointer-events:none}
 .hiw-3d .hiw-ghost{position:absolute;font-family:var(--hiw-mono);font-weight:700;font-size:clamp(3.6rem,8.5vw,7rem);letter-spacing:.04em;white-space:nowrap;color:rgb(var(--hiw-slate));opacity:calc(max(0,1 - var(--dist,9)) * .07);transform:translateY(calc(var(--off,0) * 2.6rem))}
-/* orbital guide ring — echoes the hero orbit motif */
-.hiw-3d .hiw-ring{display:block;position:absolute;left:50%;top:50%;width:min(660px,88%);aspect-ratio:2.6/1;border:1px dashed rgba(var(--hiw-slate),.10);border-radius:50%;transform:translate(-50%,-50%) rotateX(74deg) rotateZ(calc(var(--p,0) * 160deg));pointer-events:none}
+/* rolling odometer step counter */
+.hiw-3d .hiw-count{display:flex;position:absolute;top:0;right:.4rem;align-items:baseline;gap:.4rem;font-family:var(--hiw-mono);pointer-events:none;z-index:1}
+.hiw-count-track{position:relative;display:inline-block;width:2ch;height:1.25em;overflow:hidden;font-size:1.05rem;font-weight:700}
+.hiw-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--hiw-soft);opacity:max(0,calc(1 - var(--dist,9) * 1.1));transform:translateY(calc(var(--off,0) * 1.25em))}
+.hiw-count-of{font-size:.64rem;font-weight:700;letter-spacing:.16em;color:var(--hiw-mut);opacity:.55}
 /* the drum */
 .hiw-3d .hiw-drum{position:absolute;inset:0;max-width:none;transform-style:preserve-3d;transform:translateZ(-460px)}
 .hiw-3d .hiw-drum::before{display:none}
@@ -1970,9 +1973,11 @@ a{color:inherit;text-decoration:none}
 /* active-step detail bloom: artifacts arrive a beat after the card lands */
 .hiw-3d .hiw-sms,.hiw-3d .hiw-chip{opacity:0;transform:translateY(8px);transition:opacity .45s .12s,transform .45s .12s}
 .hiw-3d .hiw-step.is-active .hiw-sms,.hiw-3d .hiw-step.is-active .hiw-chip{opacity:1;transform:none}
-/* meter rail */
+/* meter rail — clock-face graduation ticks + a head riding the fill tip */
 .hiw-3d .hiw-meter{display:block;grid-column:1;position:relative;height:min(42vh,380px);width:2px;justify-self:start;margin-left:6px;border-radius:2px;background:rgba(var(--hiw-slate),.16)}
+.hiw-3d .hiw-meter::before{content:'';position:absolute;left:-2px;top:0;bottom:0;width:6px;background-image:linear-gradient(180deg,rgba(var(--hiw-slate),.22) 0 1px,transparent 1px);background-size:100% calc(100% / 20)}
 .hiw-3d .hiw-meter-fill{position:absolute;inset:0;border-radius:2px;background:linear-gradient(180deg,var(--hiw-blue),rgba(91,139,207,.35));transform:scaleY(var(--p,0));transform-origin:top}
+.hiw-3d .hiw-meter-head{position:absolute;left:1px;top:calc(var(--p,0) * 100%);transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:var(--hiw-blue);box-shadow:0 0 0 4px rgba(91,139,207,.16),0 0 16px rgba(91,139,207,.55);z-index:1}
 .hiw-3d .hiw-stop{position:absolute;left:-4px;top:calc(var(--stop) * 100%);transform:translateY(-50%);display:flex;align-items:center;gap:.65rem;font-family:var(--hiw-mono);font-size:.6rem;font-weight:700;letter-spacing:.14em;color:var(--hiw-mut);opacity:.42;white-space:nowrap;transition:opacity .25s,color .25s}
 .hiw-3d .hiw-stop::before{content:'';width:8px;height:8px;border-radius:50%;background:#0b1019;border:1.5px solid rgba(var(--hiw-slate),.5);transition:border-color .25s,background .25s,box-shadow .25s}
 .hiw-3d .hiw-stop.is-passed{opacity:.62}
@@ -1995,6 +2000,8 @@ html[data-theme="light"] .hiw-sms{background:#f0f4f7;border-left-color:#376ea9}
 html[data-theme="light"] .hiw-sms em{color:#374151}
 html[data-theme="light"] .hiw-chip{background:#edf2f5;border-color:rgba(36,48,63,.13);color:#526171}
 html[data-theme="light"] .hiw-3d .hiw-ghost{color:#24303f}
+html[data-theme="light"] .hiw-num{color:#374151}
+html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0 0 0 4px rgba(55,110,169,.14),0 0 14px rgba(55,110,169,.4)}
 </style>
 <link href="/nav-quote.css?v=20260709" rel="stylesheet"/>
 <link href="/hero-device-dock.css?v=20260709" rel="stylesheet"/>
@@ -2297,6 +2304,7 @@ html[data-theme="light"] .hiw-3d .hiw-ghost{color:#24303f}
 <div class="hiw-body">
 <div aria-hidden="true" class="hiw-meter">
 <span class="hiw-meter-fill"></span>
+<span class="hiw-meter-head"></span>
 <span class="hiw-stop" style="--stop:0">Min 0</span>
 <span class="hiw-stop" style="--stop:.25">2 hrs</span>
 <span class="hiw-stop" style="--stop:.5">Call</span>
@@ -2311,7 +2319,16 @@ html[data-theme="light"] .hiw-3d .hiw-ghost{color:#24303f}
 <span class="hiw-ghost">SAME DAY</span>
 <span class="hiw-ghost">DAY 1–40</span>
 </div>
-<div aria-hidden="true" class="hiw-ring"></div>
+<div aria-hidden="true" class="hiw-count">
+<span class="hiw-count-track">
+<span class="hiw-num">01</span>
+<span class="hiw-num">02</span>
+<span class="hiw-num">03</span>
+<span class="hiw-num">04</span>
+<span class="hiw-num">05</span>
+</span>
+<span class="hiw-count-of">/ 05</span>
+</div>
 <ol class="hiw-drum" id="hiwDrum">
 <li class="hiw-step">
 <span class="hiw-time">Minute 0</span>
@@ -3221,6 +3238,7 @@ var sec=document.getElementById('process');if(!sec)return;
 var track=document.getElementById('hiwTrack'),drum=document.getElementById('hiwDrum');if(!track||!drum)return;
 var steps=[].slice.call(drum.children);
 var ghosts=[].slice.call(sec.querySelectorAll('.hiw-ghost'));
+var nums=[].slice.call(sec.querySelectorAll('.hiw-num'));
 var stops=[].slice.call(sec.querySelectorAll('.hiw-stop'));
 var N=steps.length;if(N<2)return;
 var mq=matchMedia('(min-width:900px)'),rm=matchMedia('(prefers-reduced-motion: reduce)');
@@ -3238,6 +3256,7 @@ for(var i=0;i<N;i++){
 var off=(i-cur).toFixed(3),d=Math.abs(i-cur).toFixed(3);
 setVars(steps[i],off,d);
 if(ghosts[i])setVars(ghosts[i],off,d);
+if(nums[i])setVars(nums[i],off,d);
 }
 var a=Math.round(cur);
 if(a!==active){
@@ -3257,7 +3276,7 @@ if(enabled){active=-1;update();}
 else{
 sec.style.removeProperty('--p');
 sec.classList.remove('hiw-started');
-steps.concat(ghosts).forEach(function(el){el.style.removeProperty('--off');el.style.removeProperty('--dist');el.classList.remove('is-active');el.removeAttribute('aria-current');});
+steps.concat(ghosts,nums).forEach(function(el){el.style.removeProperty('--off');el.style.removeProperty('--dist');el.classList.remove('is-active');el.removeAttribute('aria-current');});
 stops.forEach(function(s){s.classList.remove('is-active','is-passed');});
 }
 }
