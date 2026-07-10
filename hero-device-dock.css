@@ -42,11 +42,46 @@
   .hh-hero .hh-left,
   .hh-hero .hh-right {
     align-self: center;
+    transform: translateY(clamp(18px, 2.35vh, 24px));
+  }
+
+  .hh-hero .hh-title {
+    margin-top: 1.38rem;
+  }
+
+  .hh-hero .hh-tagline {
+    margin-top: 1.5rem;
+  }
+
+  .hh-hero .hh-sub {
+    margin-top: 1.24rem;
+  }
+
+  .hh-hero .hh-actions {
+    margin-top: 1.84rem;
+  }
+
+  .hh-hero .hh-stats {
+    margin-top: 1.62rem;
   }
 
   .hh-hero .hh-services {
     margin-bottom: 0;
   }
+}
+
+/* Short laptop screens keep the same hierarchy without crowding the dock. */
+@media (min-width: 1041px) and (max-height: 820px) {
+  .hh-hero .hh-left,
+  .hh-hero .hh-right {
+    transform: translateY(8px);
+  }
+
+  .hh-hero .hh-title { margin-top: 1.25rem; }
+  .hh-hero .hh-tagline { margin-top: 1.36rem; }
+  .hh-hero .hh-sub { margin-top: 1.16rem; }
+  .hh-hero .hh-actions { margin-top: 1.72rem; }
+  .hh-hero .hh-stats { margin-top: 1.5rem; }
 }
 
 /* The phone action now occupies the former secondary-CTA position. */
