@@ -1923,6 +1923,79 @@ a{color:inherit;text-decoration:none}
 .hdr-services-bottom .material-symbols-outlined{color:#9aa6b5!important}
 .hdr-services-proof .material-symbols-outlined{color:#9aa6b5!important}
 </style>
+<style id="hiw-css">
+/* ── How It Works: the time drum ──────────────────────────────
+   Base = polished static timeline (mobile / reduced-motion / no-JS).
+   .hiw-3d (added by JS on capable desktops) = scroll-pinned 3D wheel:
+   the five timestamped steps ride a rotating drum, active step flat
+   and legible, a giant ghost timestamp crossfading behind. No new
+   colors — void navy, slate, one steel blue. */
+.hiw{--hiw-mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;--hiw-blue:#5B8BCF;--hiw-ink:#eef2f8;--hiw-soft:#c2cedd;--hiw-mut:#8fa0b4;--hiw-slate:154,166,181;position:relative;background:linear-gradient(180deg,#090d15 0%,#0b1019 46%,#090d14 100%);border-top:1px solid rgba(255,255,255,.045);border-bottom:1px solid rgba(255,255,255,.045);overflow:clip}
+.hiw-pin{padding-block:clamp(4.2rem,7vw,6.4rem)}
+.hiw-shell{max-width:1160px}
+.hiw-header{margin-bottom:clamp(2.2rem,4vw,3.2rem)}
+.hiw-meter,.hiw-ghosts,.hiw-ring,.hiw-hint{display:none}
+/* static timeline (base) */
+.hiw-drum{list-style:none;margin:0 auto;padding:0;max-width:640px;position:relative}
+.hiw-drum::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,transparent,rgba(var(--hiw-slate),.30) 10%,rgba(var(--hiw-slate),.30) 90%,transparent)}
+.hiw-step{position:relative;padding:0 0 2.4rem 2.1rem}
+.hiw-step:last-child{padding-bottom:0}
+.hiw-step::before{content:'';position:absolute;left:-4.5px;top:.32em;width:10px;height:10px;border-radius:50%;background:#0b1019;border:2px solid var(--hiw-blue)}
+.hiw-time{display:block;font-family:var(--hiw-mono);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--hiw-blue);margin-bottom:.5rem}
+.hiw-title3{margin:0 0 .55rem;font-size:clamp(1.25rem,2.2vw,1.6rem);font-weight:800;color:var(--hiw-ink);letter-spacing:-.01em;line-height:1.25}
+.hiw-desc{margin:0;color:var(--hiw-mut);font-size:.98rem;line-height:1.65;max-width:58ch}
+.hiw-sms{margin-top:1.05rem;padding:.85rem 1.1rem;border-left:2px solid var(--hiw-blue);border-radius:10px;background:rgba(255,255,255,.028);max-width:52ch}
+.hiw-sms span{display:block;font-family:var(--hiw-mono);font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--hiw-mut);margin-bottom:.3rem}
+.hiw-sms em{color:var(--hiw-soft);font-size:.95rem;line-height:1.5}
+.hiw-chip{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.05rem;padding:.5rem .9rem;border-radius:999px;border:1px solid rgba(var(--hiw-slate),.25);background:rgba(var(--hiw-slate),.07);color:var(--hiw-soft);font-size:.85rem;font-weight:600}
+.hiw-chip .material-symbols-outlined{font-size:1rem;color:#9aa6b5}
+/* ── 3D mode ── */
+.hiw-3d .hiw-track{height:360vh}
+.hiw-3d .hiw-pin{position:sticky;top:0;height:100vh;padding-block:0;display:flex;align-items:stretch}
+.hiw-3d .hiw-shell{display:flex;flex-direction:column;justify-content:center;width:100%;padding-top:72px}
+.hiw-3d .hiw-header{margin-bottom:clamp(.8rem,2.5vh,2rem)}
+.hiw-3d .hiw-body{display:grid;grid-template-columns:minmax(96px,150px) minmax(0,1fr) minmax(96px,150px);align-items:center}
+.hiw-3d .hiw-stage{grid-column:2;position:relative;height:min(56vh,520px);perspective:1200px;perspective-origin:50% 50%}
+/* ghost timestamps */
+.hiw-3d .hiw-ghosts{display:flex;position:absolute;inset:0;align-items:center;justify-content:center;pointer-events:none}
+.hiw-3d .hiw-ghost{position:absolute;font-family:var(--hiw-mono);font-weight:700;font-size:clamp(3.6rem,8.5vw,7rem);letter-spacing:.04em;white-space:nowrap;color:rgb(var(--hiw-slate));opacity:calc(max(0,1 - var(--dist,9)) * .07);transform:translateY(calc(var(--off,0) * 2.6rem))}
+/* orbital guide ring — echoes the hero orbit motif */
+.hiw-3d .hiw-ring{display:block;position:absolute;left:50%;top:50%;width:min(660px,88%);aspect-ratio:2.6/1;border:1px dashed rgba(var(--hiw-slate),.10);border-radius:50%;transform:translate(-50%,-50%) rotateX(74deg) rotateZ(calc(var(--p,0) * 160deg));pointer-events:none}
+/* the drum */
+.hiw-3d .hiw-drum{position:absolute;inset:0;max-width:none;transform-style:preserve-3d;transform:translateZ(-460px)}
+.hiw-3d .hiw-drum::before{display:none}
+.hiw-3d .hiw-step{position:absolute;left:50%;top:50%;width:min(600px,92%);padding:0;margin:0;transform:translate(-50%,-50%) translateX(calc(var(--off,0) * 16px)) rotateX(calc(var(--off,0) * -34deg)) translateZ(460px);opacity:max(0,calc(1 - var(--dist,9) * .65));backface-visibility:hidden;pointer-events:none}
+.hiw-3d .hiw-step::before{display:none}
+.hiw-3d .hiw-step:last-child{padding:0}
+/* active-step detail bloom: artifacts arrive a beat after the card lands */
+.hiw-3d .hiw-sms,.hiw-3d .hiw-chip{opacity:0;transform:translateY(8px);transition:opacity .45s .12s,transform .45s .12s}
+.hiw-3d .hiw-step.is-active .hiw-sms,.hiw-3d .hiw-step.is-active .hiw-chip{opacity:1;transform:none}
+/* meter rail */
+.hiw-3d .hiw-meter{display:block;grid-column:1;position:relative;height:min(42vh,380px);width:2px;justify-self:start;margin-left:6px;border-radius:2px;background:rgba(var(--hiw-slate),.16)}
+.hiw-3d .hiw-meter-fill{position:absolute;inset:0;border-radius:2px;background:linear-gradient(180deg,var(--hiw-blue),rgba(91,139,207,.35));transform:scaleY(var(--p,0));transform-origin:top}
+.hiw-3d .hiw-stop{position:absolute;left:-4px;top:calc(var(--stop) * 100%);transform:translateY(-50%);display:flex;align-items:center;gap:.65rem;font-family:var(--hiw-mono);font-size:.6rem;font-weight:700;letter-spacing:.14em;color:var(--hiw-mut);opacity:.42;white-space:nowrap;transition:opacity .25s,color .25s}
+.hiw-3d .hiw-stop::before{content:'';width:8px;height:8px;border-radius:50%;background:#0b1019;border:1.5px solid rgba(var(--hiw-slate),.5);transition:border-color .25s,background .25s,box-shadow .25s}
+.hiw-3d .hiw-stop.is-passed{opacity:.62}
+.hiw-3d .hiw-stop.is-passed::before{border-color:var(--hiw-blue);background:var(--hiw-blue)}
+.hiw-3d .hiw-stop.is-active{opacity:1;color:var(--hiw-soft)}
+.hiw-3d .hiw-stop.is-active::before{border-color:var(--hiw-blue);background:var(--hiw-blue);box-shadow:0 0 0 4px rgba(91,139,207,.18)}
+/* scroll hint */
+.hiw-3d .hiw-hint{display:flex;position:absolute;bottom:2vh;left:50%;transform:translateX(-50%);align-items:center;gap:.4rem;font-family:var(--hiw-mono);font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--hiw-mut);opacity:.55;transition:opacity .4s;pointer-events:none}
+.hiw-3d .hiw-hint .material-symbols-outlined{font-size:.9rem;animation:hiw-nudge 2.2s ease-in-out infinite}
+.hiw-3d.hiw-started .hiw-hint{opacity:0}
+@keyframes hiw-nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@media(prefers-reduced-motion:reduce){.hiw-3d .hiw-hint .material-symbols-outlined{animation:none}}
+/* light theme */
+html[data-theme="light"] .hiw{background:linear-gradient(180deg,#f7f9fc 0%,#eef3f9 46%,#f7f9fc 100%);border-color:rgba(36,48,63,.08)}
+html[data-theme="light"] .hiw-title3{color:#111827}
+html[data-theme="light"] .hiw-desc{color:#526171}
+html[data-theme="light"] .hiw-time{color:#376ea9}
+html[data-theme="light"] .hiw-step::before,html[data-theme="light"] .hiw-3d .hiw-stop::before{background:#f7f9fc}
+html[data-theme="light"] .hiw-sms{background:#f0f4f7;border-left-color:#376ea9}
+html[data-theme="light"] .hiw-sms em{color:#374151}
+html[data-theme="light"] .hiw-chip{background:#edf2f5;border-color:rgba(36,48,63,.13);color:#526171}
+html[data-theme="light"] .hiw-3d .hiw-ghost{color:#24303f}
+</style>
 <link href="/nav-quote.css?v=20260709" rel="stylesheet"/>
 <link href="/hero-device-dock.css?v=20260709" rel="stylesheet"/>
 </head>
@@ -2212,103 +2285,65 @@ a{color:inherit;text-decoration:none}
 <!-- ═══════════════════════════════════════════
        PROCESS SECTION
   ══════════════════════════════════════════════ -->
-<section class="section section--alt" id="process">
-<div class="container">
-<div class="section-header">
+<section aria-labelledby="hiwTitle" class="hiw" id="process">
+<div class="hiw-track" id="hiwTrack">
+<div class="hiw-pin">
+<div class="container hiw-shell">
+<div class="section-header hiw-header">
 <div class="section-eyebrow">How It Works</div>
-<h2 class="section-title">Simple, transparent, fast</h2>
+<h2 class="section-title" id="hiwTitle">Simple, transparent, fast</h2>
 <p class="section-sub" data-text-reveal="">No surprises. You know exactly what's happening every step of the way.</p>
 </div>
-<div class="timeline" id="processTimeline" role="list">
-<div aria-hidden="true" class="timeline-track">
-<div class="timeline-fill" id="timelineFill"></div>
-<div class="timeline-glow" id="timelineGlow"></div>
+<div class="hiw-body">
+<div aria-hidden="true" class="hiw-meter">
+<span class="hiw-meter-fill"></span>
+<span class="hiw-stop" style="--stop:0">Min 0</span>
+<span class="hiw-stop" style="--stop:.25">2 hrs</span>
+<span class="hiw-stop" style="--stop:.5">Call</span>
+<span class="hiw-stop" style="--stop:.75">Bench</span>
+<span class="hiw-stop" style="--stop:1">Day 40</span>
 </div>
-<!-- Step 1: Text me -->
-<div class="timeline-step" data-animate="" data-step="1" role="listitem">
-<div class="timeline-dot">
-<div aria-hidden="true" class="timeline-dot-ripple"></div>
-<svg aria-hidden="true" class="timeline-svg-icon tl-icon-chat" height="24" viewbox="0 0 32 32" width="24">
-<rect class="tl-chat-bubble" fill="none" height="17" rx="4" stroke="currentColor" stroke-dasharray="82" stroke-dashoffset="82" stroke-width="2" width="24" x="4" y="5"></rect>
-<polygon class="tl-chat-tail" fill="currentColor" opacity="0" points="10,22 14,27 18,22"></polygon>
-<circle class="tl-chat-dot tl-chat-dot-1" cx="11" cy="13.5" fill="currentColor" opacity="0" r="1.5"></circle>
-<circle class="tl-chat-dot tl-chat-dot-2" cx="16" cy="13.5" fill="currentColor" opacity="0" r="1.5"></circle>
-<circle class="tl-chat-dot tl-chat-dot-3" cx="21" cy="13.5" fill="currentColor" opacity="0" r="1.5"></circle>
-</svg>
+<div class="hiw-stage">
+<div aria-hidden="true" class="hiw-ghosts">
+<span class="hiw-ghost">MINUTE 0</span>
+<span class="hiw-ghost">2 HOURS</span>
+<span class="hiw-ghost">YOUR CALL</span>
+<span class="hiw-ghost">SAME DAY</span>
+<span class="hiw-ghost">DAY 1–40</span>
 </div>
-<div class="timeline-content">
-<span class="timeline-time">Minute 0</span>
-<h3 class="timeline-title">Text me your problem</h3>
-<p class="timeline-desc">Snap a photo, describe the issue, or just say "help." I respond personally — usually within 30 minutes. No phone trees, no ticket numbers.</p>
-<div class="timeline-example">
-<span class="timeline-example-label">Example:</span>
-<em>"Hey, my iPhone 14 screen is cracked. How much to fix?"</em>
+<div aria-hidden="true" class="hiw-ring"></div>
+<ol class="hiw-drum" id="hiwDrum">
+<li class="hiw-step">
+<span class="hiw-time">Minute 0</span>
+<h3 class="hiw-title3">Text me your problem</h3>
+<p class="hiw-desc">Snap a photo, describe the issue, or just say "help." I respond personally &mdash; usually within 30 minutes. No phone trees, no ticket numbers.</p>
+<div class="hiw-sms"><span>Example:</span><em>"Hey, my iPhone 14 screen is cracked. How much to fix?"</em></div>
+</li>
+<li class="hiw-step">
+<span class="hiw-time">Within 2 hours</span>
+<h3 class="hiw-title3">Diagnosis + firm quote</h3>
+<p class="hiw-desc">I'll tell you exactly what's wrong and what it'll cost. No hidden fees, no "we'll see." If you're local, drop it off for a hands-on look &mdash; also free.</p>
+<div class="hiw-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="handshake"></span> No obligation &mdash; decide after you see the quote</div>
+</li>
+<li class="hiw-step">
+<span class="hiw-time">Your call</span>
+<h3 class="hiw-title3">You approve, I start</h3>
+<p class="hiw-desc">No work begins until you say yes. Changed your mind? No charge. Want a second opinion? Go for it. Zero pressure, always.</p>
+</li>
+<li class="hiw-step">
+<span class="hiw-time">Same day (usually)</span>
+<h3 class="hiw-title3">Repair + real-time updates</h3>
+<p class="hiw-desc">I'll text you when I start, when parts arrive, and when it's done. Most phone repairs take 30&ndash;90 minutes. Laptops 1&ndash;2 days. No radio silence.</p>
+</li>
+<li class="hiw-step">
+<span class="hiw-time">Done</span>
+<h3 class="hiw-title3">Get it back + 40-day warranty</h3>
+<p class="hiw-desc">Drop-off or shipped back with tracking. Every repair backed by a 40-day warranty. If the same issue returns, I fix it free.</p>
+<div class="hiw-chip"><span aria-hidden="true" class="material-symbols-outlined" data-icon="shield"></span> 40-day parts + labor warranty</div>
+</li>
+</ol>
+<div aria-hidden="true" class="hiw-hint"><span class="material-symbols-outlined" data-icon="arrow_downward"></span>Scroll</div>
 </div>
-</div>
-</div>
-<!-- Step 2: Diagnosis -->
-<div class="timeline-step" data-animate="" data-step="2" role="listitem">
-<div class="timeline-dot">
-<div aria-hidden="true" class="timeline-dot-ripple"></div>
-<svg aria-hidden="true" class="timeline-svg-icon tl-icon-search" height="24" viewbox="0 0 32 32" width="24">
-<circle class="tl-search-lens" cx="14" cy="14" fill="none" r="8" stroke="currentColor" stroke-dasharray="50.3" stroke-dashoffset="50.3" stroke-width="2"></circle>
-<line class="tl-search-handle" stroke="currentColor" stroke-dasharray="10" stroke-dashoffset="10" stroke-linecap="round" stroke-width="2.5" x1="20" x2="27" y1="20" y2="27"></line>
-<circle class="tl-search-pulse" cx="14" cy="14" fill="currentColor" opacity="0" r="4"></circle>
-</svg>
-</div>
-<div class="timeline-content">
-<span class="timeline-time">Within 2 hours</span>
-<h3 class="timeline-title">Diagnosis + firm quote</h3>
-<p class="timeline-desc">I'll tell you exactly what's wrong and what it'll cost. No hidden fees, no "we'll see." If you're local, drop it off for a hands-on look — also free.</p>
-<div class="timeline-tag"><span aria-hidden="true" class="material-symbols-outlined" data-icon="handshake"></span> No obligation — decide after you see the quote</div>
-</div>
-</div>
-<!-- Step 3: Approve -->
-<div class="timeline-step" data-animate="" data-step="3" role="listitem">
-<div class="timeline-dot">
-<div aria-hidden="true" class="timeline-dot-ripple"></div>
-<svg aria-hidden="true" class="timeline-svg-icon tl-icon-approve" height="24" viewbox="0 0 32 32" width="24">
-<circle class="tl-approve-circle" cx="16" cy="16" fill="none" r="11" stroke="currentColor" stroke-dasharray="69.1" stroke-dashoffset="69.1" stroke-width="2"></circle>
-<polyline class="tl-approve-check" fill="none" points="10,16 14.5,20.5 22,11" stroke="currentColor" stroke-dasharray="20" stroke-dashoffset="20" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
-</svg>
-</div>
-<div class="timeline-content">
-<span class="timeline-time">Your call</span>
-<h3 class="timeline-title">You approve, I start</h3>
-<p class="timeline-desc">No work begins until you say yes. Changed your mind? No charge. Want a second opinion? Go for it. Zero pressure, always.</p>
-</div>
-</div>
-<!-- Step 4: Repair -->
-<div class="timeline-step" data-animate="" data-step="4" role="listitem">
-<div class="timeline-dot">
-<div aria-hidden="true" class="timeline-dot-ripple"></div>
-<svg aria-hidden="true" class="timeline-svg-icon tl-icon-repair" height="24" viewbox="0 0 32 32" width="24">
-<path class="tl-repair-wrench" d="M8 24l10-10c-1-3.5 1-7 4-9 1.5-1 3-1.5 5-1.5l-3 3 0 3 3 0 3-3c0 2-0.5 3.5-1.5 5-2 3-5.5 5-9 4L10 24c-0.5 0.5-1.5 0.5-2 0s-0.5-1.5 0-2z" fill="none" stroke="currentColor" stroke-dasharray="80" stroke-dashoffset="80" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-<circle class="tl-repair-spark tl-repair-spark-1" cx="20" cy="12" fill="currentColor" opacity="0" r="1"></circle>
-<circle class="tl-repair-spark tl-repair-spark-2" cx="24" cy="8" fill="currentColor" opacity="0" r="0.8"></circle>
-<circle class="tl-repair-spark tl-repair-spark-3" cx="17" cy="9" fill="currentColor" opacity="0" r="0.6"></circle>
-</svg>
-</div>
-<div class="timeline-content">
-<span class="timeline-time">Same day (usually)</span>
-<h3 class="timeline-title">Repair + real-time updates</h3>
-<p class="timeline-desc">I'll text you when I start, when parts arrive, and when it's done. Most phone repairs take 30–90 minutes. Laptops 1–2 days. No radio silence.</p>
-</div>
-</div>
-<!-- Step 5: Done -->
-<div class="timeline-step" data-animate="" data-step="5" role="listitem">
-<div class="timeline-dot timeline-dot--done">
-<div aria-hidden="true" class="timeline-dot-ripple"></div>
-<svg aria-hidden="true" class="timeline-svg-icon tl-icon-shield" height="24" viewbox="0 0 32 32" width="24">
-<path class="tl-shield-body" d="M16 3L5 8v7c0 7.5 4.7 14.5 11 17 6.3-2.5 11-9.5 11-17V8L16 3z" fill="none" stroke="currentColor" stroke-dasharray="70" stroke-dashoffset="70" stroke-linejoin="round" stroke-width="2"></path>
-<polyline class="tl-shield-check" fill="none" points="11,16 14.5,19.5 21,12" stroke="currentColor" stroke-dasharray="16" stroke-dashoffset="16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
-</svg>
-</div>
-<div class="timeline-content">
-<span class="timeline-time">Done</span>
-<h3 class="timeline-title">Get it back + 40-day warranty</h3>
-<p class="timeline-desc">Drop-off or shipped back with tracking. Every repair backed by a 40-day warranty. If the same issue returns, I fix it free.</p>
-<div class="timeline-tag timeline-tag--green"><span aria-hidden="true" class="material-symbols-outlined" data-icon="shield"></span> 40-day parts + labor warranty</div>
 </div>
 </div>
 </div>
@@ -3178,6 +3213,62 @@ function close(){ov.classList.remove('open');ov.setAttribute('aria-hidden','true
 document.getElementById('ccClose').addEventListener('click',close);
 document.getElementById('ccBackdrop').addEventListener('click',close);
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('open'))close();});
+})();
+</script>
+<script id="hiw-js">
+(function(){
+var sec=document.getElementById('process');if(!sec)return;
+var track=document.getElementById('hiwTrack'),drum=document.getElementById('hiwDrum');if(!track||!drum)return;
+var steps=[].slice.call(drum.children);
+var ghosts=[].slice.call(sec.querySelectorAll('.hiw-ghost'));
+var stops=[].slice.call(sec.querySelectorAll('.hiw-stop'));
+var N=steps.length;if(N<2)return;
+var mq=matchMedia('(min-width:900px)'),rm=matchMedia('(prefers-reduced-motion: reduce)');
+var enabled=false,inView=true,ticking=false,active=-1;
+function setVars(el,off,d){el.style.setProperty('--off',off);el.style.setProperty('--dist',d);}
+function update(){
+ticking=false;
+if(!enabled)return;
+var r=track.getBoundingClientRect(),vh=window.innerHeight;
+var total=r.height-vh;
+var p=total>0?Math.min(1,Math.max(0,-r.top/total)):0;
+sec.style.setProperty('--p',p.toFixed(4));
+var cur=p*(N-1);
+for(var i=0;i<N;i++){
+var off=(i-cur).toFixed(3),d=Math.abs(i-cur).toFixed(3);
+setVars(steps[i],off,d);
+if(ghosts[i])setVars(ghosts[i],off,d);
+}
+var a=Math.round(cur);
+if(a!==active){
+active=a;
+steps.forEach(function(s,i){s.classList.toggle('is-active',i===a);if(i===a)s.setAttribute('aria-current','step');else s.removeAttribute('aria-current');});
+stops.forEach(function(s,i){s.classList.toggle('is-active',i===a);s.classList.toggle('is-passed',i<a);});
+}
+sec.classList.toggle('hiw-started',p>0.03);
+}
+function onScroll(){if(!inView||ticking||!enabled)return;ticking=true;requestAnimationFrame(update);}
+function setMode(){
+var want=mq.matches&&!rm.matches;
+if(want===enabled)return;
+enabled=want;
+sec.classList.toggle('hiw-3d',enabled);
+if(enabled){active=-1;update();}
+else{
+sec.style.removeProperty('--p');
+sec.classList.remove('hiw-started');
+steps.concat(ghosts).forEach(function(el){el.style.removeProperty('--off');el.style.removeProperty('--dist');el.classList.remove('is-active');el.removeAttribute('aria-current');});
+stops.forEach(function(s){s.classList.remove('is-active','is-passed');});
+}
+}
+if('IntersectionObserver' in window){
+new IntersectionObserver(function(es){inView=es[0].isIntersecting;if(inView)onScroll();},{rootMargin:'25% 0px'}).observe(sec);
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',function(){setMode();onScroll();},{passive:true});
+var onMq=function(){setMode();onScroll();};
+[mq,rm].forEach(function(m){m.addEventListener?m.addEventListener('change',onMq):m.addListener(onMq);});
+setMode();
 })();
 </script>
 </body>
