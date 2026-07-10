@@ -211,9 +211,10 @@
     }
   }
 
-  // Initialize all liquid buttons on the page
+  // Keep the legacy spring physics for mobile-menu liquid buttons only.
+  // The canonical desktop nav CTA now has its own CSS edge-shimmer treatment.
   function init() {
-    document.querySelectorAll('.water-wrapper').forEach(wrapper => {
+    document.querySelectorAll('.water-wrapper:not(#water-wrapper-nav)').forEach(wrapper => {
       new LiquidEngine(wrapper);
     });
   }
