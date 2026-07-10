@@ -1351,13 +1351,23 @@ a{color:inherit;text-decoration:none}
       max-width: 330px;
       margin: 0;
       padding: .55rem .62rem;
-      transform: none !important;
+      transform: translateY(calc(100% + 2rem)) !important;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: transform .32s cubic-bezier(.16,1,.3,1), opacity .2s ease, visibility .2s ease;
       border-radius: 1rem;
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(13,17,23,.92);
       backdrop-filter: blur(18px);
       box-shadow: 0 20px 60px rgba(0,0,0,.32);
       z-index: 80;
+    }
+    .mailin-page .cookie-banner.visible {
+      transform: none !important;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
     .mailin-page .cookie-banner-text { font-size: .68rem; line-height: 1.35; }
     .mailin-page .cookie-banner-actions { gap: .4rem; }
@@ -1394,7 +1404,7 @@ a{color:inherit;text-decoration:none}
     .mailin-page .idaho-route-card {
       margin: 2rem 0 2.1rem;
       display: grid;
-      grid-template-columns: minmax(280px, .74fr) minmax(0, 1fr);
+      grid-template-columns: minmax(430px, 1.06fr) minmax(0, .94fr);
       gap: clamp(1rem, 3vw, 2rem);
       align-items: stretch;
       background: linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
@@ -1415,47 +1425,53 @@ a{color:inherit;text-decoration:none}
       pointer-events:none;
     }
     .mailin-page .idaho-map-sketch {
-      min-height: 310px;
+      min-height: 470px;
       border-radius: 1.45rem;
       border: 1px solid rgba(255,255,255,.12);
       background:
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) 0 0/42px 42px,
-        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px) 0 0/42px 42px,
-        radial-gradient(circle at 52% 45%, rgba(126,168,223,.18), transparent 14rem),
-        rgba(7,11,18,.45);
+        linear-gradient(90deg, rgba(255,255,255,.026) 1px, transparent 1px) 0 0/34px 34px,
+        linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px) 0 0/34px 34px,
+        radial-gradient(circle at 48% 48%, rgba(126,168,223,.16), transparent 18rem),
+        linear-gradient(155deg, rgba(14,24,37,.88), rgba(5,9,15,.96));
       position: relative;
       overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05), inset 0 -35px 70px rgba(0,0,0,.24);
+    }
+    .mailin-page .idaho-map-sketch::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(90deg,rgba(4,8,13,.2),transparent 18% 80%,rgba(4,8,13,.25));
+      box-shadow:inset 0 0 70px rgba(0,0,0,.28);
     }
     .mailin-page .idaho-map-sketch svg { position:absolute; inset:0; width:100%; height:100%; }
-    .mailin-page .idaho-map-route { stroke-dasharray: 7 8; animation: routeDrift 18s linear infinite; }
-    .mailin-page .map-pin {
-      position:absolute;
-      transform: translate(-50%, -50%);
-      display:inline-flex;
-      align-items:center;
-      gap:.35rem;
-      padding:.28rem .46rem;
-      border-radius:999px;
-      background:rgba(13,17,23,.78);
-      border:1px solid rgba(255,255,255,.14);
-      color:#dfe8f4;
-      font-size:.62rem;
-      font-weight:850;
-      box-shadow:0 12px 32px rgba(0,0,0,.28);
-      white-space:nowrap;
-    }
-    .mailin-page .map-pin::before {
-      content:"";
-      width:.45rem;height:.45rem;border-radius:50%;
-      background:var(--mail-blue);
-      box-shadow:0 0 14px rgba(126,168,223,.7);
-    }
-    .mailin-page .map-pin--hailey::before { background:var(--mail-amber); box-shadow:0 0 16px rgba(232,177,95,.8); }
-    .mailin-page .map-pin--boise { left: 34%; top: 67%; }
-    .mailin-page .map-pin--tf { left: 50%; top: 75%; }
-    .mailin-page .map-pin--if { left: 72%; top: 64%; }
-    .mailin-page .map-pin--cda { left: 50%; top: 16%; }
-    .mailin-page .map-pin--hailey { left: 54%; top: 55%; }
+    .mailin-page .idaho-state-shadow { fill:rgba(0,0,0,.34); filter:url(#idahoShadow); transform:translate(4px,7px); }
+    .mailin-page .idaho-state { fill:url(#idahoFill); stroke:rgba(193,214,238,.46); stroke-width:2.2; vector-effect:non-scaling-stroke; }
+    .mailin-page .map-terrain-wash { fill:url(#terrainWash); opacity:.72; }
+    .mailin-page .map-contour { fill:none; stroke:rgba(173,199,226,.12); stroke-width:1.2; vector-effect:non-scaling-stroke; }
+    .mailin-page .map-ridge { fill:none; stroke:rgba(210,226,242,.19); stroke-width:1.35; stroke-linecap:round; stroke-linejoin:round; vector-effect:non-scaling-stroke; }
+    .mailin-page .map-range-label { fill:rgba(195,211,228,.42); font-family:var(--mail-body); font-size:8.5px; font-weight:800; letter-spacing:.12em; }
+    .mailin-page .map-river { fill:none; stroke:rgba(89,176,214,.42); stroke-width:1.6; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+    .mailin-page .map-highway { fill:none; stroke:rgba(226,237,246,.3); stroke-width:2.1; stroke-linecap:round; stroke-linejoin:round; vector-effect:non-scaling-stroke; }
+    .mailin-page .map-highway--secondary { stroke:rgba(226,237,246,.18); stroke-width:1.35; }
+    .mailin-page .map-road-shield rect { fill:rgba(8,13,21,.9); stroke:rgba(220,233,245,.24); }
+    .mailin-page .map-road-shield text { fill:rgba(222,234,246,.7); font-family:var(--mail-body); font-size:8px; font-weight:900; text-anchor:middle; dominant-baseline:middle; }
+    .mailin-page .idaho-map-route { fill:none; stroke:rgba(126,168,223,.76); stroke-width:2.45; stroke-linecap:round; stroke-dasharray:8 9; animation:routeDrift 18s linear infinite; vector-effect:non-scaling-stroke; }
+    .mailin-page .idaho-map-route--warm { stroke:rgba(232,177,95,.76); }
+    .mailin-page .idaho-map-route--cool { stroke:rgba(117,214,200,.68); }
+    .mailin-page .idaho-map-route--remote { opacity:.58; stroke-width:1.8; }
+    .mailin-page .map-city circle { fill:#83ace2; stroke:rgba(7,12,20,.95); stroke-width:2; vector-effect:non-scaling-stroke; }
+    .mailin-page .map-city text { fill:#dce8f4; font-family:var(--mail-body); font-size:11px; font-weight:750; paint-order:stroke; stroke:rgba(7,12,20,.92); stroke-width:3px; stroke-linejoin:round; }
+    .mailin-page .map-city--minor circle { fill:rgba(152,180,211,.72); }
+    .mailin-page .map-city--minor text { fill:rgba(195,211,228,.66); font-size:9px; }
+    .mailin-page .map-hub-halo { fill:rgba(232,177,95,.12); stroke:rgba(232,177,95,.54); transform-box:fill-box; transform-origin:center; animation:mapHubPulse 3.6s ease-out infinite; }
+    .mailin-page .map-hub-core { fill:#f0bd70; stroke:#fff0d5; stroke-width:1.3; filter:url(#hubGlow); vector-effect:non-scaling-stroke; }
+    .mailin-page .map-hub-label rect { fill:rgba(12,17,25,.94); stroke:rgba(232,177,95,.5); }
+    .mailin-page .map-hub-label text { fill:#ffe0ab; font-family:var(--mail-body); font-size:9.5px; font-weight:900; letter-spacing:.055em; }
+    .mailin-page .map-meta { fill:rgba(174,193,214,.42); font-family:var(--mail-body); font-size:8px; font-weight:750; letter-spacing:.12em; }
+    .mailin-page .map-legend text { fill:rgba(203,218,233,.62); font-family:var(--mail-body); font-size:8.5px; font-weight:750; letter-spacing:.06em; }
+    .mailin-page .map-compass { fill:rgba(212,226,240,.58); font-family:var(--mail-body); font-size:9px; font-weight:900; text-anchor:middle; }
     .mailin-page .route-detail-panel {
       display:grid;
       align-content:center;
@@ -1502,6 +1518,10 @@ a{color:inherit;text-decoration:none}
     .mailin-page .packing-layer svg { width:2rem;height:2rem;color:var(--mail-amber-2); }
     .mailin-page .packing-layer:not(:last-child)::after { content:"→"; position:absolute; right:-.57rem; top:50%; transform:translateY(-50%); color:rgba(255,210,138,.65); font-weight:900; }
     @keyframes routeDrift { to { stroke-dashoffset: -180; } }
+    @keyframes mapHubPulse {
+      0% { opacity:.9; transform:scale(.72); }
+      72%, 100% { opacity:0; transform:scale(1.85); }
+    }
     @keyframes mailOrbit { to { transform: rotate(352deg); } }
     @keyframes barcodeScan { 0%, 42% { transform: translateX(-115%); } 58%, 100% { transform: translateX(115%); } }
 
@@ -1523,6 +1543,10 @@ a{color:inherit;text-decoration:none}
       .mailin-page .mail-steps-timeline { grid-template-columns: 1fr 1fr; }
       .mailin-page .mail-steps-timeline::before { display:none; }
       .mailin-page .mail-founder-note-header { border-right:0; border-bottom:1px dashed rgba(255,255,255,.16); padding-right:0; padding-bottom:1rem; }
+    }
+    @media (max-width: 900px) {
+      .mailin-page .idaho-route-card { grid-template-columns:1fr; }
+      .mailin-page .idaho-map-sketch { min-height:460px; }
     }
     @media (max-width: 620px) {
       .mailin-page .container { padding-inline: 1rem; }
@@ -1553,7 +1577,12 @@ a{color:inherit;text-decoration:none}
       .mailin-page .mail-hero-art::before { display:none; }
       .mailin-page .idaho-route-card,
       .mailin-page .text-proof-layout { grid-template-columns:1fr; }
-      .mailin-page .idaho-map-sketch { min-height: 255px; }
+      .mailin-page .idaho-map-sketch { min-height: 360px; }
+      .mailin-page .idaho-map-sketch svg { left:-9%; width:118%; }
+      .mailin-page .map-legend,
+      .mailin-page .map-compass,
+      .mailin-page .map-meta { display:none; }
+      .mailin-page .map-city--minor text { display:none; }
       .mailin-page .route-micro-grid,
       .mailin-page .sms-proof-checks { grid-template-columns:1fr; }
       .mailin-page .sms-proof-card { position:relative; top:auto; }
@@ -1910,19 +1939,80 @@ a{color:inherit;text-decoration:none}
 <h2 class="section-title">A lot of Idaho is still hours from a repair counter</h2>
 <p class="section-sub">Once you're outside Boise, Nampa, Idaho Falls, Twin Falls, and a few pockets like the Wood River Valley, getting a device fixed usually means a long drive, mailing it anyway, or putting it off until the problem gets worse.</p>
 <div class="idaho-route-card" data-animate="">
-<div aria-hidden="true" class="idaho-map-sketch">
-<svg aria-label="Sketch map of Idaho routes to Hailey" role="img" viewbox="0 0 420 330">
-<path d="M178 16 L222 25 L216 78 L242 92 L226 138 L256 168 L238 236 L258 312 L126 304 L116 238 L92 210 L108 162 L84 104 L122 74 Z" fill="rgba(126,168,223,.055)" stroke="rgba(223,232,242,.25)" stroke-width="2"></path>
-<path class="idaho-map-route" d="M144 222 C174 213 199 198 226 180" fill="none" stroke="rgba(232,177,95,.72)" stroke-linecap="round" stroke-width="3"></path>
-<path class="idaho-map-route" d="M210 250 C224 224 227 203 226 180" fill="none" stroke="rgba(117,214,200,.62)" stroke-linecap="round" stroke-width="3"></path>
-<path class="idaho-map-route" d="M300 210 C273 203 248 193 226 180" fill="none" stroke="rgba(126,168,223,.72)" stroke-linecap="round" stroke-width="3"></path>
-<path class="idaho-map-route" d="M210 54 C216 96 224 136 226 180" fill="none" stroke="rgba(232,177,95,.48)" stroke-linecap="round" stroke-width="3"></path>
+<div aria-label="Map of Idaho showing mountain regions, major highways, and mail-in routes from Idaho cities to Hailey Device Repair" class="idaho-map-sketch" role="img">
+<svg aria-hidden="true" viewbox="0 0 620 600">
+<defs>
+<path d="M142.7 384.5 L145.6 389.2 L143.8 392.2 L145.1 394 L148.1 395.2 L150.2 393.5 L153 397.4 L157.1 396.4 L157.4 399.9 L161.5 402.7 L157 408.5 L159.3 415.7 L157.1 417.1 L158 421.1 L154.1 428.2 L154.4 569.1 L477.1 569 L477 378.6 L467.5 370.7 L467.5 367.1 L458.9 357 L457.3 360.4 L453.2 360.8 L454.1 363.9 L451.3 368.6 L454.2 373.5 L441.6 372 L435.3 375.9 L432.7 371.7 L419.9 375 L410.2 371.3 L406.6 373.9 L404.8 380.6 L400.1 378.1 L398.7 379.4 L386.9 376.3 L383.8 377.8 L380.6 382.6 L381.8 386 L379.5 387.4 L371.5 380.4 L371.3 374.6 L367.3 369.2 L369 366.6 L364.6 355.6 L358.4 351.7 L353.3 354.7 L347 347.8 L344.8 342.5 L347.8 341.2 L347.3 333.5 L343.6 331.2 L344.2 329.2 L340.7 328.2 L339.4 323.4 L334.7 318.6 L331.8 312.7 L332.1 308.1 L329.8 306.1 L330.3 298.1 L326.7 298 L328.2 291.7 L322.9 290.2 L321.1 284.5 L316.9 284.5 L316.9 287.7 L313.1 292.6 L307.3 296.8 L304.3 296.1 L303.1 300.7 L299.8 302.7 L292.9 294.9 L287.6 294.5 L288.7 291.4 L287.3 289 L290.3 287.4 L291 283.9 L287.2 278.5 L290 273.3 L295.7 272.4 L296.8 270.2 L294.5 266.1 L295.5 262.8 L291.9 261.7 L290.4 258.7 L292.9 253.6 L289.4 250.1 L293.7 247.7 L292.3 240.5 L294.8 238.9 L294.9 231.3 L297.6 227.5 L296 222.7 L299.3 221.1 L300.2 210.8 L298.3 209.6 L292.7 212.3 L284.8 212 L283.1 208.8 L284.2 206.6 L280.2 204.1 L276.4 207.4 L276.4 202.7 L267.7 196.9 L267.8 190.4 L263.7 186.2 L261.2 186.4 L256 176.3 L247.6 169.6 L246.5 164.5 L237.8 162.4 L232.6 155.9 L222.8 151.5 L229.8 147.2 L226.8 146.8 L226.2 143.4 L223.2 142.2 L226.4 137.9 L224 133.7 L224.8 130.5 L218.9 125.9 L217.8 120.4 L207.1 108.9 L207.1 30 L154.1 30.2 L154 228.9 L152.4 233.9 L156.5 238.2 L157.7 245.4 L160 248.2 L156.8 254.5 L163.4 268.2 L167.6 274.5 L171.4 274.5 L173.9 277.9 L180.3 280.3 L184.8 291.7 L173.4 313.3 L170.4 327.1 L164 336.3 L163.8 346.7 L159.4 354.7 L152.5 359.1 L147.8 373.8 L143.7 377.9 L142.7 384.5 Z" id="idahoBoundary"></path>
+<clippath id="idahoClip"><use href="#idahoBoundary"></use></clippath>
+<lineargradient id="idahoFill" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#1a2a3d"></stop><stop offset=".52" stop-color="#142235"></stop><stop offset="1" stop-color="#0d1725"></stop></lineargradient>
+<radialgradient id="terrainWash" cx="48%" cy="52%" r="65%"><stop offset="0" stop-color="#6e92bd" stop-opacity=".22"></stop><stop offset=".55" stop-color="#385773" stop-opacity=".11"></stop><stop offset="1" stop-color="#07101a" stop-opacity="0"></stop></radialgradient>
+<filter height="140%" id="idahoShadow" width="140%" x="-20%" y="-20%"><fegaussianblur stddeviation="9"></fegaussianblur></filter>
+<filter height="400%" id="hubGlow" width="400%" x="-150%" y="-150%"><fegaussianblur result="blur" stddeviation="4"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<text class="map-meta" x="493" y="40">IDAHO / ROUTE FIELD</text>
+<use class="idaho-state-shadow" href="#idahoBoundary"></use>
+<use class="idaho-state" href="#idahoBoundary"></use>
+<g clip-path="url(#idahoClip)">
+<rect class="map-terrain-wash" height="560" width="370" x="130" y="20"></rect>
+<g>
+<path class="map-contour" d="M130 184 C190 145 242 172 296 154 S405 128 488 170"></path>
+<path class="map-contour" d="M126 205 C184 168 244 195 302 176 S415 153 492 195"></path>
+<path class="map-contour" d="M132 252 C190 220 243 245 305 218 S408 206 488 240"></path>
+<path class="map-contour" d="M127 276 C181 246 248 275 304 246 S414 238 493 271"></path>
+<path class="map-contour" d="M133 315 C193 286 252 319 313 286 S416 281 486 314"></path>
+<path class="map-contour" d="M127 344 C187 315 250 350 307 322 S414 319 493 353"></path>
+<path class="map-contour" d="M131 386 C191 360 249 391 309 366 S419 361 490 397"></path>
+<path class="map-contour" d="M128 416 C192 392 249 423 309 400 S418 396 491 430"></path>
+<path class="map-contour" d="M131 464 C190 438 252 469 310 446 S415 441 491 473"></path>
+<path class="map-contour" d="M126 496 C188 471 249 504 311 479 S418 477 493 510"></path>
+</g>
+<g>
+<path class="map-ridge" d="M219 351 l10 -15 l8 10 l12 -22 l12 20 l8 -11 l11 18"></path>
+<path class="map-ridge" d="M229 371 l9 -13 l8 9 l11 -18 l10 18 l8 -10 l12 14"></path>
+<text class="map-range-label" transform="rotate(-9 220 386)" x="220" y="386">SAWTOOTH RANGE</text>
+<path class="map-ridge" d="M284 276 l9 -14 l9 10 l12 -20 l10 18 l9 -12 l12 18"></path>
+<path class="map-ridge" d="M273 300 l11 -16 l9 10 l10 -16 l11 16 l10 -9 l12 16"></path>
+<text class="map-range-label" transform="rotate(-12 246 316)" x="246" y="316">SALMON RIVER MTNS</text>
+<path class="map-ridge" d="M271 121 l9 -14 l8 9 l10 -18 l10 16 l8 -10 l10 15"></path>
+<path class="map-ridge" d="M284 145 l8 -12 l8 8 l10 -15 l9 15 l8 -9 l10 14"></path>
+<text class="map-range-label" transform="rotate(66 326 158)" x="326" y="158">BITTERROOT RANGE</text>
+</g>
+<path class="map-river" d="M466 475 C426 458 390 468 350 493 C320 510 292 525 258 509 C225 493 198 470 150 455"></path>
+<path class="map-river" d="M368 313 C337 318 313 335 283 334 C248 333 220 303 184 277 C168 266 159 250 154 232"></path>
+<path class="map-highway" d="M154 132 C171 130 190 132 207 132"></path>
+<path class="map-highway" d="M179 30 C168 79 168 132 156 230 C176 298 207 345 199 445 C183 474 164 493 151 512"></path>
+<path class="map-highway" d="M143 443 C170 447 199 445 235 470 C258 496 293 526 345 545 C385 555 425 560 466 562"></path>
+<path class="map-highway" d="M405 568 C400 535 402 502 424 454 C431 419 435 386 445 350"></path>
+<path class="map-highway map-highway--secondary" d="M293 526 C296 496 301 452 267 398 C286 365 323 325 346 291"></path>
+<path class="map-highway map-highway--secondary" d="M199 445 C237 457 265 470 301 452 C344 443 388 455 424 454"></path>
+<path class="map-highway map-highway--secondary" d="M293 526 C296 496 301 452 298 440 C291 424 278 408 267 398"></path>
+<path class="idaho-map-route idaho-map-route--warm idaho-map-route--remote" d="M167.7 131.9 C181 236 238 355 300.7 452.1"></path>
+<path class="idaho-map-route idaho-map-route--remote" d="M155.8 230.3 C186 302 248 386 300.7 452.1"></path>
+<path class="idaho-map-route idaho-map-route--warm" d="M198.9 444.7 C236 431 271 439 300.7 452.1"></path>
+<path class="idaho-map-route idaho-map-route--cool" d="M292.9 526.3 C310 500 310 475 300.7 452.1"></path>
+<path class="idaho-map-route" d="M423.8 454.1 C384 441 342 444 300.7 452.1"></path>
+<path class="idaho-map-route idaho-map-route--cool idaho-map-route--remote" d="M323.4 324.5 C320 365 307 410 300.7 452.1"></path>
+</g>
+<use fill="none" href="#idahoBoundary" stroke="rgba(204,221,239,.48)" stroke-width="1.4"></use>
+<g class="map-road-shield" transform="translate(178 116)"><rect height="18" rx="5" width="30"></rect><text x="15" y="9.5">I-90</text></g>
+<g class="map-road-shield" transform="translate(167 350)"><rect height="18" rx="5" width="34"></rect><text x="17" y="9.5">US-95</text></g>
+<g class="map-road-shield" transform="translate(239 476)"><rect height="18" rx="5" width="31"></rect><text x="15.5" y="9.5">I-84</text></g>
+<g class="map-road-shield" transform="translate(405 520)"><rect height="18" rx="5" width="31"></rect><text x="15.5" y="9.5">I-15</text></g>
+<g class="map-road-shield" transform="translate(274 410)"><rect height="18" rx="5" width="34"></rect><text x="17" y="9.5">ID-75</text></g>
+<g class="map-city"><circle cx="167.7" cy="131.9" r="4"></circle><text x="180" y="128">Coeur d'Alene</text></g>
+<g class="map-city"><circle cx="155.8" cy="230.3" r="4"></circle><text text-anchor="end" x="145" y="224">Lewiston</text></g>
+<g class="map-city map-city--minor"><circle cx="204.4" cy="344.9" r="3"></circle><text x="214" y="342">McCall</text></g>
+<g class="map-city"><circle cx="198.9" cy="444.7" r="4"></circle><text text-anchor="end" x="188" y="458">Boise</text></g>
+<g class="map-city"><circle cx="292.9" cy="526.3" r="4"></circle><text text-anchor="end" x="283" y="548">Twin Falls</text></g>
+<g class="map-city map-city--minor"><circle cx="401.6" cy="502" r="3"></circle><text x="412" y="518">Pocatello</text></g>
+<g class="map-city"><circle cx="423.8" cy="454.1" r="4"></circle><text x="437" y="450">Idaho Falls</text></g>
+<g class="map-city"><circle cx="323.4" cy="324.5" r="4"></circle><text x="335" y="316">Salmon</text></g>
+<g class="map-city map-city--minor"><circle cx="267.1" cy="398.3" r="3"></circle><text text-anchor="end" x="256" y="394">Stanley</text></g>
+<g transform="translate(300.7 452.1)"><circle class="map-hub-halo" r="12"></circle><circle class="map-hub-core" r="5.5"></circle><g class="map-hub-label"><rect height="29" rx="14.5" width="126" x="13" y="-38"></rect><text x="28" y="-20">HAILEY · MY BENCH</text></g></g>
+<g class="map-legend" transform="translate(493 73)"><line class="map-highway" x1="0" x2="31" y1="0" y2="0"></line><text x="40" y="3">MAJOR HIGHWAY</text><line class="idaho-map-route idaho-map-route--warm" x1="0" x2="31" y1="25" y2="25"></line><text x="40" y="28">MAIL-IN FLOW</text><path class="map-ridge" d="M0 55 l8 -10 l8 8 l8 -12 l9 14"></path><text x="40" y="55">MOUNTAIN REGION</text></g>
+<g class="map-compass" transform="translate(554 185)"><text x="0" y="-19">N</text><path d="M0 -13 L-5 2 L0 -1 L5 2 Z" fill="rgba(215,229,243,.62)"></path><line stroke="rgba(215,229,243,.35)" x1="0" x2="0" y1="1" y2="18"></line></g>
+<text class="map-meta" text-anchor="end" x="600" y="568">ROUTES ILLUSTRATIVE · NOT TO SCALE</text>
 </svg>
-<span class="map-pin map-pin--boise">Boise</span>
-<span class="map-pin map-pin--tf">Twin Falls</span>
-<span class="map-pin map-pin--if">Idaho Falls</span>
-<span class="map-pin map-pin--cda">Coeur d'Alene</span>
-<span class="map-pin map-pin--hailey">Hailey bench</span>
 </div>
 <div class="route-detail-panel">
 <h3>One practical route: your post office to my bench.</h3>
@@ -2739,8 +2829,8 @@ a{color:inherit;text-decoration:none}
       <a href="/privacy">Learn more</a>
 </p>
 <div class="cookie-banner-actions">
-<button class="btn-accept" id="cookieAccept">Got it</button>
-<button class="btn-decline" id="cookieDecline">Decline</button>
+<button class="btn-accept" id="cookieAccept" type="button">Got it</button>
+<button class="btn-decline" id="cookieDecline" type="button">Decline</button>
 </div>
 </div>
 <!-- Floating Help Widget -->
