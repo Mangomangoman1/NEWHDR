@@ -218,3 +218,216 @@ html body .nav #water-wrapper-nav .water-btn:active .rectangle-volume {
     opacity: 0.34;
   }
 }
+
+/* Canonical mobile menu actions. These selectors intentionally live beside
+   the desktop quote component so every static template shares one treatment. */
+@media (max-width: 768px) {
+  html body .nav #qfTriggerMobile {
+    display: grid !important;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    align-items: center !important;
+    gap: 0.72rem !important;
+    width: 100% !important;
+    min-height: 56px;
+    margin-top: 0.35rem !important;
+    padding: 0.55rem 0.72rem !important;
+    border: 1px solid rgba(118, 157, 211, 0.28) !important;
+    border-radius: 16px !important;
+    background:
+      radial-gradient(circle at 8% 0%, rgba(139, 184, 214, 0.12), transparent 36%),
+      linear-gradient(145deg, rgba(26, 39, 58, 0.98), rgba(12, 20, 32, 0.99)) !important;
+    color: #f2f6fd !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.09),
+      0 12px 26px rgba(0, 0, 0, 0.22) !important;
+    text-align: left;
+    transition: border-color 200ms ease, transform 200ms cubic-bezier(.16, 1, .3, 1) !important;
+  }
+
+  html body .nav #qfTriggerMobile .qf-mobile-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(139, 184, 214, 0.24);
+    border-radius: 11px;
+    background: rgba(91, 139, 207, 0.11);
+    color: #8bb8e8;
+    font-size: 1.05rem !important;
+  }
+
+  html body .nav #qfTriggerMobile .qf-mobile-copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.04rem;
+    font-style: normal;
+  }
+
+  html body .nav #qfTriggerMobile .qf-mobile-copy strong {
+    color: #f2f6fd;
+    font-size: 0.88rem;
+    font-weight: 760;
+    line-height: 1.2;
+  }
+
+  html body .nav #qfTriggerMobile .qf-mobile-copy em {
+    overflow: hidden;
+    color: #8693a6;
+    font-size: 0.69rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  html body .nav #qfTriggerMobile .qf-mobile-arrow {
+    color: #7897bf;
+    font-size: 1rem !important;
+    transition: color 200ms ease, transform 200ms cubic-bezier(.16, 1, .3, 1) !important;
+  }
+
+  html body .nav #qfTriggerMobile:hover {
+    border-color: rgba(139, 184, 232, 0.43) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  html body .nav #qfTriggerMobile:hover .qf-mobile-arrow {
+    color: #c7dfff;
+    transform: translateX(3px);
+  }
+
+  html body .nav #water-wrapper-mobile {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 54px !important;
+    margin-top: 0.65rem;
+    isolation: isolate;
+    filter: drop-shadow(0 12px 25px rgba(12, 34, 66, 0.32));
+  }
+
+  html body .nav #water-wrapper-mobile .water-btn {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    border: 1px solid rgba(157, 194, 242, 0.32) !important;
+    border-radius: 17px !important;
+    background: #0a101a !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    filter: none !important;
+    transform: none !important;
+    transition: transform 180ms cubic-bezier(.16, 1, .3, 1) !important;
+  }
+
+  html body .nav #water-wrapper-mobile .water-btn::before,
+  html body .nav #water-wrapper-mobile .water-btn::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 142px;
+    aspect-ratio: 2 / 1;
+    background: radial-gradient(
+      100% 100% at right,
+      #0a101a 0%,
+      rgba(255, 255, 255, 0.98) 6%,
+      #8bb8e8 34%,
+      rgba(91, 139, 207, 0.26) 58%,
+      transparent 80%
+    );
+    offset-path: border-box;
+    -webkit-offset-path: border-box;
+    offset-anchor: 100% 50%;
+    -webkit-offset-anchor: 100% 50%;
+    filter: blur(11px);
+    pointer-events: none;
+    will-change: offset-distance;
+  }
+
+  html body .nav #water-wrapper-mobile .water-btn::before {
+    opacity: 0.48;
+    animation: hdrQuoteTrail 14s linear infinite;
+  }
+
+  html body .nav #water-wrapper-mobile .water-btn::after {
+    opacity: 0.76;
+    animation: hdrQuoteTrailOffset 14s linear infinite;
+  }
+
+  html body .nav #water-wrapper-mobile .rectangle-volume {
+    position: absolute !important;
+    inset: 1.5px !important;
+    z-index: 2 !important;
+    border: 1px solid rgba(212, 230, 255, 0.16) !important;
+    border-radius: 15.5px !important;
+    background:
+      radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.2), transparent 40%),
+      linear-gradient(135deg, #4d7dbb, #315e97) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 -12px 26px rgba(11, 37, 75, 0.22),
+      0 12px 24px rgba(0, 0, 0, 0.22) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html body .nav #water-wrapper-mobile .btn-text {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    color: #fff !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.95rem !important;
+    font-weight: 780 !important;
+    text-shadow: 0 1px 1px rgba(8, 24, 48, 0.28) !important;
+    transform: none !important;
+  }
+
+  html body .nav #water-wrapper-mobile .btn-text .material-symbols-outlined {
+    color: #eef6ff !important;
+    font-size: 1.05rem !important;
+  }
+
+  html body .nav #water-wrapper-mobile .ambient-shadow {
+    position: absolute !important;
+    inset: 20% 8% -10% !important;
+    z-index: -1 !important;
+    border-radius: 18px !important;
+    background: rgba(91, 139, 207, 0.46) !important;
+    filter: blur(18px) !important;
+    opacity: 0.34 !important;
+  }
+
+  html body .nav #water-wrapper-mobile .caustic,
+  html body .nav #water-wrapper-mobile .glare-radial,
+  html body .nav #water-wrapper-mobile .glare-sharp {
+    display: none !important;
+  }
+
+  html body .nav #water-wrapper-mobile .water-btn:active {
+    transform: scale(0.985) !important;
+  }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  html body .nav #qfTriggerMobile,
+  html body .nav #qfTriggerMobile .qf-mobile-arrow,
+  html body .nav #water-wrapper-mobile .water-btn {
+    transition: none !important;
+  }
+
+  html body .nav #water-wrapper-mobile .water-btn::before,
+  html body .nav #water-wrapper-mobile .water-btn::after {
+    animation: none !important;
+    opacity: 0.36;
+  }
+}
