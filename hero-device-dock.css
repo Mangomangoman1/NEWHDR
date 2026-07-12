@@ -20,7 +20,7 @@
 }
 
 /* Keep the first desktop viewport focused on one composition. The device
-   dock anchors the hero; the repair ledger begins after the first scroll. */
+   dock anchors the hero before the full service overview begins. */
 @media (min-width: 1041px) {
   .hh-hero {
     min-height: calc(100svh - 64px);

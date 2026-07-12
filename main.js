@@ -366,17 +366,6 @@
     });
   }
 
-  // ─── Recently Fixed ticker: clone items for seamless loop ─
-  const tickerScroll = document.querySelector('.ticker-scroll');
-  if (tickerScroll) {
-    // Clone all ticker items to create seamless infinite loop
-    const items = tickerScroll.querySelectorAll('.ticker-item');
-    items.forEach(item => {
-      const clone = item.cloneNode(true);
-      tickerScroll.appendChild(clone);
-    });
-  }
-
   // ─── Smooth anchor offset for sticky nav ─────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
