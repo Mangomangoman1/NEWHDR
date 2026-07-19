@@ -19,6 +19,87 @@
   row-gap: 1rem;
 }
 
+/* Let the real repair photo read as part of the hero's lighting system rather
+   than as a rectangular asset placed on top of it. */
+.hh-hero .hh-stage {
+  isolation: isolate;
+}
+
+.hh-hero .hh-cluster {
+  position: relative;
+  z-index: 2;
+  width: min(105%, 640px);
+  height: auto;
+  filter: none;
+  transform-style: preserve-3d;
+}
+
+.hh-hero .hh-cluster::before {
+  content: "";
+  position: absolute;
+  inset: 5% 2% -4%;
+  z-index: -1;
+  border-radius: 38%;
+  background: url("/assets/hero/repair-bench-macbook.webp") center / cover no-repeat;
+  opacity: 0.3;
+  filter: blur(34px) saturate(1.18);
+  transform: translateY(20px) scale(0.94);
+  pointer-events: none;
+}
+
+.hh-hero .hh-photo-frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  padding: 7px;
+  overflow: hidden;
+  border: 1px solid rgba(214, 226, 244, 0.2);
+  border-radius: clamp(20px, 3vw, 30px);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.025)),
+    #111824;
+  box-shadow:
+    0 42px 82px rgba(0, 0, 0, 0.5),
+    0 12px 28px rgba(28, 58, 110, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transform: rotate(-1.15deg);
+}
+
+.hh-hero .hh-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  z-index: 2;
+  border-radius: calc(clamp(20px, 3vw, 30px) - 7px);
+  background:
+    linear-gradient(112deg, rgba(255, 255, 255, 0.12), transparent 22% 74%, rgba(129, 166, 225, 0.1)),
+    linear-gradient(180deg, transparent 68%, rgba(4, 8, 15, 0.23));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.09);
+  pointer-events: none;
+}
+
+.hh-hero .hh-photo-frame::after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  bottom: 4px;
+  left: 10%;
+  z-index: 3;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(137, 174, 232, 0.72), transparent);
+  box-shadow: 0 0 15px rgba(95, 142, 220, 0.45);
+  pointer-events: none;
+}
+
+.hh-hero .hh-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(clamp(20px, 3vw, 30px) - 7px);
+  object-fit: cover;
+  object-position: 51% 50%;
+  filter: saturate(0.93) contrast(1.05) brightness(0.91);
+}
+
 /* Keep the first desktop viewport focused on one composition. The device
    dock anchors the hero before the full service overview begins. */
 @media (min-width: 1041px) {
@@ -331,6 +412,8 @@
   .hh-hero .hh-services { order: 2; }
   .hh-hero .hh-right { order: 3; }
 
+  .hh-hero .hh-cluster { width: min(92%, 560px); }
+
   .hh-hero .hh-services-label { width: 158px; }
   .hh-hero .hh-services-label em { display: none; }
   .hh-hero .hh-svc { padding-inline: 0.6rem; }
@@ -345,6 +428,32 @@
     margin: 0.9rem 0 0.15rem;
     border-radius: 18px;
     animation-delay: 0.42s;
+  }
+
+  .hh-hero .hh-cluster {
+    width: min(92%, 350px);
+    margin: 1.2rem auto 0.2rem;
+    filter: none;
+  }
+
+  .hh-hero .hh-cluster::before {
+    inset: 5% 0 -8%;
+    filter: blur(24px) saturate(1.12);
+  }
+
+  .hh-hero .hh-photo-frame {
+    padding: 5px;
+    border-radius: 20px;
+    transform: rotate(-0.65deg);
+    box-shadow:
+      0 25px 52px rgba(0, 0, 0, 0.48),
+      0 8px 24px rgba(28, 58, 110, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  .hh-hero .hh-photo,
+  .hh-hero .hh-photo-frame::before {
+    border-radius: 15px;
   }
 
   .hh-hero .hh-services-core { border-radius: 16.5px; }
