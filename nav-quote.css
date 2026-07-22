@@ -431,3 +431,11 @@ html body .nav #water-wrapper-nav .water-btn:active .rectangle-volume {
     opacity: 0.36;
   }
 }
+
+/* Give the desktop navigation a little more room on wide displays while
+   retaining a centered, readable composition. */
+@media (min-width: 1100px) {
+  html body .nav .nav-inner {
+    max-width: 1260px !important;
+  }
+}
