@@ -81,17 +81,31 @@
 }
 
 .pricing-page .pt-estimate-note {
+  position: relative;
   display: grid;
   grid-template-columns: 24px minmax(0, 1fr);
   align-items: start;
   gap: 0.7rem;
   max-width: 680px;
   margin: 1.45rem auto 0;
-  padding: 0.95rem 1rem;
+  padding: 0.95rem 1rem 0.95rem 1.35rem;
   border-block: 1px solid rgba(143, 179, 232, 0.2);
   background: linear-gradient(90deg, transparent, rgba(91, 139, 207, 0.07) 18%, rgba(91, 139, 207, 0.07) 82%, transparent);
   color: var(--pt-text-2);
   text-align: left;
+}
+
+.pricing-page .pt-estimate-note::before {
+  content: "";
+  position: absolute;
+  top: 0.65rem;
+  bottom: 0.65rem;
+  left: 0;
+  width: 8px;
+  border: solid rgba(143, 179, 232, 0.78);
+  border-width: 1.5px 0 1.5px 2px;
+  border-radius: 4px 0 0 4px;
+  filter: drop-shadow(0 0 5px rgba(143, 179, 232, 0.22));
 }
 
 .pricing-page .pt-estimate-note .material-symbols-outlined {
@@ -107,7 +121,7 @@
 }
 
 .pricing-page .pt-estimate-note strong {
-  color: var(--pt-text);
+  color: #accbf3;
   font-weight: 650;
 }
 
@@ -597,7 +611,8 @@
 
   .pricing-page .pt-estimate-note {
     margin-top: 1.2rem;
-    padding-inline: 0.45rem;
+    padding-right: 0.45rem;
+    padding-left: 1.1rem;
     background: rgba(91, 139, 207, 0.055);
   }
 
