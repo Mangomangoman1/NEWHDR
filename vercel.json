@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/student-military",
+      "destination": "/pricing",
+      "statusCode": 301
+    },
+    {
       "source": "/guide",
       "destination": "/tips",
       "statusCode": 301

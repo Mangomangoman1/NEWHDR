@@ -2531,7 +2531,6 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         { name: 'FAQ', desc: 'Pricing, turnaround, warranty & more', href: '/faq', icon: 'help', kw: 'faq questions answers how long warranty turnaround' },
         { name: 'Device Check', desc: 'Free instant repair estimate', href: '/device-check', icon: 'manage_search', kw: 'device check estimate instant free diagnostic whats wrong' },
         { name: 'Warranty', desc: '40-day guarantee on every repair', href: '/warranty', icon: 'verified', kw: 'warranty guarantee coverage 40 day parts labor' },
-        { name: 'Student & Military Discount', desc: '15% off — just show your ID', href: '/student-military', icon: 'percent', kw: 'student military discount 15 percent off id college veteran' }
       ]},
       { title: 'About', icon: 'info', links: [
         { name: 'About HDR', desc: 'Meet Samuel — your local repair tech', href: '/about', icon: 'person', kw: 'about sam samuel who person story local repair tech' },

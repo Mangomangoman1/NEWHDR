@@ -74,7 +74,6 @@ These public profiles help identify Hailey Device Repair as the same local busin
 
 - [About Hailey Device Repair](/about): Samuel’s local repair approach, service area, values, and trust signals.
 - [Contact Hailey Device Repair](/contact): Text or call (208) 450-1606 for the fastest repair quote.
-- [Student and military discount](/student-military): Discount information for students and military customers.
 - [Electronics recycling](/electronics-recycling): Responsible recycling path for devices that are not worth repairing.
 - [Privacy](/privacy): Privacy policy and customer-data handling.
 
