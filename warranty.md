@@ -8,4 +8,4 @@ New drops, liquid exposure, pressure damage, customer-supplied parts unless expl
 
 ## Contact
 
-If the same issue returns, text (208) 450-1606 with the device model, repair date, and what changed.
+If the same issue returns, text (208) 366-6111 with the device model, repair date, and what changed.

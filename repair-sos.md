@@ -4,4 +4,4 @@ Use Repair SOS when a phone, laptop, tablet, or console has water damage, a blac
 
 ## First steps
 
-Power off if safe. Do not charge wet or swelling devices. Do not keep force-restarting a boot-looping phone. Keep data-risk devices powered down. Text (208) 450-1606 with the model and symptoms.
+Power off if safe. Do not charge wet or swelling devices. Do not keep force-restarting a boot-looping phone. Keep data-risk devices powered down. Text (208) 366-6111 with the model and symptoms.

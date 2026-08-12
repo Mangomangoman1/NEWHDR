@@ -30,7 +30,7 @@ Most iPhones are worth quoting before replacing when the issue is a screen, batt
 
 Send: “iPhone 13 Pro, cracked screen, touch still works, Face ID works, photo attached.”
 
-Text or call (208) 450-1606. Local drop-off is based in Hailey, Idaho. Idaho mail-in repair is available when the job is a good candidate for shipping.
+Text or call (208) 366-6111. Local drop-off is based in Hailey, Idaho. Idaho mail-in repair is available when the job is a good candidate for shipping.
 
 ## Related pages
 

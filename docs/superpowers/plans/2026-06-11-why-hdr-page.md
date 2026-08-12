@@ -64,7 +64,7 @@ Write `why-hdr.html` with the complete head (meta, schema, fonts, critical CSS),
   "@id": "https://www.haileyrepair.com/#business",
   "name": "Hailey Device Repair",
   "url": "https://www.haileyrepair.com",
-  "telephone": "+12084501606",
+  "telephone": "+12083666111",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Hailey",
@@ -296,7 +296,7 @@ details[open] .faq-chevron{transform:rotate(180deg)}
 <li><a class="nav-link" href="/contact">Contact</a></li>
 </ul>
 <div class="nav-actions">
-<a class="btn btn-primary btn-sm" href="sms:+12084501606">
+<a class="btn btn-primary btn-sm" href="sms:+12083666111">
 <span class="material-symbols-outlined" aria-hidden="true" data-icon="sms" style="font-size:1rem"></span>
 Text for Quote
 </a>
@@ -385,7 +385,7 @@ Text for Quote
 </div>
 <div class="footer-col" data-animate="">
 <strong>Contact</strong>
-<a href="sms:+12084501606">+1 (208) 450-1606</a>
+<a href="sms:+12083666111">+1 (208) 366-6111</a>
 <a href="mailto:samuel@haileyrepair.com">samuel@haileyrepair.com</a>
 <a href="https://g.page/r/CRz04Aqd3UvPEBM/review" target="_blank" rel="noopener">Leave a Review ↗</a>
 </div>
@@ -420,13 +420,13 @@ Text for Quote
 </div>
 </div>
 <div class="help-fab-options">
-<a class="help-fab-option" href="sms:+12084501606">
+<a class="help-fab-option" href="sms:+12083666111">
 <div class="help-fab-option-icon help-fab-option-icon--text"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span></div>
 <div class="help-fab-option-info"><strong>Text me</strong><span>Fastest way to reach me</span></div>
 </a>
-<a class="help-fab-option" href="tel:+12084501606">
+<a class="help-fab-option" href="tel:+12083666111">
 <div class="help-fab-option-icon help-fab-option-icon--call"><span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span></div>
-<div class="help-fab-option-info"><strong>Call</strong><span>(208) 450-1606</span></div>
+<div class="help-fab-option-info"><strong>Call</strong><span>(208) 366-6111</span></div>
 </a>
 <a class="help-fab-option" href="/contact">
 <div class="help-fab-option-icon help-fab-option-icon--quote"><span class="material-symbols-outlined" aria-hidden="true" data-icon="description"></span></div>
@@ -488,7 +488,7 @@ With:
 <h1 class="hero-headline">The Wood River Valley finally has a <span class="hero-headline-accent">real repair bench.</span></h1>
 <p class="hero-sub">Sun Valley has world-class skiing, five-star hotels, and some of the most expensive real estate in Idaho. Until HDR, it had nowhere serious to take a broken device.</p>
 <div class="hero-cta">
-<a href="sms:+12084501606" class="btn btn-primary btn-lg">
+<a href="sms:+12083666111" class="btn btn-primary btn-lg">
 <span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
 Text Samuel for a Quote
 </a>
@@ -867,7 +867,7 @@ With:
 <h2 class="section-title">Ready to get it fixed?</h2>
 <p>Describe what's wrong. Get a reply in minutes. No obligation, no commitment until you approve the quote.</p>
 <div class="why-cta-actions">
-<a href="sms:+12084501606" class="btn btn-primary btn-lg">
+<a href="sms:+12083666111" class="btn btn-primary btn-lg">
 <span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
 Text Samuel
 </a>
@@ -876,7 +876,7 @@ Text Samuel
 View Pricing
 </a>
 </div>
-<p class="why-cta-phone"><a href="tel:+12084501606">(208) 450-1606</a> · Hailey, Idaho · 7 days a week</p>
+<p class="why-cta-phone"><a href="tel:+12083666111">(208) 366-6111</a> · Hailey, Idaho · 7 days a week</p>
 </div>
 </div>
 </section>

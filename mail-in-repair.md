@@ -8,4 +8,4 @@ Text first, get a quote path, pack the device, ship it, receive updates, approve
 
 ## Contact
 
-Text (208) 450-1606 before shipping anything.
+Text (208) 366-6111 before shipping anything.
