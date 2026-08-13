@@ -172,6 +172,75 @@
   padding: 0.8rem 1.15rem;
 }
 
+/* A quiet operational note: visible in the primary reading path without
+   competing with the quote CTA or turning the hero into a banner stack. */
+.hh-hero .hh-appointment {
+  display: flex;
+  width: min(100%, 34rem);
+  margin-top: 1.25rem;
+  padding: 0.72rem 0;
+  align-items: center;
+  gap: 0.72rem;
+  border-block: 1px solid rgba(139, 184, 214, 0.14);
+  color: #d8e3f0;
+}
+
+.hh-hero .hh-appointment-icon {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(139, 184, 214, 0.22);
+  border-radius: 9px;
+  background: rgba(91, 139, 207, 0.08);
+  color: #8bb8d6;
+  font-size: 1rem;
+}
+
+.hh-hero .hh-appointment-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.08rem;
+  line-height: 1.28;
+}
+
+.hh-hero .hh-appointment-copy strong {
+  color: #eef4fb;
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.hh-hero .hh-appointment-copy span {
+  color: #8997aa;
+  font-size: 0.76rem;
+}
+
+.hh-hero .hh-appointment-link {
+  display: inline-flex;
+  margin-left: auto;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.22rem;
+  color: #a9c8ed;
+  font-size: 0.76rem;
+  font-weight: 720;
+  white-space: nowrap;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.hh-hero .hh-appointment-link .material-symbols-outlined {
+  font-size: 0.9rem;
+}
+
+.hh-hero .hh-appointment-link:hover {
+  color: #e8f2ff;
+  transform: translateX(2px);
+}
+
 /* Trust points should read as evidence, not as another control surface. */
 .hh-hero .hh-stats {
   width: max-content;
@@ -421,6 +490,21 @@
 }
 
 @media (max-width: 680px) {
+  .hh-hero .hh-appointment {
+    order: 4;
+    margin-top: 1rem;
+    padding: 0.7rem 0;
+    align-items: flex-start;
+  }
+
+  .hh-hero .hh-appointment-copy span {
+    max-width: 13.5rem;
+  }
+
+  .hh-hero .hh-appointment-link {
+    margin-top: 0.1rem;
+  }
+
   .hh-hero .hh-services {
     order: 6;
     display: block;
