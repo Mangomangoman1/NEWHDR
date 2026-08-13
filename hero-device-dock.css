@@ -165,38 +165,52 @@
   .hh-hero .hh-stats { margin-top: 1.5rem; }
 }
 
-/* The phone action now occupies the former secondary-CTA position. */
-.hh-hero .hh-actions .hh-phone {
-  min-height: 52px;
-  margin: 0;
-  padding: 0.8rem 1.15rem;
-}
-
-/* A quiet operational note: visible in the primary reading path without
-   competing with the quote CTA or turning the hero into a banner stack. */
+/* The appointment console is the hero's single conversion path: text first,
+   with a smaller integrated call option for customers who need it. */
 .hh-hero .hh-appointment {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   width: min(100%, 34rem);
   margin-top: 1.25rem;
-  padding: 0.72rem 0;
+  padding: 4px;
+  align-items: center;
+  gap: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(139, 184, 214, 0.24);
+  border-radius: 17px;
+  background:
+    radial-gradient(circle at 5% 0%, rgba(125, 169, 226, 0.14), transparent 42%),
+    linear-gradient(145deg, rgba(24, 36, 54, 0.96), rgba(10, 17, 27, 0.98));
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  color: #d8e3f0;
+}
+
+.hh-hero .hh-appointment-main {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  min-width: 0;
   align-items: center;
   gap: 0.72rem;
-  border-block: 1px solid rgba(139, 184, 214, 0.14);
-  color: #d8e3f0;
+  padding: 0.78rem 0.82rem;
+  border-radius: 13px;
+  background: linear-gradient(135deg, rgba(82, 132, 199, 0.3), rgba(58, 91, 143, 0.17));
+  color: inherit;
+  transition: background 180ms ease, transform 180ms ease;
 }
 
 .hh-hero .hh-appointment-icon {
   display: inline-flex;
-  width: 30px;
-  height: 30px;
-  flex: 0 0 30px;
+  width: 34px;
+  height: 34px;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(139, 184, 214, 0.22);
-  border-radius: 9px;
-  background: rgba(91, 139, 207, 0.08);
-  color: #8bb8d6;
-  font-size: 1rem;
+  border: 1px solid rgba(170, 205, 245, 0.25);
+  border-radius: 10px;
+  background: rgba(8, 17, 29, 0.24);
+  color: #b9d7f7;
+  font-size: 1.05rem;
 }
 
 .hh-hero .hh-appointment-copy {
@@ -208,37 +222,61 @@
 
 .hh-hero .hh-appointment-copy strong {
   color: #eef4fb;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 760;
-  letter-spacing: 0.035em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .hh-hero .hh-appointment-copy span {
-  color: #8997aa;
+  color: #a6b5c8;
   font-size: 0.76rem;
 }
 
-.hh-hero .hh-appointment-link {
+.hh-hero .hh-appointment-arrow {
   display: inline-flex;
-  margin-left: auto;
-  flex: 0 0 auto;
   align-items: center;
-  gap: 0.22rem;
-  color: #a9c8ed;
-  font-size: 0.76rem;
-  font-weight: 720;
-  white-space: nowrap;
-  transition: color 180ms ease, transform 180ms ease;
+  color: #c6dcf5;
+  transition: transform 180ms ease;
 }
 
-.hh-hero .hh-appointment-link .material-symbols-outlined {
-  font-size: 0.9rem;
+.hh-hero .hh-appointment-arrow .material-symbols-outlined {
+  font-size: 1.05rem;
 }
 
-.hh-hero .hh-appointment-link:hover {
-  color: #e8f2ff;
+.hh-hero .hh-appointment-main:hover {
+  background: linear-gradient(135deg, rgba(91, 145, 216, 0.4), rgba(65, 103, 160, 0.23));
+  transform: translateY(-1px);
+}
+
+.hh-hero .hh-appointment-main:hover .hh-appointment-arrow {
   transform: translateX(2px);
+}
+
+.hh-hero .hh-appointment-call {
+  display: inline-flex;
+  min-width: 58px;
+  min-height: 58px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.12rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 11px;
+  color: #9fb7d4;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.hh-hero .hh-appointment-call .material-symbols-outlined {
+  font-size: 1rem;
+}
+
+.hh-hero .hh-appointment-call:hover {
+  background: rgba(255, 255, 255, 0.045);
+  color: #eef6ff;
 }
 
 /* Trust points should read as evidence, not as another control surface. */
@@ -493,16 +531,30 @@
   .hh-hero .hh-appointment {
     order: 4;
     margin-top: 1rem;
-    padding: 0.7rem 0;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+
+  .hh-hero .hh-appointment-main {
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    gap: 0.58rem;
+    padding: 0.7rem 0.66rem;
+  }
+
+  .hh-hero .hh-appointment-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hh-hero .hh-appointment-copy strong {
+    font-size: 0.72rem;
   }
 
   .hh-hero .hh-appointment-copy span {
-    max-width: 13.5rem;
+    font-size: 0.7rem;
   }
 
-  .hh-hero .hh-appointment-link {
-    margin-top: 0.1rem;
+  .hh-hero .hh-appointment-call {
+    min-width: 52px;
   }
 
   .hh-hero .hh-services {
