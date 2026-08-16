@@ -253,7 +253,7 @@
   transform: translateX(2px);
 }
 
-.hh-hero .hh-appointment-call {
+.hh-hero .hh-appointment-text {
   display: inline-flex;
   min-width: 58px;
   min-height: 58px;
@@ -270,11 +270,11 @@
   transition: background 180ms ease, color 180ms ease;
 }
 
-.hh-hero .hh-appointment-call .material-symbols-outlined {
+.hh-hero .hh-appointment-text .material-symbols-outlined {
   font-size: 1rem;
 }
 
-.hh-hero .hh-appointment-call:hover {
+.hh-hero .hh-appointment-text:hover {
   background: rgba(255, 255, 255, 0.045);
   color: #eef6ff;
 }
@@ -553,7 +553,7 @@
     font-size: 0.7rem;
   }
 
-  .hh-hero .hh-appointment-call {
+  .hh-hero .hh-appointment-text {
     min-width: 52px;
   }
 
