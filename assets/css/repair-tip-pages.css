@@ -1,0 +1,31 @@
+/* Shared shell for focused repair-problem articles. Extends bench-tips.css. */
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--bench-body);-webkit-font-smoothing:antialiased}
+.tip-nav{position:sticky;top:0;z-index:100;background:rgba(8,11,16,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--bench-line)}
+.tip-nav-inner{max-width:1160px;height:64px;margin:auto;padding:0 1.25rem;display:flex;align-items:center;gap:1rem}
+.tip-brand{display:flex;align-items:center;gap:.55rem;color:var(--bench-ink);text-decoration:none;font-weight:700;white-space:nowrap}
+.tip-brand .material-symbols-outlined{color:var(--bench-blue);font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
+.tip-brand span:last-child{color:var(--bench-muted)}.tip-brand strong{color:var(--bench-ink)}
+.tip-nav-links{display:flex;align-items:center;gap:.25rem;margin-left:auto}
+.tip-nav-links a{padding:.42rem .66rem;color:var(--bench-muted);text-decoration:none;font-size:.9rem;border-radius:8px}
+.tip-nav-links a:hover,.tip-nav-links a[aria-current="page"]{color:var(--bench-ink)}
+.tip-quote{margin-left:.35rem!important;background:#5b8bcf;color:#fff!important;font-weight:700!important;padding:.58rem .86rem!important}
+.tip-progress{position:fixed;left:0;top:0;z-index:150;width:0;height:3px;background:linear-gradient(90deg,#9fb6cd,#74a4de);box-shadow:0 0 12px rgba(116,164,222,.5)}
+.tip-hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.64fr);gap:2rem;align-items:center}
+.tip-photo{position:relative;min-height:390px;border:1px solid var(--bench-line-strong);border-radius:24px;overflow:hidden;background:#111722;box-shadow:0 28px 80px rgba(0,0,0,.4);animation:tipPhotoIn .7s cubic-bezier(.2,.7,.2,1) both}
+.tip-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.06);transform:scale(1.025);transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.tip-photo:hover img{transform:scale(1)}
+.tip-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(3,6,10,.76));pointer-events:none}
+.tip-photo-note{position:absolute;z-index:1;left:1rem;right:1rem;bottom:1rem;display:flex;justify-content:space-between;gap:1rem;align-items:end;color:#fff}
+.tip-photo-note span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#cbd8e5}.tip-photo-note strong{max-width:230px;text-align:right;font-size:.9rem}
+.tip-answer{margin-top:1.25rem;padding:1rem 1.1rem;border:1px solid rgba(116,164,222,.3);border-radius:16px;background:rgba(116,164,222,.09);color:#eaf2ff;line-height:1.58}
+.tip-byline{margin:.7rem 0 0;color:var(--bench-muted);font-size:.84rem}
+.tip-source-list a{color:var(--bench-cyan)}
+.tip-related{display:grid;gap:.5rem}.tip-related a{padding:.65rem .7rem;border:1px solid var(--bench-line);border-radius:12px;color:#dce7f2;text-decoration:none;background:rgba(255,255,255,.025)}
+.tip-related a:hover{border-color:rgba(116,164,222,.4)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .58s cubic-bezier(.2,.7,.2,1),transform .58s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@keyframes tipPhotoIn{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}
+@media(max-width:900px){.tip-hero-grid{grid-template-columns:1fr}.tip-photo{min-height:300px}.tip-nav-links a:not(.tip-quote){display:none}.bench-hero{padding-top:3.3rem}}
+@media(max-width:620px){.tip-nav-inner{height:60px;padding:0 1rem}.tip-brand{font-size:.88rem}.tip-quote{font-size:.8rem!important;margin-left:auto!important}.tip-photo{min-height:225px;border-radius:20px}.tip-photo-note strong{font-size:.78rem}.bench-hero{padding-top:2.2rem}.tip-answer{font-size:.94rem}.tip-byline{font-size:.78rem}.bench-article-shell{padding-top:1rem!important}}
+@media(prefers-reduced-motion:reduce){.tip-photo{animation:none}.tip-photo img,.reveal{transition:none}.reveal{opacity:1;transform:none}}
