@@ -33,7 +33,7 @@ Not a duplicate of `/about` (which tells the origin story). This page answers a 
 - **Eyebrow:** Why HDR
 - **Headline:** "The Wood River Valley finally has a real repair bench."
 - **Sub:** "Sun Valley has world-class skiing, five-star hotels, and some of the most expensive real estate in Idaho. Until HDR, it had nowhere serious to take a broken device."
-- **CTA (primary):** Text Samuel for a Quote → `sms:+12083666111`
+- **CTA (primary):** Text Samuel for a Quote → `sms:+12084501606`
 - **CTA (secondary):** See how it works → links to `#how-it-works` on homepage or `/pricing`
 - **Badge:** 5.0★ · Hailey, Idaho
 
@@ -108,7 +108,7 @@ Closing line: "This isn't a hobby bench. It's a professional shop — it just ha
 ### 8. CTA
 - Headline: "Ready to get it fixed?"
 - Sub: "Describe what's wrong. Get a reply in minutes. No obligation, no commitment until you approve the quote."
-- Primary button: "Text Samuel" → `sms:+12083666111`
+- Primary button: "Text Samuel" → `sms:+12084501606`
 - Secondary: phone number as plain text
 - Tertiary link: "View starting prices →" → `/pricing`
 

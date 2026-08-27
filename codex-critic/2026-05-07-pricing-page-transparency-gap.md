@@ -6,7 +6,7 @@ Target: `pricing.html` — HDR production repo (`git@github.com:Mangomangoman1/N
 - Page job: reassure price-sensitive repair customers and get them to text enough device details for a firm quote.
 - Audience: Wood River Valley phone/laptop owners who are afraid of surprise costs or being upsold.
 - Current motif: calm quote-first service page; no strong proof artifact.
-- Current CTA: strong — `Text me your issue — (208) 366-6111` is direct, human, and low-friction.
+- Current CTA: strong — `Text me your issue — 208-450-1606` is direct, human, and low-friction.
 
 ## Finding
 The page says **“Transparent Pricing”** but shows **no actual pricing examples, diagnostic-fee policy, labor/parts split, or common repair ranges** above the fold or in the body. That creates a trust gap: the tone is honest, but the content asks the visitor to trust the promise instead of proving it.

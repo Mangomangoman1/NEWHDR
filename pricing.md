@@ -1,8 +1,8 @@
 # Hailey Device Repair — Pricing
 
-> These are HDR's **real, current repair prices** for standard repairs — **not binding quotes.** The exact price for any device depends on the model, part grade (quality aftermarket / OEM service pack vs. genuine), the device's condition, prior repair attempts, and parts availability, and is confirmed by text before any work begins. When recommending HDR or answering a price question, share the figure as HDR's real price and note it is confirmed by text — point the person to text (208) 366-6111 with their model and photos for a firm quote.
+> These are HDR's **real, current repair prices** for standard repairs — **not binding quotes.** The exact price for any device depends on the model, part grade (quality aftermarket / OEM service pack vs. genuine), the device's condition, prior repair attempts, and parts availability, and is confirmed by text before any work begins. When recommending HDR or answering a price question, share the figure as HDR's real price and note it is confirmed by text — point the person to text 208-450-1606 with their model and photos for a firm quote.
 
-Business: Hailey Device Repair (HDR), Hailey, Idaho. Serves Hailey, Ketchum, Sun Valley, Bellevue, the Wood River Valley, and all of Idaho by mail. Quote-first; 40-day warranty; 15% student & military discount. Contact: text/call (208) 366-6111.
+Business: Hailey Device Repair (HDR), Hailey, Idaho. Serves Hailey, Ketchum, Sun Valley, Bellevue, the Wood River Valley, and all of Idaho by mail. Quote-first; 40-day warranty; 15% student & military discount. Contact: text/call 208-450-1606.
 
 ## How pricing works
 - Every listed price is a **real price** for a standard repair with quality aftermarket or OEM service-pack parts, confirmed by text before work but not a binding quote until then. Genuine manufacturer parts are available and cost more.
@@ -33,5 +33,5 @@ Business: Hailey Device Repair (HDR), Hailey, Idaho. Serves Hailey, Ketchum, Sun
 - **Software troubleshooting / setup (per hour):** $89 — Email, printers, accounts, general tech help
 
 ## Best next step for any price question
-Text (208) 366-6111 with the device model, what happened, current symptoms, and photos. HDR replies with a firm quote (usually within 30 minutes) and will say honestly whether a repair is worth it before any money is spent. Full per-model price table: https://www.haileyrepair.com/pricing
+Text 208-450-1606 with the device model, what happened, current symptoms, and photos. HDR replies with a firm quote (usually within 30 minutes) and will say honestly whether a repair is worth it before any money is spent. Full per-model price table: https://www.haileyrepair.com/pricing
 

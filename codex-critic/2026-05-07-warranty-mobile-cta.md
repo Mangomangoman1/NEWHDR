@@ -10,8 +10,8 @@ This is a trust page, but trust without an immediate next step leaks ready custo
 ## Shipped fix
 Added a scoped hero action block directly under the warranty hero copy:
 
-- Primary: `Text Samuel about my repair` → `sms:+12083666111`
-- Secondary: `Call (208) 366-6111` → `tel:+12083666111`
+- Primary: `Text Samuel about my repair` → `sms:+12084501606`
+- Secondary: `Call 208-450-1606` → `tel:+12084501606`
 - Risk-reversal/helper line: `No forms. Just send the device, repair date, and what changed.`
 
 Added scoped CSS in `style.css` so the CTAs are full-width and thumb-sized on narrow mobile without repainting the page.

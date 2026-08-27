@@ -11,7 +11,7 @@
 ## Global Constraints
 
 - **Site domain:** `https://www.haileyrepair.com` — canonicals and og:url are extensionless (e.g. `/idaho-falls-repair`, not `.html`).
-- **Contact:** phone display `(208) 366-6111`, links `tel:+12083666111` and `sms:+12083666111`. Email `samuel@haileyrepair.com`. Owner is "Samuel". Business name "Hailey Device Repair", short "HDR".
+- **Contact:** phone display `208-450-1606`, links `tel:+12084501606` and `sms:+12084501606`. Email `samuel@haileyrepair.com`. Owner is "Samuel". Business name "Hailey Device Repair", short "HDR".
 - **Title tags ≤ 60 characters. Meta descriptions 145–160 characters.** Verify every new/changed page with:
   ```bash
   python3 -c "
@@ -69,7 +69,7 @@ Every spoke task says "apply the Replacement Checklist with the content table be
    - `BreadcrumbList`: last item name/url → this page.
    - If the copied page has a `HowTo` block with Rexburg mentions, swap city names only.
 6. **Residue check:** `grep -ciE 'rexburg|byu|sugar city|madison county' {slug}.html` must be **0** (exception: none of these pages keep a student discount unless the table says so).
-7. **Cross-links:** the page must link `/mail-in-repair` at least twice (hero CTA area + closing CTA — the rexburg base already does; keep them) and `sms:+12083666111` at least twice.
+7. **Cross-links:** the page must link `/mail-in-repair` at least twice (hero CTA area + closing CTA — the rexburg base already does; keep them) and `sms:+12084501606` at least twice.
 8. **Infra entries:**
    - `_redirects` — add both lines, matching existing format/alignment:
      ```
@@ -432,7 +432,7 @@ for u in idaho-falls pocatello coeur-dalene nampa-meridian mccall salmon sandpoi
       <div id="townResult" class="town-result" role="status" aria-live="polite" hidden>
         <div class="town-result-time" id="townResultTime"></div>
         <p class="town-result-note" id="townResultNote"></p>
-        <p class="town-result-cta"><a class="btn btn-primary" href="sms:+12083666111">Text photos for your quote</a></p>
+        <p class="town-result-cta"><a class="btn btn-primary" href="sms:+12084501606">Text photos for your quote</a></p>
       </div>
     </div>
   </div>
@@ -687,7 +687,7 @@ Place label `<text>` to the **left** of pins in the east (Idaho Falls, Rexburg, 
 - [ ] **Step 1: Create `mail-in-kit.html`** with exactly this structure (head: title `Mail-In Repair Packing Sheet — Hailey Device Repair` (53 chars), description `Print this one-page packing sheet for your mail-in repair: five packing steps, what to include in the box, and carrier tips. From Hailey Device Repair.` (~151 — verify), canonical `https://www.haileyrepair.com/mail-in-kit`, `<meta name="robots" content="index,follow">`, favicon links copied from any page, vt-css block):
 
 Body content (single `<main class="sheet">`):
-1. Header row: "Hailey Device Repair — Mail-In Packing Sheet" + "(208) 366-6111 · text photos first" + note "Step 0: If you haven't texted for your quote yet, do that first — no work happens without your approved quote."
+1. Header row: "Hailey Device Repair — Mail-In Packing Sheet" + "208-450-1606 · text photos first" + note "Step 0: If you haven't texted for your quote yet, do that first — no work happens without your approved quote."
 2. **Five packing steps** (numbered, one line + sub-line each): ① Back it up if it powers on. ② Power off; for phones remove the case; for laptops, ship the charger only if asked. ③ Wrap in soft padding; the device must not move when you shake the box. ④ Pad all six sides — two inches everywhere. ⑤ USPS Priority with tracking; text us the tracking number.
 3. **"Write this on a note inside the box"** card with blank lines: Name ___ · Callback number ___ · Device &amp; model ___ · What happened ___ · Quote approved by text on (date) ___
 4. **Ship-to line:** "Ship to: you'll get the address by text when your quote is approved — write it here:" + three blank ruled lines.

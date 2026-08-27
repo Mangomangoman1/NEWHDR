@@ -8,7 +8,7 @@ Theme: model-first Android triage from a careful local repair bench. The page mu
 
 ## Primary quote path
 
-Text (208) 366-6111 with:
+Text 208-450-1606 with:
 
 - exact Android model
 - what happened

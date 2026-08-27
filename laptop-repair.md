@@ -4,4 +4,4 @@ HDR helps with Windows laptops, Chromebooks, and PCs: no power, slow performance
 
 ## Contact
 
-Text (208) 366-6111 with laptop model, symptoms, when it changed, and whether files matter.
+Text 208-450-1606 with laptop model, symptoms, when it changed, and whether files matter.
