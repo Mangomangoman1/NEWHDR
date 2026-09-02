@@ -3,6 +3,61 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/index.md",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about.md",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/android-repair.md",
+      "destination": "/android-repair",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact.md",
+      "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/iphone-repair.md",
+      "destination": "/iphone-repair",
+      "statusCode": 301
+    },
+    {
+      "source": "/laptop-repair.md",
+      "destination": "/laptop-repair",
+      "statusCode": 301
+    },
+    {
+      "source": "/macbook-repair.md",
+      "destination": "/macbook-repair",
+      "statusCode": 301
+    },
+    {
+      "source": "/mail-in-repair.md",
+      "destination": "/mail-in-repair",
+      "statusCode": 301
+    },
+    {
+      "source": "/pricing.md",
+      "destination": "/pricing",
+      "statusCode": 301
+    },
+    {
+      "source": "/repair-sos.md",
+      "destination": "/repair-sos",
+      "statusCode": 301
+    },
+    {
+      "source": "/warranty.md",
+      "destination": "/warranty",
+      "statusCode": 301
+    },
+    {
       "source": "/student-military",
       "destination": "/pricing",
       "statusCode": 301

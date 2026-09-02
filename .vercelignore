@@ -1,6 +1,12 @@
+# Source and project files are not part of the public website.
+# Keeping Markdown sources out of the deployment prevents duplicate public URLs
+# such as /iphone-repair and /iphone-repair.md.
+*.md
+*.numbers
 HDR-Price-Table.csv
-docs
-codex-critic
-archived
+docs/
+codex-critic/
+scripts/
+archived/
 build.sh
-assets/source
+assets/source/
