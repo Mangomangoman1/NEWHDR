@@ -19,6 +19,12 @@ const priorityRoutes = [
   "/tips/data-safe-during-repair",
   "/tips/fake-support-scam-popups",
   "/tips/phone-charges-slowly",
+  "/tips/iphone-liquid-detected-port-dry",
+  "/tips/swollen-phone-battery-screen-lifting",
+  "/tips/iphone-stuck-on-apple-logo",
+  "/tips/face-id-not-working-after-drop",
+  "/tips/iphone-battery-health-80-percent",
+  "/tips/iphone-ghost-touch-cracked-screen",
 ];
 
 const failures = [];
