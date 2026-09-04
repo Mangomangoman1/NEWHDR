@@ -25,6 +25,12 @@ const priorityRoutes = [
   "/tips/face-id-not-working-after-drop",
   "/tips/iphone-battery-health-80-percent",
   "/tips/iphone-ghost-touch-cracked-screen",
+  "/tips/iphone-charging-cable-loose-angle",
+  "/tips/iphone-restarts-every-three-minutes",
+  "/tips/iphone-camera-shaking-clicking-not-focusing",
+  "/tips/iphone-green-white-line-screen",
+  "/tips/iphone-speaker-muffled-after-water",
+  "/tips/iphone-unknown-part-important-message",
 ];
 
 const failures = [];
