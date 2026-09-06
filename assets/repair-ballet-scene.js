@@ -1,7 +1,8 @@
 import * as THREE from './vendor/three/three.module.min.js';
 import { RoomEnvironment } from './vendor/three/RoomEnvironment.js';
 import { buildPhone } from './repair-phone-model.mjs';
-import { cycleAt, layerAt, layers, smooth, phaseAt } from './repair-ballet-motion.mjs';
+import { posePhone } from './repair-phone-rig.mjs';
+import { cycleAt, smooth, phaseAt } from './repair-ballet-motion.mjs';
 
 const PAUSE='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zm5 0h3v10H9z"/></svg>';
 const PLAY='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5 13 8 4 13.5z"/></svg>';
@@ -19,6 +20,22 @@ function batteryTexture() {
     ['Handle with care.','Do not disassemble, puncture, crush,','heat or burn. Service by trained personnel.','Recycle according to local regulations.'].forEach((line,i)=>ctx.fillText(line,27,632+i*16));
     ctx.font='25px sans-serif';ctx.fillText('↻',27,746);
     for(let i=0;i<34;i++)ctx.fillRect(90+i*4,721,i%3===0?2:1,25);
+  });
+}
+function componentTexture() {
+  return texture(512,1024,(ctx,w)=>{
+    ctx.textAlign='center';ctx.fillStyle='rgba(185,192,192,.70)';
+    ctx.font='500 62px -apple-system, sans-serif';ctx.fillText('A18',w/2,95);
+    ctx.font='500 25px sans-serif';ctx.fillText('PRO',w/2,136);
+    ctx.font='15px monospace';ctx.fillText('APL1V07',w/2,185);
+    ctx.fillStyle='rgba(160,169,175,.68)';ctx.font='18px monospace';ctx.fillText('339S   •   024',w/2,356);
+    ctx.font='13px monospace';ctx.fillText('SHIELDED ASSEMBLY',w/2,390);
+    // A tiny matrix-like manufacturing mark, authored with the model.
+    for(let y=0;y<9;y++)for(let x=0;x<9;x++)if(x===0||y===8||((x*7+y*11)%5<2))ctx.fillRect(231+x*5,412+y*5,4,4);
+    ctx.fillStyle='rgba(191,196,202,.8)';ctx.font='500 47px sans-serif';ctx.fillText('TAPTIC ENGINE',w/2,655);
+    ctx.fillStyle='rgba(138,150,165,.58)';ctx.font='22px monospace';ctx.fillText('DISPLAY ASSEMBLY',w/2,862);
+    ctx.font='14px monospace';ctx.fillText('FLEX • OLED • SHIELD',w/2,902);
+    for(let i=0;i<68;i++)ctx.fillRect(120+i*4,925,i%3===0?2:1,29);
   });
 }
 function lockTexture() {
@@ -71,9 +88,10 @@ export function createRepairBallet(aside) {
       #include <tonemapping_fragment>
       #include <colorspace_fragment>
     }`});
-  const batteryMap=batteryTexture(),lockMap=lockTexture();
+  const batteryMap=batteryTexture(),lockMap=lockTexture(),detailMap=componentTexture();
   const screenUI=new THREE.MeshBasicMaterial({map:lockMap,transparent:true,opacity:0,depthWrite:false,toneMapped:false});
-  const {phone,groups,screws}=buildPhone({batteryMap,screenMaterial,screenUI});scene.add(phone);
+  const model=buildPhone({batteryMap,screenMaterial,screenUI,detailMap});
+  const {phone,groups}=model;scene.add(phone);
   const paths=[[[.64,-.62],[.27,-.32],[.10,.34],[-.19,.65],[-.36,1.62]],[[.64,-.62],[.86,.02],[.94,.67]],[[.64,-.62],[-.03,-.83],[-.51,-1.40],[-.82,-1.9]],[[.64,-.62],[.81,-1.28],[.59,-1.99]],[[.27,-.32],[-.44,-.13],[-.97,.23]],[[-.19,.65],[.27,.98],[.6,1.48]],[[.64,-.62],[.99,-.93]]];
   const cracks=[];paths.forEach(path=>{for(let i=1;i<path.length;i++)cracks.push(...path[i-1],.0134,...path[i],.0134);});
   const crackGeometry=new THREE.BufferGeometry();crackGeometry.setAttribute('position',new THREE.Float32BufferAttribute(cracks,3));
@@ -95,18 +113,11 @@ export function createRepairBallet(aside) {
   }
   function draw() {
     if(disposed||contextLost)return;
-    layers.forEach((layer,i)=>{
-      const group=groups[layer.id],position=layerAt(layer,progress);group.position.z=position.z;
-      group.position.x=Math.sin(i*1.2)*position.open*.055;
-      group.position.y=Math.sin(time*.65+i*.65)*position.open*.018;
-      group.rotation.z=Math.sin(time*.4+i)*position.open*.010;
-    });
-    const open=1-smooth(.79,1,progress);
-    screws.forEach(({mesh,x},i)=>{const a=open*Math.PI*4+i;mesh.position.set(x+Math.cos(a)*open*.10,Math.sin(a)*open*.10,.004+open*.75);mesh.rotation.z=open*Math.PI*8;});
+    posePhone(model,progress,time);
     phone.rotation.set(-.07+view.y*.07,.10+angle+view.x*.13,-.20+view.x*.035);
     phone.position.y=playing?Math.sin(time*.7)*.035:phone.position.y;
     target.set(0,0,(1-progress)*.92).applyQuaternion(phone.quaternion);target.y+=phone.position.y;camera.lookAt(target);
-    const halfHeight=Math.max(3.12+(1-progress)*.42,2.90/aspect);
+    const halfHeight=Math.max(3.12+(1-progress)*.54,(2.90+(1-progress)*.18)/aspect);
     camera.left=-halfHeight*aspect;camera.right=halfHeight*aspect;camera.top=halfHeight;camera.bottom=-halfHeight;camera.updateProjectionMatrix();
     screenUniforms.uRepair.value=progress;screenUI.opacity=smooth(.94,1,progress);crackMaterial.opacity=.45*(1-smooth(.60,.95,progress));
     const pulse=smooth(.91,1,progress);ripple.scale.setScalar(1+pulse*.32);rippleMaterial.opacity=Math.sin(pulse*Math.PI)*.20;
@@ -147,7 +158,7 @@ export function createRepairBallet(aside) {
     if(event.persisted){renderer.setAnimationLoop(null);running=false;lastTime=null;return;}
     disposed=true;renderer.setAnimationLoop(null);visibilityObserver.disconnect();resizeObserver.disconnect();document.removeEventListener('visibilitychange',updateLoop);window.removeEventListener('scroll',updateLoop);motion.removeEventListener('change',onMotion);window.removeEventListener('pageshow',updateLoop);window.removeEventListener('pagehide',dispose);
     const geometries=new Set(),materials=new Set();scene.traverse(object=>{if(object.geometry)geometries.add(object.geometry);if(object.material)(Array.isArray(object.material)?object.material:[object.material]).forEach(m=>materials.add(m));});
-    geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());batteryMap.dispose();lockMap.dispose();haloMap.dispose();environment.dispose();renderer.dispose();
+    geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());batteryMap.dispose();lockMap.dispose();detailMap.dispose();haloMap.dispose();environment.dispose();renderer.dispose();
   }
   window.addEventListener('pagehide',dispose);window.addEventListener('pageshow',updateLoop);
 }

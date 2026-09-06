@@ -24,7 +24,7 @@ function add(parent,geometry,material,x=0,y=0,z=0,name='') {
 }
 function circle(radius,depth) {return new THREE.CylinderGeometry(radius,radius,depth,48).rotateX(Math.PI/2);}
 
-export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null}={}) {
+export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null,detailMap=null}={}) {
   const {width:W,height:H,depth:D,radius:R}=PHONE;
   const phone=new THREE.Group();phone.name='iPhone 16 Pro Max study';
   const materials={
@@ -41,6 +41,7 @@ export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null}={
     optical:new THREE.MeshPhysicalMaterial({color:0x070d19,metalness:.15,roughness:.08,clearcoat:1,clearcoatRoughness:.045}),
   };
   const {titanium,edge,glassBack,black,shield,graphite,pcb,gold,copper,ceramic,optical}=materials;
+  const rig={ cameras:[], shields:[], flexes:[], modules:[] };
   const groups={};for(const id of ['housing','board','battery','frame','display','backglass']){groups[id]=new THREE.Group();groups[id].name=id;phone.add(groups[id]);}
   const {housing,board,battery,frame,display,backglass}=groups;
   // One hollow titanium rail. Front and rear glass occupy the remaining 0.025 units.
@@ -72,43 +73,137 @@ export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null}={
     add(screw,circle(.026,.007),edge);
     for(let i=0;i<5;i++){const a=i*Math.PI*2/5;add(screw,circle(.005,.001),black,Math.sin(a)*.009,Math.cos(a)*.009,.004);}
     add(screw,circle(.012,.07),titanium,0,0,-.035);
+    const threadPoints=[];
+    for(let i=0;i<=100;i++){const t=i/100,a=t*Math.PI*10;threadPoints.push(new THREE.Vector3(Math.cos(a)*.014,Math.sin(a)*.014,-.012-t*.054));}
+    add(screw,new THREE.TubeGeometry(new THREE.CatmullRomCurve3(threadPoints),100,.0028,4,false),edge,0,0,0,'helical screw thread');
     screws.push({mesh:screw,x});
   }
-  // Camera bodies: three shielded modules in the top-right from the FRONT viewpoint.
-  const cameraShield=add(housing,rounded(1.31,1.40,.047,.16),shield,.43,1.63,-.017);
+  // Independently seated camera cans, with stepped shielding and folded flex tails.
+  add(housing,rounded(1.31,1.40,.016,.16),graphite,.43,1.63,-.047);
   const cameraCenters=[[.75,1.99],[.75,1.29],[.12,1.64]];
-  cameraCenters.forEach(([x,y])=>{
-    add(housing,rounded(.53,.53,.053,.08),graphite,x,y,-.045);
-    add(housing,rounded(.46,.46,.018,.06),shield,x,y,-.008);
-    // Rear-facing optics sit below the camera module's shielded front.
-    add(housing,circle(.22,.08),black,x,y,-.12);
+  cameraCenters.forEach(([x,y],i)=>{
+    const module=new THREE.Group();module.position.set(x,y,0);module.name=['main camera','ultrawide camera','telephoto camera'][i];housing.add(module);
+    add(module,rounded(.53,.53,.053,.065),graphite,0,0,-.045);
+    add(module,rounded(.50,.50,.015,.055),shield,0,0,-.014);
+    add(module,rounded(.43,.43,.008,.045),titanium,0,0,-.003);
+    add(module,rounded(.34,.34,.003,.022),graphite,0,0,.002);
+    for(const sign of [-1,1])add(module,new THREE.BoxGeometry(.025,.29,.008),edge,sign*.237,0,-.002);
+    add(module,circle(.22,.08),black,0,0,-.12);
+    // Conductive shielding seam and gold flex contacts are actual geometry.
+    add(module,new THREE.BoxGeometry(.13,.14,.007),copper,-.13,-.285,-.022);
+    for(let pin=0;pin<5;pin++)add(module,new THREE.BoxGeometry(.015,.061,.002),gold,-.175+pin*.022,-.31,-.017);
+    rig.cameras.push({mesh:module,x,y,index:i});
   });
   // Logic board is beside the battery, with photographed layout proportions.
   const boardShape=new THREE.Shape().moveTo(-1.025,-1.01).lineTo(-.53,-1.01).lineTo(-.53,1.47).lineTo(-.04,1.47).lineTo(-.04,2.16).lineTo(-1.025,2.16).closePath();
   const bg=new THREE.ExtrudeGeometry(boardShape,{depth:.018,bevelEnabled:false});bg.translate(0,0,-.009);add(board,bg,pcb);
+  function decal(parent,slot,w,h,x,y,z) {
+    if(!detailMap)return;
+    const geo=new THREE.PlaneGeometry(w,h),uv=geo.attributes.uv;
+    // Four labels share one atlas and material; each slot occupies a quarter.
+    for(let i=0;i<uv.count;i++)uv.setY(i,(uv.getY(i)+3-slot)/4);
+    const label=add(parent,geo,labelMaterial,x,y,z);if(z<0)label.rotation.y=Math.PI;
+  }
+  const labelMaterial=detailMap?new THREE.MeshBasicMaterial({map:detailMap,transparent:true,depthWrite:false,toneMapped:false}):null;
   [[-.79,-.62,.35,.56],[-.78,.10,.37,.54],[-.76,.74,.4,.55],[-.72,1.49,.43,.68],[-.30,1.95,.36,.30]].forEach(([x,y,w,h],i)=>{
-    add(board,rounded(w,h,.035,.035),black,x,y,.019);
-    add(board,rounded(w-.024,h-.024,.006,.025),i%2?shield:graphite,x,y,.040);
+    add(board,rounded(w,h,.030,.035),black,x,y,.019);
+    decal(board,i===3?0:1,w*.79,h*.55,x,y,.035);
+    const cover=new THREE.Group();cover.position.set(x,y,.040);cover.name='logic board shielding';board.add(cover);
+    add(cover,rounded(w-.024,h-.024,.006,.025),i%2?shield:graphite);
+    // Embossed rim catches a fine highlight around each shield.
+    add(cover,rounded(w-.036,h-.036,.002,.018,[w-.064,h-.064,.008],.0003),titanium,0,0,.004);
+    decal(cover,1,w*.75,h*.40,0,0,.0055);
+    rig.shields.push({mesh:cover,z:.040,index:i});
   });
   const contacts=new THREE.InstancedMesh(new THREE.BoxGeometry(.026,.015,.014),gold,56);board.add(contacts);
   const matrix=new THREE.Matrix4();for(let i=0;i<56;i++){matrix.makeTranslation(-.997+(i%2)*.43,-.94+Math.floor(i/2)*.105,.013);contacts.setMatrixAt(i,matrix);}
   const resistors=new THREE.InstancedMesh(new THREE.BoxGeometry(.048,.023,.018),graphite,32);board.add(resistors);
   for(let i=0;i<32;i++){matrix.makeTranslation(-.965+(i%4)*.09,1.04+Math.floor(i/4)*.085,.027);resistors.setMatrixAt(i,matrix);}
+  // Fine PCB routing, plated vias, and soldered passive components.
+  const routeVertices=[];
+  for(let i=0;i<15;i++){
+    const x=-1.014+i*.006,y=-.96+i*.04;
+    const points=[[x,y,.010],[x,y+1.87,.010],[x+.085,y+1.955,.010],[x+.085,2.12-i*.008,.010]];
+    for(let j=1;j<points.length;j++)routeVertices.push(...points[j-1],...points[j]);
+  }
+  const routeGeo=new THREE.BufferGeometry();routeGeo.setAttribute('position',new THREE.Float32BufferAttribute(routeVertices,3));
+  board.add(new THREE.LineSegments(routeGeo,new THREE.LineBasicMaterial({color:0x9d8955,transparent:true,opacity:.48})));
+  const vias=new THREE.InstancedMesh(new THREE.RingGeometry(.006,.012,8),gold,64);vias.name='plated circuit vias';board.add(vias);
+  for(let i=0;i<64;i++){matrix.makeTranslation(-.97+(i%2)*.40,-.90+Math.floor(i/2)*.094,.010);vias.setMatrixAt(i,matrix);}
+  const solder=new THREE.InstancedMesh(new THREE.BoxGeometry(.014,.008,.011),shield,112);solder.name='solder terminations';board.add(solder);
+  const passives=new THREE.InstancedMesh(new THREE.BoxGeometry(.012,.032,.017),ceramic,56);board.add(passives);
+  for(let i=0;i<56;i++){
+    const x=i%2?-.548:-.998,y=-.94+Math.floor(i/2)*.074;
+    matrix.makeTranslation(x,y,.022);passives.setMatrixAt(i,matrix);
+    for(let j=0;j<2;j++){matrix.makeTranslation(x,y+(j?1:-1)*.021,.019);solder.setMatrixAt(i*2+j,matrix);}
+  }
+  // Standoffs sit inside the existing rail, not through the front glass.
+  const mountPoints=[[-1.06,1.95],[-1.06,.85],[-1.06,-.85],[-1.02,-2.19],[1.05,.92],[1.05,-1.75],[.1,2.27]];
+  const mounts=new THREE.InstancedMesh(new THREE.CylinderGeometry(.031,.037,.031,16).rotateX(Math.PI/2),shield,mountPoints.length);housing.add(mounts);
+  mountPoints.forEach(([x,y],i)=>{matrix.makeTranslation(x,y,-.041);mounts.setMatrixAt(i,matrix);});
+  const mountSockets=new THREE.InstancedMesh(new THREE.RingGeometry(.012,.025,12),black,mountPoints.length);housing.add(mountSockets);
+  mountPoints.forEach(([x,y],i)=>{matrix.makeTranslation(x,y,-.025);mountSockets.setMatrixAt(i,matrix);});
   // One shaped battery pack, not two generic separate rectangular cells.
   const bs=new THREE.Shape().moveTo(-.44,.96).quadraticCurveTo(-.47,.99,-.42,1.0).lineTo(.98,1.0).quadraticCurveTo(1.03,1.0,1.03,.94).lineTo(1.03,-1.95).quadraticCurveTo(1.03,-2.00,.98,-2.00).lineTo(-1.0,-2.00).quadraticCurveTo(-1.04,-2.,-1.04,-1.95).lineTo(-1.04,-1.03).quadraticCurveTo(-1.04,-.98,-.99,-.98).lineTo(-.49,-.98).quadraticCurveTo(-.44,-.98,-.44,-.92).closePath();
   const batteryGeometry=new THREE.ExtrudeGeometry(bs,{depth:.082,bevelEnabled:true,bevelSegments:3,bevelSize:.009,bevelThickness:.006,curveSegments:16});batteryGeometry.translate(0,0,-.041);
   add(battery,batteryGeometry,black);
   if(batteryMap)add(battery,new THREE.PlaneGeometry(1.28,2.84),new THREE.MeshStandardMaterial({map:batteryMap,roughness:.56,metalness:.06}),.29,-.50,.048);
   for(const x of [-.68,0,.72])add(battery,rounded(.13,.18,.008,.02),ceramic,x,-1.92,.048);
-  const flexShape=new THREE.Shape().moveTo(-.49,-.83).lineTo(-.85,-.83).lineTo(-.85,-.63).lineTo(-.70,-.63).lineTo(-.70,-.72).lineTo(-.49,-.72).closePath();
-  add(battery,new THREE.ExtrudeGeometry(flexShape,{depth:.007,bevelEnabled:false}),copper,0,0,.015);
-  // Taptic Engine, loudspeaker, and receiver remain inside the rail.
-  add(housing,rounded(.80,.25,.075,.05),shield,-.61,-2.18,-.007);
-  add(housing,rounded(.88,.27,.08,.065),black,.62,-2.17,-.01);
+  // A ribbon has a real curved surface. Its plug folds down only after the pack seats.
+  const socket=add(board,rounded(.12,.17,.018,.018),black,-.78,-.26,.045,'battery socket');
+  add(board,rounded(.096,.14,.003,.012,[.062,.11,.008],.0004),gold,-.78,-.26,.055);
+  function flexCable(parent,origin,width,index,endRestZ=.037,direction=1,socketMesh=socket) {
+    const segments=24,geo=new THREE.BufferGeometry();
+    geo.setAttribute('position',new THREE.Float32BufferAttribute(new Float32Array((segments+1)*2*3),3));
+    geo.setAttribute('normal',new THREE.Float32BufferAttribute(new Float32Array((segments+1)*2*3),3));
+    const indices=[];for(let i=0;i<segments;i++){const a=i*2;indices.push(a,a+1,a+2,a+1,a+3,a+2);}geo.setIndex(indices);
+    const ribbon=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:0x8c562b,metalness:.65,roughness:.34,side:THREE.DoubleSide}));ribbon.name='folding flex ribbon';parent.add(ribbon);
+    const plug=new THREE.Group();plug.name='press-fit flex connector';parent.add(plug);
+    add(plug,rounded(.096,width+.018,.014,.012),black);
+    add(plug,rounded(.082,width,.003,.009),shield,0,0,.009);
+    const traces=new THREE.BufferGeometry();traces.setAttribute('position',new THREE.Float32BufferAttribute(new Float32Array(segments*2*3*5),3));
+    const traceLines=new THREE.LineSegments(traces,new THREE.LineBasicMaterial({color:0xc6a369}));parent.add(traceLines);
+    rig.flexes.push({geometry:geo,traces,plug,origin,width,segments,index,endRestZ,direction,socket:socketMesh});
+  }
+  flexCable(battery,[-.47,-.26,.032],.115,0);
+  // The motor and speaker have their own seating paths and small construction details.
+  const haptic=new THREE.Group();haptic.position.set(-.61,-2.18,-.007);haptic.name='Taptic Engine';housing.add(haptic);
+  add(haptic,rounded(.80,.25,.075,.05),shield);
+  add(haptic,rounded(.70,.18,.004,.026),graphite,0,0,.04);
+  decal(haptic,2,.58,.12,0,0,.043);
+  for(const x of [-.34,.34])add(haptic,new THREE.BoxGeometry(.017,.17,.004),edge,x,0,.044);
+  const speaker=new THREE.Group();speaker.position.set(.62,-2.17,-.01);speaker.name='loudspeaker chamber';housing.add(speaker);
+  add(speaker,rounded(.88,.27,.08,.065),black);
+  add(speaker,rounded(.70,.14,.003,.05),graphite,0,0,.042);
+  add(speaker,rounded(.60,.085,.002,.035,[.54,.04,.015],.0003),titanium,0,0,.044);
+  const speakerMesh=new THREE.InstancedMesh(new THREE.BoxGeometry(.008,.063,.001),shield,26);speaker.add(speakerMesh);
+  for(let i=0;i<26;i++){matrix.makeTranslation(-.27+i*.021,0,.045);speakerMesh.setMatrixAt(i,matrix);}
+  for(const x of [-.37,.37])add(speaker,circle(.025,.003),titanium,x,0,.043);
+  rig.modules.push({mesh:haptic,rest:haptic.position.clone(),index:0},{mesh:speaker,rest:speaker.position.clone(),index:1});
   add(housing,rounded(.81,.095,.051,.035),black,-.12,2.24,-.015);
+  const trueDepth=new THREE.Group();trueDepth.position.set(0,2.10,.067);trueDepth.name='TrueDepth sensor bridge';housing.add(trueDepth);
+  add(trueDepth,rounded(.76,.15,.025,.04),graphite);
+  for(const [x,r] of [[-.25,.036],[-.08,.045],[.11,.032],[.26,.039]]) {
+    add(trueDepth,circle(r+.009,.008),titanium,x,0,.014);
+    add(trueDepth,circle(r,.005),optical,x,0,.020);
+    add(trueDepth,circle(r*.35,.001),new THREE.MeshBasicMaterial({color:0x183447}),x-.008,.008,.023);
+  }
+  rig.modules.push({mesh:trueDepth,rest:trueDepth.position.clone(),index:2});
+  // Internal USB-C socket and the short bottom microphone flex.
+  add(housing,rounded(.31,.15,.092,.025),shield,0,-2.34,-.025,'USB-C socket body');
+  add(housing,rounded(1.64,.067,.009,.015),copper,0,-2.363,.028,'bottom microphone flex');
+  for(const x of [-.74,.74]){
+    add(housing,rounded(.15,.09,.014,.018),black,x,-2.346,.040);
+    add(housing,circle(.022,.002),shield,x,-2.346,.049);
+    add(housing,circle(.010,.001),black,x,-2.346,.0505);
+  }
   // A gasket, not a second metal body; disappears completely into the glass seam.
   add(frame,rounded(W-.073,H-.073,.006,R-.035,[W-.13,H-.13,R-.065],.001),black);
   const front=add(display,rounded(W-.024,H-.024,.021,R-.012,null,.004),black,0,0,0,'front glass substrate');
+  const displayBack=add(display,rounded(W-.17,H-.17,.003,R-.08),graphite,0,0,-.0125,'display graphite backing');
+  decal(display,3,.65,.26,0,-1.70,-.0143);
+  const displaySocket=add(board,rounded(.10,.070,.012,.012),black,-.79,.42,.052,'display flex socket');
+  flexCable(display,[-.48,.42,-.026],.060,1,-.0745,-1,displaySocket);
   // Raster dimensions reflect the screen's published 1320:2868 aspect ratio.
   const screenW=2.207,screenH=screenW*2868/1320;
   const faceGeometry=new THREE.ShapeGeometry(outline(screenW,screenH,R-.067),28);
@@ -159,5 +254,5 @@ export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null}={
   for(let i=0;i<16;i++)add(backglass,new THREE.TorusGeometry(.43+i*.018,.004,4,72),copper,0,-.50,.014);
   for(let i=0;i<18;i++){const a=i*Math.PI*2/18;const magnet=add(backglass,rounded(.135,.067,.01,.015),shield,Math.sin(a)*.82,-.5+Math.cos(a)*.82,.012);magnet.rotation.z=-a;}
   add(backglass,rounded(.09,.27,.01,.02),shield,0,-1.56,.012);
-  return {phone,groups,screws,screenSize:new THREE.Vector2(screenW,screenH),chassis,front,rear,materials};
+  return {phone,groups,screws,rig,screenSize:new THREE.Vector2(screenW,screenH),chassis,front,rear,materials};
 }
