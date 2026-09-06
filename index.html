@@ -1993,7 +1993,8 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 </style>
 <link href="/nav-quote.css?v=20260709" rel="stylesheet"/>
 <link href="/hero-device-dock.css?v=20260813-appointment" rel="stylesheet"/>
-<link rel="stylesheet" href="/assets/css/repair-explorer.css?v=20260905"/>
+<link rel="stylesheet" href="/assets/css/repair-ballet.css?v=20260905"/>
+<script type="module" src="/assets/repair-ballet.js?v=20260905"></script>
 </head>
 <body class="home-page">
 <nav class="nav" id="nav" role="navigation">
@@ -2233,11 +2234,17 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 </style>
 </section>
 
-<a class="rx-invitation" href="/inside-the-repair">
-<span class="rx-invitation-media"><img src="/assets/services/ps5-mainboard.webp" width="1400" height="1050" alt="" loading="lazy" decoding="async"/></span>
-<div class="rx-invitation-copy"><small>From the bench / Interactive tour</small><strong>There’s a world under the cover.</strong><p>Explore the parts inside a MacBook and PS5. See what makes them work.</p></div>
-<span class="rx-invitation-action">Take a closer look <span aria-hidden="true">↗</span></span>
-</a>
+
+<aside class="repair-ballet" id="repair-play" aria-labelledby="rb-title" data-state="waiting">
+  <div class="rb-copy"><span class="rb-kicker">A moment at the bench</span><h2 id="rb-title">Back<br/>together.</h2><p>A little repair therapy.<br/>Drag to put things right.</p></div>
+  <div class="rb-stage"><img class="rb-fallback" src="/assets/repair-ballet-fallback.svg" width="800" height="500" alt="Illustration of a phone with its layers floating apart" loading="lazy"/><span class="rb-caption" aria-hidden="true">The art of a fresh start</span></div>
+  <div class="rb-controls">
+    <div class="rb-transport"><button type="button" data-rb-play aria-label="Play repair animation" aria-pressed="false" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5 13 8 4 13.5z"/></svg></button><button type="button" data-rb-replay aria-label="Replay repair animation" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2a6 6 0 1 1-5.6 8h1.7A4.5 4.5 0 1 0 5 4.7L7 7H1V1l2.6 2.6A6 6 0 0 1 8 2z"/></svg></button></div>
+    <label class="rb-scrubber"><span aria-hidden="true">Apart</span><span class="rb-sr-only">Repair assembly</span><input type="range" min="0" max="100" step="1" value="0" aria-valuetext="0% assembled" disabled/><span aria-hidden="true">Together</span></label>
+  </div>
+  <p class="rb-phase" aria-hidden="true">Every part has its place</p>
+  <noscript><style>.repair-ballet .rb-controls{display:none}</style></noscript>
+</aside>
 <!-- ═══════════════════════════════════════════
        PRICING
   ══════════════════════════════════════════════ -->

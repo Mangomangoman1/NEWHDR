@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import { scenes } from '../assets/repair-explorer-data.js';
 import { fileURLToPath } from 'node:url';
 process.chdir(fileURLToPath(new URL('..', import.meta.url)));
-const contact = fs.readFileSync('contact.html', 'utf8');
+const contact = fs.readFileSync(new URL('../../../contact.html', import.meta.url), 'utf8');
 const nav = contact.slice(contact.indexOf('<nav class="nav"'), contact.indexOf('<!-- Page load curtain -->')).trim();
-const footer = contact.slice(contact.indexOf('<footer class="footer"'), contact.indexOf('<!-- Cookie Banner -->')).replaceAll(' data-animate=""', '').replace('<a href="/device-check">Device Check</a>', '<a href="/inside-the-repair">Inside the Repair</a>\n<a href="/device-check">Device Check</a>');
+const footer = contact.slice(contact.indexOf('<footer class="footer"'), contact.indexOf('<!-- Cookie Banner -->')).replaceAll(' data-animate=""', '').replace('<a href="/device-check">Device Check</a>', '<a href="/archived/inside-the-repair/inside-the-repair.html">Inside the Repair</a>\n<a href="/device-check">Device Check</a>');
 if (!nav.startsWith('<nav') || !footer.endsWith('\n')) throw new Error('Shared page shell markers have changed.');
 const panels = scenes.map((scene, index) => `<section class="rx-scene" id="scene-${scene.id}" aria-label="${scene.name}">
   <div class="rx-workbench">
@@ -27,6 +27,7 @@ const panels = scenes.map((scene, index) => `<section class="rx-scene" id="scene
 const html = `<!DOCTYPE html>
 <html lang="en" data-theme="dark"><head>
 <meta charset="utf-8"/>
+<meta name="robots" content="noindex,nofollow"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Inside the Repair — Explore the Hardware | Hailey Device Repair</title>
 <meta name="description" content="Take a closer look inside a MacBook and PlayStation 5. Explore real hardware photos, discover what the parts do, and see the detail behind device repair at HDR."/>
@@ -45,12 +46,12 @@ const html = `<!DOCTYPE html>
 <link rel="stylesheet" href="/assets/css/material-symbols.css"/>
 <link rel="stylesheet" href="/style.min.css?v=stage-parallax-20260702"/>
 <link rel="stylesheet" href="/nav-quote.css?v=20260709"/>
-<link rel="stylesheet" href="/assets/css/repair-explorer.css?v=20260905"/>
+<link rel="stylesheet" href="/archived/inside-the-repair/assets/css/repair-explorer.css?v=20260905"/>
 <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'WebPage',name:'Inside the Repair',description:'A photographic exploration of MacBook and PlayStation 5 hardware.',url:'https://www.haileyrepair.com/inside-the-repair',isPartOf:{'@type':'WebSite',name:'Hailey Device Repair',url:'https://www.haileyrepair.com'}})}</script>
 <script src="/main.min.js?v=explorer-20260905-2" defer></script>
 <script src="/liquid-btn.js" defer></script>
 <script src="/analytics-consent.js" defer></script>
-<script type="module" src="/assets/repair-explorer.js?v=20260905"></script>
+<script type="module" src="/archived/inside-the-repair/assets/repair-explorer.js?v=20260905"></script>
 </head><body class="repair-explorer-page">
 ${nav}
 <a class="skip-link" href="#main">Skip to main content</a>

@@ -9,7 +9,6 @@ const runLiveChecks = process.argv.includes("--live");
 const projectRoot = resolve(import.meta.dirname, "..");
 
 const priorityRoutes = [
-  "/inside-the-repair",
   "/iphone-repair",
   "/computer-support",
   "/mail-in/iphone",

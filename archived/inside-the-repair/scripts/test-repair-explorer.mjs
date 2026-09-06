@@ -4,6 +4,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { scenes, cameraFor, selectionFromHash } from '../assets/repair-explorer-data.js';
 const root = fileURLToPath(new URL('..', import.meta.url));
+const siteRoot = fileURLToPath(new URL('../../..', import.meta.url));
 const html = readFileSync(`${root}/inside-the-repair.html`, 'utf8');
 
 test('every shareable component resolves to its own scene', () => {
@@ -34,8 +35,8 @@ test('close-up framing keeps selected parts visible without blank photo edges', 
 
 test('all content and resources ship in the static page without JavaScript', () => {
   for (const scene of scenes) {
-    assert.ok(existsSync(root + scene.image));
-    assert.ok(existsSync(root + scene.link + '.html'));
+    assert.ok(existsSync(siteRoot + scene.image));
+    assert.ok(existsSync(siteRoot + scene.link + '.html'));
     for (const part of scene.parts) {
       assert.ok(part.x > 5 && part.x < 95 && part.y > 5 && part.y < 95);
       assert.ok(html.includes(`<h2>${part.title}</h2>`), `${part.id} headline out of sync; rebuild page`);
@@ -47,14 +48,15 @@ test('all content and resources ship in the static page without JavaScript', () 
   assert.ok(!/<(?:section|article)[^>]* hidden/.test(html));
   for (const [, path] of html.matchAll(/(?:src|href)="(\/[^"#?]+)(?:\?[^"#]*)?"/g)) {
     if (path === '/') continue;
-    assert.ok(existsSync(root + path) || existsSync(root + path + '.html'), `missing ${path}`);
+    assert.ok(existsSync(siteRoot + path) || existsSync(siteRoot + path + '.html'), `missing ${path}`);
   }
 });
 
-test('discovery links are present in deployed and source assets', () => {
+test('the archived tour is excluded from deployment and live navigation', () => {
   for (const name of ['main.js', 'main.min.js', 'index.html', 'about.html', 'sitemap.xml']) {
-    assert.ok(readFileSync(`${root}/${name}`, 'utf8').includes('/inside-the-repair'), name);
+    assert.ok(!readFileSync(`${siteRoot}/${name}`, 'utf8').includes('/inside-the-repair'), name);
   }
+  assert.ok(readFileSync(`${siteRoot}/.vercelignore`, 'utf8').split('\n').includes('archived/'));
   const css = readFileSync(`${root}/assets/css/repair-explorer.css`, 'utf8');
   assert.ok(css.includes('prefers-reduced-motion:reduce'));
   assert.ok(css.includes('.rx-main:not(.rx-ready)'));
