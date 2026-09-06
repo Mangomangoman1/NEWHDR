@@ -58,3 +58,75 @@
 /* Use the browser keyboard indicator instead of the site-wide decorative ring. */
 .rb-controls :focus-visible { outline:revert; box-shadow:none; }
 @media(max-width:360px) { .rb-controls { margin-inline:12px; } .rb-transport { gap:4px; } .rb-controls button { width:32px; height:32px; } .rb-scrubber span { font-size:7px; } }
+
+/* The quiet caption is also the keyboard-accessible entrance to inspection. */
+button.rb-caption { border:0; padding:10px 0 10px 10px; background:transparent; cursor:pointer; pointer-events:auto; transition:color .2s; }
+button.rb-caption:hover { color:#d6e7fe; }
+button.rb-caption:disabled { visibility:hidden; }
+.rb-stage canvas { cursor:zoom-in; }
+.rb-inspector { --rb-muted:#99a8bc; --rb-blue:#a9c9f4; width:min(1200px,calc(100vw - 48px)); height:min(900px,calc(100dvh - 48px)); max-width:none; max-height:none; margin:auto; padding:0; border:1px solid #b9d1f028; border-radius:16px; background:#0d1117; color:#e8eef6; box-shadow:0 30px 120px #0009; overflow:hidden; }
+.rb-inspector[open] { display:grid; grid-template-rows:auto minmax(0,1fr) auto; }
+.rb-inspector::backdrop { background:#06090fde; backdrop-filter:blur(12px); }
+.rb-inspector * { box-sizing:border-box; }
+.rb-inspector button { color:inherit; font-family:Inter,sans-serif; cursor:pointer; }
+.rb-inspector :focus-visible, button.rb-caption:focus-visible { outline:revert; box-shadow:none; }
+.rbi-header { display:flex; align-items:center; justify-content:space-between; padding:23px 28px 18px; border-bottom:1px solid #b9d1f014; }
+.rbi-kicker { display:block; font:500 8px/1.5 Inter,sans-serif; letter-spacing:.18em; text-transform:uppercase; color:#a9c9f4; margin-bottom:6px; }
+.rbi-header h2 { font:400 26px/1.2 MuseoModerno,Inter,sans-serif; letter-spacing:-.04em; margin:0; }
+.rbi-close { width:44px; height:44px; border:1px solid #b9d1f02b; border-radius:50%; background:transparent; font-size:27px; font-weight:300; }
+.rbi-close:hover { background:#a9c9f415; }
+.rbi-viewport { position:relative; min-height:0; overflow:hidden; background:radial-gradient(ellipse at 50% 45%,#131c2a 0%,#0d1117 65%); }
+.rb-inspector .rb-stage { width:100%; height:100%; margin:0; }
+.rb-inspector .rb-stage canvas { cursor:grab; touch-action:none; }
+.rb-inspector .rb-stage canvas:active { cursor:grabbing; }
+.rb-inspector .rb-caption { display:none; }
+.rbi-hint { position:absolute; left:28px; top:17px; margin:0; pointer-events:none; font:400 10px/1.5 Inter,sans-serif; color:#72849b; }
+.rbi-tools { position:absolute; right:22px; bottom:16px; display:flex; gap:5px; padding:4px; border:1px solid #b9d1f018; border-radius:30px; background:#0d1117dc; }
+.rbi-tools button { border:0; border-radius:50%; width:36px; height:36px; background:transparent; font-size:21px; }
+.rbi-tools button:hover { background:#a9c9f416; }
+.rbi-footer { padding:0 28px 22px; border-top:1px solid #b9d1f018; }
+.rbi-parts { display:flex; gap:21px; overflow-x:auto; padding:16px 0 14px; scrollbar-width:thin; scrollbar-color:#344152 transparent; }
+.rbi-parts button { flex-shrink:0; position:relative; padding:5px 0 8px; border:0; background:transparent; font:500 11px/1.4 Inter,sans-serif; color:#8c9caf; white-space:nowrap; }
+.rbi-parts button[aria-pressed="true"] { color:#d6e7fe; }
+.rbi-parts button[aria-pressed="true"]::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:#a9c9f4; }
+.rbi-parts button:hover { color:#d6e7fe; }
+.rbi-bottom { display:flex; align-items:center; gap:32px; justify-content:space-between; }
+.rbi-description { flex:1; min-height:62px; max-width:440px; }
+.rbi-description h3 { font:500 13px/1.5 Inter,sans-serif; color:#e8eef6; margin:0 0 3px; }
+.rbi-description p { font:400 11px/1.7 Inter,sans-serif; color:#8c9caf; margin:0; }
+.rbi-scrubber { flex:0 1 330px; }
+@media(max-width:600px) {
+ .rb-inspector { width:100vw; height:100dvh; border:0; border-radius:0; }
+ .rbi-header { padding:calc(16px + env(safe-area-inset-top)) 20px 14px; }
+ .rbi-header h2 { font-size:22px; }
+ .rbi-hint { left:20px; top:12px; font-size:9px; }
+ .rbi-tools { right:15px; bottom:10px; }
+ .rbi-tools button { width:40px; height:40px; }
+ .rbi-footer { padding:0 20px calc(16px + env(safe-area-inset-bottom)); }
+ .rbi-parts { gap:20px; padding:12px 0; }
+ .rbi-bottom { display:block; }
+ .rbi-description { min-height:63px; }
+ .rbi-scrubber { margin-top:9px; }
+}
+@media(max-height:600px) and (min-width:601px) {
+ .rb-inspector { width:100vw; height:100dvh; border-radius:0; }
+ .rbi-header { padding:10px 22px; }
+ .rbi-kicker { display:none; }
+ .rbi-header h2 { font-size:21px; }
+ .rbi-footer { padding-bottom:12px; }
+ .rbi-description { min-height:0; }
+}
+@media(prefers-reduced-motion:reduce) { .rb-inspector * { transition:none !important; } }
+.rb-inspector .rb-fallback { display:none; }
+/* Keep the horizontal component strip inside the modal's grid track on phones. */
+.rb-inspector[open] { grid-template-columns:minmax(0,1fr); }
+.rbi-header, .rbi-viewport, .rbi-footer, .rbi-parts { min-width:0; }
+.rbi-parts { max-width:100%; }
+
+.rbi-touch-hint { display:none; }
+@media(pointer:coarse) { .rbi-touch-hint { display:inline; } .rbi-desktop-hint { display:none; } }
+@media(max-height:450px) and (min-width:601px) {
+ .rbi-parts { padding:5px 0; }
+ .rbi-description p { display:none; }
+ .rbi-header { padding-block:5px; }
+}

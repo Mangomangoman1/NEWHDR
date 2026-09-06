@@ -1,16 +1,31 @@
 /* Pure, deterministic choreography shared by the scene and its tests. */
-export const CYCLE_SECONDS = 16;
+export const CYCLE_SECONDS = 20;
 export const clamp01 = value => Math.max(0, Math.min(1, value));
 export function smooth(start, end, value) {
   const t = clamp01((value - start) / (end - start));
   return t * t * (3 - 2 * t);
 }
+const cycleTime=seconds=>((seconds%CYCLE_SECONDS)+CYCLE_SECONDS)%CYCLE_SECONDS;
 export function cycleAt(seconds) {
-  const t = ((seconds % CYCLE_SECONDS) + CYCLE_SECONDS) % CYCLE_SECONDS;
-  if (t < 2) return 0;
-  if (t < 8) return smooth(2, 8, t);
-  if (t < 11) return 1;
-  return 1 - smooth(11, 16, t);
+  const t=cycleTime(seconds);
+  if(t<2)return 0;
+  if(t<6)return .62*smooth(2,6,t);
+  if(t<6.5)return .62;
+  if(t<8)return .62+.24*smooth(6.5,8,t);
+  if(t<8.4)return .86;
+  if(t<10.4)return .86+.14*smooth(8.4,10.4,t);
+  if(t<14)return 1;
+  return 1-smooth(14,20,t);
+}
+export function powerAt(seconds) {
+  const t=cycleTime(seconds);
+  return smooth(10.8,11.5,t)*(1-smooth(14,14.6,t));
+}
+export function assemblyTimeAt(progress) {
+  if(progress>=1)return 10.4;
+  let low=2,high=10.4;
+  for(let i=0;i<26;i++){const mid=(low+high)/2;if(cycleAt(mid)<progress)low=mid;else high=mid;}
+  return (low+high)/2;
 }
 export const layers = [
   { id:'housing', rest:0, spread:0, start:0, end:.45 },

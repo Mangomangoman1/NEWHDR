@@ -41,7 +41,7 @@ export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null,de
     optical:new THREE.MeshPhysicalMaterial({color:0x070d19,metalness:.15,roughness:.08,clearcoat:1,clearcoatRoughness:.045}),
   };
   const {titanium,edge,glassBack,black,shield,graphite,pcb,gold,copper,ceramic,optical}=materials;
-  const rig={ cameras:[], shields:[], flexes:[], modules:[] };
+  const rig={ cameras:[], lensCovers:[], shields:[], flexes:[], modules:[] };
   const groups={};for(const id of ['housing','board','battery','frame','display','backglass']){groups[id]=new THREE.Group();groups[id].name=id;phone.add(groups[id]);}
   const {housing,board,battery,frame,display,backglass}=groups;
   // One hollow titanium rail. Front and rear glass occupy the remaining 0.025 units.
@@ -89,6 +89,10 @@ export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null,de
     add(module,rounded(.34,.34,.003,.022),graphite,0,0,.002);
     for(const sign of [-1,1])add(module,new THREE.BoxGeometry(.025,.29,.008),edge,sign*.237,0,-.002);
     add(module,circle(.22,.08),black,0,0,-.12);
+    add(module,circle(.175,.003),optical,0,0,-.163);
+    add(module,new THREE.TorusGeometry(.151,.007,8,48),titanium,0,0,-.166);
+    add(module,circle(.080,.002),optical,0,0,-.168);
+    add(module,circle(.019,.001),new THREE.MeshBasicMaterial({color:0x293f62}),-.033,.027,-.1695);
     // Conductive shielding seam and gold flex contacts are actual geometry.
     add(module,new THREE.BoxGeometry(.13,.14,.007),copper,-.13,-.285,-.022);
     for(let pin=0;pin<5;pin++)add(module,new THREE.BoxGeometry(.015,.061,.002),gold,-.175+pin*.022,-.31,-.017);
@@ -146,8 +150,8 @@ export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null,de
   // One shaped battery pack, not two generic separate rectangular cells.
   const bs=new THREE.Shape().moveTo(-.44,.96).quadraticCurveTo(-.47,.99,-.42,1.0).lineTo(.98,1.0).quadraticCurveTo(1.03,1.0,1.03,.94).lineTo(1.03,-1.95).quadraticCurveTo(1.03,-2.00,.98,-2.00).lineTo(-1.0,-2.00).quadraticCurveTo(-1.04,-2.,-1.04,-1.95).lineTo(-1.04,-1.03).quadraticCurveTo(-1.04,-.98,-.99,-.98).lineTo(-.49,-.98).quadraticCurveTo(-.44,-.98,-.44,-.92).closePath();
   const batteryGeometry=new THREE.ExtrudeGeometry(bs,{depth:.082,bevelEnabled:true,bevelSegments:3,bevelSize:.009,bevelThickness:.006,curveSegments:16});batteryGeometry.translate(0,0,-.041);
-  add(battery,batteryGeometry,black);
-  if(batteryMap)add(battery,new THREE.PlaneGeometry(1.28,2.84),new THREE.MeshStandardMaterial({map:batteryMap,roughness:.56,metalness:.06}),.29,-.50,.048);
+  add(battery,batteryGeometry,black.clone(),0,0,0,'battery foil');
+  if(batteryMap)add(battery,new THREE.PlaneGeometry(1.28,2.84),new THREE.MeshStandardMaterial({map:batteryMap,roughness:.56,metalness:.06}),.29,-.50,.048,'battery label');
   for(const x of [-.68,0,.72])add(battery,rounded(.13,.18,.008,.02),ceramic,x,-1.92,.048);
   // A ribbon has a real curved surface. Its plug folds down only after the pack seats.
   const socket=add(board,rounded(.12,.17,.018,.018),black,-.78,-.26,.045,'battery socket');
@@ -200,7 +204,7 @@ export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null,de
   // A gasket, not a second metal body; disappears completely into the glass seam.
   add(frame,rounded(W-.073,H-.073,.006,R-.035,[W-.13,H-.13,R-.065],.001),black);
   const front=add(display,rounded(W-.024,H-.024,.021,R-.012,null,.004),black,0,0,0,'front glass substrate');
-  const displayBack=add(display,rounded(W-.17,H-.17,.003,R-.08),graphite,0,0,-.0125,'display graphite backing');
+  add(display,rounded(W-.17,H-.17,.003,R-.08),graphite,0,0,-.0125,'display graphite backing');
   decal(display,3,.65,.26,0,-1.70,-.0143);
   const displaySocket=add(board,rounded(.10,.070,.012,.012),black,-.79,.42,.052,'display flex socket');
   flexCable(display,[-.48,.42,-.026],.060,1,-.0745,-1,displaySocket);
@@ -238,14 +242,15 @@ export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null,de
   add(mark,new THREE.ShapeGeometry(leaf,20),markMaterial);
   add(backglass,rounded(1.39,1.49,.043,.235),glassBack,.43,1.63,-.030);
   cameraCenters.forEach(([x,y],i)=>{
-    add(backglass,circle(.281,.048),titanium,x,y,-.066);
-    add(backglass,new THREE.TorusGeometry(.263,.008,8,64),edge,x,y,-.092);
-    add(backglass,circle(.245,.006),black,x,y,-.093);
-    add(backglass,circle(.205,.008),optical,x,y,-.098);
-    add(backglass,new THREE.TorusGeometry(.153,.008,8,64),graphite,x,y,-.104);
-    add(backglass,circle(.126,.002),new THREE.MeshPhysicalMaterial({color:i===1?0x101d31:0x0c1324,metalness:.32,roughness:.055,clearcoat:1}),x,y,-.106);
-    add(backglass,circle(.054,.001),new THREE.MeshBasicMaterial({color:i===2?0x162d29:0x13213d}),x+.028,y+.017,-.1075);
-    add(backglass,circle(.012,.001),new THREE.MeshBasicMaterial({color:0x58647c}),x-.041,y-.034,-.108);
+    const cover=new THREE.Group();cover.name='camera lens cover';backglass.add(cover);rig.lensCovers.push(cover);
+    add(cover,circle(.281,.048),titanium,x,y,-.066);
+    add(cover,new THREE.TorusGeometry(.263,.008,8,64),edge,x,y,-.092);
+    add(cover,circle(.245,.006),black,x,y,-.093);
+    add(cover,circle(.205,.008),optical,x,y,-.098);
+    add(cover,new THREE.TorusGeometry(.153,.008,8,64),graphite,x,y,-.104);
+    add(cover,circle(.126,.002),new THREE.MeshPhysicalMaterial({color:i===1?0x101d31:0x0c1324,metalness:.32,roughness:.055,clearcoat:1}),x,y,-.106);
+    add(cover,circle(.054,.001),new THREE.MeshBasicMaterial({color:i===2?0x162d29:0x13213d}),x+.028,y+.017,-.1075);
+    add(cover,circle(.012,.001),new THREE.MeshBasicMaterial({color:0x58647c}),x-.041,y-.034,-.108);
   });
   add(backglass,circle(.094,.004),new THREE.MeshStandardMaterial({color:0xd4d2b9,roughness:.28}),.11,2.12,-.055);
   add(backglass,circle(.099,.004),optical,.10,1.13,-.055);

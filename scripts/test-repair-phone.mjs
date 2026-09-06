@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import * as THREE from '../assets/vendor/three/three.module.min.js';
 import { buildPhone, PHONE, rounded } from '../assets/repair-phone-model.mjs';
 import { posePhone } from '../assets/repair-phone-rig.mjs';
-import { layers, layerAt, cycleAt, CYCLE_SECONDS } from '../assets/repair-ballet-motion.mjs';
+import { layers, layerAt, cycleAt, powerAt, assemblyTimeAt, CYCLE_SECONDS } from '../assets/repair-ballet-motion.mjs';
 const near=(a,b,tolerance=1e-6)=>assert.ok(Math.abs(a-b)<tolerance,`${a} should equal ${b}`);
 function assembled(){const model=buildPhone();posePhone(model,1);model.phone.updateMatrixWorld(true);return model;}
 const bounds=object=>new THREE.Box3().setFromObject(object);
@@ -30,7 +30,7 @@ test('lock-screen texture spans normalized UV coordinates',()=>{
 });
 test('every component reaches its exact seated position with a continuous repeat',()=>{
   for(const l of layers){near(layerAt(l,1).z,l.rest);near(layerAt(l,1).open,0);near(layerAt(l,0).z,l.rest+l.spread);}
-  near(cycleAt(8),1);near(cycleAt(11),1);near(cycleAt(0),cycleAt(CYCLE_SECONDS));
+  near(cycleAt(10.4),1);near(cycleAt(14),1);near(cycleAt(0),cycleAt(CYCLE_SECONDS));
   for(let t=0;t<32;t+=.013){assert.ok(cycleAt(t)>=0&&cycleAt(t)<=1);assert.ok(Math.abs(cycleAt(t+.013)-cycleAt(t))<.005);}
 });
 
@@ -77,4 +77,11 @@ test('two screws tighten sequentially after the display seats',()=>{
   assert.ok(model.screws[0].mesh.rotation.z<model.screws[1].mesh.rotation.z);
   posePhone(model,1);
   for(const {mesh} of model.screws){near(mesh.position.z,.004);near(mesh.rotation.z,0);}
+});
+
+
+test('the screen wakes after fastening, with pauses at the connector and closure beats',()=>{
+  near(cycleAt(6),cycleAt(6.5));near(cycleAt(8),cycleAt(8.4));
+  near(powerAt(10.4),0);near(powerAt(10.8),0);near(powerAt(11.5),1);near(powerAt(14.6),0);
+  for(let p=0;p<=1;p+=.01)near(cycleAt(assemblyTimeAt(p)),p,1e-6);
 });

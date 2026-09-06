@@ -7,7 +7,7 @@ if (aside) {
     started = true;
     aside.dataset.state = 'loading';
     try {
-      const { createRepairBallet } = await import('./repair-ballet-scene.js?v=mechanical');
+      const { createRepairBallet } = await import('./repair-ballet-scene.js?v=inspector');
       createRepairBallet(aside);
     } catch (error) {
       aside.dataset.state = 'unavailable';

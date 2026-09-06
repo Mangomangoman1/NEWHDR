@@ -14,6 +14,10 @@ The second detail pass adds independently moving camera cans, removable board sh
 
 The display fans away slightly while open. Camera and speaker assemblies seat first; the board shields follow. Battery and display ribbons bend along cubic curves into their sockets, then the display closes and the two screws tighten sequentially. Every deformation and transform is derived from assembly progress, so dragging backward reverses the same motion without accumulated drift. These are visual choreography choices, not instructions for servicing a real phone.
 
+The inspection pass adds an optional native dialog, opened from the phone or “Explore the details.” Visitors can select components directly on the model or with named buttons, orbit by dragging (or arrow keys), pan with Shift-drag/Shift-arrow keys or a two-finger gesture, zoom with the wheel/pinch/buttons, and scrub assembly. Selecting a part isolates it and gently reframes the camera. Closing restores the aside’s previous assembly position, playback state, and keyboard focus. The same renderer and canvas are moved into the dialog; no second WebGL context or model is allocated.
+
+Finishes use small seeded, mipmapped procedural textures for brushed titanium, matte glass and battery foil. One filtered directional shadow map gives the internal layers contact and depth. The 20-second cycle includes pauses after shields and connectors seat; the screen wakes after final fastening. The renderer samples active frame intervals and gradually lowers pixel density, then disables shadows if performance remains poor at the minimum density. It ignores background stalls and pauses, and keeps a cooldown between adjustments. This is an adaptive safeguard; physical-handset performance has not been benchmarked here.
+
 ## Files
 
 - `assets/repair-ballet.js`: viewport-proximity loader and fallback.
@@ -21,6 +25,10 @@ The display fans away slightly while open. Camera and speaker assemblies seat fi
 - `assets/repair-phone-rig.mjs`: reversible component motion, deforming flex ribbons, and sequential screw tightening.
 - `assets/repair-ballet-motion.mjs`: deterministic assembly positions and cycle.
 - `assets/repair-ballet-scene.js`: lighting, procedural lock screen, controls, visibility and lifecycle.
+- `assets/repair-inspector.js`: accessible dialog, pointer/touch/keyboard input, component labels and focus restoration.
+- `assets/repair-inspection-view.mjs`: component isolation, ray picking, orbit, zoom and framing.
+- `assets/repair-phone-surfaces.mjs`: shared procedural finish maps.
+- `assets/repair-render-quality.mjs`: frame-time sampling and conservative quality reductions.
 - `assets/css/repair-ballet.css`: scoped responsive aside.
 - `assets/vendor/three/`: locally hosted Three.js 0.185.1, RoomEnvironment and MIT license.
 
@@ -30,6 +38,6 @@ No remote models, textures, device APIs or diagnostic automation are used. GPU r
 
 ## Validation
 
-Run `node --test scripts/test-repair-phone.mjs` for actual geometry bounds, internal clearances, connector alignment, normalized ribbon surfaces, reversible poses, screw placement/timing, texture coordinates and animation continuity. Run `node scripts/audit-indexability.mjs` for the existing site audit.
+Run `node --test scripts/test-repair-phone.mjs` for actual geometry bounds, internal clearances, connector alignment, normalized ribbon surfaces, reversible poses, screw placement/timing, texture coordinates and animation continuity. Run `node --test scripts/test-repair-inspection.mjs` for isolated-part framing, orbit bounds, visibility restoration and quality adaptation. Run `node scripts/audit-indexability.mjs` for the existing site audit.
 
 The unfinished photographic explorer remains under `archived/inside-the-repair/` and is excluded by `.vercelignore`. This animation does not restore its public route or navigation.
