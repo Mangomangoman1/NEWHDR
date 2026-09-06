@@ -14,10 +14,11 @@ export function cycleAt(seconds) {
 }
 export const layers = [
   { id:'housing', rest:0, spread:0, start:0, end:.45 },
-  { id:'board', rest:.17, spread:1.0, start:.05, end:.48 },
-  { id:'battery', rest:.24, spread:1.8, start:.18, end:.65 },
-  { id:'frame', rest:.34, spread:2.45, start:.32, end:.79 },
-  { id:'display', rest:.43, spread:3.15, start:.43, end:.91 }
+  { id:'board', rest:-.020, spread:1.0, start:.05, end:.48 },
+  { id:'battery', rest:0, spread:1.8, start:.18, end:.65 },
+  { id:'frame', rest:.094, spread:2.45, start:.32, end:.79 },
+  { id:'display', rest:.1125, spread:3.15, start:.43, end:.91 },
+  { id:'backglass', rest:-.11475, spread:-.65, start:.10, end:.72 }
 ];
 export function layerAt(layer, progress) {
   const seated = smooth(layer.start, layer.end, clamp01(progress));

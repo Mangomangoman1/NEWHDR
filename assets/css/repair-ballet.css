@@ -1,5 +1,5 @@
 /* A little repair theatre. Scoped to the aside so existing UI stays untouched. */
-.repair-ballet { --rb-ink:#e8eef6; --rb-muted:#99a8bc; --rb-blue:#a9c9f4; position:relative; isolation:isolate; max-width:1200px; margin:28px auto 65px; min-height:520px; color:var(--rb-ink); overflow:hidden; background:#0d1117; border-block:1px solid #b9d1f018; }
+.repair-ballet { --rb-ink:#e8eef6; --rb-muted:#99a8bc; --rb-blue:#a9c9f4; position:relative; isolation:isolate; scroll-margin-top:85px; max-width:1200px; margin:28px auto 65px; min-height:520px; color:var(--rb-ink); overflow:hidden; background:#0d1117; border-block:1px solid #b9d1f018; }
 .repair-ballet *, .repair-ballet *::before, .repair-ballet *::after { box-sizing:border-box; }
 .rb-copy { position:absolute; z-index:2; left:44px; top:50%; transform:translateY(-54%); width:225px; pointer-events:none; }
 .rb-copy .rb-kicker { display:block; color:var(--rb-blue); font:600 9px/1.6 Inter,sans-serif; letter-spacing:.19em; text-transform:uppercase; margin-bottom:20px; }
@@ -47,10 +47,14 @@
  .rb-copy p { max-width:100%; font-size:11px; }
  .rb-stage { margin-left:0; height:335px; }
  .rb-caption { top:15px; right:20px; font-size:7px; }
- .rb-controls { margin:0 20px 46px; gap:14px; padding-top:10px; }
+ .rb-controls { margin:0 20px 46px; gap:10px; padding-top:10px; }
  .rb-controls button { width:36px; height:36px; }
- .rb-scrubber { gap:9px; }
+ .rb-scrubber { gap:6px; }
  .rb-scrubber span { font-size:8px; }
  .rb-phase { bottom:19px; left:20px; max-width:none; font-size:8px; }
 }
 @media(prefers-reduced-motion:reduce) { .repair-ballet * { transition:none !important; } }
+
+/* Use the browser keyboard indicator instead of the site-wide decorative ring. */
+.rb-controls :focus-visible { outline:revert; box-shadow:none; }
+@media(max-width:360px) { .rb-controls { margin-inline:12px; } .rb-transport { gap:4px; } .rb-controls button { width:32px; height:32px; } .rb-scrubber span { font-size:7px; } }
