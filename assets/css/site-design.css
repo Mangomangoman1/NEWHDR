@@ -1,0 +1,234 @@
+/* HDR art direction: a real workshop, generous type, and quiet ruled details.
+   Loaded last so independently authored pages share the same finishing layer. */
+:root { --design-rule: rgba(151, 166, 187, .2); }
+html body #cookieBanner { width: min(390px, calc(100% - 28px)) !important; flex-direction: column !important; align-items: stretch !important; border-radius: 16px !important; }
+html body #cookieBanner .cookie-banner-actions { display: flex; gap: .65rem; }
+html body #cookieBanner button { flex: 1; }
+html body .section-eyebrow { letter-spacing: .13em; }
+html body .section-title { text-wrap: balance; }
+html body .btn { transition: background .2s, border-color .2s, color .2s, transform .2s; }
+html body .btn-primary { box-shadow: none; border: 1px solid rgba(255,255,255,.13); }
+html body .btn-primary:hover { transform: translateY(-2px); box-shadow: none; }
+html body .btn-outline { box-shadow: none; background-image: none; }
+html body .breadcrumb { font-size: .75rem; }
+html body .footer { border-top: 1px solid var(--design-rule); }
+html body .footer-col h4 { letter-spacing: .08em; }
+
+/* The homepage begins with the work itself, not a frame around a photograph. */
+.workshop-hero { position: relative; isolation: isolate; background: #101317; color: #f5f4ee; overflow: hidden; min-height: 660px; display: flex; flex-direction: column; justify-content: center; }
+.workshop-image { position: absolute; z-index: -3; inset: 0 0 0 auto; width: 100%; height: 100%; object-fit: cover; object-position: 52% 48%; }
+.workshop-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg,#101317 5%,rgba(16,19,23,.97) 24%,rgba(16,19,23,.78) 43%,rgba(16,19,23,.1) 76%),linear-gradient(0deg,rgba(16,19,23,.8),transparent 35%); }
+.workshop-content { position: relative; padding-top: 88px; padding-bottom: 90px; }
+.workshop-eyebrow { margin: 0 0 26px; font-size: .72rem; letter-spacing: .17em; text-transform: uppercase; font-weight: 700; color: #c5c8c8; }
+.workshop-content h1 { font-family: var(--font-display); font-size: clamp(3.1rem,4.6vw,4.2rem); line-height: 1.08; font-weight: 400; letter-spacing: -.035em; max-width: 740px; margin: 0 0 28px; text-wrap: balance; color: #f5f4ee; }
+.workshop-content h1 span { color: #a9c7e8; }
+.workshop-intro { max-width: 470px; font-size: 1.03rem; line-height: 1.8; color: #c6c9cc; margin: 0 0 30px; }
+.workshop-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.workshop-actions a { display: inline-flex; align-items: center; justify-content: space-between; gap: 22px; font-size: .86rem; font-weight: 700; text-decoration: none; transition: background .2s, transform .2s; }
+.workshop-primary { min-height: 54px; padding: 14px 22px; border-radius: 6px; color: #101820; background: #e4edf5; }
+.workshop-primary:hover { background: #fff; transform: translateY(-2px); color: #101820; }
+.workshop-secondary { color: #eee; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.35); }
+.workshop-secondary:hover { color: #fff; border-color: #fff; }
+.workshop-actions a span { font-size: 1.25rem; font-weight: 400; }
+.workshop-visit { color: #a5adb7; font-size: .75rem; margin: 18px 0 0; }
+.workshop-bottom { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-bottom: 24px; font-size: .7rem; color: #b7bdc3; }
+.workshop-bottom p { margin: 0; }
+.workshop-status:not(.closed):not(.closing-soon) { background: #9abca2; }
+.workshop-status.closing-soon { background: #d4b878; }
+.workshop-status { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #9eafc0; margin-right: 8px; }
+.workshop-caption { text-align: right; text-transform: uppercase; letter-spacing: .14em; }
+.workshop-caption span { display: block; text-transform: none; letter-spacing: .01em; color: #e0e1e2; margin-top: 5px; }
+.repair-directory { background: var(--bg-surface, #12161c); border-block: 1px solid var(--design-rule); }
+.repair-directory-inner { display: flex; align-items: center; gap: 42px; padding-block: 25px; }
+.repair-directory-inner > p { flex: 0 0 115px; font-size: .72rem; line-height: 1.55; color: var(--text-muted); margin: 0; }
+.repair-directory-inner > p strong { color: var(--text-primary); font-size: 1rem; font-weight: 600; }
+.repair-directory-links { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); flex: 1; }
+.repair-directory-links a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 45px; padding: 10px 18px; border-left: 1px solid var(--design-rule); text-decoration: none; color: var(--text-primary); font-size: .82rem; font-weight: 600; transition: background .2s; }
+.repair-directory-links a span { color: var(--text-muted); transition: transform .2s; }
+.repair-directory-links a:hover { background: var(--bg-elevated); }
+.repair-directory-links a:hover span { transform: translate(2px,-2px); }
+@media (prefers-reduced-motion: no-preference) {
+ .workshop-content > * { animation: workshop-enter .7s both; }
+ .workshop-content > :nth-child(2) { animation-delay: .08s; }
+ .workshop-content > :nth-child(3) { animation-delay: .16s; }
+ .workshop-content > :nth-child(4) { animation-delay: .24s; }
+ .workshop-content > :nth-child(5) { animation-delay: .3s; }
+ @keyframes workshop-enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+}
+
+/* About: a personal introduction paired with a generous, honest work photo. */
+html body .repair-hero--about { padding-block: clamp(40px,6vw,85px); background: var(--bg-primary, #0d1117); }
+html body .repair-hero--about::before, html body .repair-hero--about::after, .repair-hero--about .hero-particles { display: none; }
+html body .repair-hero--about .repair-hero-grid { grid-template-columns: 1.08fr 1fr; gap: clamp(32px,6vw,90px); align-items: center; }
+html body .repair-hero--about .repair-hero-title { font-size: clamp(2.7rem,4.6vw,4.4rem); line-height: 1.1; letter-spacing: -.035em; margin-block: 22px; text-wrap: balance; }
+html body .repair-hero--about .repair-hero-sub { font-size: 1rem; line-height: 1.85; max-width: 470px; }
+html body .repair-hero--about .repair-hero-badge { background: none; border: 0; padding: 0; box-shadow: none; font-size: .72rem; letter-spacing: .07em; }
+html body .repair-hero--about .about-aside { gap: 18px; }
+html body .repair-hero--about .about-photo { max-width: none; aspect-ratio: 1.12; border-radius: 4px; border: 0; box-shadow: none; }
+html body .repair-hero--about .about-photo::after { display: none; }
+html body .repair-hero--about .about-photo-cap { padding: 45px 24px 24px; }
+html body .repair-hero--about .about-photo-cap strong { font-size: 1.12rem; }
+html body .repair-hero--about .about-points { max-width: none; gap: 0; }
+html body .repair-hero--about .about-point { padding: 12px 0; border: 0; border-bottom: 1px solid var(--design-rule); border-radius: 0; background: none; box-shadow: none; }
+html body .repair-hero--about .about-point small { font-size: .73rem; }
+
+/* Service introductions share a measured scale; illustrations keep their identity. */
+html body .iphone-hero { padding-top: 65px; padding-bottom: 65px; }
+html body .iphone-hero-title { font-size: clamp(2.6rem,4.1vw,3.8rem); line-height: 1.12; letter-spacing: -.03em; background: none; -webkit-text-fill-color: var(--text-primary, #f2f5f9); }
+html body .iphone-hero-sub { font-size: 1rem; line-height: 1.8; max-width: 500px; margin-bottom: 0; }
+html body .iphone-hero-actions { gap: 12px; margin-top: 25px; margin-bottom: 0; }
+html body .iphone-hero-actions .btn { font-size: .82rem; padding: 14px 18px; min-height: 50px; }
+html body .iphone-risk-note { font-size: .75rem; margin-top: 20px; }
+html body .iphone-proof-ledger { gap: 0; border-top: 1px solid var(--design-rule); margin-top: 22px; }
+html body .iphone-ledger-item { border: 0; border-radius: 0; box-shadow: none; background: none; padding: 18px 15px 0 0; }
+html body .iphone-ledger-item + .iphone-ledger-item { padding-left: 15px; }
+html body .iphone-ledger-item em { font-size: .73rem; line-height: 1.6; }
+html body .iphone-device-card { box-shadow: none; border-color: rgba(160,180,200,.12); background: linear-gradient(145deg,rgba(155,175,210,.06),transparent); }
+html body .spectre-title { font-size: clamp(2.5rem,4.1vw,3.8rem); line-height: 1.12; letter-spacing: -.03em; }
+html body .spectre-sub { font-size: 1rem; line-height: 1.8; }
+html body .contact-hero-title { max-width: 650px; text-wrap: balance; }
+html body .contact-hero-sub { line-height: 1.8; max-width: 530px; }
+
+@media (max-width: 1000px) {
+ .repair-directory-inner { gap: 20px; }
+ .repair-directory-links { grid-template-columns: repeat(3,minmax(0,1fr)); }
+ .repair-directory-links a { font-size: .8rem; }
+ .workshop-content h1 { max-width: 620px; }
+}
+@media (max-width: 700px) {
+ .workshop-hero { min-height: 0; }
+ .workshop-image { width: 100%; height: 100%; object-position: 58% 50%; opacity: .55; }
+ .workshop-shade { background: linear-gradient(90deg,rgba(16,19,23,.94),rgba(16,19,23,.52)),linear-gradient(0deg,#101317,transparent 65%); }
+ .workshop-content { padding-top: 48px; padding-bottom: 42px; }
+ .workshop-eyebrow { font-size: .61rem; letter-spacing: .13em; margin-bottom: 22px; }
+ .workshop-content h1 { font-size: clamp(2.3rem,8.7vw,3.7rem); line-height: 1.12; letter-spacing: -.04em; max-width: 530px; margin-bottom: 24px; text-wrap: initial; }
+ .workshop-intro { font-size: .9rem; line-height: 1.75; max-width: 430px; margin-bottom: 25px; }
+ .workshop-actions { gap: 10px 23px; }
+ .workshop-actions a { font-size: .79rem; }
+ .workshop-primary { padding: 13px 17px; min-height: 50px; }
+ .workshop-secondary { padding-block: 13px; }
+ .workshop-visit { font-size: .68rem; line-height: 1.7; max-width: 285px; }
+ .workshop-bottom { padding-bottom: 22px; font-size: .65rem; }
+ .workshop-caption { display: none; }
+ .repair-directory-inner { display: block; padding-block: 22px; }
+ .repair-directory-inner > p { font-size: .7rem; margin-bottom: 13px; }
+ .repair-directory-inner > p br { display: none; }
+ .repair-directory-inner > p strong { font-size: inherit; }
+ .repair-directory-links { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 20px; }
+ .repair-directory-links a { padding: 14px 0; border-left: 0; border-top: 1px solid var(--design-rule); font-size: .8rem; }
+ html body .repair-hero--about .repair-hero-grid { grid-template-columns: 1fr; gap: 35px; }
+ html body .repair-hero--about .repair-hero-title { font-size: clamp(2.4rem,9vw,3.5rem); }
+ html body .repair-hero--about .repair-hero-sub { font-size: .95rem; }
+ html body .repair-hero--about .about-photo { aspect-ratio: 4/3; }
+ html body .iphone-hero { padding-block: 40px; }
+ html body .iphone-hero-title { font-size: clamp(2.1rem,8.4vw,3.4rem); }
+ html body .iphone-hero-sub { font-size: .93rem; }
+ 
+ 
+ html body .iphone-proof-ledger { grid-template-columns: 1fr; }
+ html body .iphone-ledger-item, html body .iphone-ledger-item + .iphone-ledger-item { padding: 12px 0; display: grid; grid-template-columns: 24px 1fr; column-gap: 8px; border-bottom: 1px solid var(--design-rule); }
+ html body .iphone-ledger-item > span { grid-row: 1 / 3; }
+ html body .iphone-ledger-item strong, html body .iphone-ledger-item em { grid-column: 2; margin: 0; }
+ html body .spectre-title { font-size: clamp(2.2rem,8.5vw,3.3rem); }
+ /* Preserve real table markup while placing the description under the model.
+    Price columns stay adjacent and visible even on a 320px viewport. */
+ html body.pricing-page .pt-table { min-width: 0; width: 100%; }
+ html body.pricing-page .pt-table tr { display: grid; grid-template-columns: minmax(0,1fr) 57px 61px; column-gap: 8px; }
+ html body.pricing-page .pt-table tr[hidden], html body.pricing-page .pt-table tr[style*="display: none"] { display: none; }
+ html body.pricing-page .pt-table th, html body.pricing-page .pt-table td { width: auto; min-width: 0; position: static; background: none; border: 0; padding: 0; white-space: normal; box-shadow: none; }
+ html body.pricing-page .pt-table thead tr { padding: 14px 0; border-bottom: 1px solid var(--design-rule); }
+ html body.pricing-page .pt-table th:nth-child(2) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+ html body.pricing-page .pt-table th:nth-child(3) { grid-column: 2; }
+ html body.pricing-page .pt-table th:nth-child(4) { grid-column: 3; }
+ html body.pricing-page .pt-table th { font-size: .64rem; letter-spacing: .02em; }
+ html body.pricing-page .pt-table tbody tr { padding: 16px 0; border-bottom: 1px solid var(--design-rule); row-gap: 5px; }
+ html body.pricing-page .pt-table td:first-child { grid-column: 1; grid-row: 1; font-size: .83rem; font-weight: 650; }
+ html body.pricing-page .pt-table td:nth-child(2) { grid-column: 1; grid-row: 2; font-size: .76rem; line-height: 1.55; }
+ html body.pricing-page .pt-table td:nth-child(3) { grid-column: 2; grid-row: 1 / 3; font-size: .82rem; }
+ html body.pricing-page .pt-table td:nth-child(4) { grid-column: 3; grid-row: 1 / 3; font-size: .82rem; }
+ html body.pricing-page .pt-table .pt-note { font-size: .67rem; line-height: 1.5; margin-top: 5px; }
+ html body.pricing-page .pt-scroll { overflow: visible; }
+}
+@media (max-width: 700px) {
+ html body.pricing-page .pt-scroll { border: 0; border-radius: 0; box-shadow: none; background: none; }
+ html body.pricing-page .pt-table th:first-child,
+ html body.pricing-page .pt-table td:first-child,
+ html body.pricing-page .pt-table tbody tr:nth-child(even) td,
+ html body.pricing-page .pt-table tbody tr:hover td { background: transparent !important; box-shadow: none !important; }
+}
+/* Consistent, legible primary actions across older page-specific themes. */
+html body .btn-primary:not(.sos-nav-btn--next) { background: #42649a !important; color: #fff !important; box-shadow: none !important; }
+html body .btn-primary:not(.sos-nav-btn--next):hover { background: #385887 !important; }
+
+/* Contact: make the actual form the destination, with permanent labels. */
+html body .contact-intake-ticket { background: none; border: 0; border-radius: 0; box-shadow: none; }
+html body .contact-intake-ticket::before { display: none; }
+html body .ticket-message-stack { background: none; border: 0; padding: 16px 0; box-shadow: none; }
+html body .ticket-message--reply { background: #42649a; color: #fff; box-shadow: none; }
+html body .ticket-detail-grid > div { background: none; border: 0; border-top: 1px solid var(--design-rule); border-radius: 0; padding-inline: 0; box-shadow: none; }
+html body .contact-form-section { background: var(--bg-primary, #0d1117); border-top: 1px solid var(--design-rule); }
+html body .contact-ticket-form { background: #f1f0e9; color: #293340; border: 0; border-radius: 8px; box-shadow: none; color-scheme: light; padding: clamp(24px,3.5vw,46px); }
+html body .contact-ticket-form::before { display: none; }
+html body .contact-ticket-form .section-title { color: #1c2936; font-size: clamp(1.8rem,3vw,2.6rem); line-height: 1.2; }
+html body .contact-ticket-form .section-sub { color: #56616b; font-size: .92rem; line-height: 1.75; }
+html body .contact-ticket-form .section-eyebrow { color: #426080; background: none; border: 0; padding: 0; }
+html body .contact-ticket-form .section-eyebrow::after { display: none; }
+html body .contact-ticket-form .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+html body .contact-ticket-form .form-group label { order: -1; position: static; transform: none !important; background: none !important; color: #35434e !important; font-size: .76rem !important; font-weight: 650; padding: 0; line-height: 1.4; pointer-events: auto; }
+html body .contact-ticket-form .form-group input,
+html body .contact-ticket-form .form-group select,
+html body .contact-ticket-form .form-group textarea { background: #fafaf6; border: 1px solid #c6cac8; border-radius: 5px; color: #253340; padding: 13px 14px; font-size: 16px; line-height: 1.5; min-height: 50px; box-shadow: none; }
+html body .contact-ticket-form .form-group textarea { min-height: 135px; }
+html body .contact-ticket-form .form-group input::placeholder,
+html body .contact-ticket-form .form-group textarea::placeholder { color: #748087; opacity: 1; }
+html body .contact-ticket-form .form-group input:focus,
+html body .contact-ticket-form .form-group select:focus,
+html body .contact-ticket-form .form-group textarea:focus { border-color: #65829a; box-shadow: none; }
+html body .contact-ticket-form .form-error { color: #a33830; }
+html body .contact-ticket-form .form-group [aria-invalid="true"] { border-color: #a33830; }
+html body .contact-ticket-form .form-note { color: #58646b; line-height: 1.7; }
+html body .contact-sidebar--polished .contact-sidebar-card { border: 0 !important; border-bottom: 1px solid var(--design-rule) !important; border-radius: 0; background: none; box-shadow: none; padding: 0 0 25px; }
+html body .contact-sidebar--polished { gap: 28px; padding-top: 16px; }
+.contact-help-strip { border-block: 1px solid var(--design-rule); padding-block: 24px; }
+.contact-help-strip .container { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 35px; }
+.contact-help-strip p { color: var(--text-muted); font-size: .8rem; margin: 0 auto 0 0; }
+.contact-help-strip a { color: var(--text-primary); font-size: .8rem; text-decoration: none; border-bottom: 1px solid var(--design-rule); padding-block: 8px; }
+.contact-help-strip a span { padding-left: 12px; }
+html body .contact-route-card { border-radius: 0; border: 0; border-top: 1px solid var(--design-rule); background: none; box-shadow: none; padding-inline: 0; }
+html body .contact-route-card:hover { box-shadow: none; background: none; }
+@media (max-width: 700px) {
+ html body .contact-hero-grid { gap: 28px; }
+ html body .contact-intake-ticket { padding: 0; }
+ html body .contact-ticket-form { padding: 24px 20px; }
+ html body .contact-ticket-form .form-row { gap: 0; }
+ .contact-help-strip .container { display: grid; gap: 12px; }
+}
+html body .contact-ticket-form .form-error:empty { display: none; }
+html body .contact-route-card::before, html body .contact-route-card::after { display: none; }
+/* A shared FAQ rhythm also covers pages whose summaries lack legacy classes. */
+html body .faq-list { gap: 0; }
+html body .faq-list .faq-item { border: 0; border-bottom: 1px solid var(--design-rule); border-radius: 0; background: none; box-shadow: none; text-align: left; }
+html body .faq-list .faq-item::before { display: none; }
+html body .faq-item > summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 64px; padding: 18px 0; list-style: none; text-align: left; font-size: .94rem; line-height: 1.6; color: var(--text-primary); cursor: pointer; }
+html body .faq-item > summary::-webkit-details-marker { display: none; }
+html body .faq-item > summary::marker { content: ''; }
+html body .faq-item > summary:not(:has(.faq-chevron))::after { content: '+'; flex: 0 0 20px; font-size: 1.3rem; font-weight: 400; text-align: center; color: var(--text-muted); }
+html body .faq-item[open] > summary:not(:has(.faq-chevron))::after { content: '−'; }
+html body .faq-list .faq-answer { padding-inline: 0; }
+html body .faq-answer-inner { opacity: 1; filter: none; }
+@media (max-width: 700px) {
+ html body .faq-item > summary { font-size: .88rem; min-height: 60px; padding-block: 17px; }
+}
+@media (max-width: 700px) {
+ html body .iphone-hero-actions { display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px; }
+ html body .iphone-hero-actions .btn { flex: none; width: 100%; height: auto; min-height: 56px; padding: 12px 10px; font-size: .75rem; gap: 8px; }
+}
+html body .spectre-sub { margin-bottom: 20px; }
+html body .spectre-highlights { margin-top: 20px; }
+html body .spectre-price__amount { font-size: 2rem; }
+@media (max-width: 700px) {
+ html body .spectre-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+ html body .spectre-hl { font-size: .75rem; line-height: 1.5; align-items: start; }
+}
+/* Byline text should wrap as a sentence, not as disconnected flex items. */
+html body .article-byline { display: block !important; line-height: 1.7; margin-bottom: 18px !important; }

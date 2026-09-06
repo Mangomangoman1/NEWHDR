@@ -5,6 +5,14 @@
 (function () {
   'use strict';
 
+  // Storage may be unavailable in private or restricted browsing.
+  const storage = {
+    get(key) { try { return localStorage.getItem(key); } catch (_) { return null; } },
+    set(key, value) { try { localStorage.setItem(key, value); } catch (_) {} },
+    remove(key) { try { localStorage.removeItem(key); } catch (_) {} }
+  };
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // ─── Promo banner: removed ─────────────────────────────────
 
   // ─── Theme toggle ────────────────────────────────────────
@@ -26,7 +34,7 @@
 
   function setTheme(theme, announce) {
     html.setAttribute('data-theme', theme);
-    localStorage.setItem(THEME_KEY, theme);
+    storage.set(THEME_KEY, theme);
     syncThemeControls(theme);
     if (announce !== false) announceToSR(theme === 'dark' ? 'Dark theme enabled' : 'Light theme enabled');
   }
@@ -49,7 +57,7 @@
 
   // Init: keep the public site dark while the light theme is still being polished.
   // Also clear any earlier light-theme choice so returning customers do not stay in the experiment.
-  localStorage.removeItem(THEME_KEY);
+  storage.remove(THEME_KEY);
   setTheme('dark', false);
 
   themeToggles.forEach((themeToggle) => {
@@ -63,12 +71,12 @@
   const cookieBanner = document.getElementById('cookieBanner');
   const cookieAccept = document.getElementById('cookieAccept');
   const cookieDecline = document.getElementById('cookieDecline');
-  if (cookieBanner && !localStorage.getItem('hdr_cookie_consent')) {
+  if (cookieBanner && !storage.get('hdr_cookie_consent')) {
     const homeMobileDelay = document.body.classList.contains('home-page') && window.matchMedia('(max-width: 768px)').matches;
     setTimeout(() => cookieBanner.classList.add('visible'), homeMobileDelay ? 6500 : 1500);
   }
   function dismissCookie(choice) {
-    localStorage.setItem('hdr_cookie_consent', choice);
+    storage.set('hdr_cookie_consent', choice);
     if (choice === 'declined') { window['ga-disable-G-SGQ617V748'] = true; }
     cookieBanner.classList.remove('visible');
     announceToSR('Cookie preferences saved');
@@ -95,17 +103,21 @@
   const navBackdrop = document.getElementById('navBackdrop');
 
   if (hamburger && mobileMenu) {
-    const closeMenu = () => {
+    hamburger.setAttribute('aria-controls', mobileMenu.id);
+    mobileMenu.hidden = true;
+    const closeMenu = (restoreFocus = true) => {
       hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Open menu');
       mobileMenu.classList.remove('open');
       mobileMenu.setAttribute('aria-hidden', 'true');
       mobileMenu.hidden = true;
       document.body.classList.remove('menu-open');
       if (navBackdrop) navBackdrop.classList.remove('visible');
-      hamburger.focus();
+      if (restoreFocus) hamburger.focus({ preventScroll: true });
     };
     const openMenu = () => {
       hamburger.setAttribute('aria-expanded', 'true');
+      hamburger.setAttribute('aria-label', 'Close menu');
       mobileMenu.hidden = false;
       mobileMenu.classList.add('open');
       mobileMenu.setAttribute('aria-hidden', 'false');
@@ -123,7 +135,7 @@
 
     // Close on link click
     mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
+      link.addEventListener('click', () => closeMenu(false));
     });
 
     // Escape key closes menu
@@ -137,6 +149,10 @@
     if (navBackdrop) {
       navBackdrop.addEventListener('click', closeMenu);
     }
+
+    window.matchMedia('(min-width: 769px)').addEventListener('change', (event) => {
+      if (event.matches && mobileMenu.classList.contains('open')) closeMenu(false);
+    });
 
     // Focus trap inside mobile menu
     mobileMenu.addEventListener('keydown', (e) => {
@@ -198,7 +214,8 @@
     contact: {
       test: v => {
         const trimmed = v.trim();
-        const phoneish = /[\d\s\-\+\(\)]{7,}/.test(trimmed);
+        const digitCount = trimmed.replace(/\D/g, '').length;
+        const phoneish = /^\+?[\d\s().-]+$/.test(trimmed) && digitCount >= 7 && digitCount <= 15;
         const emailish = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed);
         return phoneish || emailish;
       },
@@ -210,7 +227,7 @@
     }
   };
 
-  function validateField(input) {
+  function validateField(input, showRequired = false) {
     const key = input.name || input.id;
     const validator = validators[key] || validators[input.id];
     if (!validator) return true;
@@ -218,7 +235,8 @@
     const errorEl = document.getElementById(key + 'Error') || document.getElementById(input.id + 'Error');
     const isValid = validator.test(input.value);
 
-    if (!isValid && input.value.length > 0) {
+    input.setAttribute('aria-invalid', String(!isValid && (showRequired || input.value.length > 0)));
+    if (!isValid && (showRequired || input.value.length > 0)) {
       input.classList.add('invalid');
       input.classList.remove('valid');
       if (errorEl) errorEl.textContent = validator.msg;
@@ -268,7 +286,7 @@
       const fields = [nameInput, contactInput, issueInput].filter(Boolean);
       let allValid = true;
       fields.forEach(input => {
-        if (!validateField(input)) {
+        if (!validateField(input, true)) {
           allValid = false;
         }
       });
@@ -283,6 +301,8 @@
       // ─── Submit via Formspree (or fallback to mailto) ───────
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const formError = document.getElementById('formError');
+      if (formError) { formError.hidden = true; formError.classList.remove('visible'); }
+      if (formSuccess) { formSuccess.hidden = true; formSuccess.classList.remove('visible'); }
       const FORMSPREE_ID = contactForm.dataset.formspree; // set data-formspree="YOUR_ID" on <form>
 
       // Disable button + show spinner
@@ -309,7 +329,7 @@
         })
         .then(response => {
           if (response.ok) {
-            showFormSuccess();
+            showFormSuccess(true);
           } else {
             throw new Error('Submission failed');
           }
@@ -337,24 +357,29 @@
           const msg = formSuccess.querySelector('p') || formSuccess;
           msg.innerHTML = 'Your email app should have opened with your message pre-filled — hit send there to get it to me. If nothing opened, text <a href="sms:+12084501606">208-450-1606</a> or email <a href="mailto:samuel@haileyrepair.com">samuel@haileyrepair.com</a> directly.';
         }
-        showFormSuccess();
+        showFormSuccess(false);
       }
 
-      function showFormSuccess() {
+      function showFormSuccess(sent) {
+        if (formError) { formError.hidden = true; formError.classList.remove('visible'); }
         if (formSuccess) {
+          if (sent) {
+            formSuccess.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle" aria-hidden="true"></span><div><strong>Request sent.</strong> I’ll reply personally using the phone number or email you provided.</div>';
+          }
           formSuccess.hidden = false;
           formSuccess.classList.add('visible');
-          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          formSuccess.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'nearest' });
         }
-        contactForm.reset();
-        // Hide success after 8 seconds
-        setTimeout(() => {
-          if (formSuccess) {
-            formSuccess.classList.remove('visible');
-            formSuccess.hidden = true;
-          }
-          restoreSubmitBtn();
-        }, 8000);
+        // Keep the details available if the visitor's email app did not open.
+        if (sent) {
+          contactForm.reset();
+          contactForm.querySelectorAll('.valid, .invalid').forEach(input => {
+            input.classList.remove('valid', 'invalid');
+            input.removeAttribute('aria-invalid');
+          });
+          contactForm.querySelectorAll('select').forEach(select => select.dispatchEvent(new Event('change')));
+        }
+        restoreSubmitBtn();
       }
 
       function restoreSubmitBtn() {
@@ -376,7 +401,13 @@
       e.preventDefault();
       const navH = nav ? nav.offsetHeight : 64;
       const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
-      window.scrollTo({ top, behavior: 'smooth' });
+      window.scrollTo({ top, behavior: reduceMotion ? 'instant' : 'smooth' });
+      if (location.hash !== '#' + id) history.pushState(null, '', '#' + id);
+      if (!target.hasAttribute('tabindex')) {
+        target.setAttribute('tabindex', '-1');
+        target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
+      }
+      target.focus({ preventScroll: true });
     });
   });
 
@@ -1012,12 +1043,16 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     function setStep(step) {
       [dcStep1, dcStep2, dcStep3, dcStep4].forEach((p, i) => {
         p.classList.toggle('active', i + 1 === step);
+        p.hidden = i + 1 !== step;
       });
       dcProgressBar.style.width = (step * 25) + '%';
       dcStepLabels.forEach((el, i) => {
         el.classList.toggle('active', i + 1 === step);
         el.classList.toggle('done', i + 1 < step);
       });
+      const panel = [dcStep1, dcStep2, dcStep3, dcStep4][step - 1];
+      const heading = panel.querySelector('h2, h3');
+      if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
       // Scroll to wizard top
       const wizard = document.getElementById('device-check');
       if (wizard) wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1042,6 +1077,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         const btn = document.createElement('button');
         btn.className = 'dc-option';
         btn.dataset.problem = p.id;
+        btn.setAttribute('aria-pressed', 'false');
         btn.innerHTML = `
           <span class="material-symbols-outlined" data-icon="${p.icon}" aria-hidden="true"></span>
           <span class="dc-option-text">
@@ -1052,6 +1088,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         `;
         btn.addEventListener('click', () => {
           btn.classList.toggle('selected');
+          btn.setAttribute('aria-pressed', String(btn.classList.contains('selected')));
           const pid = btn.dataset.problem;
           if (state.problems.includes(pid)) {
             state.problems = state.problems.filter(x => x !== pid);
@@ -1190,7 +1227,9 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
 
   if (helpFab && helpTrigger) {
     // Check if dismissed this session
-    if (sessionStorage.getItem('hdr_help_dismissed') === '1') {
+    let helpDismissed = false;
+    try { helpDismissed = sessionStorage.getItem('hdr_help_dismissed') === '1'; } catch (_) {}
+    if (helpDismissed) {
       helpFab.classList.add('dismissed');
     }
 
@@ -1681,11 +1720,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
 (function() {
   function updateStatus() {
     const now = new Date();
-    const mtOffset = -7; // Mountain Time
-    const mtTime = new Date(now.getTime() + (mtOffset - now.getTimezoneOffset()/60) * 3600000);
-    const day = mtTime.getUTCDay();
-    const hour = mtTime.getUTCHours() - 7;
-    const min = mtTime.getUTCMinutes();
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Boise', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+    }).formatToParts(now);
+    const value = type => parts.find(part => part.type === type).value;
+    const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(value('weekday'));
+    const hour = Number(value('hour'));
+    const min = Number(value('minute'));
     const totalMin = hour * 60 + min;
     let open = false;
     let closingSoon = false;
@@ -1703,7 +1744,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     if (dot && text && time) {
       dot.className = 'status-dot' + (open ? (closingSoon ? ' closing-soon' : '') : ' closed');
       text.textContent = open ? (closingSoon ? 'Closing soon' : 'Open now') : 'Currently closed';
-      time.textContent = mtTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Boise' });
+      time.textContent = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Boise' });
     }
   }
   updateStatus();
@@ -2266,12 +2307,14 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   const sosCtaBlock = document.getElementById('sosCtaBlock');
   const sosCtaLink = document.getElementById('sosCtaLink');
 
+  let sosOpener = null;
   let currentSosType = null;
   let currentStep = 0;
   let totalSteps = 0;
   let stepStates = [];
 
   function openSos(type) {
+    sosOpener = document.activeElement;
     currentSosType = type;
     const data = SOS_DATA[type];
     if (!data) return;
@@ -2307,10 +2350,12 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
 
     requestAnimationFrame(function() {
       animateStepIn(0);
+      requestAnimationFrame(() => { if (sosClose) sosClose.focus({ preventScroll: true }); });
     });
   }
 
   function closeSos() {
+    if (sosOpener) sosOpener.focus({ preventScroll: true });
     sosOverlay.setAttribute('aria-hidden', 'true');
     sosOverlay.classList.remove('visible');
     document.body.style.overflow = '';
@@ -2390,6 +2435,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     sosProgressLabel.textContent = 'Step ' + (index + 1) + ' of ' + totalSteps;
 
     sosPrev.disabled = index === 0;
+    requestAnimationFrame(() => steps[index]?.scrollIntoView({ block: 'nearest', behavior: 'instant' }));
   }
 
   function nextStep() {
@@ -2429,6 +2475,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     sosNext.style.display = 'none';
     sosCtaBlock.classList.add('visible', 'sos-cta-activated');
     sosCtaBlock.setAttribute('aria-hidden', 'false');
+    if (sosCtaLink) sosCtaLink.focus({ preventScroll: true });
   }
 
   document.querySelectorAll('.sos-card').forEach(function(card) {
@@ -2446,6 +2493,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   document.addEventListener('keydown', function(e) {
     if (!sosOverlay || !sosOverlay.classList.contains('visible')) return;
     if (e.key === 'Escape') closeSos();
+    if (e.key === 'Tab') {
+      const controls = Array.from(sosOverlay.querySelectorAll('button, a[href]'))
+        .filter(el => !el.disabled && el.getClientRects().length && !el.closest('[aria-hidden="true"]'));
+      const first = controls[0], last = controls[controls.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); nextStep(); }
     if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); prevStep(); }
   });
@@ -2540,6 +2594,309 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     ]
   };
 
+
+
+
+
+  // BEGIN GENERATED SEARCH PAGES
+  QF_DATA.categories.push({ title: "Repair advice", icon: "menu_book", links: [
+  {
+    "name": "5 signs your laptop battery is dying",
+    "desc": "A practical laptop battery guide: how to read runtime loss, swelling, heat, system warnings, and when battery replacement becomes urgent.",
+    "href": "/tips/laptop-battery-dying",
+    "icon": "menu_book",
+    "kw": " tips laptop battery dying"
+  },
+  {
+    "name": "Cracked iPhone back glass: can you keep using it?",
+    "desc": "Cracked iPhone back glass? Learn when a case is a reasonable temporary measure, when to stop using it, and how back-glass and housing repairs differ.",
+    "href": "/tips/cracked-iphone-back-glass",
+    "icon": "menu_book",
+    "kw": " tips cracked iphone back glass"
+  },
+  {
+    "name": "Cracked iPhone tapping, typing, or opening things by itself",
+    "desc": "iPhone tapping, typing, or opening apps by itself? Learn how to stop accidental input, test the case, protector, charger, and moisture, and recognize a damaged display.",
+    "href": "/tips/iphone-ghost-touch-cracked-screen",
+    "icon": "menu_book",
+    "kw": " tips iphone ghost touch cracked screen"
+  },
+  {
+    "name": "Cracked screen: cosmetic or getting worse?",
+    "desc": "Small corner crack or spreading spiderweb? When a cracked screen is cosmetic, when it's getting worse, and when sharp glass becomes a safety problem.",
+    "href": "/tips/cracked-screen-safe-to-use",
+    "icon": "menu_book",
+    "kw": " tips cracked screen safe to use"
+  },
+  {
+    "name": "Face ID stopped working after a drop, cracked screen, or repair",
+    "desc": "Face ID stopped after a drop, cracked screen, or repair? Check obstruction and settings, read the exact message, inspect Parts and Service History, and know when TrueDepth service is needed.",
+    "href": "/tips/face-id-not-working-after-drop",
+    "icon": "menu_book",
+    "kw": " tips face id not working after drop"
+  },
+  {
+    "name": "Fake pop-ups and \"tech support\" calls: how to tell, and what to do.",
+    "desc": "How to recognize fake virus warnings and Apple or Microsoft support scams, what to do the moment you see one, and how to tell real problems from theater.",
+    "href": "/tips/fake-support-scam-popups",
+    "icon": "menu_book",
+    "kw": " tips fake support scam popups"
+  },
+  {
+    "name": "Green, white, or vertical line on an iPhone screen",
+    "desc": "A green, white, pink, or vertical line on an iPhone screen usually points to the display path. Use a screenshot test, protect data, and know when screen service is needed.",
+    "href": "/tips/iphone-green-white-line-screen",
+    "icon": "menu_book",
+    "kw": " tips iphone green white line screen"
+  },
+  {
+    "name": "How to back up your phone or laptop before a repair",
+    "desc": "What to back up before you hand in a phone or computer, when data is at higher risk, and the quickest ways to back up an iPhone, Android, Mac, or PC.",
+    "href": "/tips/backup-before-repair",
+    "icon": "menu_book",
+    "kw": " tips backup before repair"
+  },
+  {
+    "name": "iPhone battery health at 80%: does it need replacement?",
+    "desc": "What iPhone Maximum Capacity and 80% battery health actually mean, how cycle counts differ by model, which symptoms matter, and when replacement is worth it.",
+    "href": "/tips/iphone-battery-health-80-percent",
+    "icon": "menu_book",
+    "kw": " tips iphone battery health 80 percent"
+  },
+  {
+    "name": "iPhone battery replacement: when it makes sense",
+    "desc": "iPhone battery replacement explained: battery health, swelling, repair steps, cost signals, timing, and repair-or-replace advice.",
+    "href": "/guides/iphone-battery-replacement",
+    "icon": "menu_book",
+    "kw": " guides iphone battery replacement"
+  },
+  {
+    "name": "iPhone cable feels loose or only charges at an angle",
+    "desc": "Does your iPhone cable feel loose or charge only at an angle? Safely distinguish packed lint, a worn cable, moisture, and charging-port damage without poking the connector.",
+    "href": "/tips/iphone-charging-cable-loose-angle",
+    "icon": "menu_book",
+    "kw": " tips iphone charging cable loose angle"
+  },
+  {
+    "name": "iPhone camera shakes, clicks, or will not focus",
+    "desc": "If your iPhone camera shakes, buzzes, clicks, or cannot focus, test cases, magnets, lenses, apps, and impact history before deciding the camera needs repair.",
+    "href": "/tips/iphone-camera-shaking-clicking-not-focusing",
+    "icon": "menu_book",
+    "kw": " tips iphone camera shaking clicking not focusing"
+  },
+  {
+    "name": "iPhone restarts every three minutes",
+    "desc": "An iPhone that reboots about every three minutes may be logging a repeating panic. Protect your data, find the pattern, and avoid erasing before hardware is diagnosed.",
+    "href": "/tips/iphone-restarts-every-three-minutes",
+    "icon": "menu_book",
+    "kw": " tips iphone restarts every three minutes"
+  },
+  {
+    "name": "iPhone screen repair: what to expect",
+    "desc": "iPhone screen repair explained: causes, repair steps, cost signals, timing, DIY risk, and when it is worth fixing.",
+    "href": "/guides/iphone-screen-repair",
+    "icon": "menu_book",
+    "kw": " guides iphone screen repair"
+  },
+  {
+    "name": "iPhone speaker sounds muffled after getting wet",
+    "desc": "If an iPhone speaker sounds muffled after water, stop charging, let it dry safely, identify the affected speaker or microphone, and know when service is needed.",
+    "href": "/tips/iphone-speaker-muffled-after-water",
+    "icon": "menu_book",
+    "kw": " tips iphone speaker muffled after water"
+  },
+  {
+    "name": "iPhone stuck on the Apple logo—or restarting in a loop",
+    "desc": "iPhone frozen on the Apple logo or restarting in a loop? Identify the pattern, try the correct force restart, use recovery mode without erasing first, and know when to stop.",
+    "href": "/tips/iphone-stuck-on-apple-logo",
+    "icon": "menu_book",
+    "kw": " tips iphone stuck on apple logo"
+  },
+  {
+    "name": "Is my data safe during a repair?",
+    "desc": "How your data is handled during a device repair — what a technician can and can't see, why a passcode is sometimes needed, and how to protect yourself.",
+    "href": "/tips/data-safe-during-repair",
+    "icon": "menu_book",
+    "kw": " tips data safe during repair"
+  },
+  {
+    "name": "Joy-Con drift: what actually fixes it (and what doesn't).",
+    "desc": "Why Joy-Con drift happens, the quick fixes that sometimes buy time, why they're temporary, and when a stick needs a drift-proof Hall-effect module.",
+    "href": "/tips/switch-joycon-drift",
+    "icon": "menu_book",
+    "kw": " tips switch joycon drift"
+  },
+  {
+    "name": "Laptop battery replacement: what the job involves",
+    "desc": "Laptop battery replacement explained: symptoms, repair steps, cost signals, swelling risk, timing, and repair-or-replace advice.",
+    "href": "/guides/laptop-battery-replacement",
+    "icon": "menu_book",
+    "kw": " guides laptop battery replacement"
+  },
+  {
+    "name": "Laptop hinge cracking, popping, or pulling the case apart?",
+    "desc": "Laptop hinge popping, cracking, or pulling the case apart? Learn what broke, how to avoid screen and cable damage, and whether the housing can be repaired.",
+    "href": "/tips/laptop-hinge-breaking",
+    "icon": "menu_book",
+    "kw": " tips laptop hinge breaking"
+  },
+  {
+    "name": "Laptop overheating? Loud fans, a hot keyboard, and when it's hardware",
+    "desc": "Why laptops overheat — dust-clogged fans, dried thermal paste, blocked vents, swollen batteries — what's safe to try at home, and when to stop.",
+    "href": "/tips/laptop-overheating",
+    "icon": "menu_book",
+    "kw": " tips laptop overheating"
+  },
+  {
+    "name": "Laptop plugged in, but not charging?",
+    "desc": "Laptop plugged in but not charging? Test the outlet, charger wattage, USB-C or barrel port, battery, and motherboard in a safe, useful order.",
+    "href": "/tips/laptop-plugged-in-not-charging",
+    "icon": "menu_book",
+    "kw": " tips laptop plugged in not charging"
+  },
+  {
+    "name": "LCD vs OLED phone screens: how to tell",
+    "desc": "A plain-English guide to LCD vs OLED phone screens, repair pricing, aftermarket options, black-screen tests, and quality tradeoffs.",
+    "href": "/tips/lcd-vs-oled",
+    "icon": "menu_book",
+    "kw": " tips lcd vs oled"
+  },
+  {
+    "name": "Phone got wet? What to do first",
+    "desc": "A practical water-damaged phone guide: what to do immediately, what not to do, when to stop testing, and when corrosion inspection matters.",
+    "href": "/tips/water-damaged-phone",
+    "icon": "menu_book",
+    "kw": " tips water damaged phone"
+  },
+  {
+    "name": "Phone Repair in Hailey vs Boise vs Mail-In",
+    "desc": "Phone repair in Hailey vs Boise vs mail-in: a Wood River Valley guide to choosing local, the two-hour drive, or quote-first mail-in repair from HDR statewide.",
+    "href": "/phone-repair-hailey-vs-boise",
+    "icon": "menu_book",
+    "kw": " phone repair hailey vs boise"
+  },
+  {
+    "name": "Phone running hot? Normal heat vs. a warning sign",
+    "desc": "What's normal phone heat during gaming and charging, what signals a battery or water-damage problem, and when to stop using the phone immediately.",
+    "href": "/tips/phone-running-hot",
+    "icon": "menu_book",
+    "kw": " tips phone running hot"
+  },
+  {
+    "name": "Phone screen is black but still on? What it means — and what to do after a drop",
+    "desc": "Black screen but the phone still rings or vibrates? Safe first checks after a drop, the one restart worth trying, and when it's a fixable screen vs board.",
+    "href": "/tips/phone-screen-black-but-on",
+    "icon": "menu_book",
+    "kw": " tips phone screen black but on"
+  },
+  {
+    "name": "Phone screen lifting or back separating? Treat it as a swollen battery.",
+    "desc": "A lifting phone screen or separating back can mean a swollen lithium battery. Learn the warning signs, what to stop doing, how to store it temporarily, and where it belongs.",
+    "href": "/tips/swollen-phone-battery-screen-lifting",
+    "icon": "menu_book",
+    "kw": " tips swollen phone battery screen lifting"
+  },
+  {
+    "name": "Phone Water Damage Help in Hailey, Idaho",
+    "desc": "Phone water damage in Hailey, ID: power it off, skip the rice, remove the SIM, and text HDR fast before charging or heat makes corrosion permanently worse.",
+    "href": "/phone-water-damage-hailey",
+    "icon": "menu_book",
+    "kw": " phone water damage hailey"
+  },
+  {
+    "name": "Phone won't charge, or charges slowly?",
+    "desc": "Phone won't charge or charges slowly? How to test cables and bricks, clean the port safely, read moisture warnings, and spot battery or board faults.",
+    "href": "/tips/phone-charges-slowly",
+    "icon": "menu_book",
+    "kw": " tips phone charges slowly"
+  },
+  {
+    "name": "PS5 overheating? The fan roar and the dust problem.",
+    "desc": "Why a PS5 overheats — dust-clogged heatsink, aging thermal paste, blocked airflow — what's normal fan noise versus a warning, and what's safe to clean.",
+    "href": "/tips/ps5-overheating",
+    "icon": "menu_book",
+    "kw": " tips ps5 overheating"
+  },
+  {
+    "name": "PS5 turns on, but the TV says no signal?",
+    "desc": "PS5 powers on but the TV says no signal? Test the cable, TV input, Safe Mode, and HDMI port without making port or board damage worse.",
+    "href": "/tips/ps5-no-signal-hdmi",
+    "icon": "menu_book",
+    "kw": " tips ps5 no signal hdmi"
+  },
+  {
+    "name": "Repair or Replace Your Phone?",
+    "desc": "Repair or replace your phone? A Hailey, ID guide weighing cost, data, warranty, and timing, so you fix it when it pays off and replace when it does not.",
+    "href": "/repair-or-replace-phone",
+    "icon": "menu_book",
+    "kw": " repair or replace phone"
+  },
+  {
+    "name": "Repair or replace? The practical device math",
+    "desc": "A serious repair-or-replace guide using replacement value, repair cost, data value, downtime, safety risk, age, updates, and part availability.",
+    "href": "/tips/repair-or-replace",
+    "icon": "menu_book",
+    "kw": " tips repair or replace"
+  },
+  {
+    "name": "Samsung screen acting up? Green lines, black screens, and burn-in.",
+    "desc": "Why Samsung Galaxy screens fail — green line of death, vertical lines, flickering, dead touch, burn-in — quick fixes versus a screen replacement.",
+    "href": "/tips/samsung-screen-issues",
+    "icon": "menu_book",
+    "kw": " tips samsung screen issues"
+  },
+  {
+    "name": "Slow laptop or Mac? The free fixes to try first",
+    "desc": "Free fixes for a slow Windows laptop or Mac, the red flags that point to failing hardware, and when an SSD or RAM upgrade is the smarter move.",
+    "href": "/tips/speed-up-slow-laptop",
+    "icon": "menu_book",
+    "kw": " tips speed up slow laptop"
+  },
+  {
+    "name": "Tech Helper for Device and Computer Problems",
+    "desc": "Hailey Tech Helper gives quick first steps for slow computers, Wi-Fi, printers, iPhones, and malware scares — then points you to Samuel when it gets risky.",
+    "href": "/tech-helper",
+    "icon": "menu_book",
+    "kw": " tech helper"
+  },
+  {
+    "name": "What to Text for a Device Repair Quote",
+    "desc": "Texting a repair quote in Hailey, ID? Send your device model, what happened, current symptoms, your town, and photos so HDR can quote the real problem fast.",
+    "href": "/broken-phone-what-to-text",
+    "icon": "menu_book",
+    "kw": " broken phone what to text"
+  },
+  {
+    "name": "Why your phone dies in the cold — and when it's the battery.",
+    "desc": "Why phones drain fast, drop percentage, or shut off in cold weather, what's normal versus a failing battery, and how to protect your phone all winter.",
+    "href": "/tips/cold-weather-phone-battery",
+    "icon": "menu_book",
+    "kw": " tips cold weather phone battery"
+  },
+  {
+    "name": "Wi-Fi keeps dropping? Find the weak link.",
+    "desc": "Why your Wi-Fi keeps disconnecting — router, distance and interference, one device versus the whole house, or a failing Wi-Fi card — and fixes in order.",
+    "href": "/tips/wifi-keeps-dropping",
+    "icon": "menu_book",
+    "kw": " tips wifi keeps dropping"
+  },
+  {
+    "name": "“Liquid Detected”—but the iPhone port looks dry",
+    "desc": "iPhone says Liquid Detected or Charging Not Available? Learn the safe drying steps, how to test the cable, when not to override the warning, and when the port needs service.",
+    "href": "/tips/iphone-liquid-detected-port-dry",
+    "icon": "menu_book",
+    "kw": " tips iphone liquid detected port dry"
+  },
+  {
+    "name": "“Unknown Part” or “Important Message” after iPhone repair",
+    "desc": "What Genuine, Used, Finish Repair, Unknown Part, and older Important Display or Battery messages mean on iPhone—and what to ask your repairer next.",
+    "href": "/tips/iphone-unknown-part-important-message",
+    "icon": "menu_book",
+    "kw": " tips iphone unknown part important message"
+  }
+] });
+  // END GENERATED SEARCH PAGES
+
   // ---- Helpers --------------------------------------------------
   function esc(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -2570,7 +2927,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   function drawerBtnHTML(c, i) {
     var on = i === 0;
     return '<button type="button" class="qf-drawer' + (on ? ' qf-on' : '') + '" role="tab"' +
-      ' aria-selected="' + (on ? 'true' : 'false') + '" data-drawer="' + i + '">' +
+      ' id="qf-tab-' + i + '" aria-controls="qf-panel-' + i + '" tabindex="' + (on ? '0' : '-1') + '" aria-selected="' + (on ? 'true' : 'false') + '" data-drawer="' + i + '">' +
       '<span class="qf-drawer-ic">' + icon(c.icon) + '</span>' +
       '<span class="qf-drawer-title">' + esc(c.title) + '</span>' +
       '<span class="qf-drawer-count">' + c.links.length + '</span></button>';
@@ -2579,7 +2936,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   function drawerPanelHTML(c, i) {
     var on = i === 0;
     return '<div class="qf-drawerpanel' + (on ? ' qf-on' : '') + '" role="tabpanel"' +
-      ' data-drawer="' + i + '"' + (on ? '' : ' hidden') + '>' +
+      ' id="qf-panel-' + i + '" aria-labelledby="qf-tab-' + i + '" data-drawer="' + i + '"' + (on ? '' : ' hidden') + '>' +
       c.links.map(linkHTML).join('') + '</div>';
   }
 
@@ -2623,7 +2980,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
               '<div class="qf-railpanels" id="qfRailPanels">' + drawerPanels + '</div>' +
             '</div>' +
           '</div>' +
-          '<div class="qf-results" id="qfResults" role="listbox" aria-label="Search results" hidden></div>' +
+          '<div class="qf-results" id="qfResults" role="region" aria-label="Search results" hidden></div>' +
           '<div class="qf-empty" id="qfEmpty">' + icon('search_off') +
             '<span class="qf-empty-title">No pages match that.</span>' +
             '<span class="qf-empty-actions">' +
@@ -2633,7 +2990,8 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
             '</span>' +
           '</div>' +
         '</div>' +
-        '<div class="qf-footer">' +
+        '<div class="sr-only" id="qfStatus" role="status" aria-live="polite"></div>' +
+      '<div class="qf-footer">' +
           '<span>' + ALL_ITEMS.length + ' pages</span>' +
           '<div class="qf-footer-keys">' +
             '<span><kbd>↑↓</kbd> Navigate</span><span><kbd>↵</kbd> Open</span><span><kbd>esc</kbd> Close</span>' +
@@ -2676,6 +3034,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     if (index < 0 || index >= activeItems.length) return;
     var el = activeItems[index];
     el.classList.add('qf-active');
+    document.getElementById('qfStatus').textContent = el.getAttribute('data-name');
     el.scrollIntoView({ block: 'nearest' });
   }
 
@@ -2692,6 +3051,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
       var on = bi === i;
       b.classList.toggle('qf-on', on);
       b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
     });
     panelEls.forEach(function(p, pi) {
       var on = pi === i;
@@ -2766,7 +3126,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   }
 
   function resultHTML(it, q) {
-    return '<a class="qf-link" role="option" data-name="' + esc(it.name) + '" href="' + esc(it.href) + '">' +
+    return '<a class="qf-link" data-name="' + esc(it.name) + '" href="' + esc(it.href) + '">' +
       '<span class="qf-link-icon">' + icon(it.icon) + '</span>' +
       '<span class="qf-link-text">' +
         '<span class="qf-link-name">' + highlightName(it.name, q) + '</span>' +
@@ -2786,6 +3146,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     }).map(function(match) {
       return match.item;
     });
+    document.getElementById('qfStatus').textContent = matches.length + (matches.length === 1 ? ' page found' : ' pages found');
     if (!matches.length) {
       resultsZone.setAttribute('hidden', '');
       resultsZone.innerHTML = '';
@@ -2832,7 +3193,11 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   if (triggerMobile) triggerMobile.addEventListener('click', function() {
     var mobileNav = document.getElementById('navMobile');
     var menuToggle = document.getElementById('navHamburger') || document.getElementById('navToggle');
-    if (menuToggle) menuToggle.focus({ preventScroll: true });
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open menu');
+      menuToggle.focus({ preventScroll: true });
+    }
     if (mobileNav) {
       mobileNav.classList.remove('open');
       mobileNav.setAttribute('aria-hidden', 'true');
@@ -2862,6 +3227,16 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
       return;
     }
     if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Tab') {
+      var focusable = Array.from(overlay.querySelectorAll('a[href], button, input, [tabindex="0"]'))
+        .filter(function(el) { return !el.disabled && el.tabIndex >= 0 && el.getClientRects().length; });
+      var first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      activeIndex = -1;
+      clearActive();
+      return;
+    }
     if (e.key === 'Escape') { e.preventDefault(); close(); return; }
     if (e.key === 'ArrowDown') {
       e.preventDefault();
@@ -2877,14 +3252,16 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
       setActive(activeIndex);
       return;
     }
-    if (!searching && e.key === 'ArrowRight') {
+    if (!searching && e.target !== searchInput && e.key === 'ArrowRight') {
       e.preventDefault();
       setDrawer(Math.min(currentDrawer + 1, drawerEls.length - 1));
+      drawerEls[currentDrawer].focus();
       return;
     }
-    if (!searching && e.key === 'ArrowLeft') {
+    if (!searching && e.target !== searchInput && e.key === 'ArrowLeft') {
       e.preventDefault();
       setDrawer(Math.max(currentDrawer - 1, 0));
+      drawerEls[currentDrawer].focus();
       return;
     }
     if (e.key === 'Enter') {

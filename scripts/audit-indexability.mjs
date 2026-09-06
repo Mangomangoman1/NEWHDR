@@ -109,7 +109,7 @@ sitemapRoutes.length === uniqueSitemapRoutes.size
   ? pass("sitemap: no duplicate URLs")
   : fail("sitemap: duplicate URLs found");
 
-for (const route of priorityRoutes) {
+for (const route of new Set([...priorityRoutes, ...uniqueSitemapRoutes])) {
   uniqueSitemapRoutes.has(route)
     ? pass(`sitemap: contains ${route}`)
     : fail(`sitemap: missing ${route}`);

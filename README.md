@@ -1,47 +1,48 @@
-# Hailey Device Repair — Website
+# Hailey Device Repair
 
-Static site for [haileyrepair.com](https://haileyrepair.com).
+Static HTML, CSS, and vanilla JavaScript for [haileyrepair.com](https://www.haileyrepair.com). Vercel serves the root directory with clean URLs defined in `vercel.json`.
 
-Dark theme inspired by codewiki.google's design language. No build step required.
+## Local development
 
-## Files
+Run `python3 scripts/serve.py` and open `http://localhost:8080`. This preview supports extensionless routes, including `/tips` alongside the `tips/` directory. Use `--port 8081` if the default port is busy.
 
-| File | Description |
-|------|-------------|
-| `index.html` | Full single-page site |
-| `style.css` | Dark/light theme CSS |
-| `main.js` | Theme toggle, animations, form, smooth scroll |
-| `favicon.svg` | SVG favicon |
-| `vercel.json` | Vercel deploy config |
-| `robots.txt` | SEO crawl rules |
+After editing `main.js` or `style.css`, run:
 
-## Deploy to Vercel
+```sh
+bash build.sh
+```
 
-### Option 1: Drag & Drop
-1. Go to [vercel.com](https://vercel.com) → New Project
-2. Drag the `hdr-website/` folder into the deploy area
-3. Done — it's live
+Pages load `main.min.js` and `style.min.css`; edit the source files and rebuild instead of editing the generated files. Reload the browser after changes. The build also updates Quick Find's additional search entries from the sitemap and page metadata.
 
-### Option 2: Git Push
-1. Push this folder to a GitHub repo
-2. Import the repo in Vercel
-3. No build command needed (static site)
-4. Output directory: leave blank (root)
+## Shared files
 
-### Custom Domain
-- Add `haileyrepair.com` in Vercel project settings → Domains
-- Point your domain DNS to Vercel's nameservers
+- `main.js`: navigation, quote form, Quick Find, FAQs, Device Check, and other shared interactions.
+- `style.css`: the main design system; many pages also have their own inline styles.
+- `assets/css/site-polish.css`: shared responsive and interaction fixes.
+- `assets/css/site-design.css`: shared art direction, loaded last on every public page; includes the photographic homepage, personal About introduction, paper quote form, FAQs, and mobile pricing layout.
+- `nav-quote.css`: shared navigation quote button styling.
+- `assets/site-navigation.js` and `assets/css/quick-find.css`: generated navigation/search assets for pages that do not load the full main script. Their source stays in `main.js` and `style.css`.
+- `assets/css/bench-tips.css` and `repair-tip-pages.css`: editorial repair guide layouts.
+- `analytics-consent.js`: Google Analytics loading after an explicit opt-in.
+- `assets/pricing-data.json` and `scripts/build-pricing.py`: pricing data and table generation. Review generated prices before deploying.
+- `sitemap.xml`: published pages and the source of Quick Find's coverage checks.
 
-## Customization Notes
+## Checks
 
-- **Contact form**: Currently uses `mailto:` fallback. For production, connect to Formspree or a serverless function to receive emails without opening a mail client.
-- **Reviews**: The three testimonials are placeholders — swap in real Google reviews as they come in.
-- **Hours**: Currently set to Mon–Sat 9am–7pm MT. Update in `index.html` contact section.
-- **Google Maps**: Can embed a `<iframe>` map in the contact section if desired.
+```sh
+python3 scripts/audit-site.py
+node scripts/audit-indexability.mjs
+node --test scripts/test-site-interactions.mjs scripts/test-repair-phone.mjs scripts/test-repair-inspection.mjs
+```
 
-## Tech Stack
+The site audit checks every public page, local link, anchor, image reference, and shared finishing stylesheets. Indexability checks titles, descriptions, canonical URLs, and structured data for every sitemap page. Interaction tests use mocked delivery; they do not send messages to the business.
 
-- Plain HTML + CSS + vanilla JS
-- [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) + [Inter](https://fonts.google.com/specimen/Inter) via Google Fonts
-- [Material Symbols](https://fonts.google.com/icons) for icons
-- Zero dependencies, zero build step
+The optional `node scripts/audit-indexability.mjs --live` checks the deployed site's priority routes.
+
+## Quote requests
+
+The homepage and contact form use Formspree via each form's `data-formspree` setting. If a form has no endpoint, the shared script opens an email draft and keeps the visitor's details available. Never treat opening that draft as successful delivery.
+
+## Deployment
+
+Vercel publishes the static root; no server or package install is required. Run the build and checks before deploying. `.vercelignore` excludes source documents, scripts, archived pages, and working materials.

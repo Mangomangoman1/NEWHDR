@@ -368,6 +368,8 @@ a{color:inherit;text-decoration:none}
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
 </style>
 <link href="/nav-quote.css?v=20260709" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/css/site-polish.css?v=20260906"/>
+<link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 </head>
 <body>
 <nav class="nav" id="nav" role="navigation">
@@ -468,7 +470,7 @@ a{color:inherit;text-decoration:none}
 <span aria-current="page">Contact</span>
 </nav>
 <p class="contact-kicker">Hailey Device Repair quote desk</p>
-<h1 class="contact-hero-title">Contact Hailey Device Repair in Hailey, Idaho</h1>
+<h1 class="contact-hero-title">Let’s get your device fixed.</h1>
 <p class="contact-hero-sub">Fastest route: send the device model, what happened, and one clear photo. You’ll hear back from me personally — usually within 15–30 minutes during repair hours.</p>
 <div aria-label="Primary contact actions" class="contact-hero-actions">
 <a class="btn btn-primary btn-lg contact-primary-action" href="sms:+12084501606">
@@ -488,8 +490,8 @@ a{color:inherit;text-decoration:none}
 </div>
 <aside aria-label="Example repair quote text" class="contact-intake-ticket" data-animate="">
 <div class="ticket-topline">
-<span>HDR intake</span>
-<strong>Best first text</strong>
+<span>A simple conversation</span>
+<strong>Example</strong>
 </div>
 <div aria-hidden="true" class="ticket-message-stack">
 <div class="ticket-message ticket-message--incoming">iPhone 13, cracked screen, touch still works. I’m in Ketchum. Can you quote it?</div>
@@ -516,42 +518,6 @@ a{color:inherit;text-decoration:none}
 </aside>
 </div>
 </section>
-<section class="section section--alt" id="quote-message"><div class="container"><div class="answer-card" style="max-width:980px;margin:0 auto;"><div class="section-eyebrow">Fastest Quote</div><h2 class="section-title" style="text-align:left;">Text the model, the story, and the symptom.</h2><p>The best first message is: device model, what happened, what it does now, what you already tried, whether data matters, your town, and photos if anything is visibly damaged. That lets HDR quote the real repair path instead of guessing.</p><div class="guide-link-strip"><a href="/broken-phone-what-to-text">Copy the quote template</a><a href="/repair-sos">Emergency first steps</a></div></div></div></section>
-<!-- ═══════════════════════════════════════════
-       CONTACT ROUTES
-  ══════════════════════════════════════════════ -->
-<section aria-labelledby="contact-options-title" class="contact-routes">
-<div class="container">
-<div class="route-header" data-animate="">
-<p class="section-eyebrow">Choose the easiest path</p>
-<h2 class="section-title" id="contact-options-title">Simple ways to reach the bench</h2>
-</div>
-<div class="contact-route-grid">
-<a class="contact-route-card contact-route-card--primary" data-animate="" href="sms:+12084501606">
-<span class="route-chip">Fastest</span>
-<span aria-hidden="true" class="material-symbols-outlined route-icon" data-icon="sms"></span>
-<strong>Text</strong>
-<span>208-450-1606</span>
-<small>Best for photos, quick quotes, and scheduling.</small>
-</a>
-<a class="contact-route-card" data-animate="" href="tel:+12084501606">
-<span aria-hidden="true" class="material-symbols-outlined route-icon" data-icon="call"></span>
-<strong>Call</strong>
-<span>208-450-1606</span>
-<small>If I’m at the bench, leave a message or text after.</small>
-</a>
-<a class="contact-route-card" data-animate="" href="mailto:samuel@haileyrepair.com">
-<span aria-hidden="true" class="material-symbols-outlined route-icon" data-icon="mail"></span>
-<strong>Email</strong>
-<span>samuel@haileyrepair.com</span>
-<small>Good for longer explanations or business devices.</small>
-</a>
-</div>
-</div>
-</section>
-<!-- ═══════════════════════════════════════════
-       QUOTE FORM
-  ══════════════════════════════════════════════ -->
 <section aria-labelledby="quote-form-title" class="contact-form-section" id="quoteForm">
 <div class="container">
 <div class="contact-page-wrap contact-page-wrap--polished">
@@ -559,7 +525,7 @@ a{color:inherit;text-decoration:none}
 <div class="contact-form-header">
 <p class="section-eyebrow">Repair quote form</p>
 <h2 class="section-title" id="quote-form-title">Send the details once.</h2>
-<p class="section-sub">Use this if you’d rather not text. It opens a clean quote request with the details I need to price the repair honestly.</p>
+<p class="section-sub">Prefer not to text? Send your details here and I’ll reply with the next steps.</p>
 </div>
 <form class="contact-form" data-formspree="xbdvwbnr" id="contactForm" novalidate="">
 <div class="form-row">
@@ -569,7 +535,7 @@ a{color:inherit;text-decoration:none}
 <span class="form-error" id="nameError" role="alert"></span>
 </div>
 <div class="form-group">
-<input aria-describedby="contactError" autocomplete="tel email" id="contact" name="contact" placeholder="Your phone number" required="" type="text"/>
+<input aria-describedby="contactError" autocomplete="email" id="contact" name="contact" placeholder="Phone number or email" required="" type="text"/>
 <label for="contact">Phone or email *</label>
 <span class="form-error" id="contactError" role="alert"></span>
 </div>
@@ -617,7 +583,7 @@ a{color:inherit;text-decoration:none}
 <p class="form-note">No pressure. If the repair doesn’t make financial sense, I’ll tell you.</p>
 <div aria-live="polite" class="form-success" hidden="" id="formSuccess">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span>
-<div><strong>Request ready.</strong> If your mail app opened, send it from there. I’ll reply personally.</div>
+<div><strong>Request sent.</strong> I’ll reply personally using the phone number or email you provided.</div>
 </div>
 <div class="form-error-msg" hidden="" id="formError" role="alert">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="error"></span>
@@ -655,6 +621,43 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 </section>
+<aside class="contact-help-strip" id="quote-message" aria-label="Help preparing a repair request"><div class="container"><p>A little help with the first step.</p><a href="/broken-phone-what-to-text">Copy a message template <span aria-hidden="true">↗</span></a><a href="/repair-sos">Emergency first steps <span aria-hidden="true">↗</span></a></div></aside>
+<!-- ═══════════════════════════════════════════
+       CONTACT ROUTES
+  ══════════════════════════════════════════════ -->
+<section aria-labelledby="contact-options-title" class="contact-routes">
+<div class="container">
+<div class="route-header" data-animate="">
+<p class="section-eyebrow">Choose the easiest path</p>
+<h2 class="section-title" id="contact-options-title">Simple ways to reach the bench</h2>
+</div>
+<div class="contact-route-grid">
+<a class="contact-route-card contact-route-card--primary" data-animate="" href="sms:+12084501606">
+<span class="route-chip">Fastest</span>
+<span aria-hidden="true" class="material-symbols-outlined route-icon" data-icon="sms"></span>
+<strong>Text</strong>
+<span>208-450-1606</span>
+<small>Best for photos, quick quotes, and scheduling.</small>
+</a>
+<a class="contact-route-card" data-animate="" href="tel:+12084501606">
+<span aria-hidden="true" class="material-symbols-outlined route-icon" data-icon="call"></span>
+<strong>Call</strong>
+<span>208-450-1606</span>
+<small>If I’m at the bench, leave a message or text after.</small>
+</a>
+<a class="contact-route-card" data-animate="" href="mailto:samuel@haileyrepair.com">
+<span aria-hidden="true" class="material-symbols-outlined route-icon" data-icon="mail"></span>
+<strong>Email</strong>
+<span>samuel@haileyrepair.com</span>
+<small>Good for longer explanations or business devices.</small>
+</a>
+</div>
+</div>
+</section>
+<!-- ═══════════════════════════════════════════
+       QUOTE FORM
+  ══════════════════════════════════════════════ -->
+
 <!-- ═══════════════════════════════════════════
        FAQ
   ══════════════════════════════════════════════ -->
@@ -763,11 +766,11 @@ a{color:inherit;text-decoration:none}
 <!-- Cookie Banner -->
 <div aria-label="Cookie consent" class="cookie-banner" id="cookieBanner" role="dialog">
 <p class="cookie-banner-text">
-      Minimal cookies for preferences and basic site analytics. <a href="/privacy">Learn more</a>
+      Optional analytics help improve this site. <a href="/privacy">Learn more</a>
 </p>
 <div class="cookie-banner-actions">
-<button class="btn-accept" id="cookieAccept">Got it</button>
-<button class="btn-decline" id="cookieDecline">Decline</button>
+<button class="btn-accept" id="cookieAccept">Allow analytics</button>
+<button class="btn-decline" id="cookieDecline">No thanks</button>
 </div>
 </div>
 <!-- Floating Help Widget -->

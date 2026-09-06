@@ -1719,152 +1719,6 @@ a{color:inherit;text-decoration:none}
     html[data-theme="light"] #qfTriggerMobile .qf-mobile-copy em { color: #667485 !important; }
   }
 </style>
-<style id="hh-hero-css">
-/* ===== Homepage hero — reference redesign (near-black) ===== */
-.hh-hero{position:relative;overflow:hidden;isolation:isolate;
-  background:radial-gradient(42% 50% at 73% 45%,rgba(70,112,255,.26),transparent 60%),radial-gradient(28% 32% at 70% 41%,rgba(104,146,255,.20),transparent 55%),radial-gradient(72% 62% at 13% 1%,rgba(60,100,255,.07),transparent 62%),linear-gradient(180deg,#0a0e17 0%,#0a0e16 55%,#0c1019 100%)}
-.hh-hero *{box-sizing:border-box}
-.hh-shell{max-width:1360px;margin:0 auto;padding:2.2rem 1.7rem 0}
-.hh-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:2rem;align-items:center;min-height:540px}
-.hh-badge{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .85rem;border-radius:999px;border:1px solid rgba(96,128,240,.32);background:rgba(96,128,240,.09);color:#bcc7e6;font-size:.84rem;font-weight:600}
-.hh-badge .material-symbols-outlined{font-size:1rem;color:#6f8cff}
-.hh-title{font-family:'Darker Grotesque','Inter',sans-serif;font-weight:900;font-size:clamp(2.9rem,4.9vw,4.6rem);line-height:.9;letter-spacing:-.04em;color:#fff;margin:1.2rem 0 0;white-space:nowrap}
-.hh-accent{background:linear-gradient(100deg,#5b8cff,#7da3ff 60%,#8f7dff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-.hh-tagline{color:#d4dbe8;font-size:clamp(1.1rem,1.7vw,1.42rem);font-weight:600;line-height:1.32;margin:1.3rem 0 0;max-width:30rem}
-.hh-sub{color:#8c95a6;font-size:1rem;line-height:1.62;margin:1.1rem 0 0;max-width:33rem}
-.hh-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin:1.7rem 0 0}
-.hh-btn{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.4rem;border-radius:15px;text-decoration:none;font-weight:700;font-size:1rem;transition:transform .18s,box-shadow .18s,filter .18s}
-.hh-btn .material-symbols-outlined{font-size:1.2rem}
-.hh-btn-primary{background:linear-gradient(135deg,#4574b4,#48619e);color:#fff;box-shadow:0 6px 16px rgba(40,64,112,.30);border:1px solid rgba(150,175,215,.22)}
-.hh-btn-primary:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(40,64,112,.36)}
-.hh-btn-primary .arr{margin-left:.1rem;transition:transform .18s}.hh-btn-primary:hover .arr{transform:translateX(3px)}
-.hh-btn-ghost{background:rgba(255,255,255,.035);color:#dbe1ec;border:1px solid rgba(255,255,255,.13)}
-.hh-btn-ghost:hover{border-color:rgba(120,150,255,.5);color:#fff}
-.hh-stats{display:flex;align-items:center;flex-wrap:wrap;gap:1.1rem;margin:1.7rem 0 0;padding:.95rem 1.15rem;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(255,255,255,.018);max-width:33rem}
-.hh-stat{display:flex;align-items:center;gap:.55rem;color:#8c95a6;font-size:.82rem;line-height:1.2}
-.hh-stat .material-symbols-outlined{font-size:1.15rem;color:#6f8cff}
-.hh-stat strong{display:block;color:#fff;font-size:.96rem;font-weight:700}
-.hh-stat .dot{width:8px;height:8px;border-radius:50%;background:#46d27f;box-shadow:0 0 9px rgba(70,210,127,.7)}.hh-stat .dot.closed{background:#ff7d67;box-shadow:0 0 9px rgba(255,125,103,.7)}.hh-stat .dot.closing-soon{background:#f4b35e;box-shadow:0 0 9px rgba(244,179,94,.7)}
-.hh-sep{width:1px;height:30px;background:rgba(255,255,255,.10)}
-.hh-phone{display:inline-flex;align-items:center;gap:.5rem;margin:1.1rem 0 0;padding:.6rem 1rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.025);color:#cfd6e2;text-decoration:none;font-weight:600;font-size:.92rem}
-.hh-phone .material-symbols-outlined{font-size:1.05rem;color:#6f8cff}
-.hh-phone:hover{border-color:rgba(120,150,255,.5);color:#fff}
-
-.hh-right{transform:translateX(clamp(1rem,2.2vw,1.75rem))}
-.hh-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:520px}
-.hh-orbits{position:absolute;top:46%;left:51%;width:720px;height:720px;transform:translate(-50%,-50%);z-index:0;pointer-events:none}
-.hh-orbits canvas{width:100%;height:100%;display:block}
-.hh-cluster{position:relative;z-index:2;width:min(108%,640px);height:auto;filter:drop-shadow(0 40px 70px rgba(0,0,0,.6))}
-.hh-callout{position:absolute;z-index:3;display:flex;gap:.6rem;align-items:flex-start;width:208px;padding:.8rem .9rem;border-radius:15px;border:1px solid rgba(255,255,255,.10);background:rgba(13,16,24,.82);backdrop-filter:blur(12px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
-.hh-callout .ic{flex:0 0 34px;height:34px;border-radius:10px;background:rgba(96,128,240,.14);border:1px solid rgba(96,128,240,.28);display:flex;align-items:center;justify-content:center;color:#8aa3ff}
-.hh-callout .ic .material-symbols-outlined{font-size:1.15rem}
-.hh-callout strong{display:block;color:#fff;font-size:.86rem;font-weight:700;margin-bottom:.15rem}
-.hh-callout span{color:#8b95a6;font-size:.78rem;line-height:1.32}
-.hh-callout.c1{top:9%;left:-4%}
-.hh-callout.c2{top:9%;right:-3%;width:196px}
-.hh-callout.c3{top:50%;right:-5%;width:196px}
-
-.hh-services{margin:2.4rem 0 0;border:1px solid rgba(255,255,255,.08);border-radius:20px;background:rgba(255,255,255,.018);display:grid;grid-template-columns:repeat(6,1fr);overflow:hidden}
-.hh-svc{display:block;padding:1.15rem 1.2rem 1.05rem;text-decoration:none;border-left:1px solid rgba(255,255,255,.07);transition:background .18s}
-.hh-svc:first-child{border-left:none}
-.hh-svc:hover{background:rgba(96,128,240,.06)}
-.hh-svc .ic{width:42px;height:42px;border-radius:12px;border:1px solid rgba(96,128,240,.22);background:rgba(96,128,240,.08);display:flex;align-items:center;justify-content:center;color:#8aa3ff;margin-bottom:.7rem}
-.hh-svc .ic .material-symbols-outlined{font-size:1.35rem}
-.hh-svc h3{color:#fff;font-family:'Darker Grotesque','Inter',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-.02em;margin:0 0 .25rem}
-.hh-svc p{color:#828d9f;font-size:.82rem;line-height:1.35;margin:0 0 .7rem}
-.hh-svc .arr{color:#6f8cff}.hh-svc .arr .material-symbols-outlined{font-size:1.1rem}
-
-@media(max-width:1040px){
-  .hh-grid{grid-template-columns:1fr;gap:1.2rem;min-height:0}
-  .hh-right{transform:none}
-  .hh-stage{min-height:0;margin-top:.5rem}
-  .hh-cluster{width:min(92%,520px)}
-  .hh-callout{display:none}
-  .hh-orbits{display:none}
-  .hh-services{grid-template-columns:repeat(3,1fr)}
-  .hh-svc:nth-child(-n+3){border-bottom:1px solid rgba(255,255,255,.07)}
-  .hh-svc:nth-child(3n+1){border-left:none}
-}
-@media(max-width:680px){
-  .hh-shell{padding:1.35rem 1.15rem 0}
-  /* mobile-first hero: flatten the two columns and re-order for thumb-first flow */
-  .hh-grid{display:flex;flex-direction:column;gap:0;align-items:stretch;min-height:0}
-  .hh-left,.hh-right,.hh-stage{display:contents}
-  .hh-badge{order:1;align-self:flex-start;margin-bottom:.85rem}
-  .hh-title{order:2;white-space:normal;font-size:clamp(2.45rem,11.5vw,3.2rem);margin:0}
-  .hh-tagline{order:3;margin:.7rem 0 0;font-size:1.05rem}
-  .hh-cluster{order:4;width:min(84%,310px);height:auto;margin:1.05rem auto .1rem;filter:drop-shadow(0 24px 40px rgba(0,0,0,.55)) drop-shadow(0 0 52px rgba(96,128,240,.2));animation:hhFade .8s ease both;animation-delay:.25s}
-  .hh-actions{order:5;flex-direction:column;gap:.7rem;margin-top:1rem}
-  .hh-actions .hh-btn{width:100%;justify-content:center;padding:1rem;font-size:1.02rem}
-  .hh-stats{order:6;display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:1.2rem}
-  .hh-sep{display:none}
-  .hh-stat{padding:.7rem .8rem;border:1px solid rgba(255,255,255,.07);border-radius:13px;background:rgba(255,255,255,.025);margin:0}
-  .hh-phone{order:7;margin-top:1rem;align-self:flex-start}
-  .hh-sub{order:8;margin:1.25rem 0 0;font-size:.9rem;line-height:1.55;color:#828d9f}
-  .hh-services{display:none}
-  .hh-svc:nth-child(3n+1){border-left:1px solid rgba(255,255,255,.07)}
-  .hh-svc:nth-child(2n+1){border-left:none}
-}
-</style>
-<style id="hh-title-museomoderno">.hh-title{font-family:'MuseoModerno','Fraunces','Inter',sans-serif!important;letter-spacing:-.025em!important;line-height:.98!important;font-weight:400!important;}.hh-title .hh-accent{font-style:normal;font-weight:400!important;letter-spacing:-.02em}</style>
-<style id="hh-svc-fx">
-.hh-svc{position:relative;transition:background .25s ease}
-.hh-svc::before{content:"";position:absolute;top:0;left:.6rem;right:.6rem;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#6f8cff,#8bd3ff,transparent);opacity:0;transform:scaleX(.35);transform-origin:center;transition:opacity .3s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
-.hh-svc:hover{background:linear-gradient(180deg,rgba(96,128,240,.11),rgba(96,128,240,.03))}
-.hh-svc:hover::before{opacity:.95;transform:scaleX(1)}
-.hh-svc .ic{transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .25s,background .25s,box-shadow .3s,color .25s}
-.hh-svc:hover .ic{transform:translateY(-2px) scale(1.06);border-color:rgba(122,150,255,.6);background:rgba(96,128,240,.17);color:#bcd0ff;box-shadow:0 8px 22px rgba(96,128,240,.28)}
-.hh-svc .arr{display:inline-flex;transition:transform .3s cubic-bezier(.2,.7,.2,1),color .25s}
-.hh-svc:hover .arr{transform:translateX(5px);color:#9db4ff}
-.hh-svc h3{transition:color .25s}.hh-svc:hover h3{color:#fff}
-@media(prefers-reduced-motion:reduce){.hh-svc::before,.hh-svc .ic,.hh-svc .arr{transition:none!important}}
-</style>
-<style id="hh-accent-shimmer">
-.hh-accent{background:linear-gradient(100deg,#5b8cff,#7da3ff 38%,#9bbcff 50%,#8f7dff 62%,#7da3ff 80%,#5b8cff)!important;background-size:230% auto!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;color:transparent!important;animation:hhShimmer 7.5s linear infinite}
-@keyframes hhShimmer{to{background-position:230% center}}
-@media(prefers-reduced-motion:reduce){.hh-accent{animation:none}}
-</style>
-<style id="hh-btn-sheen">
-.hh-btn-primary{position:relative;overflow:hidden}
-.hh-btn-primary>*{position:relative;z-index:1}
-.hh-btn-primary::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.14),transparent);transform:skewX(-18deg);transition:left .65s cubic-bezier(.2,.7,.2,1);pointer-events:none;z-index:0}
-.hh-btn-primary:hover::after{left:150%}
-@media(prefers-reduced-motion:reduce){.hh-btn-primary::after{transition:none;display:none}}
-</style>
-<style id="hh-cluster-tilt">
-.hh-stage{perspective:1100px}
-.hh-cluster{will-change:transform;transform-style:preserve-3d}
-</style>
-<style id="hh-statusdot-ping">
-.hh-stat .dot{position:relative;color:#46d27f}
-.hh-stat .dot.closed{color:#ff7d67}
-.hh-stat .dot.closing-soon{color:#f4b35e}
-.hh-stat .dot::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1.5px solid currentColor;opacity:.55;animation:hhPing 2.6s ease-out infinite;pointer-events:none}
-@keyframes hhPing{0%{transform:scale(.55);opacity:.6}75%,100%{transform:scale(2.7);opacity:0}}
-.hh-stat .dot.closed::after{display:none}
-@media(prefers-reduced-motion:reduce){.hh-stat .dot::after{display:none}}
-</style>
-<style id="hh-svc-spotlight">
-.hh-services{position:relative}
-.hh-services::before{content:"";position:absolute;inset:0;background:radial-gradient(250px circle at var(--sx,50%) var(--sy,50%),rgba(122,150,255,.15),transparent 62%);opacity:0;transition:opacity .35s ease;pointer-events:none;z-index:0}
-.hh-services:hover::before{opacity:1}
-.hh-svc{z-index:1}
-@media(prefers-reduced-motion:reduce){.hh-services::before{display:none}}
-</style>
-<style id="hh-entrance">
-@keyframes hhRise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
-@keyframes hhFade{from{opacity:0}to{opacity:1}}
-.hh-left>*{animation:hhRise .7s cubic-bezier(.2,.7,.2,1) both}
-.hh-left>*:nth-child(1){animation-delay:.05s}
-.hh-left>*:nth-child(2){animation-delay:.13s}
-.hh-left>*:nth-child(3){animation-delay:.22s}
-.hh-left>*:nth-child(4){animation-delay:.31s}
-.hh-left>*:nth-child(5){animation-delay:.42s}
-.hh-left>*:nth-child(6){animation-delay:.52s}
-.hh-left>*:nth-child(7){animation-delay:.62s}
-.hh-stage{animation:hhFade .95s ease both;animation-delay:.18s}
-@media(prefers-reduced-motion:reduce){.hh-left>*,.hh-stage{animation:none!important}}
-</style>
 <style id="hdr-services-mobile">
 @media(max-width:680px){
   .hdr-services-stage{display:none}
@@ -1995,6 +1849,8 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 <link href="/hero-device-dock.css?v=20260813-appointment" rel="stylesheet"/>
 <link rel="stylesheet" href="/assets/css/repair-ballet.css?v=20260906-inspector"/>
 <script type="module" src="/assets/repair-ballet.js?v=20260906-inspector"></script>
+<link rel="stylesheet" href="/assets/css/site-polish.css?v=20260906"/>
+<link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 </head>
 <body class="home-page">
 <nav class="nav" id="nav" role="navigation">
@@ -2102,7 +1958,21 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 <!-- ═══════════════════════════════════════════
        HERO
   ══════════════════════════════════════════════ -->
-<section class="hh-hero" id="home-hero"><div class="hh-shell"><div class="hh-grid"><div class="hh-left"><div class="hh-badge"><span aria-hidden="true" class="material-symbols-outlined" data-icon="location_on"></span>Wood River Valley &middot; Mail-in available</div><h1 class="hh-title">Phone &amp; Computer<br/>Repair <span class="hh-accent">in Hailey</span></h1><p class="hh-tagline">Phones, laptops, tablets, consoles &mdash; text photos first for a quote.</p><p class="hh-sub">Fast, fair repair for iPhone, Android, laptop, MacBook, tablet, console, gaming PC, and small-business tech problems. Text the device model, what happened, symptoms, and photos for a quote-first repair path.</p><div aria-label="Schedule an appointment" class="hh-appointment" role="group"><a class="hh-appointment-main" href="sms:+12084501606" aria-label="Text Hailey Device Repair to schedule an appointment"><span aria-hidden="true" class="hh-appointment-icon material-symbols-outlined" data-icon="calendar_month"></span><span class="hh-appointment-copy"><strong>Visits are by appointment</strong><span>Describe the problem and send photos to schedule.</span></span><span aria-hidden="true" class="hh-appointment-arrow"><span class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-appointment-text" href="sms:+12084501606" aria-label="Text Hailey Device Repair at 208-450-1606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span><span>Text</span></a></div><div class="hh-stats"><div class="hh-stat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="forum"></span><div><strong>&lt; 30 min</strong>response</div></div><div class="hh-sep"></div><div class="hh-stat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="star"></span><div><strong>5-star</strong>rated</div></div><div class="hh-sep"></div><div class="hh-stat"><span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span><div><strong>Mail-in</strong>available</div></div><div class="hh-sep"></div><div class="hh-stat"><span class="dot" id="heroStatusDot"></span><div><strong id="heroClock">Open now</strong>Mon&ndash;Fri 9&ndash;9</div></div></div></div><div class="hh-right"><div class="hh-stage"><div class="hh-orbits" aria-hidden="true"><canvas id="hhOrbit"></canvas></div><div class="hh-cluster"><div class="hh-photo-frame"><img class="hh-photo" src="/assets/hero/repair-bench-macbook.webp" alt="Open MacBook on an orange repair mat during an internal hardware repair" width="1600" height="1200" decoding="async" fetchpriority="high"/></div></div></div></div><div class="hh-services"><div aria-hidden="true" class="hh-services-core"></div><div class="hh-services-label"><span>Start here</span><strong>What needs fixing?</strong><em>Choose a device</em></div><div class="hh-services-links"><a class="hh-svc" href="/iphone-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="phone_iphone"></span></div><h3>Phones</h3><p>Cracked screens, battery, charging, water damage</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/laptop-repair" id="laptopsHeroCard"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span></div><h3>Laptops</h3><p>MacBook, Windows, gaming PC — pick your bench</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/tablet-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="tablet"></span></div><h3>Tablets</h3><p>Screens, charging, battery, software</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/console-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sports_esports"></span></div><h3>Consoles</h3><p>PS5, Xbox, Switch repairs &amp; cleaning</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/gaming-pc-repair"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="dvr"></span></div><h3>Custom PC</h3><p>Diagnostics, builds, upgrades, fixes</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a><a class="hh-svc" href="/computer-support"><div class="ic"><span aria-hidden="true" class="material-symbols-outlined" data-icon="business_center"></span></div><h3>Business</h3><p>Small business IT support &amp; repair</p><span class="arr"><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></a></div></div></div></div></section>
+<section class="workshop-hero" id="home-hero" aria-labelledby="home-title">
+<img class="workshop-image" src="/assets/hero/repair-bench-macbook.webp" alt="An open MacBook being repaired on the workbench at Hailey Device Repair" width="1600" height="1200" fetchpriority="high" decoding="async"/>
+<div class="workshop-shade" aria-hidden="true"></div>
+<div class="container workshop-content">
+<p class="workshop-eyebrow">Independent repair · Hailey, Idaho</p>
+<h1 id="home-title">Phone &amp; computer<br/><span>repair, done with care.</span></h1>
+<p class="workshop-intro">Your everyday devices deserve another chapter. I’m Samuel — your local technician for thoughtful repairs, clear answers, and a quote before work begins.</p>
+<div class="workshop-actions"><a class="workshop-primary" href="sms:+12084501606">Text Samuel for a quote <span aria-hidden="true">↗</span></a><a class="workshop-secondary" href="/pricing">Explore pricing <span aria-hidden="true">→</span></a></div>
+<p class="workshop-visit">By appointment in Hailey. Mail-in available across Idaho.</p>
+</div>
+<div class="container workshop-bottom"><p><span class="workshop-status" id="heroStatusDot" aria-hidden="true"></span><span id="heroClock">Mon–Fri, 9 am–9 pm</span><span class="workshop-hours"> · Mountain time</span></p><p class="workshop-caption">On the bench <span>MacBook repair / Hailey, ID</span></p></div>
+</section>
+<nav class="repair-directory" aria-label="Choose a repair service"><div class="container repair-directory-inner"><p>What needs <br/><strong>fixing?</strong></p><div class="repair-directory-links">
+<a href="/iphone-repair">Phones <span aria-hidden="true">↗</span></a><a href="/laptop-repair">Laptops <span aria-hidden="true">↗</span></a><a href="/tablet-repair">Tablets <span aria-hidden="true">↗</span></a><a href="/console-repair">Consoles <span aria-hidden="true">↗</span></a><a href="/gaming-pc-repair">Custom PCs <span aria-hidden="true">↗</span></a><a href="/computer-support">Business IT <span aria-hidden="true">↗</span></a>
+</div></div></nav>
 
 <!-- ═══════════════════════════════════════════
        SERVICES GRID
@@ -2782,7 +2652,7 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 <span class="form-error" id="nameError" role="alert"></span>
 </div>
 <div class="form-group">
-<input aria-describedby="contactError" autocomplete="tel email" id="contact-field" name="contact" placeholder="Your phone number" required="" type="text"/>
+<input aria-describedby="contactError" autocomplete="email" id="contact-field" name="contact" placeholder="Phone number or email" required="" type="text"/>
 <label for="contact-field">Phone or email</label>
 <span class="form-error" id="contactError" role="alert"></span>
 </div>
@@ -2895,11 +2765,11 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 <!-- Cookie Banner -->
 <div aria-label="Cookie consent" class="cookie-banner" id="cookieBanner" role="dialog">
 <p class="cookie-banner-text">
-      Minimal cookies for preferences and basic site analytics. <a href="/privacy">Learn more</a>
+      Optional analytics help improve this site. <a href="/privacy">Learn more</a>
 </p>
 <div class="cookie-banner-actions">
-<button class="btn-accept" id="cookieAccept">Got it</button>
-<button class="btn-decline" id="cookieDecline">Decline</button>
+<button class="btn-accept" id="cookieAccept">Allow analytics</button>
+<button class="btn-decline" id="cookieDecline">No thanks</button>
 </div>
 </div>
 <script defer="" src="liquid-btn.js"></script>
@@ -3108,66 +2978,6 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 </div>
 </div>
 </div>
-<script id="hh-orbit-js">
-(function(){
-  var canvas=document.getElementById('hhOrbit'); if(!canvas) return;
-  if(window.matchMedia('(max-width:1040px)').matches) return;
-  var ctx=canvas.getContext('2d');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W=0,H=0,cx=0,cy=0,dpr=1,dots=[],rings=[];
-  var mx=0,my=0,px=0,py=0,running=false,raf=0;
-  function rnd(a,b){return a+Math.random()*(b-a);}
-  function setup(){
-    var r=canvas.getBoundingClientRect(); if(!r.width) return false;
-    dpr=Math.min(window.devicePixelRatio||1,2); W=r.width; H=r.height; cx=W/2; cy=H/2;
-    canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);
-    var base=Math.min(W,H)*0.5;
-    rings=[{r:base*0.44,op:0.11,dash:0,spd:0.00003},{r:base*0.62,op:0.07,dash:1,spd:-0.00002},{r:base*0.8,op:0.05,arc:0.5,spd:0.000016}];
-    dots=[]; var N=window.innerWidth>1600?40:32;
-    for(var i=0;i<N;i++){
-      var rad; if(Math.random()<0.58){var rr=[0.44,0.62,0.8][(Math.random()*3)|0]; rad=base*rr*rnd(0.97,1.03);} else {rad=base*rnd(0.16,0.86);}
-      dots.push({rad:rad,ang:rnd(0,6.2832),spd:(Math.random()<0.5?-1:1)*rnd(0.00005,0.00016),size:rnd(0.6,1.9),bright:Math.random()<0.16,twp:rnd(0,6.2832),tws:rnd(0.0005,0.0013)});
-    }
-    return true;
-  }
-  function draw(ts){
-    ctx.clearRect(0,0,W,H);
-    px+=(mx-px)*0.045; py+=(my-py)*0.045;
-    var ox=cx+px, oy=cy+py, g=ts*0.000011, i, j;
-    for(i=0;i<rings.length;i++){var rg=rings[i]; ctx.beginPath(); var a0=g+ts*rg.spd;
-      if(rg.arc){ctx.arc(ox,oy,rg.r,a0,a0+6.2832*rg.arc);}else{ctx.arc(ox,oy,rg.r,0,6.2832);}
-      ctx.strokeStyle='rgba(140,172,255,'+rg.op+')'; ctx.lineWidth=1; ctx.setLineDash(rg.dash?[2,7]:[]); ctx.stroke();}
-    ctx.setLineDash([]);
-    var pts=[];
-    for(i=0;i<dots.length;i++){var d=dots[i]; var a=d.ang+ts*d.spd+g;
-      pts.push({x:ox+Math.cos(a)*d.rad,y:oy+Math.sin(a)*d.rad,s:d.size,b:d.bright,a:0.55+0.45*Math.sin(d.twp+ts*d.tws)});}
-    var md=96,md2=md*md;
-    for(i=0;i<pts.length;i++)for(j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,q=dx*dx+dy*dy;
-      if(q<md2){var o=(1-Math.sqrt(q)/md)*0.07; ctx.strokeStyle='rgba(120,158,255,'+o+')'; ctx.lineWidth=0.6;
-        ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke();}}
-    for(i=0;i<pts.length;i++){var p=pts[i]; ctx.beginPath(); ctx.arc(p.x,p.y,p.s,0,6.2832);
-      if(p.b){ctx.fillStyle='rgba(175,205,255,'+(0.9*p.a)+')'; ctx.shadowColor='rgba(150,185,255,.85)'; ctx.shadowBlur=7;}
-      else{ctx.fillStyle='rgba(120,150,235,'+(0.5*p.a)+')'; ctx.shadowBlur=0;}
-      ctx.fill(); ctx.shadowBlur=0;}
-  }
-  function loop(ts){draw(ts); raf=requestAnimationFrame(loop);}
-  function start(){if(running||reduce)return; running=true; raf=requestAnimationFrame(loop);}
-  function stop(){running=false; if(raf)cancelAnimationFrame(raf); raf=0;}
-  function begin(){
-    if(reduce){draw(0); return;}
-    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting&&!document.hidden?start():stop();});},{threshold:0.01}); io.observe(canvas);} else {start();}
-    document.addEventListener('visibilitychange',function(){if(document.hidden)stop();});
-    window.addEventListener('mousemove',function(e){var r=canvas.getBoundingClientRect();
-      mx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/r.width))*16;
-      my=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/r.height))*16;},{passive:true});
-    var rt; window.addEventListener('resize',function(){clearTimeout(rt); rt=setTimeout(function(){
-      if(window.matchMedia('(max-width:1040px)').matches){stop(); return;} if(setup()&&reduce)draw(0);},180);},{passive:true});
-  }
-  if(setup()) begin(); else window.addEventListener('load',function(){if(setup())begin();});
-})();
-</script>
-<script id="hh-cluster-tilt-js">(function(){var hero=document.querySelector('.hh-hero'),stage=document.querySelector('.hh-stage'),cl=document.querySelector('.hh-cluster');if(!hero||!stage||!cl)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||window.matchMedia('(max-width:1040px)').matches)return;var tx=0,ty=0,cx=0,cy=0,raf=0;function loop(){cx+=(tx-cx)*0.08;cy+=(ty-cy)*0.08;cl.style.transform='rotateY('+(cx*5).toFixed(2)+'deg) rotateX('+(-cy*4).toFixed(2)+'deg) translateZ(0)';if(Math.abs(tx-cx)>0.001||Math.abs(ty-cy)>0.001){raf=requestAnimationFrame(loop);}else{raf=0;}}function kick(){if(!raf)raf=requestAnimationFrame(loop);}hero.addEventListener('mousemove',function(e){var r=stage.getBoundingClientRect();tx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/r.width));ty=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/r.height));kick();},{passive:true});hero.addEventListener('mouseleave',function(){tx=0;ty=0;kick();});})();</script>
-
 <style id="computer-chooser-css">
 .cc-overlay{position:fixed;inset:0;z-index:10001;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
 .cc-overlay.open{opacity:1;visibility:visible}

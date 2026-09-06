@@ -4,6 +4,9 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+python3 scripts/build-search-index.py
+python3 scripts/build-shared-navigation.py
+
 echo "🥭 HDR Build — Minifying assets..."
 
 # CSS: strip comments, collapse whitespace, remove blank lines
