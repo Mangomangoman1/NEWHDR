@@ -80,8 +80,9 @@ test('two screws tighten sequentially after the display seats',()=>{
 });
 
 
-test('the screen wakes after fastening, with pauses at the connector and closure beats',()=>{
-  near(cycleAt(6),cycleAt(6.5));near(cycleAt(8),cycleAt(8.4));
+test('both moving legs are uninterrupted and the screen wakes after fastening',()=>{
+  for(let t=.02;t<10.4;t+=.02)assert.ok(cycleAt(t)>cycleAt(t-.02),'assembly must keep advancing');
+  for(let t=14.02;t<20;t+=.02)assert.ok(cycleAt(t)<cycleAt(t-.02),'disassembly must keep advancing');
   near(powerAt(10.4),0);near(powerAt(10.8),0);near(powerAt(11.5),1);near(powerAt(14.6),0);
   for(let p=0;p<=1;p+=.01)near(cycleAt(assemblyTimeAt(p)),p,1e-6);
 });

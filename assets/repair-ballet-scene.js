@@ -4,9 +4,10 @@ import { buildPhone } from './repair-phone-model.mjs';
 import { posePhone } from './repair-phone-rig.mjs';
 import { createInspector } from './repair-inspector.js';
 import { createInspectionView } from './repair-inspection-view.mjs';
+import { createBalletView } from './repair-ballet-view.mjs';
 import { finishPhone } from './repair-phone-surfaces.mjs';
 import { createQualityGovernor } from './repair-render-quality.mjs';
-import { cycleAt, powerAt, assemblyTimeAt, smooth, phaseAt } from './repair-ballet-motion.mjs';
+import { cycleAt, powerAt, scrubTimeAt, CYCLE_SECONDS, smooth, phaseAt } from './repair-ballet-motion.mjs';
 
 const PAUSE='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zm5 0h3v10H9z"/></svg>';
 const PLAY='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5 13 8 4 13.5z"/></svg>';
@@ -112,10 +113,11 @@ export function createRepairBallet(aside) {
   backdrop.add(new THREE.Mesh(new THREE.TorusGeometry(2.95,.004,4,160),orbitMaterial));
   const rippleMaterial=new THREE.MeshBasicMaterial({color:0x8bbbff,transparent:true,opacity:0,depthWrite:false});
   const ripple=new THREE.Mesh(new THREE.TorusGeometry(2.7,.008,5,144),rippleMaterial);backdrop.add(ripple);
-  let time=0,progress=motion.matches?1:0,playing=!motion.matches,visible=false,lastTime=null,disposed=false,contextLost=false;
-  let inspecting=false,savedState=null,manualPower=motion.matches,heldPower=null;
+  const balletView=createBalletView(model,camera);
+  let time=motion.matches?11.5:0,progress=motion.matches?1:0,playing=!motion.matches,visible=false,lastTime=null,disposed=false,contextLost=false;
+  let inspecting=false,savedState=null,manualPower=motion.matches,heldPower=null,reverseScrub=false;
   let rearView=false,angle=0,targetAngle=0,turning=false,aspect=1,lastUI=-1;
-  const pointer={x:0,y:0},view={x:0,y:0},target=new THREE.Vector3();
+  const pointer={x:0,y:0},view={x:0,y:0},backdropOffset=new THREE.Vector3();
   function syncControls() {
     playButton.innerHTML=playing?PAUSE:PLAY;playButton.setAttribute('aria-label',playing?'Pause repair animation':'Play repair animation');playButton.setAttribute('aria-pressed',String(playing));
     turnButton.setAttribute('aria-label',rearView?'View front of phone':'View back of phone');turnButton.setAttribute('aria-pressed',String(rearView));
@@ -127,11 +129,11 @@ export function createRepairBallet(aside) {
     if(inspecting){
       phone.rotation.set(0,0,0);phone.position.y=0;inspectionView.update(aspect,delta,motion.matches);backdrop.visible=false;
     }else{
-      backdrop.visible=true;phone.rotation.set(-.07+view.y*.07,.10+angle+view.x*.13,-.20+view.x*.035);
-      phone.position.y=playing?Math.sin(time*.7)*.035:phone.position.y;
-      target.set(0,0,(1-progress)*.92).applyQuaternion(phone.quaternion);target.y+=phone.position.y;camera.lookAt(target);
-      const halfHeight=Math.max(3.12+(1-progress)*.54,(2.90+(1-progress)*.18)/aspect);
-      camera.left=-halfHeight*aspect;camera.right=halfHeight*aspect;camera.top=halfHeight;camera.bottom=-halfHeight;camera.updateProjectionMatrix();
+      const target=balletView.update(time,progress,aspect,angle,view);
+      // Keep the halo behind the hardware as the camera travels around it.
+      backdrop.visible=true;backdrop.quaternion.copy(camera.quaternion);
+      backdropOffset.copy(camera.position).sub(target).normalize();
+      backdrop.position.copy(target).addScaledVector(backdropOffset,-6);
     }
     const power=manualPower?smooth(.94,1,progress):heldPower??powerAt(time);
     screenUniforms.uPower.value=power;screenUI.opacity=power;crackMaterial.opacity=.45*(1-smooth(.60,.95,progress));
@@ -155,9 +157,16 @@ export function createRepairBallet(aside) {
   }
   function resize(){const {width,height}=stage.getBoundingClientRect();if(!width||!height)return;aspect=width/height;renderer.setSize(width,height,false);draw();updateLoop();}
   function setPlaying(value){if(!value&&playing&&!manualPower)heldPower=powerAt(time);playing=value;syncControls();updateLoop();}
-  function onPlay(){if(!playing){if(manualPower)time=progress>=1?11.5:assemblyTimeAt(progress);manualPower=false;heldPower=null;}setPlaying(!playing);}
-  function onReplay(){time=0;progress=0;manualPower=false;heldPower=null;setPlaying(true);draw();}
-  function onScrub(){progress=Number(slider.value)/100;manualPower=true;heldPower=null;setPlaying(false);draw();}
+  function onPlay(){if(!playing){manualPower=false;heldPower=null;}setPlaying(!playing);}
+  function onReplay(){time=0;progress=0;rearView=false;angle=targetAngle=0;turning=false;manualPower=false;heldPower=null;setPlaying(true);draw();}
+  function onScrub(){
+    if(!manualPower)reverseScrub=time%CYCLE_SECONDS>=14;
+    progress=Number(slider.value)/100;manualPower=true;heldPower=null;setPlaying(false);
+    // Retain the current leg so touching the slider during disassembly does not
+    // teleport the camera to the other side of the device.
+    time=scrubTimeAt(progress,reverseScrub);
+    draw();
+  }
   function onTurn(){rearView=!rearView;targetAngle=rearView?Math.PI:0;turning=!motion.matches;if(!turning)angle=targetAngle;syncControls();draw();updateLoop();}
   function onPointer(event){if(inspecting)return;const bounds=stage.getBoundingClientRect();pointer.x=(event.clientX-bounds.left)/bounds.width*2-1;pointer.y=(event.clientY-bounds.top)/bounds.height*2-1;}
   function onLeave(){pointer.x=0;pointer.y=0;}
@@ -178,7 +187,7 @@ export function createRepairBallet(aside) {
     },
     onClose(){
       inspecting=false;inspectionView.close();({time,progress,playing,rearView,angle,targetAngle,turning,manualPower,heldPower}=savedState);phone.position.y=savedState.y;
-      camera.position.set(7.6,5.7,11.5);syncControls();resize();updateLoop();
+      syncControls();resize();updateLoop();
     },
     onOrbit:(dx,dy)=>inspectionChange(()=>inspectionView.rotate(dx,dy)),
     onPan:(dx,dy)=>inspectionChange(()=>inspectionView.pan(dx,dy)),
