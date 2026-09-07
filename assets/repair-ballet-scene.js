@@ -1,10 +1,10 @@
 import * as THREE from './vendor/three/three.module.min.js';
 import { createStudioEnvironment } from './repair-studio-lighting.mjs';
-import { buildPhone } from './repair-phone-model.mjs?v=realism';
+import { buildPhone } from './repair-phone-model.mjs?v=display-depth';
 import { posePhone } from './repair-phone-rig.mjs?v=realism';
 import { createInspector } from './repair-inspector.js?v=realism';
 import { createInspectionView } from './repair-inspection-view.mjs?v=realism';
-import { createBalletView } from './repair-ballet-view.mjs?v=realism';
+import { createBalletView, createPhoneCamera } from './repair-ballet-view.mjs?v=display-depth';
 import { finishPhone } from './repair-phone-surfaces.mjs?v=realism';
 import { createQualityGovernor } from './repair-render-quality.mjs';
 import { cycleAt, powerAt, scrubTimeAt, CYCLE_SECONDS, smooth, phaseAt } from './repair-ballet-motion.mjs';
@@ -66,7 +66,7 @@ export function createRepairBallet(aside) {
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;
   renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.12;
   const canvas=renderer.domElement;canvas.setAttribute('role','img');canvas.setAttribute('aria-label','An iPhone 16 Pro Max inspired repair animation, with a titanium enclosure, shaped battery, logic board, display and three rear cameras.');stage.append(canvas);
-  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(30,1,.1,80);
+  const scene=new THREE.Scene(),camera=createPhoneCamera();
   camera.position.set(7.6,5.7,11.5);camera.lookAt(0,0,0);
   const environment=createStudioEnvironment(renderer);
   scene.environment=environment.texture;scene.environmentIntensity=1.15;

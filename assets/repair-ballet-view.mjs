@@ -1,6 +1,10 @@
 import * as THREE from './vendor/three/three.module.min.js';
 import { cameraAt, CYCLE_SECONDS } from './repair-ballet-motion.mjs';
 
+// Both views orbit at 14 units and zoom through FOV. Avoid wasting the depth
+// buffer on space beside the lens: the laminated display needs this precision.
+export function createPhoneCamera() {return new THREE.PerspectiveCamera(30,1,1,40);}
+
 // Project cached geometry bounds, rather than vertices, to keep the complete
 // moving assembly in shot at every viewport shape and during a manual turn.
 export function createBalletView(model,camera) {

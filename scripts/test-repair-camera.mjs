@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import * as THREE from '../assets/vendor/three/three.module.min.js';
 import {buildPhone} from '../assets/repair-phone-model.mjs';
 import {posePhone} from '../assets/repair-phone-rig.mjs';
-import {createBalletView} from '../assets/repair-ballet-view.mjs';
+import {createBalletView,createPhoneCamera} from '../assets/repair-ballet-view.mjs';
 import {cameraAt,cycleAt,powerAt,scrubTimeAt,CYCLE_SECONDS} from '../assets/repair-ballet-motion.mjs';
 
 test('camera position and velocity flow continuously through the path and loop seam',()=>{
@@ -35,7 +35,7 @@ test('camera visits both sides, changes elevation and pushes in, then presents t
 });
 
 test('moving components stay in shot throughout the cycle on desktop and narrow phones',()=>{
-  const model=buildPhone(),camera=new THREE.PerspectiveCamera(30,1,.1,80),view=createBalletView(model,camera);
+  const model=buildPhone(),camera=createPhoneCamera(),view=createBalletView(model,camera);
   const corner=new THREE.Vector3(),pieces=[];
   model.phone.traverse(o=>{if(o.geometry)pieces.push(o);});
   for(const aspect of [.65,.84,1.05,1.7,2.1])for(const angle of [0,Math.PI/2,Math.PI])for(let t=0;t<=20;t+=.2){
@@ -45,13 +45,36 @@ test('moving components stay in shot throughout the cycle on desktop and narrow 
       for(let i=0;i<8;i++){
         corner.set(i&1?b.max.x:b.min.x,i&2?b.max.y:b.min.y,i&4?b.max.z:b.min.z).applyMatrix4(mesh.matrixWorld).project(camera);
         assert.ok(Math.abs(corner.x)<.92&&Math.abs(corner.y)<.92,`${mesh.name} clipped at ${t}, aspect ${aspect}, turn ${angle}`);
+        assert.ok(corner.z>-1&&corner.z<1,`${mesh.name} crosses a camera clipping plane at ${t}`);
       }
     }
   }
 });
 
+test('OLED and backing retain distinct depth values throughout front-facing motion',()=>{
+  const model=buildPhone(),camera=createPhoneCamera(),view=createBalletView(model,camera);
+  const screen=model.phone.getObjectByName('OLED image'),front=model.front;
+  front.geometry.computeBoundingBox();
+  const backingZ=front.position.z+front.geometry.boundingBox.max.z;
+  const normal=new THREE.Vector3(),eye=new THREE.Vector3(),surface=new THREE.Vector3(),backing=new THREE.Vector3();
+  for(let t=0;t<=20;t+=.05){
+    const p=cycleAt(t);posePhone(model,p,t);view.update(t,p,.84);camera.updateMatrixWorld(true);
+    normal.set(0,0,1).transformDirection(model.groups.display.matrixWorld);
+    eye.copy(camera.position).sub(screen.getWorldPosition(surface)).normalize();
+    if(normal.dot(eye)<.15)continue;
+    for(const x of [-.9,0,.9])for(const y of [-2,0,2]){
+      surface.set(x,y,screen.position.z).applyMatrix4(model.groups.display.matrixWorld).project(camera);
+      backing.set(x,y,backingZ).applyMatrix4(model.groups.display.matrixWorld).project(camera);
+      // 24-bit depth, mapped from NDC [-1,1]. Leave margin for rasterization
+      // rounding and sloped triangles, not just mathematically separate planes.
+      const separation=(backing.z-surface.z)*.5*(2**24-1);
+      assert.ok(separation>32,`only ${separation} depth steps at ${t}`);
+    }
+  }
+});
+
 test('a paused camera is deterministic after arbitrary seeks or inspection changes',()=>{
-  const model=buildPhone(),camera=new THREE.PerspectiveCamera(30,1,.1,80),view=createBalletView(model,camera);
+  const model=buildPhone(),camera=createPhoneCamera(),view=createBalletView(model,camera);
   const draw=t=>{posePhone(model,cycleAt(t),t);view.update(t,cycleAt(t),.84);camera.updateMatrixWorld(true);return [...camera.matrixWorld.elements,...camera.projectionMatrix.elements];};
   const before=draw(4.5);draw(19);camera.position.set(-20,3,4);model.phone.rotation.set(1,2,3);
   assert.deepEqual(draw(4.5),before);

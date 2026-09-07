@@ -39,6 +39,7 @@ test('glass transmits light, coatings are dielectric, and transparent surfaces d
     if(object.name==='curved coated lens'){assert.ok(material.iridescence>0);assert.equal(material.metalness,0);}
   });
   assert.equal(windows,4,'one front glass and three sapphire windows');
+  assert.equal(model.phone.getObjectByName('cover-glass reflection').material.thickness,0,'laminated glass must sample the OLED directly, without refracting behind it');
   assert.ok(model.materials.titanium.bumpScale<.0002);
   assert.ok(model.materials.glassBack.bumpScale<.0003);
   dispose();

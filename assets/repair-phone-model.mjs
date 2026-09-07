@@ -204,7 +204,9 @@ export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null,de
   }
   // A gasket, not a second metal body; disappears completely into the glass seam.
   add(frame,rounded(W-.073,H-.073,.006,R-.035,[W-.13,H-.13,R-.065],.001),black);
-  const front=add(display,rounded(W-.024,H-.024,.021,R-.012,null,.004),black,0,0,0,'front glass substrate');
+  // Recess the opaque backing under the OLED instead of almost sharing its
+  // depth. Keep the rear seat and outer glass silhouette in their original places.
+  const front=add(display,rounded(W-.024,H-.024,.017,R-.012,null,.004),black,0,0,-.002,'front glass substrate');
   add(display,rounded(W-.17,H-.17,.003,R-.08),graphite,0,0,-.0125,'display graphite backing');
   decal(display,3,.65,.26,0,-1.70,-.0143);
   const displaySocket=add(board,rounded(.10,.070,.012,.012),black,-.79,.42,.052,'display flex socket');
@@ -214,7 +216,10 @@ export function buildPhone({batteryMap=null,screenMaterial=null,screenUI=null,de
   const faceGeometry=new THREE.ShapeGeometry(outline(screenW,screenH,R-.067),28);
   if(screenMaterial)add(display,faceGeometry,screenMaterial,0,0,.0108,'OLED image');
   else add(display,faceGeometry,black,0,0,.0108,'OLED image');
-  const glass=new THREE.MeshPhysicalMaterial({color:0xffffff,metalness:0,roughness:.004,ior:1.5,transmission:1,thickness:.002,clearcoat:1,clearcoatRoughness:.04,depthWrite:false});
+  // This is a laminated sheet over an opaque OLED, not a volume to ray-march
+  // through. Zero optical thickness keeps transmission on the underlying pixel
+  // while retaining the dielectric Fresnel reflections and clearcoat.
+  const glass=new THREE.MeshPhysicalMaterial({color:0xffffff,metalness:0,roughness:.004,ior:1.5,transmission:1,thickness:0,clearcoat:1,clearcoatRoughness:.04,depthWrite:false});
   add(display,new THREE.ShapeGeometry(outline(W-.031,H-.031,R-.016),28),glass,0,0,.0112,'cover-glass reflection');
   if(screenUI) {
     const uiGeometry=faceGeometry.clone();const uv=uiGeometry.attributes.uv,positions=uiGeometry.attributes.position;

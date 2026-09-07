@@ -3,10 +3,11 @@ import assert from 'node:assert/strict';
 import * as THREE from '../assets/vendor/three/three.module.min.js';
 import {buildPhone} from '../assets/repair-phone-model.mjs';
 import {posePhone} from '../assets/repair-phone-rig.mjs';
+import {createPhoneCamera} from '../assets/repair-ballet-view.mjs';
 import {createInspectionView} from '../assets/repair-inspection-view.mjs';
 import {createQualityGovernor} from '../assets/repair-render-quality.mjs';
 
-function setup(){const model=buildPhone(),camera=new THREE.PerspectiveCamera(30,1,.1,80);posePhone(model,0);return {model,camera,view:createInspectionView(model,camera)};}
+function setup(){const model=buildPhone(),camera=createPhoneCamera();posePhone(model,0);return {model,camera,view:createInspectionView(model,camera)};}
 function visibleMeshes(model){const meshes=[];model.phone.traverse(o=>{if(o.isMesh&&o.visible)meshes.push(o);});return meshes;}
 
 test('each isolated part fits the initial inspection frame in portrait and landscape',()=>{
@@ -17,6 +18,7 @@ test('each isolated part fits the initial inspection frame in portrait and lands
     for(let i=0;i<8;i++){
       const point=new THREE.Vector3(i&1?box.max.x:box.min.x,i&2?box.max.y:box.min.y,i&4?box.max.z:box.min.z).project(camera);
       assert.ok(Math.abs(point.x)<=1.001&&Math.abs(point.y)<=1.001,`${id} should fit at aspect ${aspect}`);
+      assert.ok(point.z>-1&&point.z<1,`${id} crosses the inspection clipping planes`);
     }
   }
 });
