@@ -56,7 +56,7 @@ test('mechanical motion can be scrubbed in either direction without drift or inv
   const model=buildPhone();
   const sample=()=>{
     model.phone.updateMatrixWorld(true);
-    return [...model.rig.cameras,...model.rig.shields,...model.rig.modules].flatMap(({mesh})=>mesh.matrixWorld.elements)
+    return [...model.rig.cameras,...model.rig.shields,...model.rig.modules,...model.rig.details,{mesh:model.rig.cameraAssembly}].flatMap(({mesh})=>mesh.matrixWorld.elements)
       .concat(...model.rig.flexes.map(f=>Array.from(f.geometry.attributes.position.array)));
   };
   posePhone(model,.46,3);const first=sample();

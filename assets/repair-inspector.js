@@ -2,9 +2,13 @@ export const PARTS = [
   {id:'all',name:'Whole phone',description:'An iPhone 16 Pro Max study. Drag to turn it; use the slider to bring every part home.'},
   {id:'display',name:'Display',description:'The thin OLED assembly, its graphite backing, and the flex cable that folds into the board.'},
   {id:'battery',name:'Battery',description:'One shaped power pack, with foil wrapping, pull tabs, and a small press-fit connector.'},
-  {id:'cameras',name:'Cameras',description:'Three shielded camera modules and their layered protective lens covers.'},
+  {id:'cameras',name:'Cameras',description:'Three optical modules, their shared carrier and integrated LiDAR, with layered sapphire lens windows.'},
   {id:'board',name:'Logic board',description:'Fine copper routing, soldered components, and removable shields over the chip packages.'},
   {id:'haptic',name:'Taptic Engine',description:'The compact haptic assembly, tucked beside the speaker at the bottom of the enclosure.'},
+  {id:'speakers',name:'Top speaker',description:'The upper acoustic chamber and antenna assembly, with shielding, contacts and mounting hardware.'},
+  {id:'loudspeaker',name:'Bottom speaker',description:'The lower speaker chamber, its rubber seal and the fine perforations of the acoustic grille.'},
+  {id:'charging',name:'Charging & mic',description:'The USB-C socket, dock flex cable, contact fingers and main microphone assembly.'},
+  {id:'truedepth',name:'TrueDepth',description:'The front sensor bridge, with recessed optical windows and grounding contacts.'},
   {id:'backglass',name:'Rear glass',description:'Matte glass on the outside; the copper charging coil and its magnet ring on the inside.'}
 ];
 

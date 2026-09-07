@@ -7,7 +7,7 @@ if (aside) {
     started = true;
     aside.dataset.state = 'loading';
     try {
-      const { createRepairBallet } = await import('./repair-ballet-scene.js?v=fluid-camera');
+      const { createRepairBallet } = await import('./repair-ballet-scene.js?v=realism');
       createRepairBallet(aside);
     } catch (error) {
       aside.dataset.state = 'unavailable';

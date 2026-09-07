@@ -6,12 +6,12 @@ import {posePhone} from '../assets/repair-phone-rig.mjs';
 import {createInspectionView} from '../assets/repair-inspection-view.mjs';
 import {createQualityGovernor} from '../assets/repair-render-quality.mjs';
 
-function setup(){const model=buildPhone(),camera=new THREE.OrthographicCamera(-5,5,5,-5,.1,80);posePhone(model,0);return {model,camera,view:createInspectionView(model,camera)};}
+function setup(){const model=buildPhone(),camera=new THREE.PerspectiveCamera(30,1,.1,80);posePhone(model,0);return {model,camera,view:createInspectionView(model,camera)};}
 function visibleMeshes(model){const meshes=[];model.phone.traverse(o=>{if(o.isMesh&&o.visible)meshes.push(o);});return meshes;}
 
 test('each isolated part fits the initial inspection frame in portrait and landscape',()=>{
   const {model,camera,view}=setup();view.open();
-  for(const id of ['all','display','battery','cameras','board','haptic','backglass'])for(const aspect of [.65,1.7]){
+  for(const id of ['all','display','battery','cameras','board','haptic','backglass','speakers','loudspeaker','charging','truedepth'])for(const aspect of [.65,1.7]){
     view.select(id);view.update(aspect,1/60,true);camera.updateMatrixWorld();
     const box=new THREE.Box3();for(const mesh of visibleMeshes(model))box.union(new THREE.Box3().setFromObject(mesh));
     for(let i=0;i<8;i++){
@@ -27,7 +27,7 @@ test('closing inspection restores every model mesh after isolating components',(
 test('orbit and zoom remain finite at their limits and converge when released',()=>{
   const {camera,view}=setup();view.open();view.update(1,1/60,true);view.rotate(200,200);view.zoom(.00001);
   for(let i=0;i<160;i++)view.update(1,1/60);
-  assert.equal(view.moving,false);assert.ok(camera.position.toArray().every(Number.isFinite));assert.ok(camera.top>0);
+  assert.equal(view.moving,false);assert.ok(camera.position.toArray().every(Number.isFinite));assert.ok(camera.fov>0&&camera.fov<100);
 });
 test('quality remains unchanged at normal frame rates or after background stalls',()=>{
   const governor=createQualityGovernor(2);

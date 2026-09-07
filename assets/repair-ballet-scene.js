@@ -1,11 +1,11 @@
 import * as THREE from './vendor/three/three.module.min.js';
-import { RoomEnvironment } from './vendor/three/RoomEnvironment.js';
-import { buildPhone } from './repair-phone-model.mjs';
-import { posePhone } from './repair-phone-rig.mjs';
-import { createInspector } from './repair-inspector.js';
-import { createInspectionView } from './repair-inspection-view.mjs';
-import { createBalletView } from './repair-ballet-view.mjs';
-import { finishPhone } from './repair-phone-surfaces.mjs';
+import { createStudioEnvironment } from './repair-studio-lighting.mjs';
+import { buildPhone } from './repair-phone-model.mjs?v=realism';
+import { posePhone } from './repair-phone-rig.mjs?v=realism';
+import { createInspector } from './repair-inspector.js?v=realism';
+import { createInspectionView } from './repair-inspection-view.mjs?v=realism';
+import { createBalletView } from './repair-ballet-view.mjs?v=realism';
+import { finishPhone } from './repair-phone-surfaces.mjs?v=realism';
 import { createQualityGovernor } from './repair-render-quality.mjs';
 import { cycleAt, powerAt, scrubTimeAt, CYCLE_SECONDS, smooth, phaseAt } from './repair-ballet-motion.mjs';
 
@@ -18,7 +18,6 @@ function texture(width,height,paint) {
 }
 function batteryTexture() {
   return texture(384,852,(ctx,w,h)=>{
-    ctx.fillStyle='#111419';ctx.fillRect(0,0,w,h);
     ctx.fillStyle='#72777b';ctx.font='19px sans-serif';ctx.fillText('Rechargeable Li-ion Battery',27,564);
     ctx.font='14px sans-serif';ctx.fillText('Li-ion',27,594);
     ctx.fillStyle='#52585e';ctx.font='10px sans-serif';
@@ -65,16 +64,16 @@ export function createRepairBallet(aside) {
   const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'low-power'});
   renderer.setClearColor(0x0d1117,0);renderer.setPixelRatio(quality.current.pixelRatio);
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;
-  renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.08;
+  renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.12;
   const canvas=renderer.domElement;canvas.setAttribute('role','img');canvas.setAttribute('aria-label','An iPhone 16 Pro Max inspired repair animation, with a titanium enclosure, shaped battery, logic board, display and three rear cameras.');stage.append(canvas);
-  const scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-5,5,3.8,-3.8,.1,80);
+  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(30,1,.1,80);
   camera.position.set(7.6,5.7,11.5);camera.lookAt(0,0,0);
-  const room=new RoomEnvironment(),pmrem=new THREE.PMREMGenerator(renderer),environment=pmrem.fromScene(room,.035);
-  scene.environment=environment.texture;scene.environmentIntensity=.82;room.dispose();pmrem.dispose();
-  scene.add(new THREE.HemisphereLight(0xdcecff,0x171416,.35));
-  for(const [color,intensity,position] of [[0xe4eeff,2.0,[-3,6,7]],[0x99baff,1.25,[4,-2,3]],[0xffdcb2,1.5,[-5,-2,-4]]]) {
+  const environment=createStudioEnvironment(renderer);
+  scene.environment=environment.texture;scene.environmentIntensity=1.15;
+  scene.add(new THREE.HemisphereLight(0xe4ecfa,0x282019,.38));
+  for(const [color,intensity,position] of [[0xf3f5ff,2.6,[-3,6,7]],[0xc1d6f4,.9,[4,-2,3]],[0xffe2c2,1.2,[-5,-2,-4]]]) {
     const light=new THREE.DirectionalLight(color,intensity);light.position.set(...position);scene.add(light);
-    if(position[1]===6){light.castShadow=true;light.shadow.mapSize.set(1024,1024);Object.assign(light.shadow.camera,{left:-5,right:5,top:5,bottom:-5,near:.5,far:24});light.shadow.bias=-.00015;light.shadow.normalBias=.004;light.shadow.radius=3;}
+    if(position[1]===6){light.castShadow=true;light.shadow.mapSize.set(2048,2048);Object.assign(light.shadow.camera,{left:-5,right:5,top:5,bottom:-5,near:.5,far:24});light.shadow.bias=-.00008;light.shadow.normalBias=.002;light.shadow.radius=3;}
   }
   const screenUniforms={uPower:{value:0},uSize:{value:new THREE.Vector2(2.207,2.207*2868/1320)}};
   // Warm, glass-like elliptical ribbons echo the phone's titanium finish.
@@ -98,14 +97,15 @@ export function createRepairBallet(aside) {
       #include <colorspace_fragment>
     }`});
   const batteryMap=batteryTexture(),lockMap=lockTexture(),detailMap=componentTexture();
+  for(const map of [batteryMap,lockMap,detailMap])map.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
   const screenUI=new THREE.MeshBasicMaterial({map:lockMap,transparent:true,opacity:0,depthWrite:false,toneMapped:false});
   const model=buildPhone({batteryMap,screenMaterial,screenUI,detailMap});
   const {phone,groups}=model;scene.add(phone);
-  const disposeFinishes=finishPhone(model),inspectionView=createInspectionView(model,camera);
+  const disposeFinishes=finishPhone(model,renderer.capabilities.getMaxAnisotropy()),inspectionView=createInspectionView(model,camera);
   const paths=[[[.64,-.62],[.27,-.32],[.10,.34],[-.19,.65],[-.36,1.62]],[[.64,-.62],[.86,.02],[.94,.67]],[[.64,-.62],[-.03,-.83],[-.51,-1.40],[-.82,-1.9]],[[.64,-.62],[.81,-1.28],[.59,-1.99]],[[.27,-.32],[-.44,-.13],[-.97,.23]],[[-.19,.65],[.27,.98],[.6,1.48]],[[.64,-.62],[.99,-.93]]];
   const cracks=[];paths.forEach(path=>{for(let i=1;i<path.length;i++)cracks.push(...path[i-1],.0134,...path[i],.0134);});
   const crackGeometry=new THREE.BufferGeometry();crackGeometry.setAttribute('position',new THREE.Float32BufferAttribute(cracks,3));
-  const crackMaterial=new THREE.LineBasicMaterial({color:0x9bb4cf,transparent:true,opacity:.5});groups.display.add(new THREE.LineSegments(crackGeometry,crackMaterial));
+  const crackMaterial=new THREE.LineBasicMaterial({color:0x9bb4cf,transparent:true,opacity:.5,depthWrite:false});groups.display.add(new THREE.LineSegments(crackGeometry,crackMaterial));
   const haloMap=texture(256,256,(ctx)=>{const gradient=ctx.createRadialGradient(128,128,0,128,128,128);gradient.addColorStop(0,'rgba(73,122,187,.18)');gradient.addColorStop(.45,'rgba(44,78,137,.10)');gradient.addColorStop(1,'rgba(13,17,23,0)');ctx.fillStyle=gradient;ctx.fillRect(0,0,256,256);});
   const backdrop=new THREE.Group();scene.add(backdrop);backdrop.quaternion.copy(camera.quaternion);backdrop.position.copy(camera.position).normalize().multiplyScalar(-2);
   const halo=new THREE.Mesh(new THREE.PlaneGeometry(8.4,8.4),new THREE.MeshBasicMaterial({map:haloMap,transparent:true,depthWrite:false}));backdrop.add(halo);

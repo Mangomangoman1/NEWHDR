@@ -8,8 +8,8 @@ export function createBalletView(model,camera) {
   const flexible=new Set(model.rig.flexes.flatMap(f=>[f.geometry,f.traces]));
   model.phone.traverse(object=>{
     if(!object.geometry)return;
-    object.geometry.computeBoundingBox();
-    pieces.push({object,box:object.geometry.boundingBox,dynamic:flexible.has(object.geometry)});
+    if(object.isInstancedMesh)object.computeBoundingBox();else object.geometry.computeBoundingBox();
+    pieces.push({object,box:object.isInstancedMesh?object.boundingBox:object.geometry.boundingBox,dynamic:flexible.has(object.geometry)});
   });
   const target=new THREE.Vector3(),offset=new THREE.Vector3(),corner=new THREE.Vector3();
   const matrix=new THREE.Matrix4(),rotation=new THREE.Matrix4();
@@ -33,7 +33,8 @@ export function createBalletView(model,camera) {
         matrix.premultiply(rotation);
         for(let i=0;i<8;i++){
           corner.set(i&1?box.max.x:box.min.x,i&2?box.max.y:box.min.y,i&4?box.max.z:box.min.z).applyMatrix4(matrix);
-          extentX=Math.max(extentX,Math.abs(corner.x));extentY=Math.max(extentY,Math.abs(corner.y));
+          const perspective=camera.isPerspectiveCamera?14/Math.max(.1,14-corner.z):1;
+          extentX=Math.max(extentX,Math.abs(corner.x)*perspective);extentY=Math.max(extentY,Math.abs(corner.y)*perspective);
         }
       }
       const width=extentX/aspect;
@@ -41,8 +42,9 @@ export function createBalletView(model,camera) {
       // on a narrow screen. Padding varies independently along the camera path.
       const fit=Math.max(width,extentY)+Math.log1p(Math.exp(-12*Math.abs(width-extentY)))/12;
       const halfHeight=fit*pose.padding;
-      camera.left=-halfHeight*aspect;camera.right=halfHeight*aspect;
-      camera.top=halfHeight;camera.bottom=-halfHeight;camera.updateProjectionMatrix();
+      if(camera.isPerspectiveCamera){camera.aspect=aspect;camera.fov=THREE.MathUtils.radToDeg(2*Math.atan(halfHeight/14));}
+      else{camera.left=-halfHeight*aspect;camera.right=halfHeight*aspect;camera.top=halfHeight;camera.bottom=-halfHeight;}
+      camera.updateProjectionMatrix();
       return target;
     }
   };

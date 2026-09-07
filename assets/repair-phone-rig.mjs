@@ -16,10 +16,13 @@ export function posePhone(model,progress,time=0) {
     }
     if(layer.id==='backglass'){group.position.x+=open*.16;group.rotation.y=open*.13;}
   });
-  rig.cameras.forEach(({mesh,x,y,index:i})=>{
-    const open=1-smooth(.12+i*.055,.38+i*.055,progress);
-    mesh.position.set(x+open*(.20+i*.10),y+open*(.18+i*.06),open*(.94+i*.14));
-    mesh.rotation.set(-open*.13,open*(.12+i*.07),open*(i-1)*.09);
+  const cameraOpen=1-smooth(.12,.44,progress);
+  rig.cameraAssembly.position.set(cameraOpen*.18,cameraOpen*.24,cameraOpen*1.10);
+  rig.cameraAssembly.rotation.set(-cameraOpen*.07,cameraOpen*.12,cameraOpen*.025);
+  rig.cameras.forEach(({mesh,x,y})=>{mesh.position.set(x,y,0);mesh.rotation.set(0,0,0);});
+  rig.details.forEach(({mesh,rest,start,end,lift})=>{
+    const open=1-smooth(start,end,progress);
+    mesh.position.copy(rest);mesh.position.z+=open*lift;mesh.rotation.set(open*.06,0,open*.025);
   });
   rig.shields.forEach(({mesh,z,index:i})=>{
     const open=1-smooth(.34+i*.018,.55+i*.018,progress);

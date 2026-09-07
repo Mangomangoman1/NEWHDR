@@ -1,7 +1,7 @@
 import * as THREE from './vendor/three/three.module.min.js';
 
 export function createInspectionView(model,camera) {
-  const parts={all:[model.phone],display:[model.groups.display],battery:[model.groups.battery],cameras:[...model.rig.cameras.map(p=>p.mesh),...model.rig.lensCovers],board:[model.groups.board],haptic:[model.rig.modules[0].mesh],backglass:[model.groups.backglass]};
+  const parts={all:[model.phone],display:[model.groups.display],battery:[model.groups.battery],cameras:[model.rig.cameraAssembly,...model.rig.lensCovers],board:[model.groups.board],haptic:[model.rig.modules[0].mesh],backglass:[model.groups.backglass],speakers:[model.detailParts.speakers[0]],loudspeaker:[model.detailParts.speakers[1]],charging:[model.detailParts.dock,model.detailParts.microphone,model.phone.getObjectByName('USB-C socket body')],truedepth:[model.rig.modules[2].mesh]};
   const renderables=[];
   function refresh(){renderables.length=0;model.phone.traverse(object=>{if(object.isMesh||object.isLine)renderables.push(object);});}
   refresh();
@@ -32,16 +32,19 @@ export function createInspectionView(model,camera) {
       inverse.copy(camera.quaternion).invert();let fit=.25;
       for(let i=0;i<8;i++){
         corner.set(i&1?bounds.max.x:bounds.min.x,i&2?bounds.max.y:bounds.min.y,i&4?bounds.max.z:bounds.min.z).sub(framingCenter).applyQuaternion(inverse);
-        fit=Math.max(fit,Math.abs(corner.y)*1.17,Math.abs(corner.x)*1.17/aspect);
+        const perspective=camera.isPerspectiveCamera?14/Math.max(.1,14-corner.z):1;
+        fit=Math.max(fit,Math.abs(corner.y)*1.17*perspective,Math.abs(corner.x)*1.17*perspective/aspect);
       }
       const desired=fit*zoom;halfHeight+=(desired-halfHeight)*follow;
-      camera.left=-halfHeight*aspect;camera.right=halfHeight*aspect;camera.top=halfHeight;camera.bottom=-halfHeight;camera.updateProjectionMatrix();
+      if(camera.isPerspectiveCamera){camera.aspect=aspect;camera.fov=THREE.MathUtils.radToDeg(2*Math.atan(halfHeight/14));}
+      else{camera.left=-halfHeight*aspect;camera.right=halfHeight*aspect;camera.top=halfHeight;camera.bottom=-halfHeight;}
+      camera.updateProjectionMatrix();
       moving=Math.abs(targetTheta-theta)>.0005||Math.abs(targetPhi-phi)>.0005||smoothedCenter.distanceTo(center)>.001||Math.abs(desired-halfHeight)>.001;snap=false;
     },
     pick(clientX,clientY,rect){
       mouse.set((clientX-rect.left)/rect.width*2-1,-(clientY-rect.top)/rect.height*2+1);camera.updateMatrixWorld();raycaster.setFromCamera(mouse,camera);
       const hit=raycaster.intersectObjects(renderables.filter(o=>o.isMesh&&o.visible),false)[0];if(!hit)return null;
-      for(const id of ['display','battery','cameras','board','haptic','backglass'])if(belongs(hit.object,parts[id]))return id;
+      for(const id of ['display','battery','cameras','board','haptic','backglass','speakers','loudspeaker','charging','truedepth'])if(belongs(hit.object,parts[id]))return id;
       return 'all';
     }
   };

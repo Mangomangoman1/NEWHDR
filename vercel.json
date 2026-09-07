@@ -121,7 +121,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(css|js|svg)",
+      "source": "/(.*)\\.(css|js|mjs|svg)",
       "headers": [
         {
           "key": "Cache-Control",
