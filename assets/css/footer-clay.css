@@ -1,0 +1,55 @@
+/* A small repair-bench keepsake, tucked into the homepage footer. */
+.footer-clay {
+  position: relative;
+  width: 240px;
+  max-width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 10px;
+  isolation: isolate;
+}
+.footer-clay img,
+.footer-clay video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.footer-clay video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.footer-clay.has-video video { opacity: 1; }
+.footer-clay-toggle {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  min-width: 44px;
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(13, 17, 23, .78);
+  color: #fff;
+  font: 500 11px/1 var(--font-body);
+  cursor: pointer;
+}
+.footer-clay-toggle:hover { background: #0d1117; }
+@media (max-width: 900px) {
+  .footer-clay { margin-bottom: 24px; }
+}
+@media (min-width: 901px) {
+  .footer-home .footer-brand { grid-column: 1; grid-row: 1; }
+  .footer-home .footer-links { grid-column: 2; grid-row: 1; }
+  .footer-clay {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    margin-top: 100px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-clay.has-video video { opacity: 0; }
+  .footer-clay-toggle { display: none; }
+}
