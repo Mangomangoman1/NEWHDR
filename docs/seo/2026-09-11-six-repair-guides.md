@@ -50,6 +50,7 @@ The [complete image prompts and original/output paths](2026-09-11-guide-image-pr
 
 - The Repair Library now lists 40 guides. Its visible count and CollectionPage list agree.
 - All six pages appear in the Repair Guides hub, sitemap, and generated Quick Find search index.
+- All six pages use the library's full shared navigation, including Quick Find, the quote button, and the mobile menu. `build-shared-navigation.py` refreshes their marked header blocks and navigation stylesheet from the library at build time.
 - Contextual links connect the protector guide to cracked-screen safety, backup to the successful black-screen page, laptop guides to laptop repair, and PS5 guides to PS5 repair.
 - The Repair Guides hub's 22 card entries and two visible FAQs now match its structured data. Obsolete FAQ text about unpublished cards was removed from the schema.
 - New articles have unique titles, descriptions, self-referencing canonical URLs, Article/BreadcrumbList/FAQPage markup, and visible matching FAQs.
@@ -58,12 +59,13 @@ The [complete image prompts and original/output paths](2026-09-11-guide-image-pr
 ## Verification
 
 - `bash build.sh` completed, rebuilding shared navigation and search assets.
-- `python3 scripts/audit-site.py`: 84 public pages, 5,845 local references, zero failures.
+- `python3 scripts/audit-site.py`: 84 public pages, 5,917 local references, zero failures after the shared-navigation correction.
 - `node scripts/audit-indexability.mjs`: 760 checks passed, zero failed. These are local structural checks, not confirmation of Google indexing.
 - Existing site-interaction and repair-viewer test suites: all 24 tests passed.
 - All six new FAQ schemas were compared with their visible answers.
 - Computer Use in Chrome: reviewed all six guides in actual 390px iframe viewports; checked all six at 320px with content width equal to viewport width. Representative desktop pages were visually checked, and a FAQ was opened successfully.
 - Chrome verified the library's protector search, its five-result console category including both new PS5 pages, and the DualSense guide in Quick Find.
+- After the navigation correction, the in-app browser verified desktop Quick Find, the 390px mobile menu, mobile search handoff, Escape dismissal, and no horizontal overflow at 320px. All six header blocks match; the eight site-interaction tests passed again, with no browser console errors during the navigation checks.
 - `git diff --check` passed. Temporary mobile-preview fixtures were removed.
 
 After deployment, Google still decides whether and when to index each page. Evaluate page-specific queries and usefulness over time; the existing site's growth does not establish that these six pages will rank or produce local repair inquiries.

@@ -3,7 +3,7 @@
 .fg-page *{box-sizing:border-box}
 .fg-page a{color:inherit;text-underline-offset:4px}
 .fg-page h1,.fg-page h2,.fg-page h3{color:#f2f1ed;font-family:'Darker Grotesque',Inter,sans-serif!important}
-.fg-page .tip-brand{gap:.3rem}.fg-page .tip-progress{background:#94b3cf;box-shadow:none}
+.fg-page .tip-progress{background:#94b3cf;box-shadow:none}
 .fg-wrap{width:min(1160px,calc(100% - 64px));margin-inline:auto}
 .fg-skip{position:fixed;top:-100px;left:20px;z-index:500;background:#f2f1ed;color:#0b0f14!important;padding:12px 20px}
 .fg-skip:focus{top:12px}

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build the same navigation/search for pages that do not use the full main script."""
 from pathlib import Path
+import re
 ROOT = Path(__file__).resolve().parent.parent
 main = (ROOT / 'main.js').read_text()
 nav = main[main.index('  // ─── Nav: scroll shadow'):main.index('  // ─── Scroll animations')]
@@ -10,4 +11,26 @@ css = (ROOT / 'style.css').read_text()
 start = css.index('.qf-overlay {')
 end = css.index('/* ─── SERVICES GRID DIAGNOSTIC TICKET CARDS', start)
 (ROOT / 'assets/css/quick-find.css').write_text('/* Generated from style.css by scripts/build-shared-navigation.py. */\n' + css[start:end])
+
+# The library is the canonical header for its articles. Opted-in pages keep
+# static navigation, with the same markup and styles refreshed at build time.
+library = (ROOT / 'tips.html').read_text()
+nav_css = re.search(r'<style id="hdr-canonical-nav-css">(.*?)</style>', library, re.S).group(1)
+(ROOT / 'assets/css/site-navigation.css').write_text(
+    '/* Generated from tips.html by scripts/build-shared-navigation.py. */\n' + nav_css.strip() + '\n'
+)
+header = re.search(
+    r'<nav class="nav" id="nav".*?</nav>\s*<div[^>]*id="navBackdrop"[^>]*></div>',
+    library, re.S
+).group(0).replace('aria-current="page"', 'aria-current="location"')
+header = header.replace('class="nav" id="nav" role="navigation"',
+                        'class="nav" id="nav" role="navigation" aria-label="Primary"')
+block = '<!-- shared-navigation:start -->\n' + header + '\n<!-- shared-navigation:end -->'
+for article in (ROOT / 'tips').glob('*.html'):
+    html = article.read_text()
+    if '<!-- shared-navigation:start -->' in html:
+        updated = re.sub(r'<!-- shared-navigation:start -->.*?<!-- shared-navigation:end -->',
+                         lambda _: block, html, flags=re.S)
+        if updated != html:
+            article.write_text(updated)
 print('Shared navigation and Quick Find assets built.')
