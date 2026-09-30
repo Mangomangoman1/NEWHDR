@@ -2699,6 +2699,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips iphone camera shaking clicking not focusing"
   },
   {
+    "name": "iPhone microphone not working? Calls, videos, and app checks",
+    "desc": "If callers cannot hear you, compare Voice Memos, both cameras, and app permissions before assuming your iPhone needs a microphone repair.",
+    "href": "/tips/iphone-microphone-not-working",
+    "icon": "menu_book",
+    "kw": " tips iphone microphone not working"
+  },
+  {
     "name": "iPhone restarts every three minutes",
     "desc": "An iPhone that reboots about every three minutes may be logging a repeating panic. Protect your data, find the pattern, and avoid erasing before hardware is diagnosed.",
     "href": "/tips/iphone-restarts-every-three-minutes",
@@ -2755,6 +2762,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips laptop hinge breaking"
   },
   {
+    "name": "Laptop keyboard keys not working? Safe checks before repair",
+    "desc": "Compare apps, keyboard settings, and an external keyboard before replacing laptop keys. Stop power-on tests after a spill or signs of swelling.",
+    "href": "/tips/laptop-keyboard-keys-not-working",
+    "icon": "menu_book",
+    "kw": " tips laptop keyboard keys not working"
+  },
+  {
     "name": "Laptop overheating? Loud fans, a hot keyboard, and when it's hardware",
     "desc": "Why laptops overheat — dust-clogged fans, dried thermal paste, blocked vents, swollen batteries — what's safe to try at home, and when to stop.",
     "href": "/tips/laptop-overheating",
@@ -2781,6 +2795,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/lcd-vs-oled",
     "icon": "menu_book",
     "kw": " tips lcd vs oled"
+  },
+  {
+    "name": "Nintendo Switch won’t turn on or charge? Safe first checks",
+    "desc": "For Switch, Lite, and OLED power problems, test the console directly with the correct adapter, reset power once, and know when to stop for service.",
+    "href": "/tips/nintendo-switch-wont-turn-on",
+    "icon": "menu_book",
+    "kw": " tips nintendo switch wont turn on"
   },
   {
     "name": "Phone got wet? What to do first",

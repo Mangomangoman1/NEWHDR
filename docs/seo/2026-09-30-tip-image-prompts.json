@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-30",
+  "tool": "Built-in ImageGen",
+  "images": [
+    {
+      "slug": "iphone-microphone-not-working",
+      "prompt": "Use case: stylized-concept. Asset type: landscape 3:2 editorial illustration for a Hailey Device Repair troubleshooting article. Create a polished restrained 3D product illustration on a deep slate blue work surface, soft warm ivory device materials, subtle cool blue rim lighting, tactile realistic materials, generous dark negative space, no people, no text, no logos, no watermark, no exploded parts or repair tools. Subject: a modern ivory smartphone lying diagonally face up, its screen showing a simple abstract blue audio waveform and small red circular record control without text. Emphasize the phone's bottom microphone openings and charging port, intact clean device, next to a separate slim empty phone case placed well away. The subject communicates comparing voice recordings without a case. No actual app interface imitation.",
+      "original": "/Users/Samuel/Documents/Codex/2026-09-30/task-2/generated_images/exec-ce93bfb5-a14d-4636-82a8-a80e67572b0f.png",
+      "outputs": [
+        "assets/tips/iphone-microphone-not-working.webp",
+        "assets/tips/iphone-microphone-not-working-768.webp"
+      ]
+    },
+    {
+      "slug": "laptop-keyboard-keys-not-working",
+      "prompt": "Use case: stylized-concept. Asset type: landscape 3:2 editorial illustration for a Hailey Device Repair troubleshooting article. Create a polished restrained 3D product illustration on a deep slate blue work surface, soft warm ivory device materials, subtle cool blue rim lighting, tactile realistic materials, generous dark negative space, no people, no text, no logos, no watermark, no exploded parts or repair tools. Subject: a silver laptop viewed from a slightly elevated angle, open with dim dark screen, its intact ivory keyboard in clear focus, beside a separate compact dark USB keyboard with visible cable connecting to the laptop. A few laptop keys have a subtle blue lighting reflection to draw attention, but no removed or floating keys. Communicate comparing internal and external keyboard input.",
+      "original": "/Users/Samuel/Documents/Codex/2026-09-30/task-2/generated_images/exec-3b7a0490-8b05-4894-a6dd-e9c3cb6338af.png",
+      "outputs": [
+        "assets/tips/laptop-keyboard-keys-not-working.webp",
+        "assets/tips/laptop-keyboard-keys-not-working-768.webp"
+      ]
+    },
+    {
+      "slug": "nintendo-switch-wont-turn-on",
+      "prompt": "Use case: stylized-concept. Asset type: landscape 3:2 editorial illustration for a Hailey Device Repair troubleshooting article. Create a polished restrained 3D product illustration on a deep slate blue work surface, soft warm ivory device materials, subtle cool blue rim lighting, tactile realistic materials, generous dark negative space, no people, no text, no logos, no watermark, no exploded parts or repair tools. Subject: a generic Nintendo Switch-style handheld console with muted ivory left and right attached controllers, dark intact black screen, lying on a slate blue surface. A black AC wall adapter with two flat metal plug prongs and a USB-C cable is beside it, USB-C end positioned close to but not inserted into the console bottom charging port. No dock, no tools, no visible logos. Clearly show that it is a handheld game system with joysticks and buttons, styled like the original Switch and not Switch 2.",
+      "original": "/Users/Samuel/Documents/Codex/2026-09-30/task-2/generated_images/exec-2062daff-cb51-4df8-a386-c00dd2da0623.png",
+      "outputs": [
+        "assets/tips/nintendo-switch-wont-turn-on.webp",
+        "assets/tips/nintendo-switch-wont-turn-on-768.webp"
+      ]
+    }
+  ]
+}
