@@ -114,7 +114,7 @@ a{color:inherit;text-decoration:none}
 <link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 </head>
 <body>
-<nav class="nav" id="nav" role="navigation">
+<nav class="nav" id="nav" role="navigation" aria-label="Primary">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
 <span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
@@ -811,8 +811,8 @@ a{color:inherit;text-decoration:none}
       Optional analytics help improve this site. <a href="/privacy">Learn more</a>
 </p>
 <div class="cookie-banner-actions">
-<button class="btn-accept" id="cookieAccept">Allow analytics</button>
-<button class="btn-decline" id="cookieDecline">No thanks</button>
+<button class="btn-accept" id="cookieAccept" type="button">Allow analytics</button>
+<button class="btn-decline" id="cookieDecline" type="button">No thanks</button>
 </div>
 </div>
 <!-- Floating Help Widget -->
@@ -858,7 +858,7 @@ a{color:inherit;text-decoration:none}
         Hailey, ID • 7 days a week
       </div>
 </div>
-<button aria-label="Get help" class="help-fab-trigger" id="helpFabTrigger">
+<button aria-label="Get help" class="help-fab-trigger" id="helpFabTrigger" type="button">
 <span class="help-fab-dot"></span>
 <span class="help-fab-label-text">Need help?</span>
 <span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span>
@@ -880,8 +880,8 @@ a{color:inherit;text-decoration:none}
 <div class="qf-panel">
 <div class="qf-header">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="search"></span>
-<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text"/>
-<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>
+<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text" aria-label="Search pages"/>
+<button aria-label="Close Quick Find" class="qf-close" id="qfClose" type="button">ESC</button>
 </div>
 <div class="qf-body" id="qfBody">
 <div class="qf-columns" id="qfColumns">

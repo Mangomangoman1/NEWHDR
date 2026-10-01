@@ -4,9 +4,21 @@
   function updateProgress(){
     var root=document.documentElement;
     var max=root.scrollHeight-root.clientHeight;
-    if(progress) progress.style.width=(max>0?root.scrollTop/max*100:0)+'%';
+    if(progress) progress.style.width=Math.max(0,Math.min(100,max>0?root.scrollTop/max*100:0))+'%';
   }
-  window.addEventListener('scroll',updateProgress,{passive:true});
+  var scheduled=false;
+  function scheduleProgress(){
+    if(scheduled) return;
+    scheduled=true;
+    window.requestAnimationFrame(function(){scheduled=false;updateProgress()});
+  }
+  if(progress) window.addEventListener('scroll',scheduleProgress,{passive:true});
+  if(progress){
+    window.addEventListener('pageshow',scheduleProgress);
+    window.addEventListener('resize',scheduleProgress);
+    window.addEventListener('load',scheduleProgress);
+    document.addEventListener('load',scheduleProgress,true);
+  }
   updateProgress();
   var items=[].slice.call(document.querySelectorAll('.reveal'));
   if(reduced||!('IntersectionObserver' in window)){

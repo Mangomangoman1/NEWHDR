@@ -28,7 +28,10 @@
       video.src = video.dataset.src;
     }
     toggle.hidden = false;
-    video.play().catch(updateButton);
+    video.play().catch(() => {
+      scene.classList.remove('has-video');
+      updateButton();
+    });
   }
 
   video.addEventListener('playing', () => {
@@ -46,6 +49,8 @@
   });
   motion.addEventListener('change', syncPlayback);
   document.addEventListener('visibilitychange', syncPlayback);
+  window.addEventListener('pagehide', () => video.pause());
+  window.addEventListener('pageshow', syncPlayback);
 
   // Browsers without IntersectionObserver retain the still image.
   if ('IntersectionObserver' in window) {

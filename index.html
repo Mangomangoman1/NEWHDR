@@ -1855,7 +1855,7 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 <script defer src="/assets/footer-clay.js?v=20260908"></script>
 </head>
 <body class="home-page">
-<nav class="nav" id="nav" role="navigation">
+<nav class="nav" id="nav" role="navigation" aria-label="Primary">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
 <span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
@@ -2109,7 +2109,7 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 
 <aside class="repair-ballet" id="repair-play" aria-labelledby="rb-title" data-state="waiting">
   <div class="rb-copy"><span class="rb-kicker">A moment at the bench</span><h2 id="rb-title">Back <br/>together.</h2><p>A little repair therapy.<br/>Drag to put things right.</p></div>
-  <div class="rb-stage"><img class="rb-fallback" src="/assets/repair-ballet-fallback.svg" width="800" height="500" alt="Illustration of a phone with its layers floating apart" loading="lazy"/><button class="rb-caption" type="button" data-rb-inspect aria-haspopup="dialog" aria-expanded="false" aria-controls="repair-inspector" disabled>Explore the details <span aria-hidden="true">↗</span></button></div>
+  <div class="rb-stage"><img class="rb-fallback" src="/assets/repair-ballet-fallback.svg" width="800" height="500" alt="Illustration of a phone with its layers floating apart" loading="lazy" decoding="async"/><button class="rb-caption" type="button" data-rb-inspect aria-haspopup="dialog" aria-expanded="false" aria-controls="repair-inspector" disabled>Explore the details <span aria-hidden="true">↗</span></button></div>
   <div class="rb-controls">
     <div class="rb-transport"><button type="button" data-rb-play aria-label="Play repair animation" aria-pressed="false" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5 13 8 4 13.5z"/></svg></button><button type="button" data-rb-replay aria-label="Replay repair animation" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2a6 6 0 1 1-5.6 8h1.7A4.5 4.5 0 1 0 5 4.7L7 7H1V1l2.6 2.6A6 6 0 0 1 8 2z"/></svg></button>
           <button type="button" data-rb-turn aria-label="View back of phone" aria-pressed="false" title="Turn the phone" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="3" width="5" height="10" rx="1"/><path d="M3.5 5C.2 6.2.2 9.8 3.5 11m9-6c3.3 1.2 3.3 4.8 0 6M2 3.5 3.5 5 2 6.5m12 3-1.5 1.5 1.5 1.5"/></g></svg></button></div>
@@ -2654,7 +2654,7 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 <span class="form-error" id="nameError" role="alert"></span>
 </div>
 <div class="form-group">
-<input aria-describedby="contactError" autocomplete="email" id="contact-field" name="contact" placeholder="Phone number or email" required="" type="text"/>
+<input aria-describedby="contactError" autocomplete="email" id="contact-field" name="contact" placeholder="Phone number or email" required="" type="text" autocapitalize="none" autocorrect="off" spellcheck="false"/>
 <label for="contact-field">Phone or email</label>
 <span class="form-error" id="contactError" role="alert"></span>
 </div>
@@ -2775,8 +2775,8 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
       Optional analytics help improve this site. <a href="/privacy">Learn more</a>
 </p>
 <div class="cookie-banner-actions">
-<button class="btn-accept" id="cookieAccept">Allow analytics</button>
-<button class="btn-decline" id="cookieDecline">No thanks</button>
+<button class="btn-accept" id="cookieAccept" type="button">Allow analytics</button>
+<button class="btn-decline" id="cookieDecline" type="button">No thanks</button>
 </div>
 </div>
 <script defer="" src="liquid-btn.js"></script>
@@ -2800,8 +2800,8 @@ html[data-theme="light"] .hiw-3d .hiw-meter-head{background:#376ea9;box-shadow:0
 <div class="qf-panel">
 <div class="qf-header">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="search"></span>
-<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text"/>
-<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>
+<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text" aria-label="Search pages"/>
+<button aria-label="Close Quick Find" class="qf-close" id="qfClose" type="button">ESC</button>
 </div>
 <div class="qf-body" id="qfBody">
 <div class="qf-columns" id="qfColumns">

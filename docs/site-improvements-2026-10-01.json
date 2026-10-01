@@ -1,0 +1,683 @@
+{
+  "baseline": "5b93b75a5f444cb823ddec97882b858c144359a1",
+  "passes": [
+    {
+      "pass_number": 1,
+      "improvement": "Provide missing main landmarks",
+      "finding": "Four pages had no main landmark for assistive navigation.",
+      "files": [
+        "404.html",
+        "data-recovery.html",
+        "computer-support.html",
+        "virus-removal.html"
+      ]
+    },
+    {
+      "pass_number": 2,
+      "improvement": "Complete skip navigation",
+      "finding": "Older layouts lacked a keyboard shortcut past repeated navigation.",
+      "files": [
+        "repair-sos.html",
+        "404.html",
+        "data-recovery.html",
+        "tech-helper.html",
+        "computer-support.html",
+        "device-repair-hailey-idaho.html",
+        "ps5-repair.html",
+        "virus-removal.html",
+        "printer-setup.html",
+        "guides/iphone-screen-repair.html",
+        "guides/iphone-battery-replacement.html",
+        "guides/laptop-battery-replacement.html",
+        "tips/iphone-green-white-line-screen.html",
+        "tips/laptop-battery-dying.html",
+        "tips/face-id-not-working-after-drop.html",
+        "tips/backup-before-repair.html",
+        "tips/laptop-overheating.html",
+        "tips/iphone-stuck-on-apple-logo.html",
+        "tips/water-damaged-phone.html",
+        "tips/swollen-phone-battery-screen-lifting.html",
+        "tips/laptop-hinge-breaking.html",
+        "tips/iphone-liquid-detected-port-dry.html",
+        "tips/cold-weather-phone-battery.html",
+        "tips/phone-running-hot.html",
+        "tips/lcd-vs-oled.html",
+        "tips/phone-screen-black-but-on.html",
+        "tips/cracked-screen-safe-to-use.html",
+        "tips/data-safe-during-repair.html",
+        "tips/fake-support-scam-popups.html",
+        "tips/ps5-no-signal-hdmi.html",
+        "tips/iphone-battery-health-80-percent.html",
+        "tips/wifi-keeps-dropping.html",
+        "tips/samsung-screen-issues.html",
+        "tips/iphone-camera-shaking-clicking-not-focusing.html",
+        "tips/cracked-iphone-back-glass.html",
+        "tips/iphone-unknown-part-important-message.html",
+        "tips/switch-joycon-drift.html",
+        "tips/repair-or-replace.html",
+        "tips/phone-charges-slowly.html",
+        "tips/ps5-overheating.html",
+        "tips/iphone-speaker-muffled-after-water.html",
+        "tips/iphone-restarts-every-three-minutes.html",
+        "tips/iphone-charging-cable-loose-angle.html",
+        "tips/iphone-ghost-touch-cracked-screen.html",
+        "tips/laptop-plugged-in-not-charging.html",
+        "tips/speed-up-slow-laptop.html"
+      ]
+    },
+    {
+      "pass_number": 3,
+      "improvement": "Declare button behavior explicitly",
+      "finding": "Unspecified button types can accidentally submit an enclosing form.",
+      "files": [
+        "boise-repair.html",
+        "mail-in-repair.html",
+        "device-check.html",
+        "laptop-repair.html",
+        "warranty.html",
+        "index.html",
+        "about.html",
+        "contact.html",
+        "repair-sos.html",
+        "pricing.html",
+        "twin-falls-repair.html",
+        "repair-or-replace-phone.html",
+        "laptop-wont-turn-on.html",
+        "macbook-repair.html",
+        "404.html",
+        "data-recovery.html",
+        "why-hdr.html",
+        "rexburg-repair.html",
+        "ketchum-repair.html",
+        "tech-helper.html",
+        "iphone-repair.html",
+        "android-repair.html",
+        "phone-repair-hailey-vs-boise.html",
+        "phone-water-damage-hailey.html",
+        "tablet-repair.html",
+        "guides.html",
+        "electronics-recycling.html",
+        "gaming-pc-repair.html",
+        "computer-support.html",
+        "tips.html",
+        "device-repair-hailey-idaho.html",
+        "broken-phone-what-to-text.html",
+        "ps5-repair.html",
+        "faq.html",
+        "console-repair.html",
+        "virus-removal.html",
+        "privacy.html",
+        "printer-setup.html",
+        "mail-in/iphone.html",
+        "mail-in/ipad.html",
+        "mail-in/macbook.html",
+        "guides/iphone-screen-repair.html",
+        "guides/iphone-battery-replacement.html",
+        "guides/laptop-battery-replacement.html",
+        "tips/laptop-battery-dying.html",
+        "tips/backup-before-repair.html",
+        "tips/laptop-overheating.html",
+        "tips/water-damaged-phone.html",
+        "tips/cold-weather-phone-battery.html",
+        "tips/phone-running-hot.html",
+        "tips/lcd-vs-oled.html",
+        "tips/phone-screen-black-but-on.html",
+        "tips/cracked-screen-safe-to-use.html",
+        "tips/data-safe-during-repair.html",
+        "tips/fake-support-scam-popups.html",
+        "tips/wifi-keeps-dropping.html",
+        "tips/samsung-screen-issues.html",
+        "tips/switch-joycon-drift.html",
+        "tips/repair-or-replace.html",
+        "tips/phone-charges-slowly.html",
+        "tips/ps5-overheating.html",
+        "tips/speed-up-slow-laptop.html",
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 4,
+      "improvement": "Name primary navigation landmarks",
+      "finding": "Repeated navigation landmarks were unnamed on older pages.",
+      "files": [
+        "boise-repair.html",
+        "mail-in-repair.html",
+        "device-check.html",
+        "laptop-repair.html",
+        "warranty.html",
+        "index.html",
+        "about.html",
+        "contact.html",
+        "repair-sos.html",
+        "pricing.html",
+        "twin-falls-repair.html",
+        "repair-or-replace-phone.html",
+        "laptop-wont-turn-on.html",
+        "macbook-repair.html",
+        "404.html",
+        "data-recovery.html",
+        "why-hdr.html",
+        "rexburg-repair.html",
+        "ketchum-repair.html",
+        "tech-helper.html",
+        "iphone-repair.html",
+        "android-repair.html",
+        "phone-repair-hailey-vs-boise.html",
+        "phone-water-damage-hailey.html",
+        "tablet-repair.html",
+        "guides.html",
+        "electronics-recycling.html",
+        "gaming-pc-repair.html",
+        "computer-support.html",
+        "tips.html",
+        "device-repair-hailey-idaho.html",
+        "broken-phone-what-to-text.html",
+        "ps5-repair.html",
+        "faq.html",
+        "console-repair.html",
+        "virus-removal.html",
+        "privacy.html",
+        "printer-setup.html",
+        "mail-in/iphone.html",
+        "mail-in/ipad.html",
+        "mail-in/macbook.html",
+        "guides/iphone-screen-repair.html",
+        "guides/iphone-battery-replacement.html",
+        "guides/laptop-battery-replacement.html",
+        "tips/laptop-battery-dying.html",
+        "tips/backup-before-repair.html",
+        "tips/laptop-overheating.html",
+        "tips/water-damaged-phone.html",
+        "tips/cold-weather-phone-battery.html",
+        "tips/phone-running-hot.html",
+        "tips/lcd-vs-oled.html",
+        "tips/phone-screen-black-but-on.html",
+        "tips/cracked-screen-safe-to-use.html",
+        "tips/data-safe-during-repair.html",
+        "tips/fake-support-scam-popups.html",
+        "tips/wifi-keeps-dropping.html",
+        "tips/samsung-screen-issues.html",
+        "tips/switch-joycon-drift.html",
+        "tips/repair-or-replace.html",
+        "tips/phone-charges-slowly.html",
+        "tips/ps5-overheating.html",
+        "tips/speed-up-slow-laptop.html",
+        "scripts/build-shared-navigation.py"
+      ]
+    },
+    {
+      "pass_number": 5,
+      "improvement": "Label static Quick Find search fields",
+      "finding": "Static search markup used a placeholder without an accessible name.",
+      "files": [
+        "boise-repair.html",
+        "mail-in-repair.html",
+        "device-check.html",
+        "laptop-repair.html",
+        "warranty.html",
+        "index.html",
+        "about.html",
+        "contact.html",
+        "repair-sos.html",
+        "pricing.html",
+        "twin-falls-repair.html",
+        "repair-or-replace-phone.html",
+        "laptop-wont-turn-on.html",
+        "macbook-repair.html",
+        "404.html",
+        "data-recovery.html",
+        "rexburg-repair.html",
+        "ketchum-repair.html",
+        "tech-helper.html",
+        "iphone-repair.html",
+        "android-repair.html",
+        "phone-repair-hailey-vs-boise.html",
+        "phone-water-damage-hailey.html",
+        "tablet-repair.html",
+        "guides.html",
+        "electronics-recycling.html",
+        "gaming-pc-repair.html",
+        "computer-support.html",
+        "tips.html",
+        "device-repair-hailey-idaho.html",
+        "broken-phone-what-to-text.html",
+        "ps5-repair.html",
+        "faq.html",
+        "console-repair.html",
+        "virus-removal.html",
+        "privacy.html",
+        "printer-setup.html",
+        "mail-in/iphone.html",
+        "mail-in/ipad.html",
+        "mail-in/macbook.html",
+        "guides/iphone-screen-repair.html",
+        "guides/iphone-battery-replacement.html",
+        "guides/laptop-battery-replacement.html",
+        "tips/laptop-battery-dying.html",
+        "tips/backup-before-repair.html",
+        "tips/laptop-overheating.html",
+        "tips/water-damaged-phone.html",
+        "tips/cold-weather-phone-battery.html",
+        "tips/phone-running-hot.html",
+        "tips/lcd-vs-oled.html",
+        "tips/phone-screen-black-but-on.html",
+        "tips/cracked-screen-safe-to-use.html",
+        "tips/data-safe-during-repair.html",
+        "tips/fake-support-scam-popups.html",
+        "tips/wifi-keeps-dropping.html",
+        "tips/samsung-screen-issues.html",
+        "tips/switch-joycon-drift.html",
+        "tips/repair-or-replace.html",
+        "tips/phone-charges-slowly.html",
+        "tips/ps5-overheating.html",
+        "tips/speed-up-slow-laptop.html"
+      ]
+    },
+    {
+      "pass_number": 6,
+      "improvement": "Associate table headings with columns",
+      "finding": "Repair and comparison table headers lacked explicit column scope.",
+      "files": [
+        "mail-in-repair.html",
+        "pricing.html",
+        "ps5-repair.html",
+        "console-repair.html"
+      ]
+    },
+    {
+      "pass_number": 7,
+      "improvement": "Announce complete search counts",
+      "finding": "Live result counts were not atomic, allowing partial announcements.",
+      "files": [
+        "pricing.html",
+        "tips.html",
+        "faq.html"
+      ]
+    },
+    {
+      "pass_number": 8,
+      "improvement": "Prevent contact address autocorrection",
+      "finding": "Phone/email fields could capitalize or correct visitor input on mobile.",
+      "files": [
+        "index.html",
+        "contact.html"
+      ]
+    },
+    {
+      "pass_number": 9,
+      "improvement": "Preserve device model identifiers",
+      "finding": "Model identifiers were exposed to spelling correction.",
+      "files": [
+        "contact.html"
+      ]
+    },
+    {
+      "pass_number": 10,
+      "improvement": "Decode remaining images asynchronously",
+      "finding": "Several illustrations omitted an asynchronous decoding hint.",
+      "files": [
+        "index.html",
+        "about.html",
+        "android-repair.html",
+        "tips.html",
+        "tips/iphone-green-white-line-screen.html",
+        "tips/ps5-disc-not-reading.html",
+        "tips/face-id-not-working-after-drop.html",
+        "tips/screen-protector-or-cracked-screen.html",
+        "tips/iphone-stuck-on-apple-logo.html",
+        "tips/swollen-phone-battery-screen-lifting.html",
+        "tips/laptop-hinge-breaking.html",
+        "tips/nintendo-switch-wont-turn-on.html",
+        "tips/iphone-liquid-detected-port-dry.html",
+        "tips/laptop-screen-black-but-running.html",
+        "tips/iphone-microphone-not-working.html",
+        "tips/spilled-liquid-on-laptop.html",
+        "tips/backup-iphone-broken-screen.html",
+        "tips/ps5-controller-not-charging.html",
+        "tips/ps5-no-signal-hdmi.html",
+        "tips/iphone-battery-health-80-percent.html",
+        "tips/iphone-camera-shaking-clicking-not-focusing.html",
+        "tips/cracked-iphone-back-glass.html",
+        "tips/iphone-unknown-part-important-message.html",
+        "tips/iphone-speaker-muffled-after-water.html",
+        "tips/iphone-restarts-every-three-minutes.html",
+        "tips/iphone-charging-cable-loose-angle.html",
+        "tips/iphone-ghost-touch-cracked-screen.html",
+        "tips/laptop-plugged-in-not-charging.html",
+        "tips/laptop-keyboard-keys-not-working.html"
+      ]
+    },
+    {
+      "pass_number": 11,
+      "improvement": "Honor native hidden states",
+      "finding": "Author display rules could override hidden search cards and panels.",
+      "files": [
+        "assets/css/site-polish.css"
+      ]
+    },
+    {
+      "pass_number": 12,
+      "improvement": "Share skip-link positioning",
+      "finding": "Article layouts without the main stylesheet lacked skip-link styling.",
+      "files": [
+        "assets/css/site-polish.css"
+      ]
+    },
+    {
+      "pass_number": 13,
+      "improvement": "Offset legacy article anchors",
+      "finding": "Sticky navigation could cover older article anchor destinations.",
+      "files": [
+        "assets/css/site-polish.css"
+      ]
+    },
+    {
+      "pass_number": 14,
+      "improvement": "Wrap long editorial links",
+      "finding": "Long source addresses could exceed narrow article columns.",
+      "files": [
+        "assets/css/site-polish.css"
+      ]
+    },
+    {
+      "pass_number": 15,
+      "improvement": "Allow editorial grid columns to shrink",
+      "finding": "Grid children retained an intrinsic minimum width on small screens.",
+      "files": [
+        "assets/css/site-polish.css"
+      ]
+    },
+    {
+      "pass_number": 16,
+      "improvement": "Keep textareas within forms",
+      "finding": "Resizable textareas could extend beyond their form column.",
+      "files": [
+        "assets/css/site-polish.css"
+      ]
+    },
+    {
+      "pass_number": 17,
+      "improvement": "Contain wide table scrolling",
+      "finding": "Wide tables needed independent horizontal scrolling without trapping vertical gestures.",
+      "files": [
+        "assets/css/site-polish.css"
+      ]
+    },
+    {
+      "pass_number": 18,
+      "improvement": "Enlarge library filter touch targets",
+      "finding": "Library category buttons were shorter than 44 pixels.",
+      "files": [
+        "assets/css/tips-hub.css"
+      ]
+    },
+    {
+      "pass_number": 19,
+      "improvement": "Prevent library search zoom on mobile",
+      "finding": "The library mobile rule overrode the shared 16px input size.",
+      "files": [
+        "assets/css/tips-hub.css"
+      ]
+    },
+    {
+      "pass_number": 20,
+      "improvement": "Enlarge guide disclosure targets",
+      "finding": "Native FAQ summaries offered a small vertical hit area.",
+      "files": [
+        "assets/css/repair-field-guides.css"
+      ]
+    },
+    {
+      "pass_number": 21,
+      "improvement": "Keep sticky guide contents reachable",
+      "finding": "Tall desktop contents lists could extend below short viewports.",
+      "files": [
+        "assets/css/repair-field-guides.css"
+      ]
+    },
+    {
+      "pass_number": 22,
+      "improvement": "Respect mobile navigation safe areas",
+      "finding": "The final mobile menu item could sit against a device home indicator.",
+      "files": [
+        "assets/css/site-polish.css"
+      ]
+    },
+    {
+      "pass_number": 23,
+      "improvement": "Allow Quick Find input to shrink",
+      "finding": "The flex search field kept its intrinsic minimum width.",
+      "files": [
+        "style.css"
+      ]
+    },
+    {
+      "pass_number": 24,
+      "improvement": "Show complete desktop category labels",
+      "finding": "Desktop drawer names were truncated even when wrapping space was available.",
+      "files": [
+        "style.css",
+        "scripts/build-shared-navigation.py"
+      ]
+    },
+    {
+      "pass_number": 25,
+      "improvement": "Enlarge footer animation control",
+      "finding": "The video play/pause control was only 32 pixels high.",
+      "files": [
+        "assets/css/footer-clay.css"
+      ]
+    },
+    {
+      "pass_number": 26,
+      "improvement": "Clamp article reading progress",
+      "finding": "Browser overscroll could produce progress below zero or above 100 percent.",
+      "files": [
+        "assets/repair-tip-pages.js"
+      ]
+    },
+    {
+      "pass_number": 27,
+      "improvement": "Coalesce reading progress updates",
+      "finding": "Every scroll event wrote a progress style directly.",
+      "files": [
+        "assets/repair-tip-pages.js"
+      ]
+    },
+    {
+      "pass_number": 28,
+      "improvement": "Recalculate progress after layout changes",
+      "finding": "Resizing and late image loads left the progress percentage stale.",
+      "files": [
+        "assets/repair-tip-pages.js"
+      ]
+    },
+    {
+      "pass_number": 29,
+      "improvement": "Refresh restored article progress",
+      "finding": "Back/forward cache restoration could restore scroll without a progress update.",
+      "files": [
+        "assets/repair-tip-pages.js"
+      ]
+    },
+    {
+      "pass_number": 30,
+      "improvement": "Cache library search metadata",
+      "finding": "Each keystroke reread and normalized every guide and category.",
+      "files": [
+        "assets/tips-hub.js"
+      ]
+    },
+    {
+      "pass_number": 31,
+      "improvement": "Match accented library searches",
+      "finding": "Accent marks were dropped together with their letters.",
+      "files": [
+        "assets/tips-hub.js"
+      ]
+    },
+    {
+      "pass_number": 32,
+      "improvement": "Avoid repeated live count announcements",
+      "finding": "Unchanged counts were rewritten for every input event.",
+      "files": [
+        "assets/tips-hub.js"
+      ]
+    },
+    {
+      "pass_number": 33,
+      "improvement": "Synchronize the library empty state",
+      "finding": "The empty result panel relied only on a visual class.",
+      "files": [
+        "assets/tips-hub.js"
+      ]
+    },
+    {
+      "pass_number": 34,
+      "improvement": "Respect reduced motion in library navigation",
+      "finding": "Filter, preset and submit actions always requested smooth scrolling.",
+      "files": [
+        "assets/tips-hub.js"
+      ]
+    },
+    {
+      "pass_number": 35,
+      "improvement": "Reveal library content immediately for reduced motion",
+      "finding": "Reduced-motion visitors still waited for reveal observers.",
+      "files": [
+        "assets/tips-hub.js"
+      ]
+    },
+    {
+      "pass_number": 36,
+      "improvement": "Wait for composed search input",
+      "finding": "Input method composition triggered filtering before the term was complete.",
+      "files": [
+        "assets/tips-hub.js"
+      ]
+    },
+    {
+      "pass_number": 37,
+      "improvement": "Clear library queries with Escape",
+      "finding": "Keyboard visitors had no quick way to clear an active query.",
+      "files": [
+        "assets/tips-hub.js"
+      ]
+    },
+    {
+      "pass_number": 38,
+      "improvement": "Prevent duplicate quote submissions",
+      "finding": "Repeated submit events could send the same request while a fetch was pending.",
+      "files": [
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 39,
+      "improvement": "Expose pending form state",
+      "finding": "Assistive technology was not told that the form was processing.",
+      "files": [
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 40,
+      "improvement": "Respect reduced motion for form errors",
+      "finding": "Submission failures always scrolled smoothly.",
+      "files": [
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 41,
+      "improvement": "Preserve modified anchor clicks",
+      "finding": "Anchor interception prevented normal modifier-key browser navigation.",
+      "files": [
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 42,
+      "improvement": "Resolve encoded anchor destinations",
+      "finding": "Percent-encoded IDs did not resolve to their DOM target.",
+      "files": [
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 43,
+      "improvement": "Reset mobile navigation before page caching",
+      "finding": "An open menu could restore a locked page from the back/forward cache.",
+      "files": [
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 44,
+      "improvement": "Restore the prior Quick Find scroll state",
+      "finding": "Closing search discarded any previous inline body overflow value.",
+      "files": [
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 45,
+      "improvement": "Expose Quick Find trigger state",
+      "finding": "Search buttons did not identify their dialog or expanded state.",
+      "files": [
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 46,
+      "improvement": "Describe responsive search category orientation",
+      "finding": "Desktop categories were vertical while the tablist implied horizontal orientation.",
+      "files": [
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 47,
+      "improvement": "Complete search category keyboard navigation",
+      "finding": "Category tabs lacked orientation-aware arrows and Home/End navigation.",
+      "files": [
+        "main.js"
+      ]
+    },
+    {
+      "pass_number": 48,
+      "improvement": "Show the footer poster if playback is blocked",
+      "finding": "A rejected play promise could leave an opaque stalled video over the poster.",
+      "files": [
+        "assets/footer-clay.js"
+      ]
+    },
+    {
+      "pass_number": 49,
+      "improvement": "Pause footer media across page restoration",
+      "finding": "Page caching did not explicitly pause and resynchronize footer playback.",
+      "files": [
+        "assets/footer-clay.js"
+      ]
+    },
+    {
+      "pass_number": 50,
+      "improvement": "Avoid decorative 3D downloads in data-saving mode",
+      "finding": "The homepage still downloaded its 3D scene when Save-Data was enabled.",
+      "files": [
+        "assets/repair-ballet.js"
+      ]
+    }
+  ],
+  "validation": {
+    "build": "bash build.sh; repeated build produced identical generated assets",
+    "site_audit": "87 public pages, 6104 local references, zero failures",
+    "semantic_audit": "87 public pages, zero failures",
+    "content_preservation": "87 public pages; unchanged copy, metadata and JSON-LD compared with baseline (skip-navigation utility text excluded)",
+    "indexability": "784 checks passed",
+    "tests": "37 tests passed across test-site-interactions, test-site-refinements, test-repair-phone and test-repair-inspection",
+    "http_smoke": "19 local routes/assets returned HTTP 200 with nonempty bodies",
+    "diff_check": "git diff --check passed",
+    "browser_qa": "No browser control capability exposed in this session; rendered visual QA was not performed"
+  }
+}

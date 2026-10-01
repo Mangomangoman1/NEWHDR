@@ -414,7 +414,7 @@
 <link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 </head>
 <body>
-<nav class="nav" id="nav" role="navigation">
+<nav class="nav" id="nav" role="navigation" aria-label="Primary">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
 <span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
@@ -530,10 +530,10 @@
 <text class="rail-mini" id="svgNote" x="448" y="130">Tap a symptom.</text>
 </svg>
 <div class="diag-buttons">
-<button class="diag-btn" data-stop="brick" data-symptom="dead">No lights, fan, sound<span>Could be charger, port, battery, or board short</span></button>
-<button class="diag-btn" data-stop="battery" data-symptom="light">Charging light only<span>Battery, power button, firmware, or board path</span></button>
-<button class="diag-btn" data-stop="screen" data-symptom="black">Keyboard/fan, black screen<span>May be display, RAM, GPU, or boot issue</span></button>
-<button class="diag-btn" data-stop="board" data-symptom="spill">After spill, heat, smell<span>Stop charging. Board inspection first</span></button>
+<button class="diag-btn" data-stop="brick" data-symptom="dead" type="button">No lights, fan, sound<span>Could be charger, port, battery, or board short</span></button>
+<button class="diag-btn" data-stop="battery" data-symptom="light" type="button">Charging light only<span>Battery, power button, firmware, or board path</span></button>
+<button class="diag-btn" data-stop="screen" data-symptom="black" type="button">Keyboard/fan, black screen<span>May be display, RAM, GPU, or boot issue</span></button>
+<button class="diag-btn" data-stop="board" data-symptom="spill" type="button">After spill, heat, smell<span>Stop charging. Board inspection first</span></button>
 </div>
 <div aria-live="polite" class="diag-result"><strong id="diagTitle">Start with what it does.</strong><p id="diagText">Choose the closest symptom. I will mark where the power path usually stops and add it to your bench ticket.</p></div>
 </div>
@@ -568,12 +568,12 @@
 <p class="section-sub">If one of these fuses trips, the page disables the DIY reset path and builds a safer text message instead.</p>
 </div>
 <div class="hazard-board" data-animate="">
-<button class="fuse" data-hazard="liquid"><strong>Liquid spill</strong><span>Water, coffee, snow, beer, anything wet</span></button>
-<button class="fuse" data-hazard="heat"><strong>Getting hot</strong><span>Warm near port, battery, or keyboard</span></button>
-<button class="fuse" data-hazard="smell"><strong>Burning smell</strong><span>Electrical smell, pop, or smoke</span></button>
-<button class="fuse" data-hazard="swollen"><strong>Swollen battery</strong><span>Trackpad lifted or case separating</span></button>
-<button class="fuse" data-hazard="drop"><strong>Dropped hard</strong><span>Died after impact or travel</span></button>
-<button class="fuse" data-hazard="data"><strong>Files matter</strong><span>Photos, work docs, school files</span></button>
+<button class="fuse" data-hazard="liquid" type="button"><strong>Liquid spill</strong><span>Water, coffee, snow, beer, anything wet</span></button>
+<button class="fuse" data-hazard="heat" type="button"><strong>Getting hot</strong><span>Warm near port, battery, or keyboard</span></button>
+<button class="fuse" data-hazard="smell" type="button"><strong>Burning smell</strong><span>Electrical smell, pop, or smoke</span></button>
+<button class="fuse" data-hazard="swollen" type="button"><strong>Swollen battery</strong><span>Trackpad lifted or case separating</span></button>
+<button class="fuse" data-hazard="drop" type="button"><strong>Dropped hard</strong><span>Died after impact or travel</span></button>
+<button class="fuse" data-hazard="data" type="button"><strong>Files matter</strong><span>Photos, work docs, school files</span></button>
 </div>
 <div class="hazard-alert" id="hazardAlert" role="status"><strong>Stop the power attempts.</strong> Do not charge it again until it has been checked. Text me what happened, when it happened, and whether the data matters.</div>
 </div>
@@ -596,10 +596,10 @@
 <div class="meter"><div class="meter-face"><div class="meter-labels"><span>dead</span><span>load</span><span>spike</span></div><div class="needle" id="needle"></div><div class="meter-center"></div></div></div>
 <p class="meter-result" id="meterResult">Toggle what you know. If the meter points at the port, bring the charger too.</p>
 <div class="toggle-list">
-<button class="meter-toggle" data-meter="outlet">Known-good outlet tried <span class="switch"></span></button>
-<button class="meter-toggle" data-meter="charger">Known-good charger tried <span class="switch"></span></button>
-<button class="meter-toggle" data-meter="wiggle">Only charges when cable wiggles <span class="switch"></span></button>
-<button class="meter-toggle" data-meter="warm">Port or charger area gets warm <span class="switch"></span></button>
+<button class="meter-toggle" data-meter="outlet" type="button">Known-good outlet tried <span class="switch"></span></button>
+<button class="meter-toggle" data-meter="charger" type="button">Known-good charger tried <span class="switch"></span></button>
+<button class="meter-toggle" data-meter="wiggle" type="button">Only charges when cable wiggles <span class="switch"></span></button>
+<button class="meter-toggle" data-meter="warm" type="button">Port or charger area gets warm <span class="switch"></span></button>
 </div>
 </div>
 </div>
@@ -796,8 +796,8 @@ I can bring/mail the charger: yes/no</code>
 <div class="qf-panel">
 <div class="qf-header">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="search"></span>
-<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text"/>
-<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>
+<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text" aria-label="Search pages"/>
+<button aria-label="Close Quick Find" class="qf-close" id="qfClose" type="button">ESC</button>
 </div>
 <div class="qf-body" id="qfBody">
 <div class="qf-columns" id="qfColumns">

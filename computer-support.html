@@ -508,7 +508,8 @@
 <link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 </head>
 <body>
-<nav class="nav" id="nav" role="navigation">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="nav" id="nav" role="navigation" aria-label="Primary">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
 <span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
@@ -568,6 +569,7 @@
 </div>
 </nav>
 <div aria-hidden="true" class="nav-mobile-backdrop" id="navBackdrop"></div>
+<main id="content">
 
 
 
@@ -997,27 +999,27 @@
 </div>
 <div class="faq-list">
 <div class="faq-item" data-animate="">
-<button class="faq-q">How much does computer repair cost?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">How much does computer repair cost?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Text-photo quotes are free — send the model and symptom and you'll know what it looks like before you commit. When a machine needs real bench diagnosis (no-power, mystery faults), it's a $45 bench fee, credited toward the repair. Virus and malware removal is a flat $99 and includes a full tune-up; an OS reinstall / factory refresh is $89; hands-on software help is $89/hr — all labor-only, so no sales tax. Hardware repairs are quoted per job after diagnosis. <a class="body-link" href="/pricing">See the full price table</a>.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Can you fix my computer remotely?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Can you fix my computer remotely?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Yes — for most software problems. Virus removal, tune-ups, Windows issues, software installs, account problems — all doable remotely. If it's hardware (won't turn on, broken screen, bad drive) it needs to come in.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">How long does it take?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">How long does it take?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Most software jobs — tune-ups, virus removal, Windows fixes — are same day, often within a few hours. Hardware jobs depend on whether I have parts on hand. I'll give you an honest timeline upfront.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Is it worth repairing or should I just buy a new computer?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Is it worth repairing or should I just buy a new computer?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Depends on the computer and the problem. If it's slow — the $99 cleanup + tune-up usually makes it feel new. If the hard drive is dying on a 10-year-old machine — might be time to replace. I'll give you an honest answer after diagnosis, not push unnecessary repairs.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Do you work on Macs too?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Do you work on Macs too?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Yes, though most Mac repairs are more limited than Windows. Software issues, diagnostics, and some hardware I can handle. Macs with soldered components (most post-2016 models) have fewer repair options — I'll tell you upfront what's possible.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Will you lose my files?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Will you lose my files?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">No. Data safety is the first priority. I always assess the risk to your files before doing anything, and for anything that could affect your data, I'll recommend a backup first. If your drive is failing, I'll tell you before it dies completely.</div>
 </div>
 </div>
@@ -1047,6 +1049,7 @@
 </div>
 </section>
 <!-- FOOTER -->
+</main>
 <footer class="footer">
 <div class="container">
 <div class="footer-inner">
@@ -1107,8 +1110,8 @@
 <div class="qf-panel">
 <div class="qf-header">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="search"></span>
-<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text"/>
-<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>
+<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text" aria-label="Search pages"/>
+<button aria-label="Close Quick Find" class="qf-close" id="qfClose" type="button">ESC</button>
 </div>
 <div class="qf-body" id="qfBody">
 <div class="qf-columns" id="qfColumns">

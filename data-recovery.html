@@ -383,7 +383,8 @@
 <link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 </head>
 <body>
-<nav class="nav" id="nav" role="navigation">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="nav" id="nav" role="navigation" aria-label="Primary">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
 <span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
@@ -443,6 +444,7 @@
 </div>
 </nav>
 <div aria-hidden="true" class="nav-mobile-backdrop" id="navBackdrop"></div>
+<main id="content">
 
 
 
@@ -718,35 +720,35 @@
 </div>
 <div class="faq-list">
 <div class="faq-item" data-animate="">
-<button class="faq-q">Can deleted files be recovered?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Can deleted files be recovered?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Often yes — if the space hasn’t been overwritten by new data. The sooner you stop using the drive, the better the odds. If you’ve been using the device heavily since deletion, the chances drop. We can evaluate this quickly.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Can data be recovered after formatting?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Can data be recovered after formatting?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Sometimes. A quick format usually leaves data intact — it just removes the file table. A full format or continued use after formatting makes recovery much harder. Stop using the drive and contact us.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Can a dead phone still have recoverable data?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Can a dead phone still have recoverable data?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Yes, if the storage chip is intact. A phone that won’t turn on often has a working motherboard and storage — it’s the screen, battery, or power circuit that failed. We can often extract data even from phones that seem completely dead.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Is water-damaged data recoverable?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Is water-damaged data recoverable?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">It depends on how quickly you act and whether the storage chip got wet. If the water never reached the NAND chip, recovery is often possible. Corrosion is the real enemy — the sooner you power off and get help, the better.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Should I use recovery software?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Should I use recovery software?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Only if the drive is healthy and you install the software on a different device. Never install recovery software on the failing drive itself — it can overwrite the very data you’re trying to save. If the drive is clicking, slow, or not recognized, skip the software and call us.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">How long does data recovery take?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">How long does data recovery take?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Logical recovery (deleted files, formatted drives — Tier 1, a flat $99) is often same-day if the drive is healthy. Physical recovery (clicking drives, water damage, chip-level work — Tier 2, from $199) can take 2–7 days depending on damage and parts needed. We’ll give you an honest timeline upfront, and if we can’t recover your data, you don’t pay for the recovery.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Can you help if I’m outside Hailey?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Can you help if I’m outside Hailey?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Yes — we serve all of Idaho via mail-in service. Ship us the device, we evaluate it the day it arrives, and ship it back when done. We’ve helped customers from Boise to Idaho Falls to Coeur d’Alene.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">What if recovery isn’t possible?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">What if recovery isn’t possible?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">We’ll tell you honestly and early. If the storage chip is physically destroyed or overwritten, recovery may not be feasible. In those cases, we’ll help you set up a backup system so it never happens again — and we won’t charge you for a failed evaluation.</div>
 </div>
 </div>
@@ -773,6 +775,7 @@
 </div>
 </section>
 <!-- FOOTER -->
+</main>
 <footer class="footer">
 <div class="container">
 <div class="footer-inner">
@@ -832,8 +835,8 @@
 <div class="qf-panel">
 <div class="qf-header">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="search"></span>
-<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text"/>
-<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>
+<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text" aria-label="Search pages"/>
+<button aria-label="Close Quick Find" class="qf-close" id="qfClose" type="button">ESC</button>
 </div>
 <div class="qf-body" id="qfBody">
 <div class="qf-columns" id="qfColumns">

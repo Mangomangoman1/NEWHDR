@@ -61,6 +61,7 @@
   color: var(--text-muted);
 }
 .qf-search {
+  min-width: 0;
   flex: 1;
   background: none;
   border: none;
@@ -521,3 +522,4 @@ html[data-theme="light"] .qf-overlay.qf-hdr .qf-drawer:hover { background: rgba(
     margin-top: 0.5rem;
   }
 }
+@media (min-width: 641px) { .qf-overlay.qf-hdr .qf-drawer-title { white-space: normal; overflow-wrap: anywhere; line-height: 1.4; } }

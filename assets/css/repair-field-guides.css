@@ -36,3 +36,7 @@
 @media(max-width:1000px){.fg-hero-grid{gap:28px}.fg-layout{grid-template-columns:200px minmax(0,1fr);gap:38px}.fg-page h1{font-size:48px!important}}
 @media(max-width:760px){.fg-wrap{width:calc(100% - 36px)}.fg-hero{padding-top:20px}.fg-breadcrumbs{font-size:10px;margin-bottom:24px}.fg-hero-grid{grid-template-columns:1fr;gap:25px}.fg-page h1{font-size:43px!important;line-height:1.02!important}.fg-byline{font-size:11px}.fg-answer{font-size:14px}.fg-image img{aspect-ratio:3/2}.fg-layout{display:block;padding-top:28px}.fg-aside{position:static;margin-bottom:38px}.fg-aside nav{display:grid;grid-template-columns:1fr 1fr;column-gap:20px}.fg-aside .fg-kicker{grid-column:1/-1}.fg-aside nav>a{font-size:11px}.fg-back{display:none}.fg-article{font-size:15px;line-height:1.8}.fg-page h2{font-size:30px}.fg-section{margin-bottom:32px;padding-bottom:24px}.fg-footer>div{gap:12px;flex-wrap:wrap}.fg-footer a:last-child{margin-left:0}.fg-footer span{display:none}}
 @media(prefers-reduced-motion:reduce){.fg-image{animation:none}.fg-aside nav>a,.fg-next>div>a span{transition:none}}
+
+.fg-faq summary { min-height: 44px; display: list-item; align-content: center; }
+
+@media (min-width: 761px) { .fg-aside { max-height: calc(100dvh - 112px); overflow-y: auto; overscroll-behavior: contain; } }

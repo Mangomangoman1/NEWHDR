@@ -15,7 +15,9 @@ if (aside) {
       console.warn('Repair animation unavailable; showing the illustration.', error);
     }
   }
-  if ('IntersectionObserver' in window) {
+  if (navigator.connection?.saveData) {
+    aside.dataset.state = 'unavailable';
+  } else if ('IntersectionObserver' in window) {
     const loader = new IntersectionObserver(entries => {
       if (entries.some(entry => entry.isIntersecting)) { loader.disconnect(); start(); }
     }, { rootMargin:'250px' });

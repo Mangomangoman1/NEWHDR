@@ -178,6 +178,7 @@ body.tips-library-page .container { width: min(1080px, calc(100% - 40px)); margi
 .rh-topic-rail__inner { min-height: 66px; display: flex; align-items: center; gap: .35rem; overflow-x: auto; scrollbar-width: none; }
 .rh-topic-rail__inner::-webkit-scrollbar { display: none; }
 .rh-filter {
+  min-height: 44px;
   flex: 0 0 auto;
   border: 0;
   border-radius: 999px;
@@ -331,7 +332,7 @@ body.tips-library-page .container { width: min(1080px, calc(100% - 40px)); margi
   .rh-hero__edition { margin-bottom: 1.1rem; font-size: .64rem; }
   .rh-search { min-height: 58px; margin-top: 1.45rem; padding-left: .85rem; }
   .rh-search button { min-width: 45px; min-height: 45px; }
-  .rh-search input { font-size: .88rem; }
+  .rh-search input { font-size: 16px; }
   .rh-popular { display: none; }
   .rh-topic-rail { top: 64px; }
   .rh-topic-rail__inner { min-height: 58px; width: calc(100% - 16px); margin-left: 16px; }

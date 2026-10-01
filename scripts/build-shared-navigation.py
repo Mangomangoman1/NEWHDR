@@ -10,7 +10,7 @@ search = main[main.index('/* ═════════════════
 css = (ROOT / 'style.css').read_text()
 start = css.index('.qf-overlay {')
 end = css.index('/* ─── SERVICES GRID DIAGNOSTIC TICKET CARDS', start)
-(ROOT / 'assets/css/quick-find.css').write_text('/* Generated from style.css by scripts/build-shared-navigation.py. */\n' + css[start:end])
+(ROOT / 'assets/css/quick-find.css').write_text('/* Generated from style.css by scripts/build-shared-navigation.py. */\n' + css[start:end].rstrip() + '\n')
 
 # The library is the canonical header for its articles. Opted-in pages keep
 # static navigation, with the same markup and styles refreshed at build time.
@@ -23,8 +23,9 @@ header = re.search(
     r'<nav class="nav" id="nav".*?</nav>\s*<div[^>]*id="navBackdrop"[^>]*></div>',
     library, re.S
 ).group(0).replace('aria-current="page"', 'aria-current="location"')
-header = header.replace('class="nav" id="nav" role="navigation"',
-                        'class="nav" id="nav" role="navigation" aria-label="Primary"')
+if 'aria-label="Primary"' not in header.split('>', 1)[0]:
+    header = header.replace('class="nav" id="nav" role="navigation"',
+                            'class="nav" id="nav" role="navigation" aria-label="Primary"')
 block = '<!-- shared-navigation:start -->\n' + header + '\n<!-- shared-navigation:end -->'
 for article in (ROOT / 'tips').glob('*.html'):
     html = article.read_text()

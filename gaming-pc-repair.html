@@ -492,7 +492,7 @@
 <link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 </head>
 <body>
-<nav class="nav" id="nav" role="navigation">
+<nav class="nav" id="nav" role="navigation" aria-label="Primary">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
 <span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
@@ -687,9 +687,9 @@
 </div>
 </div>
 <div class="thermal-modes" data-animate="">
-<button class="mode-btn active" data-mode="idle" onclick="setThermalMode('idle')">Idle</button>
-<button class="mode-btn" data-mode="gaming" onclick="setThermalMode('gaming')">Gaming Load</button>
-<button class="mode-btn" data-mode="overheat" onclick="setThermalMode('overheat')">Overheat</button>
+<button class="mode-btn active" data-mode="idle" onclick="setThermalMode('idle')" type="button">Idle</button>
+<button class="mode-btn" data-mode="gaming" onclick="setThermalMode('gaming')" type="button">Gaming Load</button>
+<button class="mode-btn" data-mode="overheat" onclick="setThermalMode('overheat')" type="button">Overheat</button>
 </div>
 <div class="thermal-readout" data-animate="" id="thermalReadout">Airflow: <span>42°C</span> · Stable · Low particle velocity</div>
 <div aria-label="Related repair paths" class="context-links" data-animate="">
@@ -957,42 +957,42 @@
 </div>
 <div class="faq-list">
 <div class="faq-item">
-<button class="faq-q" onclick="toggleFaq(this.parentNode)">
+<button class="faq-q" onclick="toggleFaq(this.parentNode)" type="button">
               How much does gaming PC repair cost?
               <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">A full diagnostic is $45, credited toward the repair. Deep cleaning and fresh thermal paste is $89. GPU or CPU installation starts at $45, RAM and storage upgrades from $35, and PSU replacement from $65. Custom builds start at $199 plus parts. You'll get a firm quote before any work begins.</div>
 </div>
 <div class="faq-item">
-<button class="faq-q" onclick="toggleFaq(this.parentNode)">
+<button class="faq-q" onclick="toggleFaq(this.parentNode)" type="button">
               How long does gaming PC repair take?
               <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">Most diagnostics are same-day. Cleaning, thermal paste, and simple upgrades are usually finished within a few hours. Complex builds or troubleshooting jobs may take 1-2 days. Mail-in PC repair turnaround is typically 3-5 days total including shipping.</div>
 </div>
 <div class="faq-item">
-<button class="faq-q" onclick="toggleFaq(this.parentNode)">
+<button class="faq-q" onclick="toggleFaq(this.parentNode)" type="button">
               Why is my gaming PC overheating?
               <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">Common causes include dust-clogged fans, dried-out thermal paste, poor case airflow, or a failing CPU cooler. I inspect airflow paths, clean every component, and replace thermal paste with high-quality compound. If the cooler itself is failing, I can source and install a replacement.</div>
 </div>
 <div class="faq-item">
-<button class="faq-q" onclick="toggleFaq(this.parentNode)">
+<button class="faq-q" onclick="toggleFaq(this.parentNode)" type="button">
               Can you upgrade my GPU or CPU?
               <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">Yes. I handle GPU and CPU upgrades, including compatibility checks, BIOS updates, and power supply validation. Before you buy parts, text me your current specs and budget — I'll confirm what fits, what your PSU can handle, and whether your case has enough clearance.</div>
 </div>
 <div class="faq-item">
-<button class="faq-q" onclick="toggleFaq(this.parentNode)">
+<button class="faq-q" onclick="toggleFaq(this.parentNode)" type="button">
               Do you build custom gaming PCs?
               <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
 <div class="faq-a">Absolutely. I build custom gaming PCs tailored to your budget and the games you play. I handle part selection, assembly, cable management, Windows installation, driver setup, and stress testing. Build fee starts at $199 plus parts. I only charge for the build — no markup on components.</div>
 </div>
 <div class="faq-item">
-<button class="faq-q" onclick="toggleFaq(this.parentNode)">
+<button class="faq-q" onclick="toggleFaq(this.parentNode)" type="button">
               Can I mail in my gaming PC for repair?
               <span class="material-symbols-outlined faq-q-icon" aria-hidden="true" data-icon="expand_more"></span>
 </button>
@@ -1239,8 +1239,8 @@
 <div class="qf-panel">
 <div class="qf-header">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="search"></span>
-<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text"/>
-<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>
+<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text" aria-label="Search pages"/>
+<button aria-label="Close Quick Find" class="qf-close" id="qfClose" type="button">ESC</button>
 </div>
 <div class="qf-body" id="qfBody">
 <div class="qf-columns" id="qfColumns">

@@ -394,7 +394,8 @@
 <link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 </head>
 <body>
-<nav class="nav" id="nav" role="navigation">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="nav" id="nav" role="navigation" aria-label="Primary">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
 <span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
@@ -454,6 +455,7 @@
 </div>
 </nav>
 <div aria-hidden="true" class="nav-mobile-backdrop" id="navBackdrop"></div>
+<main id="content">
 
 
 
@@ -617,19 +619,19 @@
 </div>
 <div class="faq-list">
 <div class="faq-item" data-animate="">
-<button class="faq-q">How much does virus removal cost?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">How much does virus removal cost?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Virus and malware removal is a flat <strong>$99</strong>, and it includes a full tune-up. It’s labor-only, so there’s no sales tax. If the problem turns out to be something bigger — like failing hardware — I’ll tell you before you’re on the hook for anything. <a class="body-link" href="/pricing">See the full price table</a>.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Will you need to wipe my computer?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Will you need to wipe my computer?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Usually no. Most cleanups do not require a wipe. If a reset is the smartest move, I’ll tell you first, explain why, and talk through backup options.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Can you tell if it’s actually a virus?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Can you tell if it’s actually a virus?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">Yes. Sometimes it really is malware. Sometimes it’s just a bloated browser, bad extensions, a rough Windows install, or failing hardware. I’ll tell you which one it is.</div>
 </div>
 <div class="faq-item" data-animate="">
-<button class="faq-q">Can I just ignore the popups?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
+<button class="faq-q" type="button">Can I just ignore the popups?<span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span></button>
 <div class="faq-a">If it’s fake browser scareware, maybe for a minute. If the machine keeps redirecting, installing junk, or logging you out of stuff, no. That’s how bad gets worse.</div>
 </div>
 </div>
@@ -653,6 +655,7 @@
 </div>
 </div>
 </section>
+</main>
 <footer class="footer">
 <div class="container">
 <div class="footer-inner">
@@ -712,8 +715,8 @@
 <div class="qf-panel">
 <div class="qf-header">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="search"></span>
-<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text"/>
-<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>
+<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text" aria-label="Search pages"/>
+<button aria-label="Close Quick Find" class="qf-close" id="qfClose" type="button">ESC</button>
 </div>
 <div class="qf-body" id="qfBody">
 <div class="qf-columns" id="qfColumns">

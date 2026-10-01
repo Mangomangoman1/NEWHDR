@@ -154,6 +154,8 @@
       if (event.matches && mobileMenu.classList.contains('open')) closeMenu(false);
     });
 
+    window.addEventListener('pagehide', () => closeMenu(false));
+
     // Focus trap inside mobile menu
     mobileMenu.addEventListener('keydown', (e) => {
       if (e.key !== 'Tab') return;
@@ -266,6 +268,7 @@
     });
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (contactForm.dataset.submitting === 'true') return;
 
       const nameInput    = contactForm.querySelector('#name');
       const contactInput = contactForm.querySelector('[name="contact"], #contact, #contactField');
@@ -305,6 +308,8 @@
       if (formSuccess) { formSuccess.hidden = true; formSuccess.classList.remove('visible'); }
       const FORMSPREE_ID = contactForm.dataset.formspree; // set data-formspree="YOUR_ID" on <form>
 
+      contactForm.dataset.submitting = 'true';
+      contactForm.setAttribute('aria-busy', 'true');
       // Disable button + show spinner
       if (submitBtn) {
         submitBtn.disabled = true;
@@ -339,7 +344,7 @@
           if (formError) {
             formError.hidden = false;
             formError.classList.add('visible');
-            formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            formError.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'nearest' });
           }
           restoreSubmitBtn();
         });
@@ -383,6 +388,8 @@
       }
 
       function restoreSubmitBtn() {
+        delete contactForm.dataset.submitting;
+        contactForm.setAttribute('aria-busy', 'false');
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = submitBtn.dataset.originalText || '<span class="material-symbols-outlined" data-icon="send" aria-hidden="true"></span> Send Quote Request';
@@ -394,7 +401,9 @@
   // ─── Smooth anchor offset for sticky nav ─────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-      const id = anchor.getAttribute('href').slice(1);
+      if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || (e.button != null && e.button !== 0)) return;
+      let id;
+      try { id = decodeURIComponent(anchor.getAttribute('href').slice(1)); } catch (_) { return; }
       if (!id) return;
       const target = document.getElementById(id);
       if (!target) return;
@@ -3031,7 +3040,7 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         '<div class="qf-header">' +
           icon('search') +
           '<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search or describe a problem…" type="text" aria-label="Search pages"/>' +
-          '<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>' +
+          '<button type="button" aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>' +
         '</div>' +
         '<div class="qf-body" id="qfBody">' +
           '<div class="qf-browse" id="qfBrowse">' +
@@ -3080,7 +3089,14 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   var searching     = false;
   var activeIndex   = -1;
   var activeItems   = [];
+  var categoryLayout = window.matchMedia("(max-width: 640px)");
+  function updateCategoryOrientation() {
+    if (railNav) railNav.setAttribute("aria-orientation", categoryLayout.matches ? "horizontal" : "vertical");
+  }
+  categoryLayout.addEventListener("change", updateCategoryOrientation);
+  updateCategoryOrientation();
   var lastTrigger   = null;
+  var previousOverflow = '';
 
   function activeListNodes() {
     if (searching) return Array.prototype.slice.call(resultsZone.querySelectorAll('.qf-link'));
@@ -3230,9 +3246,11 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   }
 
   function open(opener) {
+    if (!overlay.classList.contains('open')) previousOverflow = document.body.style.overflow;
     lastTrigger = opener || null;
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
+    triggers.forEach(function(button) { button.setAttribute('aria-expanded', 'true'); });
     document.body.style.overflow = 'hidden';
     if (searchInput) { searchInput.value = ''; }
     showBrowse();
@@ -3241,9 +3259,11 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   }
 
   function close() {
+    if (!overlay.classList.contains('open')) return;
     overlay.classList.remove('open');
     overlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    document.body.style.overflow = previousOverflow;
+    triggers.forEach(function(button) { button.setAttribute('aria-expanded', 'false'); });
     activeIndex = -1;
     clearActive();
     if (lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus();
@@ -3252,6 +3272,12 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   // Triggers
   var trigger = document.getElementById('qfTrigger');
   var triggerMobile = document.getElementById('qfTriggerMobile');
+  var triggers = [trigger, triggerMobile].filter(Boolean);
+  triggers.forEach(function(button) {
+    button.setAttribute('aria-controls', overlay.id);
+    button.setAttribute('aria-haspopup', 'dialog');
+    button.setAttribute('aria-expanded', 'false');
+  });
   if (trigger) trigger.addEventListener('click', function() { open(trigger); });
   if (triggerMobile) triggerMobile.addEventListener('click', function() {
     var mobileNav = document.getElementById('navMobile');
@@ -3275,6 +3301,22 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
   if (closeBtn) closeBtn.addEventListener('click', close);
   if (backdrop) backdrop.addEventListener('click', close);
   if (searchInput) searchInput.addEventListener('input', function() { onInput(this.value); });
+
+  if (railNav) railNav.addEventListener('keydown', function(e) {
+    if (!e.target.closest('.qf-drawer') || !drawerEls.length) return;
+    var next = currentDrawer;
+    var forward = categoryLayout.matches ? 'ArrowRight' : 'ArrowDown';
+    var backward = categoryLayout.matches ? 'ArrowLeft' : 'ArrowUp';
+    if (e.key === 'Home') next = 0;
+    else if (e.key === 'End') next = drawerEls.length - 1;
+    else if (e.key === forward) next = (currentDrawer + 1) % drawerEls.length;
+    else if (e.key === backward) next = (currentDrawer + drawerEls.length - 1) % drawerEls.length;
+    else return;
+    e.preventDefault();
+    e.stopPropagation();
+    setDrawer(next);
+    drawerEls[next].focus();
+  });
 
   if (railNav) railNav.addEventListener('click', function(e) {
     var btn = e.target.closest('.qf-drawer');

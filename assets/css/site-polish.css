@@ -86,3 +86,27 @@ html body .sos-nav-btn--next.btn-primary:hover { background: #ee8c72; color: #20
   white-space: normal;
   line-height: 1.5;
 }
+
+/* Honor native hidden states. */
+html body [hidden] { display: none !important; }
+
+/* Share skip-link positioning. */
+.skip-link { position: fixed; top: -100px; left: 20px; transform: none; z-index: 500; padding: 12px 20px; background: #f2f1ed; color: #0b0f14; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+
+/* Offset legacy article anchors. */
+.bench-article-card[id] { scroll-margin-top: 88px; }
+
+/* Wrap long editorial links. */
+.bench-article a, .fg-article a { overflow-wrap: anywhere; }
+
+/* Allow editorial grid columns to shrink. */
+.rh-group > *, .rh-guide > *, .fg-hero-grid > *, .fg-layout > * { min-width: 0; }
+
+/* Keep textareas within forms. */
+.form-group textarea { resize: vertical; max-width: 100%; min-height: 120px; }
+
+/* Contain wide table scrolling. */
+.pt-scroll, .lp-table-wrap, .cmp-wrap, .ps5-menu, .pricing-table-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+
+@media (max-width: 768px) { html body .nav-mobile { padding-bottom: max(2rem, env(safe-area-inset-bottom)) !important; } }

@@ -333,7 +333,7 @@ a{color:inherit;text-decoration:none}
 <link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 </head>
 <body>
-<nav class="nav" id="nav" role="navigation">
+<nav class="nav" id="nav" role="navigation" aria-label="Primary">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
 <span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
@@ -453,32 +453,32 @@ a{color:inherit;text-decoration:none}
 <div aria-label="Step 1: Choose your device type" class="dc-panel active" id="dcStep1" role="group">
 <h2 class="dc-panel-title">What type of device?</h2>
 <div class="dc-options dc-options--lg">
-<button aria-label="iPhone" class="dc-option" data-device="iphone">
+<button aria-label="iPhone" class="dc-option" data-device="iphone" type="button">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="phone_iphone"></span>
 <strong>iPhone</strong>
 <span class="dc-option-sub">All models</span>
 </button>
-<button aria-label="Android phone" class="dc-option" data-device="android">
+<button aria-label="Android phone" class="dc-option" data-device="android" type="button">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="smartphone"></span>
 <strong>Android</strong>
 <span class="dc-option-sub">Samsung, Pixel, etc.</span>
 </button>
-<button aria-label="Laptop or PC" class="dc-option" data-device="laptop">
+<button aria-label="Laptop or PC" class="dc-option" data-device="laptop" type="button">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop"></span>
 <strong>Laptop / PC</strong>
 <span class="dc-option-sub">Mac, Windows, Chromebook</span>
 </button>
-<button aria-label="iPad or Tablet" class="dc-option" data-device="tablet">
+<button aria-label="iPad or Tablet" class="dc-option" data-device="tablet" type="button">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="tablet"></span>
 <strong>iPad / Tablet</strong>
 <span class="dc-option-sub">All brands</span>
 </button>
-<button aria-label="Game console" class="dc-option" data-device="console">
+<button aria-label="Game console" class="dc-option" data-device="console" type="button">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="monitor"></span>
 <strong>Game Console</strong>
 <span class="dc-option-sub">Switch, PS, Xbox</span>
 </button>
-<button aria-label="Other device" class="dc-option" data-device="other">
+<button aria-label="Other device" class="dc-option" data-device="other" type="button">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="build"></span>
 <strong>Other</strong>
 <span class="dc-option-sub">Smartwatch, speaker, etc.</span>
@@ -487,7 +487,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <!-- Step 2: Problem Type -->
 <div aria-label="Step 2: Describe the problem" class="dc-panel" id="dcStep2" role="group">
-<button aria-label="Go back" class="dc-back" id="dcBack2">
+<button aria-label="Go back" class="dc-back" id="dcBack2" type="button">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_back"></span> Back
         </button>
 <h2 class="dc-panel-title">What's the problem?</h2>
@@ -495,13 +495,13 @@ a{color:inherit;text-decoration:none}
 <div class="dc-options dc-options--multi" id="dcProblems">
 <!-- Populated dynamically based on device type -->
 </div>
-<button class="btn btn-primary dc-next" disabled="" id="dcNext2">
+<button class="btn btn-primary dc-next" disabled="" id="dcNext2" type="button">
           Next <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span>
 </button>
 </div>
 <!-- Step 3: Details -->
 <div aria-label="Step 3: Additional details" class="dc-panel" id="dcStep3" role="group">
-<button aria-label="Go back" class="dc-back" id="dcBack3">
+<button aria-label="Go back" class="dc-back" id="dcBack3" type="button">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_back"></span> Back
         </button>
 <h2 class="dc-panel-title">A couple more details</h2>
@@ -547,13 +547,13 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 </div>
-<button class="btn btn-primary dc-next" id="dcNext3">
+<button class="btn btn-primary dc-next" id="dcNext3" type="button">
           Get My Estimate <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span>
 </button>
 </div>
 <!-- Step 4: Results -->
 <div aria-label="Step 4: Your estimate" class="dc-panel" id="dcStep4" role="group">
-<button aria-label="Start over" class="dc-back" id="dcBack4">
+<button aria-label="Start over" class="dc-back" id="dcBack4" type="button">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_back"></span> Start Over
         </button>
 <div class="dc-results" id="dcResults">
@@ -586,8 +586,8 @@ a{color:inherit;text-decoration:none}
 <div class="cookie-banner-inner container">
 <p>Optional analytics help improve this site. <a href="/privacy">Learn more</a> <a href="/privacy">Privacy policy</a></p>
 <div class="cookie-banner-actions">
-<button class="btn btn-primary btn-sm" id="cookieAccept">Allow analytics</button>
-<button class="btn btn-outline btn-sm" id="cookieDecline">No thanks</button>
+<button class="btn btn-primary btn-sm" id="cookieAccept" type="button">Allow analytics</button>
+<button class="btn btn-outline btn-sm" id="cookieDecline" type="button">No thanks</button>
 </div>
 </div>
 </div>
@@ -671,7 +671,7 @@ a{color:inherit;text-decoration:none}
         Hailey, ID • 7 days a week
       </div>
 </div>
-<button aria-label="Get help" class="help-fab-trigger" id="helpFabTrigger">
+<button aria-label="Get help" class="help-fab-trigger" id="helpFabTrigger" type="button">
 <span class="help-fab-dot"></span>
 <span class="help-fab-label-text">Need help?</span>
 <span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span>
@@ -693,8 +693,8 @@ a{color:inherit;text-decoration:none}
 <div class="qf-panel">
 <div class="qf-header">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="search"></span>
-<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text"/>
-<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>
+<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text" aria-label="Search pages"/>
+<button aria-label="Close Quick Find" class="qf-close" id="qfClose" type="button">ESC</button>
 </div>
 <div class="qf-body" id="qfBody">
 <div class="qf-columns" id="qfColumns">

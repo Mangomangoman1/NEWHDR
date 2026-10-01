@@ -16,7 +16,7 @@ function element(value = '') {
     setAttribute(key, value) { this.attributes[key] = value; },
     removeAttribute(key) { delete this.attributes[key]; },
     addEventListener(event, callback) { this.handlers[event] = callback; },
-    scrollIntoView() {}, focus() { this.focused = true; }, dispatchEvent() {},
+    scrollIntoView(options) { this.scrollOptions = options; }, focus() { this.focused = true; }, dispatchEvent() {},
     querySelector() { return null; }
   };
 }
@@ -29,16 +29,38 @@ function setup({ response = 'ok', fallback = false } = {}) {
   form.querySelectorAll = selector => selector === 'select' ? [ids.device, ids.service] : [ids.name, ids.contact, ids.issue];
   form.reset = () => { for (const key of ['name', 'contact', 'issue', 'device', 'model', 'service']) ids[key].value = ''; form.resets = (form.resets || 0) + 1; };
   const requests = [], window = { location: { href: '' } };
+  let completeRequest;
   const context = { document: { getElementById: id => id === 'contactForm' ? form : ids[id] }, window, reduceMotion: true, Event: class {}, fetch: async (url, options) => {
     requests.push({ url, options });
+    if (response === 'pending') return new Promise(resolve => { completeRequest = resolve; });
     if (response === 'network') throw new Error('offline');
     return { ok: response === 'ok' };
   } };
   vm.runInNewContext(formCode, context);
   const send = async () => { form.handlers.submit({ preventDefault() {} }); await new Promise(resolve => setImmediate(resolve)); };
   const fill = () => { ids.name.value = 'Jane Smith'; ids.contact.value = 'jane@example.com'; ids.issue.value = 'Cracked screen after a drop'; };
-  return { ids, form, submit, requests, window, send, fill };
+  return { ids, form, submit, requests, window, send, fill, release: () => completeRequest({ ok: true }) };
 }
+
+test('pending submission is busy and ignores a second submit, then permits another request', async () => {
+  const s = setup({ response: 'pending' }); s.fill();
+  await s.send(); await s.send();
+  assert.equal(s.requests.length, 1);
+  assert.equal(s.form.attributes['aria-busy'], 'true');
+  assert.equal(s.submit.disabled, true);
+  s.release(); await new Promise(resolve => setImmediate(resolve));
+  assert.equal(s.form.attributes['aria-busy'], 'false');
+  assert.equal(s.form.dataset.submitting, undefined);
+  s.fill(); await s.send(); assert.equal(s.requests.length, 2);
+  s.release(); await new Promise(resolve => setImmediate(resolve));
+});
+
+test('failed submission clears busy state and honors reduced motion for error scrolling', async () => {
+  const s = setup({ response: 'network' }); s.fill(); await s.send();
+  assert.equal(s.form.attributes['aria-busy'], 'false');
+  assert.equal(s.form.dataset.submitting, undefined);
+  assert.equal(s.ids.formError.scrollOptions.behavior, 'instant');
+});
 
 test('empty required fields give feedback and focus without sending', async () => {
   const s = setup(); await s.send();

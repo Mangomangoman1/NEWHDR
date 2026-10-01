@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="/assets/css/site-polish.css?v=20260906"/>
 <link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 </head><body class="tips-library-page">
-<nav class="nav" id="nav" role="navigation">
+<nav class="nav" id="nav" role="navigation" aria-label="Primary">
 <div class="nav-inner">
 <a aria-label="Hailey Device Repair Home" class="nav-logo" href="/">
 <span aria-hidden="true" class="material-symbols-outlined nav-logo-icon" data-icon="smartphone"></span>
@@ -82,7 +82,7 @@
 <div aria-hidden="true" class="nav-mobile-backdrop" id="navBackdrop"></div>
 <a class="skip" href="#content">Skip to content</a><main class="resource-hub" id="content">
 <section class="rh-hero" aria-labelledby="resource-title">
-<div class="rh-hero__media"><img src="/assets/hero/repair-bench-macbook.webp" alt="Open laptop on a professional repair bench" width="1600" height="1200" fetchpriority="high"/></div>
+<div class="rh-hero__media"><img src="/assets/hero/repair-bench-macbook.webp" alt="Open laptop on a professional repair bench" width="1600" height="1200" fetchpriority="high" decoding="async"/></div>
 <div class="rh-shell"><div class="rh-hero__copy">
 <div class="rh-hero__edition"><span>HDR</span> Repair Library <b aria-hidden="true">/</b> 40 field guides</div>
 <h1 id="resource-title">The Repair <span>Library.</span></h1>
@@ -110,7 +110,7 @@
 <header class="rh-section-head rh-reveal"><h2>Start with the right move.</h2><p>When a device is wet, hot, swollen, unresponsive, or holding irreplaceable data, doing less is often safer than trying every fix you find online.</p></header>
 <div class="rh-featured__grid rh-reveal">
 <a class="rh-lead-story" href="/tips/phone-screen-black-but-on">
-<img src="/assets/services/hero-phone-cracked.webp" alt="Phone with a badly cracked display" width="420" height="630" loading="lazy"/>
+<img src="/assets/services/hero-phone-cracked.webp" alt="Phone with a badly cracked display" width="420" height="630" loading="lazy" decoding="async"/>
 <div class="rh-lead-story__copy"><span class="rh-lead-story__meta">Featured field guide · Phone</span><h3>Black screen.<br/>Phone still on.</h3><p>Separate a failed display from a software crash, try the one restart worth attempting, and protect the data after a hard drop.</p><span class="rh-lead-story__action">Read the guide <span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></span></div>
 </a>
 <aside class="rh-urgent" aria-label="Emergency repair guides"><p class="rh-urgent__title">Use these first</p>
@@ -122,7 +122,7 @@
 </div></div></section>
 
 <section class="rh-library" id="library"><div class="rh-shell">
-<header class="rh-library__top rh-reveal"><div><span class="rh-kicker">Complete index</span><h2>Browse every guide.</h2></div><p class="rh-result-count" aria-live="polite"><strong id="resourceResultNumber">43</strong> <span id="resourceResultLabel">guides</span></p></header>
+<header class="rh-library__top rh-reveal"><div><span class="rh-kicker">Complete index</span><h2>Browse every guide.</h2></div><p class="rh-result-count" aria-live="polite" aria-atomic="true"><strong id="resourceResultNumber">43</strong> <span id="resourceResultLabel">guides</span></p></header>
 <div class="rh-groups">
 <section class="rh-group rh-reveal" data-guide-group><header class="rh-group__label"><span class="rh-group__index">01 / Phones</span><h3>Phone problems</h3><p>Screens, charging, batteries, water, heat, and device-specific symptoms.</p></header><div class="rh-guide-list">
 <a class="rh-guide" href="/tips/screen-protector-or-cracked-screen" data-guide data-category="phone decision" data-search="cracked screen protector or phone screen? how to tell screen protector or cracked screen"><span><span class="rh-guide__topic">Screen diagnosis</span><strong>Cracked screen protector or phone screen? How to tell</strong></span><p>Identify the damaged layer before buying a screen. Know what normal touch can—and cannot—tell you.</p><span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></a>
@@ -202,8 +202,8 @@
 <div class="qf-panel">
 <div class="qf-header">
 <span aria-hidden="true" class="material-symbols-outlined" data-icon="search"></span>
-<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text"/>
-<button aria-label="Close Quick Find" class="qf-close" id="qfClose">ESC</button>
+<input autocomplete="off" class="qf-search" id="qfSearch" placeholder="Search pages..." type="text" aria-label="Search pages"/>
+<button aria-label="Close Quick Find" class="qf-close" id="qfClose" type="button">ESC</button>
 </div>
 <div class="qf-body" id="qfBody">
 <div class="qf-columns" id="qfColumns">
