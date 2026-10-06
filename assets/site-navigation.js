@@ -378,6 +378,13 @@
     "kw": " tips nintendo switch wont turn on"
   },
   {
+    "name": "One AirPod not working?",
+    "desc": "One AirPod silent or quieter? Check each earbud’s charge, isolate the sound problem, clean safely, and choose the correct reset for your AirPods model.",
+    "href": "/tips/one-airpod-not-working",
+    "icon": "menu_book",
+    "kw": " tips one airpod not working"
+  },
+  {
     "name": "Phone got wet? What to do first",
     "desc": "A practical water-damaged phone guide: what to do immediately, what not to do, when to stop testing, and when corrosion inspection matters.",
     "href": "/tips/water-damaged-phone",

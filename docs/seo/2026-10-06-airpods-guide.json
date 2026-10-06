@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-06",
+  "topic": "One AirPod not working",
+  "rationale": "Distinct from all 43 existing guides: accessory output and individual charging, rather than iPhone microphone or wet phone speaker.",
+  "route": "/tips/one-airpod-not-working",
+  "baseline": "91039e9a7ddac81ae00da2bf74dbd4ec18b8cb24",
+  "sources": [
+    "https://support.apple.com/en-us/100494",
+    "https://support.apple.com/en-us/102593",
+    "https://support.apple.com/en-us/118531",
+    "https://support.apple.com/en-us/102672",
+    "https://support.apple.com/en-us/120409",
+    "https://support.apple.com/en-us/109525",
+    "https://support.apple.com/en-us/102520"
+  ],
+  "design": "Existing field-guide shell; native symptom jump links and side-by-side model controls, stacked on mobile. No new JavaScript or repair/service claims.",
+  "checks": {
+    "build": "pass",
+    "site_audit": "88 public pages, 6153 references, zero failures",
+    "indexability": "792 checks, zero failures",
+    "semantic_accessibility": "88 pages, zero failures",
+    "existing_tests": "47 passed",
+    "chromium": "390, 1440 and 320 px: no overflow or page errors; native anchors; Quick Find mobile/desktop; library search; JavaScript-disabled content",
+    "visual_review": "Full-page screenshots reviewed at 390 and 1440 px",
+    "content_preservation": "Original script cannot compare a newly added page against baseline. Fallback verified 87 existing HTML pages, only intended two edited, business JSON-LD unchanged.",
+    "limits": [
+      "No physical AirPods testing or screen-reader session.",
+      "axe-core unavailable; semantic audit and keyboard/browser checks used.",
+      "GitHub API reports Forbidden with supplied credential; CI/deployment verification will be attempted after push."
+    ]
+  }
+}

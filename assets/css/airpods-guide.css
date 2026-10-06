@@ -1,0 +1,8 @@
+/* AirPods symptom routes: native anchors, readable without JavaScript. */
+.ap-scope{font-size:12px;color:#a9b7c7;margin-top:20px}
+.ap-route{background:linear-gradient(145deg,#1e303b,#14202a);border:1px solid #425969;border-radius:16px;padding:28px;align-self:center;box-shadow:0 18px 60px #0003}
+.ap-route>a{display:flex;align-items:center;gap:16px;padding:22px 0;border-top:1px solid #425969;text-decoration:none}.ap-route>a>span:nth-child(2){flex:1}.ap-route strong{display:block;font-size:16px;line-height:1.45;color:#f2f1ed}.ap-route small{display:block;color:#b7cbd7;font-size:13px;margin-top:5px}.ap-mark{display:grid;place-items:center;width:36px;height:36px;flex-shrink:0;border:1px solid #779baa;border-radius:50%;font-size:12px;color:#bfddd9}.ap-route>p:last-child{font-size:12px;color:#bdcad5;border-top:1px solid #425969;padding-top:20px;margin-bottom:0}.ap-route a:hover{color:#c3ece2}.ap-route a:focus-visible,.fg-page a:focus-visible{outline:2px solid #b7e6dc;outline-offset:5px;border-radius:2px}
+.ap-models{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.ap-models section{padding:24px;border:1px solid #425969;border-radius:10px;background:#141f28}.ap-models h3{font-size:27px;line-height:1.15;margin:0 0 18px}.ap-models p:last-child{margin:0;font-size:14px}.ap-models .fg-kicker{font-size:10px;margin-bottom:12px;color:#b9d7d1}
+@media(max-width:760px){.ap-route{padding:22px}.ap-route>a{padding:18px 0}.ap-route strong{font-size:15px}.ap-models{grid-template-columns:1fr}.ap-models section{padding:20px}}
+
+.ap-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
