@@ -1,0 +1,15 @@
+/* iPad rotation guide: native links and disclosure; no script required. */
+.ir-scope{font-size:12px;color:#a9b7c7;margin-top:20px}
+.ir-routes{align-self:center;padding:26px 30px;border:1px solid #405866;border-radius:16px;background:linear-gradient(145deg,#20303c,#111e28);box-shadow:0 20px 60px #0003}
+.ir-diagram{display:flex;align-items:center;justify-content:center;gap:28px;min-height:145px;margin-bottom:22px}
+.ir-tablet{display:block;border:2px solid #abc8d7;border-radius:10px;padding:8px;background:#0b141d;box-shadow:8px 12px 24px #0003}
+.ir-tablet:after{content:"";display:block;width:100%;height:100%;border-radius:3px;background:linear-gradient(140deg,#6c9ea1,#244963 68%,#1b3042)}
+.ir-portrait{width:77px;height:106px;transform:rotate(-7deg)}.ir-landscape{width:128px;height:88px;transform:rotate(5deg)}.ir-turn{font-size:29px;color:#abc8d7}
+.ir-routes>a{display:flex;align-items:center;gap:15px;padding:18px 0;border-top:1px solid #405866;text-decoration:none}.ir-routes>a>span:first-child{font-size:11px;color:#b1d5d0}.ir-routes strong{font-size:14px;color:#f2f1ed;flex:1}.ir-routes>p:last-child{font-size:12px;color:#b2c2cf;margin:15px 0 0}
+.ir-models{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.ir-models section{padding:22px;border:1px solid #405866;background:#14212b;border-radius:10px}.ir-models h3{font-size:26px;line-height:1.2;margin:0 0 14px}.ir-models p:last-child{font-size:14px;margin:0}.ir-models .fg-kicker{font-size:10px;color:#b1d5d0}
+.ir-frozen{border:1px solid #405866;border-radius:10px;padding:0 20px;background:#121e27}.ir-frozen summary{cursor:pointer;min-height:48px;padding:16px 0;font-weight:600;color:#e8f1f4}.ir-frozen[open] summary{margin-bottom:8px}.ir-frozen p,.ir-frozen li{font-size:14px}
+.fg-page a:focus-visible,.ir-frozen summary:focus-visible{outline:2px solid #b8e8df;outline-offset:5px;border-radius:2px}
+@media(max-width:760px){.ir-routes{padding:22px}.ir-diagram{min-height:120px;gap:18px}.ir-models{grid-template-columns:1fr}.ir-models section{padding:20px}}
+@media(max-width:360px){.ir-diagram{gap:12px}.ir-landscape{width:108px;height:77px}.ir-portrait{width:66px;height:92px}}
+
+.ir-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}

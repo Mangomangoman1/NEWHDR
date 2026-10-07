@@ -2680,6 +2680,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips backup before repair"
   },
   {
+    "name": "iPad screen won’t rotate?",
+    "desc": "iPad stuck in portrait or landscape? Check Rotation Lock, compare apps, restart the right model, and protect your data before further troubleshooting.",
+    "href": "/tips/ipad-screen-wont-rotate",
+    "icon": "menu_book",
+    "kw": " tips ipad screen wont rotate"
+  },
+  {
     "name": "iPhone battery health at 80%: does it need replacement?",
     "desc": "What iPhone Maximum Capacity and 80% battery health actually mean, how cycle counts differ by model, which symptoms matter, and when replacement is worth it.",
     "href": "/tips/iphone-battery-health-80-percent",

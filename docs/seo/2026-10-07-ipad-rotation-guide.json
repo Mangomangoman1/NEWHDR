@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-07",
+  "topic": "iPad screen won’t rotate",
+  "route": "/tips/ipad-screen-wont-rotate",
+  "baseline": "53379f1f1d7bb4086a2afb40424de955142cc534",
+  "rationale": "Reviewed all 44 existing tips and three repair-expectation guides. No orientation-lock or iPad rotation troubleshooting intent; distinct from damaged/black displays, ghost touch, and screen replacement.",
+  "sources": [
+    "https://support.apple.com/en-us/111790",
+    "https://support.apple.com/en-us/102499",
+    "https://support.apple.com/guide/ipad/quit-and-reopen-an-app-ipad79518d15/ipados",
+    "https://support.apple.com/en-us/119876",
+    "https://support.apple.com/en-us/101603",
+    "https://support.apple.com/en-us/102642",
+    "https://support.apple.com/en-us/118426",
+    "https://support.apple.com/en-us/118575",
+    "https://support.apple.com/ipad"
+  ],
+  "design": "Existing branded field-guide shell; CSS tablet illustration, native symptom links, two model cards, and a keyboard-operable native disclosure. No new JavaScript. Content works without JavaScript.",
+  "integration": [
+    "Repair Library: 45 visible cards, corrected stale hero count, phones/tablets filter, matching CollectionPage items",
+    "Repair Guides: new tablet troubleshooting card and matching CollectionPage items",
+    "Sitemap entry and updated dates for three changed existing pages",
+    "Quick Find regenerated in source, minified, and shared navigation scripts",
+    "Incoming contextual link from tablet service; outgoing backup, tablet service, contact, and library links"
+  ],
+  "checks": {
+    "build": "bash build.sh passed",
+    "site_audit": "89 public pages; 6204 local references; zero failures",
+    "indexability": "800 checks; zero failures",
+    "accessibility": "89-page semantic audit; zero failures",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed",
+    "browser": "Chromium at 320, 390, 768, 1440 px: no horizontal overflow or JS page errors. Skip link, anchors, disclosure mouse/keyboard, mobile menu, Quick Find, library search/filter/reset, schema/card ordering, no-JavaScript content passed. 200% CSS layout zoom at 720px: no overflow.",
+    "visual_review": "Full-page screenshots at 390 and 1440 px, 320 px layout, desktop/mobile viewport screenshots, expanded restart disclosure inspected. Fixed missing arrow glyph with CSS arrows and H1 whitespace in generated search label.",
+    "preservation": "88 existing HTML pages compared with baseline; only tips.html, guides.html, tablet-repair.html changed. All prior tips including one-airpod-not-working and phone-charges-slowly byte-identical. Existing business/FAQ schema preserved.",
+    "diff": "git diff --check passed"
+  },
+  "limits": [
+    "No physical iPad, Safari/WebKit, or screen-reader session.",
+    "axe-core unavailable; semantic audit and keyboard/browser checks used.",
+    "GitHub status API returned Forbidden before push; deployment verification must use accessible public content unless API access becomes available."
+  ]
+}
