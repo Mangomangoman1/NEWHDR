@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-08",
+  "topic": "Laptop touchpad not working — Windows 11",
+  "route": "/tips/laptop-touchpad-not-working",
+  "baseline": "5f3ab4fe9faa9a66f3f1af6084332fb0cec3f18c",
+  "environment": "Cloud Linux workspace only; no Mac access",
+  "instructions": "README and docs/HDR-CONTENT-ARCHITECTURE-GUIDE.md reviewed; no AGENTS.md or local .agents skills present. Existing iPad field-guide shell used.",
+  "rationale": "Inventory contains laptop keyboard, display, power, and battery guidance but no dedicated touchpad/pointer/gesture troubleshooting intent. New guide separates software checks from hardware diagnosis.",
+  "sources": [
+    "https://www.dell.com/support/kbdoc/en-us/000123353/touchpad-usage-and-troubleshooting-guide",
+    "https://dl.dell.com/manuals/common/Swollen_Battery_TechSheet.PDF",
+    "https://www.dell.com/support/kbdoc/en-us/000124374/disabling-or-enabling-the-touchpad-on-a-dell-notebook",
+    "https://support.microsoft.com/en-us/windows/hardware/input-devices/touch-gestures-for-windows",
+    "https://support.microsoft.com/en-us/windows/hardware/input-devices/fix-touchpad-problems-in-windows",
+    "https://support.microsoft.com/en-us/windows/hardware/drivers/automatically-get-recommended-and-updated-hardware-drivers",
+    "https://support.microsoft.com/en-us/windows/update-drivers-through-device-manager-in-windows-ec62f46c-ff14-c91d-eead-d7126dc1f7b6"
+  ],
+  "design": "Existing field-guide typography and layout; scoped CSS laptop illustration, native symptom anchors, keyboard reference card, high-visibility deformation warning, native optional rollback disclosure. No new JavaScript.",
+  "integration": [
+    "46 Repair Library cards with computer filter/search and matching ordered schema",
+    "27 Repair Guides cards and matching ordered schema; corrected pre-existing stale counts/dates",
+    "Contextual incoming laptop service link and outgoing backup/battery/service links",
+    "Sitemap and regenerated Quick Find source, minified and shared navigation assets"
+  ],
+  "checks": {
+    "build": "bash build.sh passed",
+    "site_audit": "90 public pages; 6255 local references; zero failures",
+    "indexability": "808 checks passed; zero failures",
+    "accessibility": "90-page semantic audit; zero failures",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed",
+    "browser": {
+      "results": [
+        "320px: no overflow",
+        "390px: no overflow",
+        "768px: no overflow",
+        "1440px: no overflow",
+        "skip link, keyboard disclosure, Quick Find passed",
+        "mobile menu and search passed",
+        "/tips: 46 cards match schema",
+        "/guides: 27 cards match schema",
+        "200% layout zoom: no overflow",
+        "no-JavaScript article and disclosure passed"
+      ],
+      "errors": []
+    },
+    "library": "Search for touchpad, computer filter, phone exclusion, all reset and correct computer group passed",
+    "visual": "Full-page 390px and 1440px screenshots plus mobile/desktop viewport images inspected. Four viewport sizes tested; 200% CSS layout zoom at 720px passed.",
+    "preservation": "Compared 93 tracked existing HTML files outside archived against baseline: only tips.html, guides.html and laptop-repair.html changed; all existing tips byte-identical including AirPods, iPad rotation and charging safety fixes.",
+    "diff": "git diff --check passed"
+  },
+  "limits": [
+    "Chromium only; no Safari/WebKit, screen-reader session, or physical Windows laptop test.",
+    "axe-core unavailable; semantic and keyboard/browser checks used.",
+    "Indexability checks do not establish search-engine indexing."
+  ]
+}

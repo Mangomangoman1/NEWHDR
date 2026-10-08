@@ -371,6 +371,13 @@
     "kw": " tips laptop screen black but running"
   },
   {
+    "name": "Laptop touchpad not working?",
+    "desc": "Laptop touchpad not working? Check Windows 11 settings, mouse detection, gestures, and official drivers. Stop if the pad is raised or swollen.",
+    "href": "/tips/laptop-touchpad-not-working",
+    "icon": "menu_book",
+    "kw": " tips laptop touchpad not working"
+  },
+  {
     "name": "LCD vs OLED phone screens: how to tell",
     "desc": "A plain-English guide to LCD vs OLED phone screens, repair pricing, aftermarket options, black-screen tests, and quality tradeoffs.",
     "href": "/tips/lcd-vs-oled",
