@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-09",
+  "topic": "iPhone says SOS, No Service, or Searching",
+  "route": "/tips/iphone-sos-no-service",
+  "baseline": "0a2106cb3c0ef048cdc5127960a60e40f111007f",
+  "environment": "Saved cloud Linux workspace only; no access to user Mac",
+  "instructions": "README and HDR-CONTENT-ARCHITECTURE-GUIDE reviewed; no AGENTS.md or .agents skills found. Existing Vercel hosting preserved. Recent field-guide layouts inspected.",
+  "rationale": "Full inventory of 46 tips and three repair-expectation guides reviewed. No dedicated cellular registration, SOS, SIM/eSIM activation intent. Distinct from Wi-Fi drops, microphone faults, display/power failures, and iPhone repair service intent.",
+  "sources": [
+    "https://support.apple.com/en-us/101582",
+    "https://support.apple.com/en-us/102421",
+    "https://support.apple.com/en-us/102478",
+    "https://support.apple.com/en-us/108914",
+    "https://support.apple.com/en-us/109324",
+    "https://support.apple.com/en-us/109357",
+    "https://support.apple.com/en-us/118259",
+    "https://support.apple.com/en-us/118575",
+    "https://support.apple.com/en-us/120000",
+    "https://support.apple.com/guide/iphone/reset-iphone-settings-iphea1c2fe48/ios",
+    "https://support.apple.com/guide/iphone/view-or-change-cellular-data-settings-iph3dd5f213/ios"
+  ],
+  "content": "939-word main article with immediate answer, symptom routes, interpretation of comparisons, model-specific restart/tray guidance, carrier activation and account checks, iOS 18+ diagnostics, eSIM deletion cautions, and separate network-reset/erase consequences. No pricing, affiliate additions, or claimed bench observations.",
+  "design": "Established field-guide shell with scoped CSS signal/phone illustration, two status explanation cards, native symptom links and keyboard-operable disclosures. No new JavaScript.",
+  "integration": [
+    "47 library cards with matching ordered CollectionPage schema and search/filter metadata",
+    "28 repair-guide cards with matching ordered CollectionPage schema",
+    "Incoming contextual link from iPhone repair service; outgoing backup, liquid/swelling safety and service links",
+    "Sitemap and generated Quick Find source, minified and shared navigation assets"
+  ],
+  "checks": {
+    "build": "bash build.sh passed",
+    "site": "91 public pages; 6308 local references; zero failures",
+    "indexability": "816 checks passed; zero failures",
+    "semantic_accessibility": "91 public pages; zero failures",
+    "tests": "node --test scripts/test-*.mjs: 47 passed; zero failed",
+    "browser": [
+      "320px: no overflow, all anchors valid",
+      "390px: no overflow, all anchors valid",
+      "768px: no overflow, all anchors valid",
+      "1440px: no overflow, all anchors valid",
+      "Skip link and both native disclosures work with keyboard",
+      "Symptom jump clears fixed navigation; Quick Find finds new page",
+      "Mobile menu and mobile Quick Find passed",
+      "47 library cards match ordered schema; search, phone/computer filters and reset passed",
+      "28 repair-guide cards match ordered schema",
+      "CSS zoom experiment: main fits; inherited desktop navigation overflows, reproduced on unchanged Oct8 guide",
+      "720px effective layout for 200% desktop zoom: no horizontal overflow",
+      "No-JavaScript content, disclosure, and anchor navigation passed"
+    ],
+    "browser_errors": [],
+    "visual": "Full-page 390px/1440px screenshots, both hero viewports, SIM/eSIM section and expanded reset disclosure inspected",
+    "preservation": "All 46 prior tips byte-identical, including Oct6/7/8 and approved ESR placement/display-pricing correction. Existing HTML changed only in tips.html, guides.html and iphone-repair.html. Existing business, breadcrumb and FAQ schema on indexes unchanged.",
+    "diff": "git diff --check passed"
+  },
+  "limits": [
+    "Chromium only; no Safari/WebKit, screen-reader session, physical iPhone or native browser-zoom test. axe-core unavailable.",
+    "720px effective viewport reflow passed. Synthetic CSS zoom is not native browser zoom; one probe overflowed inherited desktop navigation identically on unchanged Oct8 guide. Main article fit; no shared navigation change made.",
+    "Indexability checks do not establish search-engine indexing.",
+    "GitHub authenticated status API returned Forbidden before push; post-push verification recorded separately."
+  ]
+}

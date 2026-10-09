@@ -1,0 +1,16 @@
+/* Cellular field guide. Decorative signal illustration; all guidance is native HTML. */
+.cs-scope{font-size:13px;color:#b4c1cd;margin:18px 0 0}
+.cs-routes{padding:26px 30px;border:1px solid #405b62;border-radius:12px;background:radial-gradient(ellipse at 50% 10%,#284b50,#14252e 60%,#111c26)}
+.cs-routes>a{display:flex;align-items:center;gap:15px;padding:18px 0;border-top:1px solid #405b62;text-decoration:none}
+.cs-routes>a>span:first-child{font-size:11px;color:#b1d5d0}.cs-routes strong{font-size:14px;color:#f2f1ed;flex:1}.cs-routes>p:last-child{font-size:12px;color:#b2c2cf;margin:15px 0 0}
+.cs-illustration{height:178px;display:grid;place-items:center;position:relative;margin-bottom:22px;isolation:isolate}
+.cs-illustration:before,.cs-illustration:after{content:"";position:absolute;width:180px;height:150px;border:1px solid #719c9955;border-radius:50%;z-index:-1}.cs-illustration:after{width:250px;height:174px;border-color:#719c9930}
+.cs-phone{height:170px;width:100px;border:5px solid #a7bfc1;border-radius:19px;background:#10202a;box-shadow:0 12px 30px #06101788;transform:rotate(-7deg);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.cs-phone:before{content:"";position:absolute;width:35px;height:7px;border-radius:8px;top:7px;background:#a7bfc1}.cs-phone:after{content:"";position:absolute;width:30px;height:3px;border-radius:8px;bottom:7px;background:#769594}
+.cs-phone b{font-size:24px;color:#e3cfaa;letter-spacing:.07em}.cs-bars{display:flex;gap:4px;align-items:flex-end;height:27px;margin-top:13px}.cs-bars i{display:block;width:8px;border:1px solid #819ba5;border-radius:2px}.cs-bars i:nth-child(1){height:7px}.cs-bars i:nth-child(2){height:13px}.cs-bars i:nth-child(3){height:19px}.cs-bars i:nth-child(4){height:25px}
+.cs-status{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}.cs-status>div{padding:22px;border:1px solid #405b62;border-radius:10px;background:#13232b}.cs-status h3{font-family:Inter,sans-serif!important;font-size:16px;margin:0 0 10px;color:#d2e9e4}.cs-status p{font-size:14px;margin:0}
+.cs-details{border:1px solid #405b62;border-radius:10px;padding:0 20px;background:#12212a;margin:24px 0}.cs-details summary{cursor:pointer;min-height:48px;padding:16px 0;font-weight:600;color:#e8f1f4}.cs-details[open] summary{margin-bottom:8px}.cs-details p,.cs-details li{font-size:14px}
+.cs-warning{padding:22px;border:1px solid #987c58;border-radius:10px;background:#27231b}.cs-warning strong{color:#f0d9b8}.cs-warning p:last-child{margin:0}
+.cs-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
+.fg-page a:focus-visible,.cs-details summary:focus-visible{outline:2px solid #b8e8df;outline-offset:5px;border-radius:2px}
+@media(max-width:760px){.cs-routes{padding:22px}.cs-status{grid-template-columns:1fr}.cs-status>div{padding:20px}.cs-illustration{height:172px}.cs-warning{padding:20px}}

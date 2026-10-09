@@ -294,6 +294,13 @@
     "kw": " tips iphone restarts every three minutes"
   },
   {
+    "name": "iPhone says SOS or No Service?",
+    "desc": "iPhone says SOS, No Service, or Searching? Check coverage, SIM/eSIM, carrier settings, and diagnostics without deleting your plan or erasing data.",
+    "href": "/tips/iphone-sos-no-service",
+    "icon": "menu_book",
+    "kw": " tips iphone sos no service"
+  },
+  {
     "name": "iPhone screen repair: what to expect",
     "desc": "iPhone screen repair explained: causes, repair steps, cost signals, timing, DIY risk, and when it is worth fixing.",
     "href": "/guides/iphone-screen-repair",
