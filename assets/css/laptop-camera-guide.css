@@ -1,0 +1,14 @@
+/* Windows laptop camera guide: native links and disclosures, scoped artwork. */
+.wc-scope{font-size:13px;color:#afbdca;margin:18px 0 0}
+.wc-routes{padding:26px 30px;border:1px solid #405866;border-radius:12px;background:linear-gradient(145deg,#203544,#111c26)}
+.wc-routes>a{display:flex;align-items:center;gap:15px;padding:18px 0;border-top:1px solid #405866;text-decoration:none}
+.wc-routes>a>span:first-child{font-size:11px;color:#b1d5d0}.wc-routes strong{font-size:14px;color:#f2f1ed;flex:1}.wc-routes>p:last-child{font-size:12px;color:#b2c2cf;margin:15px 0 0}
+.wc-illustration{height:160px;display:grid;place-items:center;margin-bottom:22px}.wc-laptop{width:min(250px,100%);transform:rotate(-4deg)}
+.wc-bezel{position:relative;height:138px;border:7px solid #99abb9;border-top-width:17px;border-radius:9px 9px 0 0;margin:0 10px;background:#192c3a;box-shadow:0 15px 35px #060d1455}
+.wc-lens{position:absolute;top:-12px;left:calc(50% - 4px);width:7px;height:7px;border-radius:50%;background:#b8e8df;box-shadow:0 0 0 3px #203848}
+.wc-screen{height:100%;display:grid;place-items:center;background:linear-gradient(135deg,#427882,#152e42)}
+.wc-viewfinder{width:74px;height:58px;border:1px solid #a7d2d1;border-radius:10px;position:relative}.wc-viewfinder:before{content:"";position:absolute;width:17px;height:17px;top:8px;left:27px;border-radius:50%;border:1px solid #b8e8df}.wc-viewfinder:after{content:"";position:absolute;width:36px;height:17px;bottom:8px;left:18px;border:1px solid #b8e8df;border-radius:18px 18px 4px 4px}
+.wc-base{height:10px;background:#8297a6;border-radius:0 0 15px 15px}.wc-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
+.wc-details{border:1px solid #405866;border-radius:10px;padding:0 20px;background:#121e27;margin-top:22px}.wc-details summary{cursor:pointer;min-height:48px;padding:16px 0;font-weight:600;color:#e8f1f4;line-height:1.6}.wc-details[open] summary{margin-bottom:8px}.wc-details p{font-size:14px}
+.fg-page a:focus-visible,.wc-details summary:focus-visible{outline:2px solid #b8e8df;outline-offset:5px;border-radius:2px}.fg-page code{font-size:.92em;color:#c8e9e4;overflow-wrap:anywhere}
+@media(max-width:760px){.wc-routes{padding:22px}.wc-illustration{height:150px}.wc-details{padding-inline:16px}}

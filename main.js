@@ -2778,6 +2778,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " guides laptop battery replacement"
   },
   {
+    "name": "Laptop camera not working?",
+    "desc": "Laptop webcam black or not detected? Check the shutter, Windows 11 permissions, apps, and model-specific drivers before a reset or repair.",
+    "href": "/tips/laptop-camera-not-working",
+    "icon": "menu_book",
+    "kw": " tips laptop camera not working"
+  },
+  {
     "name": "Laptop hinge cracking, popping, or pulling the case apart?",
     "desc": "Laptop hinge popping, cracking, or pulling the case apart? Learn what broke, how to avoid screen and cable damage, and whether the housing can be repaired.",
     "href": "/tips/laptop-hinge-breaking",

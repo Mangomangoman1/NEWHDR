@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-10",
+  "topic": "Laptop camera not working — Windows 11 built-in webcam",
+  "route": "/tips/laptop-camera-not-working",
+  "baseline": "12a483dd03189c2d1191cb0e8a2def9e77ee5d69",
+  "environment": "Saved cloud Linux workspace only; no other execution environment or user computer accessed",
+  "instructions": "README, documented checks, HDR-CONTENT-ARCHITECTURE-GUIDE and recent SEO/QA notes reviewed. No AGENTS.md or .agents skills found in workspace or remote inventory. Existing Vercel hosting preserved.",
+  "rationale": "Complete remote inventory of 47 tips, three repair-expectation spokes and both hubs reviewed. No built-in Windows laptop webcam/privacy shutter/app-permission intent. Distinct from iPhone camera focus, microphone, Windows display, keyboard, touchpad and Wi-Fi guidance.",
+  "sources": [
+    "https://support.microsoft.com/en-us/windows/hardware/camera/camera-doesn-t-work-in-windows",
+    "https://support.microsoft.com/en-us/windows/privacy/manage-app-permissions-for-a-camera-in-windows",
+    "https://support.microsoft.com/en-us/windows/hardware/camera/manage-cameras-with-camera-settings-in-windows-11",
+    "https://support.microsoft.com/en-us/windows/privacy/windows-camera-microphone-and-privacy",
+    "https://www.dell.com/support/contents/en-us/article/product-support/self-support-knowledgebase/monitor-screen-video/webcams",
+    "https://www.dell.com/support/kbdoc/en-us/000248760/laptop-mipi-camera-may-not-work-under-windows"
+  ],
+  "content": "Direct answer, model-specific physical/electronic privacy controls, separate Store/desktop/browser permissions, Camera-versus-call preview interpretation, precise error caveats, camera detection, Windows Hello distinctions, official model-specific MIPI drivers, data-loss boundaries and clear stop/service criteria. No claimed bench experience, pricing changes or affiliate addition.",
+  "design": "Current field-guide shell, scoped CSS webcam illustration, three native symptom links, sticky section navigation, two keyboard-operable native disclosures. Content remains visible without JavaScript.",
+  "integration": [
+    "48 repair-library cards and matching ordered CollectionPage schema; correct computer filter and search terms",
+    "29 guide-hub cards and matching ordered CollectionPage schema",
+    "Contextual laptop service link; related backup, spill and service routes",
+    "Sitemap dates and generated Quick Find source, minified and shared navigation assets"
+  ],
+  "checks": {
+    "build": "bash build.sh passed",
+    "site": "92 public pages; 6362 local references; zero failures",
+    "indexability": "824 checks passed; zero failures",
+    "semantic_accessibility": "92 public pages; zero failures",
+    "tests": "node --test scripts/test-*.mjs: 47 passed; zero failed",
+    "browser": [
+      "Typography: official Google Fonts GitHub binaries loaded via QA-only interception; Google Fonts CSS endpoint blocked by cloud proxy",
+      "320, 390, 720, 768, 1440px layouts: no overflow or missing anchor targets",
+      "Keyboard skip link reaches main",
+      "Both native disclosures open and close with keyboard",
+      "Symptom anchor clears fixed navigation",
+      "Expanded data/driver warning reviewed",
+      "Desktop Quick Find finds webcam guide and closes with Escape",
+      "Mobile menu and Quick Find work",
+      "48 library cards match ordered schema; webcam search, phone/computer filters and reset pass",
+      "29 guide cards match ordered schema",
+      "Laptop service contextual link reaches new guide",
+      "No JavaScript: article, native disclosure, anchor, and layout pass"
+    ],
+    "browser_errors": [],
+    "visual": "390px and 1440px hero and full-page screenshots, software disclosure, section details and amended hub/service link layouts inspected",
+    "preservation": "All 47 prior tips byte-identical, including Oct9 cracked-screen correction and approved ESR placement. Existing HTML changes limited to hub cards/counts/collection schema and one laptop service link; non-collection hub schema unchanged.",
+    "diff": "git diff --check passed"
+  },
+  "limits": [
+    "Chromium only; no Safari/WebKit, screen-reader session, physical Windows laptop or native browser-zoom test. No full WCAG certification claimed.",
+    "720px effective viewport reflow passed. No synthetic CSS zoom result treated as native zoom; inherited prior navigation zoom observation remains unverified.",
+    "Cloud proxy blocks Google Fonts CSS. Branded visual checks used official Google Fonts GitHub binaries through temporary browser interception; fallback layouts also passed. Production font delivery not verified.",
+    "Indexability audit does not establish search-engine indexing.",
+    "Cloud gh status API returned Forbidden before push; remote/deployment verification recorded in final handoff."
+  ]
+}
