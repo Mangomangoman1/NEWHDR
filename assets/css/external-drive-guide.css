@@ -1,0 +1,12 @@
+/* Mac external-drive guide: static storage diagram and native result routes. */
+.ed-scope{font-size:13px;color:#b3c0c8;margin:18px 0 0}
+.ed-routes{padding:26px 30px;border:1px solid #59665c;border-radius:12px;background:linear-gradient(145deg,#24362f,#132027)}
+.ed-art{margin:0 0 26px}.ed-art svg{display:block;width:100%;height:auto}.ed-art figcaption{font-size:12px;color:#d9c3a2;margin-top:12px;text-align:center}
+.ed-routes>a{display:flex;align-items:center;gap:15px;padding:18px 0;border-top:1px solid #59665c;text-decoration:none;min-height:60px}
+.ed-routes>a>span:first-child{font-size:11px;color:#d9c3a2}.ed-routes strong{font-size:14px;color:#f2f1ed;flex:1}
+.ed-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
+.ed-warning{padding:22px 24px;border:1px solid #927348;border-left:3px solid #dfba83;border-radius:4px;background:#25221d;margin-bottom:24px;color:#dfd7cb}
+.ed-warning>strong{display:block;color:#f3dec2;margin-bottom:10px}.ed-warning p:last-child{margin:0}
+.ed-details{border:1px solid #526359;border-radius:10px;padding:0 20px;background:#141f21;margin-top:22px}.ed-details summary{cursor:pointer;min-height:48px;padding:16px 0;font-weight:600;color:#e8f1ec;line-height:1.6}.ed-details[open] summary{margin-bottom:8px}.ed-details p{font-size:14px}
+.ed-page a:focus-visible,.ed-details summary:focus-visible{outline:2px solid #dfba83;outline-offset:5px;border-radius:2px}
+@media(max-width:760px){.ed-routes{padding:22px}.ed-warning{padding:18px}.ed-details{padding-inline:16px}}
