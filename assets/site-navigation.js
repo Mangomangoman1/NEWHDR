@@ -301,6 +301,13 @@
     "kw": " tips iphone microphone not working"
   },
   {
+    "name": "iPhone not ringing for incoming calls?",
+    "desc": "iPhone not ringing or sending calls to voicemail? Check Silent mode, ringtone volume, Focus, and caller screening before a reset or repair.",
+    "href": "/tips/iphone-not-ringing",
+    "icon": "menu_book",
+    "kw": " tips iphone not ringing"
+  },
+  {
     "name": "iPhone restarts every three minutes",
     "desc": "An iPhone that reboots about every three minutes may be logging a repeating panic. Protect your data, find the pattern, and avoid erasing before hardware is diagnosed.",
     "href": "/tips/iphone-restarts-every-three-minutes",
