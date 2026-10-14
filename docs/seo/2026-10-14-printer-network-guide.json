@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-14",
+  "topic": "Printer offline after a router or Wi-Fi change — Windows 11 home printing",
+  "route": "/tips/printer-offline-after-router-change",
+  "baseline": "bd4ab3cbe2371f5167fe6a4fac0c0ecd724c9809",
+  "environment": "Saved cloud Linux environment, /workspace/NEWHDR. No user Mac or other execution environment accessed.",
+  "instructions": "README, architecture guide, recent QA records, check/build scripts and representative field guides reviewed. Workspace .agents and .codex empty; no AGENTS.md or repository .agents skills found. Relevant edits, commit and normal main push explicitly authorized. Existing static Vercel hosting retained.",
+  "rationale": "Reviewed all 51 current tips, three repair-expectation spokes, both hubs and the existing printer service page. No dedicated router-change printing walkthrough exists. Narrow informational intent: restore a formerly working home Wi-Fi printer on Windows 11 after a network change. Existing service page remains the commercial setup/assessment destination. No search demand, traffic, personal bench experience or new business facts inferred. Requested detail takes precedence over the legacy short article-length target.",
+  "sources": [
+    "https://support.microsoft.com/en-us/windows/hardware/printer/troubleshooting-offline-printer-problems-in-windows",
+    "https://support.brother.com/g/s/id/htmldoc/printer/cv_hll2460dw/uke/html/GUID-44BEFA90-16C6-48A6-8A51-4A2D1A14D01F_1.html",
+    "https://files.support.epson.com/docid/cpd6/cpd60271.pdf",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/source/printers/source/networking/tasks/switching_router.html",
+    "https://support.microsoft.com/en-us/windows/hardware/printer/view-a-printer-s-print-queue-in-windows",
+    "https://support.microsoft.com/en-us/windows/hardware/printer/fix-print-job-stuck-in-queue-errors-in-windows",
+    "https://support.microsoft.com/en-us/windows/hardware/printer/add-or-install-a-printer-in-windows",
+    "https://support.microsoft.com/en-us/windows/hardware/printer/download-and-install-the-latest-printer-drivers",
+    "https://support.microsoft.com/en-us/windows/hardware/printer/help-with-installing-printers-on-arm-pcs",
+    "https://learn.microsoft.com/en-us/windows/modern-print/windows-protected-print-mode/windows-protected-print-mode"
+  ],
+  "content": "Direct answer and scope; save originals and cancel unwanted jobs before reconnection; preserve network settings; printer-side report and result interpretation; Brother HL-L2400DW menu and 0.0.0.0 wait; Epson ET-2800/ET-2803 setup and completion controls; model-dependent 2.4 GHz, isolation and Wi-Fi Direct distinctions; current Windows queue versus legacy menu; canceling print jobs versus deleting source documents; limited spooler restart; controlled one-page tests and interpretation; fresh discovery and driver scope; ARM and protected-print distinctions; stops before destructive resets, spool-file deletion or security changes. No hands-on diagnosis, guaranteed fix, new affiliate products or tracking.",
+  "design": "Existing field-guide branding, shared navigation, scoped teal/linen connection diagram with visible text explanation, three native symptom links, sticky contents, semantic result lists, two native disclosures, visible reset warning and focusable main. Article content works without JavaScript.",
+  "integration": [
+    "52 library cards, ordered CollectionPage schema and computer filter",
+    "33 guide-hub cards with ordered schema",
+    "One contextual link on printer-setup; new guide links to Wi-Fi, backup and setup resources",
+    "Sitemap dates and generated Quick Find source, main.min.js and shared navigation assets"
+  ],
+  "checks": {
+    "build": "bash build.sh passed. Generated changes only add one search entry; all generated styles remain unchanged.",
+    "site": "python3 scripts/audit-site.py: 96 public pages, 6579 local references, zero failures.",
+    "indexability": "node scripts/audit-indexability.mjs: 856 passed, zero failed.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 96 public pages, zero failures.",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed, including all documented interaction, phone and inspection checks. Mocked delivery; no messages sent.",
+    "browser": [
+      "320px clean route",
+      "320px no horizontal overflow",
+      "320px article visible",
+      "320px all anchors exist",
+      "390px clean route",
+      "390px no horizontal overflow",
+      "390px article visible",
+      "390px all anchors exist",
+      "720px clean route",
+      "720px no horizontal overflow",
+      "720px article visible",
+      "720px all anchors exist",
+      "768px clean route",
+      "768px no horizontal overflow",
+      "768px article visible",
+      "768px all anchors exist",
+      "1440px clean route",
+      "1440px no horizontal overflow",
+      "1440px article visible",
+      "1440px all anchors exist",
+      "Skip link first",
+      "Skip focuses main",
+      "Disclosure 0 keyboard opens",
+      "Disclosure 0 keyboard closes",
+      "Disclosure 1 keyboard opens",
+      "Disclosure 1 keyboard closes",
+      "390px join jump clears navigation",
+      "390px queue jump clears navigation",
+      "390px compare jump clears navigation",
+      "1440px join jump clears navigation",
+      "1440px queue jump clears navigation",
+      "1440px compare jump clears navigation",
+      "Desktop Quick Find finds guide",
+      "Quick Find finds router intent",
+      "Escape restores search trigger focus",
+      "Mobile menu opens",
+      "Mobile Quick Find finds guide",
+      "Library has 52 cards",
+      "Library schema matches card order",
+      "Library query finds one guide",
+      "New library card visible",
+      "Phone filter excludes printer guide",
+      "Computer filter includes printer guide",
+      "Library empty state",
+      "Escape clears library query",
+      "All cards restored",
+      "390px /tips fits",
+      "1440px /tips fits",
+      "tips link opens guide",
+      "390px /guides fits",
+      "1440px /guides fits",
+      "Guides has 33 cards",
+      "Guide schema matches card order",
+      "guides link opens guide",
+      "390px /printer-setup fits",
+      "1440px /printer-setup fits",
+      "printer-setup link opens guide",
+      "Expanded disclosure fits mobile",
+      "No-JS article visible",
+      "No-JS disclosure works",
+      "No-JS fits mobile",
+      "No application JavaScript errors"
+    ],
+    "browser_result": "62 functional assertions passed. No application exceptions. Chromium emitted native Transition was skipped with an empty stack on navigation; the same behavior was previously reproduced on unchanged guide destinations. No application regression attributed to this native event.",
+    "font_qa": [
+      {
+        "width": 320,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 390,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 720,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 768,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 1440,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "reduced_motion": "article visible"
+      }
+    ],
+    "visual": "390px and 1440px heroes/full pages, mobile model/setup details, expanded spooler disclosure, sources/footer, both hub cards and contextual printer service link inspected. Fallback and branded-font layouts checked at 320,390,720,768,1440px. Temporary Playwright interception serves official Google Fonts GitHub variable TTFs for QA only; no fonts or test files added to the public site.",
+    "preservation": "92 prior public HTML pages byte-identical, including all 51 earlier tips. Only two hubs and a contextual printer-service sentence changed. Every prior affiliate/tracking URL and non-collection hub schema retained. No business copy or metadata changed outside the intended collection dates.",
+    "diff": "git diff --check passed.",
+    "reconciliation": "Pre-commit fetch confirms remote main unchanged at bd4ab3cbe2371f5167fe6a4fac0c0ecd724c9809. No concurrent changes to reconcile. Final SHA and post-push deployment/public results are in the handoff."
+  },
+  "limits": [
+    "Chromium only. Physical printer/network behavior, Safari/WebKit, screen-reader session and native browser zoom not tested. Semantic audit is not full WCAG certification.",
+    "Google Fonts CSS blocked by cloud proxy (ERR_TUNNEL_CONNECTION_FAILED); QA substitution verifies intended layout, not public font delivery.",
+    "Some HP, Canon and Brother source endpoints were inaccessible during research. Their unverified procedures were not used; usable official Microsoft, Epson and Brother sources listed above support the article.",
+    "Public access and CI/deployment will be checked against the exact pushed SHA. Static indexability does not prove search-engine indexing, and deployment status does not prove public page behavior."
+  ]
+}

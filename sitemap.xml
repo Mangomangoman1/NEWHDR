@@ -116,7 +116,7 @@
   </url>
   <url>
     <loc>https://www.haileyrepair.com/tips</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://www.haileyrepair.com/device-check</loc>
@@ -136,7 +136,7 @@
   </url>
   <url>
     <loc>https://www.haileyrepair.com/printer-setup</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://www.haileyrepair.com/electronics-recycling</loc>
@@ -296,7 +296,7 @@
   </url>
   <url>
     <loc>https://www.haileyrepair.com/guides</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://www.haileyrepair.com/guides/iphone-screen-repair</loc>
@@ -382,6 +382,12 @@
   <url>
     <loc>https://www.haileyrepair.com/tips/iphone-not-ringing</loc>
     <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.haileyrepair.com/tips/printer-offline-after-router-change</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
