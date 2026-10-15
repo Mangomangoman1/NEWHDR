@@ -2855,6 +2855,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips lcd vs oled"
   },
   {
+    "name": "MacBook speakers not working?",
+    "desc": "MacBook has no sound? Compare apps, check the built-in output, disconnect audio accessories, and restart safely before assuming speaker damage.",
+    "href": "/tips/macbook-speakers-not-working",
+    "icon": "menu_book",
+    "kw": " tips macbook speakers not working"
+  },
+  {
     "name": "Nintendo Switch won’t turn on or charge? Safe first checks",
     "desc": "For Switch, Lite, and OLED power problems, test the console directly with the correct adapter, reset power once, and know when to stop for service.",
     "href": "/tips/nintendo-switch-wont-turn-on",

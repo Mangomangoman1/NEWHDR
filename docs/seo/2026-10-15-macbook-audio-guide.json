@@ -1,0 +1,401 @@
+{
+  "date": "2026-10-15",
+  "topic": "MacBook speakers not working \u2014 app volume and output routing before hardware assumptions",
+  "route": "/tips/macbook-speakers-not-working",
+  "baseline": "67dd58168363ee97ceec6a17fff47f68f77344c8",
+  "environment": "Saved cloud Linux environment at /workspace/NEWHDR. Execution, Git transport, build, browser and audits healthy. No user Mac accessed.",
+  "instructions": "Inspected clean checkout and remote history before writing. Read README, content architecture, recent QA record, documented scripts, all 52 tips and three repair-expectation spokes, representative pages and relevant service content. Workspace .agents and .codex are empty; no applicable AGENTS.md or local skills found. Routine edits, commit and normal main push authorized. Analytics work remains deferred and unchanged.",
+  "rationale": "No MacBook sound or built-in speaker walkthrough in the complete inventory; existing wet-iPhone speaker, iPhone ringing, AirPod, Mac storage and commercial MacBook pages have distinct intent. Added one owner troubleshooting page. Published date reflects the resumed October 15 execution; no backdating. No traffic assumptions, hands-on experience, new business facts, new affiliate placements or tracking. Requested detailed decisions and warnings take precedence over the legacy short length target.",
+  "sources": [
+    "https://support.apple.com/en-us/102411",
+    "https://support.apple.com/guide/mac-help/if-you-cant-hear-sound-from-your-speakers-mchlp1439/mac",
+    "https://support.apple.com/guide/mac-help/if-you-cant-hear-sound-from-your-speakers-mchlp1439/12.0/mac/12.0",
+    "https://support.apple.com/guide/mac-help/change-the-sound-output-settings-mchlp2256/mac",
+    "https://support.apple.com/guide/mac-help/shut-down-or-restart-your-mac-mchlp2522/mac"
+  ],
+  "content": "Direct answer, safe listening and saved work, liquid/battery stopping points, two-app/two-file comparison, Safari/player controls, wired/display/dock and wireless output distinctions, eject drives before dock removal, built-in device selection, Ventura-and-later Settings versus Monterey-and-earlier Preferences, Intel/Apple silicon scope, headphone comparison, balance, cautious interpretation of missing or distorted output, one normal restart with forced-shutdown data risk, evidence for assessment and backup before service. No erase, reinstall, preference deletion, driver fixer or unrelated reset required.",
+  "design": "Existing field-guide branding and navigation; scoped sand/blue routing illustration with visible caption, three native symptom jumps, sticky contents, semantic result lists, two keyboard-operable native disclosures, focusable main and skip link. No article-specific JavaScript.",
+  "integration": [
+    "53 library cards and matching ordered CollectionPage schema; computer filtering and symptom search",
+    "34 guide-hub cards and matching ordered CollectionPage schema",
+    "One contextual laptop-service link; article links to spill, backup and repair resources",
+    "Sitemap entry and affected collection/service dates; generated Quick Find in source, minified and shared navigation files"
+  ],
+  "checks": {
+    "build": "bash build.sh passed twice; generated changes only add one Quick Find entry. Shared/generated styles unchanged.",
+    "site": "python3 scripts/audit-site.py: 97 public pages, 6633 local references, zero failures. Repeated after final metadata update and remote reconciliation.",
+    "indexability": "node scripts/audit-indexability.mjs: 864 passed, zero failed. Repeated after final metadata update and remote reconciliation.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 97 pages, zero failures. Repeated after final metadata update and remote reconciliation; not a full WCAG certification.",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed. Includes all documented interaction, phone and inspection tests plus camera/detail/refinement tests; mocked delivery, no messages sent.",
+    "browser": [
+      {
+        "check": "320px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip link first",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip focuses main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px apps jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.3125,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px output jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.109375,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px compare jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.5,
+          "nav": 61
+        }
+      },
+      {
+        "check": "1440px apps jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.984375,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px output jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.921875,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px compare jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.859375,
+          "nav": 65
+        }
+      },
+      {
+        "check": "Desktop Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Quick Find finds no-sound intent",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape restores search trigger focus",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile menu opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library has 53 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library query finds one guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "New library card visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Phone filter excludes MacBook guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Computer filter includes MacBook guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library empty state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape clears library query",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "All cards restored",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "tips link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guides has 34 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guide schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "guides link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /laptop-repair fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /laptop-repair fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "laptop-repair link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Expanded disclosure fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS disclosure works",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No application JavaScript errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "browser_result": "62 assertions passed at 320,390,720,768,1440px: clean route, overflow, article and anchor presence, keyboard skip/focus and disclosures, desktop/mobile symptom jumps, Quick Find and focus restoration, library search/filter/empty/Escape behavior, 53/34 card counts and ordered schemas, all three integration links, no-JavaScript content/disclosure, reduced motion and no application exceptions. One native Chromium Transition was skipped event with an empty stack matches behavior previously reproduced on unchanged destinations.",
+    "font_qa": [
+      {
+        "width": 320,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 390,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 720,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 768,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 1440,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "reduced_motion": "article visible"
+      }
+    ],
+    "visual": "Inspected 390px and 1440px heroes, mobile macOS menus, stop/data warning, expanded disclosure, result comparison, sources and related links; both hub cards and contextual service link at desktop/mobile. All five widths fit with fallback and temporarily substituted official Google Fonts GitHub TTFs. Initial library screenshot preceded a reveal animation; recaptured after settling/reduced motion and inspected visible card.",
+    "preservation": "93 previous public HTML pages byte-identical, including all 52 earlier tips. Only tips/guides hubs and one laptop-service supporting link changed. Prior affiliate/tracking URL lists identical in every prior public HTML page; non-collection hub schemas identical. No analytics, account, consent, hosting or business metadata changes.",
+    "diff": "git diff --check passed.",
+    "reconciliation": "Fresh pre-commit fetch confirms origin/main remains 67dd58168363ee97ceec6a17fff47f68f77344c8; no concurrent work to reconcile. Final pushed SHA and deployment/public checks will be recorded in the outside-repository handoff."
+  },
+  "limits": [
+    "Chromium only; no physical MacBook/audio tests, native Safari/WebKit, screen-reader session or native browser zoom test. No hands-on diagnosis claimed.",
+    "Cloud proxy blocks Google Fonts CSS with ERR_TUNNEL_CONNECTION_FAILED. Temporary Playwright font substitution checks layout, not public font delivery; no font or harness files added to the site.",
+    "Static audits do not establish search-engine indexing. Post-push checks must distinguish exact-SHA deployment status from independently observable public page behavior."
+  ]
+}
