@@ -1,0 +1,413 @@
+{
+  "date": "2026-10-16",
+  "topic": "iPhone storage full but iCloud has space \u2014 free local room while protecting synced originals",
+  "route": "/tips/iphone-storage-full-icloud-space",
+  "baseline": "c2c4db9205f08fbfc45300984b1621a5811c7596",
+  "environment": "Saved cloud Linux environment at /workspace/NEWHDR only. Environment started successfully. Git transport, build, tests, audits and local Chromium usable; no user Mac accessed.",
+  "instructions": "Read README, content architecture, recent QA, build/check scripts and representative pages; reviewed all 53 tips and three repair-expectation spokes. Workspace .agents/.codex are empty and no applicable AGENTS.md or local skills found. Relevant edits, commit and normal main push authorized. Analytics explicitly deferred and left untouched.",
+  "rationale": "No existing iPhone local-storage versus cloud-capacity guide in the full inventory. Intent differs from broken-screen backup, Mac drive discovery, slow-laptop storage, Apple-logo recovery and service pages. Exactly one new troubleshooting guide added. No traffic estimates, hands-on expertise, business claims, affiliate placements or tracking added. Requested depth, safe command distinctions and decision branches take precedence over the legacy short article-length target; about 1628 words including contents, sources and related links.",
+  "sources": [
+    "https://support.apple.com/en-us/102670",
+    "https://support.apple.com/en-us/108429",
+    "https://support.apple.com/en-us/105061",
+    "https://support.apple.com/en-us/108782",
+    "https://support.apple.com/en-us/104953",
+    "https://support.apple.com/en-us/102344",
+    "https://support.apple.com/en-us/111762",
+    "https://support.apple.com/en-us/104967",
+    "https://support.apple.com/en-us/101559",
+    "https://support.apple.com/en-us/118575"
+  ],
+  "content": "Separate local/cloud meters; fixed device capacity; identify large categories; read recommendations before enabling; synced photo deletions propagate; iCloud Photos excluded from duplicate device iCloud backup; independent export and verified destinations; Recently Deleted recovery and permanent-loss warning; Music Remove Download versus Delete from Library; Files iCloud Drive versus On My iPhone and Remove Download versus Delete; app Offload versus Delete and retained Documents & Data; preserve critical/offline app access; iOS 27 optimization menu versus iOS 26 and earlier; iOS 26/18/17 Photos status controls; power/Wi-Fi and paused-sync reasons without toggling off; System Data/cache limits; retest actual failed task; backup before update; stop before erase/restore or deletion of the only copy. No particular space recovery, time-to-fix or diagnosis guaranteed.",
+  "design": "Existing shared field-guide branding, navigation and focusable main. New scoped mint/blue separate-storage diagram has visible text labels and caption, three native symptom jumps, sticky contents, semantic result lists, two native disclosures, visible data-loss warning and focus rings. Content and disclosures work without JavaScript; no new app logic.",
+  "integration": [
+    "54 repair-library cards, phone filtering, symptom keywords and ordered CollectionPage schema",
+    "35 guide-hub cards and matching ordered CollectionPage schema",
+    "One supporting iPhone service link; related backup, Apple-logo and service destinations",
+    "Sitemap route and affected dates; generated Quick Find entries in main.js, main.min.js and assets/site-navigation.js"
+  ],
+  "checks": {
+    "build": "bash build.sh passed twice. Generated differences only add the new Quick Find entry; generated styles unchanged.",
+    "site": "python3 scripts/audit-site.py: 98 public pages, 6687 local references, zero failures. Repeated after fresh remote reconciliation.",
+    "indexability": "node scripts/audit-indexability.mjs: 872 passed, zero failed. Repeated after fresh remote reconciliation.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 98 public pages, zero failures. Repeated after fresh remote reconciliation; not full WCAG certification.",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed. Includes all documented interaction/phone/inspection tests plus camera, detail and refinements. Mocked delivery; no messages sent.",
+    "browser_assertions": [
+      {
+        "check": "320px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip link first",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip focuses main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px measure jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.59375,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px space jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.1875,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px photos jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.984375,
+          "nav": 61
+        }
+      },
+      {
+        "check": "1440px measure jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.21875,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px space jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.71875,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px photos jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.34375,
+          "nav": 65
+        }
+      },
+      {
+        "check": "Desktop Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Quick Find finds iCloud intent",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape restores search trigger focus",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile menu opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library has 54 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library query finds one guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "New library card visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Phone filter includes storage guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Computer filter excludes storage guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library empty state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape clears library query",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "All cards restored",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "tips link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guides has 35 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guide schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "guides link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /iphone-repair fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /iphone-repair fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "iphone-repair link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Expanded disclosure fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS disclosure works",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No application JavaScript errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "browser_result": "62 passed, zero failed. Clean route, content/anchor presence and no overflow at 320,390,720,768,1440px; keyboard skip link and main focus; both disclosures open/close by keyboard; mobile/desktop symptom jumps clear navigation; desktop/mobile Quick Find; Escape focus restoration; library phone/computer filters, search, empty state, Escape/reset; all 54/35 cards and exact schema order; both hubs and service link open the guide; no-JS content/disclosure; reduced-motion article visible. No browser page errors observed.",
+    "font_qa": [
+      {
+        "width": 320,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 390,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 720,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 768,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 1440,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "reduced_motion": "article visible"
+      }
+    ],
+    "visual": "Inspected 390/1440px heroes, graphic and hierarchy; mobile photo-version instructions, preservation warning and expanded System Data disclosure; download/offload options, sync status, sources and related links; both index cards and contextual iPhone service link at desktop/mobile. Temporary Playwright routes substitute official Google Fonts GitHub TTFs to check intended fonts at all five widths; fallback layouts also fit.",
+    "external_request_limits": [
+      "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js \u2014 net::ERR_CERT_AUTHORITY_INVALID",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@300;400;500;600;700&display=swap \u2014 net::ERR_TUNNEL_CONNECTION_FAILED",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap \u2014 net::ERR_TUNNEL_CONNECTION_FAILED",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap \u2014 net::ERR_TUNNEL_CONNECTION_FAILED",
+      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap \u2014 net::ERR_TUNNEL_CONNECTION_FAILED"
+    ],
+    "preservation": "94 prior public HTML files byte-identical, including all 53 prior tips. Only tips/guides hubs and one added iPhone-service supporting link changed. All existing affiliate/tracking URL lists identical; non-CollectionPage hub schemas identical. No analytics, consent, account, security, hosting or unrelated business changes.",
+    "diff": "git diff --check passed.",
+    "reconciliation": "Pre-commit fetch confirms origin/main remains c2c4db9205f08fbfc45300984b1621a5811c7596. No concurrent changes to reconcile. Final SHA and deployment/public checks will be in the cloud scratch handoff."
+  },
+  "limits": [
+    "Chromium only. No physical iPhone/storage/sync tests, Safari/WebKit, screen-reader session or native browser zoom. Semantic audit is not a full accessibility certification.",
+    "Google Fonts requests blocked by cloud proxy; intended-font substitution validates layout, not public font delivery. Existing iPhone service-page Three.js CDN module also blocked by certificate trust; its 3D behavior was not verified. The service code is unchanged except the new supporting link. No certificate bypass or security setting changes.",
+    "Static indexability does not establish search-engine indexing. Exact-SHA deployment and public fetch will be checked after push; deployment status must not be treated as evidence of public page behavior."
+  ]
+}

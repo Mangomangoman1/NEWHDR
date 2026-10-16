@@ -336,6 +336,13 @@
     "kw": " tips iphone speaker muffled after water"
   },
   {
+    "name": "iPhone storage full, but iCloud has space?",
+    "desc": "iPhone full despite free iCloud space? Remove local downloads, offload suitable apps, and optimize photos without accidentally deleting synced originals.",
+    "href": "/tips/iphone-storage-full-icloud-space",
+    "icon": "menu_book",
+    "kw": " tips iphone storage full icloud space"
+  },
+  {
     "name": "iPhone stuck on the Apple logo—or restarting in a loop",
     "desc": "iPhone frozen on the Apple logo or restarting in a loop? Identify the pattern, try the correct force restart, use recovery mode without erasing first, and know when to stop.",
     "href": "/tips/iphone-stuck-on-apple-logo",

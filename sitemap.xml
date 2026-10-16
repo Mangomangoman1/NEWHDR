@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>https://www.haileyrepair.com/iphone-repair</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://www.haileyrepair.com/android-repair</loc>
@@ -116,7 +116,7 @@
   </url>
   <url>
     <loc>https://www.haileyrepair.com/tips</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://www.haileyrepair.com/device-check</loc>
@@ -296,7 +296,7 @@
   </url>
   <url>
     <loc>https://www.haileyrepair.com/guides</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-16</lastmod>
   </url>
   <url>
     <loc>https://www.haileyrepair.com/guides/iphone-screen-repair</loc>
@@ -394,6 +394,12 @@
   <url>
     <loc>https://www.haileyrepair.com/tips/macbook-speakers-not-working</loc>
     <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.haileyrepair.com/tips/iphone-storage-full-icloud-space</loc>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
