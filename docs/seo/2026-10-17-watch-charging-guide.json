@@ -1,0 +1,397 @@
+{
+  "date": "2026-10-17",
+  "topic": "Apple Watch not charging \u2014 symbols, charger comparisons and intentional charge limits",
+  "route": "/tips/apple-watch-not-charging",
+  "baseline": "00220be25b273357a8b71b1ae385786896b9a4a8",
+  "environment": "Saved cloud Linux environment at /workspace/NEWHDR only. Started successfully; Git, build, tests, audits and local Chromium usable. No user Mac accessed.",
+  "instructions": "Read README, content architecture, build/check scripts, recent QA and representative charging/audio/field-guide pages. Reviewed all 54 tips and three repair-expectation spokes, relevant hub/service structure and full current inventory. Workspace .agents/.codex empty; hidden-file search found no applicable AGENTS.md or SKILL.md. User authorizes relevant edits, commit and normal main push. Analytics remains explicitly deferred and untouched.",
+  "rationale": "No Apple Watch owner troubleshooting guide in the full inventory. The puck/contact, charging symbols, charge-limit and watch-backup intent is distinct from phone charging, Apple Pencil compatibility, AirPods and console power. Exactly one new guide added. No hands-on expertise, demand estimates or new business/service claims. Model support is to be confirmed with a provider; no watch-repair service page or promise added. Detailed model/region distinctions, result interpretation and data warnings take precedence over the legacy short article-length target; about 1790 words including contents, sources and related links.",
+  "sources": [
+    "https://support.apple.com/en-us/108927",
+    "https://support.apple.com/en-us/108760",
+    "https://support.apple.com/guide/watch/charge-the-battery-apd2b717523a/watchos",
+    "https://support.apple.com/en-us/108893",
+    "https://support.apple.com/en-us/108766",
+    "https://support.apple.com/en-us/105106",
+    "https://support.apple.com/en-us/102454",
+    "https://support.apple.com/en-us/120920",
+    "https://support.apple.com/guide/watch/restart-apple-watch-apd521a8a902/watchos",
+    "https://support.apple.com/en-us/108926",
+    "https://support.apple.com/en-us/108358",
+    "https://support.apple.com/en-us/108372"
+  ],
+  "content": "Safety and update interruption stop; red bolt/ring, cable image, blank screen and charging icon interpretation; up-to-30-minute depleted-battery wait; yellow Low Power Mode icon; percentage/graph evidence; dry surfaces and gentle cleaning; original magnetic cable, flat/ventilated surface, contact and known power source; larger-model Dock/MagSafe Duo alignment; one-variable cable/adapter comparisons and limited conclusions; short-runtime distinction; optimized charging and Charge to Full Now; watchOS 10 charge-limit eligibility; Series/SE/Ultra fast-charge compatibility, A3277 new cable and model/region differences; WPT country-specific message; normal versus one forced restart with no update interruption; unpairing erases; paired/family watch and Health/Fitness backup distinctions; stop before erase/replacement and report exact observations. No guaranteed fix or component diagnosis.",
+  "design": "Existing field-guide branding and navigation with scoped lavender/sand charging illustration, visible caption and simplified-illustration label. Three native symptom jumps; sticky contents; ordered setup checklist; semantic result lists; two keyboard-operable native disclosures; prominent update/erase warnings; focusable main and visible focus states. Entire article works without JavaScript. No new app logic.",
+  "integration": [
+    "55 Repair Library cards, phone-family filtering and symptom keywords; hub labels now explicitly include watches",
+    "36 guide-hub cards, neutral Phone & watch guides category label; ordered CollectionPage lists match visible cards",
+    "Related backup/phone-charging/library links and general contact path without adding watch-service claims; unrelated service pages unchanged",
+    "Sitemap new route and affected hub dates; generated Quick Find in source, main.min.js and shared navigation"
+  ],
+  "checks": {
+    "build": "bash build.sh passed twice; generated changes only add one Quick Find entry and generated styles are unchanged.",
+    "site": "python3 scripts/audit-site.py: 99 public pages, 6738 local references, zero failures; repeated after fresh remote reconciliation.",
+    "indexability": "node scripts/audit-indexability.mjs: 880 passed, zero failed; repeated after fresh remote reconciliation.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 99 public pages, zero failures; repeated after fresh remote reconciliation. Not full WCAG certification.",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed. Includes all documented interaction/phone/inspection tests plus camera/detail/refinements. Mocked delivery; no messages sent.",
+    "browser_assertions": [
+      {
+        "check": "320px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip link first",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip focuses main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px symbols jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.46875,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px setup jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.265625,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px limits jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.859375,
+          "nav": 61
+        }
+      },
+      {
+        "check": "1440px symbols jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.171875,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px setup jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.703125,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px limits jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.15625,
+          "nav": 65
+        }
+      },
+      {
+        "check": "Desktop Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Quick Find finds red-bolt intent",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape restores search trigger focus",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile menu opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library has 55 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library query finds one guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "New library card visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Phone filter includes watch guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Computer filter excludes watch guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library empty state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape clears library query",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "All cards restored",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "tips link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guides has 36 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guide schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "guides link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Expanded disclosure fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS disclosure works",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No application JavaScript errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "browser_result": "59 assertions passed. Clean route, no page overflow, visible article and valid anchors at 320,390,720,768,1440px; keyboard skip link/main focus; two disclosures open/close; symptom jumps clear sticky navigation on desktop/mobile; Quick Find and red-bolt intent; Escape focus restoration; mobile menu; library search/filter/empty/Escape/reset; exact 55/36 card counts and ordered schemas; both index links open guide; expanded regional disclosure fits; no-JS content/disclosure; reduced-motion content visible. No browser page errors observed.",
+    "font_qa": [
+      {
+        "width": 320,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 390,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 720,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 768,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 1440,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "reduced_motion": "article visible"
+      }
+    ],
+    "visual": "Inspected 390/1440px heroes/diagram, mobile charge-limit controls and backup warning, expanded WPT disclosure, desktop result comparisons and sources/related links. Both index cards and broadened category labels checked on mobile/desktop. All five widths fit with fallback fonts and with official Google Fonts GitHub variable TTFs temporarily substituted via Playwright routes. No fonts or harness files added to the site.",
+    "external_request_limits": [
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap \u2014 net::ERR_TUNNEL_CONNECTION_FAILED",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap \u2014 net::ERR_TUNNEL_CONNECTION_FAILED"
+    ],
+    "preservation": "96 prior public HTML pages byte-identical including all 54 earlier tips and all service pages. Only two hub pages changed. Existing affiliate/tracking URL lists identical for every prior public HTML page; all non-CollectionPage hub schemas identical. No analytics, consent, account, hosting, security or unrelated business changes.",
+    "diff": "git diff --check passed.",
+    "reconciliation": "Fresh pre-commit fetch confirms origin/main remains 00220be25b273357a8b71b1ae385786896b9a4a8; no concurrent changes. Final pushed SHA and deployment/public checks will be recorded in the cloud scratch handoff."
+  },
+  "limits": [
+    "Chromium only; no physical Apple Watch/charger, native Safari/WebKit, screen-reader session or native browser zoom testing. No hands-on diagnosis claimed.",
+    "Google Fonts CSS blocked by cloud proxy with ERR_TUNNEL_CONNECTION_FAILED. Temporary official-font substitution validates intended layout, not public font delivery.",
+    "Static indexability does not establish search-engine indexing. Exact-SHA deployment status and public fetch must be checked after push and reported separately; deployment status is not proof of public page behavior."
+  ]
+}

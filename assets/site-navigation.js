@@ -189,6 +189,13 @@
     "kw": " tips apple pencil not working"
   },
   {
+    "name": "Apple Watch not charging?",
+    "desc": "Apple Watch blank or showing a red bolt? Check charger contact, allow time for a flat battery, and separate charge limits from faults before a reset.",
+    "href": "/tips/apple-watch-not-charging",
+    "icon": "menu_book",
+    "kw": " tips apple watch not charging"
+  },
+  {
     "name": "Back up an iPhone with a broken screen: what works",
     "desc": "Can you back up an iPhone when its screen is broken? Check existing iCloud copies, trusted-computer limits, working touch, and data-preserving repair options.",
     "href": "/tips/backup-iphone-broken-screen",
