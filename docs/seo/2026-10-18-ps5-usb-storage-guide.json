@@ -1,0 +1,428 @@
+{
+  "date": "2026-10-18",
+  "topic": "PS5 games on USB extended storage will not play \u2014 copy-back, game versions and safe connection checks",
+  "route": "/tips/ps5-games-usb-extended-storage",
+  "baseline": "e18691e879f7a534a02a0dd1f0602377a24b6bb5",
+  "environment": "Saved NEWHDR cloud Linux environment at /workspace/NEWHDR only. This existing task is the sole writer; no other agent, user Mac or other project used. Environment, Git transport, local build/tests and Chromium available.",
+  "instructions": "Safely fetched and verified clean main before writing. Read README, content architecture, build/check scripts, recent QA, full 55-tip inventory, three repair-expectation spokes, representative PS5 disc/HDMI, Mac drive and branded field-guide pages, hub/service structure. Workspace .agents/.codex empty; hidden-file search found no applicable AGENTS.md or local skills. Routine changes, commit and normal main push explicitly authorized. Analytics and consent remain deferred and untouched.",
+  "rationale": "No existing page explains a PS5 game present on USB extended storage but unable to launch. This playback-location intent differs from PS5 discs, HDMI, controller charging and Mac disk discovery. Exactly one guide added. Current PlayStation instructions support a safe copy-back route and clear stops before formatting. No traffic claims, personal bench experience, new business facts, affiliate placements or tracking. Requested version/model distinctions and data-loss boundaries take precedence over legacy short length target; final article including contents/sources/related links is about 1475 words.",
+  "sources": [
+    "https://www.playstation.com/en-us/support/hardware/ps5-extended-storage/",
+    "https://www.playstation.com/en-us/support/hardware/ps5-manage-storage-space/",
+    "https://www.playstation.com/en-us/support/hardware/ps5-usb-ports-guide/",
+    "https://www.playstation.com/en-us/support/games/upgrade-ps4-game-to-ps5-version/",
+    "https://www.playstation.com/en-us/support/games/ps5-backward-compatibility-games/",
+    "https://www.playstation.com/en-us/support/hardware/ps5-install-m2-ssd/",
+    "https://www.playstation.com/en-us/support/hardware/back-up-ps5-data-USB/"
+  ],
+  "content": "Direct answer distinguishes USB storage-only PS5 games from directly playable compatible PS4 games and console/internal M.2 playback. Check version from library, exact Installed/Options/Copy route, free destination space by moving less-used game files, never clear saved data to make room. Existing internal M.2 route versus USB enclosure; SuperSpeed/minimum capacity requirements and direct connection; CFI-1000 front USB-A versus USB-C and CFI-2000/7000 two-front-USB-C speed distinction; safe removal/full shutdown versus rest mode; cancel computer initialization/format prompts; interpret copy success, remaining disc/lock/launch messages and repeated transfer failure without guessing hardware. Separate game installations from PS5/PS4 save backups, separate FAT32/exFAT backup destination, console-backup exclusions and restore erasure. Stops before destructive formatting, resets or recovery. No disassembly or account/security changes required.",
+  "design": "Existing branded field-guide shell and navigation, scoped blue/sand copy-path illustration with visible labels/caption, three native symptom jumps, sticky contents, semantic storage-location and result lists, compact responsive model cards, two native disclosures, ordered copy-back checklist, prominent format warning and focusable main. No new article JavaScript; content and disclosures work without it.",
+  "integration": [
+    "56 Repair Library cards with console filter/search keywords and ordered CollectionPage schema",
+    "37 guide-hub cards with matching ordered schema",
+    "One contextual PS5 service link and related disc/service/library links",
+    "Sitemap new route and affected hub/service dates; generated Quick Find source, main.min.js and shared navigation entry"
+  ],
+  "checks": {
+    "build": "bash build.sh passed twice. Generated changes only add one Quick Find entry; generated shared styles unchanged.",
+    "site": "python3 scripts/audit-site.py: 100 public pages, 6790 local references, zero failures. Repeated after final text shortening and fresh remote reconciliation.",
+    "indexability": "node scripts/audit-indexability.mjs: 888 passed, zero failed. Repeated after final text shortening and fresh remote reconciliation.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 100 public pages, zero failures. Repeated after final text shortening and fresh remote reconciliation; not full WCAG certification.",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed. Includes all documented interaction/phone/inspection tests and camera/detail/refinement tests. Mocked delivery; no messages sent.",
+    "browser_assertions": [
+      {
+        "check": "320px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip link first",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip focuses main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px copy jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.734375,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px version jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.9375,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px connection jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.53125,
+          "nav": 61
+        }
+      },
+      {
+        "check": "1440px copy jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.8125,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px version jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.46875,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px connection jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.359375,
+          "nav": 65
+        }
+      },
+      {
+        "check": "Desktop Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Quick Find finds USB-extended-storage intent",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape restores search trigger focus",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile menu opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library has 56 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library query finds one guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "New library card visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Console filter includes PS5 storage guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Phone filter excludes PS5 storage guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library empty state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape clears library query",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "All cards restored",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "tips link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guides has 37 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guide schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "guides link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /ps5-repair fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /ps5-repair fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "ps5-repair link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Expanded disclosure fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS disclosure works",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No application JavaScript errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "browser_result": "62 assertions passed: clean route, no page overflow, article/anchor presence at 320,390,720,768,1440px; keyboard skip/main focus and both disclosures; desktop/mobile symptom jumps clear navigation; Quick Find and USB extended-storage query; Escape focus restoration; mobile menu; library search/console and phone filters/empty/Escape/reset; exact 56/37 counts and schema order; both hub and service links open guide; expanded disclosure fits; no-JS content/disclosure; reduced-motion content visible. No browser page errors. Final shortening of warning/removal prose was followed by repeated five-width font/layout checks, focused mobile sections/M.2 disclosure and visual recapture; app behavior unchanged.",
+    "font_qa": [
+      {
+        "width": 320,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 390,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 720,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 768,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 1440,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "reduced_motion": "article visible"
+      }
+    ],
+    "focused_checks": {
+      "final_mobile_sections": "fit",
+      "m2_disclosure": "fits and opens",
+      "service_animation_comparison": [
+        {
+          "current": {
+            "animated": 1,
+            "transparent": 1
+          }
+        },
+        {
+          "baseline": {
+            "animated": 1,
+            "transparent": 1
+          }
+        }
+      ]
+    },
+    "visual": "Inspected 390/1440px heroes, copy diagram and hierarchy, mobile format warning, model-specific ports, save/restore boundary and expanded M.2/format disclosures; result interpretations, sources/related links and both index cards. PS5 supporting link fits and navigates at mobile/desktop. Intended fonts tested using official Google Fonts GitHub TTFs temporarily routed in Playwright; fallback layouts also fit. No fonts or harness files added to public site.",
+    "service_baseline": "The existing PS5 page leaves an animated CTA container transparent after an instant jump under reduced-motion QA. Replayed baseline HTML from e18691e with the same dependencies and conditions: both current and baseline contain one animated container in that section and it is transparent in both. Existing supporting paragraph/link remains visible. No task regression identified; unrelated animation implementation left untouched.",
+    "external_request_limits": [
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap \u2014 net::ERR_TUNNEL_CONNECTION_FAILED",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap \u2014 net::ERR_TUNNEL_CONNECTION_FAILED",
+      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap \u2014 net::ERR_TUNNEL_CONNECTION_FAILED",
+      "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap \u2014 net::ERR_TUNNEL_CONNECTION_FAILED"
+    ],
+    "preservation": "96 prior public HTML pages byte-identical, including all 55 earlier tips. Only two hubs and one PS5 service supporting link changed. Existing affiliate/tracking URL lists identical for all prior public HTML; non-CollectionPage hub schemas identical. No analytics, consent, accounts, security, hosting or unrelated business changes.",
+    "diff": "git diff --check passed.",
+    "reconciliation": "Fresh pre-commit fetch confirms origin/main remains e18691e879f7a534a02a0dd1f0602377a24b6bb5. No concurrent changes. Exact pushed SHA and deployment/public observations will be recorded in the cloud scratch handoff."
+  },
+  "limits": [
+    "Chromium only; no physical PS5/storage/transfer tests, Safari/WebKit, screen-reader session or native browser zoom. Source-based guidance; no hands-on diagnosis claimed.",
+    "Cloud proxy blocks Google Fonts CSS with ERR_TUNNEL_CONNECTION_FAILED. Temporary official-font substitution checks intended layout, not public font delivery. Existing service-page instant-jump animation behavior was compared with baseline, not rewritten.",
+    "Static indexability does not prove search-engine indexing. Exact-SHA deployment and public fetch must be checked after push and reported independently; deployment success is not public behavior evidence."
+  ]
+}

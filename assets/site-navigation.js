@@ -518,6 +518,13 @@
     "kw": " tips ps5 controller not charging"
   },
   {
+    "name": "PS5 game on USB won’t play?",
+    "desc": "PS5 games cannot run from USB extended storage. Check the game version, copy it to console or internal M.2 storage, and avoid destructive formatting.",
+    "href": "/tips/ps5-games-usb-extended-storage",
+    "icon": "menu_book",
+    "kw": " tips ps5 games usb extended storage"
+  },
+  {
     "name": "PS5 not reading discs? Safe checks before a reset",
     "desc": "PS5 says unrecognized disc or will not read games? Check disc type, orientation, cleaning, a second disc and drive setup before risking saves or forcing the mechanism.",
     "href": "/tips/ps5-disc-not-reading",
