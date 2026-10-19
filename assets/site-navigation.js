@@ -231,6 +231,13 @@
     "kw": " tips cracked screen safe to use"
   },
   {
+    "name": "Epson EcoTank printing blank pages?",
+    "desc": "Epson ET-2800 or ET-2803 feeds blank paper? Use a nozzle check to separate app problems from print quality, with safe cleaning limits and ink warnings.",
+    "href": "/tips/epson-ecotank-blank-pages",
+    "icon": "menu_book",
+    "kw": " tips epson ecotank blank pages"
+  },
+  {
     "name": "External drive not showing up on Mac?",
     "desc": "Mac can’t see your external drive? Check Finder, connections, and mounting safely. Protect files before First Aid, formatting, or replacement.",
     "href": "/tips/external-drive-not-showing-up-mac",

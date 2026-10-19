@@ -1,0 +1,421 @@
+{
+  "date": "2026-10-19",
+  "topic": "Epson EcoTank ET-2800/ET-2803 feeds blank pages despite ink: printer-side nozzle check, app comparison and bounded cleaning",
+  "route": "/tips/epson-ecotank-blank-pages",
+  "baseline": "c7c824194c36c8e12099826b807fc9d140fca6f0",
+  "environment": "Saved cloud Linux /workspace/NEWHDR only. Sole writer; no user Mac, other project or subagent used.",
+  "instructions": "Fetched and verified clean current main. Read README, content architecture, build/check scripts, latest handoff, full 56-tip inventory, three guide spokes, representative branded guides and printer/service hubs. Applicable AGENTS.md/SKILL.md search found none; .agents/.codex empty. Relevant edits, commit and normal main push authorized. Analytics and consent remain deferred and unchanged.",
+  "rationale": "Exactly one new guide. Blank sheets and printer-side print quality differ from the existing printer-offline/network guide. Narrow ET-2800/ET-2803 scope avoids applying maintenance steps to other EcoTanks or cartridge printers. No invented bench experience, demand/traffic claims or business services. Detailed model paths, safeguards, result interpretation and source links take precedence over the legacy short-length target; main content including contents/sources/related links is 1580 words.",
+  "sources": [
+    "https://support.microsoft.com/en-us/windows/hardware/printer/view-a-printer-s-print-queue-in-windows",
+    "https://support.microsoft.com/en-us/windows/hardware/printer/fix-print-job-stuck-in-queue-errors-in-windows",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/source/printers/source/ink_functions/tasks/et4500_4550/checking_status_visually_et2550_4550.html",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/source/printers/source/ink_functions/tasks/et2720_l3160/refilling_ink_tanks_et2720_l3160.html",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/source/printers/source/troubleshooting/reference/problem_noise_install_tanks.html",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/source/printers/source/ink_functions/tasks/et2800_l3260/checking_nozzles_lcd_et2800_l3260.html",
+    "https://epson.com/faq/SPT_C11CJ66203~faq-0000491-et2800_2803",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/source/printers/source/ink_functions/tasks/et2720_l3160/cleaning_head_lcd_et2720_l3160.html",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/source/printers/source/ink_functions/concepts/print_head_cleaning_tanks.html",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/source/printers/source/ink_functions/concepts/power_cleaning_tanks.html",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/source/printers/source/ink_functions/tasks/et2800_l3260/power_cleaning_lcd_et2800_l3260.html",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/source/troubleshooting/tasks/et2720_l3160/resetting_defaults_et2720_l3160.html",
+    "https://files.support.epson.com/docid/cpd6/cpd60271/helpcontents.html",
+    "https://files.support.epson.com/docid/cpd6/cpd60271.pdf#page=159"
+  ],
+  "content": "Save original documents, cancel repeated queue requests without deleting original files, Windows 11 queue path; actual tank levels, low ink and first-charge stop; exact printer-side nozzle check independent of computer OS; complete versus some gaps versus mostly absent pattern results; app/preview/paper-size/one-page comparison; driver-dependent Skip Blank Page limits; ordinary Head Cleaning sequence, keep cover closed and power on, completion signal and recheck; up-to-three cycles then 12-hour wait; Power Cleaning only for indicated results, all tanks at least one-third full, heavy ink use, waste-pad service risk, 12 hours between attempts; stop before more ink use if no improvement, leaks/service errors/unclear levels; preserve settings rather than factory-resetting; evidence handoff and Epson support for persistent printer-side quality. No manual flushing or unofficial resets.",
+  "design": "Existing branded field-guide shell and shared navigation. Scoped mint/paper three-pattern illustration labeled in text with simplified-example caption; three native result links, sticky contents, semantic result list, ordered checks, prominent ordinary-cleaning limit, two keyboard-operable native disclosures, focusable main. No new article JavaScript; article/disclosures work without JavaScript.",
+  "integration": [
+    "57 Repair Library cards with computer filter/search metadata and matching ordered CollectionPage schema",
+    "38 guide-hub cards with matching ordered schema",
+    "One contextual printer-setup service link; relevant old printer/network, service and library links",
+    "Sitemap route and affected hub/service dates; generated Quick Find source, main.min.js and shared navigation entry"
+  ],
+  "checks": {
+    "build": "bash build.sh passed twice. Generated changes add one Quick Find entry only; generated shared styles unchanged.",
+    "site": "python3 scripts/audit-site.py: 101 public pages, 6843 local references, zero failures. Repeated after final initial-charging/refill clarification.",
+    "indexability": "node scripts/audit-indexability.mjs: 896 passed, zero failed. Repeated after final clarification; structural indexability does not prove search-engine indexing.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 101 public pages, zero failures. Repeated after final clarification; not a full WCAG assessment.",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed. Includes all README checks and expanded camera/detail/refinement tests. Mocked delivery; no messages sent.",
+    "browser_assertions": [
+      {
+        "check": "320px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip link first",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip focuses main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px pattern jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.109375,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px software jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.90625,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px clean jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.703125,
+          "nav": 61
+        }
+      },
+      {
+        "check": "1440px pattern jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.796875,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px software jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.734375,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px clean jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.484375,
+          "nav": 65
+        }
+      },
+      {
+        "check": "Desktop Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Quick Find finds ET-2803 intent",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape restores search trigger focus",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile menu opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library has 57 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library query finds one guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "New library card visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Computer filter includes EcoTank guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Phone filter excludes EcoTank guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library empty state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape clears library query",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "All cards restored",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "tips link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guides has 38 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guide schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "guides link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /printer-setup fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /printer-setup fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "printer-setup link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Expanded disclosure fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS disclosure works",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No application JavaScript errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "browser_errors": [],
+    "font_layout": [
+      {
+        "width": 320,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 390,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 720,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 768,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 1440,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "reduced_motion": "article visible"
+      }
+    ],
+    "visual": "Inspected 390px and 1440px branded hero; mobile ordinary-cleaning warning, expanded Power Cleaning ink/wait warning and evidence handoff; new library and guide cards, printer-service supporting link, desktop sources/related links. Five-width fallback and intended-font checks at 320/390/720/768/1440px; intended-font checks repeated after final clarification. Reduced-motion checks and desktop/mobile integration screenshots captured.",
+    "git": "git diff --check passed. Fresh fetch, HEAD, origin/main and ls-remote refs/heads/main all matched baseline c7c824194c36c8e12099826b807fc9d140fca6f0 before commit; no concurrent remote change. Post-push exact-SHA verification recorded separately in the cloud handoff."
+  },
+  "preservation": {
+    "baseline": "c7c824194c36c8e12099826b807fc9d140fca6f0",
+    "prior_html_byte_identical": 97,
+    "old_tips_unchanged": 56,
+    "changed_existing_html": [
+      "guides.html",
+      "printer-setup.html",
+      "tips.html"
+    ],
+    "affiliate_tracking_url_lists": "identical on all prior public HTML",
+    "other_hub_schema": "identical"
+  },
+  "limits": [
+    "Source-based guidance only; no physical printer, ink charging, print, cleaning or driver test performed. Chromium only; no Safari/WebKit, screen-reader session or native browser zoom.",
+    "Cloud proxy blocks Google Fonts CSS with ERR_TUNNEL_CONNECTION_FAILED. Temporary official-font substitution checked intended layout, not public font delivery. No production font configuration changed.",
+    "Exact-SHA CI/deployment status and public page response must be verified after push and reported separately. Prior cloud public requests were proxy-blocked; deployment success alone is not public-behavior evidence."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-19"
+}

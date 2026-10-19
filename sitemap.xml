@@ -116,7 +116,7 @@
   </url>
   <url>
     <loc>https://www.haileyrepair.com/tips</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://www.haileyrepair.com/device-check</loc>
@@ -136,7 +136,7 @@
   </url>
   <url>
     <loc>https://www.haileyrepair.com/printer-setup</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://www.haileyrepair.com/electronics-recycling</loc>
@@ -296,7 +296,7 @@
   </url>
   <url>
     <loc>https://www.haileyrepair.com/guides</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
   </url>
   <url>
     <loc>https://www.haileyrepair.com/guides/iphone-screen-repair</loc>
@@ -414,5 +414,9 @@
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.haileyrepair.com/tips/epson-ecotank-blank-pages</loc>
+    <lastmod>2026-10-19</lastmod>
   </url>
 </urlset>

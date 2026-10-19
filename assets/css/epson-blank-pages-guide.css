@@ -1,0 +1,22 @@
+/* EcoTank guide: labeled pattern artwork and native decision links. */
+.bp-page .fg-kicker,.bp-page .fg-number{color:#b9d7cc}.bp-page .tip-progress{background:#b9d7cc}
+.bp-scope{font-size:13px;color:#b9c7ce;margin:18px 0 0}
+.bp-routes{padding:28px 30px;border:1px solid #536f69;border-radius:12px;background:linear-gradient(145deg,#253b37,#17252e)}
+.bp-routes>a{display:flex;align-items:center;gap:14px;padding:19px 0;border-top:1px solid #536f69;text-decoration:none;min-height:64px}
+.bp-routes>a>span:first-child{font-size:11px;color:#b9d7cc}.bp-routes strong{font-size:14px;color:#f2f1ed;flex:1;line-height:1.6}
+.bp-routes>a:hover strong{text-decoration:underline;text-underline-offset:4px}
+.bp-art{margin:0 0 26px}.bp-sheets{display:flex;justify-content:center;gap:12px;min-height:150px;align-items:center;padding-block:12px}
+.bp-sheets>div{flex:1;max-width:110px;padding:18px 10px 12px;background:#efede4;border:1px solid #dfd9c7;border-radius:3px;box-shadow:0 5px 12px #0a14172e;transform:rotate(-4deg)}
+.bp-sheets>div:nth-child(2){transform:translateY(-7px)}.bp-sheets>div:last-child{transform:rotate(4deg)}
+.bp-sheets span{display:block;font-size:9px;line-height:1.5;font-weight:700;color:#283b3a;text-align:center;margin-top:14px}
+.bp-lines{position:relative;display:block;height:56px;background:repeating-linear-gradient(0deg,transparent 0 6px,#4a6261 6px 8px)}
+.bp-gaps:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 28%,#efede4 28% 45%,transparent 45% 68%,#efede4 68% 80%,transparent 80%)}
+.bp-empty{background:linear-gradient(90deg,#4a6261 0 14%,transparent 14%);height:2px;margin-block:27px}
+.bp-art figcaption{text-align:center;font-size:12px;color:#c2d2ce;line-height:1.7}
+.bp-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
+.bp-warning{padding:22px;border:1px solid #927953;border-radius:6px;background:#28241f;margin:24px 0}.bp-warning>strong{display:block;color:#f0d9b8;margin-bottom:10px}.bp-warning p{margin:0}
+.bp-details{border:1px solid #536f69;border-radius:10px;padding:0 22px;background:#1b2b2e;margin:24px 0}.bp-details summary{cursor:pointer;min-height:48px;padding:16px 0;font-weight:600;color:#edf1f5;line-height:1.6}.bp-details[open] summary{margin-bottom:6px}.bp-details p{font-size:14px}
+.bp-handoff{padding:24px;border-left:2px solid #b9d7cc;background:#202e31;margin-top:26px}.bp-page .bp-handoff h3{font-family:Inter,sans-serif!important;font-size:17px;color:#e5eee8;margin:0 0 18px}.bp-handoff p:last-child{margin-bottom:0}
+.bp-page a:focus-visible,.bp-page summary:focus-visible{outline:2px solid #cae6d9;outline-offset:5px;border-radius:2px}
+@media(max-width:760px){.bp-routes{padding:22px}.bp-warning,.bp-handoff,.bp-details{padding-inline:18px}}
+@media(max-width:360px){.bp-sheets{gap:8px}.bp-sheets>div{padding-inline:7px}.bp-sheets span{font-size:8px}}
