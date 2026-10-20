@@ -1,0 +1,429 @@
+{
+  "date": "2026-10-20",
+  "topic": "Android phone charges from a Windows 11 PC but photos do not show or copy over USB",
+  "route": "/tips/android-photos-not-showing-windows-usb",
+  "baseline": "26266c976340e9993ecf6e3a2119201bd3f0f5f7",
+  "environment": "Saved cloud Linux /workspace/NEWHDR only; sole writer. No user Mac, other project or subagent used. Waited for selected cloud environment to become ready before repository work.",
+  "instructions": "Safely fetched current remote and verified clean main. Read README, content architecture, build/check scripts, latest handoff, full 57-tip inventory, three guide spokes, branded representative pages, backup guidance, Android service and hub conventions. Hidden AGENTS.md/SKILL.md search found none; workspace .agents/.codex empty. Existing visible context was complete. User explicitly authorizes relevant edits, commit and normal main push after checks. No competing writer found. Existing analytics investigation remains deferred.",
+  "rationale": "Exactly one guide added. USB photo transfer failure differs from general backup preparation, charge-speed troubleshooting, iPhone cloud capacity and Mac disk discovery. Uses current Google/Android, Samsung and Microsoft sources. No invented bench experience, market/traffic claim, business fact, affiliate placement or tracking. The requested diagnosis, model/version distinctions, warnings and stopping points take precedence over the legacy short length target; main including contents, sources and related links is 1595 words.",
+  "sources": [
+    "https://support.google.com/android/answer/9064445?hl=en",
+    "https://www.samsung.com/uk/support/mobile-devices/how-do-i-transfer-photos-from-my-smartphone-to-my-pc/",
+    "https://www.samsung.com/us/support/troubleshoot/TSG10013048/",
+    "https://support.google.com/android/answer/16778864?hl=en",
+    "https://support.microsoft.com/en-us/windows/apps/photos/import-photos-and-videos-from-phone-to-pc",
+    "https://support.google.com/photos/answer/7652919?hl=en",
+    "https://support.microsoft.com/en-us/windows/experience/platform-variants/media-feature-pack-for-windows-n",
+    "https://support.google.com/photos/answer/6128843?co=GENIE.Platform%3DAndroid&hl=en",
+    "https://support.google.com/photos/answer/6128858?co=GENIE.Platform%3DAndroid&hl=en"
+  ],
+  "content": "Unlockable Android plus Windows 11 scope, trusted-PC boundary, data-capable cable versus charging; Pixel/Android USB notification and File Transfer route, Android 14 caveat, Galaxy Transferring files/Android Auto/MTP label differences; One UI 7 lock-screen restrictions and Google USB Protection, unlocking/reconnecting without disabling protections; managed-device policy stop. Galaxy internal/SD DCIM locations; two new non-sensitive test photos, explicit Copy/Paste rather than Cut/Move, finish/eject if offered/disconnect/open PC copies; Photos import alternative, playback-format distinction, sample versus full-backup warning, file counts/sizes/video checks and independent copy before deletion. Controlled cable/port/PC tests, interpretation of no entry/empty storage/repeated disconnect, one normal restart, Windows 11 N Media Feature Pack exception. Cloud-visible/device-removed photos versus local originals and Google Photos browser download; synchronized deletion risk. Stops before resets, formatting, random driver tools, USB debugging, policy bypass or forcing damaged ports. Privacy-safe evidence handoff and relevant device/computer support routes.",
+  "design": "Existing branded field-guide shell/navigation with scoped blue/sand phone-to-PC artwork, visible copy-path caption, three native symptom links, sticky contents, ordered checks and semantic result lists. Prominent copy/verification warning, two native disclosures for lock-screen restrictions and Windows N, focusable main and focus indicators. No new article JavaScript; guide and disclosures work without JavaScript.",
+  "integration": [
+    "58 Repair Library cards with phone filter, Android/USB/MTP/DCIM search metadata and matching ordered CollectionPage schema",
+    "39 guide-hub cards with matching ordered schema",
+    "One contextual Android-service supporting link; appropriate backup, wet-phone, computer/device support and library related links",
+    "Sitemap route and affected hub/service dates; generated Quick Find source/main.min.js/shared-navigation entry only"
+  ],
+  "checks": {
+    "build": "bash build.sh passed twice; generated changes add only one Quick Find entry. Generated shared styles unchanged.",
+    "site": "python3 scripts/audit-site.py: 102 public pages, 6896 local references, zero failures. Repeated after final playback-format clarification.",
+    "indexability": "node scripts/audit-indexability.mjs: 904 passed, zero failed. Repeated after final clarification; does not prove search-engine indexing.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 102 public pages, zero failures. Repeated after final clarification; not full WCAG certification.",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed. Includes all README checks and camera/detail/refinement tests. Mocked delivery; no business messages sent.",
+    "browser_assertions": [
+      {
+        "check": "320px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip link first",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip focuses main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px connect jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.53125,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px copy jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.328125,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px missing jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.921875,
+          "nav": 61
+        }
+      },
+      {
+        "check": "1440px connect jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.6875,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px copy jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.8125,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px missing jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.875,
+          "nav": 65
+        }
+      },
+      {
+        "check": "Desktop Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Quick Find finds MTP intent",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape restores search trigger focus",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile menu opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library has 58 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Broad Android photo query includes new guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "MTP library query finds one guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "New library card visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Phone filter includes Android USB guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Computer filter excludes Android USB guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library empty state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape clears library query",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "All cards restored",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "tips link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guides has 39 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guide schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "guides link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /android-repair fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /android-repair fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "android-repair link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Expanded disclosure fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS disclosure works",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No application JavaScript errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "browser_events": [
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8085/tips/android-photos-not-showing-windows-usb",
+        "stack": ""
+      }
+    ],
+    "browser_event_interpretation": "One Chromium event reported Transition was skipped with empty stack; retained here. The harness excludes that native transition event from application-error classification. No application JavaScript error with a stack was observed; all functional checks passed. Shared script logic is unchanged, apart from the generated search entry.",
+    "font_layout": [
+      {
+        "width": 320,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 390,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 720,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 768,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "width": 1440,
+        "fits": true,
+        "fonts_loaded": true
+      },
+      {
+        "reduced_motion": "article visible"
+      }
+    ],
+    "visual": "Inspected 390px/1440px branded hero, mobile copy/verification and cloud-delete warnings, Windows N expanded disclosure, library/guide-hub cards, and Android service supporting link. Five widths 320/390/720/768/1440px fit with fallback and intended fonts. Intended-font checks repeated after final clarification; mobile/desktop reduced-motion integration and section screenshots captured.",
+    "search_test_refinement": "Initial QA incorrectly expected the broad Android photos query to produce exactly one library result. Existing relevant backup content also matches. Final QA verifies that broad query includes the guide and the specific MTP query returns one guide, then checks phone/computer filters and empty state. No production search behavior changed.",
+    "git": "git diff --check passed. Fresh fetch, HEAD, origin/main and ls-remote refs/heads/main matched the baseline before commit; no concurrent change found. Exact post-push verification will be recorded in the cloud handoff."
+  },
+  "preservation": {
+    "baseline": "26266c976340e9993ecf6e3a2119201bd3f0f5f7",
+    "prior_html_byte_identical": 98,
+    "old_tips_unchanged": 57,
+    "changed_existing_html": [
+      "android-repair.html",
+      "guides.html",
+      "tips.html"
+    ],
+    "affiliate_tracking_url_lists": "identical on all prior public HTML",
+    "other_hub_schema": "identical"
+  },
+  "limits": [
+    "No physical Android phone, cable, PC photo import/copy, USB restriction, Windows N installation or driver test performed. Source-based guidance; no hands-on diagnosis claimed. Chromium only; no Safari/WebKit, screen-reader session or native browser zoom.",
+    "Cloud proxy blocks Google Fonts CSS with ERR_TUNNEL_CONNECTION_FAILED. Temporary official-font substitution verifies intended layout, not public font delivery. Production font configuration unchanged. One native empty-stack transition event retained in browser evidence.",
+    "Post-push exact-SHA CI/deployment and public-page behavior must be verified separately. Previous public/Actions requests were environment-blocked; no publication inference from a local preview."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-20"
+}

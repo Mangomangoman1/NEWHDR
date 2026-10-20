@@ -1,0 +1,20 @@
+/* Android USB guide: native decision links and a labeled copy path. */
+.ut-page .fg-kicker,.ut-page .fg-number{color:#b1c9e4}.ut-page .tip-progress{background:#b1c9e4}
+.ut-scope{font-size:13px;color:#b8c6d2;margin:18px 0 0}
+.ut-routes{padding:28px 30px;border:1px solid #526c89;border-radius:12px;background:linear-gradient(145deg,#28394d,#182731)}
+.ut-routes>a{display:flex;align-items:center;gap:14px;padding:19px 0;border-top:1px solid #526c89;text-decoration:none;min-height:64px}
+.ut-routes>a>span:first-child{font-size:11px;color:#b1c9e4}.ut-routes strong{font-size:14px;color:#f2f1ed;flex:1;line-height:1.6}.ut-routes>a:hover strong{text-decoration:underline;text-underline-offset:4px}
+.ut-art{margin:0 0 26px}.ut-path{display:flex;align-items:center;justify-content:center;gap:18px;min-height:150px;padding:16px 8px}
+.ut-phone{position:relative;width:54px;height:97px;border:3px solid #b8cde2;border-radius:10px;background:#152633;flex-shrink:0}.ut-phone:before{content:"";position:absolute;top:6px;left:18px;width:12px;height:3px;border-radius:2px;background:#b8cde2}
+.ut-phone i{position:absolute;width:30px;height:37px;left:9px;top:29px;border:1px solid #d8e7ed;border-radius:2px;background:linear-gradient(145deg,#6a8d91 49%,#b8cfd2 50%)}
+.ut-cable{flex:1;max-width:120px;position:relative;border-top:2px solid #d9c09a}.ut-cable:after{content:"";position:absolute;right:-1px;top:-5px;width:7px;height:7px;border-top:2px solid #d9c09a;border-right:2px solid #d9c09a;transform:rotate(45deg)}
+.ut-cable span{display:block;position:absolute;top:-28px;left:0;width:100%;text-align:center;font-size:10px;color:#ead6b7;white-space:nowrap}
+.ut-pc{position:relative;width:118px;height:79px;border:3px solid #b8cde2;border-radius:5px;background:#152633;display:flex;align-items:center;justify-content:center;gap:6px;flex-shrink:0}.ut-pc:after{content:"";position:absolute;left:-11px;bottom:-10px;width:134px;height:6px;border-radius:0 0 8px 8px;background:#b8cde2}.ut-pc i{width:23px;height:29px;border:1px solid #d8e7ed;background:linear-gradient(145deg,#6a8d91 49%,#b8cfd2 50%);border-radius:2px}.ut-pc i:last-child{width:15px;height:23px;background:#304c61}
+.ut-stages{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:#d9e4ef;margin:0 0 20px}.ut-stages>span{flex:1;text-align:center;padding:7px 4px;border:1px solid #526c89;border-radius:5px}
+.ut-art figcaption{text-align:center;font-size:12px;color:#bacbd9;line-height:1.7}.ut-art figcaption strong{font-size:12px;color:#e6dccb}
+.ut-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
+.ut-warning{padding:22px;border:1px solid #927953;border-radius:6px;background:#28241f;margin:24px 0}.ut-warning>strong{display:block;color:#f0d9b8;margin-bottom:10px}.ut-warning p{margin:0}
+.ut-details{border:1px solid #526c89;border-radius:10px;padding:0 22px;background:#1c2936;margin:24px 0}.ut-details summary{cursor:pointer;min-height:48px;padding:16px 0;font-weight:600;color:#edf1f5;line-height:1.6}.ut-details[open] summary{margin-bottom:6px}.ut-details p{font-size:14px}
+.ut-page a:focus-visible,.ut-page summary:focus-visible{outline:2px solid #c6ddf1;outline-offset:5px;border-radius:2px}
+@media(max-width:760px){.ut-routes{padding:22px}.ut-warning,.ut-details{padding-inline:18px}.ut-path{gap:14px}}
+@media(max-width:360px){.ut-path{gap:10px;padding-inline:0}.ut-phone{width:46px;height:86px}.ut-phone:before{left:14px}.ut-phone i{left:6px}.ut-pc{width:99px;height:70px}.ut-pc:after{width:115px}.ut-cable span{font-size:9px}.ut-stages{gap:5px;font-size:9px}}
