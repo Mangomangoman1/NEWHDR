@@ -1,0 +1,437 @@
+{
+  "date": "2026-10-21",
+  "topic": "Nintendo Switch microSD card not recognized: model compatibility, safe reseating, result interpretation and capture preservation",
+  "route": "/tips/switch-microsd-card-not-recognized",
+  "baseline_local_commit": "673160f9fea4b8f226a3eea9d4b607ce50e4987f",
+  "publication_state": "Prepared and tested locally only. GitHub-dependent and deployment operations paused by owner. No fetch/pull/push, remote status polling, PR or deployment attempt performed for this task. Cached origin/main is not a current remote verification.",
+  "environment": "Saved NEWHDR cloud Linux /workspace/NEWHDR only; sole writer. No user Mac, other project or subagent. Manufacturer research and local test activity only; no alternate credentials or GitHub-dependent font downloads.",
+  "instructions": "Reviewed local README, content architecture, build/audit scripts, full 58-tip inventory and three guide spokes, representative branded/audio/power pages, latest handoff including yesterday\u2019s publication investigation, hubs and console-service context. Hidden AGENTS.md/SKILL.md search found none; workspace .agents/.codex empty. Existing visible history supplies the owner pause and authorization for a local commit. User depth/safety and current prepare-only restriction take precedence over legacy first-person bench claims, weekly cadence and short length target. Analytics investigation remains deferred.",
+  "rationale": "Exactly one distinct guide. Existing Switch pages concern power and Joy-Con drift; this guide concerns microSD recognition and destructive-format decisions, with original-family steps and a bounded Switch 2 compatibility branch. Current Nintendo sources; no invented experience, traffic claim, new business fact or affiliate placement. Main content including contents/sources/related links is 1363 words.",
+  "publication_date_policy": "Article uses dateCreated/dateModified 2026-10-21 and a Reviewed October 21 byline; datePublished is intentionally omitted while unpublished. After restoration and safe synchronization, add the actual publication date as appropriate and recheck any changed facts/metadata before a normal push. Current sitemap/hub dates describe prepared local edits, not evidence of live publication.",
+  "sources": [
+    "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22482",
+    "https://en-americas-support.nintendo.com/app/answers/detail/a_id/68425",
+    "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22481",
+    "https://en-americas-support.nintendo.com/app/answers/detail/a_id/68479",
+    "https://www.nintendo.com/au/support/articles/microsd-cards-faq/",
+    "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22525",
+    "https://en-americas-support.nintendo.com/app/answers/detail/a_id/68218",
+    "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22404",
+    "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22365"
+  ],
+  "content": "Save progress and record error; stop for physical damage or contamination; original Switch/Lite/OLED microSD/HC/XC capacity ranges, Express compatible at ordinary speed, full-size SD exclusion. Switch 2 Express requirement, first-use online update and old-card capture-import exception, separate official troubleshooting. SDXC update prerequisite and original-family update route. Full normal shutdown versus sleep, per-model slot location, gentle release, label-away orientation and one reseat; no case opening. Data Management capacity check and one-title-versus-undetected result interpretation. Optional safe second-card comparison without borrowing a sole copy or accepting deletion prompts. Game saves remain in console memory, while card can hold software and captures; card copy is not save backup. Prominent format-erasure warning, preservation stop for unreadable sole-copy captures, cancel computer format/initialize/repair prompts; formatting only after backup or deliberate loss acceptance, official model-specific procedure and stop if still failing. No console initialization, user deletion, repeated flexing or guessed parts; privacy-safe evidence handoff.",
+  "design": "Existing branded field-guide shell/navigation, scoped sand/card-type comparison artwork labeled as illustrative, three native symptom jumps, sticky contents, semantic result lists, ordered owner steps, visible data-loss warning, two native disclosures for Switch 2 exception and format boundary, focusable main and focus outlines. No new article JavaScript. Mobile/desktop and no-JS reading/disclosures checked.",
+  "integration": [
+    "59 local Repair Library cards with console filter, microSD/SDXC/Express terms and matching ordered CollectionPage schema",
+    "40 local guide-hub cards with matching ordered schema",
+    "One supporting link in the console-service Nintendo card and relevant power/service/library links",
+    "New sitemap route and local modified dates; generated Quick Find source/main.min.js/shared navigation entry"
+  ],
+  "checks": {
+    "build": "bash build.sh passed twice; only one generated Quick Find entry added in each shared JS file; generated global styles unchanged.",
+    "site": "python3 scripts/audit-site.py: 103 public-template pages, 6948 local references, zero failures. Repeated after final model clarification. Public-template page count is local, not publication evidence.",
+    "indexability": "node scripts/audit-indexability.mjs: 912 checks passed, zero failed; repeated after final clarification. No --live check run.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 103 local pages, zero failures; repeated after final clarification. Not full WCAG certification.",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed. Includes all README tests and extended camera/detail/refinement tests; mocked delivery, no business messages sent.",
+    "browser_assertions": [
+      {
+        "check": "320px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip link first",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip focuses main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px model jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.25,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px reseat jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.046875,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px data jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.640625,
+          "nav": 61
+        }
+      },
+      {
+        "check": "1440px model jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.1875,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px reseat jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 177.9375,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px data jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.03125,
+          "nav": 65
+        }
+      },
+      {
+        "check": "Desktop Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Quick Find finds SDXC intent",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape restores search trigger focus",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile menu opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library has 59 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Switch microSD query includes new guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "SDXC library query finds one guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "New library card visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Console filter includes microSD guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Phone filter excludes microSD guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library empty state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape clears library query",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "All cards restored",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "tips link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guides has 40 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guide schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "guides link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /console-repair fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /console-repair fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "console-repair link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Expanded disclosure fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS disclosure works",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No application JavaScript errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "browser_events": [
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8087/tips/switch-microsd-card-not-recognized",
+        "stack": ""
+      }
+    ],
+    "browser_event_note": "One empty-stack Chromium Transition was skipped event retained. Harness excludes that transition event from application-error classification; no application error with a stack observed. All 63 functional assertions passed. Shared interaction logic unchanged.",
+    "final_layout": [
+      {
+        "width": 320,
+        "fits": true,
+        "font_delivery": "fallback; Google Fonts blocked"
+      },
+      {
+        "width": 390,
+        "fits": true,
+        "font_delivery": "fallback; Google Fonts blocked"
+      },
+      {
+        "width": 720,
+        "fits": true,
+        "font_delivery": "fallback; Google Fonts blocked"
+      },
+      {
+        "width": 768,
+        "fits": true,
+        "font_delivery": "fallback; Google Fonts blocked"
+      },
+      {
+        "width": 1440,
+        "fits": true,
+        "font_delivery": "fallback; Google Fonts blocked"
+      }
+    ],
+    "visual": "Inspected 390px/1440px hero, mobile formatting warning and expanded disclosure, console Nintendo supporting card, desktop guide-hub card and source/related sections. Browser fits at 320/390/720/768/1440px; final model text rechecked at all five widths. Reduced-motion integration/section screenshots captured.",
+    "search_fix": "Initial browser QA exposed missing SDXC discoverability in Quick Find metadata. Rewrote the description to include SDXC and Express, rebuilt generated search, then all 63 assertions passed, including SDXC search. This changed only the new guide\u2019s metadata/search entry.",
+    "git": "git diff --check passed. Repository started clean at baseline_local_commit. All Git operations are local; remote synchronization and status checks deliberately not run."
+  },
+  "preservation": {
+    "baseline": "673160f9fea4b8f226a3eea9d4b607ce50e4987f",
+    "prior_html_byte_identical": 99,
+    "old_tips_unchanged": 58,
+    "yesterday_guide_byte_identical": true,
+    "changed_existing_html": [
+      "console-repair.html",
+      "guides.html",
+      "tips.html"
+    ],
+    "affiliate_tracking_url_lists": "identical on all prior public HTML",
+    "other_hub_schema": "identical"
+  },
+  "limits": [
+    "No physical console, microSD, update, formatting, data recovery or card-reader test. Source-based owner checklist; no hands-on diagnosis claimed. Chromium only; no Safari/WebKit, screen-reader session or native browser zoom.",
+    "Google Fonts CSS and official Google font-download requests are blocked by the cloud proxy. Only fallback-font layout/visual QA performed today; intended downloaded-font check not run. No GitHub font source was accessed, and production font configuration is unchanged.",
+    "No current remote SHA, CI/deployment or public-page checks performed due owner restriction. Yesterday\u2019s committed guide is preserved; last reported public 404 is historical, not a new observation. No pushed or live publication claim."
+  ],
+  "restart_steps": [
+    "Wait for explicit owner restoration update before any GitHub-dependent operation.",
+    "Preserve this local commit and yesterday\u2019s baseline; inspect local state, then safely fetch current remote after restoration.",
+    "Reconcile concurrent remote work without force push and preserve unrelated changes; rerun relevant checks after reconciliation.",
+    "Set an accurate publication date and recheck sources/metadata as needed before publishing.",
+    "Only after restoration and passing checks, normally push main and verify exact remote SHA, CI/deployment and actual public HTML/assets/index links."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-21",
+  "publication_hold": "Local preparation only under the owner\u2019s current restriction; wait for restoration confirmation before remote synchronization or publication."
+}
