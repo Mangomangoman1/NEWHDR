@@ -1,0 +1,418 @@
+{
+  "date": "2026-10-22",
+  "topic": "iPhone Personal Hotspot does not appear on a Windows 11 PC",
+  "route": "/tips/iphone-hotspot-not-showing-windows",
+  "baseline_local_commit": "8af336ecc4630ff999db865b5592532a62adcd5e",
+  "publication_state": "Prepared locally for later publication. No fetch/pull/push, remote status or deployment polling, PR, public-page request or deployment attempt. Cached origin/main is not a current remote verification. Wait for owner restoration confirmation before remote-dependent work.",
+  "environment": "Saved /workspace/NEWHDR cloud Linux only. Sole writer, no competing local edits at start; no user Mac, alternate environment, subagent, alternate credentials, third-party outreach, payment, account or security setting changes. Advice in the draft is not an executed device or network change.",
+  "instructions": "Reviewed local README, content architecture, full 59-tip and three-spoke guide inventory, representative branded/rotation/Switch/audio pages, prior handoff/recovery state and relevant hubs/service context. Hidden AGENTS.md/SKILL.md search found none; workspace .agents/.codex empty. Visible context includes the explicit remote hold and local-commit authorization. Current safety/depth and prepare-only scope take precedence over legacy short length, first-person bench claims, cadence and publication-date defaults. Analytics investigation remains deferred.",
+  "rationale": "One distinct guide. Existing Wi-Fi article addresses dropping connections; this page addresses iPhone hotspot discovery on a Windows client, distinguishing absent name, joining/password error and connected/no internet. No invented expertise, traffic claim, business fact or affiliate placement. Main content including contents, sources and related links is 1483 words.",
+  "publication_date_policy": "Article has dateCreated/dateModified 2026-10-22 and Reviewed October 22 byline. No datePublished while locally staged. After restoration/safe synchronization, set an accurate publication date if used and recheck sources/metadata as appropriate. Prepared sitemap/hub dates are not live-publication evidence.",
+  "sources": [
+    "https://support.apple.com/guide/iphone/share-your-internet-connection-iph45447ca6/ios",
+    "https://support.apple.com/en-us/111785",
+    "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-wi-fi-network-in-windows",
+    "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows",
+    "https://support.apple.com/en-us/119837",
+    "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-your-windows-device-as-a-mobile-hotspot",
+    "https://support.apple.com/guide/security/wi-fi-security-with-apple-devices-secfd166f620/web",
+    "https://support.apple.com/en-us/118259",
+    "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/metered-connections-in-windows"
+  ],
+  "content": "Small cellular-only webpage test, restore Wi-Fi afterward, Dual SIM selected data line and plan awareness; actual Personal Hotspot/Cellular menus, Allow Others to Join and keep settings screen open; Windows 11 taskbar group, Manage Wi-Fi connections, refresh scan, Airplane mode/Wi-Fi controls and missing adapter branch. Correct SSID/password versus lock/Apple Account credentials, ordinary Windows Wi-Fi versus Apple Instant Hotspot; narrow optional Forget for an already visible saved hotspot with known password and credential-loss warning. PC Mobile hotspot is reverse direction; USB app requirement distinguished. Optional iPhone 12-and-later Maximize Compatibility only after visible 2.4 GHz/WPA2, performance/security tradeoff; no claim hardware fault from comparison. Other-device and other-network results, connected/no internet versus discovery, carrier/admin handoff, no management-profile/APN invention or VPN/security-software disabling. Normal model-linked iPhone and Windows restarts, backup before updates, metered usage limits and disconnect after use. Explicit iPhone/Windows network-reset configuration-loss warnings and no erase/reset prerequisite; privacy-safe handoff.",
+  "design": "Existing branded field-guide shell/navigation, scoped teal/sand phone-provider/PC-client illustration with visible directional labels, three native symptom links, sticky contents, ordered checks, semantic result comparisons, compatibility warning before the optional action, two native disclosures for PC-sharing direction and reset consequences, focusable main and visible keyboard focus. No new article JavaScript.",
+  "integration": [
+    "60 local library cards with computer filter and iPhone/hotspot/compatibility search terms, matching ordered CollectionPage schema",
+    "41 guide-hub cards with matching ordered schema",
+    "One contextual computer-support link and relevant dropping-Wi-Fi, cellular/SOS, backup and support links",
+    "New sitemap route and prepared modified dates; generated Quick Find entry in source/main.min.js/shared navigation only"
+  ],
+  "checks": {
+    "build": "bash build.sh passed twice. Second build hash comparison verified identical generated JS/CSS assets. Generated shared global styles unchanged from baseline.",
+    "site": "python3 scripts/audit-site.py: 104 local public-template pages, 7000 local references, zero failures. Count is not a claim those staged pages are live.",
+    "indexability": "node scripts/audit-indexability.mjs: 920 passed, zero failed. No --live request; does not prove search-engine indexing.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 104 local pages, zero failures; not full WCAG certification.",
+    "tests": "node --test scripts/test-*.mjs: 47 passed, zero failed; includes all README tests plus camera/detail/refinement tests. Mocked delivery; no business messages sent.",
+    "browser_assertions": [
+      {
+        "check": "320px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "320px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "720px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "768px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px clean route",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px no horizontal overflow",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px all anchors exist",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip link first",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Skip focuses main",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 0 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Disclosure 1 keyboard closes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px discover jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.234375,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px join jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 162.03125,
+          "nav": 61
+        }
+      },
+      {
+        "check": "390px compare jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 161.625,
+          "nav": 61
+        }
+      },
+      {
+        "check": "1440px discover jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.28125,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px join jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.421875,
+          "nav": 65
+        }
+      },
+      {
+        "check": "1440px compare jump clears navigation",
+        "pass": true,
+        "detail": {
+          "section": 178.109375,
+          "nav": 65
+        }
+      },
+      {
+        "check": "Desktop Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Quick Find finds hotspot intent",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape restores search trigger focus",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile menu opens",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Mobile Quick Find finds guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library has 60 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "iPhone hotspot query includes new guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Hotspot library query finds one guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "New library card visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Computer filter includes hotspot guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Phone filter excludes hotspot guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Library empty state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Escape clears library query",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "All cards restored",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /tips fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "tips link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /guides fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guides has 41 cards",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Guide schema matches card order",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "guides link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "390px /computer-support fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "1440px /computer-support fits",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "computer-support link opens guide",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "Expanded disclosure fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS article visible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS disclosure works",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No-JS fits mobile",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "check": "No application JavaScript errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "browser_events": [
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8088/tips/iphone-hotspot-not-showing-windows",
+        "stack": ""
+      },
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8088/tips/iphone-hotspot-not-showing-windows",
+        "stack": ""
+      },
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8088/tips/iphone-hotspot-not-showing-windows",
+        "stack": ""
+      }
+    ],
+    "browser_event_note": "Three empty-stack Chromium Transition was skipped events retained. Harness excludes that event from application-error classification; no application error with stack observed. Similar events are recorded in earlier local QA. All 63 functional assertions passed; shared interaction logic unchanged.",
+    "visual": "Inspected 390px/1440px hero, mobile compatibility tradeoff before action, reset-loss disclosure, computer-support supporting link and desktop guide-hub card. Five-width layout checks at 320/390/720/768/1440px with fallback fonts; keyboard skip/focus/disclosures, desktop/mobile Quick Find, exact library/schema order, filters/search/empty state, native jumps, integrations and no-JS reading checked. Reduced-motion integration screenshots captured.",
+    "preservation": {
+      "baseline_local_commit": "8af336ecc4630ff999db865b5592532a62adcd5e",
+      "prior_html_byte_identical": 100,
+      "old_tips_unchanged": 59,
+      "unpushed_switch_guide_byte_identical": true,
+      "changed_existing_html": [
+        "computer-support.html",
+        "guides.html",
+        "tips.html"
+      ],
+      "affiliate_tracking_url_lists": "identical on all prior public HTML",
+      "other_hub_schema": "identical"
+    },
+    "git": "Started clean at baseline_local_commit. git diff --check passed. Only local Git operations; no remote synchronization or current remote SHA check."
+  },
+  "limits": [
+    "Source-based owner guidance only; no physical iPhone, Windows Wi-Fi adapter, carrier, hotspot, compatibility-toggle, password/profile, network-reset or data-transfer test performed. No actual account/security setting changes. Chromium only; no Safari/WebKit, screen-reader session or native browser zoom.",
+    "Google Fonts CSS requests fail in this cloud environment. Fallback-font visual/layout checks only; intended downloaded-font and public font delivery checks not run. No GitHub font request or alternate credentials. Production font configuration unchanged.",
+    "GitHub/CI/deployment/public checks deliberately unrun under owner restriction. Do not claim pushed/live/current remote verified. Existing unpushed Switch commit and guide preserved; prior publication observations remain historical."
+  ],
+  "restart_steps": [
+    "Wait for explicit owner restoration confirmation before remote-dependent operations.",
+    "Preserve both local staged guide commits and the existing committed source; safely fetch/synchronize only after restoration.",
+    "Reconcile concurrent main changes without overwrite, force push or protection bypass; recheck affected local build/tests/audits.",
+    "Review publication dates and sources for both locally staged guides, then normally push main when permitted.",
+    "Verify exact remote SHA, CI/deployment and actual public page/assets/hubs/sitemap after publication."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-22"
+}

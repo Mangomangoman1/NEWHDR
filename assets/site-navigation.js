@@ -315,6 +315,13 @@
     "kw": " tips iphone camera shaking clicking not focusing"
   },
   {
+    "name": "iPhone hotspot missing on your PC?",
+    "desc": "iPhone hotspot missing on Windows 11? Check discovery, Wi-Fi, and Maximize Compatibility before resets. Separate no network from no internet.",
+    "href": "/tips/iphone-hotspot-not-showing-windows",
+    "icon": "menu_book",
+    "kw": " tips iphone hotspot not showing windows"
+  },
+  {
     "name": "iPhone microphone not working? Calls, videos, and app checks",
     "desc": "If callers cannot hear you, compare Voice Memos, both cameras, and app permissions before assuming your iPhone needs a microphone repair.",
     "href": "/tips/iphone-microphone-not-working",
