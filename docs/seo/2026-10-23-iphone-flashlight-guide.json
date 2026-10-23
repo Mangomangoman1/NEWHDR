@@ -1,0 +1,511 @@
+{
+  "date": "2026-10-23",
+  "topic": "iPhone flashlight will not turn on: controls, brightness, heat and rear-LED comparison",
+  "route": "/tips/iphone-flashlight-not-working",
+  "intended_url": "https://www.haileyrepair.com/tips/iphone-flashlight-not-working",
+  "publication_status": "Prepared and checked locally under an owner publication hold; no push, deployment or live verification performed.",
+  "publication_metadata": "Article uses dateCreated/dateModified and Reviewed October 23, 2026. datePublished intentionally absent. Recheck actual publication date and source freshness after safe synchronization is permitted. Local sitemap/hub entries and build wording do not establish publication.",
+  "baseline_local_commit": "67f15e8f6412a6ad111829ff3e25c5df5198d30a",
+  "inspection": {
+    "instructions": [
+      "README.md",
+      "docs/HDR-CONTENT-ARCHITECTURE-GUIDE.md",
+      "October 22 cloud handoff and local Git history"
+    ],
+    "workspace_instructions": "No applicable AGENTS.md or relevant .agents/skills found in the saved cloud workspace; no competing local writer or pre-existing working-tree edits found.",
+    "inventory": "All 60 prior tips and three guide pages inspected in the local inventory; representative existing flashlight-adjacent camera/heat pages and recent guide templates reviewed.",
+    "distinct_intent": "The existing camera guide diagnoses shaking/clicking/focus. The heat guide covers general overheating. Neither answers a missing/gray/dim flashlight control and rear-LED comparison as its primary intent."
+  },
+  "content": {
+    "article_words": 1159,
+    "diagnostic_scope": [
+      "Missing control versus low brightness versus no rear beam",
+      "Face ID and Home-button/SE gestures",
+      "iOS 18-and-later control editor versus iOS 17-and-earlier Settings layout",
+      "Lock Screen/Action button activation route differences",
+      "Cool before retesting after heat protection",
+      "Explicit Flash On rear-photo comparison; Auto and selfie-screen results are not equivalent",
+      "Result interpretations are clues, not a part diagnosis"
+    ],
+    "stopping_points": [
+      "Wet, swollen, burning-smell or unusually hot idle phone: stop testing/charging and arrange assessment",
+      "Temperature warning: off, away from sun, cool before reuse",
+      "Persistent failure after safe checks: assessment instead of repeated toggles or guessed parts",
+      "Back up before software update; unexpected erase/recovery prompt: stop for data plan"
+    ],
+    "data_safeguards": "No erase, recovery restore or Reset All Settings required. Warns about loss of unbacked-up photos/messages/app data. No fabricated bench experience, diagnostic certainty, repair prices or business claims."
+  },
+  "design_and_integration": {
+    "template": "Existing dark field-guide template, scoped warm LED accent and decorative CSS illustration; native symptom links and two keyboard-operable details disclosures; no new article script or dependencies.",
+    "discovery": [
+      "Repair Library phone card and 61-item ordered schema",
+      "Guide hub card and 42-item ordered schema",
+      "Contextual iPhone service-page link",
+      "Extensionless sitemap route and affected page lastmod dates",
+      "Generated Quick Find entry in source and both generated navigation outputs"
+    ],
+    "mobile": "Five widths checked (320, 390, 720, 768, 1440). No horizontal overflow; responsive illustration and readable native disclosures. Desktop/mobile jump links clear fixed navigation.",
+    "visual_review": "Inspected desktop/mobile hero, controls, expanded version/activation disclosures, cooling/data warnings, comparison results, sources/footer, and hub/service integrations. Reduced-motion screenshots included. A comparison screenshot taken during initial paint was rechecked after settling: all paragraphs visible, opacity 1; settled evidence retained."
+  },
+  "sources": [
+    {
+      "url": "https://support.apple.com/en-us/105001",
+      "supports": "Control Center gestures, brightness, Lock Screen and Action button activation."
+    },
+    {
+      "url": "https://support.apple.com/guide/iphone/use-and-customize-control-center-iph59095ec58/ios",
+      "supports": "Current editable Control Center groups and Add a Control gallery."
+    },
+    {
+      "url": "https://support.apple.com/guide/iphone/use-and-customize-control-center-iph59095ec58/18.0/ios/18.0",
+      "supports": "iOS 18 introduced the described in-Control-Center editing layout; checked separately."
+    },
+    {
+      "url": "https://support.apple.com/guide/iphone/use-and-customize-control-center-iph59095ec58/17.0/ios/17.0",
+      "supports": "iOS 17 uses Settings > Control Center to add controls; version-specific reference."
+    },
+    {
+      "url": "https://support.apple.com/en-us/118431",
+      "supports": "Heat may temporarily disable the flash; temperature-warning cooling procedure."
+    },
+    {
+      "url": "https://support.apple.com/en-us/102514",
+      "supports": "Obstruction/accessory checks, Flash Auto distinction, restart and persistent-failure service stop. Source dated October 22, 2026 when reviewed."
+    },
+    {
+      "url": "https://support.apple.com/guide/iphone/use-camera-tools-iph3dc593597/ios",
+      "supports": "Current Camera Controls / Flash / Auto-On-Off UI for a controlled rear-photo comparison."
+    },
+    {
+      "url": "https://support.apple.com/en-us/118259",
+      "supports": "Normal restart differs by Face ID / Home-button / first-generation SE model."
+    },
+    {
+      "url": "https://support.apple.com/en-us/118575",
+      "supports": "Back up before updating; Settings > General > Software Update and device-offered version."
+    }
+  ],
+  "checks": [
+    {
+      "command": "bash build.sh",
+      "result": "Passed twice; second pass byte-identical generated asset hashes."
+    },
+    {
+      "command": "python3 scripts/audit-site.py",
+      "result": "105 public pages, 7056 local references, 0 failures."
+    },
+    {
+      "command": "node scripts/audit-indexability.mjs",
+      "result": "928 checks passed, 0 failed. Local only; --live not used."
+    },
+    {
+      "command": "python3 scripts/audit-accessibility.py",
+      "result": "105 public pages, 0 semantic failures."
+    },
+    {
+      "command": "node --test scripts/test-*.mjs",
+      "result": "47 passed, 0 failed/skipped; existing mocked interaction/3D lifecycle tests, no external messages."
+    },
+    {
+      "command": "git diff --check",
+      "result": "Passed."
+    },
+    {
+      "command": "Cloud Chromium / Playwright against python3 scripts/serve.py --port 8089",
+      "result": "63 passed, 0 failed; exact checks listed below."
+    }
+  ],
+  "browser_checks": [
+    {
+      "check": "320px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Skip link first",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Skip focuses main",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 keyboard opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 keyboard closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 keyboard opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 keyboard closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px controls jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 161.9375,
+        "nav": 61
+      }
+    },
+    {
+      "check": "390px cool jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 162.140625,
+        "nav": 61
+      }
+    },
+    {
+      "check": "390px compare jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 161.734375,
+        "nav": 61
+      }
+    },
+    {
+      "check": "1440px controls jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 178.046875,
+        "nav": 65
+      }
+    },
+    {
+      "check": "1440px cool jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 177.6875,
+        "nav": 65
+      }
+    },
+    {
+      "check": "1440px compare jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 177.59375,
+        "nav": 65
+      }
+    },
+    {
+      "check": "Desktop Quick Find finds guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Quick Find finds brightness intent",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Escape restores search trigger focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Mobile menu opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Mobile Quick Find finds guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library has 61 cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library schema matches card order",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "iPhone flashlight query includes new guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Flashlight library query finds one guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "New library card visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Phone filter includes flashlight guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Computer filter excludes flashlight guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library empty state",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Escape clears library query",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "All cards restored",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /tips fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /tips fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "tips link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /guides fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /guides fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Guides has 42 cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Guide schema matches card order",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "guides link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /iphone-repair fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /iphone-repair fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "iphone-repair link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Expanded disclosure fits mobile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS disclosure works",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS fits mobile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No application JavaScript errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "browser_observations": {
+    "unhandled_events_observed": [
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8089/tips/iphone-flashlight-not-working",
+        "stack": ""
+      },
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8089/tips/iphone-flashlight-not-working",
+        "stack": ""
+      }
+    ],
+    "classification": "Two empty-stack Chromium \"Transition was skipped\" events retained in evidence. The harness excludes only that known transition signal from application-error failure classification; no other pageerror observed.",
+    "failed_request_urls": [
+      "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@300;400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    ],
+    "resource_limits": "Google Fonts CSS and the existing iPhone service page jsDelivr Three.js module failed in this environment. Verified fallback-font layouts/content and existing static service fallback; intended downloaded fonts and live 3D rendering not validated. Their source configuration is unchanged."
+  },
+  "preservation": {
+    "baseline_local_commit": "67f15e8f6412a6ad111829ff3e25c5df5198d30a",
+    "prior_public_html": 104,
+    "prior_html_byte_identical": 101,
+    "old_tips_unchanged": 60,
+    "unpushed_switch_and_hotspot_guides_byte_identical": true,
+    "changed_existing_html": [
+      "guides.html",
+      "iphone-repair.html",
+      "tips.html"
+    ],
+    "affiliate_tracking_url_lists": "identical on all prior public HTML",
+    "other_hub_schema": "identical",
+    "shared_javascript": "only new generated Quick Find entry; seven lines added in each output; no deletions"
+  },
+  "build_determinism": {
+    "second_build_generated_assets_identical": true,
+    "sha256": {
+      "main.js": "91763d457e4b8b387a1d5390eea945a07a7a99f06ca259a2f414c48d34efda44",
+      "main.min.js": "82f8a57ec372951277ce30110ba12e236ff0ef70a2fd7e62244f448bdbe85f1c",
+      "assets/site-navigation.js": "a8b94e879c88881fb259bcb22c1a4624b57b34e7bef329cac364d80621168901",
+      "assets/css/site-navigation.css": "ce09112e31b427beddd1e831cffdd57aae4202072b3a26e2694e837b9ff1597f",
+      "assets/css/quick-find.css": "44500b54d924246a6516aa04fe294139b9fcebc96673abb3033229b312c0a33d",
+      "style.min.css": "dbe34835b9d2743560e60bcc8472b013bbff009d79337ca2b4c6ff5cd0de1898"
+    }
+  },
+  "limitations": [
+    "Source-based guidance only. No physical iPhone LED/camera/temperature/update/reset/service diagnosis or device settings changes performed.",
+    "Chromium only; no Safari/WebKit, screen-reader session or native browser zoom check.",
+    "Fallback-font visual checks only. Existing 3D service dependency unavailable. No new external resources added.",
+    "No GitHub fetch/pull/push, remote-ref query, CI/status/deployment polling, PR, deployment attempt or public-page request under the owner hold. Cached origin/main is not current remote verification. No live-publication claim.",
+    "Remote reconciliation and publication remain pending explicit restoration confirmation. Both earlier locally staged guides preserved."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-23",
+  "record_created_utc": "2026-10-23T14:23:28.083697+00:00"
+}

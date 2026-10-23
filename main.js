@@ -2750,6 +2750,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips iphone camera shaking clicking not focusing"
   },
   {
+    "name": "iPhone flashlight won’t turn on?",
+    "desc": "iPhone flashlight missing, dim, or not turning on? Check Control Center, brightness, heat, and rear camera flash before resets or a guessed repair.",
+    "href": "/tips/iphone-flashlight-not-working",
+    "icon": "menu_book",
+    "kw": " tips iphone flashlight not working"
+  },
+  {
     "name": "iPhone hotspot missing on your PC?",
     "desc": "iPhone hotspot missing on Windows 11? Check discovery, Wi-Fi, and Maximize Compatibility before resets. Separate no network from no internet.",
     "href": "/tips/iphone-hotspot-not-showing-windows",
