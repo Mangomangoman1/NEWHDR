@@ -1,0 +1,590 @@
+{
+  "date": "2026-10-24",
+  "topic": "Bluetooth headphones connected to Windows 11 but producing no sound",
+  "route": "/tips/bluetooth-headphones-no-sound-windows",
+  "intended_url": "https://www.haileyrepair.com/tips/bluetooth-headphones-no-sound-windows",
+  "publication_status": "Prepared, verified and committed locally only under an owner publication hold. Not pushed, deployed or publicly verified.",
+  "publication_metadata": "Article dateCreated/dateModified and Reviewed October 24, 2026 are preparation/review dates. datePublished omitted while staged. Recheck source freshness and actual publication metadata after synchronization is authorized. Local sitemap/hub entries and legacy build wording do not establish live publication.",
+  "baseline_local_commit": "4e98e28b00198061a0b4304e49bfe7cd94ddc03e",
+  "inspection": {
+    "instructions": [
+      "README.md",
+      "docs/HDR-CONTENT-ARCHITECTURE-GUIDE.md",
+      "October 23 cloud handoff and local Git history"
+    ],
+    "workspace_state": "No applicable AGENTS.md or relevant .agents/skills found; .agents/.codex directories empty. Local main clean before editing, with three pending guide commits. No additional writer used.",
+    "inventory": "Reviewed all 61 prior tips and three guide pages in the local inventory, representative camera/audio/current field guides and integration pages.",
+    "distinct_intent": "Existing audio pages cover built-in MacBook speakers and a single silent AirPod. This guide targets Windows 11 Bluetooth output registration, per-app audio route, multipoint source competition and a controlled re-pairing decision."
+  },
+  "content": {
+    "article_words": 1298,
+    "diagnostic_scope": [
+      "PC speaker versus headphone output",
+      "A saved Bluetooth pairing versus selected audible output",
+      "System output versus app-specific mixer routing",
+      "One source at a time; model-specific multipoint example",
+      "Headphones on a phone and PC speaker comparison narrows the path without certifying a part",
+      "Windows 11 LE Audio requirements and manufacturer-specific reset consequences"
+    ],
+    "safeguards": [
+      "Low-volume clip before changing routes to avoid sudden loud playback",
+      "Finish calls/recordings, save work before restart or reconnect",
+      "Stop using/charging wet, swollen, hot or burnt-smelling headphones",
+      "Target only headphone pairing; retain keyboard/mouse Bluetooth",
+      "Know model-specific pairing mode before removing a saved connection",
+      "No adapter uninstall, forced codec/audio format, factory reset or PC erase required",
+      "Back up before later recovery; Windows reset can remove files/apps/settings",
+      "No fabricated bench experience, guarantees, repair prices or business facts"
+    ]
+  },
+  "design_and_integration": {
+    "template": "Existing dark field-guide branding; scoped blue/teal CSS laptop/headphone illustration; native three-symptom navigation and two details disclosures. No new article JavaScript or dependencies.",
+    "discovery": [
+      "Repair Library computer card and ordered 62-item schema",
+      "Guides hub card and ordered 43-item schema",
+      "Contextual computer-support link",
+      "Extensionless sitemap route and affected lastmod dates",
+      "Generated Quick Find entry in main.js, main.min.js and site-navigation.js"
+    ],
+    "responsive": "Five widths: 320, 390, 720, 768 and 1440; desktop/mobile jump links clear fixed navigation; no horizontal overflow.",
+    "visual_review": "Inspected desktop/mobile hero, output/app steps, comparison results, both expanded disclosures, stopping/data warning, sources/footer and all three integration pages. Reduced-motion and no-JS checks included. Final small copy refinements were followed by the complete 73-check browser run and updated static audits; affected screenshots refreshed. The long stopping section was also checked by clicking its actual contents link at 390/1440; its heading remains below navigation. Programmatic center-scroll screenshots alone are not evidence of anchor behavior."
+  },
+  "sources": [
+    {
+      "url": "https://support.microsoft.com/en-us/windows/hardware/bluetooth/fix-bluetooth-connected-but-no-sound-issue-on-windows",
+      "supports": "Select the Bluetooth audio output; review Get Help Bluetooth diagnostics."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/hardware/audio/fix-app-audio-not-working-while-system-sounds-work-in-windows",
+      "supports": "Windows 11 Volume mixer app mute, volume and per-app Output device can differ from system output."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/hardware/bluetooth/fix-bluetooth-problems-in-windows",
+      "supports": "Check power, charge, proximity; remove only the affected device and reconnect; official driver support."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/hardware/bluetooth/pair-a-bluetooth-device-in-windows",
+      "supports": "Headphone pairing mode is manufacturer-specific; current Windows 11 Quick Settings pairing route."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/hardware/bluetooth/check-if-a-windows-11-device-supports-bluetooth-low-energy-audio",
+      "supports": "LE Audio needs compatible PC/headset hardware and drivers and Windows 11 22H2+; missing option can reflect unsupported PC/driver combination."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/hardware/audio/fix-sound-or-audio-problems-in-windows",
+      "supports": "Save work before restart, official device manufacturer audio drivers and Get Help audio diagnostics."
+    },
+    {
+      "url": "https://helpguide.sony.net/mdr/wh1000xm5/v1/en/contents/TP1000534512.html",
+      "supports": "WH-1000XM5 multipoint may stay on first device sending silence; stop/close that app and verify output and playback. This model example is not generalized to all headphones."
+    },
+    {
+      "url": "https://helpguide.sony.net/mdr/wh1000xm5/v1/en/contents/TP1000541012.html",
+      "supports": "WH-1000XM5 Resetting retains pairing and other settings; no generic button sequence prescribed."
+    },
+    {
+      "url": "https://helpguide.sony.net/mdr/wh1000xm5/v1/en/contents/TP1000541013.html",
+      "supports": "WH-1000XM5 Initializing restores settings and deletes pairing information, distinct from Resetting."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/experience/backup-recovery/reset-your-pc",
+      "supports": "Windows reset may remove apps, settings and personal files depending on option; backup first. No erase steps prescribed."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/experience/find-information-about-your-windows-device",
+      "supports": "Find PC model and Windows version in Settings > System > About, with version under Windows specifications."
+    }
+  ],
+  "checks": [
+    {
+      "command": "bash build.sh",
+      "result": "Passed twice; generated assets byte-identical on second pass. Final article-only copy changes do not affect generated entries."
+    },
+    {
+      "command": "python3 scripts/audit-site.py",
+      "result": "106 public pages, 7109 local references, 0 failures."
+    },
+    {
+      "command": "node scripts/audit-indexability.mjs",
+      "result": "936 passed, 0 failed; local only, no --live."
+    },
+    {
+      "command": "python3 scripts/audit-accessibility.py",
+      "result": "106 public pages, 0 semantic failures."
+    },
+    {
+      "command": "node --test scripts/test-*.mjs",
+      "result": "47 passed, 0 failed/skipped. Existing mocked interactions only; no business messages sent."
+    },
+    {
+      "command": "git diff --check",
+      "result": "Passed."
+    },
+    {
+      "command": "Cloud Chromium / Playwright against python3 scripts/serve.py --port 8090",
+      "result": "73 final assertions passed. Keyboard, responsive anchors, both search modes, filters, schema order, three integration links, no-JS, repeated disclosures, interrupted searches and mobile-menu resize interruption checked."
+    }
+  ],
+  "browser_checks": [
+    {
+      "check": "320px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Skip link first",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Skip focuses main",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 keyboard opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 keyboard closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 keyboard opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 keyboard closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px output jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 161.671875,
+        "nav": 61
+      }
+    },
+    {
+      "check": "390px app jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 162.46875,
+        "nav": 61
+      }
+    },
+    {
+      "check": "390px reconnect jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 162.0625,
+        "nav": 61
+      }
+    },
+    {
+      "check": "1440px output jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 177.828125,
+        "nav": 65
+      }
+    },
+    {
+      "check": "1440px app jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 177.578125,
+        "nav": 65
+      }
+    },
+    {
+      "check": "1440px reconnect jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 177.875,
+        "nav": 65
+      }
+    },
+    {
+      "check": "Desktop Quick Find finds guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Quick Find finds multipoint intent",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Escape restores search trigger focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Mobile menu opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Mobile Quick Find finds guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library has 62 cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library schema matches card order",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Bluetooth headphones query includes new guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Multipoint library query finds one guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "New library card visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Computer filter includes Bluetooth guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Phone filter excludes Bluetooth guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library empty state",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Escape clears library query",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "All cards restored",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /tips fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /tips fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "tips link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /guides fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /guides fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Guides has 43 cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Guide schema matches card order",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "guides link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /computer-support fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /computer-support fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "computer-support link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Expanded disclosure fits mobile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 repeat cycle 1",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 repeat cycle 2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 repeat cycle 3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 repeat cycle 1",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 repeat cycle 2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 repeat cycle 3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Interrupted search cycle 1 closes and restores focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Interrupted search cycle 2 closes and restores focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Interrupted search cycle 3 closes and restores focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Resize interrupts mobile menu without scroll lock",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS disclosure works",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS fits mobile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No application JavaScript errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "browser_observations": {
+    "pageerror_events": [
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8090/tips/bluetooth-headphones-no-sound-windows",
+        "stack": ""
+      },
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8090/tips/bluetooth-headphones-no-sound-windows",
+        "stack": ""
+      },
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8090/tips/bluetooth-headphones-no-sound-windows",
+        "stack": ""
+      }
+    ],
+    "classification": "The harness preserves every event, excluding only an empty-stack \"Transition was skipped\" signal from application failure classification. Actual final observed events are recorded above; do not infer zero events without reading this array.",
+    "failed_request_urls": [
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@300;400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+    ],
+    "resource_limit": "Google Fonts CSS failed in this cloud environment. Verified fallback-font layout; intended downloaded fonts and public font delivery not verified. Existing font configuration is unchanged."
+  },
+  "preservation": {
+    "baseline_local_commit": "4e98e28b00198061a0b4304e49bfe7cd94ddc03e",
+    "prior_public_html": 105,
+    "prior_html_byte_identical": 102,
+    "old_tips_unchanged": 61,
+    "three_prior_staged_guides_byte_identical": true,
+    "changed_existing_html": [
+      "computer-support.html",
+      "guides.html",
+      "tips.html"
+    ],
+    "affiliate_tracking_url_lists": "identical on all prior public HTML",
+    "other_hub_schema": "identical",
+    "shared_javascript": "only a new generated Quick Find entry; seven added lines in each file, no deletions"
+  },
+  "build_determinism": {
+    "second_build_generated_assets_identical": true,
+    "sha256": {
+      "main.js": "28ba5263c18f01bd47a046f9ca5b327fbc16400a089201d8aa1af0b8072c50cd",
+      "main.min.js": "a48fd76a1dfd5a137d4595c1a811c9391959138ae1c9b795b10a47d74400f06b",
+      "assets/site-navigation.js": "6e74876f49b048c17c6d0ab8c0b184bd2695810d13cd811c43213840a175a25c",
+      "assets/css/site-navigation.css": "ce09112e31b427beddd1e831cffdd57aae4202072b3a26e2694e837b9ff1597f",
+      "assets/css/quick-find.css": "44500b54d924246a6516aa04fe294139b9fcebc96673abb3033229b312c0a33d",
+      "style.min.css": "dbe34835b9d2743560e60bcc8472b013bbff009d79337ca2b4c6ff5cd0de1898"
+    }
+  },
+  "limitations": [
+    "Source-based owner checklist only. No physical Windows Bluetooth/audio adapter, headphones, multipoint routing, pairing, LE Audio, driver or reset test performed; no user device settings or accounts changed.",
+    "Chromium only; no Safari/WebKit, screen-reader session or native browser zoom check. Semantic audit and keyboard checks do not certify full WCAG conformance.",
+    "Cloud blocked Google Fonts CSS; visual checks used fallback fonts. Intended-font rendering and public resources not verified.",
+    "No fetch/pull/push, remote-ref/CI/deployment/publication check, PR, deployment attempt, alternate credentials, security change or outreach under the owner hold. Cached origin/main is not current remote evidence.",
+    "Three prior locally pending guides preserved. Current source is locally staged; reconciliation and publication require the owner’s explicit restoration update."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-24",
+  "record_created_utc": "2026-10-24T14:43:53.752896+00:00",
+  "additional_targeted_checks": [
+    {
+      "width": 390,
+      "check": "Contents stop link keeps long-section heading below navigation",
+      "pass": true,
+      "heading_top": 189.65625,
+      "nav_bottom": 61
+    },
+    {
+      "width": 1440,
+      "check": "Contents stop link keeps long-section heading below navigation",
+      "pass": true,
+      "heading_top": 206.203125,
+      "nav_bottom": 65
+    }
+  ]
+}

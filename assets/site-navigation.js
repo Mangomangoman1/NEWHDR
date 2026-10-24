@@ -210,6 +210,13 @@
     "kw": " tips backup iphone broken screen"
   },
   {
+    "name": "Bluetooth headphones connected but silent?",
+    "desc": "Bluetooth headphones connected but silent on Windows 11? Check output, app volume, multipoint, and pairing before resets or driver removal.",
+    "href": "/tips/bluetooth-headphones-no-sound-windows",
+    "icon": "menu_book",
+    "kw": " tips bluetooth headphones no sound windows"
+  },
+  {
     "name": "Cracked iPhone back glass: can you keep using it?",
     "desc": "Cracked iPhone back glass? Learn when a case is a reasonable temporary measure, when to stop using it, and how back-glass and housing repairs differ.",
     "href": "/tips/cracked-iphone-back-glass",
