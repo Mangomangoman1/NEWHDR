@@ -287,6 +287,13 @@
     "kw": " tips backup before repair"
   },
   {
+    "name": "iPad keyboard won’t appear?",
+    "desc": "iPad keyboard missing when you type? Compare Notes, show the software keyboard, and test external keyboards before resets. Protect app documents.",
+    "href": "/tips/ipad-keyboard-not-showing",
+    "icon": "menu_book",
+    "kw": " tips ipad keyboard not showing"
+  },
+  {
     "name": "iPad screen won’t rotate?",
     "desc": "iPad stuck in portrait or landscape? Check Rotation Lock, compare apps, restart the right model, and protect your data before further troubleshooting.",
     "href": "/tips/ipad-screen-wont-rotate",

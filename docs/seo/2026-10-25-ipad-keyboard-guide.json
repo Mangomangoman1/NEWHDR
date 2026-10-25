@@ -1,0 +1,583 @@
+{
+  "date": "2026-10-25",
+  "topic": "iPad onscreen keyboard does not appear when typing",
+  "route": "/tips/ipad-keyboard-not-showing",
+  "intended_url": "https://www.haileyrepair.com/tips/ipad-keyboard-not-showing",
+  "publication_status": "Prepared and verified locally only, for a local commit under the owner publication hold. No push, deployment, CI or live/public verification attempted.",
+  "publication_metadata": "Article uses dateCreated/dateModified and Reviewed October 25, 2026 for preparation/review. datePublished omitted while locally staged. Recheck source freshness and true publication dates after synchronization is authorized. Local hub/sitemap entries and legacy build wording are not evidence of publication.",
+  "baseline_local_commit": "56f1e2bebe40f6e024178bca96fcbc387eb5c731",
+  "inspection": {
+    "instructions": [
+      "README.md",
+      "docs/HDR-CONTENT-ARCHITECTURE-GUIDE.md",
+      "October 24 cloud handoff and local Git history"
+    ],
+    "state": "Clean local main at start, four unpublished guide commits preserved. No applicable AGENTS.md or relevant .agents/skills found; workspace .agents/.codex empty. No additional writer or execution environment used.",
+    "inventory": "Reviewed full local inventory of 62 prior tips and three repair-guide pages, representative iPad rotation/Pencil and recent field-guide content, and hub/tablet service integrations.",
+    "distinct_intent": "Existing iPad guides cover orientation and Apple Pencil pairing/charging/writing. Laptop keyboard guide covers physical PC keys. This page addresses iPad software-keyboard visibility, external keyboard input state and app comparison.",
+    "scope_judgment": "Explicit daily guide and safety/detail requirements govern preparation; no invented bench experience or publication date used to satisfy older content-template preferences."
+  },
+  "content": {
+    "article_words": 1231,
+    "diagnostic_scope": [
+      "Editable Notes text field versus drawing/read-only view",
+      "Show Keyboard via current Shortcuts bar and model-specific Apple keyboard-case controls",
+      "Bluetooth keyboard versus Smart Connector keyboard case versus USB keyboard isolation",
+      "One app versus multiple apps versus nonresponsive touch",
+      "Floating/split keyboard is present input; model limits and restoring familiar layout",
+      "Normal and force restart button distinctions, with appropriate stopping point"
+    ],
+    "safeguards": [
+      "Stop use/charging after suspected damage, unusual heat, wet or lifting/cracked glass",
+      "Preserve documents before quitting apps or restarting; app deletion may lose documents",
+      "Keep accessibility/input devices available; isolate only the typing accessory",
+      "Finish storage transfers before changing a hub connection",
+      "Know passcode before restart; release force-restart buttons at Apple logo",
+      "Back up before compatible update; no erase, Restore or Reset All Settings needed for comparisons",
+      "No guessed part replacement, fabricated experience, prices or new business claims"
+    ]
+  },
+  "design_and_integration": {
+    "template": "Existing dark field-guide branding with scoped lavender/blue CSS tablet-input sketch. Native symptom links and two accessible disclosures. No new article JavaScript, external resource, tracking or affiliate placement.",
+    "discovery": [
+      "Repair Library phone/tablet card and ordered 63-item schema",
+      "Guide hub tablet card and ordered 44-item schema",
+      "Contextual tablet-repair link",
+      "New extensionless sitemap route and affected lastmod values",
+      "Generated Quick Find entry in main.js and both navigation outputs"
+    ],
+    "responsive": "320, 390, 720, 768 and 1440 pixel widths; no horizontal overflow. Desktop/mobile native jumps clear fixed navigation.",
+    "visual_review": "Inspected desktop/mobile hero, hardware-input branch, app results, normal/frozen restart guidance, expanded floating/split and frozen disclosures, data warning, sources/footer, and hub/service links. Reduced-motion screenshots included. Final routing/power-control copy refinement followed by full 73-assertion browser run and static audits.",
+    "additional_targeted_checks": [
+      {
+        "check": "Contents stop link keeps heading below navigation",
+        "width": 390,
+        "pass": true,
+        "heading_top": 189.65625,
+        "nav_bottom": 61
+      },
+      {
+        "check": "Contents stop link keeps heading below navigation",
+        "width": 1440,
+        "pass": true,
+        "heading_top": 205.765625,
+        "nav_bottom": 65
+      }
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://support.apple.com/guide/ipad/type-with-the-onscreen-keyboard-ipad997da459/ipados",
+      "supports": "Tap an editable text field to show the software keyboard; distinguishes an input test from a drawing/read-only view."
+    },
+    {
+      "url": "https://support.apple.com/guide/ipad/switch-between-keyboards-ipaddd28d7ed/ipados",
+      "supports": "Current Shortcuts bar Keyboard Shortcut / language button followed by Show Keyboard; user-guide version selector available."
+    },
+    {
+      "url": "https://support.apple.com/en-us/108361",
+      "supports": "Smart Keyboard / Smart Keyboard Folio use Smart Connector rather than Bluetooth pairing, and lower-right keyboard menu shows software keyboard."
+    },
+    {
+      "url": "https://support.apple.com/en-us/108762",
+      "supports": "Magic Keyboard for iPad case does not require pairing; setup article documents lower-right touch-and-hold route to onscreen keyboard."
+    },
+    {
+      "url": "https://support.apple.com/en-us/102513",
+      "supports": "Floating keyboard expansion and More > Full; split Merge / Dock and Merge; Apple lists split availability only on mini and iPad 9th generation or earlier."
+    },
+    {
+      "url": "https://support.apple.com/guide/ipad/quit-and-reopen-an-app-ipad79518d15/ipados",
+      "supports": "Current iPadOS guide calls app overview Exposé, reached by swiping up and pausing; swipe up app to quit and reopen. Version-specific layouts can differ."
+    },
+    {
+      "url": "https://support.apple.com/en-us/119876",
+      "supports": "Reopen affected app, app updates and developer help; deletion can lose app-stored data."
+    },
+    {
+      "url": "https://support.apple.com/en-us/101603",
+      "supports": "Normal restart differs for Home-button and no-Home-button iPads; shutdown slider, 30-second wait, then hold top button to start."
+    },
+    {
+      "url": "https://support.apple.com/en-us/102642",
+      "supports": "Separate force-restart sequences for frozen no-Home/Home iPads, stopping at Apple logo; unresolved frozen/startup issue needs its own support path."
+    },
+    {
+      "url": "https://support.apple.com/en-us/118426",
+      "supports": "Current backup before further software/repair changes; confirm usable documents rather than assume app deletion is safe."
+    },
+    {
+      "url": "https://support.apple.com/en-us/118575",
+      "supports": "Back up before updating via General > Software Update, using the compatible version offered to the device."
+    },
+    {
+      "url": "https://support.apple.com/guide/ipad/important-safety-information-ipad27098ef5/ipados",
+      "supports": "Stop use when device/battery damage is suspected; cracked-screen and moisture/charging cautions."
+    }
+  ],
+  "checks": [
+    {
+      "command": "bash build.sh",
+      "result": "Passed twice; second build generated-asset hashes identical."
+    },
+    {
+      "command": "python3 scripts/audit-site.py",
+      "result": "107 public pages, 7162 local references, 0 failures."
+    },
+    {
+      "command": "node scripts/audit-indexability.mjs",
+      "result": "944 checks passed, 0 failed. Local only, no --live."
+    },
+    {
+      "command": "python3 scripts/audit-accessibility.py",
+      "result": "107 public pages, 0 semantic failures."
+    },
+    {
+      "command": "node --test scripts/test-*.mjs",
+      "result": "47 passed, 0 failed/skipped; existing mocked interaction checks, no messages sent."
+    },
+    {
+      "command": "git diff --check",
+      "result": "Passed."
+    },
+    {
+      "command": "Cloud Chromium / Playwright against python3 scripts/serve.py --port 8091",
+      "result": "73 final assertions passed, 0 failed; two additional stop-link checks passed. Responsive, keyboard, native disclosures, anchors, desktop/mobile search, library filters and ordered schema, service/hub navigation, no-JS, repeated disclosure use, interrupted search and mobile-menu resize interruption."
+    }
+  ],
+  "browser_checks": [
+    {
+      "check": "320px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Skip link first",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Skip focuses main",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 keyboard opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 keyboard closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 keyboard opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 keyboard closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px hardware jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 161.671875,
+        "nav": 61
+      }
+    },
+    {
+      "check": "390px apps jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 162.46875,
+        "nav": 61
+      }
+    },
+    {
+      "check": "390px layout jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 162.265625,
+        "nav": 61
+      }
+    },
+    {
+      "check": "1440px hardware jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 177.984375,
+        "nav": 65
+      }
+    },
+    {
+      "check": "1440px apps jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 177.703125,
+        "nav": 65
+      }
+    },
+    {
+      "check": "1440px layout jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 177.640625,
+        "nav": 65
+      }
+    },
+    {
+      "check": "Desktop Quick Find finds guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Quick Find finds software keyboard intent",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Escape restores search trigger focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Mobile menu opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Mobile Quick Find finds guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library has 63 cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library schema matches card order",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "iPad keyboard query includes new guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "iPad onscreen library query finds one guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "New library card visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Phone filter includes iPad keyboard guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Computer filter excludes iPad keyboard guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library empty state",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Escape clears library query",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "All cards restored",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /tips fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /tips fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "tips link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /guides fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /guides fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Guides has 44 cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Guide schema matches card order",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "guides link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /tablet-repair fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /tablet-repair fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "tablet-repair link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Expanded disclosure fits mobile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 repeat cycle 1",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 repeat cycle 2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 repeat cycle 3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 repeat cycle 1",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 repeat cycle 2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 repeat cycle 3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Interrupted search cycle 1 closes and restores focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Interrupted search cycle 2 closes and restores focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Interrupted search cycle 3 closes and restores focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Resize interrupts mobile menu without scroll lock",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS disclosure works",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS fits mobile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No application JavaScript errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "browser_observations": {
+    "final_pageerror_events": [],
+    "classification": "All observed events retained. Harness excludes only empty-stack Transition was skipped from application failure classification; final event array above is the exact final-run observation. Initial exploratory run had one such event, retained in earlier tool output; final run had none.",
+    "failed_request_urls": [
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@300;400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    ],
+    "failed_request_reasons": [
+      "net::ERR_TUNNEL_CONNECTION_FAILED"
+    ],
+    "resource_limit": "Existing Google Fonts CSS requests fail with ERR_TUNNEL_CONNECTION_FAILED in this cloud environment. Visual checks use fallback fonts; intended downloaded fonts/public font delivery unverified. Font configuration unchanged."
+  },
+  "preservation": {
+    "baseline_local_commit": "56f1e2bebe40f6e024178bca96fcbc387eb5c731",
+    "prior_public_html": 106,
+    "prior_html_byte_identical": 103,
+    "old_tips_unchanged": 62,
+    "four_prior_staged_guides_byte_identical": true,
+    "changed_existing_html": [
+      "guides.html",
+      "tablet-repair.html",
+      "tips.html"
+    ],
+    "affiliate_tracking_url_lists": "identical on all prior public HTML",
+    "other_hub_schema": "identical",
+    "shared_javascript": "new generated Quick Find entry only; seven added lines in each file, no deletions"
+  },
+  "build_determinism": {
+    "second_build_generated_assets_identical": true,
+    "sha256": {
+      "main.js": "191765a4e15ceae272ec04ea1532d639db2017687aba376c878a3595fc713b68",
+      "main.min.js": "49ee486a08747a2b5f1dd579065bca666259f8c410c3ea3e410b265d0ba2091d",
+      "assets/site-navigation.js": "be818f67831738cc822854069dbb4f315899dc571fc1b86ba84e49297d9832ad",
+      "assets/css/site-navigation.css": "ce09112e31b427beddd1e831cffdd57aae4202072b3a26e2694e837b9ff1597f",
+      "assets/css/quick-find.css": "44500b54d924246a6516aa04fe294139b9fcebc96673abb3033229b312c0a33d",
+      "style.min.css": "dbe34835b9d2743560e60bcc8472b013bbff009d79337ca2b4c6ff5cd0de1898"
+    }
+  },
+  "limitations": [
+    "Source-based checklist only. No physical iPad, accessory, touch, Show Keyboard, pairing, Notes, layout, restart or update test performed; no user-device settings changed.",
+    "Chromium only. No Safari/WebKit, native browser zoom or screen-reader session. Semantic/keyboard checks do not establish full accessibility conformance.",
+    "Google Fonts delivery failed in the cloud; fallback-font visuals checked. Intended-font rendering unrun.",
+    "No GitHub fetch/pull/push, remote-ref/CI/deployment/publication check, PR, deployment attempt, alternate credentials, account/security change, third-party outreach or separate notification. No Mac or alternative environment work.",
+    "Remote synchronization and main push for Mangomangoman1/NEWHDR intentionally unattempted under owner hold, pending explicit restoration update. No tool denial or uncertain publication action occurred. Cached origin/main is not a fresh remote verification.",
+    "Four prior pending guides preserved unchanged. Current guide is staged for later release, not live."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-25",
+  "record_created_utc": "2026-10-25T15:00:15.436474+00:00"
+}
