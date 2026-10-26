@@ -1,0 +1,570 @@
+{
+  "date": "2026-10-26",
+  "topic": "Samsung Galaxy Warning: Camera failed / Samsung Camera will not launch",
+  "route": "/tips/samsung-camera-failed",
+  "intended_url": "https://www.haileyrepair.com/tips/samsung-camera-failed",
+  "publication_status": "Prepared and verified locally for local commit only under the owner release hold. No push, CI/deployment retry or public verification attempted.",
+  "publication_metadata": "Article dateCreated/dateModified and Reviewed October 26, 2026 represent preparation/review, not live release. datePublished omitted while staged. Recheck source freshness and accurate release dates after safe synchronization is authorized. Local hub/sitemap entries and legacy build wording do not establish publication.",
+  "baseline_local_commit": "f05ddfaedb7d60977c20f466fa90ab8ff70363a0",
+  "inspection": {
+    "instructions": [
+      "README.md",
+      "docs/HDR-CONTENT-ARCHITECTURE-GUIDE.md",
+      "October 25 cloud handoff and local Git history"
+    ],
+    "state": "Clean main at task start, five unpublished guides preserved. No applicable AGENTS.md or relevant .agents/skills found; workspace .agents/.codex empty. No additional writer or execution environment used.",
+    "inventory": "Reviewed all 63 prior tips and three repair-guide pages in local inventory; representative Samsung screen, iPhone camera and current iPad field-guide pages and integration conventions.",
+    "distinct_intent": "Existing Samsung page is about the display. Existing iPhone camera guide covers shaking/focus/optics. This page targets Samsung Camera initialization failure, app cache/data, model-specific component updates and Safe mode comparisons.",
+    "novelty_limit": "Intent checked against available local inventory only. Remote inventory is unverified under the hold; review concurrent remote content and possible overlap after restoration.",
+    "scope_judgment": "Explicit daily task and source-based safety/depth requirements govern preparation; no invented bench expertise or release date used to meet older template preferences."
+  },
+  "content": {
+    "article_words": 1295,
+    "diagnostic_scope": [
+      "Exact warning and front/rear behavior versus a different display or third-party app error",
+      "Camera cache versus Camera-only data reset versus whole-phone factory reset",
+      "Phone firmware, Camera app and scoped Google Play system update are distinct paths",
+      "One UI 7+/older Quick panel gestures and S25/One UI 7+ Camera settings controls",
+      "Regional A/M/XCover examples are not generalized to all Galaxy models",
+      "Safe mode result narrows a downloaded-app interaction without declaring a specific hardware failure",
+      "Members/Device care diagnostic result is evidence, not a full hardware certification"
+    ],
+    "safeguards": [
+      "Stop repeated camera/charging tests after wet, hot, swollen or impact-damaged camera glass",
+      "Save work and know unlock credentials before restarts",
+      "Verify important photo/document copies before updates or Camera data reset",
+      "Select only Camera for cache/data actions; general app data may be lost and Camera preferences reset",
+      "Safe mode entry, label, exit and possible customization changes explained before use",
+      "No factory reset, camera-bump impact or guessed module purchase as a diagnostic step",
+      "No fabricated repairs, prices, expertise or business facts"
+    ]
+  },
+  "design_and_integration": {
+    "template": "Existing dark field-guide branding, scoped teal camera illustration, native symptom links and two disclosures. No new article script, dependency, tracking or affiliate placement.",
+    "discovery": [
+      "Repair Library phone card and ordered 64-item schema",
+      "Guide hub phone card and ordered 45-item schema",
+      "Contextual Android repair link",
+      "Extensionless sitemap route and affected lastmod values",
+      "Generated Quick Find entry in source and both shared navigation outputs"
+    ],
+    "responsive": "Five widths (320, 390, 720, 768, 1440); no horizontal overflow, native anchor destinations clear fixed navigation.",
+    "visual_review": "Inspected desktop/mobile hero, update/model branch, expanded Camera-data and Safe mode steps, diagnostic/results, factory-reset warning, sources/footer and hub/service integrations. Reduced-motion and no-JS checks included. Final Quick panel version clarification followed by complete 73-assertion rerun, static audits and refreshed restart screenshots.",
+    "additional_targeted_stop_checks": [
+      {
+        "check": "Contents stop link keeps heading below navigation",
+        "width": 390,
+        "pass": true,
+        "heading_top": 189.453125,
+        "nav_bottom": 61
+      },
+      {
+        "check": "Contents stop link keeps heading below navigation",
+        "width": 1440,
+        "pass": true,
+        "heading_top": 205.765625,
+        "nav_bottom": 65
+      }
+    ],
+    "additional_targeted_restart_checks": "Actual contents-to-restart link clicked at 390/1440 after final One UI clarification; asserted no overflow and heading below navigation, then captured final-restart screenshots."
+  },
+  "sources": [
+    {
+      "url": "https://www.samsung.com/us/support/troubleshoot/TSG10004628/",
+      "supports": "Power menu restart, phone/Camera updates, One UI 7+/S25 four-dot Camera settings route and factory-reset data consequences."
+    },
+    {
+      "url": "https://www.samsung.com/us/support/troubleshoot/TSG10013262/",
+      "supports": "Camera-specific Clear data > Delete resets Camera settings while retaining saved photos/videos/personal data; persistent failure warrants camera/internal circuitry assessment."
+    },
+    {
+      "url": "https://www.samsung.com/us/support/answer/ANS10001372/",
+      "supports": "App cache removal versus app-data reset; general app data and personal settings can be removed, so do not generalize the Camera-specific preservation statement to other apps."
+    },
+    {
+      "url": "https://www.samsung.com/levant/support/mobile-devices/how-to-fix-camera-issues-with-error-warning-camera-failed/",
+      "supports": "Guidance updated October 14, 2026 scopes Google Play system component compatibility to listed A/M/XCover devices; Security and privacy > Updates > Google Play system update; restart/retest if an update is offered."
+    },
+    {
+      "url": "https://www.samsung.com/us/support/answer/ANS10003495/",
+      "supports": "Safe mode temporarily disables downloaded apps, Power menu entry/normal restart exit, credential planning and possible wallpaper/theme defaults on exit."
+    },
+    {
+      "url": "https://www.samsung.com/us/support/answer/ANS10003632/",
+      "supports": "Members Discover/Support diagnostic routes; Camera individual test; Device care diagnostics on Android 12+; first full scan and model-dependent available tests."
+    },
+    {
+      "url": "https://www.samsung.com/us/support/answer/ANS10002780/",
+      "supports": "Galaxy backup choices. Verify copies of selected important photos/documents rather than assume one backup method covers all content."
+    },
+    {
+      "url": "https://www.samsung.com/us/support/answer/ANS10002874/",
+      "supports": "One UI version under About phone > Software information. Quick panel: top-right swipe on One UI 7+, two fingers from top on One UI 6.1.1 and earlier."
+    }
+  ],
+  "checks": [
+    {
+      "command": "bash build.sh",
+      "result": "Passed twice; second build generated-asset hashes identical. Final paragraph/link refinement did not change page metadata or generated search entry."
+    },
+    {
+      "command": "python3 scripts/audit-site.py",
+      "result": "108 public pages, 7214 local references, 0 failures."
+    },
+    {
+      "command": "node scripts/audit-indexability.mjs",
+      "result": "952 passed, 0 failed; local only, no --live."
+    },
+    {
+      "command": "python3 scripts/audit-accessibility.py",
+      "result": "108 public pages, 0 semantic failures."
+    },
+    {
+      "command": "node --test scripts/test-*.mjs",
+      "result": "47 passed, 0 failed/skipped; existing mocked interaction tests, no messages sent."
+    },
+    {
+      "command": "git diff --check",
+      "result": "Passed."
+    },
+    {
+      "command": "Cloud Chromium / Playwright against python3 scripts/serve.py --port 8092",
+      "result": "73 final assertions passed; additional stop/restart link checks at 390/1440 passed. Native keyboard disclosures, anchors, five-width layout, desktop/mobile search, library filters/schema order, three integration links, no-JS, repeated disclosures, interrupted searches and mobile menu resize interruption checked."
+    }
+  ],
+  "browser_checks": [
+    {
+      "check": "320px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "320px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "720px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "768px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px clean route",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px all anchors exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Skip link first",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Skip focuses main",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 keyboard opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 keyboard closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 keyboard opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 keyboard closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px cache jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 162.46875,
+        "nav": 61
+      }
+    },
+    {
+      "check": "390px updates jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 162.265625,
+        "nav": 61
+      }
+    },
+    {
+      "check": "390px compare jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 162.0625,
+        "nav": 61
+      }
+    },
+    {
+      "check": "1440px cache jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 178.34375,
+        "nav": 65
+      }
+    },
+    {
+      "check": "1440px updates jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 178.109375,
+        "nav": 65
+      }
+    },
+    {
+      "check": "1440px compare jump clears navigation",
+      "pass": true,
+      "detail": {
+        "section": 178.046875,
+        "nav": 65
+      }
+    },
+    {
+      "check": "Desktop Quick Find finds guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Quick Find finds Google Play intent",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Escape restores search trigger focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Mobile menu opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Mobile Quick Find finds guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library has 64 cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library schema matches card order",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Samsung camera query includes new guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Galaxy failed library query finds one guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "New library card visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Phone filter includes Samsung camera guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Computer filter excludes Samsung camera guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Library empty state",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Escape clears library query",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "All cards restored",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /tips fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /tips fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "tips link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /guides fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /guides fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Guides has 45 cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Guide schema matches card order",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "guides link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "390px /android-repair fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "1440px /android-repair fits",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "android-repair link opens guide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Expanded disclosure fits mobile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 repeat cycle 1",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 repeat cycle 2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 0 repeat cycle 3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 repeat cycle 1",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 repeat cycle 2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Disclosure 1 repeat cycle 3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Interrupted search cycle 1 closes and restores focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Interrupted search cycle 2 closes and restores focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Interrupted search cycle 3 closes and restores focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "Resize interrupts mobile menu without scroll lock",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS article visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS disclosure works",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No-JS fits mobile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "No application JavaScript errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "browser_observations": {
+    "final_pageerror_events": [],
+    "classification": "All observed events retained. Harness excludes only empty-stack Transition was skipped from application failure classification. Initial run had two such events in tool output; final event array above is the exact final-run result.",
+    "failed_request_urls": [
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@300;400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    ],
+    "failed_request_reasons": [
+      "net::ERR_TUNNEL_CONNECTION_FAILED"
+    ],
+    "resource_limit": "Existing Google Fonts CSS fails with ERR_TUNNEL_CONNECTION_FAILED in this cloud environment. Layout reviewed with fallback fonts; intended font rendering and public resource delivery unverified. Font configuration unchanged."
+  },
+  "preservation": {
+    "baseline_local_commit": "f05ddfaedb7d60977c20f466fa90ab8ff70363a0",
+    "prior_public_html": 107,
+    "prior_html_byte_identical": 104,
+    "old_tips_unchanged": 63,
+    "five_prior_staged_guides_byte_identical": true,
+    "changed_existing_html": [
+      "android-repair.html",
+      "guides.html",
+      "tips.html"
+    ],
+    "affiliate_tracking_url_lists": "identical on all prior public HTML",
+    "other_hub_schema": "identical",
+    "shared_javascript": "new generated Quick Find entry only; seven added lines in each file, no deletions"
+  },
+  "build_determinism": {
+    "second_build_generated_assets_identical": true,
+    "sha256": {
+      "main.js": "791d9228e78ffa3bc4af160f78d5fa85f2f5b62a4627825e50b7d03a4cf0e27c",
+      "main.min.js": "614762fec8b14e2075d83471ea74efe168edeed9e84c3e3f543df876e03b6f04",
+      "assets/site-navigation.js": "d765eda7e2208ca0e3adbbb668585e3608bf9712695eeba1af67134d0e0f1a40",
+      "assets/css/site-navigation.css": "ce09112e31b427beddd1e831cffdd57aae4202072b3a26e2694e837b9ff1597f",
+      "assets/css/quick-find.css": "44500b54d924246a6516aa04fe294139b9fcebc96673abb3033229b312c0a33d",
+      "style.min.css": "dbe34835b9d2743560e60bcc8472b013bbff009d79337ca2b4c6ff5cd0de1898"
+    }
+  },
+  "limitations": [
+    "Source-based guidance only. No physical Galaxy, Camera app, cache/data reset, Google Play/firmware update, Safe mode, diagnostic, backup or front/rear test performed. No user-device settings changed.",
+    "Chromium only. Safari/WebKit, screen-reader session and native browser zoom unrun; semantic/keyboard checks do not certify full accessibility conformance.",
+    "Google Fonts requests failed; fallback-font visuals verified. Intended downloaded-font rendering unrun.",
+    "No GitHub fetch/pull/push, remote-ref/CI/deployment/publication check, PR, deployment attempt, alternate credentials, account/security change, outreach or separate notification. No Mac or alternative project/environment work.",
+    "Remote synchronization, main push and publication verification for Mangomangoman1/NEWHDR intentionally unattempted pending the owner’s explicit restoration update. No tool denial or uncertain remote mutation occurred; cached origin/main is not a current remote check.",
+    "Five prior unpublished guides preserved. Current guide remains staged for later release, not live."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-26",
+  "record_created_utc": "2026-10-26T15:16:28.534048+00:00"
+}

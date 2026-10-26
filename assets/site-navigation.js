@@ -273,6 +273,13 @@
     "kw": " tips fake support scam popups"
   },
   {
+    "name": "Galaxy says “Camera failed”?",
+    "desc": "Samsung Galaxy says Camera failed? Try restart, Camera cache, Google Play system updates, and Safe mode before a reset. Protect photos and settings.",
+    "href": "/tips/samsung-camera-failed",
+    "icon": "menu_book",
+    "kw": " tips samsung camera failed"
+  },
+  {
     "name": "Green, white, or vertical line on an iPhone screen",
     "desc": "A green, white, pink, or vertical line on an iPhone screen usually points to the display path. Use a screenshot test, protect data, and know when screen service is needed.",
     "href": "/tips/iphone-green-white-line-screen",
