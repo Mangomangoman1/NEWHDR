@@ -1,0 +1,148 @@
+{
+  "date": "2026-10-27",
+  "topic": "External monitor black or not detected on a responsive MacBook Air or Pro",
+  "prepared_route": "/tips/macbook-external-monitor-black",
+  "intended_url": "https://www.haileyrepair.com/tips/macbook-external-monitor-black",
+  "state": "Prepared and locally checked for normal main publication. This pre-push QA snapshot does not assert live availability; post-push remote/deployment/public outcomes are recorded in the saved cloud handoff.",
+  "baseline": "4c9c5b4f84eb0cd4d36989a92e7e7b09ef88376c",
+  "uniqueness": "All64 local tips and current remote inventory inspected. Existing Mac audio and external-drive guides concern different devices/results; the Windows laptop black-screen guide tests a built-in Windows display. No existing Mac wired external-monitor guide.",
+  "scope": "One directly connected wired monitor on a responsive MacBook Air/Pro with a working built-in screen; distinguish discovery, video path and native count/mode limits. AirPlay, Sidecar, a failed built-in screen and a Mac that does not start are outside scope.",
+  "sources": [
+    {
+      "url": "https://support.apple.com/guide/mac-help/connect-storage-devices-mac-mchl027f1d66/mac",
+      "reviewed": "2026-10-27",
+      "supports": "Eject in Finder before disconnecting storage; read only ejection instructions, no erase step reproduced."
+    },
+    {
+      "url": "https://www.dell.com/support/contents/en-us/article/product-support/self-support-knowledgebase/monitor-screen-video/connect-monitor-to-computer",
+      "reviewed": "2026-10-27",
+      "supports": "Monitor-side input selection and suitable video connections; no Windows settings copied into Mac procedure."
+    },
+    {
+      "url": "https://support.apple.com/en-us/102501",
+      "reviewed": "2026-10-27",
+      "supports": "Direct connection, cable/mode limits, closed-lid requirements, detection, brightness and monitor firmware scope."
+    },
+    {
+      "url": "https://support.apple.com/en-us/102555",
+      "reviewed": "2026-10-27",
+      "supports": "Video-capable ports/adapters and model-specific display support."
+    },
+    {
+      "url": "https://support.apple.com/en-us/102282",
+      "reviewed": "2026-10-27",
+      "supports": "Apple silicon laptop accessory approval; locked state; charging can continue after denial. Guide retains global security defaults."
+    },
+    {
+      "url": "https://support.apple.com/guide/mac-help/connect-an-external-display-mchl7c7ebe08/mac",
+      "reviewed": "2026-10-27",
+      "supports": "Current Detect Displays replaces Night Shift under Option; exact-model Help > Specifications lookup."
+    },
+    {
+      "url": "https://support.apple.com/en-us/122212",
+      "reviewed": "2026-10-27",
+      "supports": "M4/M5 MacBook Air two external displays alongside built-in, limits depend on mode; lid closure adds none."
+    },
+    {
+      "url": "https://support.apple.com/en-us/101571",
+      "reviewed": "2026-10-27",
+      "supports": "MacBook Pro chip variants have different counts/modes; older models need specifications."
+    },
+    {
+      "url": "https://support.apple.com/en-us/117373",
+      "reviewed": "2026-10-27",
+      "supports": "Base M3 Air/Pro dual-display closed-lid setup, power/input devices,14.3 Air/14.6 Pro minimum and opening-lid behavior."
+    },
+    {
+      "url": "https://support.apple.com/guide/mac-help/change-your-displays-resolution-mchl86d72b76/26/mac/26",
+      "reviewed": "2026-10-27",
+      "supports": "Versioned macOS26 resolution recovery:15seconds thenEscape; Default and version selector. Guide does not reproduce Safe mode/recovery sequence."
+    },
+    {
+      "url": "https://support.apple.com/guide/mac-help/shut-down-or-restart-your-mac-mchlp2522/mac",
+      "reviewed": "2026-10-27",
+      "supports": "Normal restart and unsaved-change risk of forced shutdown."
+    },
+    {
+      "url": "https://support.apple.com/en-us/108382",
+      "reviewed": "2026-10-27",
+      "supports": "Backup before compatible macOS update; model-supported updates and uninterrupted installation."
+    }
+  ],
+  "decisions": [
+    "Use existing editorial template, shared navigation and scoped CSS; decorative video-path sketch and native disclosures need no article JavaScript.",
+    "Explain base M3 lid/power/input and minimum macOS requirements separately from M4/M5 Air and Pro/Max variants. Older models need exact specifications.",
+    "Preserve storage through Finder ejection before dock disconnects; warn about unsaved work and erasing unbacked-up files.",
+    "Do not disable accessory security globally, install random display drivers, open equipment, force responsive Macs off or erase/reinstall as part of these comparisons.",
+    "Twelve primary manufacturer references; no fabricated repair experience, business promises or product/affiliate recommendation.",
+    "Reviewed and publication metadata use October27; genuine source-based review date, not a manufacturer update claim.",
+    "Preserve all64 older guides byte-for-byte; add incoming links through /tips,/guides and /macbook-repair and useful related links from this guide."
+  ],
+  "integration": {
+    "tips_cards": 65,
+    "guide_hub_cards": 46,
+    "collection_lists": "Schema list order and count match rendered cards.",
+    "search": "Generated Quick Find entry from H1/description/sitemap; correct spaces across H1 line break verified.",
+    "sitemap": "New route and modified MacBook service-page lastmod; existing hubs already datedOctober27.",
+    "generated_assets": "Seven added lines in each search asset; no shared interaction logic deletion."
+  },
+  "checks": {
+    "build": "bash build.sh; final build after H1 search-spacing correction.",
+    "node_tests": "node --test scripts/test-*.mjs:47 passed0 failed; mocked delivery, no business messages sent.",
+    "site_audit": "109 public pages /7267 local references /0 failures.",
+    "indexability": "960 passed0 failed.",
+    "semantic_accessibility": "109 public pages /0 failures.",
+    "browser": "73 final assertions:320,390,720,768,1440px, clean route, anchors, keyboard skip, disclosures, route jumps, mobile/desktop Quick Find, library search/filter/empty/reset, collection schema order/counts, three incoming page links, repeated disclosures, interrupted searches, mobile-menu resize and no-JS.",
+    "targeted_navigation": "23 passed: visually separated contents links, all8 contents targets clear fixed navigation at390/1440, explicit final data-loss warning, expanded M3 branch and320px reduced-motion layout.",
+    "final_generated_search": "2 assertions passed: current entry has correct word spacing; Escape restores focus and scrolling.",
+    "visual": "Inspected desktop/mobile heroes, full mobile page, resolution disclosure and M3 disclosure. Caught and fixed contents sidebar class/formatting.",
+    "preservation": {
+      "baseline": "4c9c5b4f84eb0cd4d36989a92e7e7b09ef88376c",
+      "old_public_html_byte_identical": 105,
+      "changed_existing_html": [
+        "guides.html",
+        "macbook-repair.html",
+        "tips.html"
+      ],
+      "old_tips_byte_identical": 64,
+      "affiliate_tracking_form_url_lists_identical": true,
+      "all_non_collection_schema_graphs_identical": true,
+      "shared_javascript": "Generated new seven-line Quick Find entry only in main.js,main.min.js and assets/site-navigation.js; no deletions.",
+      "excluded_hidden_html_byte_identical": 4
+    },
+    "git": "git diff --check passed; initial worktree clean and remote equal. Final fetch/normal push and exact SHA verification follow checks."
+  },
+  "issues_resolved": [
+    "Initial contents sidebar used wrong template class and rendered inline links. Corrected to established fg-aside with kicker; full browser check rerun and explicit link separation/anchor tests passed.",
+    "Clarified monitor models without physical power/input controls and Apple brightness control differences.",
+    "Added space after the H1 line break so generated Quick Find label has normal word spacing; rebuilt and checked."
+  ],
+  "browser_observations": {
+    "retained_pageerror_events": [
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8094/tips/macbook-external-monitor-black",
+        "stack": ""
+      },
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8094/tips/macbook-external-monitor-black",
+        "stack": ""
+      }
+    ],
+    "classification": "Only exact empty-stack Transition was skipped from shared view transitions is excluded from application-error failure classification. Two events in final full run retained; no other application errors in that run.",
+    "failed_requests": [
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Space+Mono:wght@400;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+    ],
+    "resource_limit": "Existing Google Fonts requests fail through the environment tunnel; screenshots use fallback fonts. Intended downloaded-font rendering not verified."
+  },
+  "limits": [
+    "Source-based instructions; no physical Mac/monitor/dock, firmware, port or backup test performed.",
+    "Chromium only; Safari/WebKit, screen-reader session and native zoom not run. Semantic/keyboard checks do not certify full accessibility conformance.",
+    "Public HTML/assets and deployment status require post-push verification. A network block must be reported separately from an actual origin failure."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-27",
+  "preservation": "No unrelated work, business facts, affiliate placements, analytics/form endpoints, accounts or security settings changed. Existing saved NEWHDR environment only."
+}

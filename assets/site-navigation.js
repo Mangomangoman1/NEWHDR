@@ -483,6 +483,13 @@
     "kw": " tips lcd vs oled"
   },
   {
+    "name": "MacBook on. External monitor black?",
+    "desc": "External monitor black on MacBook? Check input, video connection, Detect Displays and model limits before resets. Protect dock-connected drives.",
+    "href": "/tips/macbook-external-monitor-black",
+    "icon": "menu_book",
+    "kw": " tips macbook external monitor black"
+  },
+  {
     "name": "MacBook speakers not working?",
     "desc": "MacBook has no sound? Compare apps, check the built-in output, disconnect audio accessories, and restart safely before assuming speaker damage.",
     "href": "/tips/macbook-speakers-not-working",
