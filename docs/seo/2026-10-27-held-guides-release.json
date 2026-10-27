@@ -1,0 +1,246 @@
+{
+  "record_type": "Pre-publication release validation",
+  "review_date": "2026-10-27",
+  "prepared_head": "8ee090b577387f5dff753159a16bab402867552f",
+  "fetched_remote_main": "673160f9fea4b8f226a3eea9d4b607ce50e4987f",
+  "reconciliation": "Successful origin fetch found main six commits ahead, zero behind. No concurrent source change or merge was needed. All six preparation commits preserved.",
+  "publication_dates": "The six guides retain original dateCreated (October 21–26). Article datePublished/dateModified, visible review dates and sitemap lastmod use October 27 for this release. No earlier live publication is asserted. Actual push, remote SHA and hosting outcomes are verified separately after this pre-push record.",
+  "scope": [
+    "Release the six held guides; no new daily guide.",
+    "Refresh manufacturer instructions and publication metadata.",
+    "Repair Apple safety link to equivalent official canonical path after descriptive path fetch timed out.",
+    "Include Volume mixer and onscreen in the two relevant descriptions so generated Quick Find searches find those guides."
+  ],
+  "sources": {
+    "records": [
+      {
+        "preparation_record": "docs/seo/2026-10-21-switch-microsd-guide.json",
+        "sources_reviewed_on": "2026-10-27",
+        "sources": [
+          "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22482",
+          "https://en-americas-support.nintendo.com/app/answers/detail/a_id/68425",
+          "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22481",
+          "https://en-americas-support.nintendo.com/app/answers/detail/a_id/68479",
+          "https://www.nintendo.com/au/support/articles/microsd-cards-faq/",
+          "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22525",
+          "https://en-americas-support.nintendo.com/app/answers/detail/a_id/68218",
+          "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22404",
+          "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22365"
+        ]
+      },
+      {
+        "preparation_record": "docs/seo/2026-10-22-iphone-hotspot-guide.json",
+        "sources_reviewed_on": "2026-10-27",
+        "sources": [
+          "https://support.apple.com/guide/iphone/share-your-internet-connection-iph45447ca6/ios",
+          "https://support.apple.com/en-us/111785",
+          "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/connect-to-a-wi-fi-network-in-windows",
+          "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows",
+          "https://support.apple.com/en-us/119837",
+          "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/use-your-windows-device-as-a-mobile-hotspot",
+          "https://support.apple.com/guide/security/wi-fi-security-with-apple-devices-secfd166f620/web",
+          "https://support.apple.com/en-us/118259",
+          "https://support.microsoft.com/en-us/windows/experience/connectivity-networking/metered-connections-in-windows"
+        ]
+      },
+      {
+        "preparation_record": "docs/seo/2026-10-23-iphone-flashlight-guide.json",
+        "sources_reviewed_on": "2026-10-27",
+        "sources": [
+          "https://support.apple.com/en-us/105001",
+          "https://support.apple.com/guide/iphone/use-and-customize-control-center-iph59095ec58/ios",
+          "https://support.apple.com/guide/iphone/use-and-customize-control-center-iph59095ec58/18.0/ios/18.0",
+          "https://support.apple.com/guide/iphone/use-and-customize-control-center-iph59095ec58/17.0/ios/17.0",
+          "https://support.apple.com/en-us/118431",
+          "https://support.apple.com/en-us/102514",
+          "https://support.apple.com/guide/iphone/use-camera-tools-iph3dc593597/ios",
+          "https://support.apple.com/en-us/118259",
+          "https://support.apple.com/en-us/118575"
+        ]
+      },
+      {
+        "preparation_record": "docs/seo/2026-10-24-bluetooth-audio-guide.json",
+        "sources_reviewed_on": "2026-10-27",
+        "sources": [
+          "https://support.microsoft.com/en-us/windows/hardware/bluetooth/fix-bluetooth-connected-but-no-sound-issue-on-windows",
+          "https://support.microsoft.com/en-us/windows/hardware/audio/fix-app-audio-not-working-while-system-sounds-work-in-windows",
+          "https://support.microsoft.com/en-us/windows/hardware/bluetooth/fix-bluetooth-problems-in-windows",
+          "https://support.microsoft.com/en-us/windows/hardware/bluetooth/pair-a-bluetooth-device-in-windows",
+          "https://support.microsoft.com/en-us/windows/hardware/bluetooth/check-if-a-windows-11-device-supports-bluetooth-low-energy-audio",
+          "https://support.microsoft.com/en-us/windows/hardware/audio/fix-sound-or-audio-problems-in-windows",
+          "https://helpguide.sony.net/mdr/wh1000xm5/v1/en/contents/TP1000534512.html",
+          "https://helpguide.sony.net/mdr/wh1000xm5/v1/en/contents/TP1000541012.html",
+          "https://helpguide.sony.net/mdr/wh1000xm5/v1/en/contents/TP1000541013.html",
+          "https://support.microsoft.com/en-us/windows/experience/backup-recovery/reset-your-pc",
+          "https://support.microsoft.com/en-us/windows/experience/find-information-about-your-windows-device"
+        ]
+      },
+      {
+        "preparation_record": "docs/seo/2026-10-25-ipad-keyboard-guide.json",
+        "sources_reviewed_on": "2026-10-27",
+        "sources": [
+          "https://support.apple.com/guide/ipad/type-with-the-onscreen-keyboard-ipad997da459/ipados",
+          "https://support.apple.com/guide/ipad/switch-between-keyboards-ipaddd28d7ed/ipados",
+          "https://support.apple.com/en-us/108361",
+          "https://support.apple.com/en-us/108762",
+          "https://support.apple.com/en-us/102513",
+          "https://support.apple.com/guide/ipad/quit-and-reopen-an-app-ipad79518d15/ipados",
+          "https://support.apple.com/en-us/119876",
+          "https://support.apple.com/en-us/101603",
+          "https://support.apple.com/en-us/102642",
+          "https://support.apple.com/en-us/118426",
+          "https://support.apple.com/en-us/118575",
+          "https://support.apple.com/guide/ipad/important-safety-information-ipad27098ef5/ipados"
+        ]
+      },
+      {
+        "preparation_record": "docs/seo/2026-10-26-galaxy-camera-guide.json",
+        "sources_reviewed_on": "2026-10-27",
+        "sources": [
+          "https://www.samsung.com/us/support/troubleshoot/TSG10004628/",
+          "https://www.samsung.com/us/support/troubleshoot/TSG10013262/",
+          "https://www.samsung.com/us/support/answer/ANS10001372/",
+          "https://www.samsung.com/levant/support/mobile-devices/how-to-fix-camera-issues-with-error-warning-camera-failed/",
+          "https://www.samsung.com/us/support/answer/ANS10003495/",
+          "https://www.samsung.com/us/support/answer/ANS10003632/",
+          "https://www.samsung.com/us/support/answer/ANS10002780/",
+          "https://www.samsung.com/us/support/answer/ANS10002874/"
+        ]
+      }
+    ],
+    "unique_source_count": 56,
+    "finding": "No substantive advice changes required after source review. Apple current/versioned controls, Nintendo Express compatibility, Microsoft audio/LE Audio limits and Samsung scoped updates/data-reset safeguards remain supported.",
+    "link_repair": {
+      "old": "https://support.apple.com/guide/ipad/important-safety-information-ipad27098ef5/ipados",
+      "old_result": "Web fetch timed out twice",
+      "new": "https://support.apple.com/en-us/guide/ipad/ipad27098ef5/ipados",
+      "new_result": "Successfully reviewed Apple safety text via official regional redirect; replaced same-article descriptive URL."
+    },
+    "verification_limits": "Web tool retrieval may use cached manufacturer content (crawled today, yesterday or recent days); this is a fresh review on October 27, not a claim that all manufacturers changed their articles today. No physical device tests.",
+    "search_corrections": [
+      "Added Volume mixer to Bluetooth guide descriptions so generated Quick Find can surface the relevant app-output route.",
+      "Added onscreen to iPad guide descriptions so the visible software-keyboard intent is discoverable in generated Quick Find."
+    ]
+  },
+  "local_checks": {
+    "build": "bash build.sh; final generated search change contains two description changes only, no shared interaction logic change.",
+    "node_tests": "node --test scripts/test-*.mjs: 47 passed, 0 failed; delivery mocked.",
+    "site_audit": "python3 scripts/audit-site.py: 108 public pages, 7214 local references, 0 failures.",
+    "indexability": "node scripts/audit-indexability.mjs: 952 passed, 0 failed.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 108 public pages, 0 failures.",
+    "browser": [
+      {
+        "route": "/tips/switch-microsd-card-not-recognized",
+        "assertions_passed": 73,
+        "retained_pageerrors": [
+          {
+            "error": "Transition was skipped",
+            "url": "http://localhost:8093/tips/switch-microsd-card-not-recognized",
+            "stack": ""
+          }
+        ],
+        "failed_request_reasons": [
+          "net::ERR_TUNNEL_CONNECTION_FAILED"
+        ]
+      },
+      {
+        "route": "/tips/iphone-hotspot-not-showing-windows",
+        "assertions_passed": 73,
+        "retained_pageerrors": [
+          {
+            "error": "Transition was skipped",
+            "url": "http://localhost:8093/tips/iphone-hotspot-not-showing-windows",
+            "stack": ""
+          }
+        ],
+        "failed_request_reasons": [
+          "net::ERR_TUNNEL_CONNECTION_FAILED"
+        ]
+      },
+      {
+        "route": "/tips/iphone-flashlight-not-working",
+        "assertions_passed": 73,
+        "retained_pageerrors": [
+          {
+            "error": "Transition was skipped",
+            "url": "http://localhost:8093/tips/iphone-flashlight-not-working",
+            "stack": ""
+          }
+        ],
+        "failed_request_reasons": [
+          "net::ERR_CERT_AUTHORITY_INVALID",
+          "net::ERR_TUNNEL_CONNECTION_FAILED"
+        ]
+      },
+      {
+        "route": "/tips/bluetooth-headphones-no-sound-windows",
+        "assertions_passed": 73,
+        "retained_pageerrors": [
+          {
+            "error": "Transition was skipped",
+            "url": "http://localhost:8093/tips/bluetooth-headphones-no-sound-windows",
+            "stack": ""
+          },
+          {
+            "error": "Transition was skipped",
+            "url": "http://localhost:8093/tips/bluetooth-headphones-no-sound-windows",
+            "stack": ""
+          }
+        ],
+        "failed_request_reasons": [
+          "net::ERR_TUNNEL_CONNECTION_FAILED"
+        ]
+      },
+      {
+        "route": "/tips/ipad-keyboard-not-showing",
+        "assertions_passed": 73,
+        "retained_pageerrors": [
+          {
+            "error": "Transition was skipped",
+            "url": "http://localhost:8093/tips/ipad-keyboard-not-showing",
+            "stack": ""
+          },
+          {
+            "error": "Transition was skipped",
+            "url": "http://localhost:8093/tips/ipad-keyboard-not-showing",
+            "stack": ""
+          }
+        ],
+        "failed_request_reasons": [
+          "net::ERR_TUNNEL_CONNECTION_FAILED"
+        ]
+      },
+      {
+        "route": "/tips/samsung-camera-failed",
+        "assertions_passed": 73,
+        "retained_pageerrors": [
+          {
+            "error": "Transition was skipped",
+            "url": "http://localhost:8093/tips/samsung-camera-failed",
+            "stack": ""
+          }
+        ],
+        "failed_request_reasons": [
+          "net::ERR_TUNNEL_CONNECTION_FAILED"
+        ]
+      }
+    ],
+    "browser_scope": "438 assertions across six guides: 320/390/720/768/1440 widths, local clean routes, anchors, skip focus, native disclosures with keyboard and repeated cycles, route jumps, desktop/mobile Quick Find, library search and categories, exact collection-schema/card order, service/hub links, no-JS content/disclosures, interrupted search cleanup and mobile-menu resize.",
+    "visual_review": "Inspected 390px and 1440px hero screenshots for all six and mobile expanded disclosures. Existing branding and readable fallback-font layouts retained.",
+    "followup": "Final smoke: 44 passed. Verified current generated search for both queries on all six guides, Article metadata, reduced-motion settled 320px fit and the October20 local clean route."
+  },
+  "issues_found_and_resolved": [
+    "Quick Find did not return Bluetooth guide for Volume mixer; description and generated index corrected, full guide check passed on rerun.",
+    "Quick Find did not return iPad guide for onscreen; description and generated index corrected, full guide check passed on rerun.",
+    "An additional immediate-after-resize smoke sampled stale document width (387px at 320px viewport) with no overflowing element. After responsive rendering settled, width was 320px. Final smoke explicitly waits 350ms after resizing; no production layout change was warranted."
+  ],
+  "limits": [
+    "Physical device instructions are source-based; no owner-device tests performed.",
+    "Chromium only; Safari/WebKit, screen-reader session and native zoom not run. Semantic checks do not certify full WCAG conformance.",
+    "Existing Google Fonts requests fail in this cloud environment (tunnel errors, one certificate error); intended downloaded-font appearance is unverified. Fallback fonts were visually reviewed.",
+    "Eight empty-stack Transition was skipped pageerror events retained across full six-guide runs. Only this exact shared view-transition signal is excluded from application-error failures; no other application errors observed.",
+    "Before release, public HTTPS was blocked by the cloud tunnel. The web retrieval tool returned an older cached 50-guide index, not current deployment evidence.",
+    "Historical October20 publication remains uncertain: source is on remote main, local clean route works, but baseline GitHub checks/statuses/Actions are empty and no fresh public response was available. Its historical metadata/source was preserved."
+  ],
+  "preservation": "Business graphs, affiliate/tracking/form endpoint URL lists and unrelated pages preserved. Original six-commit recovery bundle verified and retained. No force push, account/security change, alternate credential, tracking addition, outreach or Mac work."
+}
