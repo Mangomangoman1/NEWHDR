@@ -182,6 +182,13 @@
     "kw": " tips laptop battery dying"
   },
   {
+    "name": "AirDrop can’t find the other iPhone?",
+    "desc": "AirDrop not finding an iPhone? Check receiving settings, Contacts Only and AirDrop codes. Test one photo and protect originals before resets.",
+    "href": "/tips/airdrop-not-finding-iphone",
+    "icon": "menu_book",
+    "kw": " tips airdrop not finding iphone"
+  },
+  {
     "name": "Android charges, but photos won’t transfer?",
     "desc": "Android photos missing on a Windows 11 PC? Check a data cable, unlock, and USB File Transfer (MTP), then copy and verify before deleting originals.",
     "href": "/tips/android-photos-not-showing-windows-usb",

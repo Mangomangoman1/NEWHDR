@@ -1,0 +1,146 @@
+{
+  "date": "2026-10-28",
+  "topic": "AirDrop cannot find a nearby receiving iPhone",
+  "prepared_route": "/tips/airdrop-not-finding-iphone",
+  "intended_url": "https://www.haileyrepair.com/tips/airdrop-not-finding-iphone",
+  "baseline": "b50d282184e29d454219310864400fd838deb2e9",
+  "record_type": "Pre-publication source and QA snapshot",
+  "publication_state": "Prepared and locally checked for normal main publication. Post-push exact remote SHA, Vercel status and public behavior are recorded in the saved cloud handoff; this snapshot does not assert live availability.",
+  "uniqueness": "Complete 65-guide local inventory and current remote inspected; no existing AirDrop discovery guide. Existing iPhone hotspot, Android USB transfer and Mac external-display guides have different intents. Remote matched clean local main; one worktree and no index lock or known competing writer.",
+  "scope": "Nearby iPhone-to-iPhone file sharing on responsive phones, distinguishing missing recipients from visible recipients awaiting approval. Mac controls, Android/Windows transfer and cloud-library sync are outside scope.",
+  "sources": [
+    {
+      "url": "https://support.apple.com/en-us/119857",
+      "reviewed": "2026-10-28",
+      "supports": "Wi-Fi/Bluetooth/proximity, disconnect Personal Hotspot, sender/receiver workflow, Everyone for 10 Minutes expiration/sign-in distinction and code condition when both phones use iOS 26.2+. Fresh review of October 5 version."
+    },
+    {
+      "url": "https://support.apple.com/guide/security/airdrop-security-sec2261183f4/web",
+      "reviewed": "2026-10-28",
+      "supports": "Initial discovery uses local peer-to-peer Wi-Fi and BLE, not a shared internet access point; Contacts Only uses recipient-side recognition. Technical source used only for these stable fundamentals, not newer code behavior."
+    },
+    {
+      "url": "https://support.apple.com/guide/personal-safety/secure-airdrop-ips7d84d2cdc/web",
+      "reviewed": "2026-10-28",
+      "supports": "Receiving choices and Settings > General > AirDrop; restore a private receiving setting after an intentional test."
+    },
+    {
+      "url": "https://support.apple.com/en-us/108330",
+      "reviewed": "2026-10-28",
+      "supports": "Control Center gestures for full-screen and Home-button models, including SE."
+    },
+    {
+      "url": "https://support.apple.com/is-is/guide/iphone/iph3ff83f3b1/ios",
+      "reviewed": "2026-10-28",
+      "supports": "Current English article body in an Apple regional page confirms Screen Time > Content & Privacy Restrictions > Other Features. Descriptive/US canonical URLs were inaccessible to retrieval; this official regional URL was returned by search and successfully read."
+    },
+    {
+      "url": "https://support.apple.com/guide/deployment/restrictions-for-iphone-and-ipad-dep0f7dd3d8/web",
+      "reviewed": "2026-10-28",
+      "supports": "Managed devices can restrict AirDrop and managed-document destinations; guide directs owner to administrator and does not bypass policy."
+    },
+    {
+      "url": "https://support.apple.com/guide/iphone/use-airdrop-to-send-items-to-nearby-devices-iphcd8b9f0af/ios",
+      "reviewed": "2026-10-28",
+      "supports": "Sender identity must appear in recipient contact card; code generated on receiver; 30-day reuse/Other Known cleanup; own-account auto-accept; Photos/Files destinations; cellular continuation and VPN local-networking caveat."
+    },
+    {
+      "url": "https://support.apple.com/en-us/118259",
+      "reviewed": "2026-10-28",
+      "supports": "Model-specific normal restarts, including top-button first-generation SE. No forced shutdown or recovery sequence reproduced."
+    },
+    {
+      "url": "https://support.apple.com/en-us/118575",
+      "reviewed": "2026-10-28",
+      "supports": "Backup before compatible iOS update offered to the phone."
+    },
+    {
+      "url": "https://support.apple.com/en-us/111786",
+      "reviewed": "2026-10-28",
+      "supports": "Only network-reset consequences and administrator warning are used. The article also contains uninstall-VPN advice that this guide deliberately does not reproduce."
+    }
+  ],
+  "decisions": [
+    "Direct answer and small harmless-photo test; sender and receiver labeled in a decorative CSS diagram.",
+    "Version distinctions: Home-button versus full-screen Control Center gestures; iOS 16.2 timed receiving and sign-in-dependent expiry; iOS 26.2-and-later code prompt and 30-day relationship explained separately.",
+    "Check sender identity in the receiver contact card. Same Apple Account is not required for sharing with another person; own-account auto-accept is a separate behavior.",
+    "Two native disclosures cover restricted AirDrop and code relationship cleanup; no article JavaScript or new tracking.",
+    "Preserve originals until copied item opens; explain network-reset configuration loss and erase risks. Stop before those operations or restriction bypass.",
+    "Use source-based organization attribution, with no invented hands-on experience or repair promises.",
+    "Creation, intended publication and review metadata use October 28; no backdated publication or claim that manufacturers updated their pages today."
+  ],
+  "integration": {
+    "tips_cards": 66,
+    "guide_hub_cards": 47,
+    "collection_schema": "Count and order match rendered cards.",
+    "service_link": "Added a relevant link to the existing iPhone repair guide-link group.",
+    "sitemap": "New route, current hub dates and modified iPhone service lastmod.",
+    "search": "One generated Quick Find entry from H1/description/sitemap; AirDrop iPhone and Contacts Only queries passed.",
+    "related_links": "Existing iPhone storage, hotspot and backup guidance; all 65 previous guide files byte-identical."
+  },
+  "checks": {
+    "build": "bash build.sh passed; generated assets contain only the new seven-line search entry.",
+    "node_tests": "node --test scripts/test-*.mjs: 47 passed, 0 failed; mocked delivery only.",
+    "site_audit": "110 public pages, 7320 local references, 0 failures.",
+    "indexability": "968 passed, 0 failed.",
+    "semantic_accessibility": "110 public pages, 0 failures.",
+    "browser": "73 assertions passed: 320/390/720/768/1440px, clean route, no overflow, all anchors, skip focus, keyboard disclosures, hero jumps, desktop/mobile Quick Find, library search/filter/empty/reset, exact collection schema/card order, hub/service incoming links, no-JS and repeated/interrupted interactions.",
+    "targeted_navigation": "23 assertions passed: visually separated contents links, all eight contents targets clear fixed navigation at 390/1440px, data-loss warning, expanded restrictions branch and settled 320px reduced-motion layout.",
+    "visual": "Inspected 390px/1440px heroes, full mobile layout and both expanded disclosures. Native branches remain readable; no production layout regression found.",
+    "preservation": {
+      "baseline": "b50d282184e29d454219310864400fd838deb2e9",
+      "prior_public_html": 109,
+      "old_public_html_byte_identical": 106,
+      "changed_existing_html": [
+        "guides.html",
+        "iphone-repair.html",
+        "tips.html"
+      ],
+      "old_tips_byte_identical": 65,
+      "affiliate_tracking_form_url_lists_identical": true,
+      "all_non_collection_schema_graphs_identical": true,
+      "generated_javascript": "Seven added lines for new Quick Find entry in each generated asset; no shared interaction logic deletions."
+    },
+    "git": "git diff --check passed; final fetch, task-only commit, normal push and exact remote verification follow these checks."
+  },
+  "browser_observations": {
+    "retained_pageerrors": [
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8095/tips/airdrop-not-finding-iphone",
+        "stack": ""
+      },
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8095/tips/airdrop-not-finding-iphone",
+        "stack": ""
+      },
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8095/tips/airdrop-not-finding-iphone",
+        "stack": ""
+      }
+    ],
+    "classification": "Three exact empty-stack Transition was skipped events from shared view transitions retained. Harness excludes only this exact existing signal from application-error failures; no other application errors in the full run.",
+    "failed_request_reasons": [
+      "net::ERR_CERT_AUTHORITY_INVALID",
+      "net::ERR_TUNNEL_CONNECTION_FAILED"
+    ],
+    "failed_request_urls": [
+      "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@300;400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    ],
+    "font_limit": "Existing Google Fonts requests fail through environment tunnel/certificate errors. Fallback-font appearance visually reviewed; downloaded-font appearance unverified."
+  },
+  "limits": [
+    "Source-based guidance; no physical AirDrop, iPhone, account, firmware or file transfer tests performed.",
+    "Chromium only; Safari/WebKit, screen-reader session and native zoom unrun. Semantic and keyboard checks do not certify full accessibility conformance.",
+    "Source retrieval may return cached official articles. The current English Screen Time body was reviewed through the working official regional URL after two other aliases were inaccessible.",
+    "Public origin HTML/assets require a post-push check; distinguish environment failures from an actual origin response."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-28",
+  "preservation": "Business facts, all non-CollectionPage schema graphs, affiliate/tracking/form URLs, old guide files and unrelated work preserved. No account/security settings, hosting, outreach or user Mac work."
+}
