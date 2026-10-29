@@ -32,7 +32,7 @@ Pages load `main.min.js` and `style.min.css`; edit the source files and rebuild 
 ```sh
 python3 scripts/audit-site.py
 node scripts/audit-indexability.mjs
-node --test scripts/test-site-interactions.mjs scripts/test-repair-phone.mjs scripts/test-repair-inspection.mjs
+node --test scripts/test-*.mjs
 ```
 
 The site audit checks every public page, local link, anchor, image reference, and shared finishing stylesheets. Indexability checks titles, descriptions, canonical URLs, and structured data for every sitemap page. Interaction tests use mocked delivery; they do not send messages to the business.

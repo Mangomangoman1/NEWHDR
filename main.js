@@ -1739,11 +1739,11 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     const totalMin = hour * 60 + min;
     let open = false;
     let closingSoon = false;
-    // Mon-Fri 9am-9pm, Weekends 11am-7pm
-    if (day >= 1 && day <= 5 && totalMin >= 540 && totalMin < 1260) {
+    // Hailey local time: Mon-Fri 10:30am-8:30pm, Sat-Sun noon-7pm
+    if (day >= 1 && day <= 5 && totalMin >= 630 && totalMin < 1230) {
       open = true;
-      if (totalMin >= 1230) closingSoon = true;
-    } else if ((day === 0 || day === 6) && totalMin >= 660 && totalMin < 1140) {
+      if (totalMin >= 1200) closingSoon = true;
+    } else if ((day === 0 || day === 6) && totalMin >= 720 && totalMin < 1140) {
       open = true;
       if (totalMin >= 1110) closingSoon = true;
     }
@@ -1904,11 +1904,12 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     var dayStr = now.toLocaleDateString('en-US', { timeZone: HAILEY_TZ, weekday: 'short' });
     var dayNum = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(dayStr);
 
-    // Mon-Fri 9am-9pm, Weekends 11am-7pm
+    // Hailey local time: Mon-Fri 10:30am-8:30pm, Sat-Sun noon-7pm
+    var totalMin = hours * 60 + minutes;
     var isOpen = false;
     var closingSoon = false;
-    if (dayNum >= 1 && dayNum <= 5) { isOpen = hours >= 9 && hours < 21; closingSoon = hours === 20 && minutes >= 30; }
-    else if (dayNum === 0 || dayNum === 6) { isOpen = hours >= 11 && hours < 19; closingSoon = hours === 18 && minutes >= 30; }
+    if (dayNum >= 1 && dayNum <= 5) { isOpen = totalMin >= 630 && totalMin < 1230; closingSoon = isOpen && totalMin >= 1200; }
+    else if (dayNum === 0 || dayNum === 6) { isOpen = totalMin >= 720 && totalMin < 1140; closingSoon = isOpen && totalMin >= 1110; }
     return { open: isOpen, closingSoon: closingSoon };
   }
 
