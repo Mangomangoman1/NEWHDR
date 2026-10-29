@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-29",
+  "topic": "Nintendo Switch works handheld but shows no picture on the TV",
+  "prepared_route": "/tips/switch-no-picture-tv",
+  "intended_url": "https://www.haileyrepair.com/tips/switch-no-picture-tv",
+  "baseline": "fa694e9c3f0383243015249e577ee99a2b7ff6ba",
+  "record_type": "Pre-publication source and QA snapshot",
+  "publication_state": "Prepared and locally checked for normal main publication. Exact commit, push outcome, remote SHA, deployment and public-origin verification are recorded afterward in the saved cloud handoff. This snapshot does not assert live availability.",
+  "uniqueness": "Complete 66-guide inventory, local history and representative pages inspected. Existing Switch power guide only routes a working handheld/dock failure to HDMI investigation; no Switch TV-output procedure existed. PS5 HDMI and Mac display guides cover different hardware. Initial fetch matched clean local main, with one worktree and no index lock or known competing writer.",
+  "scope": "Responsive original Nintendo Switch and Switch OLED, with working handheld HOME. Lite cannot output TV mode; Switch 2 branches to its own official procedure and accessories. No forced shutdown, initialization or internal repair.",
+  "sources": [
+    {
+      "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22264",
+      "reviewed": "2026-10-29",
+      "supports": "Original/OLED no-TV troubleshooting: direct HDMI path, case removal, port/cable/TV/dock comparisons and unresolved console/dock service boundary. Comparison interpretations are identified as leads, not diagnoses."
+    },
+    {
+      "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22372",
+      "reviewed": "2026-10-29",
+      "supports": "Illustrated original/OLED dock connections, HAC-002, AC ADAPTER and HDMI OUT labels, orientation, paired controllers, selected TV input and normal console-screen shutdown when docked."
+    },
+    {
+      "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/55834",
+      "reviewed": "2026-10-29",
+      "supports": "OLED works with original dock; original/OLED system version 11.0.0+ supports LAN dock; Lite cannot use TV mode or docks; dock models and LAN difference."
+    },
+    {
+      "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/28186",
+      "reviewed": "2026-10-29",
+      "supports": "Original-family supplied-adapter error; disconnect both ends at least 30 seconds; HAC-002; normal three-second Power Options > Restart; current console software and compatible dock."
+    },
+    {
+      "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22331",
+      "reviewed": "2026-10-29",
+      "supports": "System Settings > TV Settings; TV Resolution choices Automatic/480p/720p/1080p; consult display manufacturer for supported settings. Original family, not Switch 2 menu."
+    },
+    {
+      "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/55980",
+      "reviewed": "2026-10-29",
+      "supports": "Only original-family LAN dock HEG-007 updatable; console current first; System > Update Dock > Begin Update. Guide stops if visible prompts cannot be completed, rather than asking owner to navigate blind."
+    },
+    {
+      "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22622",
+      "reviewed": "2026-10-29",
+      "supports": "Initial brief LED flash then off normal; solid green during TV display; persistent flash comparison and service, original HAC-007/HEG-007 compatibility. No forced shutdown reproduced for responsive console."
+    },
+    {
+      "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22559",
+      "reviewed": "2026-10-29",
+      "supports": "Initialization removes console-memory save data, users and other data; cloud recovery requires existing backups. Consequences only; destructive procedure not reproduced."
+    },
+    {
+      "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/68442",
+      "reviewed": "2026-10-29",
+      "supports": "Separate Switch 2 procedure: NGN-01, BEE-005 and Ultra High Speed HDMI. HAC-002 may charge directly but cannot support Switch 2 TV mode. No Switch 2 reset sequence mixed into original-family instructions."
+    }
+  ],
+  "decisions": [
+    "Direct answer and decorative dock-to-TV path, followed by a repeatable direct-HDMI baseline and one-variable comparisons. Interpretations are leads, not physical component diagnoses.",
+    "Original-family HAC-002 both-end adapter reset for at least 30 seconds, normal restart, stable-power update and HOME check; handheld failure routes to the existing power guide.",
+    "HAC-007 versus HEG-007; original/OLED LAN dock support from version 11.0.0; Lite TV limitation; Switch 2 NGN-01/BEE-005/Ultra High Speed HDMI distinction. No mixed generation reset procedure.",
+    "Two native disclosures for Switch 2 and dock firmware. If missing TV image prevents completing firmware prompts, stop rather than navigating blind.",
+    "Brief initial LED blink distinguished from persistent flashing. Neither indicator nor a working handheld screen certifies a component.",
+    "Save work, avoid interrupted updates, stop for damage/unstable power/forced connectors; no initialization, user deletion or microSD formatting. Initialization save-data loss explained and linked.",
+    "Source-based organization attribution; no invented bench testing, business promises, ads, tracking or affiliate placements. Review/publication metadata use October 29; no claim Nintendo updated its documents today."
+  ],
+  "integration": {
+    "tips_cards": 67,
+    "guide_hub_cards": 48,
+    "collection_schema": "Exact rendered count and card order checked in both hubs.",
+    "service_link": "One relevant link in existing Nintendo section of console-repair.html.",
+    "sitemap": "New guide plus dates for changed hubs and console service page.",
+    "search": "One generated Quick Find entry; Switch TV and dock power queries passed. Library console filter and docked query passed.",
+    "related_links": "Existing Switch power, microSD and console assessment pages. All 66 old guide files unchanged."
+  },
+  "checks": {
+    "build": "bash build.sh passed; shared generated JS adds only the seven-line new search entry in each asset.",
+    "node_tests": "node --test scripts/test-*.mjs: 47 passed, 0 failed, 0 skipped; form delivery mocked.",
+    "site_audit": "python3 scripts/audit-site.py: 111 public pages, 7373 local references, 0 failures.",
+    "indexability": "node scripts/audit-indexability.mjs: 976 checks passed, 0 failed.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 111 public pages, 0 failures.",
+    "browser": "73 passed: 320/390/720/768/1440px, clean route, overflow, all anchors, skip focus, native disclosures via Enter/Space, three hero jumps, desktop/mobile Quick Find, library search/filter/empty/Escape, schema card order, hub/service incoming links, repeated disclosures, interrupted search/menu and no-JS.",
+    "targeted_navigation": "23 passed: all eight TOC targets clear fixed nav at 390/1440px, separated link targets, data-loss warning, expanded Switch 2 branch and settled 320px reduced-motion layout.",
+    "visual": "Inspected 390px and 1440px heroes, full mobile layout, both expanded disclosures, connection steps and final data-loss boundary. Fallback-font layout readable and consistent with existing field-guide branding.",
+    "preservation": {
+      "baseline": "fa694e9c3f0383243015249e577ee99a2b7ff6ba",
+      "prior_public_html": 110,
+      "old_public_html_byte_identical": 107,
+      "changed_existing_html": [
+        "console-repair.html",
+        "guides.html",
+        "tips.html"
+      ],
+      "old_tips_byte_identical": 66,
+      "affiliate_tracking_form_url_lists_identical": true,
+      "all_non_collection_schema_graphs_identical": true,
+      "new_guide_no_affiliate_tracking_form_urls": true,
+      "official_sources": 9,
+      "article_date_metadata": "2026-10-29",
+      "generated_javascript": "Exactly seven added lines per generated asset for new Quick Find entry; no deletions."
+    },
+    "git": "git diff --check passed. Initial fetch succeeded; final fetch failed with fatal: could not read Username for https://github.com: No such device or address. Existing authorized GitHub read API independently confirmed remote main still equals baseline; no concurrent changes observed. Normal task-only commit/push outcome follows in handoff."
+  },
+  "browser_observations": {
+    "retained_pageerrors": [
+      {
+        "error": "Transition was skipped",
+        "url": "http://localhost:8096/tips/switch-no-picture-tv",
+        "stack": ""
+      }
+    ],
+    "classification": "One exact empty-stack Transition was skipped event from shared view transitions retained. Only that exact existing signal excluded from application-error failure; no other application errors in the full run.",
+    "failed_request_reasons": [
+      "net::ERR_TUNNEL_CONNECTION_FAILED"
+    ],
+    "failed_request_urls": [
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@300;400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    ],
+    "font_limit": "Existing external font/CDN requests fail through environment certificate/tunnel errors. Fallback appearance reviewed; downloaded-font appearance unverified."
+  },
+  "limits": [
+    "Source-based guide; no physical console, dock, TV, cable, firmware update or save-data operation tested.",
+    "Chromium only; Safari/WebKit, screen-reader session and native zoom unrun. Semantic and keyboard checks do not certify full accessibility conformance.",
+    "Official source retrieval may include cached content; reviewed documents are not claimed to have manufacturer update dates today.",
+    "Post-push origin HTML, discovery, assets and deployment need independent evidence. Environment tunnel/DNS failure is not an origin 404 or site outage."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-29",
+  "preservation": "Business facts, non-CollectionPage schema graphs, affiliate/tracking/form URLs, all old guides and unrelated work preserved. No account/security settings, hosting, outreach or user Mac work."
+}
