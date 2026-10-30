@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-30",
+  "topic": "Windows 11 microphone works locally but calls cannot hear you",
+  "prepared_route": "/tips/windows-microphone-not-working-calls",
+  "intended_url": "https://www.haileyrepair.com/tips/windows-microphone-not-working-calls",
+  "baseline": "e8b19bc814516bcdc90fcd51f18af286e0d86269",
+  "record_type": "Pre-publication source and QA snapshot",
+  "publication_state": "Prepared and locally checked for normal main publication. Post-push exact remote SHA, deployment and public-origin result are recorded in the saved cloud handoff; this snapshot does not assert public availability.",
+  "uniqueness": "Full 67-guide inventory and representative pages inspected. Existing Windows webcam guide covers image capture; Bluetooth headphone guide covers sound output and explicitly excludes microphone faults. No existing Windows microphone/call troubleshooting spoke. Initial fetch matched clean main, single worktree and no known concurrent writer.",
+  "scope": "Responsive Windows 11 PCs, especially a microphone that captures a local sample but fails in calls. Built-in/USB/headset input, desktop/app/site access and Teams desktop/personal/web distinctions. Remote or virtual desktop, Mac and Windows 10 procedures outside scope.",
+  "sources": [
+    {
+      "url": "https://support.microsoft.com/en-us/windows/hardware/drivers/fix-microphone-problems",
+      "reviewed": "2026-10-30",
+      "supports": "Windows 11 Sound > Input selection and recorded-sample Start test/Stop test/Play, gradual input level adjustment. Windows 10 tab deliberately not mixed into this guide."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/privacy/turn-on-app-permissions-for-your-microphone-in-windows",
+      "reviewed": "2026-10-30",
+      "supports": "Windows 11 Privacy & security > Microphone access, app access and per-app/desktop controls."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/privacy/windows-camera-microphone-and-privacy",
+      "reviewed": "2026-10-30",
+      "supports": "Desktop-app permission scope and exceptions; Edge needs separate per-site permission, current Privacy/search/services > Site Permissions > All sites route. No claim that Windows privacy switches are an absolute security boundary."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/teams/meetings/my-microphone-isn-t-working-in-microsoft-teams",
+      "reviewed": "2026-10-30",
+      "supports": "Teams desktop Devices input, Make a test call when offered, no test call on Teams web, in-call Mic > More audio settings, Bluetooth charge/other-device comparison. Page's older browser compatibility list and older Edge menu are not reproduced; current browser sources used instead."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/teams/personal/get-started/manage-your-device-settings-in-microsoft-teams-personal",
+      "reviewed": "2026-10-30",
+      "supports": "Personal-use desktop Teams Settings > Devices; microphone dropdown and account/app feature differences. Does not promise a test-call button in every edition."
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/2693767?co=GENIE.Platform%3DDesktop&hl=en",
+      "reviewed": "2026-10-30",
+      "supports": "Current desktop Chrome microphone input selector and specific-site permissions; managed browser settings may require administrator. No broad allow-all-sites recommendation."
+    },
+    {
+      "url": "https://www.dell.com/support/contents/en-us/article/product-support/self-support-knowledgebase/audio-and-speakers/microphone",
+      "reviewed": "2026-10-30",
+      "supports": "Physical connections, USB port comparisons, mute and gradually adjusted input level. BIOS/driver procedures on source page are not reproduced."
+    },
+    {
+      "url": "https://www.dell.com/support/kbdoc/en-us/000179430/how-to-troubleshoot-audio-or-sound-recording-issues",
+      "reviewed": "2026-10-30",
+      "supports": "Dell combo TRRS versus separate headphone/microphone plugs; call app input is independent of Windows default; save work before normal restart and offered Windows updates. Guide stops before advanced driver, firmware and restore/reset procedures; no hardware diagnostic certainty claimed."
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/windows/experience/backup-recovery/reset-your-pc",
+      "reviewed": "2026-10-30",
+      "supports": "Consequences only: Keep my files removes apps/settings; Remove everything also removes personal files. No reset instructions reproduced."
+    }
+  ],
+  "decisions": [
+    "Choose and record one named input before treating a Windows test as relevant to a headset or call. Playback output is checked before interpreting an inaudible sample.",
+    "Decorative three-stage voice path supports the Windows/app/other-person diagnosis; all substantive information stays in ordinary text.",
+    "Two native disclosures explain TRRS combo versus separate plugs and desktop-app permission scope/exceptions. No article JavaScript or recording/upload widget.",
+    "App input can differ from Windows default; Teams test call is conditional and absent on web. Personal-use device settings linked separately.",
+    "Use the actual trusted meeting site, not blanket website access. Managed settings go to the administrator; no security, management or registry bypass.",
+    "Keep test speech harmless and private; save work before restart; explain Keep my files versus Remove everything consequences and stop before reset, reinstall or driver removal.",
+    "Source-based organization attribution with no fabricated device tests, experience or repair promise. Article/review dates October 30; no claim manufacturers revised their sources today.",
+    "Preserve authoritative Hailey hours and all related regression coverage; no account, security, hosting, tracking or affiliate changes."
+  ],
+  "integration": {
+    "tips_cards": 68,
+    "guide_hub_cards": 49,
+    "collection_schema": "Counts and exact card order match rendered cards in both hubs.",
+    "service_link": "One incoming link added next to webcam guidance in laptop-repair.html.",
+    "sitemap": "New guide plus dates for changed hubs and laptop service.",
+    "search": "One generated Quick Find entry; microphone calls and site permissions queries passed; library microphone browser query and computer filter passed.",
+    "related_links": "Existing webcam, Bluetooth output and backup guides; all 67 previous guide files byte-identical."
+  },
+  "checks": {
+    "build": "bash build.sh passed; only seven-line new search entry added to each generated/source shared JS asset.",
+    "node_tests": "node --test scripts/test-*.mjs: 53 passed, 0 failed, 0 skipped, including six authoritative-hours regressions. Mocked form delivery only.",
+    "site_audit": "python3 scripts/audit-site.py: 112 public pages, 7425 local references, 0 failures.",
+    "indexability": "node scripts/audit-indexability.mjs: 984 passed, 0 failed.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 112 public pages, 0 failures.",
+    "browser": "73 passed: 320/390/720/768/1440px, clean route, overflow, all anchors, skip focus, keyboard disclosures, hero jumps, desktop/mobile Quick Find, library search/filter/empty/Escape, schema/card order, incoming links, no-JS, repeated disclosure cycles and interrupted search/menu.",
+    "targeted_navigation": "23 passed: all eight TOC targets clear fixed navigation at 390/1440px, separated target sizes, reset warning, expanded connector branch and settled 320px reduced-motion layout.",
+    "visual": "Inspected 390px/1440px heroes, full mobile layout and both expanded native disclosures. Readable with existing branding and fallback fonts; no production regression found.",
+    "preservation": {
+      "baseline": "e8b19bc814516bcdc90fcd51f18af286e0d86269",
+      "prior_public_html": 111,
+      "old_public_html_byte_identical": 108,
+      "changed_existing_html": [
+        "guides.html",
+        "laptop-repair.html",
+        "tips.html"
+      ],
+      "old_tips_byte_identical": 67,
+      "affiliate_tracking_form_url_lists_identical": true,
+      "all_non_collection_schema_graphs_identical": true,
+      "official_sources": 9,
+      "article_dates": "2026-10-30",
+      "business_hours": "All 42 existing schedules and displayed hours unchanged; both clocks unchanged outside the generated search insertion, with six hours regressions passing.",
+      "generated_javascript": "Exactly seven added lines for the new search entry in each of three generated/source assets, no deletions or shared logic changes."
+    },
+    "git": "Initial and final git fetch --prune origin succeeded. Both local main and current origin/main equal e8b19bc814516bcdc90fcd51f18af286e0d86269 with zero divergence; no concurrent changes to reconcile. git diff --check passed. Task-only commit, normal push and exact remote verification follow."
+  },
+  "browser_observations": {
+    "pageerrors": [],
+    "failed_request_reasons": [
+      "net::ERR_TUNNEL_CONNECTION_FAILED"
+    ],
+    "failed_request_urls": [
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@300;400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    ],
+    "font_limit": "Existing external Google Fonts requests fail through the cloud tunnel. Fallback appearance reviewed; downloaded-font appearance unverified."
+  },
+  "limits": [
+    "Source-based guide; no physical microphone, live call, voice recording, account, driver, update or reset operation performed.",
+    "Chromium only; Safari/WebKit, screen-reader session and native zoom unrun. Semantic/keyboard checks do not certify full accessibility conformance.",
+    "Official retrieval may include cached article content. Older browser compatibility/Edge menu text in the Teams source was not reproduced; current Microsoft privacy and Google browser instructions used.",
+    "Public origin behavior requires post-push evidence. A tunnel/DNS failure does not establish a site outage or origin HTTP status."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-30",
+  "preservation": "Business facts, all hours, non-CollectionPage schema graphs, affiliate/tracking/form URLs, old guides and unrelated work preserved. No user Mac, alternative project, external outreach, account/security or hosting changes."
+}
