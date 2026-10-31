@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-31",
+  "topic": "Forgot a newly changed iPhone passcode: check previous-passcode recovery before erasing",
+  "prepared_route": "/tips/forgot-new-iphone-passcode",
+  "intended_url": "https://www.haileyrepair.com/tips/forgot-new-iphone-passcode",
+  "baseline": "06ae5b33a5e62d6a0c2d744e58685d04e955af0e",
+  "record_type": "Pre-publication source and QA snapshot",
+  "publication_state": "Prepared and locally checked for normal main publication. Commit, exact remote SHA, deployment and public-origin result follow in the saved cloud handoff; this snapshot does not assert live availability.",
+  "uniqueness": "Full 68-guide inventory and representative backup, Apple-logo and latest microphone pages inspected. No prior 72-hour passcode-recovery guide. Broken-screen backup access and boot-loop Update/Restore decisions have distinct causes and scope. Initial clean main matched remote, one worktree and no competing writer.",
+  "scope": "An owner who recently changed an iPhone unlock passcode, knows the old device passcode and is reviewing available on-device recovery choices. No random-guess sequence, credential collection, Activation Lock/management bypass or erase required.",
+  "sources": [
+    {
+      "url": "https://support.apple.com/en-us/105039",
+      "reviewed": "2026-10-31",
+      "retrieval": "Full official page read; published August 11, 2026.",
+      "supports": "iOS/iPadOS 17+ previous-passcode recovery within 72 hours; already-Unavailable > Forgot Passcode? > Enter Previous Passcode; set a new code immediately; non-erasing route. No deliberate failed-attempt recipe reproduced."
+    },
+    {
+      "url": "https://support.apple.com/en-us/127950",
+      "reviewed": "2026-10-31",
+      "retrieval": "Full official page read; published July 31, 2026.",
+      "supports": "72-hour grace period and manual early expiry; Face ID & Passcode or Touch ID & Passcode > Expire Previous Passcode Now, only discussed after confirmed recovery."
+    },
+    {
+      "url": "https://support.apple.com/en-us/119586",
+      "reviewed": "2026-10-31",
+      "retrieval": "Full official page read; published May 13, 2026.",
+      "supports": "Optional automatic erase at ten failed attempts, computer-restore warning when disabled; previous code described as usable once; model-specific passcode settings labels. No suggestion to force five more failures."
+    },
+    {
+      "url": "https://support.apple.com/en-us/105090",
+      "reviewed": "2026-10-31",
+      "retrieval": "Current official search text read, including complete English regional body. Direct US and en-la page opens each returned HTTP 429; no unchanged retry.",
+      "supports": "On-device recovery needs network, Find My already enabled and account access; iOS 17 Forgot Passcode? versus 15.2/16 Erase Device; erasure permanent; eSIM distinctions. Only consequences/conditions linked, no erase confirmation performed or required."
+    },
+    {
+      "url": "https://support.apple.com/en-us/118430",
+      "reviewed": "2026-10-31",
+      "retrieval": "Current official search body read; direct open returned HTTP 429 without retry.",
+      "supports": "Forgotten-passcode computer reset erases device; model-specific recovery buttons and Finder/Apple Devices paths. No full destructive sequence reproduced and Update is not promised to remove a forgotten passcode."
+    },
+    {
+      "url": "https://support.apple.com/en-us/108934",
+      "reviewed": "2026-10-31",
+      "retrieval": "Current official search body read; direct open returned HTTP 429 without retry.",
+      "supports": "Activation Lock is separate; associated-owner credentials/Apple ownership support with proof of purchase; business/school devices go to IT. No lock bypass or removal procedure reproduced."
+    },
+    {
+      "url": "https://support.apple.com/en-us/108366",
+      "reviewed": "2026-10-31",
+      "retrieval": "Official search returned complete article body, published September 24, 2026.",
+      "supports": "After regaining access: Wi-Fi, Settings > name > iCloud > iCloud Backup > Back Up Now; wait for completion and verify last backup date/time. No backup guarantee for a currently locked device."
+    },
+    {
+      "url": "https://support.apple.com/en-us/108809",
+      "reviewed": "2026-10-31",
+      "retrieval": "Official search returned complete article body, published October 20, 2026.",
+      "supports": "Locate existing computer backups, Trust/passcode prompt caveat, protect/archive copies rather than delete or overwrite during investigation."
+    },
+    {
+      "url": "https://support.apple.com/en-us/108770",
+      "reviewed": "2026-10-31",
+      "retrieval": "Official US search excerpt and complete English regional article body read.",
+      "supports": "iCloud sync and device backup differ; iCloud Photos and other synced data are not duplicated in daily backup. No claim that seeing some photos proves all data protected."
+    }
+  ],
+  "decisions": [
+    "Direct answer prioritizes eligibility and the previous-passcode route before destructive recovery. A decorative 72-hour/old-code/new-code diagram contains no input fields.",
+    "Software and model distinctions: iOS 17+ feature versus 15.2/16 erasing option; Face ID versus Touch ID passcode settings; Apple Account/Screen Time/Activation Lock distinguished from device unlock code.",
+    "Attempt-limit warning appears before steps; guide starts at the displayed recovery choice and does not reproduce a deliberate five-failure recipe. Uncertain attempt history, declined previous code or missing choices get a stopping point.",
+    "Explain early expiry and one-time use without claiming a specific reason for rejection. Expire Previous Passcode Now discussed only after regaining access and confirming new code.",
+    "Differentiate successful non-erasing Passcode Reset from Start iPhone Reset/Erase iPhone/computer Restore. eSIM and account prerequisites explained before any later erase; computer button sequence linked rather than reproduced.",
+    "After regained access, finish a backup and verify its date. While locked out, preserve existing backups and separately synced data without promising a new backup or recovery of unsaved files.",
+    "Two native disclosures for old-code expiry and erase-only choices; no article JavaScript, code-collection form, ads, tracking or new affiliate placement.",
+    "Source-based organization attribution; no invented physical recovery test, expertise or business promise. Creation/publication/review metadata October 31; no claim source documents were updated today.",
+    "Preserve corrected hours and all six business-hours regression tests. No Mac or other repository, accounts/security/hosting changes or external outreach."
+  ],
+  "integration": {
+    "tips_cards": 69,
+    "guide_hub_cards": 50,
+    "collection_schema": "Exact counts and card order match rendered cards in both indexes.",
+    "service_link": "Relevant incoming link beside Apple-logo guidance in iphone-repair.html.",
+    "sitemap": "New route and lastmod for changed indexes/iPhone service.",
+    "search": "One generated Quick Find entry; iPhone passcode and previous passcode queries passed; library passcode previous and phone filter passed.",
+    "related_links": "Existing broken-screen backup, ghost-touch and backup-before-service guides. All 68 prior guide files byte-identical."
+  },
+  "checks": {
+    "build": "bash build.sh passed; source/generated shared JavaScript each gains only seven lines for new search entry.",
+    "node_tests": "node --test scripts/test-*.mjs: 53 passed, 0 failed, 0 skipped, including six authoritative-hours regressions. Form delivery mocked.",
+    "site_audit": "python3 scripts/audit-site.py: 113 public pages, 7478 local references, 0 failures.",
+    "indexability": "node scripts/audit-indexability.mjs: 992 passed, 0 failed.",
+    "semantic_accessibility": "python3 scripts/audit-accessibility.py: 113 public pages, 0 failures.",
+    "browser": "73 passed: 320/390/720/768/1440px, clean route, no overflow, all anchors, skip focus, native disclosure keyboard operation, three hero jumps, desktop/mobile Quick Find, library search/filter/empty/Escape, schema/card order, incoming links, no-JS and repeated/interrupted interactions.",
+    "targeted_navigation": "23 passed: all eight TOC targets clear fixed navigation at 390/1440px, separated link targets, erase warning, expanded expiry branch and settled 320px reduced-motion layout.",
+    "visual": "Inspected 390px/1440px heroes, full mobile layout and both expanded native disclosures; recovery versus erase wording legible and clear. No production layout regression found.",
+    "preservation": {
+      "baseline": "06ae5b33a5e62d6a0c2d744e58685d04e955af0e",
+      "prior_public_html": 112,
+      "old_public_html_byte_identical": 109,
+      "changed_existing_html": [
+        "guides.html",
+        "iphone-repair.html",
+        "tips.html"
+      ],
+      "old_tips_byte_identical": 68,
+      "affiliate_tracking_form_url_lists_identical": true,
+      "all_non_collection_schema_graphs_identical": true,
+      "official_sources": 9,
+      "article_dates": "2026-10-31",
+      "business_hours": "All displayed hours and 42 schema schedules unchanged. Both local clocks unchanged outside new seven-line generated search entry; six hours regressions included in full suite.",
+      "generated_javascript": "Exactly seven added lines in main.js, main.min.js and assets/site-navigation.js, no deletions or shared interaction changes."
+    },
+    "git": "Initial and final git fetch --prune origin succeeded. Main and origin/main still equal baseline with zero divergence; no concurrent changes to reconcile. git diff --check passed. Task-only commit, normal push and post-push verification follow."
+  },
+  "browser_observations": {
+    "pageerrors": [],
+    "failed_request_reasons": [
+      "net::ERR_CERT_AUTHORITY_INVALID",
+      "net::ERR_TUNNEL_CONNECTION_FAILED"
+    ],
+    "failed_request_urls": [
+      "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@300;400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@600;700;800;900&family=MuseoModerno:wght@400&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+    ],
+    "font_limit": "Existing external Google Fonts requests failed through environment tunnel. Fallback-font appearance reviewed; downloaded-font appearance unverified."
+  },
+  "limits": [
+    "Source-based checklist; no physical locked iPhone, passcode, Apple Account, backup, reset or carrier operation tested.",
+    "Chromium only; Safari/WebKit, screen-reader session and native zoom unrun. Semantic/keyboard checks do not certify full accessibility conformance.",
+    "Some direct Apple page fetches returned HTTP 429. Core previous-code, expiry and attempt-warning bodies were fully read; other documented facts were reviewed in current official indexed text, including full regional bodies. Exact retrieval channels recorded for every source. No unchanged fetch retries.",
+    "Public-origin verification requires post-push evidence; a tunnel/DNS failure is not proof of an outage or HTTP error from the site."
+  ],
+  "evidence_directory": "/workspace/scratch/hdr-2026-10-31",
+  "preservation": "All business facts and corrected hours, non-CollectionPage schema, affiliate/tracking/form URLs, old guides and unrelated work preserved."
+}

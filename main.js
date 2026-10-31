@@ -2716,6 +2716,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips fake support scam popups"
   },
   {
+    "name": "Forgot your new iPhone passcode?",
+    "desc": "Forgot a newly changed iPhone passcode? Check the 72-hour previous passcode option, stop guessing, and protect data before an erasing reset.",
+    "href": "/tips/forgot-new-iphone-passcode",
+    "icon": "menu_book",
+    "kw": " tips forgot new iphone passcode"
+  },
+  {
     "name": "Galaxy says “Camera failed”?",
     "desc": "Samsung Galaxy says Camera failed? Try restart, Camera cache, Google Play system updates, and Safe mode before a reset. Protect photos and settings.",
     "href": "/tips/samsung-camera-failed",
