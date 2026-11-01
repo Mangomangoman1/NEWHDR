@@ -2639,6 +2639,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips apple pencil not working"
   },
   {
+    "name": "Apple Watch missing iPhone notifications?",
+    "desc": "Apple Watch alerts missing? Check iPhone lock state, connection, Focus, app settings and haptics before unpairing or erasing your Watch.",
+    "href": "/tips/apple-watch-not-getting-notifications",
+    "icon": "menu_book",
+    "kw": " tips apple watch not getting notifications"
+  },
+  {
     "name": "Apple Watch not charging?",
     "desc": "Apple Watch blank or showing a red bolt? Check charger contact, allow time for a flat battery, and separate charge limits from faults before a reset.",
     "href": "/tips/apple-watch-not-charging",
