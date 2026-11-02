@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-02",
+  "topic": "Xbox Series X|S powered on with no TV signal: HDMI path checks, low-resolution boot and HDMI port damage",
+  "prepared_route": "/tips/xbox-series-x-no-signal-hdmi",
+  "intended_url": "https://www.haileyrepair.com/tips/xbox-series-x-no-signal-hdmi",
+  "record_type": "Draft on branch claude/tips-xbox-no-signal, awaiting owner approval before merge to main",
+  "uniqueness": "71-guide inventory checked. No Xbox guide existed; console group held only PlayStation and Nintendo. Mirrors the PS5 no-signal pattern, which gained early impressions in the September Search Console review, and ties to the listed Series X|S HDMI port repair.",
+  "scope": "Series X, Series S and Series X Digital that power on while the TV shows no signal. Power faults and in-game black screens excluded.",
+  "sources": [
+    {"url": "https://support.xbox.com/en-US/help/hardware-network/display-sound/tv-or-monitor-screen-is-blank-while-connected", "retrieval": "Official page is a JavaScript app; article text could not be read from this environment. Steps cross-checked against two independent write-ups that reproduce them."},
+    {"url": "https://support.xbox.com/en-US/help/hardware-network/display-sound/change-tv-display-resolution", "retrieval": "Same limitation; menu path cross-checked."},
+    {"url": "https://support.xbox.com/en-CA/help/hardware-network/display-sound/troubleshooting-4k-and-hdr-on-xbox-one", "retrieval": "Linked for console-side 4K/HDR guidance."},
+    {"url": "https://support.xbox.com/en-IN/help/hardware-network/power/restart-or-power-cycle-console", "retrieval": "Linked for power cycling; the one-minute unplug is the page's own conservative instruction, not attributed to Xbox."},
+    {"url": "https://fixmyconsole.co.nz/content/16-how-to-reset-xbox-series-xs-display-settings", "retrieval": "Read. Power + Eject (disc) or Power + Pair (Series S and Series X Digital), release after second beep about 10 seconds later, 640 x 480."},
+    {"url": "https://www.slashgear.com/1133942/why-your-xbox-series-x-is-stuck-on-a-black-screen-and-how-to-fix-it/", "retrieval": "Read. Same Series X sequence and TV & display options path."}
+  ],
+  "integration": {
+    "tips_hub": "Card after PS5 no-signal in the console group; console group description now names Xbox; count and CollectionPage ItemList 70 to 71.",
+    "guides_hub": "Card after Switch no-picture; ItemList 51 to 52.",
+    "service_link": "One contextual link under the Xbox platform on console-repair.html.",
+    "sitemap": "New route plus lastmod for tips, guides and console-repair.",
+    "search": "One generated Quick Find entry from build.sh."
+  },
+  "checks": {
+    "build": "bash build.sh passed.",
+    "site_audit": "115 public pages, 7583 local references, 0 failures.",
+    "indexability": "1008 passed, 0 failed.",
+    "accessibility": "115 public pages, 0 failures.",
+    "node_tests": "53 passed, 0 failed."
+  },
+  "limits": [
+    "Source-based guide; no console tested.",
+    "No local browser available in this environment; visual review via the branch preview deployment."
+  ]
+}
