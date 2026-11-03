@@ -6,6 +6,7 @@ cd "$(dirname "$0")"
 
 python3 scripts/build-search-index.py
 python3 scripts/build-shared-navigation.py
+python3 scripts/build-ask-bench.py
 
 echo "🥭 HDR Build — Minifying assets..."
 
