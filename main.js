@@ -2947,6 +2947,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips macbook external monitor black"
   },
   {
+    "name": "MacBook Pro screen lit like a stage?",
+    "desc": "Bright bars along the bottom of a 2016–2017 MacBook Pro screen? Confirm a worn backlight cable with a screenshot and lid test before repair.",
+    "href": "/tips/macbook-pro-stage-light",
+    "icon": "menu_book",
+    "kw": " tips macbook pro stage light"
+  },
+  {
     "name": "MacBook speakers not working?",
     "desc": "MacBook has no sound? Compare apps, check the built-in output, disconnect audio accessories, and restart safely before assuming speaker damage.",
     "href": "/tips/macbook-speakers-not-working",

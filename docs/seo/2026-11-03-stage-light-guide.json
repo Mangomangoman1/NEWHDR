@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-03",
+  "topic": "MacBook Pro stage light effect: uneven bottom-edge backlight from a worn display backlight flex cable on 2016–2017 models",
+  "prepared_route": "/tips/macbook-pro-stage-light",
+  "intended_url": "https://www.haileyrepair.com/tips/macbook-pro-stage-light",
+  "record_type": "Published to main on 2026-11-04 after owner approval in chat (cable-level repair line approved as written)",
+  "uniqueness": "72-guide inventory checked. No stage light, Flexgate or display-cable guide existed in tips/ or guides/. Nearest pages are the MacBook external monitor guide (external display path) and the laptop hinge guide (structural), both linked as related. Queue item 2 from the owner's Nov 3 keyword list: iFixit ranks #4 with an Answers thread rather than a guide.",
+  "scope": "2016 and 2017 13-inch and 15-inch MacBook Pro with bright bars along the bottom edge or a backlight that cuts out as the lid opens. Cracked panels, lines visible in screenshots and no-power Macs excluded. 2018+ noted as less certain.",
+  "sources": [
+    {
+      "url": "https://www.ifixit.com/News/12903/flexgate",
+      "retrieval": "Read. Backlight cable usually fails first, producing stage light symptoms, then the backlight gives out when opened more than about 40 degrees. Cables wrap over the display controller board and are part of the display assembly."
+    },
+    {
+      "url": "https://www.ifixit.com/News/apples-2018-macbook-pros-attempt-to-solve-flexgate-without-admitting-it-exists",
+      "retrieval": "Read. 2018 cable about 2 mm longer; iFixit unsure whether it fixes or delays the failure."
+    },
+    {
+      "url": "https://support.apple.com/en-us/108052",
+      "retrieval": "Read. Model names and identifiers MacBookPro13,1 to 14,3; About This Mac path."
+    },
+    {
+      "url": "https://support.apple.com/13-inch-macbook-pro-display-backlight-service",
+      "retrieval": "Read. Page now states only that the program has ended."
+    },
+    {
+      "url": "https://support.apple.com/service-programs",
+      "retrieval": "Read. Current programs list has no 13-inch MacBook Pro backlight program."
+    },
+    {
+      "url": "https://www.macrumors.com/2019/05/21/apple-backlight-service-program-macbook-pro/",
+      "retrieval": "Read. Program launch May 21, 2019; two 2016 13-inch models; vertical bright areas along the bottom or backlight failure."
+    },
+    {
+      "url": "https://www.macrumors.com/2021/01/17/apple-extends-13-macbook-pro-backlight-program/",
+      "retrieval": "Read. Extended to five years from purchase or three years from program start, whichever longer."
+    }
+  ],
+  "integration": {
+    "tips_hub": "Card after the MacBook external monitor guide in the computer group; hero count, result count and CollectionPage ItemList 71 to 72.",
+    "guides_hub": "Card after the MacBook external monitor guide; ItemList 52 to 53.",
+    "service_link": "One contextual link in the Screen & Display card on macbook-repair.html, with a link style so it reads as a link.",
+    "sitemap": "New route plus lastmod for tips, guides and macbook-repair.",
+    "search": "One generated Quick Find entry from build.sh."
+  },
+  "checks": {
+    "build": "bash build.sh passed.",
+    "site_audit": "116 public pages, 7638 local references, 0 failures.",
+    "indexability": "1016 passed, 0 failed.",
+    "accessibility": "116 public pages, 0 failures.",
+    "node_tests": "53 passed, 0 failed."
+  },
+  "limits": [
+    "Source-based guide; no MacBook tested.",
+    "No local browser available in this environment; visual review via the branch preview deployment."
+  ]
+}

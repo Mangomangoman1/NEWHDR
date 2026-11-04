@@ -1,0 +1,40 @@
+/* MacBook Pro stage light: decorative footlight screen, a lid-angle gauge and native branches. */
+.sl-page .fg-kicker,.sl-page .fg-number{color:#e6c88f}.sl-page .tip-progress{background:#e6c88f}.sl-page .fg-article li::marker{color:#e2c48c}.sl-page .fg-note{border-left-color:#d9b877;color:#e0d6c4}.sl-scope{font-size:13px;color:#cfc8bb;margin:18px 0 0}
+.sl-routes{position:relative;overflow:hidden;padding:28px 30px;border:1px solid #6f5d3f;border-radius:12px;background:radial-gradient(90% 70% at 50% 108%,#4b3b1f 0%,rgba(75,59,31,0) 64%),linear-gradient(160deg,#28231b,#1a1f27 74%)}
+.sl-routes>a{display:flex;align-items:center;gap:14px;padding:19px 0;border-top:1px solid #6f5d3f;text-decoration:none;min-height:64px}.sl-routes>a>span:first-child{font-size:11px;color:#e6c88f;font-variant-numeric:tabular-nums}.sl-routes strong{font-size:14px;color:#f4efe5;flex:1;line-height:1.6}.sl-routes>a:hover strong{text-decoration:underline;text-underline-offset:4px}
+.sl-art{margin:0 0 26px}
+.sl-scene{display:flex;align-items:flex-end;justify-content:center;gap:26px;min-height:186px;padding:8px 0 40px}
+.sl-mac{position:relative;width:172px;flex-shrink:0}
+.sl-lid{position:relative;height:112px;border:2px solid #c9c1b1;border-bottom-width:3px;border-radius:9px 9px 2px 2px;background:#07090c}
+.sl-panel{position:absolute;inset:6px 6px 7px;overflow:hidden;border-radius:2px;background:linear-gradient(#2b3038,#2b3038) 12% 16%/46% 6px no-repeat,linear-gradient(#222730,#222730) 12% 30%/62% 4px no-repeat,linear-gradient(#222730,#222730) 12% 40%/38% 4px no-repeat,linear-gradient(180deg,#151a21,#10141a)}
+.sl-panel:after{content:"";position:absolute;inset:auto 0 0;height:74%;background:radial-gradient(12% 78% at 8% 100%,rgba(255,236,196,.95),rgba(255,212,140,.34) 46%,rgba(255,212,140,0) 76%),radial-gradient(12% 70% at 31% 100%,rgba(255,236,196,.9),rgba(255,212,140,.3) 46%,rgba(255,212,140,0) 76%),radial-gradient(12% 82% at 54% 100%,rgba(255,236,196,.95),rgba(255,212,140,.34) 46%,rgba(255,212,140,0) 76%),radial-gradient(12% 66% at 77% 100%,rgba(255,236,196,.88),rgba(255,212,140,.28) 46%,rgba(255,212,140,0) 76%),radial-gradient(10% 74% at 96% 100%,rgba(255,236,196,.9),rgba(255,212,140,.3) 46%,rgba(255,212,140,0) 76%);mix-blend-mode:screen;animation:sl-footlights 5.6s ease-in-out infinite}
+.sl-base{position:relative;height:8px;margin:0 -13px;border-radius:0 0 9px 9px;background:linear-gradient(180deg,#d8d1c3,#a9a296)}.sl-base:before{content:"";position:absolute;top:0;left:calc(50% - 16px);width:32px;height:3px;border-radius:0 0 4px 4px;background:#8c867b}
+.sl-mac>span,.sl-dial>span{position:absolute;top:calc(100% + 15px);left:-20px;right:-20px;text-align:center;font-size:11px;color:#e3d9c6;white-space:nowrap}
+.sl-dial{position:relative;width:108px;height:88px;flex-shrink:0}
+.sl-dial:before{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:#c9c1b1}
+.sl-dial i{position:absolute;left:0;bottom:-34px;width:68px;height:68px;border-radius:50%;background:conic-gradient(from 50deg,rgba(230,200,143,.26) 0 40deg,transparent 0)}
+.sl-dial b{position:absolute;left:34px;bottom:0;width:72px;height:2px;border-radius:2px;transform-origin:0 50%}
+.sl-dial b:first-of-type{transform:rotate(-40deg);background:#e6c88f;box-shadow:0 0 10px rgba(230,200,143,.5)}
+.sl-dial b:last-of-type{width:64px;transform:rotate(-108deg);background:repeating-linear-gradient(90deg,#6c6a66 0 5px,transparent 5px 9px)}
+.sl-dial em{position:absolute;left:72px;bottom:7px;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.04em;color:#f2dfb8}
+.sl-dial>span{top:calc(100% + 15px)}
+.sl-art figcaption{text-align:center;font-size:12px;color:#ddd3c1;line-height:1.7}
+.sl-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
+.sl-models{width:100%;border-collapse:collapse;margin:22px 0 24px;font-size:14px;line-height:1.6}
+.sl-models caption{text-align:left;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#cdb68a;padding-bottom:10px}
+.sl-models th,.sl-models td{text-align:left;vertical-align:top;padding:13px 14px 13px 0;border-bottom:1px solid #352f27}
+.sl-models thead th{font-size:12px;font-weight:600;color:#ecd7ae;border-bottom-color:#5c4e37}
+.sl-models tbody th{font-weight:500;color:#f1ede6}.sl-models td{color:#cbc3b5;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sl-steps{display:grid;gap:14px;margin:24px 0}
+.sl-step{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px 20px;border:1px solid #3d362b;border-radius:10px;background:#16161a}
+.sl-step>b{display:grid;place-items:center;width:32px;height:32px;border:1px solid #8a7550;border-radius:50%;font-size:12px;font-weight:600;color:#f0dcb4;font-variant-numeric:tabular-nums}
+.sl-step p{margin:0}.sl-step p+p{margin-top:8px;font-size:14px;color:#c6bfb2}
+.sl-warning{padding:22px;border:1px solid #927b55;border-radius:6px;background:#29251f;margin:24px 0}.sl-warning>strong{display:block;color:#efd8b5;margin-bottom:10px}.sl-warning p{margin:0}.sl-warning p+p{margin-top:10px}
+.sl-details{border:1px solid #6f5d3f;border-radius:10px;padding:0 22px;background:#211e19;margin:24px 0}.sl-details summary{cursor:pointer;min-height:48px;padding:16px 0;font-weight:600;color:#edf1f5;line-height:1.6}.sl-details[open] summary{margin-bottom:6px}.sl-details p{font-size:14px}
+.sl-page .fg-article a{color:#ecd3a3}
+.sl-page a:focus-visible,.sl-page summary:focus-visible{outline:2px solid #f0dcb4;outline-offset:5px;border-radius:2px}
+@keyframes sl-footlights{0%,100%{opacity:1}46%{opacity:.82}50%{opacity:.58}54%{opacity:.86}}
+@media(max-width:760px){.sl-routes{padding:22px}.sl-warning,.sl-details{padding-inline:18px}.sl-step{padding:16px;gap:13px}.sl-models{font-size:13px}}
+@media(max-width:430px){.sl-scene{gap:12px}.sl-mac{width:138px}.sl-lid{height:90px}.sl-base{margin:0 -10px}.sl-dial{width:88px;height:74px}.sl-dial i{left:-6px;bottom:-30px;width:60px;height:60px}.sl-dial b{left:24px;width:58px}.sl-dial b:last-of-type{width:50px}.sl-dial em{left:56px;bottom:5px;font-size:10px}.sl-mac>span,.sl-dial>span{font-size:10px}.sl-models td{white-space:normal}}
+@media(max-width:350px){.sl-mac{width:122px}.sl-lid{height:80px}.sl-dial{width:80px}}
+@media(prefers-reduced-motion:reduce){.sl-panel:after{animation:none}}
