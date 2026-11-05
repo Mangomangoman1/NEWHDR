@@ -1,7 +1,7 @@
 {
   "date": "2026-11-04",
   "type": "search-snippet-rewrite",
-  "status": "draft on branch, awaiting owner approval",
+  "status": "published 2026-11-05 on owner approval",
   "goal": "Lift click-through on tips pages that get Google impressions but few clicks, without new pages.",
   "data_used": {
     "october_report_mail": "Search Console October 2026 email: 943 clicks, 138K impressions; top pages by clicks phone-screen-black-but-on 372, screen-protector-or-cracked-screen 81, iphone-speaker-muffled-after-water 39. No per-page impressions.",
@@ -104,5 +104,6 @@
   "notes": [
     "ps5-overheating description drops the 'aging thermal paste' claim; Sony describes the PS5 APU interface as liquid metal (flagged in the Sept findings)."
   ],
-  "measure": "Compare page CTR in Search Console for matched 28-day windows before and after going live."
+  "measure": "Compare page CTR in Search Console for matched 28-day windows before and after going live.",
+  "published": "2026-11-05"
 }
