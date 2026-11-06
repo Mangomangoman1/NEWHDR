@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-04",
+  "type": "search-snippet-rewrite",
+  "status": "published 2026-11-05 on owner approval",
+  "goal": "Lift click-through on tips pages that get Google impressions but few clicks, without new pages.",
+  "data_used": {
+    "october_report_mail": "Search Console October 2026 email: 943 clicks, 138K impressions; top pages by clicks phone-screen-black-but-on 372, screen-protector-or-cracked-screen 81, iphone-speaker-muffled-after-water 39. No per-page impressions.",
+    "page_level": "docs/seo/2026-09-07-search-console-findings.md, Aug 9 to Sep 5 window (stale).",
+    "not_available": "No current per-page Search Console export; no Vercel Web Analytics data."
+  },
+  "left_alone": [
+    "phone-screen-black-but-on",
+    "screen-protector-or-cracked-screen",
+    "iphone-speaker-muffled-after-water"
+  ],
+  "pages": [
+    {
+      "page": "/tips/cracked-screen-safe-to-use",
+      "selection": "Sept data: 5,981 impressions, 29 clicks (0.48%), pos 10.0",
+      "title_before": "Cracked phone screen: is it safe to keep using?",
+      "title_after": "Cracked phone screen: safe to use? Hairline cracks explained",
+      "description_after": "Touch still works, but is cracked glass safe? Tell a hairline glass crack from display damage, when a protector helps, and when it's time to repair."
+    },
+    {
+      "page": "/tips/ps5-overheating",
+      "selection": "Sept data: 1,143 impressions, 5 clicks (0.44%), pos 6.5",
+      "title_before": "PS5 overheating? Fan roar, shutdowns & the dust problem",
+      "title_after": "PS5 overheating or fan roaring? Usually dust, not failure",
+      "description_after": "PS5 loud or shutting off mid-game? Usually dust packed in the heatsink. What's normal fan noise, what you can clean safely, and when it needs a teardown."
+    },
+    {
+      "page": "/tips/laptop-hinge-breaking",
+      "selection": "Sept data: 788 impressions, 4 clicks (0.51%), pos 7.0",
+      "title_before": "Laptop hinge cracking or separating? Stop the damage",
+      "title_after": "Laptop hinge broken or popping? Why tightening won't fix it",
+      "description_after": "Hinge popping or pulling the case apart? The mounts inside the housing often broke, not the hinge. Protect the screen cable and see if it's worth fixing."
+    },
+    {
+      "page": "/tips/ps5-no-signal-hdmi",
+      "selection": "Sept data: 738 impressions, 7 clicks (0.95%), pos 13.2",
+      "title_before": "PS5 turns on but no signal? Cable, TV, or HDMI port",
+      "title_after": "PS5 no signal on TV? 5 checks before blaming the HDMI port",
+      "description_after": "PS5 has a white light but the TV says no signal? Test the cable and TV input, use Safe Mode once, and spot a damaged HDMI port before it gets worse."
+    },
+    {
+      "page": "/tips/laptop-plugged-in-not-charging",
+      "selection": "Sept data: 513 impressions, 0 clicks, pos 35.3",
+      "title_before": "Laptop plugged in but not charging? Find the failure",
+      "title_after": "Laptop says plugged in, not charging? Start with the charger",
+      "description_after": "Laptop shows plugged in but the battery won't fill? Check the charger's wattage first, then the port and battery: three useful tests and when to stop."
+    },
+    {
+      "page": "/tips/laptop-screen-black-but-running",
+      "selection": "Judgement: older page on a high-volume symptom; no page-level data",
+      "title_before": "Laptop screen black but still running? Safe Windows checks",
+      "title_after": "Laptop screen black but fans running? 4 checks before repair",
+      "description_after": "Windows laptop on but the screen is black? Try brightness, Win+Ctrl+Shift+B and an external monitor to tell a bad screen from a startup problem."
+    },
+    {
+      "page": "/tips/samsung-screen-issues",
+      "selection": "Judgement: older page on a high-volume symptom; no page-level data",
+      "title_before": "Samsung screen problems: green lines, black & burn-in",
+      "title_after": "Samsung green line or black screen? What each symptom means",
+      "description_after": "Green line, vertical lines, flicker, dead touch or burn-in on a Galaxy? What each AMOLED symptom points to, what to try first, and when it's the screen."
+    },
+    {
+      "page": "/tips/water-damaged-phone",
+      "selection": "Judgement: older page on a high-volume symptom; no page-level data",
+      "title_before": "Phone got wet? What to do first — water damage triage",
+      "title_after": "Phone fell in water? What to do in the first 5 minutes",
+      "description_after": "Phone got wet? Unplug it, power it off, and skip the rice and hair dryer. Why a wet phone can work for hours then fail, and when to get it checked."
+    },
+    {
+      "page": "/tips/phone-charges-slowly",
+      "selection": "Judgement: older page on a high-volume symptom; no page-level data",
+      "title_before": "Phone won't charge or charges slowly? Port, cable, battery",
+      "title_after": "Phone charging slowly or not at all? Test it in this order",
+      "description_after": "iPhone or Android charging slowly or not at all? Test the brick and cable, check the port without poking it, and read the pattern before buying a battery."
+    },
+    {
+      "page": "/tips/iphone-green-white-line-screen",
+      "selection": "Judgement: older page on a high-volume symptom; no page-level data",
+      "title_before": "Green or white line on iPhone screen",
+      "title_after": "Green or white line on iPhone screen? The screenshot test",
+      "description_after": "Green, white or pink line on your iPhone? Screenshot it and view it on another device to tell a display fault from software. Protect your data first."
+    }
+  ],
+  "changed_fields": [
+    "title",
+    "meta description",
+    "og:title",
+    "og:description",
+    "twitter:title",
+    "twitter:description (where present)",
+    "Quick Find descriptions via build.sh"
+  ],
+  "unchanged": [
+    "H1",
+    "body copy",
+    "JSON-LD",
+    "canonical",
+    "sitemap"
+  ],
+  "notes": [
+    "ps5-overheating description drops the 'aging thermal paste' claim; Sony describes the PS5 APU interface as liquid metal (flagged in the Sept findings)."
+  ],
+  "measure": "Compare page CTR in Search Console for matched 28-day windows before and after going live.",
+  "published": "2026-11-05"
+}
