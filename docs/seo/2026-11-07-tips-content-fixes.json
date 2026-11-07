@@ -1,6 +1,6 @@
 {
   "date": "2026-11-07",
-  "status": "preview",
+  "status": "published",
   "source_data": "Search Console export, web, last 3 months, saved 2026-11-06 (project files hdr-seo/gsc-export-2026-11-06)",
   "rules": [
     "Titles from rounds 1 and 2 left unchanged; measure clicks around Dec 3-7.",
@@ -8,16 +8,61 @@
     "No invented bench stories, stats or prices; photo slots marked with <!-- bench-note --> comments for the owner."
   ],
   "changes": [
-    {"page": "/tips/screen-protector-or-cracked-screen", "why": "'reglass for iphone meaning' 1,136 impressions at pos 9.7, 0 clicks; 'how do I know if I have a screen protector' and 'can a screen protector crack' clusters", "what": "New 'What reglass means' section (glass-only repair vs full assembly, HDR does full assembly); 'is a protector even fitted' check; two FAQs + schema; link to black-screen guide"},
-    {"page": "/tips/cracked-screen-safe-to-use", "why": "hairline crack cluster and 'how to stop a crack spreading' (pos 20-24)", "what": "New hairline crack section: what it is, crack vs scratch, will it spread, can a screen crack by itself"},
-    {"page": "/tips/iphone-battery-health-80-percent", "why": "'is 80 battery health good' cluster pos 6-10", "what": "Direct 'Is 80% good?' answer by model; AppleCare under-80% coverage fact; FAQ schema; Apple source"},
-    {"page": "/tips/laptop-overheating", "why": "'why does keyboard overheat' 345 imp pos 9.9; quiz query about hot laptop with slower fan (218 imp)", "what": "New 'Why the keyboard gets hot' section"},
-    {"page": "/tips/ps5-controller-not-charging", "why": "'dualsense not charging' 147 imp; rest-mode and no-light queries", "what": "Rest-mode light bar behaviour and charging temperature range from Sony's manual; sources"},
-    {"page": "/tips/iphone-stuck-on-apple-logo", "why": "pos 19 overall; 'continue holding for recovery iphone' query", "what": "iOS 27 on-device recovery route from Apple's support article, kept separate from computer recovery mode"},
-    {"page": "/tips/laptop-plugged-in-not-charging", "why": "pos 22.9; head terms owned by Microsoft/makers", "what": "Charge-limit table by maker (Windows, Lenovo, ASUS, Dell, HP, Surface, Samsung, MacBook) with sources"},
-    {"page": "internal links", "why": "low-ranking pages had 3-6 inbound links", "what": "computer-support -> wifi, external drive, laptop camera; printer-setup -> wifi; macbook-repair -> external drive; laptop-battery-dying -> plugged-in and overheating; water-damaged-phone, face-id, ghost-touch, screen-protector -> phone-screen-black-but-on"},
-    {"page": "vercel.json", "why": "11 non-existent /tips URLs collecting impressions", "what": "301 redirects to the matching real guides"}
+    {
+      "page": "/tips/screen-protector-or-cracked-screen",
+      "why": "'reglass for iphone meaning' 1,136 impressions at pos 9.7, 0 clicks; 'how do I know if I have a screen protector' and 'can a screen protector crack' clusters",
+      "what": "New 'What reglass means' section (glass-only repair vs full assembly, HDR does full assembly); 'is a protector even fitted' check; two FAQs + schema; link to black-screen guide"
+    },
+    {
+      "page": "/tips/cracked-screen-safe-to-use",
+      "why": "hairline crack cluster and 'how to stop a crack spreading' (pos 20-24)",
+      "what": "New hairline crack section: what it is, crack vs scratch, will it spread, can a screen crack by itself"
+    },
+    {
+      "page": "/tips/iphone-battery-health-80-percent",
+      "why": "'is 80 battery health good' cluster pos 6-10",
+      "what": "Direct 'Is 80% good?' answer by model; AppleCare under-80% coverage fact; FAQ schema; Apple source"
+    },
+    {
+      "page": "/tips/laptop-overheating",
+      "why": "'why does keyboard overheat' 345 imp pos 9.9; quiz query about hot laptop with slower fan (218 imp)",
+      "what": "New 'Why the keyboard gets hot' section"
+    },
+    {
+      "page": "/tips/ps5-controller-not-charging",
+      "why": "'dualsense not charging' 147 imp; rest-mode and no-light queries",
+      "what": "Rest-mode light bar behaviour and charging temperature range from Sony's manual; sources"
+    },
+    {
+      "page": "/tips/iphone-stuck-on-apple-logo",
+      "why": "pos 19 overall; 'continue holding for recovery iphone' query",
+      "what": "iOS 27 on-device recovery route from Apple's support article, kept separate from computer recovery mode"
+    },
+    {
+      "page": "/tips/laptop-plugged-in-not-charging",
+      "why": "pos 22.9; head terms owned by Microsoft/makers",
+      "what": "Charge-limit table by maker (Windows, Lenovo, ASUS, Dell, HP, Surface, Samsung, MacBook) with sources"
+    },
+    {
+      "page": "internal links",
+      "why": "low-ranking pages had 3-6 inbound links",
+      "what": "computer-support -> wifi, external drive, laptop camera; printer-setup -> wifi; macbook-repair -> external drive; laptop-battery-dying -> plugged-in and overheating; water-damaged-phone, face-id, ghost-touch, screen-protector -> phone-screen-black-but-on"
+    },
+    {
+      "page": "vercel.json",
+      "why": "11 non-existent /tips URLs collecting impressions",
+      "what": "301 redirects to the matching real guides"
+    }
   ],
-  "checks": ["audit-site.py", "audit-indexability.mjs", "audit-accessibility.py", "node --test scripts/test-*.mjs", "git diff --check"],
-  "limits": "check-content-preservation.py cannot run in a shallow clone (references an older commit); not part of the playbook checks."
+  "checks": [
+    "audit-site.py",
+    "audit-indexability.mjs",
+    "audit-accessibility.py",
+    "node --test scripts/test-*.mjs",
+    "git diff --check"
+  ],
+  "limits": "check-content-preservation.py cannot run in a shallow clone (references an older commit); not part of the playbook checks.",
+  "published": "2026-11-07",
+  "owner_approval": "Sam said yes in words on 2026-11-07",
+  "measure_after": "around 2026-12-05, against the 2026-11-06 export"
 }
