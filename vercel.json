@@ -96,6 +96,61 @@
       "source": "/guides/data-recovery-what-to-expect",
       "destination": "/data-recovery",
       "statusCode": 301
+    },
+    {
+      "source": "/tips/phone-screen-black-on",
+      "destination": "/tips/phone-screen-black-but-on",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/phone-power-black-on-drop",
+      "destination": "/tips/phone-screen-black-but-on",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/phone-screen-black-but-still-on-what-to-do-after-a-drop",
+      "destination": "/tips/phone-screen-black-but-on",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/cracked-phone-screen-safe-to-use",
+      "destination": "/tips/cracked-screen-safe-to-use",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/iphone-stuck-on-the-apple-logo",
+      "destination": "/tips/iphone-stuck-on-apple-logo",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/iphone-unknown-path-important-message",
+      "destination": "/tips/iphone-unknown-part-important-message",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/lcd-oled",
+      "destination": "/tips/lcd-vs-oled",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/ps5-not-charging",
+      "destination": "/tips/ps5-controller-not-charging",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/screen-protector-or-phone-screen",
+      "destination": "/tips/screen-protector-or-cracked-screen",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/speaker-muffled-after-water",
+      "destination": "/tips/iphone-speaker-muffled-after-water",
+      "statusCode": 301
+    },
+    {
+      "source": "/tips/iPhone-ghost-touch-cracked-screen",
+      "destination": "/tips/iphone-ghost-touch-cracked-screen",
+      "statusCode": 301
     }
   ],
   "headers": [
