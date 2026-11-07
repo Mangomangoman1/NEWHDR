@@ -2,7 +2,7 @@
   "date": "2026-11-06",
   "type": "search-snippet-rewrite",
   "round": 2,
-  "status": "draft on branch claude/project-thread-u1l8ll, awaiting owner approval",
+  "status": "published 2026-11-06 on owner approval",
   "data_used": {
     "source": "Search Console export, Web, last 3 months (2026-08-05 to 2026-11-04): Pages, Queries (top 1,000), Chart, Devices, Countries, Search appearance. Copy at /mnt/project-files/hdr-seo/gsc-export-2026-11-06/.",
     "limits": [
@@ -204,7 +204,6 @@
     "Site-wide CTR has been flat around 0.65% while impressions grew from about 23K in August to 138K in October; reach is growing faster than clicks."
   ],
   "other_findings": [
-    "Local IT queries rank top 3 with zero clicks: 'it experts in hailey' pos 2.0, 'local it support hailey' pos 1.9, 'it solutions near me hailey' pos 3.4, 'data backup and recovery hailey' pos 2.9 (107 imp). The likely landing page (computer-support) is titled 'Computer Help in Hailey, ID', which doesn't say IT support. These are money queries; worth a title and content look (not a tips page, so out of this round).",
     "'reglass for iphone meaning' has 1,136 impressions, 0 clicks: the biggest single zero-click query. No page explains reglass (glass-only screen refurbishing). Candidate for a short tips page or a section on the screen-protector page.",
     "'why does keyboard overheat' (345 imp) and a 218-impression multiple-choice exam-style query about laptop heat suggest a 'why is my laptop keyboard hot' angle worth a section.",
     "Stray URLs with a few impressions, likely invented by AI answers or old links: /tips/phone-screen-black-on, /tips/phone-screen-black-but-still-on-what-to-do-after-a-drop, /tips/cracked-phone-screen-safe-to-use, /tips/screen-protector-or-phone-screen, /tips/lcd-oled, /tips/ps5-not-charging, /tips/iphone-stuck-on-the-apple-logo, /backup-iphone-broken-screen, /tips/iPhone-ghost-touch-cracked-screen. None has a redirect in vercel.json; cheap 301s to the real pages would catch them. Trailing-slash variants (1 to 3 impressions) should already redirect since vercel.json sets trailingSlash false; apex-domain URLs (haileyrepair.com without www) also show single impressions, worth confirming the apex redirects to www in Vercel.",
@@ -225,5 +224,10 @@
     "canonical",
     "sitemap"
   ],
-  "measure": "Compare these 10 pages' CTR for matched 28-day windows before and after going live, US and all countries. Expect gains of a few tenths of a point, not a jump to normal-curve CTR."
+  "measure": "Compare these 10 pages' CTR for matched 28-day windows before and after going live, US and all countries. Expect gains of a few tenths of a point, not a jump to normal-curve CTR.",
+  "published": "2026-11-06",
+  "owner_decisions": [
+    "Approved all 10 titles on 2026-11-06.",
+    "Local 'IT support Hailey' queries rank top 3 with zero clicks, but the owner deliberately avoids IT wording because that isn't work he wants. Leave computer-support titled 'Computer Help'; don't chase IT queries."
+  ]
 }
