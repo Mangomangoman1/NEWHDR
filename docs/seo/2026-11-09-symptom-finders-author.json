@@ -6,7 +6,7 @@
   "changes": [
     {
       "what": "Author entity",
-      "detail": "about.html gains ProfilePage markup and a Person @id (about#samuel). All 72 guides now use that Person as schema author and link the visible byline to /about. 35 guides that said 'Hailey Device Repair' now say 'Reviewed by Samuel, owner & technician'."
+      "detail": "about.html gains ProfilePage markup and a Person @id (about#samuel). All 72 guides now use that Person as schema author and link the visible byline to /about. 35 guides that said 'Hailey Device Repair' now say 'Samuel, Owner & Technician'."
     },
     {
       "what": "Four symptom-finder pages",
@@ -31,7 +31,7 @@
     }
   ],
   "owner_review_needed": [
-    "The 35 newer guides now carry 'Reviewed by Samuel'. Confirm you are happy to put your name on each.",
+    "The 35 newer guides now carry Samuel's name. Confirm you are happy to put your name on each.",
     "Schema uses the full name 'Samuel Torres' (already in the homepage and About markup); visible bylines say 'Samuel'.",
     "Read the four finder pages for any row that misstates its guide."
   ],

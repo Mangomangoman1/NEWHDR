@@ -262,7 +262,7 @@ def build(finder, nav, tail):
 <main id="content" tabindex="-1">
 <header class="fg-hero"><div class="fg-wrap">
 <nav class="fg-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/tips">Repair Library</a><span>/</span><span>{escape(finder['crumb'])}</span></nav>
-<div class="fg-hero-grid"><div class="fg-heading"><p class="fg-kicker">{escape(finder['kicker'])}</p><h1>{finder['h1']}</h1><p class="fg-byline">By <a href="/about" rel="author">Samuel</a>, owner &amp; technician <span>·</span> <time datetime="{REVIEWED}">{REVIEWED_LABEL}</time></p>
+<div class="fg-hero-grid"><div class="fg-heading"><p class="fg-kicker">{escape(finder['kicker'])}</p><h1>{finder['h1']}</h1><p class="fg-byline"><a href="/about" rel="author">Samuel</a>, Owner &amp; Technician <span>·</span> <time datetime="{REVIEWED}">{REVIEWED_LABEL}</time></p>
 <p class="sf-lede">{escape(finder['lede'])}</p>
 <div class="sf-count"><div><strong>{len(guides)}</strong>guides</div><div><strong>{len(finder['groups'])}</strong>symptom groups</div></div></div>
 <aside class="sf-stop" aria-labelledby="stop-title"><p>Before any test</p><h2 id="stop-title">Three things change the first step.</h2>{stop}</aside>
