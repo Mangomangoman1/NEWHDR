@@ -1,7 +1,9 @@
 {
   "date": "2026-11-09",
   "type": "structure-and-authorship",
-  "status": "draft, awaiting owner review",
+  "status": "published",
+  "published": "2026-11-09",
+  "owner_approval": "Sam approved publishing straight to main on 2026-11-09",
   "why": "Search Console (Aug 5 to Nov 4): impressions grew about sixfold while CTR stayed near 0.65%. Most guides had 3 to 4 inbound links, 38 had no personal byline, and only 7 linked to Device Check.",
   "changes": [
     {
