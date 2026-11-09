@@ -1,0 +1,36 @@
+/* Real bench photos inside repair guides.
+   Works on both the field-guide (.fg-page) and older bench-tips layouts.
+   Markers are placed with --x / --y as percentages of the photo. */
+.bp-figure{margin:30px 0 36px;padding:0;color:#c4cfda}
+.bp-grid{display:grid;grid-template-columns:5fr 3fr;gap:10px;align-items:start}
+.bp-grid--single{grid-template-columns:1fr}
+.bp-shot{position:relative;margin:0;border-radius:4px;overflow:hidden;background:#141b23;isolation:isolate}
+.bp-shot::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);pointer-events:none}
+.bp-shot a{display:block;color:inherit;text-decoration:none;cursor:zoom-in}
+.bp-shot img{display:block;width:100%;height:auto;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.bp-shot a:hover img{transform:scale(1.015)}
+.bp-shot a:focus-visible{outline:2px solid #b3d4ef;outline-offset:-2px}
+
+/* Small label in the corner of each photo */
+.bp-tag{position:absolute;left:10px;top:10px;z-index:2;display:inline-flex;align-items:center;gap:7px;padding:5px 9px 5px 8px;border-radius:999px;background:rgba(8,11,15,.66);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font:600 9.5px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#eef2f6}
+.bp-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:#ff5a4f;box-shadow:0 0 0 3px rgba(255,90,79,.22)}
+.bp-zoom{position:absolute;right:10px;bottom:10px;z-index:2;padding:5px 9px;border-radius:999px;background:rgba(8,11,15,.66);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font:500 10px/1 Inter,sans-serif;color:#dfe6ee;opacity:0;transform:translateY(4px);transition:opacity .2s,transform .2s}
+.bp-shot a:hover .bp-zoom,.bp-shot a:focus-visible .bp-zoom{opacity:1;transform:none}
+
+/* Numbered rings that point at what to look for */
+.bp-mark{position:absolute;left:var(--x);top:var(--y);z-index:1;width:clamp(30px,8.5%,54px);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);border:1.5px solid #f6f3ec;box-shadow:0 0 0 1px rgba(0,0,0,.45),inset 0 0 0 1px rgba(0,0,0,.35);animation:bp-ring 1.1s .5s cubic-bezier(.2,.7,.2,1) both}
+.bp-mark::after{content:attr(data-n);position:absolute;top:-9px;right:-9px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:#f6f3ec;color:#0b0f14;font:700 10px/1 Inter,sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.45)}
+
+/* Caption and key */
+.bp-figure figcaption{padding-top:16px;font-size:14px;line-height:1.6}
+.bp-figure figcaption>strong{display:block;font-size:15px;font-weight:600;color:#eef2f6;margin-bottom:12px}
+.bp-key{list-style:none;margin:0 0 12px!important;padding:0!important;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.bp-key li{position:relative;margin:0!important;padding:0 0 0 30px!important;color:#c4cfda}
+.bp-key li::before{content:attr(data-n);position:absolute;left:0;top:2px;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;background:#f6f3ec;color:#0b0f14;font:700 10px/1 Inter,sans-serif}
+.bp-key b{color:#eef2f6;font-weight:600}
+.bp-credit{display:block;font-size:11px;letter-spacing:.02em;color:#8d9aab}
+
+@keyframes bp-ring{from{opacity:0;transform:translate(-50%,-50%) scale(1.6)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@media(max-width:600px){.bp-grid{grid-template-columns:1fr;gap:8px}.bp-key{grid-template-columns:1fr}.bp-figure figcaption{font-size:13.5px}}
+@media(hover:none){.bp-zoom{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.bp-mark{animation:none}.bp-shot img,.bp-zoom{transition:none}.bp-shot a:hover img{transform:none}}
