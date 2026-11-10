@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-09",
+  "type": "structure-and-authorship",
+  "status": "published",
+  "published": "2026-11-09",
+  "owner_approval": "Sam approved publishing straight to main on 2026-11-09",
+  "why": "Search Console (Aug 5 to Nov 4): impressions grew about sixfold while CTR stayed near 0.65%. Most guides had 3 to 4 inbound links, 38 had no personal byline, and only 7 linked to Device Check.",
+  "changes": [
+    {
+      "what": "Author entity",
+      "detail": "about.html gains ProfilePage markup and a Person @id (about#samuel). All 72 guides now use that Person as schema author and link the visible byline to /about. 35 guides that said 'Hailey Device Repair' now say 'Samuel, Owner & Technician'."
+    },
+    {
+      "what": "Four symptom-finder pages",
+      "detail": "/tips/phone-screen-problems, /tips/battery-charging-problems, /tips/laptop-problems, /tips/game-console-problems. Each row restates its guide's own summary; no new prices, statistics or repair claims.",
+      "built_by": "scripts/build-symptom-finders.py"
+    },
+    {
+      "what": "Guide footer strip",
+      "detail": "Every guide links to its finder (or the Repair Library) and to Device Check."
+    },
+    {
+      "what": "Hub and About",
+      "detail": "tips.html gains a 'Find it by symptom' section; about.html gains a 'Guides from the same bench' section."
+    },
+    {
+      "what": "Discovery files",
+      "detail": "sitemap.xml and llms.txt list the four finders. Guide lastmod and dateModified values were left alone because guide body copy did not change."
+    },
+    {
+      "what": "Architecture guide",
+      "detail": "Added a dated update: Article schema only, author entity, finders, topic focus, pace."
+    }
+  ],
+  "owner_review_needed": [
+    "The 35 newer guides now carry Samuel's name. Confirm you are happy to put your name on each.",
+    "Schema uses the full name 'Samuel Torres' (already in the homepage and About markup); visible bylines say 'Samuel'.",
+    "Read the four finder pages for any row that misstates its guide."
+  ],
+  "not_done": [
+    "Bench photos and video (owner)",
+    "Cost-by-model pages from pricing data",
+    "Bing Webmaster Tools and Search Console generative-AI report (need owner accounts)"
+  ],
+  "checks": [
+    "audit-site.py",
+    "audit-indexability.mjs",
+    "audit-accessibility.py",
+    "node --test scripts/test-*.mjs",
+    "visual check at 1280 and 390 px"
+  ],
+  "measure_after": "around 2026-12-07: inbound-link counts are structural; watch average position for the 8 guides listed as ranking problems in the 2026-11-06 record, and clicks to /device-check from /tips pages."
+}

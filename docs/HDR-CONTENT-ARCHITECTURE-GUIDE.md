@@ -7,6 +7,16 @@ Repo: `/Users/Samuel/.hermes/webagent/NEWHDR`
 
 ---
 
+## Update — 2026-11-09
+
+Read this before the rest; where it conflicts with the text below, this wins.
+
+- **Rich results:** Google retired HowTo rich results (2023) and FAQ rich results (May 2026). Existing `HowTo` and `FAQPage` markup is harmless but earns nothing in search. New guides use `Article` only.
+- **Author:** every guide's `author` is the Person `https://www.haileyrepair.com/about#samuel`, and its visible byline links to `/about`.
+- **Symptom finders:** `/tips/phone-screen-problems`, `/tips/battery-charging-problems`, `/tips/laptop-problems`, and `/tips/game-console-problems` are triage pages built by `scripts/build-symptom-finders.py`. After adding a guide, add one row for it in that script and rerun it. A row may only restate what the guide says.
+- **Topic focus:** prefer physical damage, hardware diagnosis, and repair-or-replace decisions. Settings-only topics that Apple or Microsoft document rank poorly here and are furthest from what the shop sells.
+- **Pace:** two or three guides a week, each with a real bench photo or clip where one exists.
+
 ## Overview
 
 This document specifies two parallel content systems to build for haileyrepair.com:

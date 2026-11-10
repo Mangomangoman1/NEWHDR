@@ -2660,6 +2660,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips backup iphone broken screen"
   },
   {
+    "name": "Battery and charging problems: find the cause",
+    "desc": "Won’t charge, charges slowly, drains fast, runs hot or looks swollen? Match the symptom to the right check for phones, laptops, watches and controllers.",
+    "href": "/tips/battery-charging-problems",
+    "icon": "menu_book",
+    "kw": " tips battery charging problems"
+  },
+  {
     "name": "Bluetooth headphones connected but silent?",
     "desc": "Bluetooth headphones connected but silent on Windows 11? Check output, Volume mixer, multipoint, and pairing before resets or driver removal.",
     "href": "/tips/bluetooth-headphones-no-sound-windows",
@@ -2919,6 +2926,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips laptop plugged in not charging"
   },
   {
+    "name": "Laptop problems: find yours by symptom",
+    "desc": "Black screen, won’t charge, overheating, broken hinge, dead keys or no sound? Match your laptop’s symptom to the right checks before paying for a repair.",
+    "href": "/tips/laptop-problems",
+    "icon": "menu_book",
+    "kw": " tips laptop problems"
+  },
+  {
     "name": "Laptop screen black but still running? Safe Windows checks",
     "desc": "Windows laptop on but the screen is black? Try brightness, Win+Ctrl+Shift+B and an external monitor to tell a bad screen from a startup problem.",
     "href": "/tips/laptop-screen-black-but-running",
@@ -3017,6 +3031,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips swollen phone battery screen lifting"
   },
   {
+    "name": "Phone screen problems: find yours by what you see",
+    "desc": "Black screen, cracks, lines, ghost touch or a lifting display? Match what you see to the right check, and know which symptoms mean stop using the phone.",
+    "href": "/tips/phone-screen-problems",
+    "icon": "menu_book",
+    "kw": " tips phone screen problems"
+  },
+  {
     "name": "Phone Water Damage Help in Hailey, Idaho",
     "desc": "Phone water damage in Hailey, ID: power it off, skip the rice, remove the SIM, and text HDR fast before charging or heat makes corrosion permanently worse.",
     "href": "/phone-water-damage-hailey",
@@ -3071,6 +3092,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/ps5-no-signal-hdmi",
     "icon": "menu_book",
     "kw": " tips ps5 no signal hdmi"
+  },
+  {
+    "name": "PS5, Xbox and Switch problems: find yours by symptom",
+    "desc": "No signal on the TV, overheating, discs not reading, controller not charging or Joy-Con drift? Match the symptom to safe checks before a reset or repair.",
+    "href": "/tips/game-console-problems",
+    "icon": "menu_book",
+    "kw": " tips game console problems"
   },
   {
     "name": "Repair or Replace Your Phone?",
