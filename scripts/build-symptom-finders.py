@@ -52,6 +52,7 @@ FINDERS = [
             ('picture', 'The picture or touch is wrong', [
                 ('tips/iphone-green-white-line-screen', 'A green, white or pink line on an iPhone', 'Take a screenshot and view it on another device to tell a display fault from software.', ''),
                 ('tips/samsung-screen-issues', 'Samsung green line, flicker, dead touch or burn-in', 'What each AMOLED symptom points to, what to try first, and when it is the screen.', ''),
+                ('tips/white-spot-on-phone-screen', 'A white or bright spot that stays in one place', 'Tell an LCD backlight pressure mark from a stuck pixel with a screenshot and a color test.', ''),
                 ('tips/iphone-ghost-touch-cracked-screen', 'The iPhone taps, types or opens apps by itself', 'Stop the accidental input first, then test the case, protector, charger and moisture.', ''),
                 ('tips/swollen-phone-battery-screen-lifting', 'The screen is lifting away from the frame', 'A lifting screen or separating back can mean a swollen lithium battery.', STOP),
             ]),

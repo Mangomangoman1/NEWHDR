@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-13",
+  "topic": "White spot on a phone screen: LCD backlight pressure marks, stuck pixels and OLED image persistence",
+  "prepared_route": "/tips/white-spot-on-phone-screen",
+  "intended_url": "https://www.haileyrepair.com/tips/white-spot-on-phone-screen",
+  "record_type": "Draft on a branch; publishes to main only after owner approval in chat",
+  "uniqueness": "72-guide inventory checked. No white spot, bright spot or pressure-mark guide existed in tips/ or guides/. Nearest pages are lcd-vs-oled (screen type and pricing), cracked-screen-safe-to-use, iphone-green-white-line-screen and samsung-screen-issues, all linked. Queue item 4 from the owner's keyword list (4,900; iFixit ranks #4 with an Answers thread). The Acer Chromebook item was skipped on the owner's word.",
+  "scope": "A white or bright spot that stays in one place on a phone display while the picture changes. Cracked glass, colored lines, black ink-like damage and white spots that appear only in photos are routed to other guides.",
+  "sources": [
+    {"url": "https://support.apple.com/en-us/109039", "retrieval": "Read. OLED Super Retina models (iPhone X, XS, XS Max; iPhone 11 Pro models and later excluding iPhone SE 2nd and 3rd generation). Image persistence is temporary and fades after a few minutes of normal use; burn-in in extreme cases."},
+    {"url": "https://support.apple.com/en-us/111865", "retrieval": "Read. iPhone 11 tech specs list an LCD Multi-Touch display with IPS technology."},
+    {"url": "https://support.apple.com/en-us/111882", "retrieval": "Read. iPhone SE (2nd generation) tech specs list an LCD."},
+    {"url": "https://support.apple.com/en-us/111866", "retrieval": "Read. iPhone SE (3rd generation) tech specs list an LCD."},
+    {"url": "https://www.samsung.com/ae/support/mobile-devices/i-have-dead-pixel-on-my-samsung-mobile", "retrieval": "Read. Stuck pixels stay lit in one color from an electrical fault; pressure and impact listed as causes; solid-color test, Safe mode check."},
+    {"url": "https://en.wikipedia.org/wiki/Backlight", "retrieval": "Read. LCD backlight layers: light guide plate, diffuser, reflector. OLED needs no backlight."},
+    {"url": "https://www.slashgear.com/1975970/why-bright-spot-on-ipad-iphone-screen-how-to-fix", "retrieval": "Read. Bright spots from external pressure, frame pressure and heat; no DIY fix."},
+    {"url": "https://mobileklinik.ca/blog/signs-of-internal-lcd-damage/", "retrieval": "Read. Repair chain post: cloudy patch on a white background on LCD; pressure from bags and tight clothing; resets do not repair physical damage. Cited as an example, not as proof."},
+    {"url": "https://www.ifixit.com/Answers/View/157029/Why+is+there+white+spotting+going+through+lcd", "retrieval": "Read. 2014 Answers thread: white spots after an LCD swap traced to a bent battery pressing from behind. Cited as an example."},
+    {"url": "https://www.samsung.com/us/support/troubleshooting/TSG01001485/", "retrieval": "Not readable: returned the Samsung support home page. Not cited."},
+    {"url": "https://forums.macrumors.com/threads/white-spot-on-xr-screen.2241719", "retrieval": "Read in part (opening post and one reply). Not cited; iPhone XR display type not confirmed from an Apple page, so XR is not named."}
+  ],
+  "integration": {
+    "tips_hub": "Card after Samsung screen problems in the phone group; hero count, result count and CollectionPage ItemList 72 to 73; dateModified 2026-11-13.",
+    "guides_hub": "Card after Samsung screen problems; ItemList 53 to 54; dateModified 2026-11-13.",
+    "symptom_finder": "Added to the phone screen finder's 'picture or touch is wrong' group via scripts/build-symptom-finders.py; finder count 14 to 15. Two unrelated stylesheet reorders the script made were reverted.",
+    "service_link": "One contextual link in the iPhone repair context strip, next to LCD vs OLED.",
+    "sitemap": "New route plus lastmod for tips, guides, iphone-repair and phone-screen-problems.",
+    "search": "One generated Quick Find entry from build.sh."
+  },
+  "checks": {
+    "build": "bash build.sh passed.",
+    "site_audit": "121 public pages, 8277 local references, 0 failures.",
+    "indexability": "1057 passed, 0 failed.",
+    "accessibility": "121 public pages, 0 failures.",
+    "node_tests": "53 passed, 0 failed.",
+    "diff_check": "clean"
+  },
+  "limits": [
+    "Source-based guide; no phone tested and no bench photos.",
+    "No local browser in this environment; visual review via the branch preview deployment.",
+    "No prices on the page."
+  ]
+}
