@@ -257,6 +257,7 @@ def build(finder, nav, tail):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/material-symbols.css"><link rel="stylesheet" href="/assets/css/bench-tips.css?v=quiet-20260708"><link rel="stylesheet" href="/assets/css/repair-tip-pages.css?v=20260902"><link rel="stylesheet" href="/assets/css/site-navigation.css?v=20260911"><link rel="stylesheet" href="/nav-quote.css?v=20260709"><link rel="stylesheet" href="/assets/css/quick-find.css?v=20260906"><link rel="stylesheet" href="/assets/css/site-polish.css?v=20260906"><link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"><link rel="stylesheet" href="/assets/css/repair-field-guides.css?v=20260911"><link rel="stylesheet" href="/assets/css/symptom-finder.css?v={CSS_VERSION}">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False, separators=(',', ':'))}</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="bench-tips-page fg-page sf-page"><a class="fg-skip" href="#content">Skip to symptoms</a>
 {nav}
