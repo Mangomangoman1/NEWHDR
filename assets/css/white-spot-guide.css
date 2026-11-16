@@ -1,0 +1,35 @@
+/* White spot on a phone screen: an LCD bloom beside an OLED stuck pixel, a two-screen compare and a color-test strip. */
+.ws-page .fg-kicker,.ws-page .fg-number{color:#cbbdf4}.ws-page .tip-progress{background:#cbbdf4}.ws-page .fg-article li::marker{color:#c4b5ef}.ws-page .fg-note{border-left-color:#ae9de6;color:#dcd6ec}.ws-scope{font-size:13px;color:#c9c5d6;margin:18px 0 0}
+.ws-routes{position:relative;overflow:hidden;padding:28px 30px;border:1px solid #5b4f7d;border-radius:12px;background:radial-gradient(70% 60% at 30% 28%,rgba(196,181,239,.16) 0%,rgba(196,181,239,0) 70%),linear-gradient(160deg,#252036,#1a1f27 74%)}
+.ws-routes>a{display:flex;align-items:center;gap:14px;padding:19px 0;border-top:1px solid #5b4f7d;text-decoration:none;min-height:64px}.ws-routes>a>span:first-child{font-size:11px;color:#cbbdf4;font-variant-numeric:tabular-nums}.ws-routes strong{font-size:14px;color:#f3f1f8;flex:1;line-height:1.6}.ws-routes>a:hover strong{text-decoration:underline;text-underline-offset:4px}
+.ws-art{margin:0 0 26px}
+.ws-scene{display:flex;align-items:flex-end;justify-content:center;gap:34px;min-height:196px;padding:6px 0 40px}
+.ws-phone{position:relative;width:86px;height:164px;flex-shrink:0;padding:5px;border:2px solid #cfc8de;border-radius:18px;background:#0b0b10;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.ws-phone:before{content:"";position:absolute;top:9px;left:calc(50% - 13px);width:26px;height:6px;border-radius:4px;background:#0b0b10;z-index:2}
+.ws-glass{position:relative;height:100%;overflow:hidden;border-radius:13px}
+.ws-phone--lcd .ws-glass{background:linear-gradient(#3a3f4b,#3a3f4b) 18% 30%/58% 5px no-repeat,linear-gradient(#323743,#323743) 18% 40%/42% 4px no-repeat,linear-gradient(#323743,#323743) 18% 48%/50% 4px no-repeat,linear-gradient(180deg,#232836,#1c202b)}
+.ws-phone--oled .ws-glass{background:linear-gradient(#262830,#262830) 18% 30%/58% 5px no-repeat,linear-gradient(#1d1f26,#1d1f26) 18% 40%/42% 4px no-repeat,linear-gradient(#1d1f26,#1d1f26) 18% 48%/50% 4px no-repeat,#000}
+.ws-bloom{position:absolute;left:44%;top:58%;width:64px;height:54px;margin:-27px 0 0 -32px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.62),rgba(235,228,255,.32) 48%,rgba(235,228,255,0) 100%);filter:blur(3px);mix-blend-mode:screen;animation:ws-bloom 6s ease-in-out infinite}
+.ws-pixel{position:absolute;left:62%;top:63%;width:3px;height:3px;background:#fff;box-shadow:0 0 4px 1px rgba(255,255,255,.75);animation:ws-pixel 3.2s ease-in-out infinite}
+.ws-phone>span{position:absolute;top:calc(100% + 15px);left:-30px;right:-30px;text-align:center;font-size:11px;color:#dcd6ea;white-space:nowrap}
+.ws-art figcaption{text-align:center;font-size:12px;color:#d6d0e2;line-height:1.7}
+.ws-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
+.ws-page .fg-article h3{margin:30px 0 10px;font-size:17px;line-height:1.4;color:#f1eef8}
+.ws-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.ws-compare>div{padding:20px 22px;border:1px solid #3b3550;border-radius:10px;background:#18171f}
+.ws-compare>div:first-child{background:radial-gradient(90% 70% at 70% 0%,rgba(222,214,248,.09),rgba(222,214,248,0) 70%),#18171f}
+.ws-compare>div:last-child{background:#121116}
+.ws-compare p{margin:0;font-size:14px}.ws-compare p+p{margin-top:8px}
+.ws-compare__label{font-size:11px!important;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#cbbdf4}
+.ws-swatches{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 18px}
+.ws-swatch{display:inline-flex;align-items:flex-end;width:62px;height:46px;padding:6px 7px;border:1px solid #3b3550;border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.04em}
+.ws-swatch--white{background:#f4f3f7;color:#24222c}.ws-swatch--gray{background:#8d8b94;color:#17161c}.ws-swatch--black{background:#000;color:#bdb8c9}.ws-swatch--red{background:#c8302f;color:#fff}.ws-swatch--green{background:#2f9b4a;color:#fff}.ws-swatch--blue{background:#2f5fd0;color:#fff}
+.ws-warning{padding:22px;border:1px solid #8a7bb6;border-radius:6px;background:#221f2d;margin:24px 0}.ws-warning>strong{display:block;color:#ebe4fb;margin-bottom:10px}.ws-warning p{margin:0}
+.ws-page .fg-article a{color:#d8cdf8}
+.ws-page a:focus-visible{outline:2px solid #e2d9fb;outline-offset:5px;border-radius:2px}
+@keyframes ws-bloom{0%,100%{opacity:.95;transform:scale(1)}50%{opacity:.7;transform:scale(1.07)}}
+@keyframes ws-pixel{0%,100%{opacity:1}50%{opacity:.78}}
+@media(max-width:760px){.ws-routes{padding:22px}.ws-warning{padding-inline:18px}.ws-compare{grid-template-columns:1fr}.ws-compare>div{padding:18px}}
+@media(max-width:430px){.ws-scene{gap:22px}.ws-phone{width:74px;height:140px;border-radius:16px}.ws-glass{border-radius:11px}.ws-bloom{width:54px;height:46px;margin:-23px 0 0 -27px}.ws-phone>span{font-size:10px}.ws-swatch{width:calc((100% - 16px)/3)}}
+@media(max-width:350px){.ws-scene{gap:24px}.ws-phone{width:66px;height:126px}.ws-routes{padding:20px 18px}}
+@media(prefers-reduced-motion:reduce){.ws-bloom,.ws-pixel{animation:none}}

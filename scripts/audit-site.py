@@ -47,6 +47,7 @@ for path, page in pages.items():
     if page.headings != 1: errors.append(f'{label}: expected one H1, got {page.headings}')
     if page.polish != 1: errors.append(f'{label}: expected one shared polish stylesheet')
     if page.design != 1: errors.append(f'{label}: expected one shared design stylesheet')
+    if html.count('/_vercel/insights/script.js') != 1: errors.append(f'{label}: expected one Vercel Web Analytics script (/_vercel/insights/script.js)')
     for identifier, count in Counter(page.ids).items():
         if count > 1: errors.append(f'{label}: duplicate ID {identifier}')
     for reference in page.refs:

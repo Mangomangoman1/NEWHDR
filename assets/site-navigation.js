@@ -728,6 +728,13 @@
     "kw": " broken phone what to text"
   },
   {
+    "name": "White spot on your phone screen?",
+    "desc": "A white spot on a phone screen is usually an LCD backlight pressure mark or a stuck pixel. Tell which with a screenshot and a color test.",
+    "href": "/tips/white-spot-on-phone-screen",
+    "icon": "menu_book",
+    "kw": " tips white spot on phone screen"
+  },
+  {
     "name": "Why your phone dies in the cold — and when it's the battery.",
     "desc": "Why phones drain fast, drop percentage, or shut off in cold weather, what's normal versus a failing battery, and how to protect your phone all winter.",
     "href": "/tips/cold-weather-phone-battery",
