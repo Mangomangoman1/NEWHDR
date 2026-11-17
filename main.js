@@ -3122,6 +3122,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips samsung screen issues"
   },
   {
+    "name": "Screen went black after water?",
+    "desc": "Unplug it and don’t charge it. If a wet iPhone still rings, vibrates or shows up on a computer, the display usually died, not the phone. Get it in fast.",
+    "href": "/tips/phone-screen-black-after-water",
+    "icon": "menu_book",
+    "kw": " tips phone screen black after water"
+  },
+  {
     "name": "Slow laptop or Mac? The free fixes to try first",
     "desc": "Free fixes for a slow Windows laptop or Mac, the red flags that point to failing hardware, and when an SSD or RAM upgrade is the smarter move.",
     "href": "/tips/speed-up-slow-laptop",

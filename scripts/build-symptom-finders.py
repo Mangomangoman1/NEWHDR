@@ -41,6 +41,7 @@ FINDERS = [
         'groups': [
             ('dark', 'The screen is dark', [
                 ('tips/phone-screen-black-but-on', 'Black screen, but the phone still rings or vibrates', 'Common after a drop. The guide covers the safe first checks, the one restart worth trying, and how to tell a fixable screen from a board fault.', ''),
+                ('tips/phone-screen-black-after-water', 'Black screen after the phone got wet', 'Unplug it, skip the charger, and test for signs of life. On iPhones the display is usually what died.', ''),
                 ('tips/iphone-stuck-on-apple-logo', 'iPhone stuck on the Apple logo, or restarting in a loop', 'Identify the pattern, use the correct force restart, and try recovery mode without erasing first.', ''),
                 ('tips/iphone-restarts-every-three-minutes', 'iPhone restarts about every three minutes', 'It may be logging a repeating panic. Protect the data and avoid erasing before the hardware is diagnosed.', ''),
             ]),
