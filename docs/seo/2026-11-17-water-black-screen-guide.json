@@ -3,7 +3,7 @@
   "topic": "Phone screen black after water: telling a failed display from a dead phone",
   "prepared_route": "/tips/phone-screen-black-after-water",
   "intended_url": "https://www.haileyrepair.com/tips/phone-screen-black-after-water",
-  "record_type": "Draft on branch claude/project-thread-1qrr7r; not published until the owner says yes in chat",
+  "record_type": "Published to main on 2026-11-17 after owner approval in chat",
   "uniqueness": "73-guide inventory checked. Nearest pages: water-damaged-phone (general first-five-minutes triage for any wet phone), phone-screen-black-but-on (black screen mostly after a drop, one forced restart), iphone-liquid-detected-port-dry and iphone-speaker-muffled-after-water. None covers a black screen after liquid as its own symptom. This page leads with the owner's bench point, skips the restart and charge steps for a wet phone, and links both nearest pages instead of repeating them. Queue item 5, requested by the owner on Nov 15.",
   "bench_point": "Owner, Nov 15 (paraphrased on the page, no percentage printed): he gets these jobs constantly, and on iPhones the phone usually just needs a new display, as long as it wasn't left sitting wet for a long time.",
   "scope": "A phone whose screen went fully black after liquid exposure. Black screens after a dry drop, and screens with lines or patches, are routed to other guides.",
