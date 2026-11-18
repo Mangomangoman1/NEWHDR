@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-17",
+  "topic": "Phone screen black after water: telling a failed display from a dead phone",
+  "prepared_route": "/tips/phone-screen-black-after-water",
+  "intended_url": "https://www.haileyrepair.com/tips/phone-screen-black-after-water",
+  "record_type": "Published to main on 2026-11-17 after owner approval in chat",
+  "uniqueness": "73-guide inventory checked. Nearest pages: water-damaged-phone (general first-five-minutes triage for any wet phone), phone-screen-black-but-on (black screen mostly after a drop, one forced restart), iphone-liquid-detected-port-dry and iphone-speaker-muffled-after-water. None covers a black screen after liquid as its own symptom. This page leads with the owner's bench point, skips the restart and charge steps for a wet phone, and links both nearest pages instead of repeating them. Queue item 5, requested by the owner on Nov 15.",
+  "bench_point": "Owner, Nov 15 (paraphrased on the page, no percentage printed): he gets these jobs constantly, and on iPhones the phone usually just needs a new display, as long as it wasn't left sitting wet for a long time.",
+  "scope": "A phone whose screen went fully black after liquid exposure. Black screens after a dry drop, and screens with lines or patches, are routed to other guides.",
+  "sources": [
+    {"url": "https://support.apple.com/en-us/102643", "retrieval": "Read. Unplug; tap gently with connector facing down; dry area with airflow; at least 30 minutes before trying a cable; up to 24 hours to dry; no external heat or compressed air; no cotton swab or paper towel in the connector; no rice (particles can damage the phone); charging while wet can corrode pins and cause permanent damage."},
+    {"url": "https://support.apple.com/en-us/108039", "retrieval": "Read. Resistance is not permanent and can decrease with normal wear; liquid damage not covered under warranty; don't charge until completely dry; allow at least 5 hours before charging with a Lightning or USB-C cable or connecting an accessory."},
+    {"url": "https://support.apple.com/en-us/109350", "retrieval": "Read. Liquid damage service not covered by the Apple One-Year Limited Warranty; Liquid Contact Indicators."},
+    {"url": "https://support.apple.com/en-us/116940", "retrieval": "Read. Black screen steps: forced restart, then charge for an hour. Cited to explain why those steps don't fit a wet phone."},
+    {"url": "https://support.apple.com/en-us/108392", "retrieval": "Read. Device appears in the Finder sidebar on macOS Catalina or later; Apple Devices app on Windows. iTunes is named on the page from the owner's own wording for older Windows setups, not from this source."}
+  ],
+  "integration": {
+    "tips_hub": "Card after White spot in the phone group; hero count, result count and CollectionPage ItemList 73 to 74; dateModified 2026-11-17.",
+    "guides_hub": "Card after White spot; ItemList 54 to 55; dateModified 2026-11-17.",
+    "symptom_finder": "Added to the phone screen finder's 'screen is dark' group via scripts/build-symptom-finders.py; finder count 15 to 16.",
+    "service_link": "One contextual link in the phone water damage service page's guide link strip, after the triage guide.",
+    "sitemap": "New route plus lastmod for tips, guides, phone-water-damage-hailey and phone-screen-problems.",
+    "search": "One generated Quick Find entry from build.sh."
+  },
+  "checks": {
+    "build": "bash build.sh passed.",
+    "site_audit": "122 public pages, 8339 local references, 0 failures.",
+    "indexability": "1065 passed, 0 failed.",
+    "accessibility": "122 public pages, 0 failures.",
+    "node_tests": "53 passed, 0 failed.",
+    "diff_check": "clean"
+  },
+  "limits": [
+    "Source-based checklist plus the owner's stated bench point; no invented statistics, test results or bench stories.",
+    "No local browser in this environment; visual review via the branch preview deployment.",
+    "No prices on the page."
+  ]
+}
