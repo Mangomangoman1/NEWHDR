@@ -18,7 +18,7 @@ Business: Hailey Device Repair (HDR), Hailey, Idaho. Serves Hailey, Ketchum, Sun
 - **Samsung Galaxy & Google Pixel screens:** from $145 (A-series) up to $365 (S-series Ultra / newest); Pixel from $185. Android batteries from $110.
 - **iPad screen repair:** from $155 for standard iPads; laminated mini/Air/Pro assemblies from about $240 up to $970.
 - **MacBook display (full lid assembly):** $360–$795 by model and year. MacBook batteries $170–$265.
-- **Game consoles:** HDMI port repair $175 (PS5 / Xbox Series); Switch screen $150–$225; thermal repaste + deep clean from $85. Controller drift (Hall-effect, drift-proof): Joy-Con $45 single / $70 pair, DualSense/Xbox $90.
+- **Game consoles:** HDMI port repair $175 (PS5 / Xbox Series); Switch screen $150–$225; thermal repaste + deep clean from $85. Joy-Con drift fix (Hall-effect, drift-proof): $45 single / $70 pair.
 
 ## Flat-rate services (labor only — no Idaho sales tax)
 - **Diagnostic / bench fee:** $45 — Full inspection + written quote; credited toward any repair we do

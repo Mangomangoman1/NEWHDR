@@ -69,7 +69,7 @@ Custom PC no-boot, thermal, upgrade, performance, cleanup, and build help.
 
 ### Console repair
 URL: https://www.haileyrepair.com/console-repair
-PlayStation, Xbox, Nintendo Switch, HDMI, power, no-signal, cleaning, and controller drift triage.
+PlayStation, Xbox, Nintendo Switch, HDMI, power, no-signal, cleaning, and Joy-Con drift triage.
 
 ### Tablet repair
 URL: https://www.haileyrepair.com/tablet-repair
@@ -121,7 +121,7 @@ Representative prices (see /pricing for the full per-model table):
 - iPhone screen repair: from $100 (older/SE) to about $340 (newest Pro Max); iPhone 11 ~$120, iPhone 13 ~$165, iPhone 15 ~$185. iPhone battery $70–$140.
 - Samsung Galaxy / Pixel screens: from $145 (A-series) up to ~$365 (S-series Ultra); Pixel from ~$185.
 - iPad screen: from $155 (standard iPads) to ~$970 (Pro OLED). MacBook display: $360–$795; MacBook battery $170–$265.
-- Consoles: PS5/Xbox HDMI port $175; Switch screen $150–$225; controller drift (drift-proof Hall-effect) $45–$90.
+- Consoles: PS5/Xbox HDMI port $175; Switch screen $150–$225; Joy-Con drift fix (drift-proof Hall-effect) $45–$70.
 - Flat-rate labor services (no Idaho sales tax): virus removal + tune-up $99, data recovery $99 (logical) / $199+ (board-level), laptop thermal repaste $89, bench diagnostic $45 (credited toward the repair).
 - Idaho tax note: repair labor is not taxed when itemized separately from parts, so HDR itemizes every invoice and charges 6% on parts only.
 - Mail-in prices include the tracked return trip anywhere in Idaho; the customer pays only to ship the device to Hailey.

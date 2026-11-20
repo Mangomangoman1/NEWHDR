@@ -18,7 +18,7 @@ CATS = [
     ('ipad',     'iPad',                   'Standard iPads have separate glass and LCD; mini, Air, and Pro use one laminated assembly.'),
     ('android',  'Samsung & Google Pixel', 'Galaxy S and A series on OEM service packs; Pixel with fingerprint calibration included.'),
     ('macbook',  'MacBook',                'Displays are full lid assemblies; batteries are glued cells done carefully.'),
-    ('console',  'Consoles & Controllers', 'HDMI ports, drives, screens, thermal service, and drift fixes that beat buying new.'),
+    ('console',  'Consoles',               'HDMI ports, drives, screens, thermal service, and Joy-Con drift fixes that beat buying new.'),
     ('services', 'Flat-Rate Services',     'Labor-only work - and Idaho does not tax labor when it is itemized, so these prices are the whole invoice.'),
 ]
 
@@ -98,7 +98,7 @@ md = [
  f"- **Samsung Galaxy & Google Pixel screens:** from ${al} (A-series) up to ${ah} (S-series Ultra / newest); Pixel from ${span('android','screen') and pick('android','Pixel 7a','screen')}. Android batteries from ${span('android','battery')[0]}.",
  f"- **iPad screen repair:** from ${span('ipad','digitizer')[0]} for standard iPads; laminated mini/Air/Pro assemblies from about $240 up to ${ph}.",
  f"- **MacBook display (full lid assembly):** ${ml}–${mh} by model and year. MacBook batteries ${span('macbook','battery')[0]}–${span('macbook','battery')[1]}.",
- f"- **Game consoles:** HDMI port repair ${pick('console','PS5 / PS5 Slim / PS5 Pro','HDMI') or 175} (PS5 / Xbox Series); Switch screen ${pick('console','Switch (V1 / V2)','Screen')}–${pick('console','Switch OLED','Screen')}; thermal repaste + deep clean from $85. Controller drift (Hall-effect, drift-proof): Joy-Con ${pick('console','Joy-Con (single)','Drift')} single / ${pick('console','Joy-Con (pair)','Drift')} pair, DualSense/Xbox ${pick('console','PS5 DualSense','Drift')}.",
+ f"- **Game consoles:** HDMI port repair ${pick('console','PS5 / PS5 Slim / PS5 Pro','HDMI') or 175} (PS5 / Xbox Series); Switch screen ${pick('console','Switch (V1 / V2)','Screen')}–${pick('console','Switch OLED','Screen')}; thermal repaste + deep clean from $85. Joy-Con drift fix (Hall-effect, drift-proof): ${pick('console','Joy-Con (single)','Drift')} single / ${pick('console','Joy-Con (pair)','Drift')} pair.",
  "",
  "## Flat-rate services (labor only — no Idaho sales tax)",
 ]

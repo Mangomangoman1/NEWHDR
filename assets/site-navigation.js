@@ -125,7 +125,7 @@
         { name: "Laptop Won't Turn On", desc: 'No power, black screen, charging failures', href: '/laptop-wont-turn-on', icon: 'offline_bolt', kw: "laptop won't turn on dead laptop no power black screen no charging light macbook chromebook usb c" },
         { name: 'Gaming PC Repair', desc: 'Overheating, crashes & custom builds', href: '/gaming-pc-repair', icon: 'sports_esports', kw: 'gaming pc repair custom build gpu upgrade overheating frame drops blue screens' },
         { name: 'iPad & Tablet', desc: 'iPad, Galaxy Tab, Amazon Fire', href: '/tablet-repair', icon: 'tablet', kw: 'tablet ipad repair screen battery galaxy tab fire' },
-        { name: 'Game Console Repair', desc: 'Switch, PS5, Xbox, Steam Deck', href: '/console-repair', icon: 'sports_esports', kw: 'console game nintendo switch ps5 xbox steam deck controller drift' },
+        { name: 'Game Console Repair', desc: 'Switch, PS5, Xbox, Steam Deck', href: '/console-repair', icon: 'sports_esports', kw: 'console game nintendo switch ps5 xbox steam deck joy-con drift' },
         { name: 'PS5 Repair', desc: 'HDMI port, overheating, no power — statewide mail-in', href: '/ps5-repair', icon: 'stadia_controller', kw: 'ps5 playstation hdmi port no signal white light overheating liquid metal repair' },
         { name: 'Mail-In Repair', desc: 'Ship from anywhere in Idaho', href: '/mail-in-repair', icon: 'local_shipping', kw: 'mail in repair ship statewide idaho send' },
         { name: 'Electronics Recycling', desc: 'Recycle old devices with data-safe handling', href: '/electronics-recycling', icon: 'recycling', kw: 'electronics recycling recycle ewaste e waste old laptop phone ipad tablet battery data destruction parts donor' },

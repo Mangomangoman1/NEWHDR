@@ -2394,33 +2394,6 @@
 "note": ""
 },
 {
-"cat": "console",
-"device": "PS5 DualSense",
-"job": "Stick Drift Fix",
-"grade": "Hall/TMR sticks x2, solder",
-"price": "$90",
-"mailin": "$105",
-"note": ""
-},
-{
-"cat": "console",
-"device": "PS5 DualSense",
-"job": "USB-C Port / Battery",
-"grade": "Port or cell",
-"price": "$60",
-"mailin": "$75",
-"note": ""
-},
-{
-"cat": "console",
-"device": "Xbox Wireless / Elite",
-"job": "Stick Drift Fix",
-"grade": "Hall sticks x2, solder",
-"price": "$90",
-"mailin": "$105",
-"note": "Cheaper than a new Elite controller"
-},
-{
 "cat": "services",
 "device": "",
 "job": "Diagnostic / bench fee",
