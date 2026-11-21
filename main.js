@@ -2618,6 +2618,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips laptop battery dying"
   },
   {
+    "name": "A black spot spreading on your phone screen?",
+    "desc": "A black spot, ink blot or half-black screen after a drop or pressure is panel damage, and it can spread. Back up now, then do one screenshot test.",
+    "href": "/tips/black-spot-on-phone-screen",
+    "icon": "menu_book",
+    "kw": " tips black spot on phone screen"
+  },
+  {
     "name": "AirDrop can’t find the other iPhone?",
     "desc": "AirDrop not finding an iPhone? Check receiving settings, Contacts Only and AirDrop codes. Test one photo and protect originals before resets.",
     "href": "/tips/airdrop-not-finding-iphone",
@@ -2700,6 +2707,20 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/cracked-screen-safe-to-use",
     "icon": "menu_book",
     "kw": " tips cracked screen safe to use"
+  },
+  {
+    "name": "Cracked the camera lens on your iPhone?",
+    "desc": "Camera lens glass cracked after a drop? Test each lens to tell cracked cover glass from a damaged camera, and what to do with it until it’s fixed.",
+    "href": "/tips/cracked-iphone-camera-lens",
+    "icon": "menu_book",
+    "kw": " tips cracked iphone camera lens"
+  },
+  {
+    "name": "Dropped it, and now it won’t turn on?",
+    "desc": "No ring, no buzz, no charging sign after a drop? Do one forced restart and charge it for an hour on a charger you trust. Then what a dead phone means.",
+    "href": "/tips/phone-wont-turn-on-after-drop",
+    "icon": "menu_book",
+    "kw": " tips phone wont turn on after drop"
   },
   {
     "name": "Epson EcoTank printing blank pages?",
@@ -2954,6 +2975,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips lcd vs oled"
   },
   {
+    "name": "Lines, ink or flicker on a dropped laptop screen?",
+    "desc": "Lines, ink blotches or flicker after a drop? Plug in an external monitor first. If it looks fine there, the laptop’s own screen or cable took the hit.",
+    "href": "/tips/laptop-screen-damaged-after-drop",
+    "icon": "menu_book",
+    "kw": " tips laptop screen damaged after drop"
+  },
+  {
     "name": "MacBook on. External monitor black?",
     "desc": "External monitor black on MacBook? Check input, video connection, Detect Displays and model limits before resets. Protect dock-connected drives.",
     "href": "/tips/macbook-external-monitor-black",
@@ -2994,6 +3022,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/one-airpod-not-working",
     "icon": "menu_book",
     "kw": " tips one airpod not working"
+  },
+  {
+    "name": "Phone fell, and the screen won’t respond?",
+    "desc": "Picture still there, but taps do nothing or only part of the screen works? Take off the protector, restart once, map the dead zone, then save your data.",
+    "href": "/tips/phone-touch-screen-not-working-after-drop",
+    "icon": "menu_book",
+    "kw": " tips phone touch screen not working after drop"
   },
   {
     "name": "Phone got wet? What to do first",
@@ -3059,11 +3094,25 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips printer offline after router change"
   },
   {
+    "name": "PS5 controller drifting on its own?",
+    "desc": "Camera or character moving on its own? Confirm it’s the DualSense stick, try Sony’s reset and update, then see what actually fixes stick drift.",
+    "href": "/tips/ps5-controller-stick-drift",
+    "icon": "menu_book",
+    "kw": " tips ps5 controller stick drift"
+  },
+  {
     "name": "PS5 controller not charging? DualSense checks that help",
     "desc": "DualSense won't charge, shows no light, or only charges with the PS5 on? Turn on USB power in rest mode, then test one cable and port at a time.",
     "href": "/tips/ps5-controller-not-charging",
     "icon": "menu_book",
     "kw": " tips ps5 controller not charging"
+  },
+  {
+    "name": "PS5 controller won’t connect?",
+    "desc": "DualSense won’t pair, blinks then goes off, or keeps disconnecting? Pair it by USB with the PS button, check the cable, reset it, then spot a fault.",
+    "href": "/tips/ps5-controller-not-connecting",
+    "icon": "menu_book",
+    "kw": " tips ps5 controller not connecting"
   },
   {
     "name": "PS5 game on USB won’t play?",
@@ -3134,6 +3183,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/speed-up-slow-laptop",
     "icon": "menu_book",
     "kw": " tips speed up slow laptop"
+  },
+  {
+    "name": "Speaker not working after the drop?",
+    "desc": "No sound, crackling or rattling since you dropped your phone? Rule out settings, find which speaker failed, and tell a damaged speaker from the mic.",
+    "href": "/tips/phone-speaker-not-working-after-drop",
+    "icon": "menu_book",
+    "kw": " tips phone speaker not working after drop"
   },
   {
     "name": "Spilled water or coffee on a laptop? What to do first",
