@@ -1,6 +1,6 @@
 {
   "date": "2026-11-21",
-  "record_type": "Prepared on branch claude/drop-damage-guides; NOT published. Held for owner review and a staged release.",
+  "record_type": "Published to main on 2026-11-21 after owner approval in chat ('push all new pages to the live site at once').",
   "why": "Search Console (3 months to 2026-11-15): the site's traffic comes from physical-damage triage (black screen after a drop 870 clicks; protector vs crack, cracked screen safe, back glass, ghost touch) and PS5 hardware. These eight guides extend that pattern to symptoms with visible query demand and no dedicated page. Queries seen include 'phone not turning on after dropping', 'my phone fell and the screen is not working', 'phone screen half black after dropping', 'i dropped my phone and the screen is black with lines', 'dualsense not charging' cluster (controller interest).",
   "not_built": {
     "samsung green line": "samsung-screen-issues already owns it (pos 5.6)",
@@ -152,7 +152,7 @@
     "external_links": "55 external links checked: all 200 except playstation.com/repairs (redirects to repairs.playstation.com, blocked from the build sandbox; Sony's own address, contents not described).",
     "preview": "Vercel preview for the branch READY."
   },
-  "release_plan": "Recommended staged release per the content guide's 2-3 guides a week: set datePublished/visible date/sitemap lastmod at release. Suggested order by evidence: (1) phone-wont-turn-on-after-drop, touch-not-working, black-spot; (2) ps5 drift, ps5 not connecting, cracked camera lens; (3) speaker after drop, laptop screen after drop.",
+  "release_plan": "Owner chose to release all eight at once on 2026-11-21.",
   "measure_after": "28 days after each release, against the 2026-11-15 export",
   "tooling": "Generator, integration script and content modules saved in the owner's private OpusJoy repo (tools/hdr-guides), not in this public site.",
   "owner_questions": [
@@ -172,5 +172,10 @@
       "Laptop: tape for loose glass; panel vs full lid assembly and typical turnaround (bench-notes left)",
       "Release pace; /tips/dropped-phone-wont-respond redirect; bench capacity, job sources, mail-in beyond Idaho"
     ]
+  },
+  "related_change": {
+    "page": "/tips/switch-joycon-drift",
+    "what": "Removed the compressed-air / 90%+ isopropyl cleaning step and the 'isopropyl evaporates clean' note; warning box now says skip the sprays (owner: use the official advice). Short version and bring-it-in text now say recalibrating and updating. dateModified, visible date and sitemap lastmod 2026-11-21.",
+    "source_limit": "Nintendo's support site could not be read from the build sandbox (406 to plain requests; not reachable by the fetch tool), so no Nintendo statement is quoted; the page keeps only steps it already listed (calibrate, update) and states the spray advice as the owner's own recommendation."
   }
 }
