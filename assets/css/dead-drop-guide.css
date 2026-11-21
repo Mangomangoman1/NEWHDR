@@ -1,0 +1,38 @@
+/* Phone won't turn on after a drop: a dark phone with an empty battery, a flat line with one blip, crossed-out signs of life and a one-hour charge strip. */
+.dw-page .fg-kicker,.dw-page .fg-number{color:#e8bd7a}.dw-page .tip-progress{background:#e8bd7a}.dw-page .fg-article li::marker{color:#dcb06e}.dw-page .fg-note{border-left-color:#c99a55;color:#e7ddcf}.dw-scope{font-size:13px;color:#cfc8bd;margin:18px 0 0}
+.dw-routes{position:relative;overflow:hidden;padding:28px 30px;border:1px solid #5e4d36;border-radius:12px;background:radial-gradient(70% 60% at 30% 26%,rgba(232,189,122,.13) 0%,rgba(232,189,122,0) 70%),linear-gradient(160deg,#241e16,#191a1f 74%)}
+.dw-routes>a{display:flex;align-items:center;gap:14px;padding:19px 0;border-top:1px solid #5e4d36;text-decoration:none;min-height:64px}.dw-routes>a>span:first-child{font-size:11px;color:#e8bd7a;font-variant-numeric:tabular-nums}.dw-routes strong{font-size:14px;color:#f7f1e8;flex:1;line-height:1.6}.dw-routes>a:hover strong{text-decoration:underline;text-underline-offset:4px}
+.dw-art{margin:0 0 26px}
+.dw-scene{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-height:196px;padding:8px 0 22px}
+.dw-phone{position:relative;width:92px;height:176px;flex-shrink:0;padding:5px;border:2px solid #cfc6b8;border-radius:19px;background:#060504;box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.dw-phone:before{content:"";position:absolute;top:9px;left:calc(50% - 14px);width:28px;height:6px;border-radius:4px;background:#060504;z-index:2}
+.dw-glass{position:relative;display:flex;align-items:center;justify-content:center;height:100%;overflow:hidden;border-radius:14px;background:linear-gradient(155deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,0) 38%),#000}
+.dw-batt{position:relative;display:block;width:34px;height:16px;border:2px solid rgba(232,189,122,.5);border-radius:4px;opacity:0;animation:dw-batt 5s ease-in-out infinite}
+.dw-batt:after{content:"";position:absolute;right:-6px;top:3px;width:3px;height:6px;border-radius:0 2px 2px 0;background:rgba(232,189,122,.5)}
+.dw-batt__fill{position:absolute;left:2px;top:2px;bottom:2px;width:4px;border-radius:1px;background:#e0866a}
+.dw-line{position:relative;width:150px;height:22px;background:linear-gradient(#5e4d36,#5e4d36) 0 50%/100% 1.5px no-repeat}
+.dw-line__blip{position:absolute;left:0;top:50%;width:16px;height:16px;margin-top:-8px;opacity:0;background:linear-gradient(135deg,transparent 46%,#e8bd7a 46% 56%,transparent 56%) 0 0/8px 16px no-repeat,linear-gradient(45deg,transparent 46%,#e8bd7a 46% 56%,transparent 56%) 8px 0/8px 16px no-repeat;animation:dw-blip 5s linear infinite}
+.dw-art figcaption{text-align:center;font-size:12px;color:#ddd5ca;line-height:1.7}
+.dw-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
+.dw-check{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.dw-chip{display:inline-flex;align-items:center;gap:10px;padding:10px 14px 10px 12px;border:1px solid #574735;border-radius:999px;background:#1b1813;font-size:13px;font-weight:600;color:#eee5d8}
+.dw-chip__x{position:relative;display:inline-block;width:14px;height:14px;flex-shrink:0}
+.dw-chip__x:before,.dw-chip__x:after{content:"";position:absolute;left:6px;top:0;width:2px;height:14px;border-radius:1px;background:#e8bd7a}
+.dw-chip__x:before{transform:rotate(45deg)}.dw-chip__x:after{transform:rotate(-45deg)}
+.dw-hour{display:grid;grid-template-columns:repeat(3,1fr);margin:24px 0;border:1px solid #574735;border-radius:10px;overflow:hidden}
+.dw-hour__step{position:relative;padding:18px 18px 20px;font-size:13px;color:#d6cdc0;line-height:1.5;background:#17150f}
+.dw-hour__step+.dw-hour__step{border-left:1px solid #574735}
+.dw-hour__step strong{display:block;margin-bottom:4px;font-size:14px;color:#f7f1e8;font-variant-numeric:tabular-nums}
+.dw-hour__step:after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,#5e4d36,#e8bd7a)}
+.dw-hour__step:first-child:after{background:#5e4d36}
+.dw-hour__step--end{background:radial-gradient(90% 80% at 20% 0%,rgba(232,189,122,.12),rgba(232,189,122,0) 70%),#1b1813}
+.dw-hour__step--end:after{background:#e8bd7a}
+.dw-warning{padding:22px;border:1px solid #a7744d;border-radius:6px;background:#241911;margin:24px 0}.dw-warning>strong{display:block;color:#f8e9d6;margin-bottom:10px}.dw-warning p{margin:0}
+.dw-page .fg-article a{color:#f0cf9b}
+.dw-page a:focus-visible{outline:2px solid #f3d9ae;outline-offset:5px;border-radius:2px}
+@keyframes dw-batt{0%,30%{opacity:0}38%{opacity:1}62%{opacity:1}72%,100%{opacity:0}}
+@keyframes dw-blip{0%{left:0;opacity:0}6%{opacity:1}46%{opacity:1}52%{left:calc(100% - 16px);opacity:0}100%{left:calc(100% - 16px);opacity:0}}
+@media(max-width:760px){.dw-routes{padding:22px}.dw-warning{padding-inline:18px}}
+@media(max-width:430px){.dw-phone{width:80px;height:154px;border-radius:17px}.dw-glass{border-radius:12px}.dw-hour{grid-template-columns:1fr}.dw-hour__step+.dw-hour__step{border-left:0;border-top:1px solid #574735}.dw-chip{font-size:12px;padding:9px 12px 9px 10px}}
+@media(max-width:350px){.dw-routes{padding:20px 18px}.dw-line{width:120px}}
+@media(prefers-reduced-motion:reduce){.dw-batt,.dw-line__blip{animation:none}.dw-batt{opacity:.9}.dw-line__blip{opacity:.8;left:calc(50% - 8px)}}
