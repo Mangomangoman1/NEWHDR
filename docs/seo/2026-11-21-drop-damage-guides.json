@@ -52,7 +52,7 @@
         "https://support.google.com/android/answer/9075928?hl=en"
       ],
       "uniqueness": "Dark counterpart of white-spot-on-phone-screen; lines and fully black screens routed to their pages.",
-      "bench_question": "How fast black spots tend to spread, in plain words; a real bench photo of an OLED ink blot."
+      "bench_question": "Answered 2026-11-21 (see owner_bench_points_2026_11_21)."
     },
     {
       "route": "/tips/cracked-iphone-camera-lens",
@@ -159,5 +159,18 @@
     "Joy-Con drift page recommends compressed air and 90%+ isopropyl under the stick; Sony's DualSense manual says keep liquids and foreign objects out. Which advice should the site give?",
     "Each guide's bench-note comment (one question per guide, listed under guides[].bench_question).",
     "Existing redirect /tips/dropped-phone-wont-respond: keep pointing at phone-screen-black-but-on, or point at the new phone-wont-turn-on-after-drop?"
-  ]
+  ],
+  "owner_bench_points_2026_11_21": {
+    "source": "Owner, in chat on 2026-11-21 (paraphrased on the pages, first person where it is his observation; no numbers given or printed)",
+    "phone-wont-turn-on-after-drop": "Depends on the drop and what 'completely dead' means. No signs of life at all generally means board damage; sometimes a peripheral (battery, charging assembly); sometimes a phone that appears dead only needs a screen.",
+    "phone-touch-screen-not-working-after-drop": "Dead touch after a drop is generally the whole display. Connectors rarely pop loose now (covers, shields, clips); possible if a previous repair left a cover off; board unlikely but possible. Dead zones can come back intermittently but never fix themselves permanently.",
+    "black-spot-on-phone-screen": "Ink blots are often slow to spread, can stay unchanged a long time or migrate fast; on phones he sees, usually slow. A damaged display can still fail entirely at any moment. Two bench photos supplied and added (Galaxy ink blot; iPhone with a small blot and the area below failed to white). iPhone photo cropped to remove a customer's banking app icons; EXIF stripped from both.",
+    "cracked-iphone-camera-lens": "Tape over cracked camera glass to protect the inner lens; its coating is delicate, debris on it effectively cannot be cleaned and touching it makes it worse, so a cracked cover can mean a new camera module too. A camera not working after a drop is usually a dead or internally damaged module, not a loose connector. Glass-only replacement on recent iPhones: owner believes yes and asked for a fact check; Apple's iPhone 16 and 17 repair manuals list only Back Glass and Camera procedures, so the page says shops can often do it and that Apple doesn't list it as a separate part.",
+    "ps5 guides": "Owner: 'just use the official advice, it's not my area.' PS5 pages follow Sony only; their bench-note questions were removed.",
+    "unanswered": [
+      "Speaker crackle/rattle after a drop (bench-note left)",
+      "Laptop: tape for loose glass; panel vs full lid assembly and typical turnaround (bench-notes left)",
+      "Release pace; /tips/dropped-phone-wont-respond redirect; bench capacity, job sources, mail-in beyond Idaho"
+    ]
+  }
 }

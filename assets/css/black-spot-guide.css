@@ -49,3 +49,11 @@
 @media(max-width:430px){.bk-phone{width:88px;height:170px;border-radius:18px}.bk-glass{border-radius:13px}.bk-shapes{grid-template-columns:1fr;gap:10px}.bk-shape{display:grid;grid-template-columns:32px 1fr;column-gap:16px;align-items:center;padding:14px 16px}.bk-shape .bk-mini{grid-row:1/3}.bk-shape strong{margin:0}}
 @media(max-width:350px){.bk-routes{padding:20px 18px}.bk-compare__arrow{width:22px}.bk-compare__item{width:110px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.bk-blot{animation:none}}
+/* Bench photos (owner-supplied, Nov 21) */
+.bk-photos{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;margin:26px 0 8px}
+.bk-photos figure{margin:0}
+.bk-photos img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid #3d3552;background:#15131c}
+.bk-photos figcaption{padding:12px 2px 0;font-size:13px;line-height:1.55;color:#cfc8e0}
+.bk-photos figcaption strong{display:block;color:#f1edf9;font-weight:600;margin-bottom:2px}
+.bk-photos figcaption span{display:block;margin-top:6px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#a99fc4}
+@media(max-width:560px){.bk-photos{grid-template-columns:1fr}}
