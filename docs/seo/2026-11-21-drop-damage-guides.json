@@ -147,8 +147,17 @@
     "accessibility": "130 pages, 0 failures",
     "node_tests": "53 passed, 0 failed",
     "diff_check": "clean",
-    "visual": "Every guide screenshotted at 390px and 1280px (and 320px), no horizontal overflow, 0 page errors"
+    "visual": "Every guide screenshotted at 390px and 1280px by its writer and reviewed; all eight hero sections and guide 1 in full reviewed by the integrating session; 320px overflow check run on all eight (scrollWidth 320, nothing outside the viewport).",
+    "source_spot_checks": "Re-read against sources by the integrating session: Sony reset 'at least 5 seconds', up to four pairings, one-year accessory warranty; Apple 'at least 5 hours' before charging after liquid; Google 'about 30 seconds' power hold; Samsung black spots 'may spread over time'; Samsung SIM-tray pressure equalizing; Apple force-restart sequence (user guide added as a source for iPhone SE 2nd gen and later).",
+    "external_links": "55 external links checked: all 200 except playstation.com/repairs (redirects to repairs.playstation.com, blocked from the build sandbox; Sony's own address, contents not described).",
+    "preview": "Vercel preview for the branch READY."
   },
   "release_plan": "Recommended staged release per the content guide's 2-3 guides a week: set datePublished/visible date/sitemap lastmod at release. Suggested order by evidence: (1) phone-wont-turn-on-after-drop, touch-not-working, black-spot; (2) ps5 drift, ps5 not connecting, cracked camera lens; (3) speaker after drop, laptop screen after drop.",
-  "measure_after": "28 days after each release, against the 2026-11-15 export"
+  "measure_after": "28 days after each release, against the 2026-11-15 export",
+  "tooling": "Generator, integration script and content modules saved in the owner's private OpusJoy repo (tools/hdr-guides), not in this public site.",
+  "owner_questions": [
+    "Joy-Con drift page recommends compressed air and 90%+ isopropyl under the stick; Sony's DualSense manual says keep liquids and foreign objects out. Which advice should the site give?",
+    "Each guide's bench-note comment (one question per guide, listed under guides[].bench_question).",
+    "Existing redirect /tips/dropped-phone-wont-respond: keep pointing at phone-screen-black-but-on, or point at the new phone-wont-turn-on-after-drop?"
+  ]
 }
