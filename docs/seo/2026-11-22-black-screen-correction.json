@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-22",
+  "status": "published",
+  "owner_approval": "Owner in chat, 2026-11-22: 'yes lets correct the black screen page'",
+  "page": "/tips/phone-screen-black-but-on",
+  "why": "The page ranked 'display cable knocked loose' first among drop outcomes ('in rough order of how often I see them on the bench') and called a reseat 'frequently a sub-$100 job'. The owner said on 2026-11-21 that connectors rarely pop loose on current phones (covers, shields, clips), that it is only more possible after a previous repair left a cover off, and that a black screen on a phone that still rings usually needs a new display.",
+  "what": [
+    "'What a hard drop actually breaks': display failure is now the first card; a loose display connector is the last card, marked uncommon, in the owner's terms; the 'in rough order of how often I see them' claim and the sub-$100 line are removed; closing sentence says 'a failed display'.",
+    "FAQ 'is it fixable?' (visible text and FAQPage JSON-LD): 'the display itself was damaged ... it usually takes a new display' replaces 'the display, its cable, or its connector'.",
+    "dateModified, visible 'Updated' date and sitemap lastmod set to 2026-11-22."
+  ],
+  "not_changed": "Title, H1, meta description, section order, symptom map, prices elsewhere on the page.",
+  "also": "Removed three owner-question HTML comments from two live guides (phone-speaker-not-working-after-drop, laptop-screen-damaged-after-drop): HTML comments are readable in page source. The questions are kept in docs/seo/2026-11-21-drop-damage-guides.json. The site agent's four 'photo slot' comments were left in place.",
+  "checks": {
+    "site_audit": "130 pages, 0 failures",
+    "indexability": "1129 passed",
+    "accessibility": "0 failures",
+    "node_tests": "53 passed",
+    "json_ld": "parses"
+  },
+  "measure": "This is the site's top page (870 clicks in the 3 months to 2026-11-13, position 5.25). Compare its clicks and position for the two weeks after 2026-11-22 against the two weeks before."
+}
