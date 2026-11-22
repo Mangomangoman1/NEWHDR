@@ -1,6 +1,6 @@
 {
   "date": "2026-11-22",
-  "record_type": "Prepared on branch claude/damage-guides-batch-2; NOT published. Held for the owner's release decision.",
+  "record_type": "Published to main on 2026-11-22 after owner approval in chat ('release as soon we're finished, no need to delay').",
   "why": "Second batch of damage and hardware-diagnosis guides. HONEST LIMIT: unlike the Nov 21 batch, these topics were NOT chosen from query or volume data. The Nov 15 Search Console export's unused evidence was exhausted and no keyword-volume tool was available, so each topic was chosen by analogy to a page that already earns impressions, then checked for overlap, source readability and whether the shop does the work.",
   "not_built": {
     "xbox controller drift / not connecting": "Xbox Support is a JavaScript shell needing about five more Microsoft hosts to read; owner says controllers are not his area",
@@ -42,7 +42,7 @@
         "https://support.apple.com/ipad/repair",
         "Apple tech-spec pages listing 'Fully laminated' for iPad mini 5/6/A17 Pro, iPad Air 2 through M3, iPad Pro 11-inch 4th gen and M4 models; not listed for iPad 9th, 10th, A16"
       ],
-      "owner_input": "Owner supplied the model list (tables in chat, 2026-11-22): glass-only on every standard iPad through iPad 11 (A16), mini 1-3, Air 1; full assembly on mini 4+, Air 2+, every Pro. Apple's spec pages agree where they overlap. TO CONFIRM: page says a dead touch zone on a glass-only model is fixed by the glass/digitizer replacement (touch layer is part of that glass), and that lines or dark patches mean the LCD too. The model table is labelled 'By model' (not 'from the bench'): the owner supplied it as reference tables, and five rows were verified against Apple's spec pages by the integrating session."
+      "owner_input": "Owner supplied the model list (tables in chat, 2026-11-22): glass-only on every standard iPad through iPad 11 (A16), mini 1-3, Air 1; full assembly on mini 4+, Air 2+, every Pro. Apple's spec pages agree where they overlap. CONFIRMED by the owner on 2026-11-22 ('yes glass/digitizer generally fixes dead touch zones'): page says a dead touch zone on a glass-only model is fixed by the glass/digitizer replacement (touch layer is part of that glass), and that lines or dark patches mean the LCD too. The model table is labelled 'By model' (not 'from the bench'): the owner supplied it as reference tables, and five rows were verified against Apple's spec pages by the integrating session."
     },
     {
       "route": "/tips/cracked-samsung-back-glass",
@@ -141,12 +141,12 @@
     "redirects": "No vercel.json redirect names any of the six new slugs."
   },
   "known_inconsistency_on_live_site": "tips/phone-screen-black-but-on (the top page) still lists 'display cable knocked loose' as the most common drop outcome; the owner says connectors rarely come loose. Not edited; raised with the owner.",
-  "release": "At release: set each page's DATE to the release date (CREATED stays 2026-11-22), regenerate, rerun finders and build, update sitemap lastmod. Content guide recommends 2-3 guides a week; eight went live on 2026-11-21.",
+  "release": "Owner chose immediate release. Dates were already 2026-11-22 (created and published the same day).",
   "measure_after": "28 days after release",
   "release_blockers": [
-    "Owner to confirm the iPad dead-touch wording.",
-    "dropped-external-hard-drive-clicking links to data-recovery.html, which contradicts it; reconcile before that page goes live.",
-    "Owner or site agent to confirm none of these six topics is already in the site agent's queue (not visible from this session).",
-    "Fresh approval, restamped dates and a fresh fetch of main at release."
-  ]
+    "RESOLVED: owner confirmed the iPad dead-touch wording.",
+    "RESOLVED: owner does not believe any of these topics is in the site agent's queue.",
+    "OPEN (not blocking, owner's call): /data-recovery still describes clicking drives as Tier 2 work with 'data stays local'; questions are in docs/seo/owner-open-items.md."
+  ],
+  "notes_policy": "All bench-note HTML comments were removed from published pages on 2026-11-22 (they are public in page source). Open owner questions and photo slots now live in docs/seo/owner-open-items.md; the content guide has the rule."
 }
