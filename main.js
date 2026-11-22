@@ -2681,6 +2681,20 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips bluetooth headphones no sound windows"
   },
   {
+    "name": "Cracked back glass on a Galaxy or Pixel?",
+    "desc": "A flat crack can sit under a case until it’s repaired, but don’t count on water resistance now. Stop if the back is lifting, bulging or running hot.",
+    "href": "/tips/cracked-samsung-back-glass",
+    "icon": "menu_book",
+    "kw": " tips cracked samsung back glass"
+  },
+  {
+    "name": "Cracked iPad screen: safe to keep using?",
+    "desc": "Apple says not to use an iPad with a cracked screen. Two tests show if the display broke too, and your model decides glass-only or a full display.",
+    "href": "/tips/cracked-ipad-screen",
+    "icon": "menu_book",
+    "kw": " tips cracked ipad screen"
+  },
+  {
     "name": "Cracked iPhone back glass: can you keep using it?",
     "desc": "Back glass cracked but the iPhone still works? When a case is a fair stopgap, the signs to stop (heat, bent frame, camera damage) and how repair works.",
     "href": "/tips/cracked-iphone-back-glass",
@@ -2716,11 +2730,25 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips cracked iphone camera lens"
   },
   {
+    "name": "Dropped it, and now a button won’t work?",
+    "desc": "Power or volume button stuck, mushy or dead after a drop? Take the case off, back up now, and switch on the on-screen button. Plus when it’s urgent.",
+    "href": "/tips/phone-buttons-not-working-after-drop",
+    "icon": "menu_book",
+    "kw": " tips phone buttons not working after drop"
+  },
+  {
     "name": "Dropped it, and now it won’t turn on?",
     "desc": "No ring, no buzz, no charging sign after a drop? Do one forced restart and charge it for an hour on a charger you trust. Then what a dead phone means.",
     "href": "/tips/phone-wont-turn-on-after-drop",
     "icon": "menu_book",
     "kw": " tips phone wont turn on after drop"
+  },
+  {
+    "name": "Dropped the drive, and now it clicks?",
+    "desc": "Dropped hard drive clicking, beeping or not showing up? Unplug it and leave it off. What the sounds mean, the one safe check, and what never to try.",
+    "href": "/tips/dropped-external-hard-drive-clicking",
+    "icon": "menu_book",
+    "kw": " tips dropped external hard drive clicking"
   },
   {
     "name": "Epson EcoTank printing blank pages?",
@@ -3038,6 +3066,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips water damaged phone"
   },
   {
+    "name": "Phone or iPad bent? Don’t bend it back.",
+    "desc": "A bent phone or iPad can be a battery hazard. Don’t bend it back. Tell a bend from a bulge, learn the signs to stop, and what the repair really is.",
+    "href": "/tips/bent-phone-or-ipad",
+    "icon": "menu_book",
+    "kw": " tips bent phone or ipad"
+  },
+  {
     "name": "Phone Repair in Hailey vs Boise vs Mail-In",
     "desc": "Phone repair in Hailey vs Boise vs mail-in: a Wood River Valley guide to choosing local, the two-hour drive, or quote-first mail-in repair from HDR statewide.",
     "href": "/phone-repair-hailey-vs-boise",
@@ -3260,6 +3295,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/iphone-liquid-detected-port-dry",
     "icon": "menu_book",
     "kw": " tips iphone liquid detected port dry"
+  },
+  {
+    "name": "“Moisture detected” on a dry Samsung?",
+    "desc": "Galaxy shows a water-drop icon and won’t charge? Unplug, air dry, then test the cable, the room and Samsung’s USB-cache step before blaming the port.",
+    "href": "/tips/samsung-moisture-detected",
+    "icon": "menu_book",
+    "kw": " tips samsung moisture detected"
   },
   {
     "name": "“Unknown Part” or “Important Message” after iPhone repair",

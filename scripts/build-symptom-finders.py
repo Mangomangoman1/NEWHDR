@@ -49,7 +49,9 @@ FINDERS = [
             ('cracked', 'The glass is cracked', [
                 ('tips/cracked-screen-safe-to-use', 'Cracked, but touch still works', 'Tell a hairline glass crack from display damage, when a protector helps, and when it is time to repair.', ''),
                 ('tips/screen-protector-or-cracked-screen', 'Not sure if it is the screen or only the protector', 'Find the protector’s edge and check the picture without pressing on the crack.', ''),
+                ('tips/cracked-ipad-screen', "It is an iPad with a cracked screen", "Apple’s safety advice, two tests for display damage, and which iPad models can have the glass replaced on its own.", ''),
                 ('tips/cracked-iphone-back-glass', 'The back of the iPhone is cracked', 'When a case is a fair stopgap, and the signs to stop: heat, a bent frame, or camera damage.', ''),
+                ('tips/cracked-samsung-back-glass', "The back of a Samsung or Pixel is cracked", "What the back glass protects, five things to check before a case goes on, and why a lifting back is a battery warning.", ''),
                 ('tips/cracked-iphone-camera-lens', "The camera lens on the back is cracked", "Take one photo with each lens to tell cracked cover glass from a damaged camera, and keep dust out until it’s fixed.", ''),
             ]),
             ('picture', 'The picture or touch is wrong', [
@@ -64,6 +66,8 @@ FINDERS = [
             ('after', 'After a drop or a repair', [
                 ('tips/face-id-not-working-after-drop', 'Face ID stopped working after a drop or screen repair', 'Check obstruction and settings, read the exact message, and inspect Parts and Service History.', ''),
                 ('tips/phone-speaker-not-working-after-drop', "Speaker silent, crackling or rattling after a drop", "Rule out settings and Bluetooth, find which speaker failed, and tell a damaged speaker from the mic.", ''),
+                ('tips/phone-buttons-not-working-after-drop', "Power or volume button stuck, mushy or dead after a drop", "Rule out the case, back up while the phone is still on, and turn on the on-screen stand-in until it’s repaired.", ''),
+                ('tips/bent-phone-or-ipad', "The phone or iPad is bent", "Tell a bend from a swollen-battery bulge, check it without flexing it, and why bending it back is the wrong fix.", ''),
                 ('tips/iphone-unknown-part-important-message', 'iPhone shows Unknown Part or an Important Message', 'What Genuine, Used, Finish Repair and Unknown Part mean, and what to ask your repairer.', ''),
                 ('tips/lcd-vs-oled', 'Quoted two very different prices for a screen', 'LCD and OLED screens are priced differently. How to tell which your phone has.', ''),
                 ('tips/backup-iphone-broken-screen', 'Need the data off an iPhone with a broken screen', 'Check existing iCloud copies, trusted-computer limits, and data-preserving repair options.', ''),
@@ -82,7 +86,7 @@ FINDERS = [
         'strip': 'Won’t charge, drains, heat, swelling',
         'stop': [
             ('tips/swollen-phone-battery-screen-lifting', 'Anything is bulging or lifting', 'Stop using and charging it. Read this first.'),
-            ('tips/iphone-liquid-detected-port-dry', 'The phone warns about liquid', 'Do not override the warning until you have read this.'),
+            ('tips/iphone-liquid-detected-port-dry', 'An iPhone warns about liquid', 'Do not override the warning until you have read this.'),
             ('tips/spilled-liquid-on-laptop', 'Liquid went into a laptop', 'Disconnect power safely. Drying alone is not a repair.'),
         ],
         'groups': [
@@ -90,6 +94,7 @@ FINDERS = [
                 ('tips/phone-charges-slowly', 'Phone charging slowly, or not at all', 'Test the brick and cable, check the port without poking it, and read the pattern before buying a battery.', ''),
                 ('tips/iphone-charging-cable-loose-angle', 'The iPhone cable feels loose, or only works at an angle', 'Tell packed lint from a worn cable, moisture, or a damaged charging port.', ''),
                 ('tips/iphone-liquid-detected-port-dry', 'iPhone says Liquid Detected, but the port looks dry', 'Safe drying steps, how to test the cable, and when the port needs service.', ''),
+                ('tips/samsung-moisture-detected', "Samsung says Moisture detected, but the phone is dry", "Samsung’s drying steps and times, then the cable, room, restart and USB-cache checks, and when the port needs service.", ''),
                 ('tips/laptop-plugged-in-not-charging', 'Laptop says plugged in, not charging', 'Check the charger’s wattage first, then the port and battery.', ''),
             ]),
             ('drain', 'It drains fast or dies early', [
@@ -154,6 +159,7 @@ FINDERS = [
             ]),
             ('storage', 'Drives and Wi-Fi', [
                 ('tips/external-drive-not-showing-up-mac', 'External drive not showing up on a Mac', 'Check Finder, connections and mounting safely. Protect files before First Aid or formatting.', ''),
+                ('tips/dropped-external-hard-drive-clicking', "A dropped hard drive clicks, beeps or won’t show up", "Unplug it and leave it off, tell normal sounds from stop sounds, and try one cable only if the drive is quiet.", STOP),
                 ('tips/wifi-keeps-dropping', 'Wi-Fi keeps dropping', 'Router, distance and interference, one device versus the whole house, or a failing Wi-Fi card.', ''),
             ]),
         ],

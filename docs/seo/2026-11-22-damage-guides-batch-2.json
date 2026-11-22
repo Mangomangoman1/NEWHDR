@@ -1,0 +1,145 @@
+{
+  "date": "2026-11-22",
+  "record_type": "Prepared on branch claude/damage-guides-batch-2; NOT published. Held for the owner's release decision.",
+  "why": "Second batch of damage and hardware-diagnosis guides. HONEST LIMIT: unlike the Nov 21 batch, these topics were NOT chosen from query or volume data. The Nov 15 Search Console export's unused evidence was exhausted and no keyword-volume tool was available, so each topic was chosen by analogy to a page that already earns impressions, then checked for overlap, source readability and whether the shop does the work.",
+  "not_built": {
+    "xbox controller drift / not connecting": "Xbox Support is a JavaScript shell needing about five more Microsoft hosts to read; owner says controllers are not his area",
+    "macbook swollen battery": "laptop-battery-dying already covers trackpad and case signs",
+    "screen black during calls": "no query evidence",
+    "four more topics to reach ten": "waiting on fresh per-page Search Console query exports or keyword volumes"
+  },
+  "rules": [
+    "Every manufacturer fact from a page read on 2026-11-22; phrased 'Samsung says', 'Apple says'.",
+    "Owner house facts from 2026-11-21 applied (connectors rarely pop loose; a dead part is usually the part itself; no claims about speed of damage; tape cracked camera glass).",
+    "No invented bench stories, statistics or prices. Remaining questions are <!-- bench-note --> comments.",
+    "Mail-in stays 'Statewide' (Idaho). Bent devices: text photos first, no blanket mail-in offer."
+  ],
+  "guides": [
+    {
+      "route": "/tips/samsung-moisture-detected",
+      "topic": "Samsung 'Moisture detected' / water-drop icon, including on a dry phone",
+      "chosen_by_analogy_to": "iphone-liquid-detected-port-dry (2,961 impressions)",
+      "sources": [
+        "https://www.samsung.com/us/support/troubleshoot/TSG10004905/",
+        "https://www.samsung.com/us/support/galaxy-battery/charging-tip/",
+        "https://www.samsung.com/uk/support/mobile-devices/my-device-displays-a-water-drop-icon-and-will-not-charge/",
+        "https://www.samsung.com/in/support/mobile-devices/moisture-handling-tips-for-mobile-phones/",
+        "https://support.google.com/pixelphone/answer/9280079?hl=en"
+      ],
+      "owner_input": "Owner has not seen the stuck warning often enough to say what it usually is: no bench claim on the page. USB-cache steps rest on Samsung's UK page (no US version found). Open question: does he clean or replace Galaxy charging ports."
+    },
+    {
+      "route": "/tips/cracked-ipad-screen",
+      "topic": "Cracked iPad: safe to use, glass or display, glass-only versus full assembly by model",
+      "chosen_by_analogy_to": "cracked-screen-safe-to-use (27,337 impressions); iPad pages already earn impressions",
+      "sources": [
+        "https://support.apple.com/guide/ipad/important-safety-information-ipad27098ef5/ipados",
+        "https://support.apple.com/guide/ipad/take-a-screenshot-ipad08a40f3b/ipados",
+        "https://support.apple.com/en-us/108366",
+        "https://support.apple.com/en-us/108796",
+        "https://support.apple.com/en-us/108967",
+        "https://support.apple.com/en-us/108043",
+        "https://support.apple.com/ipad/repair",
+        "Apple tech-spec pages listing 'Fully laminated' for iPad mini 5/6/A17 Pro, iPad Air 2 through M3, iPad Pro 11-inch 4th gen and M4 models; not listed for iPad 9th, 10th, A16"
+      ],
+      "owner_input": "Owner supplied the model list (tables in chat, 2026-11-22): glass-only on every standard iPad through iPad 11 (A16), mini 1-3, Air 1; full assembly on mini 4+, Air 2+, every Pro. Apple's spec pages agree where they overlap. TO CONFIRM: page says a dead touch zone on a glass-only model is fixed by the glass/digitizer replacement (touch layer is part of that glass), and that lines or dark patches mean the LCD too."
+    },
+    {
+      "route": "/tips/cracked-samsung-back-glass",
+      "topic": "Cracked back glass on a Galaxy or Pixel",
+      "chosen_by_analogy_to": "cracked-iphone-back-glass (8,319 impressions)",
+      "sources": [
+        "https://www.samsung.com/us/support/answer/ANS10001610/",
+        "https://www.samsung.com/us/support/troubleshoot/TSG10002488/",
+        "https://www.samsung.com/us/support/troubleshoot/TSG10013508/",
+        "https://www.samsung.com/us/support/legal/LGL10000282/",
+        "https://www.samsung.com/us/support/answer/ANS10010059/",
+        "https://www.samsung.com/us/trade-in/frequently-asked-questions/",
+        "https://support.google.com/pixelphone/answer/14958126?hl=en",
+        "https://support.google.com/pixelphone/answer/7533279?hl=en",
+        "https://support.google.com/pixelphone/answer/7106961?hl=en",
+        "https://support.google.com/pixelphone/answer/15738128?hl=en",
+        "https://support.google.com/pixelphone/answer/16043453?hl=en"
+      ],
+      "owner_input": "Owner confirmed he replaces cracked back glass on Samsung and Pixel phones. Open: is camera lens glass part of the back panel he fits; which models he doesn't take; what he says about water resistance after the repair."
+    },
+    {
+      "route": "/tips/phone-buttons-not-working-after-drop",
+      "topic": "Power, volume or mute button stuck or dead after a drop; on-screen stand-ins",
+      "chosen_by_analogy_to": "phone-wont-turn-on-after-drop family (drop triage)",
+      "sources": [
+        "https://support.apple.com/en-us/102327",
+        "https://support.apple.com/en-us/111794",
+        "https://support.apple.com/en-us/111772",
+        "https://support.apple.com/en-us/105103",
+        "https://support.apple.com/guide/iphone/turn-iphone-on-or-off-iph841379c3d/ios",
+        "https://support.apple.com/guide/iphone/force-restart-iphone-iph8903c3ee6/ios",
+        "https://support.apple.com/en-us/104992",
+        "https://www.samsung.com/sg/support/mobile-devices/what-to-do-when-the-keys-on-your-galaxy-device-stop-working/",
+        "https://www.samsung.com/us/accessibility/galaxy-mobile-assistant-menu/",
+        "https://www.samsung.com/us/support/answer/ANS10002527/",
+        "https://www.samsung.com/us/support/answer/ANS10003231/",
+        "https://www.samsung.com/us/support/answer/ANS10002033/",
+        "https://www.samsung.com/us/support/answer/ANS10001579/",
+        "https://www.samsung.com/us/support/troubleshoot/TSG10001468/",
+        "https://support.google.com/accessibility/android/answer/9078941?hl=en",
+        "https://support.google.com/pixelphone/answer/7374159?hl=en"
+      ],
+      "owner_input": "Owner: fairly uncommon in his experience; when it happens the mechanism is often physically bent or disfigured. Open: does a phone with a dead power button start when plugged in; what a stuck power button does on phones he sees."
+    },
+    {
+      "route": "/tips/bent-phone-or-ipad",
+      "topic": "Bent phone or iPad: bend versus bulge, battery hazard, don't bend it back",
+      "chosen_by_analogy_to": "swollen-phone-battery-screen-lifting (3,285 impressions)",
+      "sources": [
+        "https://support.apple.com/guide/iphone/important-safety-information-iph301fc905/ios",
+        "https://support.apple.com/guide/ipad/important-safety-information-ipad27098ef5/ipados",
+        "https://support.google.com/pixelphone/answer/14958126?hl=en",
+        "https://support.google.com/pixelphone/answer/13159795?hl=en",
+        "https://support.google.com/pixelphone/answer/16043453?hl=en",
+        "https://www.samsung.com/us/support/legal/LGL10000282/",
+        "https://www.samsung.com/us/trade-in/frequently-asked-questions/"
+      ],
+      "owner_input": "Owner: does not straighten bent frames; takes bent-frame jobs by replacing the frame and damaged internals; bent devices can be battery hazards. Open: which devices he takes; what he finds inside; whether he'll open one just for data."
+    },
+    {
+      "route": "/tips/dropped-external-hard-drive-clicking",
+      "topic": "Dropped hard drive that clicks, beeps or won't spin: stop powering it",
+      "chosen_by_analogy_to": "external-drive-not-showing-up-mac; data-recovery service page ranks for local data recovery terms",
+      "sources": [
+        "https://www.seagate.com/support/kb/identifying-hard-drive-sounds-and-determining-what-they-mean/",
+        "https://www.seagate.com/support/kb/lacie/the-drive-is-making-clicking-sounds-006281en/",
+        "https://www.seagate.com/support/kb/what-should-i-do-for-a-noisy-disk-drive-193731en/",
+        "https://www.seagate.com/support/kb/internal-hard-drive-troubleshooter-006183en/",
+        "https://www.seagate.com/support/kb/usb-external-troubleshooter-003581en/",
+        "Seagate Recovery Services data-loss FAQ PDF (2012, UK edition)",
+        "https://support-en.wd.com/app/answers/detailweb/a_id/32906/",
+        "https://support-en.wd.com/app/answers/detailweb/a_id/22209/"
+      ],
+      "owner_input": "Owner: can often save data from drives beginning to fail but still partly working, and drives with damaged ports or other PCB issues; drives with damaged internal mechanisms or badly damaged file systems generally go to a data-recovery expert. CONFLICT TO RESOLVE: data-recovery.html lists clicking drives as Tier 2 in-house work (2-7 days), says 'data stays local' and 'no recovery, no fee'. Not edited; owner to decide."
+    }
+  ],
+  "other_changes": [
+    "tips/phone-wont-turn-on-after-drop: one sentence linking to the buttons guide; dateModified 2026-11-22",
+    "battery finder 'stop' row relabelled 'An iPhone warns about liquid' (it routes to the iPhone guide; Samsung now has its own row)"
+  ],
+  "integration": {
+    "tips_hub": "6 cards, count 82 to 88",
+    "guides_hub": "6 cards, ItemList 63 to 69",
+    "symptom_finders": "phone-screen-problems +4, battery-charging-problems +1, laptop-problems +1 (drive row flagged STOP)",
+    "sitemap": "6 routes + lastmod for tips, guides and three finders"
+  },
+  "checks": {
+    "site_audit": "136 public pages, 0 failures",
+    "indexability": "1177 passed, 0 failed",
+    "accessibility": "136 pages, 0 failures",
+    "node_tests": "53 passed, 0 failed",
+    "diff_check": "clean",
+    "visual": "Each guide screenshotted at 390px and 1280px and checked at 320px (scrollWidth 320, nothing past the edge); hero and first sections of all six reviewed by the integrating session",
+    "external_links": "66 external links, all HTTP 200",
+    "source_spot_checks": "Samsung 'approximately 1 to 2 hours', 'shake 5 to 10 times', USB cache steps, 'not permanent and may diminish over time', 'chips and cracks can significantly reduce' re-read against the pages"
+  },
+  "known_inconsistency_on_live_site": "tips/phone-screen-black-but-on (the top page) still lists 'display cable knocked loose' as the most common drop outcome; the owner says connectors rarely come loose. Not edited; raised with the owner.",
+  "release": "At release: set each page's DATE to the release date (CREATED stays 2026-11-22), regenerate, rerun finders and build, update sitemap lastmod. Content guide recommends 2-3 guides a week; eight went live on 2026-11-21.",
+  "measure_after": "28 days after release"
+}
