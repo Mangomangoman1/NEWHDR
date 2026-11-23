@@ -196,6 +196,13 @@
     "kw": " tips airdrop not finding iphone"
   },
   {
+    "name": "Android battery health: is yours bad?",
+    "desc": "Where a Samsung Galaxy or Google Pixel shows battery health, what Normal, Weak, Bad and Reduced mean, and when a new battery is worth it.",
+    "href": "/tips/android-battery-health",
+    "icon": "menu_book",
+    "kw": " tips android battery health"
+  },
+  {
     "name": "Android charges, but photos won’t transfer?",
     "desc": "Android photos missing on a Windows 11 PC? Check a data cable, unlock, and USB File Transfer (MTP), then copy and verify before deleting originals.",
     "href": "/tips/android-photos-not-showing-windows-usb",
@@ -243,6 +250,13 @@
     "href": "/tips/bluetooth-headphones-no-sound-windows",
     "icon": "menu_book",
     "kw": " tips bluetooth headphones no sound windows"
+  },
+  {
+    "name": "Broken screen, photos still on the phone?",
+    "desc": "Cracked, black or dead-touch screen on a Galaxy or Pixel? Check what’s already saved, then use a USB mouse, a monitor or a new screen to reach the rest.",
+    "href": "/tips/backup-android-broken-screen",
+    "icon": "menu_book",
+    "kw": " tips backup android broken screen"
   },
   {
     "name": "Cracked back glass on a Galaxy or Pixel?",
@@ -817,6 +831,13 @@
     "href": "/tech-helper",
     "icon": "menu_book",
     "kw": " tech helper"
+  },
+  {
+    "name": "What does “reglass” mean for an iPhone?",
+    "desc": "Reglass is repair-shop shorthand for replacing only an iPhone’s cracked glass and keeping its original display. When it can’t work, and what to ask.",
+    "href": "/tips/reglass-iphone-meaning",
+    "icon": "menu_book",
+    "kw": " tips reglass iphone meaning"
   },
   {
     "name": "What to Text for a Device Repair Quote",

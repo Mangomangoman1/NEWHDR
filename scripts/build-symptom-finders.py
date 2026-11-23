@@ -70,7 +70,9 @@ FINDERS = [
                 ('tips/bent-phone-or-ipad', "The phone or iPad is bent", "Tell a bend from a swollen-battery bulge, check it without flexing it, and why bending it back is the wrong fix.", ''),
                 ('tips/iphone-unknown-part-important-message', 'iPhone shows Unknown Part or an Important Message', 'What Genuine, Used, Finish Repair and Unknown Part mean, and what to ask your repairer.', ''),
                 ('tips/lcd-vs-oled', 'Quoted two very different prices for a screen', 'LCD and OLED screens are priced differently. How to tell which your phone has.', ''),
+                ('tips/reglass-iphone-meaning', "Quoted a “reglass” and not sure what that is", "Reglass means replacing only the cracked glass and keeping the original display. What it keeps, when it can’t work, and what to ask the shop.", ''),
                 ('tips/backup-iphone-broken-screen', 'Need the data off an iPhone with a broken screen', 'Check existing iCloud copies, trusted-computer limits, and data-preserving repair options.', ''),
+                ('tips/backup-android-broken-screen', "Need the data off a Samsung or Android with a broken screen", "Check what’s already in your Google account, then use a USB mouse, a monitor or a new screen, depending on what still works.", ''),
             ]),
         ],
     },
@@ -99,6 +101,7 @@ FINDERS = [
             ]),
             ('drain', 'It drains fast or dies early', [
                 ('tips/iphone-battery-health-80-percent', 'iPhone battery health is at 80%', '80% Maximum Capacity means a worn battery, not a dead or unsafe one. When replacing it makes sense.', ''),
+                ('tips/android-battery-health', "Checking battery health on a Samsung or Pixel", "Where the check is, what Normal, Weak, Bad and Reduced mean, and when a new battery is worth it.", ''),
                 ('tips/cold-weather-phone-battery', 'The phone dies in the cold', 'What is normal in winter, what points to a failing battery, and how to protect the phone.', ''),
                 ('tips/laptop-battery-dying', 'Laptop runtime keeps getting shorter', 'How to read runtime loss, system warnings and heat, and when replacement becomes urgent.', ''),
             ]),

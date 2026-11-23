@@ -1,0 +1,35 @@
+/* Android battery health: a battery that fills to "full" below its original top, status tiles for the makers' own words, and a by-model strip for Pixel. */
+.ab-page .fg-kicker,.ab-page .fg-number{color:#6fd3ff}.ab-page .tip-progress{background:#6fd3ff}.ab-page .fg-article li::marker{color:#63c2ec}.ab-page .fg-note{border-left-color:#4aa8d4;color:#dbe7ee}.ab-scope{font-size:13px;color:#c0cbd2;margin:18px 0 0}.ab-scope a{color:#b3e6ff}
+.ab-routes{position:relative;overflow:hidden;padding:28px 30px;border:1px solid #2f5163;border-radius:12px;background:radial-gradient(70% 60% at 32% 24%,rgba(111,211,255,.12) 0%,rgba(111,211,255,0) 70%),linear-gradient(160deg,#131f27,#191a1f 74%)}
+.ab-routes>a{display:flex;align-items:center;gap:14px;padding:19px 0;border-top:1px solid #2f5163;text-decoration:none;min-height:64px}.ab-routes>a>span:first-child{font-size:11px;color:#6fd3ff;font-variant-numeric:tabular-nums}.ab-routes strong{font-size:14px;color:#eef6fa;flex:1;line-height:1.6}.ab-routes>a:hover strong{text-decoration:underline;text-underline-offset:4px}
+.ab-art{margin:0 0 26px}
+.ab-scene{display:flex;align-items:center;justify-content:center;min-height:196px;padding:8px 0 20px}
+.ab-phone{position:relative;width:92px;height:176px;flex-shrink:0;padding:5px;border:2px solid #c9d8e0;border-radius:19px;background:#04070a;box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.ab-glass{position:relative;display:flex;flex-direction:column;align-items:center;height:100%;overflow:hidden;border-radius:14px;background:radial-gradient(90% 60% at 50% 34%,rgba(111,211,255,.13),rgba(111,211,255,0) 72%),linear-gradient(170deg,#101b22,#080d11)}
+.ab-cell{position:relative;display:block;width:42px;height:76px;margin-top:30px;border:2px solid rgba(201,216,224,.85);border-radius:8px;background:#060a0d}
+.ab-cell:before{content:"";position:absolute;top:-7px;left:calc(50% - 8px);width:16px;height:5px;border-radius:3px 3px 0 0;background:rgba(201,216,224,.85)}
+.ab-cell__lost{position:absolute;left:3px;right:3px;top:3px;height:17px;border-radius:4px 4px 1px 1px;border-bottom:1.5px dashed rgba(111,211,255,.75);background:repeating-linear-gradient(135deg,rgba(111,211,255,.3) 0 2px,rgba(111,211,255,0) 2px 6px)}
+.ab-cell__fill{position:absolute;left:3px;right:3px;bottom:3px;height:51px;border-radius:1px 1px 4px 4px;background:linear-gradient(180deg,#8ddcff,#3fa9d8);transform-origin:50% 100%;animation:ab-fill 7s ease-in-out infinite}
+.ab-word{display:block;width:38px;height:6px;margin-top:14px;border-radius:3px;background:rgba(238,246,250,.6)}
+.ab-word--short{width:24px;height:4px;margin-top:7px;background:rgba(238,246,250,.28)}
+.ab-art figcaption{text-align:center;font-size:12px;color:#d0dbe1;line-height:1.7}
+.ab-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
+.ab-status,.ab-models{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 24px}
+.ab-status__cell,.ab-models__cell{display:flex;flex-direction:column;padding:16px 16px 18px;border:1px solid #29465a;border-radius:10px;background:#101920;font-size:13px;line-height:1.55;color:#bccbd4}
+.ab-status__cell strong,.ab-models__cell strong{display:block;font-size:14px;line-height:1.4;color:#eef6fa}
+.ab-status__cell strong{margin:10px 0 4px}
+.ab-models__cell strong{margin:8px 0 4px}
+.ab-models__cell em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6fd3ff}
+.ab-dot{display:block;width:26px;height:8px;border-radius:4px;background:#2b3d49}
+.ab-dot--ok{background:linear-gradient(90deg,#6fd3ff,#6fd3ff)}
+.ab-dot--mid{background:linear-gradient(90deg,#e8bd7a 0 62%,#2b3d49 62%)}
+.ab-dot--low{background:linear-gradient(90deg,#e58a7a 0 30%,#2b3d49 30%)}
+.ab-warning{padding:22px;border:1px solid #a7744d;border-radius:6px;background:#241911;margin:24px 0}.ab-warning>strong{display:block;color:#f8e9d6;margin-bottom:10px}.ab-warning p{margin:0}.ab-page .fg-article .ab-warning a{color:#f0cf9b}
+.ab-page .fg-article a{color:#b3e6ff}
+.ab-page a:focus-visible{outline:2px solid #c6ecff;outline-offset:5px;border-radius:2px}
+@keyframes ab-fill{0%{transform:scaleY(.22)}42%,86%{transform:scaleY(1)}100%{transform:scaleY(.22)}}
+@media(max-width:760px){.ab-routes{padding:22px}.ab-warning{padding-inline:18px}}
+@media(max-width:620px){.ab-status,.ab-models{grid-template-columns:1fr;gap:10px}.ab-status__cell{display:grid;grid-template-columns:26px 1fr;column-gap:14px;align-items:start}.ab-status__cell .ab-dot{grid-row:1/3;margin-top:7px}.ab-status__cell strong{margin:0 0 3px}}
+@media(max-width:430px){.ab-phone{width:80px;height:154px;border-radius:17px}.ab-glass{border-radius:12px}.ab-cell{width:38px;height:66px;margin-top:26px}.ab-cell__lost{height:15px}.ab-cell__fill{height:43px}}
+@media(max-width:350px){.ab-routes{padding:20px 18px}}
+@media(prefers-reduced-motion:reduce){.ab-cell__fill{animation:none}}

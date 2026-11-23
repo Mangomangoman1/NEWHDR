@@ -30,3 +30,8 @@ The service page says clicking drives are Tier 2 physical recovery (from $199, 2
 3. Does “no recovery, no fee” still hold when a specialist does the work?
 4. Roughly how long does a send-out take?
 5. Should “your data stays local” become “your data stays local unless you approve sending the drive to a specialist”?
+
+### From the 2026-11-23 guides
+- `/tips/backup-android-broken-screen`: on a locked Galaxy with One UI 7 or later and dead touch, does a USB mouse reach the PIN screen on your bench, or does Samsung's USB lock block it? Does an Android screen replacement ever need a reset?
+- `/tips/android-battery-health`: when a Galaxy comes in for a battery, what do you go by: the Samsung Members word, your own reading, or runtime and shutdowns? Is mail-in fine for ordinary battery replacements?
+- `/tips/reglass-iphone-meaning`: optional. When a customer shows you a quote that says “reglass”, what most often turns out to mean something different from what they assumed?

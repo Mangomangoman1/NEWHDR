@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-23",
+  "record_type": "Prepared on branch claude/guides-batch-3; NOT published. Waiting for the owner's release decision.",
+  "why": "Three guides chosen from the Search Console export to 2026-11-13 without keyword-volume data. A fourth candidate ('I dropped my phone but nothing happened', 105 impressions) was dropped: the search results show the query means 'nothing happens when I press power', which /tips/phone-wont-turn-on-after-drop already covers.",
+  "guides": [
+    {
+      "route": "/tips/reglass-iphone-meaning",
+      "topic": "What 'reglass' means for an iPhone: front and back meanings, versus full and aftermarket replacement, process, OLED, when it isn't possible, questions for a shop",
+      "evidence": "'reglass for iphone meaning' 1,136 impressions at position 9.7 with 0 clicks, plus 'what is reglass iphone'; the site ranked from a three-paragraph section on the protector guide. Search results show the term is a repair-quote term, not a used-listing term.",
+      "sources": [
+        "https://support.apple.com/en-us/103256",
+        "https://support.apple.com/en-us/102658",
+        "https://support.apple.com/en-us/120652",
+        "https://support.apple.com/en-us/120638",
+        "iFixit member guides: iPhone 11 Pro Max Screen Glass Replacement (128587), iPhone 12 Screen Refurbishment (138992)",
+        "iFixit editorials May and July 2019 (News/16303, News/30717)",
+        "iFixit: iPhone Screen Repair: Costs and Considerations",
+        "iFixit Answers 812432 (user forum, 2023)"
+      ],
+      "notes": "Owner instructions (2026-11-23): no statement about what HDR does or doesn't fit, no disclaimer about his experience; he has not fitted reglassed screens because there are usually better options, and it is not a policy. The page takes no side. Five iFixit glass-only guides returned 403 and were not used. No source uses the word 'reglass'; the page calls it trade shorthand. Three points rest on one forum answer and are labelled as such."
+    },
+    {
+      "route": "/tips/backup-android-broken-screen",
+      "topic": "Getting data off a Samsung, Pixel or other Android phone with a cracked, black or dead-touch screen, organised by what still works",
+      "evidence": "Analogy: /tips/backup-iphone-broken-screen has 61 clicks at 0.9% CTR; Samsung black-screen queries click at about 3%.",
+      "sources": [
+        "Samsung US: ANS10002919, TSG10013048, ANS10002780, ANS10002458, ANS10002778, ANS10001955, ANS10001972, ANS10003600, TSG10001451",
+        "Samsung UK broken-screen page; Samsung Ireland unlock page",
+        "Google: android/2819582, googleone/9149304, pixelphone/7179901, photos/6193313, android/9064445, android/16778864, pixelphone/6285273, pixelphone/2865484, accessibility/16323943, accounts/6160491, android/6088915, pixelphone/9004345"
+      ],
+      "notes": "No lock-bypass methods; every method states the unlock prerequisite as the maker states it. Verified by the integrating session: One UI 7 USB restriction, OneDrive Gallery sync ended 2026-09-30, DeX/HDMI model list, Google's 57-day backup expiry."
+    },
+    {
+      "route": "/tips/android-battery-health",
+      "topic": "Where Samsung and Pixel show battery health, what the status words mean, charge-limit settings, when to replace",
+      "evidence": "Analogy: /tips/iphone-battery-health-80-percent has 13,847 impressions. /tips/android-battery-health was on the site's original plan.",
+      "sources": [
+        "Samsung US: ANS10003632, galaxy-battery/about-battery, galaxy-battery/care-and-maintenance, ANS10002534",
+        "Samsung India and Caribbean battery status pages; Samsung UK battery protection page",
+        "Google: pixelphone/15738128, pixelphone/6090612, pixelphone/14101646"
+      ],
+      "notes": "No '80%' in the title: Google states 80% for Pixel, Samsung states no figure. Samsung's status words come from its India and Caribbean pages; the US pages give only the path. Verified by the integrating session: Google's Reduced-below-80%, 800 and 1,000 rated cycles, Pixel 9a note; Samsung's three status definitions, 32-95°F, and its unplug-at-100% line."
+    }
+  ],
+  "other_changes": [
+    "/tips/screen-protector-or-cracked-screen: removed 'Hailey Device Repair replaces the complete bonded display assembly rather than re-glassing' (owner: not a policy) and added one link to the new reglass guide; dateModified 2026-11-23. Note: this section was due to be measured around Dec 3-7; the new dedicated page changes that measurement.",
+    "/tips/phone-touch-screen-not-working-after-drop: one sentence on Samsung's One UI 7 USB restriction (a mouse may not work on a locked Galaxy after a restart) with a link to the Android backup guide; Samsung source added; dateModified 2026-11-23."
+  ],
+  "integration": {
+    "tips_hub": "3 cards, 88 to 91",
+    "guides_hub": "3 cards, ItemList 69 to 72",
+    "symptom_finders": "phone-screen-problems +2, battery-charging-problems +1",
+    "sitemap": "3 routes; lastmod for tips, guides, two finders and the two edited guides"
+  },
+  "checks": {
+    "site_audit": "139 public pages, 0 failures",
+    "indexability": "1201 passed, 0 failed",
+    "accessibility": "0 failures",
+    "node_tests": "53 passed",
+    "diff_check": "clean",
+    "visual": "All three read in full as text by the integrating session; reglass read in full at phone width, both Android guides' first two phone slices viewed; 390/1280 no overflow, 320px scrollWidth 320",
+    "external_links": "44 links: all 200 except photos.google.com, which the build sandbox cannot reach (valid address)",
+    "redirects": "none name the new slugs",
+    "page_source": "no HTML comments or notes in any page"
+  },
+  "owner_questions": "Added to docs/seo/owner-open-items.md.",
+  "measure_after": "28 days after release"
+}
