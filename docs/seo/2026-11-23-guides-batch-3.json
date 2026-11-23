@@ -17,7 +17,7 @@
         "iFixit: iPhone Screen Repair: Costs and Considerations",
         "iFixit Answers 812432 (user forum, 2023)"
       ],
-      "notes": "Owner instructions (2026-11-23): no statement about what HDR does or doesn't fit, no disclaimer about his experience; he has not fitted reglassed screens because there are usually better options, and it is not a policy. The page takes no side. Five iFixit glass-only guides returned 403 and were not used. No source uses the word 'reglass'; the page calls it trade shorthand. Three points rest on one forum answer and are labelled as such."
+      "notes": "Owner instructions (2026-11-23): no statement about what HDR does or doesn't fit, no disclaimer about his experience; he has not fitted reglassed screens because there are usually better options, and it is not a policy. The page takes no side. Five iFixit glass-only guides returned 403 and were not used. No source uses the word 'reglass'; the page calls it trade shorthand. Three points rest on one forum answer and are labelled as such. The definitions of front reglass, back reglass and 'refurbished' screen have no source page that uses those words; they are stated as trade usage."
     },
     {
       "route": "/tips/backup-android-broken-screen",
@@ -44,7 +44,7 @@
   ],
   "other_changes": [
     "/tips/screen-protector-or-cracked-screen: removed 'Hailey Device Repair replaces the complete bonded display assembly rather than re-glassing' (owner: not a policy) and added one link to the new reglass guide; dateModified 2026-11-23. Note: this section was due to be measured around Dec 3-7; the new dedicated page changes that measurement.",
-    "/tips/phone-touch-screen-not-working-after-drop: one sentence on Samsung's One UI 7 USB restriction (a mouse may not work on a locked Galaxy after a restart) with a link to the Android backup guide; Samsung source added; dateModified 2026-11-23."
+    "/tips/phone-touch-screen-not-working-after-drop: Samsung's One UI 7 USB restriction added. The guide now says, on a Galaxy, unlock by fingerprint or face, connect the mouse and back up BEFORE any restart (after a restart the phone asks for the PIN first), and links to the Android backup guide from the backup section and the data section. Samsung source added; dateModified 2026-11-23."
   ],
   "integration": {
     "tips_hub": "3 cards, 88 to 91",
@@ -58,11 +58,16 @@
     "accessibility": "0 failures",
     "node_tests": "53 passed",
     "diff_check": "clean",
-    "visual": "All three read in full as text by the integrating session; reglass read in full at phone width, both Android guides' first two phone slices viewed; 390/1280 no overflow, 320px scrollWidth 320",
+    "visual": "All three read in full as text by the integrating session; reglass read in full at phone width; both Android guides' opening slices, the TV/monitor section and the battery decision table viewed at phone width; the 'After a drop or a repair' finder group (9 rows) viewed after integration; 390/1280 no overflow, 320px scrollWidth 320.",
     "external_links": "44 links: all 200 except photos.google.com, which the build sandbox cannot reach (valid address)",
     "redirects": "none name the new slugs",
     "page_source": "no HTML comments or notes in any page"
   },
   "owner_questions": "Added to docs/seo/owner-open-items.md.",
-  "measure_after": "28 days after release"
+  "measure_after": "28 days after release",
+  "open_for_owner": [
+    "Release approval for these three guides.",
+    "/tips/cracked-screen-safe-to-use states three times (callout, FAQ, FAQ JSON-LD) that 'HDR uses complete bonded display assemblies, not glass-only refurbishment', next to the starting prices. The owner said on 2026-11-23 that this is not a policy. Not edited: it is the site's third-largest page and the sentence is tied to pricing. Owner to choose the wording.",
+    "/tips/phone-screen-black-but-on tells readers to try a forced restart first. On a locked Galaxy with One UI 7+ that removes fingerprint unlock and blocks a USB mouse. Not edited (top page); raised with the owner."
+  ]
 }
