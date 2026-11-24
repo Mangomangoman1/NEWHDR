@@ -127,11 +127,11 @@
         { name: 'iPad & Tablet', desc: 'iPad, Galaxy Tab, Amazon Fire', href: '/tablet-repair', icon: 'tablet', kw: 'tablet ipad repair screen battery galaxy tab fire' },
         { name: 'Game Console Repair', desc: 'Switch, PS5, Xbox, Steam Deck', href: '/console-repair', icon: 'sports_esports', kw: 'console game nintendo switch ps5 xbox steam deck controller drift' },
         { name: 'PS5 Repair', desc: 'HDMI port, overheating, no power — statewide mail-in', href: '/ps5-repair', icon: 'stadia_controller', kw: 'ps5 playstation hdmi port no signal white light overheating liquid metal repair' },
-        { name: 'Mail-In Repair', desc: 'Ship from anywhere in Idaho', href: '/mail-in-repair', icon: 'local_shipping', kw: 'mail in repair ship statewide idaho send' },
+        { name: 'Mail-In Repair', desc: 'Ship from anywhere in the lower 48', href: '/mail-in-repair', icon: 'local_shipping', kw: 'mail in repair ship nationwide any state lower 48 idaho send' },
         { name: 'Electronics Recycling', desc: 'Recycle old devices with data-safe handling', href: '/electronics-recycling', icon: 'recycling', kw: 'electronics recycling recycle ewaste e waste old laptop phone ipad tablet battery data destruction parts donor' },
-        { name: 'Mail-In iPhone Repair', desc: 'Idaho-wide iPhone shipping guide', href: '/mail-in/iphone', icon: 'phone_iphone', kw: 'mail in iphone repair idaho ship iphone cracked screen back glass battery' },
-        { name: 'Mail-In MacBook Repair', desc: 'Idaho-wide MacBook shipping guide', href: '/mail-in/macbook', icon: 'laptop_mac', kw: 'mail in macbook repair idaho ship macbook battery screen keyboard charging' },
-        { name: 'Mail-In iPad Repair', desc: 'Idaho-wide iPad shipping guide', href: '/mail-in/ipad', icon: 'tablet_mac', kw: 'mail in ipad repair idaho ship ipad cracked glass battery charging' }
+        { name: 'Mail-In iPhone Repair', desc: 'Ship your iPhone from any state', href: '/mail-in/iphone', icon: 'phone_iphone', kw: 'mail in iphone repair idaho ship iphone cracked screen back glass battery' },
+        { name: 'Mail-In MacBook Repair', desc: 'Ship your MacBook from any state', href: '/mail-in/macbook', icon: 'laptop_mac', kw: 'mail in macbook repair idaho ship macbook battery screen keyboard charging' },
+        { name: 'Mail-In iPad Repair', desc: 'Ship your iPad from any state', href: '/mail-in/ipad', icon: 'tablet_mac', kw: 'mail in ipad repair idaho ship ipad cracked glass battery charging' }
       ]},
       { title: 'Computer Help', icon: 'computer', links: [
         { name: 'Computer Help & IT', desc: 'Slow PC, crashes, startup issues', href: '/computer-support', icon: 'computer', kw: 'computer help support slow pc crash startup it' },
@@ -869,7 +869,7 @@
   },
   {
     "name": "Phone Repair in Hailey vs Boise vs Mail-In",
-    "desc": "Phone repair in Hailey vs Boise vs mail-in: a Wood River Valley guide to choosing local, the two-hour drive, or quote-first mail-in repair from HDR statewide.",
+    "desc": "Phone repair in Hailey vs Boise vs mail-in: a Wood River Valley guide to choosing local, the two-hour drive, or quote-first mail-in repair from HDR.",
     "href": "/phone-repair-hailey-vs-boise",
     "icon": "menu_book",
     "kw": " phone repair hailey vs boise"

@@ -215,9 +215,9 @@ def card(model, row, index):
 
 STEPS = [
     ('Text the model and what broke', 'A photo of the damage helps. You get a firm quote back before anything ships.'),
-    ('Pack it and send it', 'Power it off, take off the case, wrap it well and use any small box with USPS, UPS or FedEx.'),
-    ('Repaired on the bench', 'You get a text when it arrives. Most repairs are finished within 24 hours, and anything unexpected is texted to you before extra work.'),
-    ('Shipped back, tracked', 'Tested, packed and sent back with a tracking number by text. Return shipping is in the mail-in price.'),
+    ('Pack it and send it', 'Power it off, take off the case, wrap it well and ship it from anywhere in the lower 48 with USPS, UPS or FedEx. Postage to us is yours.'),
+    ('Repaired on the bench', 'You get a text when it arrives. Most repairs are finished in 1–2 days, depending on the job, and anything unexpected is texted to you before extra work.'),
+    ('Pay, then it ships back', 'The invoice comes by text or email. Once it is paid, it ships back tested and tracked, with return postage on us.'),
 ]
 
 
@@ -300,7 +300,7 @@ def build_model(model, nav, tail):
 <div class="rp-cards">{cards}</div>{grade_note}</section>
 <section class="rp-section rp-mail" aria-labelledby="mail-title"><header class="rp-section__head"><p class="fg-kicker">02 / By mail</p><h2 id="mail-title">Send it in, get it back fixed</h2></header>
 <ol class="rp-steps">{steps}</ol>
-<div class="rp-mail__end"><p>Not near Hailey? This is how most {escape(name)} repairs reach the bench.</p><a class="rp-btn rp-btn--main" href="{SMS}">Text the model and the problem {ARROW}</a><a class="rp-btn" href="/{fam['mailin'][0]}">{escape(fam['mailin'][1])}</a></div></section>
+<div class="rp-mail__end"><p>Not near Hailey? This is how most {escape(name)} repairs reach the bench, from any state in the lower 48.</p><a class="rp-btn rp-btn--main" href="{SMS}">Text the model and the problem {ARROW}</a><a class="rp-btn" href="/{fam['mailin'][0]}">{escape(fam['mailin'][1])}</a></div></section>
 <section class="rp-section" aria-labelledby="more-title"><header class="rp-section__head"><p class="fg-kicker">03 / Before you send it</p><h2 id="more-title">Not sure it’s the part?</h2></header>
 <div class="rp-related">{related}<a href="/{service[0]}">{escape(service[1])} {ARROW}</a><a href="/device-check">Device Check: a few questions, then an estimate {ARROW}</a></div></section>
 <nav class="rp-models" aria-label="Other {escape(fam['label'])} models"><p class="fg-kicker">Other {escape(fam['label'])} prices</p><div class="rp-models__list">{sib_links}</div><div class="rp-models__pn">{prev_next}</div><a class="rp-models__all" href="/repair">Every model we price {ARROW}</a></nav>
