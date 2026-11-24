@@ -336,7 +336,7 @@ def build_index(nav, tail):
 <main id="content" tabindex="-1">
 <header class="fg-hero rp-hero"><div class="fg-wrap">
 <nav class="fg-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Repair prices</span></nav>
-<div class="rp-hero__copy rp-hero__copy--wide"><p class="fg-kicker">Repair prices · By model</p><h1>Repair prices, model by<h1>Find the price for your exact&nbsp;model.</h1>nbsp;model.</h1>
+<div class="rp-hero__copy rp-hero__copy--wide"><p class="fg-kicker">Repair prices · By model</p><h1>Repair prices, model by&nbsp;model.</h1>
 <p class="rp-answer">Each model has its own page with the bench price, the mail-in price with return shipping included, the part we fit and what the job covers. Every job still gets a firm quote by text before work starts.</p>
 <div class="rp-cta"><a class="rp-btn rp-btn--main" href="{SMS}">Text for a quote {ARROW}</a><a class="rp-btn" href="/pricing">Search the full menu</a></div></div>
 </div></header>

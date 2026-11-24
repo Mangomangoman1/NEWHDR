@@ -1015,7 +1015,7 @@
     "kw": " tips repair or replace"
   },
   {
-    "name": "Repair prices, model byFind the price for your exact model.",
+    "name": "Repair prices, model by model.",
     "desc": "Find the repair price for your exact model: every iPhone from the 11 to the 17 Pro Max, PS5, Xbox, Switch and controllers. Bench and mail-in prices, quote first.",
     "href": "/repair",
     "icon": "menu_book",
