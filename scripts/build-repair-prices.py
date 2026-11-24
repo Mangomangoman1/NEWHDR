@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ORIGIN = 'https://www.haileyrepair.com'
 CHECKED = '2026-11-24'
 CHECKED_LABEL = 'November 24, 2026'
-CSS_VERSION = '20261124'
+CSS_VERSION = '20261124b'
 SMS = 'sms:+12084501606'
 TEL = 'tel:+12084501606'
 PHONE = '208-450-1606'
@@ -57,6 +57,48 @@ GRADES = {
     'Aftermarket flex': 'An aftermarket port assembly.',
     'Glass only (no housing swap)': 'New rear glass; your original frame and parts stay.',
 }
+# Jobs for the other families: (title, what it is, tip, tip label). Only facts about the part.
+JOBS = {
+    'android': {
+        'Screen': ('Screen replacement', 'The display and touch layer, replaced together as one assembly.', 'tips/samsung-screen-issues', 'Green line, flicker or dead touch'),
+        'Battery': ('Battery replacement', 'A new cell for a phone that dies early, drains fast or has started to swell.', 'tips/swollen-phone-battery-screen-lifting', 'Screen or back lifting? Read this first'),
+        'Charge Port': ('Charging port repair', 'The USB-C port and the small board or cable it sits on.', 'tips/samsung-moisture-detected', 'Moisture detected on the port'),
+    },
+    'ipad': {
+        'Screen Assembly': ('Screen replacement', 'On this iPad the glass, touch and picture are bonded into one part, so they are replaced together.', 'tips/cracked-ipad-screen', 'Cracked iPad screen: two tests first'),
+        'Glass / Digitizer': ('Glass and touch replacement', 'The front glass and the touch layer bonded to it. The picture sits on a separate panel underneath.', 'tips/cracked-ipad-screen', 'Cracked iPad screen: two tests first'),
+        'LCD (under glass)': ('LCD replacement', 'The picture panel under the glass, for lines, dark patches or no picture when the glass is fine.', 'tips/cracked-ipad-screen', 'Is it the glass or the display?'),
+        'Battery': ('Battery replacement', 'A new cell for an iPad that drains fast or shuts off early.', 'tips/swollen-phone-battery-screen-lifting', 'Screen lifting? Stop charging it'),
+        'Charge Port': ('Charging port repair', 'The port is soldered to the board on iPad, so this is a micro-soldering job.', 'tips/battery-charging-problems', 'Not charging: what to check first'),
+    },
+    'macbook': {
+        'Display': ('Display replacement', 'The complete display assembly, replaced as one part.', 'tips/laptop-screen-damaged-after-drop', 'Screen damaged after a drop'),
+        'Battery': ('Battery replacement', 'A new battery for a MacBook that drains fast or shows Service Recommended.', 'tips/laptop-battery-dying', 'Battery dying fast: what to check'),
+    },
+}
+GRADES.update({
+    'OEM service pack w/ frame': 'A Samsung service pack: a genuine Samsung screen that comes fitted to a new frame.',
+    'OEM service pack': 'A Samsung service pack, a genuine Samsung screen.',
+    'Aftermarket / incell': 'An aftermarket in-cell screen.',
+    'OEM/premium cell': 'A genuine or premium aftermarket battery cell.',
+    'Premium cell': 'A premium aftermarket battery cell.',
+    'Sub-board or flex': 'The charging sub-board or port cable, replaced as a unit.',
+    'Sub-board': 'The charging sub-board, replaced as a unit.',
+    'Sub-board / flex': 'The charging sub-board or port cable, replaced as a unit.',
+    'OEM / premium AM': 'A genuine Google screen or a premium aftermarket one.',
+    'Aftermarket digitizer': 'An aftermarket glass and touch panel.',
+    'Aftermarket LCD': 'An aftermarket LCD panel.',
+    'Aftermarket cell': 'A new aftermarket battery cell.',
+    'Soldered — micro-solder': 'Soldered to the board and replaced with micro-soldering.',
+    'Laminated assembly': 'Glass, touch and display bonded as one part.',
+    'Full assembly, OEM-pull/AM': 'The complete display assembly: a genuine Apple part pulled from another MacBook, or an aftermarket one.',
+    'Full assembly': 'The complete display assembly.',
+    'Aftermarket': 'An aftermarket battery.',
+    'Aftermarket / OEM': 'An aftermarket or genuine Apple battery.',
+    'OEM': 'A genuine Apple battery.',
+    'OEM-pull/AM': 'A genuine Apple battery pulled from another MacBook, or an aftermarket one.',
+})
+JOB_FAMILY = {'samsung': 'android', 'pixel': 'android', 'ipad': 'ipad', 'macbook': 'macbook'}
 LCD_NATIVE = {'iPhone 8', 'iPhone 8 Plus', 'iPhone XR', 'iPhone 11', 'iPhone SE (2020)', 'iPhone SE (2022)'}
 
 CONSOLE_TIPS = {
@@ -75,6 +117,18 @@ FAMILIES = {
     'console': {'label': 'Consoles', 'accent': 'console', 'service': ('console-repair', 'Game console repair'), 'mailin': ('mail-in-repair', 'Mail-in repair'),
                 'related': [('tips/game-console-problems', 'Console problems, by symptom'), ('tips/ps5-no-signal-hdmi', 'PS5 no signal over HDMI'),
                             ('tips/xbox-series-x-no-signal-hdmi', 'Xbox Series X|S no signal'), ('tips/nintendo-switch-wont-turn-on', 'Switch won’t turn on')]},
+    'samsung': {'label': 'Samsung Galaxy', 'accent': 'android', 'service': ('android-repair', 'Samsung and Android repair'), 'mailin': ('mail-in-repair', 'Mail-in repair'),
+                'related': [('tips/samsung-screen-issues', 'Green line, flicker, dead touch or burn-in'), ('tips/cracked-samsung-back-glass', 'Cracked back glass on a Galaxy'),
+                            ('tips/samsung-moisture-detected', 'Moisture detected on the port'), ('tips/water-damaged-phone', 'The phone got wet')]},
+    'pixel': {'label': 'Google Pixel', 'accent': 'android', 'service': ('android-repair', 'Pixel and Android repair'), 'mailin': ('mail-in-repair', 'Mail-in repair'),
+              'related': [('tips/phone-screen-problems', 'Phone screen problems, by symptom'), ('tips/swollen-phone-battery-screen-lifting', 'Screen or back lifting'),
+                          ('tips/phone-charges-slowly', 'Charges slowly or not at all'), ('tips/water-damaged-phone', 'The phone got wet')]},
+    'ipad': {'label': 'iPad', 'accent': 'ipad', 'service': ('tablet-repair', 'iPad and tablet repair'), 'mailin': ('mail-in/ipad', 'Mail-in iPad repair'),
+             'related': [('tips/cracked-ipad-screen', 'Cracked iPad screen: two tests first'), ('tips/apple-pencil-not-working', 'Apple Pencil not working'),
+                         ('tips/bent-phone-or-ipad', 'A bent iPad'), ('tips/backup-before-repair', 'Back up before a repair')]},
+    'macbook': {'label': 'MacBook', 'accent': 'macbook', 'service': ('macbook-repair', 'MacBook repair'), 'mailin': ('mail-in/macbook', 'Mail-in MacBook repair'),
+                'related': [('tips/laptop-screen-black-but-running', 'Screen black but the Mac is running'), ('tips/laptop-battery-dying', 'Battery dying fast'),
+                            ('tips/spilled-liquid-on-laptop', 'Spilled liquid on the keyboard'), ('tips/macbook-pro-stage-light', 'MacBook Pro stage light')]},
 }
 
 # ─── Models. Rows are matched to the data file by exact device name. ───
@@ -104,6 +158,56 @@ CONSOLES = [
 for c in CONSOLES:
     MODELS.append({'family': 'console', **c, 'short': c['name']})
 
+GALAXY_S = ['Galaxy S21', 'Galaxy S21+', 'Galaxy S21 Ultra', 'Galaxy S21 FE', 'Galaxy S22', 'Galaxy S22+', 'Galaxy S22 Ultra',
+            'Galaxy S23', 'Galaxy S23+', 'Galaxy S23 Ultra', 'Galaxy S23 FE', 'Galaxy S24', 'Galaxy S24+', 'Galaxy S24 Ultra', 'Galaxy S24 FE',
+            'Galaxy S25', 'Galaxy S25+', 'Galaxy S25 Ultra']
+for name in GALAXY_S:
+    MODELS.append({'family': 'samsung', 'name': name, 'full': f'Samsung {name}', 'slug': slugify(f'samsung {name}'),
+                   'devices': [name, 'Galaxy S21–S25 (any)'], 'short': name.replace('Galaxy ', '')})
+for name, device, short in [('Galaxy A14, A15 and A16', 'Galaxy A14 / A15 / A16', 'A14–A16'), ('Galaxy A53 and A54', 'Galaxy A53 / A54', 'A53 / A54'),
+                            ('Galaxy A55 and A56', 'Galaxy A55 / A56', 'A55 / A56')]:
+    MODELS.append({'family': 'samsung', 'name': name, 'full': f'Samsung {name}', 'slug': slugify('samsung ' + device),
+                   'devices': [device, 'Galaxy A-series (any)'], 'short': short})
+for name in ['Pixel 7', 'Pixel 7 Pro', 'Pixel 7a', 'Pixel 8', 'Pixel 8 Pro', 'Pixel 8a', 'Pixel 9', 'Pixel 9 Pro', 'Pixel 9 Pro XL', 'Pixel 9a']:
+    MODELS.append({'family': 'pixel', 'name': name, 'full': f'Google {name}', 'slug': slugify(f'google {name}'),
+                   'devices': [name, 'Pixel 7–9a (any)'], 'short': name.replace('Pixel ', '')})
+# iPad Pro is left to the full menu until its overlapping generation rows are settled.
+IPADS = [
+    ('iPad 5th and 6th gen', 'ipad-5-6', ['iPad 5 / 6 (2017–18)', 'iPad 5 / 6'], '5th / 6th gen'),
+    ('iPad 7th, 8th and 9th gen', 'ipad-7-8-9', ['iPad 7 / 8 / 9 (10.2")', 'iPad 7 / 8 / 9'], '7th–9th gen'),
+    ('iPad 10th gen', 'ipad-10', ['iPad 10 (2022)', 'iPad 10 / 11 (A16)'], '10th gen'),
+    ('iPad 11th gen (A16)', 'ipad-11-a16', ['iPad 11 (A16, 2025)', 'iPad 10 / 11 (A16)'], '11th gen'),
+    ('iPad mini 5', 'ipad-mini-5', ['iPad mini 5 (2019)', 'iPad mini / Air (any)'], 'mini 5'),
+    ('iPad mini 6', 'ipad-mini-6', ['iPad mini 6 (2021)', 'iPad mini / Air (any)'], 'mini 6'),
+    ('iPad mini 7 (A17 Pro)', 'ipad-mini-7', ['iPad mini 7 (A17 Pro)', 'iPad mini / Air (any)'], 'mini 7'),
+    ('iPad Air 3', 'ipad-air-3', ['iPad Air 3 (2019)', 'iPad mini / Air (any)'], 'Air 3'),
+    ('iPad Air 4 and 5', 'ipad-air-4-5', ['iPad Air 4 / 5 (2020–22)', 'iPad mini / Air (any)'], 'Air 4 / 5'),
+    ('iPad Air 11" (M2, M3, M4)', 'ipad-air-11-m2-m3-m4', ['iPad Air 11" (M2/M3/M4)', 'iPad mini / Air (any)'], 'Air 11"'),
+    ('iPad Air 13" (M2, M3, M4)', 'ipad-air-13-m2-m3-m4', ['iPad Air 13" (M2/M3/M4)', 'iPad mini / Air (any)'], 'Air 13"'),
+]
+for name, slug, devices, short in IPADS:
+    MODELS.append({'family': 'ipad', 'name': name, 'slug': slug, 'devices': devices, 'short': short})
+MACS = [
+    ('Air 13" Retina (2018–19)', 'MacBook Air 13" Retina (2018–2019)', 'Air 13" 2018–19'),
+    ('Air 13" (2020, Intel)', 'MacBook Air 13" (2020, Intel)', 'Air 13" Intel 2020'),
+    ('Air 13" (M1, 2020)', 'MacBook Air 13" (M1, 2020)', 'Air 13" M1'),
+    ('Air 13" (M2, 2022)', 'MacBook Air 13" (M2, 2022)', 'Air 13" M2'),
+    ('Air 15" (M2, 2023)', 'MacBook Air 15" (M2, 2023)', 'Air 15" M2'),
+    ('Air 13"/15" (M3, 2024)', 'MacBook Air 13" and 15" (M3, 2024)', 'Air M3'),
+    ('Air 13"/15" (M4, 2025)', 'MacBook Air 13" and 15" (M4, 2025)', 'Air M4'),
+    ('Pro 13" (2019–20, Intel/M1/M2)', 'MacBook Pro 13" (2019–2022)', 'Pro 13"'),
+    ('Pro 16" (2019, Intel)', 'MacBook Pro 16" (2019, Intel)', 'Pro 16" Intel'),
+    ('Pro 14" (M1 Pro/Max, 2021)', 'MacBook Pro 14" (M1 Pro/Max, 2021)', 'Pro 14" M1'),
+    ('Pro 16" (M1 Pro/Max, 2021)', 'MacBook Pro 16" (M1 Pro/Max, 2021)', 'Pro 16" M1'),
+    ('Pro 14" (M2/M3, 2023)', 'MacBook Pro 14" (M2 or M3, 2023)', 'Pro 14" M2/M3'),
+    ('Pro 16" (M2/M3, 2023)', 'MacBook Pro 16" (M2 or M3, 2023)', 'Pro 16" M2/M3'),
+    ('Pro 14" (M4, 2024)', 'MacBook Pro 14" (M4, 2024)', 'Pro 14" M4'),
+    ('Pro 16" (M4, 2024)', 'MacBook Pro 16" (M4, 2024)', 'Pro 16" M4'),
+]
+for device, name, short in MACS:
+    MODELS.append({'family': 'macbook', 'name': name, 'slug': slugify(name.replace('"', '-inch')), 'devices': [device], 'short': short})
+JOB_ORDER = ['Screen', 'Screen Assembly', 'Glass / Digitizer', 'LCD (under glass)', 'Display', 'Battery', 'Charge Port']
+
 
 def rows_for(model):
     rows = [r for r in DATA if r['device'] in model['devices']]
@@ -111,6 +215,8 @@ def rows_for(model):
     if model['family'] == 'iphone':
         order = list(IPHONE_JOBS)
         rows.sort(key=lambda r: order.index(r['job']))
+    elif model['family'] in JOB_FAMILY:
+        rows.sort(key=lambda r: JOB_ORDER.index(r['job']))
     return rows
 
 
@@ -120,6 +226,9 @@ SCOPE = {
     'Xbox Series X / One': 'Series X and One', 'Xbox (disc models)': 'Disc models', 'Xbox (all)': 'Every Xbox model',
     'Xbox One / One S / One X': 'One, One S and One X', 'Switch (V1 / V2)': 'Original Switch', 'Switch Lite': 'Switch Lite',
     'Switch OLED': 'Switch OLED', 'Switch 2': 'Switch 2', 'Switch (all models)': 'Every Switch model',
+    'Galaxy S21–S25 (any)': 'Every Galaxy S21 to S25', 'Galaxy A-series (any)': 'Every Galaxy A model', 'Pixel 7–9a (any)': 'Every Pixel 7 to 9a',
+    'iPad 5 / 6': 'iPad 5th and 6th gen', 'iPad 7 / 8 / 9': 'iPad 7th to 9th gen', 'iPad 10 / 11 (A16)': 'iPad 10th and 11th gen',
+    'iPad mini / Air (any)': 'Every iPad mini and Air',
     'Joy-Con (pair)': 'Both Joy-Con', 'Joy-Con (single)': 'One Joy-Con', 'PS5 DualSense': 'DualSense', 'Xbox Wireless / Elite': 'Wireless and Elite',
 }
 
@@ -127,6 +236,8 @@ SCOPE = {
 def job_title(model, row):
     if model['family'] == 'iphone':
         return IPHONE_JOBS[row['job']][0]
+    if model['family'] in JOB_FAMILY:
+        return JOBS[JOB_FAMILY[model['family']]][row['job']][0]
     job = row['job']
     same = [r for r in DATA if r['device'] in model['devices'] and r['job'] == job]
     if len(same) > 1:  # e.g. four Switch screens: name the model in the job
@@ -137,6 +248,8 @@ def job_title(model, row):
 def scope(model, row):
     if model['family'] == 'iphone':
         return ''
+    if model['family'] in JOB_FAMILY:
+        return SCOPE.get(row['device'], '')
     return SCOPE[row['device']]
 
 
@@ -148,6 +261,11 @@ def job_detail(model, row):
         if row['job'] == 'Screen' and row['grade'] == 'Incell LCD':
             grade += ' This model shipped with an LCD, so the picture is the same kind it had.' if model['name'] in LCD_NATIVE else ' This model shipped with an OLED, so blacks look grayer than the original.'
         return what, grade, (tip, tip_label)
+    if model['family'] in JOB_FAMILY:
+        _, what, tip, tip_label = JOBS[JOB_FAMILY[model['family']]][row['job']]
+        if model['family'] == 'pixel' and row['job'] == 'Screen':
+            tip, tip_label = 'tips/phone-screen-problems', 'Phone screen problems, by symptom'
+        return what, GRADES.get(row['grade'], row['grade']), (tip, tip_label)
     tips = dict(CONSOLE_TIPS)
     tips.update(model.get('tips', {}))
     tip = tips.get(row['job'])
@@ -235,6 +353,22 @@ def build_model(model, nav, tail):
                        f"By mail from {low['mailin']} with return shipping included. Quote first, 40-day warranty.")
         answer = (f"An {name} screen replacement is {by['Screen']['price']} at our Hailey, Idaho bench, or {by['Screen']['mailin']} by mail with return shipping included. "
                   f"A battery is {by['Battery']['price']} ({by['Battery']['mailin']} by mail). Every job gets a firm quote by text before any work starts.")
+    elif model['family'] in JOB_FAMILY:
+        lead = rows[0]
+        lead_word = job_title(model, lead).replace(' replacement', '').replace(' repair', '')
+        battery = next((r for r in rows if r['job'] == 'Battery'), None)
+        tail_bit = f", Battery {battery['price']}" if battery and battery is not lead else ''
+        options = [f"{full} Repair Cost: {lead_word} {lead['price']}{tail_bit}", f"{name} Repair Cost: {lead_word} {lead['price']}{tail_bit}",
+                   f"{name} Repair Cost: {lead_word} {lead['price']}", f"{name} Repair Prices"]
+        title = next(t for t in options if len(t) <= 60)
+        parts = ', '.join(f"{job_title(model, r).lower()} {r['price']}" for r in rows[:3])
+        description = f"{full} {parts}. By mail from {low['mailin']} with return shipping included. Quote first, 40-day warranty."
+        if len(description) > 160:
+            description = f"{full} {job_title(model, lead).lower()} {lead['price']}. By mail from {low['mailin']} with return shipping included. Quote first, 40-day warranty."
+        article = 'An' if full[:1] in 'AEIOU' or full.startswith('iPad') else 'A'
+        answer = (f"{article} {full} {job_title(model, lead).lower()} is {lead['price']} at our Hailey, Idaho bench, or {lead['mailin']} by mail with return shipping included. "
+                  + (f"A battery is {battery['price']} ({battery['mailin']} by mail). " if battery and battery is not lead else '')
+                  + "Every job gets a firm quote by text before any work starts.")
     else:
         first = rows[0]
         title = f"{name} Repair Prices: {job_title(model, first).split(' · ')[0]} {first['price']} and More"
@@ -309,8 +443,8 @@ def build_model(model, nav, tail):
 
 def build_index(nav, tail):
     url = f'{ORIGIN}/repair'
-    title = 'Repair Prices by Model: iPhone, PS5, Switch and More'
-    description = 'Find the repair price for your exact model: every iPhone from the 11 to the 17 Pro Max, PS5, Xbox, Switch and controllers. Bench and mail-in prices, quote first.'
+    title = 'Repair Prices by Model: iPhone, Galaxy, iPad, MacBook'
+    description = 'Find the repair price for your exact model: iPhone, Samsung Galaxy, Google Pixel, iPad, MacBook, PS5, Xbox and Switch. Bench and mail-in prices, quote first.'
     schema = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'CollectionPage', '@id': f'{url}#page', 'url': url, 'name': title, 'description': description,
          'dateModified': CHECKED, 'author': PERSON, 'publisher': {'@id': f'{ORIGIN}/#business'},
@@ -328,8 +462,15 @@ def build_index(nav, tail):
             rows = rows_for(m)
             low = min(money(r['price']) for r in rows)
             first = rows[0]
-            hint = f"Screen {first['price']}" if key == 'iphone' else (f"{len(rows)} repairs" if len(rows) > 1 else "1 repair")
-            tiles += (f'<a class="rp-tile" href="/repair/{m["slug"]}"><strong>{escape(m["name"])}</strong>'
+            if key == 'iphone':
+                hint = f"Screen {first['price']}"
+            elif key in JOB_FAMILY:
+                hint = f"{job_title(m, first).replace(' and touch', '').replace(' replacement', '').replace(' repair', '')} {first['price']}"
+            else:
+                hint = f"{len(rows)} repairs" if len(rows) > 1 else "1 repair"
+            label = {'samsung': m['name'].replace('Galaxy ', ''), 'ipad': m['name'].replace('iPad ', ''), 'macbook': m['short']}.get(key, m['name'])
+            aria = f' aria-label="{escape(m["name"])} repair prices"' if label != m['name'] else ''
+            tiles += (f'<a class="rp-tile" href="/repair/{m["slug"]}"{aria}><strong>{escape(label)}</strong>'
                       f'<span>{escape(hint)}</span><small>from ${low}</small>{ARROW}</a>')
         groups += (f'<section class="rp-section rp-index rp-page--{fam["accent"]}" aria-labelledby="g-{key}"><header class="rp-section__head">'
                    f'<h2 id="g-{key}">{escape(fam["label"])}</h2></header><div class="rp-tiles">{tiles}</div></section>')
@@ -344,7 +485,7 @@ def build_index(nav, tail):
 <div class="rp-cta"><a class="rp-btn rp-btn--main" href="{SMS}">Text for a quote {ARROW}</a><a class="rp-btn" href="/pricing">Search the full menu</a></div></div>
 </div></header>
 <div class="fg-wrap rp-body">{groups}
-<p class="rp-fine">Don’t see your model? The <a href="/pricing">full price menu</a> covers Samsung, Pixel, iPad and MacBook too, or text the model for a one-message quote.</p>
+<p class="rp-fine">Don’t see your model? The <a href="/pricing">full price menu</a> covers iPad Pro and more, or text the model for a one-message quote.</p>
 </div></main>{tail}'''
 
 

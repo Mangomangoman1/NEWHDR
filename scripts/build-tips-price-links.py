@@ -53,10 +53,15 @@ def cats(rows, title, all_link):
     return {'family': 'cats', 'rows': rows, 'title': title, 'all': all_link}
 
 
-SAMSUNG = '/pricing#pt-android'
-IPAD = '/pricing#pt-ipad'
-MAC = '/pricing#pt-macbook'
-MAC_ALL = ('/pricing#pt-macbook', 'All MacBook prices')
+DROID_ALL = ('/repair#g-samsung', 'Every Galaxy and Pixel model')
+IPAD_ALL = ('/repair#g-ipad', 'Every iPad model')
+MAC_ALL = ('/repair#g-macbook', 'Every MacBook model')
+MACS3 = ['macbook-air-13-inch-m1-2020', 'macbook-air-13-inch-m2-2022', 'macbook-pro-14-inch-m1-pro-max-2021']
+
+
+def M(slug, jobs=None):
+    """A row for one model page in /repair."""
+    return (None, 'model:' + slug, jobs, None)
 
 TIPS = {
     # iPhone screen
@@ -99,29 +104,25 @@ TIPS = {
                                             'What an Xbox HDMI port repair costs'),
     'game-console-problems': console(['ps5', 'xbox-series-x', 'nintendo-switch'],
                                      title='Console repair prices, by system'),
-    # Samsung and Android
-    'samsung-screen-issues': cats([('Samsung and Android', 'android', ['Screen'], SAMSUNG)],
-                                  'What an Android screen replacement costs', ('/pricing#pt-android', 'All Android prices')),
-    'samsung-moisture-detected': cats([('Samsung and Android', 'android', ['Charge Port'], SAMSUNG)],
-                                      'What an Android charging port repair costs', ('/pricing#pt-android', 'All Android prices')),
-    'samsung-camera-failed': cats([('Samsung and Android', 'android', None, SAMSUNG)],
-                                  'Samsung and Android repair prices', ('/pricing#pt-android', 'All Android prices')),
-    'cracked-samsung-back-glass': cats([('Samsung and Android', 'android', None, SAMSUNG)],
-                                       'Samsung and Android repair prices', ('/pricing#pt-android', 'All Android prices')),
+    # Samsung and Pixel
+    'samsung-screen-issues': cats([M('samsung-galaxy-s24', ['Screen']), M('samsung-galaxy-s23', ['Screen']), M('google-pixel-8', ['Screen'])],
+                                  'What an Android screen replacement costs', DROID_ALL),
+    'samsung-moisture-detected': cats([M('samsung-galaxy-s24', ['Charge Port']), M('samsung-galaxy-a14-a15-a16', ['Charge Port']),
+                                       M('google-pixel-8', ['Charge Port'])],
+                                      'What an Android charging port repair costs', DROID_ALL),
+    **{s: cats([M('samsung-galaxy-s24'), M('samsung-galaxy-s23'), M('samsung-galaxy-a14-a15-a16')],
+               'Samsung Galaxy repair prices, by model', DROID_ALL) for s in ('samsung-camera-failed', 'cracked-samsung-back-glass')},
     # iPad
-    'cracked-ipad-screen': cats([('iPad glass and touch', 'ipad', ['Glass / Digitizer'], IPAD),
-                                 ('iPad screen assembly', 'ipad', ['Screen Assembly'], IPAD)],
-                                'What an iPad screen repair costs', ('/pricing#pt-ipad', 'All iPad prices')),
-    'apple-pencil-not-working': cats([('iPad', 'ipad', None, IPAD)], 'iPad repair prices', ('/pricing#pt-ipad', 'All iPad prices')),
+    'cracked-ipad-screen': cats([M('ipad-10', ['Glass / Digitizer']), M('ipad-7-8-9', ['Glass / Digitizer']), M('ipad-air-4-5', ['Screen Assembly'])],
+                                'What an iPad screen repair costs', IPAD_ALL),
+    'apple-pencil-not-working': cats([M('ipad-10'), M('ipad-air-11-m2-m3-m4'), M('ipad-mini-6')], 'iPad repair prices, by model', IPAD_ALL),
     # MacBook and laptops
-    'laptop-battery-dying': cats([('MacBook', 'macbook', ['Battery'], MAC)], 'What a MacBook battery replacement costs', MAC_ALL),
-    **{s: cats([('MacBook', 'macbook', ['Display'], MAC)], 'What a MacBook display replacement costs', MAC_ALL) for s in (
+    'laptop-battery-dying': cats([M(m, ['Battery']) for m in MACS3], 'What a MacBook battery replacement costs', MAC_ALL),
+    **{s: cats([M(m, ['Display']) for m in MACS3], 'What a MacBook display replacement costs', MAC_ALL) for s in (
         'laptop-screen-black-but-running', 'laptop-screen-damaged-after-drop', 'macbook-pro-stage-light')},
-    **{s: cats([('MacBook battery', 'macbook', ['Battery'], MAC), ('MacBook display', 'macbook', ['Display'], MAC)],
-               'MacBook repair prices', MAC_ALL) for s in (
+    **{s: cats([M(m) for m in MACS3], 'MacBook repair prices, by model', MAC_ALL) for s in (
         'macbook-speakers-not-working', 'macbook-external-monitor-black')},
-    **{s: cats([('MacBook battery', 'macbook', ['Battery'], MAC), ('MacBook display', 'macbook', ['Display'], MAC),
-                ('Windows laptops and Chromebooks', None, None, '/laptop-repair')],
+    **{s: cats([M(MACS3[0]), M(MACS3[2]), ('Windows laptops and Chromebooks', None, None, '/laptop-repair')],
                'Laptop repair prices', MAC_ALL) for s in (
         'laptop-hinge-breaking', 'laptop-keyboard-keys-not-working', 'laptop-camera-not-working',
         'laptop-touchpad-not-working', 'laptop-overheating', 'laptop-plugged-in-not-charging',
@@ -182,7 +183,15 @@ def cat_rows(cfg):
             out.append(row(href, label, 'Every model is different',
                            '<span class="pb-price pb-price--list"><b>Quoted by text</b></span>'))
             continue
-        rows = [r for r in DATA if r['cat'] == cat and (not jobs or r['job'] in jobs)]
+        if cat.startswith('model:'):
+            slug = cat[6:]
+            model = MODEL[slug]
+            label, href = model['name'], f'/repair/{slug}'
+            rows = [r for r in brp.rows_for(model) if not jobs or r['job'] in jobs]
+            if jobs:
+                jobs = [j for j in jobs if any(r['job'] == j for r in rows)]
+        else:
+            rows = [r for r in DATA if r['cat'] == cat and (not jobs or r['job'] in jobs)]
         assert rows, f'no {cat} {jobs} prices'
         if jobs:
             out.append(row(href, label, cap(job_label(jobs)), price_span(rows)))

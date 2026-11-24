@@ -127,3 +127,7 @@ a:hover>.rp-arrow{transform:translateX(3px)}
 }
 @media(max-width:380px){.rp-tiles{grid-template-columns:1fr}.rp-ticket li,.rp-ticket__cols{grid-template-columns:minmax(0,1fr) 46px 54px;font-size:11.5px}}
 @media(prefers-reduced-motion:reduce){.rp-ticket{animation:none}.rp-arrow,.rp-btn,.rp-card,.rp-tile,.rp-pn,.rp-models__list a{transition:none}.rp-tile:hover{transform:none}}
+.rp-page--android{--rp-accent:#8fd0a6;--rp-accent-ink:#164a2c}
+.rp-page--ipad{--rp-accent:#b7a8ec;--rp-accent-ink:#3b2a73}
+.rp-page--macbook{--rp-accent:#a9c9c3;--rp-accent-ink:#18413c}
+.rp-tile strong{padding-right:22px}.rp-tile span{align-self:end}
