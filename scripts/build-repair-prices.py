@@ -91,6 +91,8 @@ GRADES.update({
     'Aftermarket cell': 'A new aftermarket battery cell.',
     'Soldered — micro-solder': 'Soldered to the board and replaced with micro-soldering.',
     'Laminated assembly': 'Glass, touch and display bonded as one part.',
+    'OLED assembly': 'Glass, touch and OLED display bonded as one part.',
+    'Aftermarket / OEM-pull': 'An aftermarket battery, or a genuine Apple one pulled from another iPad.',
     'Full assembly, OEM-pull/AM': 'The complete display assembly: a genuine Apple part pulled from another MacBook, or an aftermarket one.',
     'Full assembly': 'The complete display assembly.',
     'Aftermarket': 'An aftermarket battery.',
@@ -171,7 +173,6 @@ for name, device, short in [('Galaxy A14, A15 and A16', 'Galaxy A14 / A15 / A16'
 for name in ['Pixel 7', 'Pixel 7 Pro', 'Pixel 7a', 'Pixel 8', 'Pixel 8 Pro', 'Pixel 8a', 'Pixel 9', 'Pixel 9 Pro', 'Pixel 9 Pro XL', 'Pixel 9a']:
     MODELS.append({'family': 'pixel', 'name': name, 'full': f'Google {name}', 'slug': slugify(f'google {name}'),
                    'devices': [name, 'Pixel 7–9a (any)'], 'short': name.replace('Pixel ', '')})
-# iPad Pro is left to the full menu until its overlapping generation rows are settled.
 IPADS = [
     ('iPad 5th and 6th gen', 'ipad-5-6', ['iPad 5 / 6 (2017–18)', 'iPad 5 / 6'], '5th / 6th gen'),
     ('iPad 7th, 8th and 9th gen', 'ipad-7-8-9', ['iPad 7 / 8 / 9 (10.2")', 'iPad 7 / 8 / 9'], '7th–9th gen'),
@@ -184,6 +185,14 @@ IPADS = [
     ('iPad Air 4 and 5', 'ipad-air-4-5', ['iPad Air 4 / 5 (2020–22)', 'iPad mini / Air (any)'], 'Air 4 / 5'),
     ('iPad Air 11" (M2, M3, M4)', 'ipad-air-11-m2-m3-m4', ['iPad Air 11" (M2/M3/M4)', 'iPad mini / Air (any)'], 'Air 11"'),
     ('iPad Air 13" (M2, M3, M4)', 'ipad-air-13-m2-m3-m4', ['iPad Air 13" (M2/M3/M4)', 'iPad mini / Air (any)'], 'Air 13"'),
+    ('iPad Pro 11" (2nd gen, 2020)', 'ipad-pro-11-2nd-gen', ['iPad Pro 11" (2nd gen, 2020)', 'iPad Pro (any)'], 'Pro 11" 2nd gen'),
+    ('iPad Pro 11" (3rd gen, 2021)', 'ipad-pro-11-3rd-gen', ['iPad Pro 11" (3rd gen, 2021)', 'iPad Pro (any)'], 'Pro 11" 3rd gen'),
+    ('iPad Pro 11" (4th gen, 2022)', 'ipad-pro-11-4th-gen', ['iPad Pro 11" (4th gen, 2022)', 'iPad Pro (any)'], 'Pro 11" 4th gen'),
+    ('iPad Pro 11" (M4, 2024)', 'ipad-pro-11-m4', ['iPad Pro 11" (5th gen, 2024)', 'iPad Pro (any)'], 'Pro 11" M4'),
+    ('iPad Pro 11" (M5, 2025)', 'ipad-pro-11-m5', ['iPad Pro 11" (6th gen, 2025)', 'iPad Pro (any)'], 'Pro 11" M5'),
+    ('iPad Pro 12.9" (3rd and 4th gen)', 'ipad-pro-12-9-3rd-4th-gen', ['iPad Pro 12.9" (3rd-4th gen, 2020)', 'iPad Pro (any)'], 'Pro 12.9" 3rd / 4th'),
+    ('iPad Pro 12.9" (5th gen)', 'ipad-pro-12-9-5th-gen', ['iPad Pro 12.9" (5th gen, 2022)', 'iPad Pro (any)'], 'Pro 12.9" 5th gen'),
+    ('iPad Pro 13" (M4 and M5)', 'ipad-pro-13-m4-m5', ['iPad Pro 13" (M4/M5)', 'iPad Pro (any)'], 'Pro 13"'),
 ]
 for name, slug, devices, short in IPADS:
     MODELS.append({'family': 'ipad', 'name': name, 'slug': slug, 'devices': devices, 'short': short})
@@ -228,7 +237,7 @@ SCOPE = {
     'Switch OLED': 'Switch OLED', 'Switch 2': 'Switch 2', 'Switch (all models)': 'Every Switch model',
     'Galaxy S21–S25 (any)': 'Every Galaxy S21 to S25', 'Galaxy A-series (any)': 'Every Galaxy A model', 'Pixel 7–9a (any)': 'Every Pixel 7 to 9a',
     'iPad 5 / 6': 'iPad 5th and 6th gen', 'iPad 7 / 8 / 9': 'iPad 7th to 9th gen', 'iPad 10 / 11 (A16)': 'iPad 10th and 11th gen',
-    'iPad mini / Air (any)': 'Every iPad mini and Air',
+    'iPad mini / Air (any)': 'Every iPad mini and Air', 'iPad Pro (any)': 'Every iPad Pro',
     'Joy-Con (pair)': 'Both Joy-Con', 'Joy-Con (single)': 'One Joy-Con', 'PS5 DualSense': 'DualSense', 'Xbox Wireless / Elite': 'Wireless and Elite',
 }
 
@@ -485,7 +494,7 @@ def build_index(nav, tail):
 <div class="rp-cta"><a class="rp-btn rp-btn--main" href="{SMS}">Text for a quote {ARROW}</a><a class="rp-btn" href="/pricing">Search the full menu</a></div></div>
 </div></header>
 <div class="fg-wrap rp-body">{groups}
-<p class="rp-fine">Don’t see your model? The <a href="/pricing">full price menu</a> covers iPad Pro and more, or text the model for a one-message quote.</p>
+<p class="rp-fine">Don’t see your model? The <a href="/pricing">full price menu</a> covers more, or text the model for a one-message quote.</p>
 </div></main>{tail}'''
 
 

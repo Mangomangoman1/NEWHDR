@@ -3045,6 +3045,62 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " repair ipad mini 7"
   },
   {
+    "name": "iPad Pro 11\" (2nd gen, 2020) repair prices",
+    "desc": "iPad Pro 11\" (2nd gen, 2020) screen replacement $275. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-11-2nd-gen",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 11 2nd gen"
+  },
+  {
+    "name": "iPad Pro 11\" (3rd gen, 2021) repair prices",
+    "desc": "iPad Pro 11\" (3rd gen, 2021) screen replacement $350. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-11-3rd-gen",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 11 3rd gen"
+  },
+  {
+    "name": "iPad Pro 11\" (4th gen, 2022) repair prices",
+    "desc": "iPad Pro 11\" (4th gen, 2022) screen replacement $350. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-11-4th-gen",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 11 4th gen"
+  },
+  {
+    "name": "iPad Pro 11\" (M4, 2024) repair prices",
+    "desc": "iPad Pro 11\" (M4, 2024) screen replacement $790. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-11-m4",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 11 m4"
+  },
+  {
+    "name": "iPad Pro 11\" (M5, 2025) repair prices",
+    "desc": "iPad Pro 11\" (M5, 2025) screen replacement $790. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-11-m5",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 11 m5"
+  },
+  {
+    "name": "iPad Pro 12.9\" (3rd and 4th gen) repair prices",
+    "desc": "iPad Pro 12.9\" (3rd and 4th gen) screen replacement $355. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-12-9-3rd-4th-gen",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 12 9 3rd 4th gen"
+  },
+  {
+    "name": "iPad Pro 12.9\" (5th gen) repair prices",
+    "desc": "iPad Pro 12.9\" (5th gen) screen replacement $430. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-12-9-5th-gen",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 12 9 5th gen"
+  },
+  {
+    "name": "iPad Pro 13\" (M4 and M5) repair prices",
+    "desc": "iPad Pro 13\" (M4 and M5) screen replacement $970. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-13-m4-m5",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 13 m4 m5"
+  },
+  {
     "name": "iPad screen won’t rotate?",
     "desc": "Rotation Lock is off and your iPad still won't turn? Close Control Center, test an app that rotates like Safari, then restart the right way for your model.",
     "href": "/tips/ipad-screen-wont-rotate",
