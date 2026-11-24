@@ -3,7 +3,7 @@
   "topic": "Acer Chromebook black screen or display glitching",
   "prepared_route": "/tips/acer-chromebook-black-screen",
   "intended_url": "https://www.haileyrepair.com/tips/acer-chromebook-black-screen",
-  "record_type": "new tips page (topic queue item 20, built on Sam's yes Nov 23)",
+  "record_type": "new tips page (topic queue item 20, built on Sam's yes Nov 23; published Nov 23 on his yes)",
   "uniqueness": "First Chromebook-specific guide. Distinct from /tips/laptop-screen-black-but-running (Windows shortcuts) and /tips/laptop-screen-damaged-after-drop: ChromeOS brightness key, Refresh + Power hard reset, Ctrl + Show windows screenshot test, Ctrl + Shift + 0, external display test, and why Powerwash or recovery can't fix a panel or cable.",
   "bench_point": "None added. No invented bench stories, stats or prices.",
   "scope": "Hardware triage (screen, backlight, display cable, hinge) with ChromeOS-specific safe checks. Counts toward the 80% hardware mix.",
