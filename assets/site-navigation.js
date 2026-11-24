@@ -392,6 +392,202 @@
     "kw": " tips ipad screen wont rotate"
   },
   {
+    "name": "iPhone 11 Pro Max repair prices",
+    "desc": "iPhone 11 Pro Max screen $140, battery $95, charging port $135, back glass $175. By mail from $105 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-11-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 11 pro max"
+  },
+  {
+    "name": "iPhone 11 Pro repair prices",
+    "desc": "iPhone 11 Pro screen $135, battery $90, charging port $135, back glass $170. By mail from $100 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-11-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 11 pro"
+  },
+  {
+    "name": "iPhone 11 repair prices",
+    "desc": "iPhone 11 screen $120, battery $85, charging port $135, back glass $170. By mail from $100 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-11",
+    "icon": "menu_book",
+    "kw": " repair iphone 11"
+  },
+  {
+    "name": "iPhone 12 mini repair prices",
+    "desc": "iPhone 12 mini screen $145, battery $85, charging port $140, back glass $175. By mail from $100 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-12-mini",
+    "icon": "menu_book",
+    "kw": " repair iphone 12 mini"
+  },
+  {
+    "name": "iPhone 12 Pro Max repair prices",
+    "desc": "iPhone 12 Pro Max screen $165, battery $100, charging port $140, back glass $175. By mail from $115 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-12-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 12 pro max"
+  },
+  {
+    "name": "iPhone 12 Pro repair prices",
+    "desc": "iPhone 12 Pro screen $160, battery $95, charging port $140, back glass $175. By mail from $110 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-12-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 12 pro"
+  },
+  {
+    "name": "iPhone 12 repair prices",
+    "desc": "iPhone 12 screen $155, battery $95, charging port $140, back glass $175. By mail from $110 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-12",
+    "icon": "menu_book",
+    "kw": " repair iphone 12"
+  },
+  {
+    "name": "iPhone 13 mini repair prices",
+    "desc": "iPhone 13 mini screen $160, battery $90, charging port $130, back glass $175. By mail from $105 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-13-mini",
+    "icon": "menu_book",
+    "kw": " repair iphone 13 mini"
+  },
+  {
+    "name": "iPhone 13 Pro Max repair prices",
+    "desc": "iPhone 13 Pro Max screen $180, battery $115, charging port $140, back glass $180. By mail from $130 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-13-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 13 pro max"
+  },
+  {
+    "name": "iPhone 13 Pro repair prices",
+    "desc": "iPhone 13 Pro screen $185, battery $105, charging port $140, back glass $175. By mail from $120 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-13-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 13 pro"
+  },
+  {
+    "name": "iPhone 13 repair prices",
+    "desc": "iPhone 13 screen $165, battery $100, charging port $140, back glass $175. By mail from $115 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-13",
+    "icon": "menu_book",
+    "kw": " repair iphone 13"
+  },
+  {
+    "name": "iPhone 14 Plus repair prices",
+    "desc": "iPhone 14 Plus screen $175, battery $115, charging port $140, back glass $145. By mail from $130 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-14-plus",
+    "icon": "menu_book",
+    "kw": " repair iphone 14 plus"
+  },
+  {
+    "name": "iPhone 14 Pro Max repair prices",
+    "desc": "iPhone 14 Pro Max screen $215, battery $120, charging port $145, back glass $185. By mail from $130 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-14-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 14 pro max"
+  },
+  {
+    "name": "iPhone 14 Pro repair prices",
+    "desc": "iPhone 14 Pro screen $205, battery $120, charging port $145, back glass $180. By mail from $130 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-14-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 14 pro"
+  },
+  {
+    "name": "iPhone 14 repair prices",
+    "desc": "iPhone 14 screen $170, battery $115, charging port $140, back glass $145. By mail from $130 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-14",
+    "icon": "menu_book",
+    "kw": " repair iphone 14"
+  },
+  {
+    "name": "iPhone 15 Plus repair prices",
+    "desc": "iPhone 15 Plus screen $195, battery $120, charging port $145, back glass $150. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-15-plus",
+    "icon": "menu_book",
+    "kw": " repair iphone 15 plus"
+  },
+  {
+    "name": "iPhone 15 Pro Max repair prices",
+    "desc": "iPhone 15 Pro Max screen $185, battery $120, charging port $145, back glass $155. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-15-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 15 pro max"
+  },
+  {
+    "name": "iPhone 15 Pro repair prices",
+    "desc": "iPhone 15 Pro screen $180, battery $120, charging port $145, back glass $155. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-15-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 15 pro"
+  },
+  {
+    "name": "iPhone 15 repair prices",
+    "desc": "iPhone 15 screen $185, battery $120, charging port $145, back glass $145. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-15",
+    "icon": "menu_book",
+    "kw": " repair iphone 15"
+  },
+  {
+    "name": "iPhone 16 Plus repair prices",
+    "desc": "iPhone 16 Plus screen $195, battery $125, charging port $145, back glass $150. By mail from $140 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-16-plus",
+    "icon": "menu_book",
+    "kw": " repair iphone 16 plus"
+  },
+  {
+    "name": "iPhone 16 Pro Max repair prices",
+    "desc": "iPhone 16 Pro Max screen $255, battery $125, charging port $145, back glass $160. By mail from $140 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-16-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 16 pro max"
+  },
+  {
+    "name": "iPhone 16 Pro repair prices",
+    "desc": "iPhone 16 Pro screen $225, battery $125, charging port $145, back glass $155. By mail from $140 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-16-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 16 pro"
+  },
+  {
+    "name": "iPhone 16 repair prices",
+    "desc": "iPhone 16 screen $180, battery $125, charging port $145, back glass $150. By mail from $140 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-16",
+    "icon": "menu_book",
+    "kw": " repair iphone 16"
+  },
+  {
+    "name": "iPhone 16e repair prices",
+    "desc": "iPhone 16e screen $180, battery $125, charging port $145, back glass $150. By mail from $140 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-16e",
+    "icon": "menu_book",
+    "kw": " repair iphone 16e"
+  },
+  {
+    "name": "iPhone 17 Pro Max repair prices",
+    "desc": "iPhone 17 Pro Max screen $275, battery $135, charging port $150, back glass $160. By mail from $150 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-17-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 17 pro max"
+  },
+  {
+    "name": "iPhone 17 Pro repair prices",
+    "desc": "iPhone 17 Pro screen $240, battery $135, charging port $150, back glass $160. By mail from $150 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-17-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 17 pro"
+  },
+  {
+    "name": "iPhone 17 repair prices",
+    "desc": "iPhone 17 screen $235, battery $135, charging port $150, back glass $155. By mail from $150 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-17",
+    "icon": "menu_book",
+    "kw": " repair iphone 17"
+  },
+  {
+    "name": "iPhone Air repair prices",
+    "desc": "iPhone Air screen $340, battery $140, charging port $150, back glass $170. By mail from $155 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-air",
+    "icon": "menu_book",
+    "kw": " repair iphone air"
+  },
+  {
     "name": "iPhone battery health at 80%: does it need replacement?",
     "desc": "80% Maximum Capacity means a worn battery, not a dead or unsafe one. What it means for your model, the symptoms that matter, and when to replace it.",
     "href": "/tips/iphone-battery-health-80-percent",
@@ -469,6 +665,20 @@
     "kw": " guides iphone screen repair"
   },
   {
+    "name": "iPhone SE (2020) repair prices",
+    "desc": "iPhone SE (2020) screen $100, battery $70, charging port $125, back glass $165. By mail from $85 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-se-2020",
+    "icon": "menu_book",
+    "kw": " repair iphone se 2020"
+  },
+  {
+    "name": "iPhone SE (2022) repair prices",
+    "desc": "iPhone SE (2022) screen $110, battery $90, charging port $125, back glass $165. By mail from $100 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-se-2022",
+    "icon": "menu_book",
+    "kw": " repair iphone se 2022"
+  },
+  {
     "name": "iPhone speaker sounds muffled after getting wet",
     "desc": "iPhone sounding muffled after it got wet? Unplug it, let it dry with airflow (no rice or heat), then test each speaker to see whether it needs service.",
     "href": "/tips/iphone-speaker-muffled-after-water",
@@ -502,6 +712,13 @@
     "href": "/tips/switch-joycon-drift",
     "icon": "menu_book",
     "kw": " tips switch joycon drift"
+  },
+  {
+    "name": "Joy-Con repair prices",
+    "desc": "Nintendo Joy-Con repair prices from $45, by mail from $60 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/joy-con",
+    "icon": "menu_book",
+    "kw": " repair joy con"
   },
   {
     "name": "Laptop battery replacement: what the job involves",
@@ -609,6 +826,13 @@
     "kw": " tips windows microphone not working calls"
   },
   {
+    "name": "Nintendo Switch repair prices",
+    "desc": "Nintendo Switch, Lite, OLED and Switch 2 repair prices from $110, by mail from $125 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/nintendo-switch",
+    "icon": "menu_book",
+    "kw": " repair nintendo switch"
+  },
+  {
     "name": "Nintendo Switch won’t turn on or charge? Safe first checks",
     "desc": "For Switch, Lite, and OLED power problems, test the console directly with the correct adapter, reset power once, and know when to stop for service.",
     "href": "/tips/nintendo-switch-wont-turn-on",
@@ -700,6 +924,13 @@
     "kw": " tips printer offline after router change"
   },
   {
+    "name": "PS4 repair prices",
+    "desc": "PlayStation 4 repair prices from $130, by mail from $145 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/ps4",
+    "icon": "menu_book",
+    "kw": " repair ps4"
+  },
+  {
     "name": "PS5 controller drifting on its own?",
     "desc": "Camera or character moving on its own? Confirm it’s the DualSense stick, try Sony’s reset and update, then see what actually fixes stick drift.",
     "href": "/tips/ps5-controller-stick-drift",
@@ -712,6 +943,13 @@
     "href": "/tips/ps5-controller-not-charging",
     "icon": "menu_book",
     "kw": " tips ps5 controller not charging"
+  },
+  {
+    "name": "PS5 controller repair prices",
+    "desc": "PS5 DualSense controller repair prices from $60, by mail from $75 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/ps5-controller",
+    "icon": "menu_book",
+    "kw": " repair ps5 controller"
   },
   {
     "name": "PS5 controller won’t connect?",
@@ -742,6 +980,13 @@
     "kw": " tips ps5 overheating"
   },
   {
+    "name": "PS5 repair prices",
+    "desc": "PlayStation 5 repair prices from $130, by mail from $145 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/ps5",
+    "icon": "menu_book",
+    "kw": " repair ps5"
+  },
+  {
     "name": "PS5 turns on, but the TV says no signal?",
     "desc": "PS5 has a white light but the TV says no signal? Test the cable and TV input, use Safe Mode once, and spot a damaged HDMI port before it gets worse.",
     "href": "/tips/ps5-no-signal-hdmi",
@@ -768,6 +1013,13 @@
     "href": "/tips/repair-or-replace",
     "icon": "menu_book",
     "kw": " tips repair or replace"
+  },
+  {
+    "name": "Repair prices, model byFind the price for your exact model.",
+    "desc": "Find the repair price for your exact model: every iPhone from the 11 to the 17 Pro Max, PS5, Xbox, Switch and controllers. Bench and mail-in prices, quote first.",
+    "href": "/repair",
+    "icon": "menu_book",
+    "kw": " repair"
   },
   {
     "name": "Samsung screen acting up? Green lines, black screens, and burn-in.",
@@ -854,11 +1106,32 @@
     "kw": " tips wifi keeps dropping"
   },
   {
+    "name": "Xbox controller repair prices",
+    "desc": "Xbox Wireless and Elite controller repair prices: stick drift fix $90. By mail with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/xbox-controller",
+    "icon": "menu_book",
+    "kw": " repair xbox controller"
+  },
+  {
     "name": "Xbox on, but the TV says no signal?",
     "desc": "Xbox Series X|S on but the TV says no signal? Test the cable and input, boot low-resolution mode, and spot a damaged HDMI port before repair.",
     "href": "/tips/xbox-series-x-no-signal-hdmi",
     "icon": "menu_book",
     "kw": " tips xbox series x no signal hdmi"
+  },
+  {
+    "name": "Xbox One repair prices",
+    "desc": "Xbox One, One S and One X repair prices from $130, by mail from $145 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/xbox-one",
+    "icon": "menu_book",
+    "kw": " repair xbox one"
+  },
+  {
+    "name": "Xbox Series X|S repair prices",
+    "desc": "Xbox Series X and Series S repair prices from $130, by mail from $145 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/xbox-series-x",
+    "icon": "menu_book",
+    "kw": " repair xbox series x"
   },
   {
     "name": "“Liquid Detected”—but the iPhone port looks dry",

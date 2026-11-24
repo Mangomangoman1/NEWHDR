@@ -5,7 +5,7 @@ import re
 
 ROOT = Path(__file__).resolve().parent.parent
 TAG = '<script defer src="/assets/quote-tracking.js?v=20261124"></script>'
-pages = [p for p in ROOT.glob('*.html')] + [p for d in ('tips', 'guides', 'mail-in') for p in (ROOT / d).glob('*.html')]
+pages = [p for p in ROOT.glob('*.html')] + [p for d in ('tips', 'guides', 'mail-in', 'repair') for p in (ROOT / d).glob('*.html')]
 added = 0
 for page in pages:
     html = page.read_text()

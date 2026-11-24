@@ -748,3 +748,31 @@
     transition: none;
   }
 }
+
+/* Link to the per-model price pages (/repair) */
+.pricing-page .pt-bymodel {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 1.4rem 0 0.4rem;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid var(--pt-hairline);
+  border-radius: 12px;
+  background: linear-gradient(100deg, rgba(95, 126, 166, 0.14), rgba(95, 126, 166, 0.02));
+  color: var(--pt-text-2);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+.pricing-page .pt-bymodel:hover { border-color: #5f7ea6; }
+.pricing-page .pt-bymodel > .material-symbols-outlined { color: #7f9ec6; font-size: 1.4rem; flex: none; }
+.pricing-page .pt-bymodel strong { color: var(--pt-text); font-weight: 600; margin-right: 0.25rem; }
+.pricing-page .pt-bymodel b { margin-left: auto; flex: none; white-space: nowrap; color: var(--pt-accent); font-weight: 600; }
+.pricing-page .pt-bymodel i { display: inline-block; font-style: normal; transition: transform 180ms ease; }
+.pricing-page .pt-bymodel:hover i { transform: translateX(3px); }
+@media (max-width: 640px) {
+  .pricing-page .pt-bymodel { flex-wrap: wrap; gap: 0.5rem 0.75rem; }
+  .pricing-page .pt-bymodel b { margin-left: 2.15rem; }
+}
+@media (prefers-reduced-motion: reduce) { .pricing-page .pt-bymodel, .pricing-page .pt-bymodel i { transition: none; } }
