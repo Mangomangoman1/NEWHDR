@@ -157,6 +157,9 @@ def job_detail(model, row):
 def template_parts():
     source = (ROOT / 'tips/iphone-not-ringing.html').read_text()
     nav = source[source.index('<!-- shared-navigation:start -->'):source.index('<!-- shared-navigation:end -->') + len('<!-- shared-navigation:end -->')]
+    # The borrowed header marks the tips library as the current section; these pages belong under Pricing.
+    nav = nav.replace('<a class="nav-link active" aria-current="location" href="/tips">', '<a class="nav-link" href="/tips">')
+    nav = nav.replace('<a class="nav-link" href="/pricing">', '<a class="nav-link active" aria-current="location" href="/pricing">')
     tail = source[source.index('<footer class="fg-footer">'):]
     tail = re.sub(r'<script src="/assets/repair-tip-pages\.js[^"]*" defer></script>', '', tail)
     return nav, tail
@@ -325,7 +328,7 @@ def build_index(nav, tail):
             rows = rows_for(m)
             low = min(money(r['price']) for r in rows)
             first = rows[0]
-            hint = f"Screen {first['price']}" if key == 'iphone' else f"{len(rows)} repairs"
+            hint = f"Screen {first['price']}" if key == 'iphone' else (f"{len(rows)} repairs" if len(rows) > 1 else "1 repair")
             tiles += (f'<a class="rp-tile" href="/repair/{m["slug"]}"><strong>{escape(m["name"])}</strong>'
                       f'<span>{escape(hint)}</span><small>from ${low}</small>{ARROW}</a>')
         groups += (f'<section class="rp-section rp-index rp-page--{fam["accent"]}" aria-labelledby="g-{key}"><header class="rp-section__head">'

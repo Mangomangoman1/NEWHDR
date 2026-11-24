@@ -754,7 +754,8 @@
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  margin: 1.4rem 0 0.4rem;
+  max-width: 880px;
+  margin: 1.6rem auto 1.2rem;
   padding: 0.95rem 1.1rem;
   border: 1px solid var(--pt-hairline);
   border-radius: 12px;
@@ -766,13 +767,15 @@
   transition: border-color 180ms ease, background 180ms ease;
 }
 .pricing-page .pt-bymodel:hover { border-color: #5f7ea6; }
-.pricing-page .pt-bymodel > .material-symbols-outlined { color: #7f9ec6; font-size: 1.4rem; flex: none; }
+.pricing-page .pt-bymodel__grid { flex: none; display: grid; grid-template-columns: repeat(2, 9px); gap: 3px; }
+.pricing-page .pt-bymodel__grid i { width: 9px; height: 9px; border: 1.5px solid var(--pt-accent); border-radius: 2px; transition: background 180ms ease; }
+.pricing-page .pt-bymodel:hover .pt-bymodel__grid i:first-child { background: var(--pt-accent); }
 .pricing-page .pt-bymodel strong { color: var(--pt-text); font-weight: 600; margin-right: 0.25rem; }
 .pricing-page .pt-bymodel b { margin-left: auto; flex: none; white-space: nowrap; color: var(--pt-accent); font-weight: 600; }
 .pricing-page .pt-bymodel i { display: inline-block; font-style: normal; transition: transform 180ms ease; }
 .pricing-page .pt-bymodel:hover i { transform: translateX(3px); }
 @media (max-width: 640px) {
   .pricing-page .pt-bymodel { flex-wrap: wrap; gap: 0.5rem 0.75rem; }
-  .pricing-page .pt-bymodel b { margin-left: 2.15rem; }
+  .pricing-page .pt-bymodel b { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .pricing-page .pt-bymodel, .pricing-page .pt-bymodel i { transition: none; } }

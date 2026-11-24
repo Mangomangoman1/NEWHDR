@@ -53,10 +53,10 @@ a:hover>.rp-arrow{transform:translateX(3px)}
 .rp-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
 .rp-card{position:relative;display:flex;flex-direction:column;gap:14px;padding:22px;background:#10161d;border:1px solid #232c37;border-radius:6px;scroll-margin-top:96px;transition:border-color .2s,transform .2s}
 .rp-card:hover{border-color:#3a4757}
-.rp-card header{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.rp-card header{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:baseline;gap:4px 12px}
 .rp-card__n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--rp-accent)}
-.rp-page .rp-card h3{flex:1 1 auto;margin:0;font-size:24px;line-height:1.05;letter-spacing:-.01em}
-.rp-card__fits{flex-basis:100%;padding-left:28px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8c9aab}
+.rp-page .rp-card h3{min-width:0;margin:0;font-size:24px;line-height:1.05;letter-spacing:-.01em}
+.rp-card__fits{grid-column:2;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8c9aab}
 .rp-card__prices{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #29323e;border-bottom:1px solid #29323e}
 .rp-card__prices>div{padding:12px 0;display:flex;flex-direction:column}
 .rp-card__mail{padding-left:16px!important;border-left:1px dashed #3a4656}
