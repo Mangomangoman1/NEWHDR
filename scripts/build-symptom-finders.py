@@ -137,6 +137,7 @@ FINDERS = [
                 ('tips/laptop-screen-black-but-running', 'Screen black, but the fans are running', 'Try brightness, Win+Ctrl+Shift+B and an external monitor to tell a bad screen from a startup problem.', ''),
                 ('tips/laptop-screen-damaged-after-drop', "Lines, ink blotches or flicker after a drop", "Plug in an external display and move the lid once to tell a damaged panel from a damaged display cable.", ''),
                 ('tips/macbook-pro-stage-light', 'Bright bars along the bottom of a MacBook Pro screen', 'On 2016–2017 models this points to a worn backlight cable. Confirm it with a screenshot and lid test.', ''),
+                ('tips/acer-chromebook-black-screen', 'Chromebook screen black, flickering or full of lines', 'Tap brightness, do one hard reset and try an external display to tell a dead screen or cable from a ChromeOS problem.', ''),
                 ('tips/macbook-external-monitor-black', 'External monitor stays black on a MacBook', 'Check input, the video connection, Detect Displays and your model’s limits.', ''),
                 ('tips/laptop-hinge-breaking', 'Hinge popping, stiff, or pulling the case apart', 'The mounts inside the housing often broke, not the hinge. Tightening will not fix it.', ''),
             ]),

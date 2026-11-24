@@ -2681,6 +2681,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips bluetooth headphones no sound windows"
   },
   {
+    "name": "Chromebook screen gone dark or glitchy?",
+    "desc": "Acer Chromebook screen black, flickering or full of lines? Use the brightness key, a hard reset and an external display to find the faulty part.",
+    "href": "/tips/acer-chromebook-black-screen",
+    "icon": "menu_book",
+    "kw": " tips acer chromebook black screen"
+  },
+  {
     "name": "Cracked back glass on a Galaxy or Pixel?",
     "desc": "A flat crack can sit under a case until it’s repaired, but don’t count on water resistance now. Stop if the back is lifting, bulging or running hot.",
     "href": "/tips/cracked-samsung-back-glass",
