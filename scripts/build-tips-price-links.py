@@ -222,7 +222,7 @@ def block(cfg):
         f'<p class="pb-note">Straight from our price list. Mail-in prices include return shipping.</p>'
         f'<a class="pb-all" href="{all_href}">{escape(all_label)} <i class="pb-arrow" aria-hidden="true"></i></a></div>'
         f'<ul class="pb-rows">{"".join(rows)}</ul>'
-        f'<a class="pb-mail" href="/mail-in-repair"><span><strong>Not near Hailey?</strong> '
+        f'<a class="pb-mail" href="{"/mail-in/console" if accent == "console" else "/mail-in-repair"}"><span><strong>Not near Hailey?</strong> '
         f'Mail it in from any state in the lower 48. You get a firm quote before any work begins.</span>'
         f'<i class="pb-arrow" aria-hidden="true"></i></a>'
         f'</section>{END}'

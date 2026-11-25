@@ -116,7 +116,7 @@ FAMILIES = {
     'iphone': {'label': 'iPhone', 'accent': 'iphone', 'service': ('iphone-repair', 'iPhone repair'), 'mailin': ('mail-in/iphone', 'Mail-in iPhone repair'),
                'related': [('tips/phone-screen-black-but-on', 'Screen black but the phone still rings'), ('tips/backup-iphone-broken-screen', 'Back up an iPhone with a broken screen'),
                            ('tips/water-damaged-phone', 'The phone got wet'), ('tips/iphone-unknown-part-important-message', 'The “unknown part” message after a repair')]},
-    'console': {'label': 'Consoles', 'accent': 'console', 'service': ('console-repair', 'Game console repair'), 'mailin': ('mail-in-repair', 'Mail-in repair'),
+    'console': {'label': 'Consoles', 'accent': 'console', 'service': ('console-repair', 'Game console repair'), 'mailin': ('mail-in/console', 'Mail-in console repair'),
                 'related': [('tips/game-console-problems', 'Console problems, by symptom'), ('tips/ps5-no-signal-hdmi', 'PS5 no signal over HDMI'),
                             ('tips/xbox-series-x-no-signal-hdmi', 'Xbox Series X|S no signal'), ('tips/nintendo-switch-wont-turn-on', 'Switch won’t turn on')]},
     'samsung': {'label': 'Samsung Galaxy', 'accent': 'android', 'service': ('android-repair', 'Samsung and Android repair'), 'mailin': ('mail-in-repair', 'Mail-in repair'),
