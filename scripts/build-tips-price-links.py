@@ -211,6 +211,18 @@ def title_for(cfg):
     return f'{names[0]} repair prices'
 
 
+MAIL_GUIDES = {'#g-iphone': '/mail-in/iphone', '#g-samsung': '/mail-in/android', '#g-pixel': '/mail-in/android',
+               '#g-ipad': '/mail-in/ipad', '#g-macbook': '/mail-in/macbook', '#g-console': '/mail-in/console'}
+
+
+def mail_guide(cfg, accent):
+    """The mail-in guide for the panel's device family; the mail-in hub when the panel spans families."""
+    if accent == 'console':
+        return '/mail-in/console'
+    href = cfg['all'][0]
+    return next((guide for frag, guide in MAIL_GUIDES.items() if href.endswith(frag)), '/mail-in-repair')
+
+
 def block(cfg):
     accent = 'console' if cfg['family'] == 'console' else 'phone'
     rows = cat_rows(cfg) if cfg['family'] == 'cats' else model_rows(cfg)
@@ -222,7 +234,7 @@ def block(cfg):
         f'<p class="pb-note">Straight from our price list. Mail-in prices include return shipping.</p>'
         f'<a class="pb-all" href="{all_href}">{escape(all_label)} <i class="pb-arrow" aria-hidden="true"></i></a></div>'
         f'<ul class="pb-rows">{"".join(rows)}</ul>'
-        f'<a class="pb-mail" href="{"/mail-in/console" if accent == "console" else "/mail-in-repair"}"><span><strong>Not near Hailey?</strong> '
+        f'<a class="pb-mail" href="{mail_guide(cfg, accent)}"><span><strong>Not near Hailey?</strong> '
         f'Mail it in from any state in the lower 48. You get a firm quote before any work begins.</span>'
         f'<i class="pb-arrow" aria-hidden="true"></i></a>'
         f'</section>{END}'
