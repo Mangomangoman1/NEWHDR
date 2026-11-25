@@ -1,0 +1,181 @@
+{
+  "date": "2026-11-21",
+  "record_type": "Published to main on 2026-11-21 after owner approval in chat ('push all new pages to the live site at once').",
+  "why": "Search Console (3 months to 2026-11-15): the site's traffic comes from physical-damage triage (black screen after a drop 870 clicks; protector vs crack, cracked screen safe, back glass, ghost touch) and PS5 hardware. These eight guides extend that pattern to symptoms with visible query demand and no dedicated page. Queries seen include 'phone not turning on after dropping', 'my phone fell and the screen is not working', 'phone screen half black after dropping', 'i dropped my phone and the screen is black with lines', 'dualsense not charging' cluster (controller interest).",
+  "not_built": {
+    "samsung green line": "samsung-screen-issues already owns it (pos 5.6)",
+    "screen flicker after a drop": "no query evidence",
+    "reglass, hairline crack": "already sections on existing pages since 2026-11-07",
+    "second PS5 no-signal / HDMI port / fan pages": "deliberately not created per 2026-09-07 record"
+  },
+  "rules": [
+    "Every manufacturer fact from a page read on 2026-11-21 (fetched text); facts phrased as 'Apple says', 'Sony says'.",
+    "No invented bench stories, statistics or prices; owner bench points requested via <!-- bench-note --> comments.",
+    "Article schema only (FAQ/HowTo retired); author Person #samuel.",
+    "Mail-in CTA stays 'Statewide' (Idaho) until the owner extends it."
+  ],
+  "guides": [
+    {
+      "route": "/tips/phone-wont-turn-on-after-drop",
+      "topic": "No signs of life after a drop: confirm it's really off, one forced restart, an hour on a known-good charger, what a drop can break, stop signs, data check",
+      "sources": [
+        "https://support.apple.com/en-us/116940",
+        "https://www.samsung.com/us/support/troubleshoot/TSG10001468/",
+        "https://support.google.com/pixelphone/answer/7167687?hl=en"
+      ],
+      "uniqueness": "phone-screen-black-but-on covers a phone that still rings; this page is its 'no signs of life' branch and routes back to it.",
+      "bench_question": "What dead-after-a-drop phones most often turn out to be on the HDR bench (port, battery, board)."
+    },
+    {
+      "route": "/tips/phone-touch-screen-not-working-after-drop",
+      "topic": "Picture fine, touch dead/patchy/laggy after a drop",
+      "sources": [
+        "https://support.apple.com/en-us/102567",
+        "https://support.apple.com/en-us/116940",
+        "https://www.samsung.com/us/support/troubleshoot/TSG10001974/",
+        "https://www.samsung.com/us/support/answer/ANS10002919/",
+        "https://support.google.com/pixelphone/answer/6010316?hl=en",
+        "https://support.google.com/android/answer/7666942?hl=en"
+      ],
+      "uniqueness": "ghost-touch covers extra taps; samsung-screen-issues has one line on dead touch; black-but-on has no picture.",
+      "bench_question": "What dead touch after a drop usually turns out to be (assembly, connector, board), and whether a dead strip ever returns."
+    },
+    {
+      "route": "/tips/black-spot-on-phone-screen",
+      "topic": "Black spot / ink blot / half-black screen after a drop or pressure; why it spreads; screenshot test",
+      "sources": [
+        "https://www.samsung.com/us/support/troubleshoot/TSG10002488/",
+        "https://www.samsung.com/us/support/troubleshoot/TSG10001447/",
+        "https://support.google.com/pixelphone/answer/16250690?hl=en",
+        "https://support.apple.com/en-us/109039",
+        "https://support.apple.com/guide/iphone/take-a-screenshot-iphc872c0115/ios",
+        "https://support.google.com/android/answer/9075928?hl=en"
+      ],
+      "uniqueness": "Dark counterpart of white-spot-on-phone-screen; lines and fully black screens routed to their pages.",
+      "bench_question": "Answered 2026-11-21 (see owner_bench_points_2026_11_21)."
+    },
+    {
+      "route": "/tips/cracked-iphone-camera-lens",
+      "topic": "Cracked camera cover glass vs damaged camera module; per-lens photo test; interim protection",
+      "sources": [
+        "https://support.apple.com/en-us/102514",
+        "https://support.apple.com/guide/iphone/take-macro-photos-iphfaacf2eb0/ios",
+        "https://support.apple.com/guide/iphone/camera-basics-iph263472f78/ios",
+        "https://support.apple.com/guide/iphone/important-safety-information-iph301fc905/ios",
+        "https://support.apple.com/en-us/108039",
+        "https://support.apple.com/en-us/102658",
+        "https://support.apple.com/en-us/103259"
+      ],
+      "uniqueness": "iphone-camera-shaking covers shake/click/focus (short glass-vs-module section); this is the cracked-glass page and links there.",
+      "bench_question": "Which iPhone models allow lens cover glass alone vs back glass/housing; tape advice for an open lens."
+    },
+    {
+      "route": "/tips/phone-speaker-not-working-after-drop",
+      "topic": "No sound / crackle / rattle after a drop; which speaker; mic vs speaker",
+      "sources": [
+        "https://support.apple.com/en-us/118432",
+        "https://support.apple.com/en-us/101600",
+        "https://support.apple.com/en-us/108765",
+        "https://www.samsung.com/us/support/troubleshoot/TSG10001510/",
+        "https://www.samsung.com/us/support/answer/ANS10003632/",
+        "https://support.google.com/pixelphone/answer/9706190?hl=en",
+        "https://support.google.com/pixelphone/answer/14748890?hl=en"
+      ],
+      "uniqueness": "iphone-speaker-muffled-after-water owns liquid; iphone-not-ringing owns ring-only problems; mic page owns recordings.",
+      "bench_question": "What a crackly or rattling speaker after a drop usually turns out to be."
+    },
+    {
+      "route": "/tips/ps5-controller-stick-drift",
+      "topic": "DualSense / Edge stick drift: confirm the stick, Sony reset and update, dead zones, warranty, lasting fix",
+      "sources": [
+        "https://www.playstation.com/en-us/support/hardware/troubleshoot-dualsense/",
+        "https://www.playstation.com/en-us/support/hardware/accessories/",
+        "https://www.playstation.com/en-us/support/hardware/edge-troubleshoot/",
+        "https://www.playstation.com/en-us/support/hardware/set-up-edge-controller/",
+        "https://www.playstation.com/en-us/support/hardware/edge-replace-stick/",
+        "DualSense CFI-ZCT1W and DualSense Edge manual PDFs (playstation.com)",
+        "https://www.playstation.com/en-us/legal/warranties/accessories/"
+      ],
+      "uniqueness": "switch-joycon-drift is Nintendo; ps5-controller-not-charging is power. Hall-effect/TMR offer restated from ps5-repair.html, no price.",
+      "bench_question": "One stick or both, which side; replace one stick or both. Also: Joy-Con page recommends compressed air/isopropyl, Sony says keep liquids out — owner to decide house advice."
+    },
+    {
+      "route": "/tips/ps5-controller-not-connecting",
+      "topic": "DualSense won't pair / disconnects: USB + PS button, data cable, reset, updates, interference, PC/phone pairing, hardware signs",
+      "sources": [
+        "https://www.playstation.com/en-us/support/hardware/dualsense-controller-support/",
+        "https://www.playstation.com/en-us/support/hardware/pair-dualsense-controller-bluetooth/",
+        "https://www.playstation.com/en-us/support/hardware/troubleshoot-dualsense/",
+        "https://www.playstation.com/en-us/support/hardware/accessories/",
+        "https://www.playstation.com/en-us/support/hardware/ps5-usb-ports-guide/",
+        "https://manuals.playstation.net/document/pdf/CFI-1015A-1.0_2.pdf",
+        "DualSense manual PDF",
+        "https://www.playstation.com/en-us/legal/warranties/accessories/"
+      ],
+      "uniqueness": "ps5-controller-not-charging owns charging/no light; nothing on the site covered pairing.",
+      "bench_question": "What 'won't connect' controllers usually turn out to be: pairing, USB-C port, battery or board."
+    },
+    {
+      "route": "/tips/laptop-screen-damaged-after-drop",
+      "topic": "Lines, ink, cracks or flicker on a laptop screen after a drop; external display, screenshot and lid-angle tests",
+      "sources": [
+        "https://support.microsoft.com/en-us/windows/hardware/display-graphics/how-to-use-multiple-monitors-in-windows",
+        "https://support.microsoft.com/en-us/windows/hardware/display-graphics/troubleshoot-external-monitor-connections-in-windows",
+        "https://support.microsoft.com/en-us/windows/hardware/display-graphics/troubleshoot-screen-flickering-in-windows",
+        "https://support.microsoft.com/en-us/surface/troubleshooting-options-for-a-screen-that-has-lines-through-it",
+        "https://support.microsoft.com/en-us/windows/experience/keyboard-shortcut-for-print-screen",
+        "https://support.microsoft.com/en-us/windows/enable-and-disable-a-touchscreen-in-windows-b774e29d-be94-990f-c20f-e02892e572fc",
+        "https://support.apple.com/en-us/102555",
+        "https://support.apple.com/en-us/guide/mac-help/mchlb5f905a1/mac",
+        "https://support.apple.com/en-us/guide/mac-help/mchlp2906/14.0/mac/14.0",
+        "https://support.apple.com/en-us/102646"
+      ],
+      "uniqueness": "laptop-screen-black-but-running owns no-picture and the full external-monitor procedure; hinge and stage-light pages routed.",
+      "bench_question": "Panel-only vs full lid assembly on dropped laptops; tape advice for loose glass. (Dell/HP/Lenovo self-test pages blocked automated reading, so brand BIST steps were left out.)"
+    }
+  ],
+  "integration": {
+    "tips_hub": "8 cards, count 74 to 82, ItemList rebuilt in card order, dateModified 2026-11-21",
+    "guides_hub": "8 cards, ItemList 55 to 63",
+    "symptom_finders": "phone-screen-problems +5, laptop-problems +1, game-console-problems +2 via scripts/build-symptom-finders.py",
+    "sitemap": "8 routes + lastmod for tips, guides and the three finders",
+    "search": "Quick Find entries generated by build.sh"
+  },
+  "checks": {
+    "site_audit": "130 public pages, 0 failures",
+    "indexability": "1129 passed, 0 failed",
+    "accessibility": "130 pages, 0 failures",
+    "node_tests": "53 passed, 0 failed",
+    "diff_check": "clean",
+    "visual": "Every guide screenshotted at 390px and 1280px by its writer and reviewed; all eight hero sections and guide 1 in full reviewed by the integrating session; 320px overflow check run on all eight (scrollWidth 320, nothing outside the viewport).",
+    "source_spot_checks": "Re-read against sources by the integrating session: Sony reset 'at least 5 seconds', up to four pairings, one-year accessory warranty; Apple 'at least 5 hours' before charging after liquid; Google 'about 30 seconds' power hold; Samsung black spots 'may spread over time'; Samsung SIM-tray pressure equalizing; Apple force-restart sequence (user guide added as a source for iPhone SE 2nd gen and later).",
+    "external_links": "55 external links checked: all 200 except playstation.com/repairs (redirects to repairs.playstation.com, blocked from the build sandbox; Sony's own address, contents not described).",
+    "preview": "Vercel preview for the branch READY."
+  },
+  "release_plan": "Owner chose to release all eight at once on 2026-11-21.",
+  "measure_after": "28 days after each release, against the 2026-11-15 export",
+  "tooling": "Generator, integration script and content modules saved in the owner's private OpusJoy repo (tools/hdr-guides), not in this public site.",
+  "owner_questions": [
+    "Joy-Con drift page recommends compressed air and 90%+ isopropyl under the stick; Sony's DualSense manual says keep liquids and foreign objects out. Which advice should the site give?",
+    "Each guide's bench-note comment (one question per guide, listed under guides[].bench_question).",
+    "Existing redirect /tips/dropped-phone-wont-respond: keep pointing at phone-screen-black-but-on, or point at the new phone-wont-turn-on-after-drop?"
+  ],
+  "owner_bench_points_2026_11_21": {
+    "source": "Owner, in chat on 2026-11-21 (paraphrased on the pages, first person where it is his observation; no numbers given or printed)",
+    "phone-wont-turn-on-after-drop": "Depends on the drop and what 'completely dead' means. No signs of life at all generally means board damage; sometimes a peripheral (battery, charging assembly); sometimes a phone that appears dead only needs a screen.",
+    "phone-touch-screen-not-working-after-drop": "Dead touch after a drop is generally the whole display. Connectors rarely pop loose now (covers, shields, clips); possible if a previous repair left a cover off; board unlikely but possible. Dead zones can come back intermittently but never fix themselves permanently.",
+    "black-spot-on-phone-screen": "Ink blots are often slow to spread, can stay unchanged a long time or migrate fast; on phones he sees, usually slow. A damaged display can still fail entirely at any moment. Two bench photos supplied and added (Galaxy ink blot; iPhone with a small blot and the area below failed to white). iPhone photo cropped to remove a customer's banking app icons; EXIF stripped from both.",
+    "cracked-iphone-camera-lens": "Tape over cracked camera glass to protect the inner lens; its coating is delicate, debris on it effectively cannot be cleaned and touching it makes it worse, so a cracked cover can mean a new camera module too. A camera not working after a drop is usually a dead or internally damaged module, not a loose connector. Glass-only replacement on recent iPhones: owner believes yes and asked for a fact check; Apple's iPhone 16 and 17 repair manuals list only Back Glass and Camera procedures, so the page says shops can often do it and that Apple doesn't list it as a separate part.",
+    "ps5 guides": "Owner: 'just use the official advice, it's not my area.' PS5 pages follow Sony only; their bench-note questions were removed.",
+    "unanswered": [
+      "Speaker crackle/rattle after a drop (bench-note left)",
+      "Laptop: tape for loose glass; panel vs full lid assembly and typical turnaround (bench-notes left)",
+      "Release pace; /tips/dropped-phone-wont-respond redirect; bench capacity, job sources, mail-in beyond Idaho"
+    ]
+  },
+  "related_change": {
+    "page": "/tips/switch-joycon-drift",
+    "what": "Removed the compressed-air / 90%+ isopropyl cleaning step and the 'isopropyl evaporates clean' note; warning box now says skip the sprays (owner: use the official advice). Short version and bring-it-in text now say recalibrating and updating. dateModified, visible date and sitemap lastmod 2026-11-21.",
+    "source_limit": "Nintendo's support site could not be read from the build sandbox (406 to plain requests; not reachable by the fetch tool), so no Nintendo statement is quoted; the page keeps only steps it already listed (calibrate, update) and states the spray advice as the owner's own recommendation."
+  }
+}

@@ -143,7 +143,7 @@ a{color:inherit;text-decoration:none}
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Hailey Device Repair",
-  "description": "Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available statewide.",
+  "description": "Professional iPhone, Android, laptop, and PC repair in Hailey, Idaho. Fast turnaround, fair pricing, mail-in service available across the lower 48 states.",
   "url": "https://www.haileyrepair.com",
   "telephone": "+12084501606",
   "email": "samuel@haileyrepair.com",
@@ -416,7 +416,7 @@ a{color:inherit;text-decoration:none}
       "name": "How much does laptop screen replacement cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "PC laptop hardware repairs are quoted per job after a $45 bench diagnosis that's credited toward the repair — models vary too much for a fixed price. MacBook display assemblies run from about $360 to $795 by model. Text your model for a quote."
+        "text": "PC laptop hardware repairs are quoted per job after a $45 bench diagnosis ($60 by mail) that's credited toward the repair — models vary too much for a fixed price. MacBook display assemblies run from about $360 to $795 by model. Text your model for a quote."
       }
     },
     {
@@ -472,7 +472,7 @@ a{color:inherit;text-decoration:none}
       "name": "What does return shipping cost for mail-in repairs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nothing extra — the tracked USPS Priority return trip is already built into every mail-in price on the pricing page. You only pay to ship your device to Hailey; a prepaid outbound label is available for about $8 if you want one."
+        "text": "Nothing extra — the tracked USPS Priority return trip is already built into every mail-in price on the pricing page. You only pay to ship your device to Hailey."
       }
     },
     {
@@ -562,6 +562,7 @@ a{color:inherit;text-decoration:none}
 <link rel="stylesheet" href="/assets/css/site-polish.css?v=20260906"/>
 <link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 <script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/assets/quote-tracking.js?v=20261124"></script>
 </head>
 <body>
 <nav class="nav" id="nav" role="navigation" aria-label="Primary">
@@ -947,7 +948,7 @@ a{color:inherit;text-decoration:none}
         <details class="faq-hub-item" data-category="laptop">
           <summary>How much does laptop screen replacement cost?</summary>
           <div class="faq-hub-answer">
-            <p>PC laptop hardware is quoted per job after a $45 bench diagnosis (credited toward the repair) — models vary too much for one price. MacBook displays run about <strong>$360–$795</strong> by model. Text your model for a quote.</p>
+            <p>PC laptop hardware is quoted per job after a $45 bench diagnosis ($60 by mail, credited toward the repair) — models vary too much for one price. MacBook displays run about <strong>$360–$795</strong> by model. Text your model for a quote.</p>
             <a href="/laptop-repair" class="faq-hub-link">See all laptop repair prices →</a>
           </div>
         </details>
@@ -1067,11 +1068,11 @@ a{color:inherit;text-decoration:none}
         </details>
         <details class="faq-hub-item" data-category="mail-in">
           <summary>How long does mail-in take?</summary>
-          <div class="faq-hub-answer"><p>Most repairs done within <strong>24 hours</strong> of receiving. Total 3–5 business days with shipping.</p></div>
+          <div class="faq-hub-answer"><p>Most repairs are done within <strong>1–2 days</strong> of arriving, plus shipping time each way.</p></div>
         </details>
         <details class="faq-hub-item" data-category="mail-in">
           <summary>Is return shipping free?</summary>
-          <div class="faq-hub-answer"><p><strong>Yes.</strong> USPS Priority Mail return always free. Prepaid outbound label $8.</p></div>
+          <div class="faq-hub-answer"><p><strong>Yes.</strong> USPS Priority Mail return is always on me. You pay the postage to send it to me.</p></div>
         </details>
         <details class="faq-hub-item" data-category="mail-in">
           <summary>How should I pack my device?</summary>
@@ -1079,11 +1080,11 @@ a{color:inherit;text-decoration:none}
         </details>
         <details class="faq-hub-item" data-category="mail-in">
           <summary>What if you can't fix my mail-in device?</summary>
-          <div class="faq-hub-answer"><p>We'll return your device and explain what we found.</p></div>
+          <div class="faq-hub-answer"><p>We'll explain what we found and ship it back with return postage on us. If it needed a bench diagnosis, the $60 bench fee still applies.</p></div>
         </details>
         <details class="faq-hub-item" data-category="mail-in">
           <summary>Do you accept devices from outside Idaho?</summary>
-          <div class="faq-hub-answer"><p>Focused on Idaho for speed. Neighboring states — text me and we'll work it out.</p></div>
+          <div class="faq-hub-answer"><p>Yes. Mail-in is open to the whole lower 48 at the same published prices and the same 40-day warranty. You pay postage to me; return postage is on me.</p></div>
         </details>
       </div>
 
@@ -1322,9 +1323,9 @@ a{color:inherit;text-decoration:none}
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sports_esports"></span></div>
 <div class="qf-link-text"><span class="qf-link-name">Game Console Repair</span><span class="qf-link-desc">Switch, PS5, Xbox, Steam Deck</span></div>
 </a>
-<a class="qf-link" data-qf="mail in repair ship statewide idaho send" href="/mail-in-repair">
+<a class="qf-link" data-qf="mail in repair ship nationwide any state lower 48 idaho send" href="/mail-in-repair">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span></div>
-<div class="qf-link-text"><span class="qf-link-name">Mail-In Repair</span><span class="qf-link-desc">Ship from anywhere in Idaho</span></div>
+<div class="qf-link-text"><span class="qf-link-name">Mail-In Repair</span><span class="qf-link-desc">Ship from anywhere in the lower 48</span></div>
 </a>
 <a class="qf-link" data-qf="electronics recycling recycle ewaste e waste old laptop phone ipad tablet battery data destruction parts donor" href="/electronics-recycling">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="recycling"></span></div>
@@ -1332,15 +1333,15 @@ a{color:inherit;text-decoration:none}
 </a>
 <a class="qf-link" data-qf="mail in iphone repair idaho ship iphone cracked screen back glass battery" href="/mail-in/iphone">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="phone_iphone"></span></div>
-<div class="qf-link-text"><span class="qf-link-name">Mail-In iPhone Repair</span><span class="qf-link-desc">Idaho-wide iPhone shipping guide</span></div>
+<div class="qf-link-text"><span class="qf-link-name">Mail-In iPhone Repair</span><span class="qf-link-desc">Ship your iPhone from any state</span></div>
 </a>
 <a class="qf-link" data-qf="mail in macbook repair idaho ship macbook battery screen keyboard charging" href="/mail-in/macbook">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="laptop_mac"></span></div>
-<div class="qf-link-text"><span class="qf-link-name">Mail-In MacBook Repair</span><span class="qf-link-desc">Idaho-wide MacBook shipping guide</span></div>
+<div class="qf-link-text"><span class="qf-link-name">Mail-In MacBook Repair</span><span class="qf-link-desc">Ship your MacBook from any state</span></div>
 </a>
 <a class="qf-link" data-qf="mail in ipad repair idaho ship ipad cracked glass battery charging" href="/mail-in/ipad">
 <div class="qf-link-icon"><span aria-hidden="true" class="material-symbols-outlined" data-icon="tablet_mac"></span></div>
-<div class="qf-link-text"><span class="qf-link-name">Mail-In iPad Repair</span><span class="qf-link-desc">Idaho-wide iPad shipping guide</span></div>
+<div class="qf-link-text"><span class="qf-link-name">Mail-In iPad Repair</span><span class="qf-link-desc">Ship your iPad from any state</span></div>
 </a>
 </div>
 <div class="qf-category">

@@ -1,0 +1,52 @@
+/* Cracked Samsung / Pixel back glass: the back of a phone with a camera row, a crack fanning out from a hit corner toward the lenses, and the charging coil faintly visible under the glass; a four-part "what's under the glass" grid and a five-check strip. */
+.sg-page .fg-kicker,.sg-page .fg-number{color:#aab4f7}.sg-page .tip-progress{background:#aab4f7}.sg-page .fg-article li::marker{color:#9ca7ee}.sg-page .fg-note{border-left-color:#7f8bd6;color:#dfe2f6}.sg-scope{font-size:13px;color:#c7cadb;margin:18px 0 0}
+.sg-routes{position:relative;overflow:hidden;padding:28px 30px;border:1px solid #3b4166;border-radius:12px;background:radial-gradient(70% 60% at 30% 24%,rgba(170,180,247,.13) 0%,rgba(170,180,247,0) 70%),linear-gradient(160deg,#1a1d2e,#17191f 74%)}
+.sg-routes>a{display:flex;align-items:center;gap:14px;padding:18px 0;border-top:1px solid #3b4166;text-decoration:none;min-height:62px}.sg-routes>a>span:first-child{font-size:11px;color:#aab4f7;font-variant-numeric:tabular-nums}.sg-routes strong{font-size:14px;color:#f1f2fb;flex:1;line-height:1.6}.sg-routes>a:hover strong{text-decoration:underline;text-underline-offset:4px}
+.sg-art{margin:0 0 24px}
+.sg-scene{display:flex;justify-content:center;padding:8px 0 20px}
+.sg-phone{position:relative;width:100px;height:190px;flex-shrink:0;border:2px solid #c9cde6;border-radius:21px;background:#0a0b12;box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.sg-phone:before{content:"";position:absolute;right:-5px;top:52px;width:3px;height:30px;border-radius:0 2px 2px 0;background:#c9cde6}
+.sg-back{position:relative;height:100%;overflow:hidden;border-radius:18px;background:linear-gradient(152deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 30%),linear-gradient(200deg,#3d4585 0%,#2a3060 55%,#1e2247 100%)}
+.sg-lens{position:absolute;left:12px;width:19px;height:19px;border-radius:50%;background:radial-gradient(circle at 42% 40%,#5d67b0 0 12%,#0a0b14 16% 44%,#262b52 48% 66%,#0a0b14 70%);box-shadow:0 0 0 1.5px #b9c0ea}
+.sg-lens--1{top:13px}.sg-lens--2{top:39px}.sg-lens--3{top:65px}
+.sg-flash{position:absolute;left:40px;top:19px;width:7px;height:7px;border-radius:50%;background:#efe6bd;opacity:.75}
+.sg-coil{position:absolute;left:calc(50% - 27px);top:92px;width:54px;height:54px;border-radius:50%;border:1.5px dashed rgba(190,198,250,.6);animation:sg-coil 5s ease-in-out infinite}
+.sg-coil:after{content:"";position:absolute;inset:11px;border-radius:50%;border:1px solid rgba(190,198,250,.5)}
+.sg-crack{position:absolute;left:calc(100% - 17px);top:calc(100% - 32px);height:1.25px;border-radius:1px;transform-origin:0 50%;background:linear-gradient(90deg,rgba(244,245,253,.95),rgba(244,245,253,.4))}
+.sg-crack--a{width:112px;transform:rotate(240deg)}
+.sg-crack--b{width:72px;transform:rotate(199deg);opacity:.85}
+.sg-crack--c{width:58px;transform:rotate(161deg);opacity:.8}
+.sg-crack--d{width:62px;transform:rotate(283deg);opacity:.8}
+.sg-crack--e{width:30px;transform:rotate(330deg);opacity:.7}
+.sg-crack--f{left:calc(100% - 48px);top:calc(100% - 86px);width:36px;height:1px;transform:rotate(204deg);opacity:.75}
+.sg-crack--g{left:calc(100% - 10px);top:calc(100% - 61px);width:26px;height:1px;transform:rotate(232deg);opacity:.65}
+.sg-hit{position:absolute;left:calc(100% - 24px);top:calc(100% - 39px);width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.95) 0 14%,rgba(214,220,255,.5) 30%,rgba(214,220,255,0) 70%);animation:sg-glint 5s ease-in-out infinite}
+.sg-art figcaption{text-align:center;font-size:12px;color:#d6d9ea;line-height:1.7}
+.sg-arrow{display:inline-block;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);flex-shrink:0;margin-right:3px}
+/* what's under the glass */
+.sg-layers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}
+.sg-layer{display:flex;flex-direction:column;align-items:flex-start;padding:16px 14px 18px;border:1px solid #333956;border-radius:10px;background:#14151f;font-size:13px;line-height:1.5;color:#c3c7da}
+.sg-layer strong{display:block;margin:12px 0 3px;font-size:14px;color:#f1f2fb}
+.sg-ico{position:relative;display:block;width:34px;height:34px;flex-shrink:0}
+.sg-ico--batt:before{content:"";position:absolute;left:8px;top:5px;width:18px;height:26px;border:1.5px solid #aab4f7;border-radius:4px;background:linear-gradient(#aab4f7,#aab4f7) 50% calc(100% - 3px)/10px 12px no-repeat}
+.sg-ico--batt:after{content:"";position:absolute;left:13px;top:1px;width:8px;height:3px;border-radius:2px 2px 0 0;background:#aab4f7}
+.sg-ico--coil:before{content:"";position:absolute;inset:2px;border-radius:50%;border:1.5px solid #aab4f7}
+.sg-ico--coil:after{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px solid #aab4f7;box-shadow:inset 0 0 0 4px #14151f,inset 0 0 0 5.5px #aab4f7}
+.sg-ico--cam:before{content:"";position:absolute;left:3px;top:3px;width:14px;height:14px;border-radius:50%;border:1.5px solid #aab4f7;box-shadow:inset 0 0 0 3px #14151f,inset 0 0 0 7px rgba(170,180,247,.55)}
+.sg-ico--cam:after{content:"";position:absolute;right:3px;bottom:3px;width:11px;height:11px;border-radius:50%;border:1.5px solid #aab4f7}
+.sg-ico--seal:before{content:"";position:absolute;left:6px;top:2px;width:22px;height:30px;border:1.5px solid #aab4f7;border-radius:7px}
+.sg-ico--seal:after{content:"";position:absolute;left:10px;top:6px;width:14px;height:22px;border:1px dashed rgba(170,180,247,.75);border-radius:4px}
+/* five checks */
+.sg-checks{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.sg-chip{display:inline-flex;align-items:center;gap:10px;padding:9px 15px 9px 9px;border:1px solid #3b4166;border-radius:999px;background:#161826;font-size:13px;font-weight:600;color:#e9ebf8}
+.sg-chip i{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(170,180,247,.16);color:#c3cafa;font-style:normal;font-size:11px;font-variant-numeric:tabular-nums}
+.sg-chip--stop{border-color:#6a5f9f}.sg-chip--stop i{background:rgba(240,170,150,.18);color:#f3c0b0}
+.sg-warning{padding:22px;border:1px solid #5d66a8;border-radius:6px;background:#171a2c;margin:24px 0}.sg-warning>strong{display:block;color:#f0f1fc;margin-bottom:10px}.sg-warning p{margin:0}
+.sg-page .fg-article a{color:#c5ccfa}
+.sg-page a:focus-visible{outline:2px solid #d9ddfc;outline-offset:5px;border-radius:2px}
+@keyframes sg-coil{0%,100%{opacity:.3}50%{opacity:.85}}
+@keyframes sg-glint{0%,100%{opacity:.55;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}}
+@media(max-width:760px){.sg-routes{padding:22px}.sg-warning{padding-inline:18px}.sg-layers{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.sg-layers{grid-template-columns:1fr;gap:10px}.sg-layer{display:grid;grid-template-columns:34px 1fr;column-gap:16px;align-items:center;padding:14px 16px}.sg-layer .sg-ico{grid-row:1/3}.sg-layer strong{margin:0}.sg-chip{font-size:12px;padding:8px 13px 8px 8px}}
+@media(max-width:350px){.sg-routes{padding:20px 18px}}
+@media(prefers-reduced-motion:reduce){.sg-coil,.sg-hit{animation:none}.sg-coil{opacity:.6}.sg-hit{opacity:.85}}

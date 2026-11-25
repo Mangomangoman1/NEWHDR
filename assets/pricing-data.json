@@ -1459,33 +1459,6 @@
 },
 {
 "cat": "ipad",
-"device": "iPad Pro 11\" (1st\u20134th gen)",
-"job": "Screen Assembly",
-"grade": "Laminated assembly",
-"price": "$290",
-"mailin": "$305",
-"note": ""
-},
-{
-"cat": "ipad",
-"device": "iPad Pro 12.9\" (3rd\u20136th gen)",
-"job": "Screen Assembly",
-"grade": "Laminated assembly",
-"price": "$345",
-"mailin": "$360",
-"note": ""
-},
-{
-"cat": "ipad",
-"device": "iPad Pro 11\" (M4/M5)",
-"job": "Screen Assembly",
-"grade": "OLED assembly",
-"price": "$780",
-"mailin": "$795",
-"note": ""
-},
-{
-"cat": "ipad",
 "device": "iPad Pro 13\" (M4/M5)",
 "job": "Screen Assembly",
 "grade": "OLED assembly",
@@ -1558,7 +1531,7 @@
 },
 {
 "cat": "ipad",
-"device": "iPad Pro 12.9\" (5th gen, 2022)",
+"device": "iPad Pro 12.9\" (5th gen, 2021)",
 "job": "Screen Assembly",
 "grade": "",
 "price": "$430",

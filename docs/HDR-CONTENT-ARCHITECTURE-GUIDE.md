@@ -17,6 +17,11 @@ Read this before the rest; where it conflicts with the text below, this wins.
 - **Topic focus:** prefer physical damage, hardware diagnosis, and repair-or-replace decisions. Settings-only topics that Apple or Microsoft document rank poorly here and are furthest from what the shop sells.
 - **Pace:** two or three guides a week, each with a real bench photo or clip where one exists.
 
+## Update — 2026-11-22
+
+- **No notes in page source.** Do not leave owner questions or photo-slot reminders as HTML comments (`<!-- bench-note: ... -->`) in published pages: comments are public in View Source. Put them in `docs/seo/owner-open-items.md`, which is not deployed. Existing comments were moved there on 2026-11-22.
+- **Owner house facts** (connectors rarely pop loose in a drop; a part that stops working after a drop is usually the part itself; no claims about how fast damage spreads) are recorded in `docs/seo/2026-11-21-drop-damage-guides.json` and `docs/seo/2026-11-22-damage-guides-batch-2.json`. New guides must not contradict them.
+
 ## Overview
 
 This document specifies two parallel content systems to build for haileyrepair.com:

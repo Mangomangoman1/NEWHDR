@@ -2563,11 +2563,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
         { name: 'iPad & Tablet', desc: 'iPad, Galaxy Tab, Amazon Fire', href: '/tablet-repair', icon: 'tablet', kw: 'tablet ipad repair screen battery galaxy tab fire' },
         { name: 'Game Console Repair', desc: 'Switch, PS5, Xbox, Steam Deck', href: '/console-repair', icon: 'sports_esports', kw: 'console game nintendo switch ps5 xbox steam deck controller drift' },
         { name: 'PS5 Repair', desc: 'HDMI port, overheating, no power — statewide mail-in', href: '/ps5-repair', icon: 'stadia_controller', kw: 'ps5 playstation hdmi port no signal white light overheating liquid metal repair' },
-        { name: 'Mail-In Repair', desc: 'Ship from anywhere in Idaho', href: '/mail-in-repair', icon: 'local_shipping', kw: 'mail in repair ship statewide idaho send' },
+        { name: 'Mail-In Repair', desc: 'Ship from anywhere in the lower 48', href: '/mail-in-repair', icon: 'local_shipping', kw: 'mail in repair ship nationwide any state lower 48 idaho send' },
         { name: 'Electronics Recycling', desc: 'Recycle old devices with data-safe handling', href: '/electronics-recycling', icon: 'recycling', kw: 'electronics recycling recycle ewaste e waste old laptop phone ipad tablet battery data destruction parts donor' },
-        { name: 'Mail-In iPhone Repair', desc: 'Idaho-wide iPhone shipping guide', href: '/mail-in/iphone', icon: 'phone_iphone', kw: 'mail in iphone repair idaho ship iphone cracked screen back glass battery' },
-        { name: 'Mail-In MacBook Repair', desc: 'Idaho-wide MacBook shipping guide', href: '/mail-in/macbook', icon: 'laptop_mac', kw: 'mail in macbook repair idaho ship macbook battery screen keyboard charging' },
-        { name: 'Mail-In iPad Repair', desc: 'Idaho-wide iPad shipping guide', href: '/mail-in/ipad', icon: 'tablet_mac', kw: 'mail in ipad repair idaho ship ipad cracked glass battery charging' }
+        { name: 'Mail-In iPhone Repair', desc: 'Ship your iPhone from any state', href: '/mail-in/iphone', icon: 'phone_iphone', kw: 'mail in iphone repair idaho ship iphone cracked screen back glass battery' },
+        { name: 'Mail-In MacBook Repair', desc: 'Ship your MacBook from any state', href: '/mail-in/macbook', icon: 'laptop_mac', kw: 'mail in macbook repair idaho ship macbook battery screen keyboard charging' },
+        { name: 'Mail-In iPad Repair', desc: 'Ship your iPad from any state', href: '/mail-in/ipad', icon: 'tablet_mac', kw: 'mail in ipad repair idaho ship ipad cracked glass battery charging' },
+        { name: 'Mail-In Console Repair', desc: 'Ship your PS5, Xbox, Switch or controller from any state', href: '/mail-in/console', icon: 'sports_esports', kw: 'mail in console repair ps5 xbox switch hdmi port joy con drift dualsense controller ship' },
+        { name: 'Mail-In Galaxy & Pixel Repair', desc: 'Ship your Samsung Galaxy or Google Pixel from any state', href: '/mail-in/android', icon: 'android', kw: 'mail in samsung galaxy repair google pixel android phone screen battery charging port ship' }
       ]},
       { title: 'Computer Help', icon: 'computer', links: [
         { name: 'Computer Help & IT', desc: 'Slow PC, crashes, startup issues', href: '/computer-support', icon: 'computer', kw: 'computer help support slow pc crash startup it' },
@@ -2616,6 +2618,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/laptop-battery-dying",
     "icon": "menu_book",
     "kw": " tips laptop battery dying"
+  },
+  {
+    "name": "A black spot spreading on your phone screen?",
+    "desc": "A black spot, ink blot or half-black screen after a drop or pressure is panel damage, and it can spread. Back up now, then do one screenshot test.",
+    "href": "/tips/black-spot-on-phone-screen",
+    "icon": "menu_book",
+    "kw": " tips black spot on phone screen"
   },
   {
     "name": "AirDrop can’t find the other iPhone?",
@@ -2674,6 +2683,27 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips bluetooth headphones no sound windows"
   },
   {
+    "name": "Chromebook screen gone dark or glitchy?",
+    "desc": "Acer Chromebook screen black, flickering or full of lines? Use the brightness key, a hard reset and an external display to find the faulty part.",
+    "href": "/tips/acer-chromebook-black-screen",
+    "icon": "menu_book",
+    "kw": " tips acer chromebook black screen"
+  },
+  {
+    "name": "Cracked back glass on a Galaxy or Pixel?",
+    "desc": "A flat crack can sit under a case until it’s repaired, but don’t count on water resistance now. Stop if the back is lifting, bulging or running hot.",
+    "href": "/tips/cracked-samsung-back-glass",
+    "icon": "menu_book",
+    "kw": " tips cracked samsung back glass"
+  },
+  {
+    "name": "Cracked iPad screen: safe to keep using?",
+    "desc": "Apple says not to use an iPad with a cracked screen. Two tests show if the display broke too, and your model decides glass-only or a full display.",
+    "href": "/tips/cracked-ipad-screen",
+    "icon": "menu_book",
+    "kw": " tips cracked ipad screen"
+  },
+  {
     "name": "Cracked iPhone back glass: can you keep using it?",
     "desc": "Back glass cracked but the iPhone still works? When a case is a fair stopgap, the signs to stop (heat, bent frame, camera damage) and how repair works.",
     "href": "/tips/cracked-iphone-back-glass",
@@ -2700,6 +2730,34 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/cracked-screen-safe-to-use",
     "icon": "menu_book",
     "kw": " tips cracked screen safe to use"
+  },
+  {
+    "name": "Cracked the camera lens on your iPhone?",
+    "desc": "Camera lens glass cracked after a drop? Test each lens to tell cracked cover glass from a damaged camera, and what to do with it until it’s fixed.",
+    "href": "/tips/cracked-iphone-camera-lens",
+    "icon": "menu_book",
+    "kw": " tips cracked iphone camera lens"
+  },
+  {
+    "name": "Dropped it, and now a button won’t work?",
+    "desc": "Power or volume button stuck, mushy or dead after a drop? Take the case off, back up now, and switch on the on-screen button. Plus when it’s urgent.",
+    "href": "/tips/phone-buttons-not-working-after-drop",
+    "icon": "menu_book",
+    "kw": " tips phone buttons not working after drop"
+  },
+  {
+    "name": "Dropped it, and now it won’t turn on?",
+    "desc": "No ring, no buzz, no charging sign after a drop? Do one forced restart and charge it for an hour on a charger you trust. Then what a dead phone means.",
+    "href": "/tips/phone-wont-turn-on-after-drop",
+    "icon": "menu_book",
+    "kw": " tips phone wont turn on after drop"
+  },
+  {
+    "name": "Dropped the drive, and now it clicks?",
+    "desc": "Dropped hard drive clicking, beeping or not showing up? Unplug it and leave it off. What the sounds mean, the one safe check, and what never to try.",
+    "href": "/tips/dropped-external-hard-drive-clicking",
+    "icon": "menu_book",
+    "kw": " tips dropped external hard drive clicking"
   },
   {
     "name": "Epson EcoTank printing blank pages?",
@@ -2737,6 +2795,153 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips forgot new iphone passcode"
   },
   {
+    "name": "Galaxy A14, A15 and A16 repair prices",
+    "desc": "Samsung Galaxy A14, A15 and A16 screen replacement $145. By mail from $125 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-a14-a15-a16",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy a14 a15 a16"
+  },
+  {
+    "name": "Galaxy A53 and A54 repair prices",
+    "desc": "Samsung Galaxy A53 and A54 screen replacement $200. By mail from $125 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-a53-a54",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy a53 a54"
+  },
+  {
+    "name": "Galaxy A55 and A56 repair prices",
+    "desc": "Samsung Galaxy A55 and A56 screen replacement $210. By mail from $125 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-a55-a56",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy a55 a56"
+  },
+  {
+    "name": "Galaxy S21 FE repair prices",
+    "desc": "Samsung Galaxy S21 FE screen replacement $220. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s21-fe",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s21 fe"
+  },
+  {
+    "name": "Galaxy S21 repair prices",
+    "desc": "Samsung Galaxy S21 screen replacement $240. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s21",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s21"
+  },
+  {
+    "name": "Galaxy S21 Ultra repair prices",
+    "desc": "Samsung Galaxy S21 Ultra screen replacement $285. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s21-ultra",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s21 ultra"
+  },
+  {
+    "name": "Galaxy S21+ repair prices",
+    "desc": "Samsung Galaxy S21+ screen replacement $250. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s21-plus",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s21 plus"
+  },
+  {
+    "name": "Galaxy S22 repair prices",
+    "desc": "Samsung Galaxy S22 screen replacement $250. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s22",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s22"
+  },
+  {
+    "name": "Galaxy S22 Ultra repair prices",
+    "desc": "Samsung Galaxy S22 Ultra screen replacement $295. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s22-ultra",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s22 ultra"
+  },
+  {
+    "name": "Galaxy S22+ repair prices",
+    "desc": "Samsung Galaxy S22+ screen replacement $260. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s22-plus",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s22 plus"
+  },
+  {
+    "name": "Galaxy S23 FE repair prices",
+    "desc": "Samsung Galaxy S23 FE screen replacement $225. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s23-fe",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s23 fe"
+  },
+  {
+    "name": "Galaxy S23 repair prices",
+    "desc": "Samsung Galaxy S23 screen replacement $250. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s23",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s23"
+  },
+  {
+    "name": "Galaxy S23 Ultra repair prices",
+    "desc": "Samsung Galaxy S23 Ultra screen replacement $305. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s23-ultra",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s23 ultra"
+  },
+  {
+    "name": "Galaxy S23+ repair prices",
+    "desc": "Samsung Galaxy S23+ screen replacement $265. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s23-plus",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s23 plus"
+  },
+  {
+    "name": "Galaxy S24 FE repair prices",
+    "desc": "Samsung Galaxy S24 FE screen replacement $240. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s24-fe",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s24 fe"
+  },
+  {
+    "name": "Galaxy S24 repair prices",
+    "desc": "Samsung Galaxy S24 screen replacement $285. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s24",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s24"
+  },
+  {
+    "name": "Galaxy S24 Ultra repair prices",
+    "desc": "Samsung Galaxy S24 Ultra screen replacement $335. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s24-ultra",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s24 ultra"
+  },
+  {
+    "name": "Galaxy S24+ repair prices",
+    "desc": "Samsung Galaxy S24+ screen replacement $300. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s24-plus",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s24 plus"
+  },
+  {
+    "name": "Galaxy S25 repair prices",
+    "desc": "Samsung Galaxy S25 screen replacement $315. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s25",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s25"
+  },
+  {
+    "name": "Galaxy S25 Ultra repair prices",
+    "desc": "Samsung Galaxy S25 Ultra screen replacement $365. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s25-ultra",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s25 ultra"
+  },
+  {
+    "name": "Galaxy S25+ repair prices",
+    "desc": "Samsung Galaxy S25+ screen replacement $330. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/samsung-galaxy-s25-plus",
+    "icon": "menu_book",
+    "kw": " repair samsung galaxy s25 plus"
+  },
+  {
     "name": "Galaxy says “Camera failed”?",
     "desc": "Samsung Galaxy says Camera failed? Try restart, Camera cache, Google Play system updates, and Safe mode before a reset. Protect photos and settings.",
     "href": "/tips/samsung-camera-failed",
@@ -2758,6 +2963,62 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips backup before repair"
   },
   {
+    "name": "iPad 10th gen repair prices",
+    "desc": "iPad 10th gen glass and touch replacement $180, battery replacement $155. By mail from $170 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-10",
+    "icon": "menu_book",
+    "kw": " repair ipad 10"
+  },
+  {
+    "name": "iPad 11th gen (A16) repair prices",
+    "desc": "iPad 11th gen (A16) glass and touch replacement $185, battery replacement $155. By mail from $170 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-11-a16",
+    "icon": "menu_book",
+    "kw": " repair ipad 11 a16"
+  },
+  {
+    "name": "iPad 5th and 6th gen repair prices",
+    "desc": "iPad 5th and 6th gen glass and touch replacement $155, battery replacement $150. By mail from $165 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-5-6",
+    "icon": "menu_book",
+    "kw": " repair ipad 5 6"
+  },
+  {
+    "name": "iPad 7th, 8th and 9th gen repair prices",
+    "desc": "iPad 7th, 8th and 9th gen glass and touch replacement $155. By mail from $170 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-7-8-9",
+    "icon": "menu_book",
+    "kw": " repair ipad 7 8 9"
+  },
+  {
+    "name": "iPad Air 11\" (M2, M3, M4) repair prices",
+    "desc": "iPad Air 11\" (M2, M3, M4) screen replacement $290. By mail from $185 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-air-11-m2-m3-m4",
+    "icon": "menu_book",
+    "kw": " repair ipad air 11 m2 m3 m4"
+  },
+  {
+    "name": "iPad Air 13\" (M2, M3, M4) repair prices",
+    "desc": "iPad Air 13\" (M2, M3, M4) screen replacement $345. By mail from $185 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-air-13-m2-m3-m4",
+    "icon": "menu_book",
+    "kw": " repair ipad air 13 m2 m3 m4"
+  },
+  {
+    "name": "iPad Air 3 repair prices",
+    "desc": "iPad Air 3 screen replacement $240. By mail from $185 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-air-3",
+    "icon": "menu_book",
+    "kw": " repair ipad air 3"
+  },
+  {
+    "name": "iPad Air 4 and 5 repair prices",
+    "desc": "iPad Air 4 and 5 screen replacement $260. By mail from $185 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-air-4-5",
+    "icon": "menu_book",
+    "kw": " repair ipad air 4 5"
+  },
+  {
     "name": "iPad keyboard won’t appear?",
     "desc": "iPad onscreen keyboard missing when you type? Compare Notes, show the software keyboard, and test external keyboards before resets. Protect app documents.",
     "href": "/tips/ipad-keyboard-not-showing",
@@ -2765,11 +3026,284 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips ipad keyboard not showing"
   },
   {
+    "name": "iPad mini 5 repair prices",
+    "desc": "iPad mini 5 screen replacement $245. By mail from $185 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-mini-5",
+    "icon": "menu_book",
+    "kw": " repair ipad mini 5"
+  },
+  {
+    "name": "iPad mini 6 repair prices",
+    "desc": "iPad mini 6 screen replacement $280. By mail from $185 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-mini-6",
+    "icon": "menu_book",
+    "kw": " repair ipad mini 6"
+  },
+  {
+    "name": "iPad mini 7 (A17 Pro) repair prices",
+    "desc": "iPad mini 7 (A17 Pro) screen replacement $305. By mail from $185 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-mini-7",
+    "icon": "menu_book",
+    "kw": " repair ipad mini 7"
+  },
+  {
+    "name": "iPad Pro 11\" (2nd gen, 2020) repair prices",
+    "desc": "iPad Pro 11\" (2nd gen, 2020) screen replacement $275. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-11-2nd-gen",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 11 2nd gen"
+  },
+  {
+    "name": "iPad Pro 11\" (3rd gen, 2021) repair prices",
+    "desc": "iPad Pro 11\" (3rd gen, 2021) screen replacement $350. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-11-3rd-gen",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 11 3rd gen"
+  },
+  {
+    "name": "iPad Pro 11\" (4th gen, 2022) repair prices",
+    "desc": "iPad Pro 11\" (4th gen, 2022) screen replacement $350. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-11-4th-gen",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 11 4th gen"
+  },
+  {
+    "name": "iPad Pro 11\" (M4, 2024) repair prices",
+    "desc": "iPad Pro 11\" (M4, 2024) screen replacement $790. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-11-m4",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 11 m4"
+  },
+  {
+    "name": "iPad Pro 11\" (M5, 2025) repair prices",
+    "desc": "iPad Pro 11\" (M5, 2025) screen replacement $790. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-11-m5",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 11 m5"
+  },
+  {
+    "name": "iPad Pro 12.9\" (3rd and 4th gen) repair prices",
+    "desc": "iPad Pro 12.9\" (3rd and 4th gen) screen replacement $355. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-12-9-3rd-4th-gen",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 12 9 3rd 4th gen"
+  },
+  {
+    "name": "iPad Pro 12.9\" (5th gen) repair prices",
+    "desc": "iPad Pro 12.9\" (5th gen) screen replacement $430. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-12-9-5th-gen",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 12 9 5th gen"
+  },
+  {
+    "name": "iPad Pro 13\" (M4 and M5) repair prices",
+    "desc": "iPad Pro 13\" (M4 and M5) screen replacement $970. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/ipad-pro-13-m4-m5",
+    "icon": "menu_book",
+    "kw": " repair ipad pro 13 m4 m5"
+  },
+  {
     "name": "iPad screen won’t rotate?",
     "desc": "Rotation Lock is off and your iPad still won't turn? Close Control Center, test an app that rotates like Safari, then restart the right way for your model.",
     "href": "/tips/ipad-screen-wont-rotate",
     "icon": "menu_book",
     "kw": " tips ipad screen wont rotate"
+  },
+  {
+    "name": "iPhone 11 Pro Max repair prices",
+    "desc": "iPhone 11 Pro Max screen $140, battery $95, charging port $135, back glass $175. By mail from $105 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-11-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 11 pro max"
+  },
+  {
+    "name": "iPhone 11 Pro repair prices",
+    "desc": "iPhone 11 Pro screen $135, battery $90, charging port $135, back glass $170. By mail from $100 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-11-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 11 pro"
+  },
+  {
+    "name": "iPhone 11 repair prices",
+    "desc": "iPhone 11 screen $120, battery $85, charging port $135, back glass $170. By mail from $100 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-11",
+    "icon": "menu_book",
+    "kw": " repair iphone 11"
+  },
+  {
+    "name": "iPhone 12 mini repair prices",
+    "desc": "iPhone 12 mini screen $145, battery $85, charging port $140, back glass $175. By mail from $100 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-12-mini",
+    "icon": "menu_book",
+    "kw": " repair iphone 12 mini"
+  },
+  {
+    "name": "iPhone 12 Pro Max repair prices",
+    "desc": "iPhone 12 Pro Max screen $165, battery $100, charging port $140, back glass $175. By mail from $115 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-12-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 12 pro max"
+  },
+  {
+    "name": "iPhone 12 Pro repair prices",
+    "desc": "iPhone 12 Pro screen $160, battery $95, charging port $140, back glass $175. By mail from $110 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-12-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 12 pro"
+  },
+  {
+    "name": "iPhone 12 repair prices",
+    "desc": "iPhone 12 screen $155, battery $95, charging port $140, back glass $175. By mail from $110 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-12",
+    "icon": "menu_book",
+    "kw": " repair iphone 12"
+  },
+  {
+    "name": "iPhone 13 mini repair prices",
+    "desc": "iPhone 13 mini screen $160, battery $90, charging port $130, back glass $175. By mail from $105 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-13-mini",
+    "icon": "menu_book",
+    "kw": " repair iphone 13 mini"
+  },
+  {
+    "name": "iPhone 13 Pro Max repair prices",
+    "desc": "iPhone 13 Pro Max screen $180, battery $115, charging port $140, back glass $180. By mail from $130 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-13-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 13 pro max"
+  },
+  {
+    "name": "iPhone 13 Pro repair prices",
+    "desc": "iPhone 13 Pro screen $185, battery $105, charging port $140, back glass $175. By mail from $120 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-13-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 13 pro"
+  },
+  {
+    "name": "iPhone 13 repair prices",
+    "desc": "iPhone 13 screen $165, battery $100, charging port $140, back glass $175. By mail from $115 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-13",
+    "icon": "menu_book",
+    "kw": " repair iphone 13"
+  },
+  {
+    "name": "iPhone 14 Plus repair prices",
+    "desc": "iPhone 14 Plus screen $175, battery $115, charging port $140, back glass $145. By mail from $130 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-14-plus",
+    "icon": "menu_book",
+    "kw": " repair iphone 14 plus"
+  },
+  {
+    "name": "iPhone 14 Pro Max repair prices",
+    "desc": "iPhone 14 Pro Max screen $215, battery $120, charging port $145, back glass $185. By mail from $130 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-14-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 14 pro max"
+  },
+  {
+    "name": "iPhone 14 Pro repair prices",
+    "desc": "iPhone 14 Pro screen $205, battery $120, charging port $145, back glass $180. By mail from $130 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-14-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 14 pro"
+  },
+  {
+    "name": "iPhone 14 repair prices",
+    "desc": "iPhone 14 screen $170, battery $115, charging port $140, back glass $145. By mail from $130 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-14",
+    "icon": "menu_book",
+    "kw": " repair iphone 14"
+  },
+  {
+    "name": "iPhone 15 Plus repair prices",
+    "desc": "iPhone 15 Plus screen $195, battery $120, charging port $145, back glass $150. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-15-plus",
+    "icon": "menu_book",
+    "kw": " repair iphone 15 plus"
+  },
+  {
+    "name": "iPhone 15 Pro Max repair prices",
+    "desc": "iPhone 15 Pro Max screen $185, battery $120, charging port $145, back glass $155. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-15-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 15 pro max"
+  },
+  {
+    "name": "iPhone 15 Pro repair prices",
+    "desc": "iPhone 15 Pro screen $180, battery $120, charging port $145, back glass $155. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-15-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 15 pro"
+  },
+  {
+    "name": "iPhone 15 repair prices",
+    "desc": "iPhone 15 screen $185, battery $120, charging port $145, back glass $145. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-15",
+    "icon": "menu_book",
+    "kw": " repair iphone 15"
+  },
+  {
+    "name": "iPhone 16 Plus repair prices",
+    "desc": "iPhone 16 Plus screen $195, battery $125, charging port $145, back glass $150. By mail from $140 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-16-plus",
+    "icon": "menu_book",
+    "kw": " repair iphone 16 plus"
+  },
+  {
+    "name": "iPhone 16 Pro Max repair prices",
+    "desc": "iPhone 16 Pro Max screen $255, battery $125, charging port $145, back glass $160. By mail from $140 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-16-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 16 pro max"
+  },
+  {
+    "name": "iPhone 16 Pro repair prices",
+    "desc": "iPhone 16 Pro screen $225, battery $125, charging port $145, back glass $155. By mail from $140 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-16-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 16 pro"
+  },
+  {
+    "name": "iPhone 16 repair prices",
+    "desc": "iPhone 16 screen $180, battery $125, charging port $145, back glass $150. By mail from $140 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-16",
+    "icon": "menu_book",
+    "kw": " repair iphone 16"
+  },
+  {
+    "name": "iPhone 16e repair prices",
+    "desc": "iPhone 16e screen $180, battery $125, charging port $145, back glass $150. By mail from $140 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-16e",
+    "icon": "menu_book",
+    "kw": " repair iphone 16e"
+  },
+  {
+    "name": "iPhone 17 Pro Max repair prices",
+    "desc": "iPhone 17 Pro Max screen $275, battery $135, charging port $150, back glass $160. By mail from $150 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-17-pro-max",
+    "icon": "menu_book",
+    "kw": " repair iphone 17 pro max"
+  },
+  {
+    "name": "iPhone 17 Pro repair prices",
+    "desc": "iPhone 17 Pro screen $240, battery $135, charging port $150, back glass $160. By mail from $150 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-17-pro",
+    "icon": "menu_book",
+    "kw": " repair iphone 17 pro"
+  },
+  {
+    "name": "iPhone 17 repair prices",
+    "desc": "iPhone 17 screen $235, battery $135, charging port $150, back glass $155. By mail from $150 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-17",
+    "icon": "menu_book",
+    "kw": " repair iphone 17"
+  },
+  {
+    "name": "iPhone Air repair prices",
+    "desc": "iPhone Air screen $340, battery $140, charging port $150, back glass $170. By mail from $155 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-air",
+    "icon": "menu_book",
+    "kw": " repair iphone air"
   },
   {
     "name": "iPhone battery health at 80%: does it need replacement?",
@@ -2849,6 +3383,20 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " guides iphone screen repair"
   },
   {
+    "name": "iPhone SE (2020) repair prices",
+    "desc": "iPhone SE (2020) screen $100, battery $70, charging port $125, back glass $165. By mail from $85 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-se-2020",
+    "icon": "menu_book",
+    "kw": " repair iphone se 2020"
+  },
+  {
+    "name": "iPhone SE (2022) repair prices",
+    "desc": "iPhone SE (2022) screen $110, battery $90, charging port $125, back glass $165. By mail from $100 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/iphone-se-2022",
+    "icon": "menu_book",
+    "kw": " repair iphone se 2022"
+  },
+  {
     "name": "iPhone speaker sounds muffled after getting wet",
     "desc": "iPhone sounding muffled after it got wet? Unplug it, let it dry with airflow (no rice or heat), then test each speaker to see whether it needs service.",
     "href": "/tips/iphone-speaker-muffled-after-water",
@@ -2882,6 +3430,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/switch-joycon-drift",
     "icon": "menu_book",
     "kw": " tips switch joycon drift"
+  },
+  {
+    "name": "Joy-Con repair prices",
+    "desc": "Nintendo Joy-Con repair prices from $45, by mail from $60 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/joy-con",
+    "icon": "menu_book",
+    "kw": " repair joy con"
   },
   {
     "name": "Laptop battery replacement: what the job involves",
@@ -2954,11 +3509,123 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips lcd vs oled"
   },
   {
+    "name": "Lines, ink or flicker on a dropped laptop screen?",
+    "desc": "Lines, ink blotches or flicker after a drop? Plug in an external monitor first. If it looks fine there, the laptop’s own screen or cable took the hit.",
+    "href": "/tips/laptop-screen-damaged-after-drop",
+    "icon": "menu_book",
+    "kw": " tips laptop screen damaged after drop"
+  },
+  {
+    "name": "MacBook Air 13\" (2020, Intel) repair prices",
+    "desc": "MacBook Air 13\" (2020, Intel) display replacement $360, battery replacement $170. By mail from $185 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-air-13-inch-2020-intel",
+    "icon": "menu_book",
+    "kw": " repair macbook air 13 inch 2020 intel"
+  },
+  {
+    "name": "MacBook Air 13\" (M1, 2020) repair prices",
+    "desc": "MacBook Air 13\" (M1, 2020) display replacement $445, battery replacement $175. By mail from $190 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-air-13-inch-m1-2020",
+    "icon": "menu_book",
+    "kw": " repair macbook air 13 inch m1 2020"
+  },
+  {
+    "name": "MacBook Air 13\" (M2, 2022) repair prices",
+    "desc": "MacBook Air 13\" (M2, 2022) display replacement $570, battery replacement $195. By mail from $210 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-air-13-inch-m2-2022",
+    "icon": "menu_book",
+    "kw": " repair macbook air 13 inch m2 2022"
+  },
+  {
+    "name": "MacBook Air 13\" and 15\" (M3, 2024) repair prices",
+    "desc": "MacBook Air 13\" and 15\" (M3, 2024) display replacement $635. By mail from $225 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-air-13-inch-and-15-inch-m3-2024",
+    "icon": "menu_book",
+    "kw": " repair macbook air 13 inch and 15 inch m3 2024"
+  },
+  {
+    "name": "MacBook Air 13\" and 15\" (M4, 2025) repair prices",
+    "desc": "MacBook Air 13\" and 15\" (M4, 2025) display replacement $700. By mail from $240 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-air-13-inch-and-15-inch-m4-2025",
+    "icon": "menu_book",
+    "kw": " repair macbook air 13 inch and 15 inch m4 2025"
+  },
+  {
+    "name": "MacBook Air 13\" Retina (2018–2019) repair prices",
+    "desc": "MacBook Air 13\" Retina (2018–2019) display replacement $360. By mail from $185 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-air-13-inch-retina-2018-2019",
+    "icon": "menu_book",
+    "kw": " repair macbook air 13 inch retina 2018 2019"
+  },
+  {
+    "name": "MacBook Air 15\" (M2, 2023) repair prices",
+    "desc": "MacBook Air 15\" (M2, 2023) display replacement $615, battery replacement $210. By mail from $220 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-air-15-inch-m2-2023",
+    "icon": "menu_book",
+    "kw": " repair macbook air 15 inch m2 2023"
+  },
+  {
     "name": "MacBook on. External monitor black?",
     "desc": "External monitor black on MacBook? Check input, video connection, Detect Displays and model limits before resets. Protect dock-connected drives.",
     "href": "/tips/macbook-external-monitor-black",
     "icon": "menu_book",
     "kw": " tips macbook external monitor black"
+  },
+  {
+    "name": "MacBook Pro 13\" (2019–2022) repair prices",
+    "desc": "MacBook Pro 13\" (2019–2022) display replacement $415, battery replacement $200. By mail from $215 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-pro-13-inch-2019-2022",
+    "icon": "menu_book",
+    "kw": " repair macbook pro 13 inch 2019 2022"
+  },
+  {
+    "name": "MacBook Pro 14\" (M1 Pro/Max, 2021) repair prices",
+    "desc": "MacBook Pro 14\" (M1 Pro/Max, 2021) display replacement $645. By mail from $250 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-pro-14-inch-m1-pro-max-2021",
+    "icon": "menu_book",
+    "kw": " repair macbook pro 14 inch m1 pro max 2021"
+  },
+  {
+    "name": "MacBook Pro 14\" (M2 or M3, 2023) repair prices",
+    "desc": "MacBook Pro 14\" (M2 or M3, 2023) display replacement $665. By mail from $260 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-pro-14-inch-m2-or-m3-2023",
+    "icon": "menu_book",
+    "kw": " repair macbook pro 14 inch m2 or m3 2023"
+  },
+  {
+    "name": "MacBook Pro 14\" (M4, 2024) repair prices",
+    "desc": "MacBook Pro 14\" (M4, 2024) display replacement $730, battery replacement $255. By mail from $270 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-pro-14-inch-m4-2024",
+    "icon": "menu_book",
+    "kw": " repair macbook pro 14 inch m4 2024"
+  },
+  {
+    "name": "MacBook Pro 16\" (2019, Intel) repair prices",
+    "desc": "MacBook Pro 16\" (2019, Intel) display replacement $520, battery replacement $235. By mail from $245 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-pro-16-inch-2019-intel",
+    "icon": "menu_book",
+    "kw": " repair macbook pro 16 inch 2019 intel"
+  },
+  {
+    "name": "MacBook Pro 16\" (M1 Pro/Max, 2021) repair prices",
+    "desc": "MacBook Pro 16\" (M1 Pro/Max, 2021) display replacement $710. By mail from $270 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-pro-16-inch-m1-pro-max-2021",
+    "icon": "menu_book",
+    "kw": " repair macbook pro 16 inch m1 pro max 2021"
+  },
+  {
+    "name": "MacBook Pro 16\" (M2 or M3, 2023) repair prices",
+    "desc": "MacBook Pro 16\" (M2 or M3, 2023) display replacement $730. By mail from $275 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-pro-16-inch-m2-or-m3-2023",
+    "icon": "menu_book",
+    "kw": " repair macbook pro 16 inch m2 or m3 2023"
+  },
+  {
+    "name": "MacBook Pro 16\" (M4, 2024) repair prices",
+    "desc": "MacBook Pro 16\" (M4, 2024) display replacement $795, battery replacement $265. By mail from $280 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/macbook-pro-16-inch-m4-2024",
+    "icon": "menu_book",
+    "kw": " repair macbook pro 16 inch m4 2024"
   },
   {
     "name": "MacBook Pro screen lit like a stage?",
@@ -2982,6 +3649,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips windows microphone not working calls"
   },
   {
+    "name": "Nintendo Switch repair prices",
+    "desc": "Nintendo Switch, Lite, OLED and Switch 2 repair prices from $110, by mail from $125 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/nintendo-switch",
+    "icon": "menu_book",
+    "kw": " repair nintendo switch"
+  },
+  {
     "name": "Nintendo Switch won’t turn on or charge? Safe first checks",
     "desc": "For Switch, Lite, and OLED power problems, test the console directly with the correct adapter, reset power once, and know when to stop for service.",
     "href": "/tips/nintendo-switch-wont-turn-on",
@@ -2996,6 +3670,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips one airpod not working"
   },
   {
+    "name": "Phone fell, and the screen won’t respond?",
+    "desc": "Picture still there, but taps do nothing or only part of the screen works? Take off the protector, restart once, map the dead zone, then save your data.",
+    "href": "/tips/phone-touch-screen-not-working-after-drop",
+    "icon": "menu_book",
+    "kw": " tips phone touch screen not working after drop"
+  },
+  {
     "name": "Phone got wet? What to do first",
     "desc": "Phone got wet? Unplug it, power it off, and skip the rice and hair dryer. Why a wet phone can work for hours then fail, and when to get it checked.",
     "href": "/tips/water-damaged-phone",
@@ -3003,8 +3684,15 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips water damaged phone"
   },
   {
+    "name": "Phone or iPad bent? Don’t bend it back.",
+    "desc": "A bent phone or iPad can be a battery hazard. Don’t bend it back. Tell a bend from a bulge, learn the signs to stop, and what the repair really is.",
+    "href": "/tips/bent-phone-or-ipad",
+    "icon": "menu_book",
+    "kw": " tips bent phone or ipad"
+  },
+  {
     "name": "Phone Repair in Hailey vs Boise vs Mail-In",
-    "desc": "Phone repair in Hailey vs Boise vs mail-in: a Wood River Valley guide to choosing local, the two-hour drive, or quote-first mail-in repair from HDR statewide.",
+    "desc": "Phone repair in Hailey vs Boise vs mail-in: a Wood River Valley guide to choosing local, the two-hour drive, or quote-first mail-in repair from HDR.",
     "href": "/phone-repair-hailey-vs-boise",
     "icon": "menu_book",
     "kw": " phone repair hailey vs boise"
@@ -3052,6 +3740,76 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips phone charges slowly"
   },
   {
+    "name": "Pixel 7 Pro repair prices",
+    "desc": "Google Pixel 7 Pro screen replacement $240. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/google-pixel-7-pro",
+    "icon": "menu_book",
+    "kw": " repair google pixel 7 pro"
+  },
+  {
+    "name": "Pixel 7 repair prices",
+    "desc": "Google Pixel 7 screen replacement $205. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/google-pixel-7",
+    "icon": "menu_book",
+    "kw": " repair google pixel 7"
+  },
+  {
+    "name": "Pixel 7a repair prices",
+    "desc": "Google Pixel 7a screen replacement $185. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/google-pixel-7a",
+    "icon": "menu_book",
+    "kw": " repair google pixel 7a"
+  },
+  {
+    "name": "Pixel 8 Pro repair prices",
+    "desc": "Google Pixel 8 Pro screen replacement $250. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/google-pixel-8-pro",
+    "icon": "menu_book",
+    "kw": " repair google pixel 8 pro"
+  },
+  {
+    "name": "Pixel 8 repair prices",
+    "desc": "Google Pixel 8 screen replacement $215. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/google-pixel-8",
+    "icon": "menu_book",
+    "kw": " repair google pixel 8"
+  },
+  {
+    "name": "Pixel 8a repair prices",
+    "desc": "Google Pixel 8a screen replacement $200. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/google-pixel-8a",
+    "icon": "menu_book",
+    "kw": " repair google pixel 8a"
+  },
+  {
+    "name": "Pixel 9 Pro repair prices",
+    "desc": "Google Pixel 9 Pro screen replacement $285. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/google-pixel-9-pro",
+    "icon": "menu_book",
+    "kw": " repair google pixel 9 pro"
+  },
+  {
+    "name": "Pixel 9 Pro XL repair prices",
+    "desc": "Google Pixel 9 Pro XL screen replacement $295. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/google-pixel-9-pro-xl",
+    "icon": "menu_book",
+    "kw": " repair google pixel 9 pro xl"
+  },
+  {
+    "name": "Pixel 9 repair prices",
+    "desc": "Google Pixel 9 screen replacement $240. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/google-pixel-9",
+    "icon": "menu_book",
+    "kw": " repair google pixel 9"
+  },
+  {
+    "name": "Pixel 9a repair prices",
+    "desc": "Google Pixel 9a screen replacement $210. By mail from $135 with return shipping included. Quote first, 40-day warranty.",
+    "href": "/repair/google-pixel-9a",
+    "icon": "menu_book",
+    "kw": " repair google pixel 9a"
+  },
+  {
     "name": "Printer offline after a new router?",
     "desc": "Printer offline after a router or Wi-Fi change? Reconnect the network, check Windows 11 queues, and test safely before resetting or reinstalling.",
     "href": "/tips/printer-offline-after-router-change",
@@ -3059,11 +3817,39 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips printer offline after router change"
   },
   {
+    "name": "PS4 repair prices",
+    "desc": "PlayStation 4 repair prices from $130, by mail from $145 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/ps4",
+    "icon": "menu_book",
+    "kw": " repair ps4"
+  },
+  {
+    "name": "PS5 controller drifting on its own?",
+    "desc": "Camera or character moving on its own? Confirm it’s the DualSense stick, try Sony’s reset and update, then see what actually fixes stick drift.",
+    "href": "/tips/ps5-controller-stick-drift",
+    "icon": "menu_book",
+    "kw": " tips ps5 controller stick drift"
+  },
+  {
     "name": "PS5 controller not charging? DualSense checks that help",
     "desc": "DualSense won't charge, shows no light, or only charges with the PS5 on? Turn on USB power in rest mode, then test one cable and port at a time.",
     "href": "/tips/ps5-controller-not-charging",
     "icon": "menu_book",
     "kw": " tips ps5 controller not charging"
+  },
+  {
+    "name": "PS5 controller repair prices",
+    "desc": "PS5 DualSense controller repair prices from $60, by mail from $75 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/ps5-controller",
+    "icon": "menu_book",
+    "kw": " repair ps5 controller"
+  },
+  {
+    "name": "PS5 controller won’t connect?",
+    "desc": "DualSense won’t pair, blinks then goes off, or keeps disconnecting? Pair it by USB with the PS button, check the cable, reset it, then spot a fault.",
+    "href": "/tips/ps5-controller-not-connecting",
+    "icon": "menu_book",
+    "kw": " tips ps5 controller not connecting"
   },
   {
     "name": "PS5 game on USB won’t play?",
@@ -3085,6 +3871,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/ps5-overheating",
     "icon": "menu_book",
     "kw": " tips ps5 overheating"
+  },
+  {
+    "name": "PS5 repair prices",
+    "desc": "PlayStation 5 repair prices from $130, by mail from $145 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/ps5",
+    "icon": "menu_book",
+    "kw": " repair ps5"
   },
   {
     "name": "PS5 turns on, but the TV says no signal?",
@@ -3115,6 +3908,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips repair or replace"
   },
   {
+    "name": "Repair prices, model by model.",
+    "desc": "Find the repair price for your exact model: iPhone, Samsung Galaxy, Google Pixel, iPad, MacBook, PS5, Xbox and Switch. Bench and mail-in prices, quote first.",
+    "href": "/repair",
+    "icon": "menu_book",
+    "kw": " repair"
+  },
+  {
     "name": "Samsung screen acting up? Green lines, black screens, and burn-in.",
     "desc": "Green line, vertical lines, flicker, dead touch or burn-in on a Galaxy? What each AMOLED symptom points to, what to try first, and when it's the screen.",
     "href": "/tips/samsung-screen-issues",
@@ -3134,6 +3934,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "href": "/tips/speed-up-slow-laptop",
     "icon": "menu_book",
     "kw": " tips speed up slow laptop"
+  },
+  {
+    "name": "Speaker not working after the drop?",
+    "desc": "No sound, crackling or rattling since you dropped your phone? Rule out settings, find which speaker failed, and tell a damaged speaker from the mic.",
+    "href": "/tips/phone-speaker-not-working-after-drop",
+    "icon": "menu_book",
+    "kw": " tips phone speaker not working after drop"
   },
   {
     "name": "Spilled water or coffee on a laptop? What to do first",
@@ -3192,6 +3999,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips wifi keeps dropping"
   },
   {
+    "name": "Xbox controller repair prices",
+    "desc": "Xbox Wireless and Elite controller repair prices: stick drift fix $90. By mail with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/xbox-controller",
+    "icon": "menu_book",
+    "kw": " repair xbox controller"
+  },
+  {
     "name": "Xbox on, but the TV says no signal?",
     "desc": "Xbox Series X|S on but the TV says no signal? Test the cable and input, boot low-resolution mode, and spot a damaged HDMI port before repair.",
     "href": "/tips/xbox-series-x-no-signal-hdmi",
@@ -3199,11 +4013,32 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips xbox series x no signal hdmi"
   },
   {
+    "name": "Xbox One repair prices",
+    "desc": "Xbox One, One S and One X repair prices from $130, by mail from $145 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/xbox-one",
+    "icon": "menu_book",
+    "kw": " repair xbox one"
+  },
+  {
+    "name": "Xbox Series X|S repair prices",
+    "desc": "Xbox Series X and Series S repair prices from $130, by mail from $145 with return shipping included. Firm quote first, 40-day warranty.",
+    "href": "/repair/xbox-series-x",
+    "icon": "menu_book",
+    "kw": " repair xbox series x"
+  },
+  {
     "name": "“Liquid Detected”—but the iPhone port looks dry",
     "desc": "iPhone says Liquid Detected or Charging Not Available? Learn the safe drying steps, how to test the cable, when not to override the warning, and when the port needs service.",
     "href": "/tips/iphone-liquid-detected-port-dry",
     "icon": "menu_book",
     "kw": " tips iphone liquid detected port dry"
+  },
+  {
+    "name": "“Moisture detected” on a dry Samsung?",
+    "desc": "Galaxy shows a water-drop icon and won’t charge? Unplug, air dry, then test the cable, the room and Samsung’s USB-cache step before blaming the port.",
+    "href": "/tips/samsung-moisture-detected",
+    "icon": "menu_book",
+    "kw": " tips samsung moisture detected"
   },
   {
     "name": "“Unknown Part” or “Important Message” after iPhone repair",

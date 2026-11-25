@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-23",
+  "topic": "Acer Chromebook black screen or display glitching",
+  "prepared_route": "/tips/acer-chromebook-black-screen",
+  "intended_url": "https://www.haileyrepair.com/tips/acer-chromebook-black-screen",
+  "record_type": "new tips page (topic queue item 20, built on Sam's yes Nov 23; published Nov 23 on his yes)",
+  "uniqueness": "First Chromebook-specific guide. Distinct from /tips/laptop-screen-black-but-running (Windows shortcuts) and /tips/laptop-screen-damaged-after-drop: ChromeOS brightness key, Refresh + Power hard reset, Ctrl + Show windows screenshot test, Ctrl + Shift + 0, external display test, and why Powerwash or recovery can't fix a panel or cable.",
+  "bench_point": "None added. No invented bench stories, stats or prices.",
+  "scope": "Hardware triage (screen, backlight, display cable, hinge) with ChromeOS-specific safe checks. Counts toward the 80% hardware mix.",
+  "sources": [
+    {"url": "https://support.google.com/chromebook/answer/3227606", "used_for": "Hard reset steps (Refresh + tap Power, release Refresh on startup); may delete some Downloads files; admins can block blank-screen bypass"},
+    {"url": "https://support.google.com/chromebook/answer/183101", "used_for": "Ctrl + Show windows screenshot; Ctrl + Shift + 0 resets screen resolution"},
+    {"url": "https://blog.acer.com/en/discussion/3325/how-to-fix-a-black-screen-on-chromebook-and-prevent-it", "used_for": "Refresh + Power ~10 s variant; sun brightness key; charging light; external monitor; Powerwash file-loss warning"},
+    {"url": "https://blog.acer.com/en/discussion/1136/how-to-fix-a-black-screen-on-chromebook-and-chromebook-plus", "used_for": "Brightness knocked to zero; disconnect external devices; let it cool; external monitor test"},
+    {"url": "https://www.ifixit.com/Troubleshooting/Acer_Chromebook/Black+Screen/514146", "used_for": "Cause list: charger, external display detected, defective display, faulty display cable, pinhole reset on some models"},
+    {"url": "https://www.ifixit.com/Troubleshooting/Acer_Chromebook/Won't+Turn+On/514170", "used_for": "Recovery erases data stored on the device"}
+  ],
+  "integration": ["tips.html card + ItemList position 52, counts 88 -> 89", "guides.html card + ItemList position 33, numberOfItems 70", "sitemap.xml new url; lastmod bumped for tips, guides, laptop-repair, tips/laptop-problems", "laptop-repair.html guide strip link", "laptop-problems symptom finder row (scripts/build-symptom-finders.py)", "Quick Find entry via build.sh"],
+  "checks": ["audit-site.py", "audit-indexability.mjs", "audit-accessibility.py", "node --test scripts/test-*.mjs", "git diff --check"],
+  "limits": "Acer and Google describe the hard reset slightly differently; both given. Model-label naming not stated. Measure clicks about four weeks after publishing."
+}

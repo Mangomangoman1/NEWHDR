@@ -42,23 +42,32 @@ FINDERS = [
             ('dark', 'The screen is dark', [
                 ('tips/phone-screen-black-but-on', 'Black screen, but the phone still rings or vibrates', 'Common after a drop. The guide covers the safe first checks, the one restart worth trying, and how to tell a fixable screen from a board fault.', ''),
                 ('tips/phone-screen-black-after-water', 'Black screen after the phone got wet', 'Unplug it, skip the charger, and test for signs of life. On iPhones the display is usually what died.', ''),
+                ('tips/phone-wont-turn-on-after-drop', "No ring, no buzz, nothing at all after a drop", "Do one forced restart and an hour on a known-good charger, then stop. It may be the port, the battery or the board.", ''),
                 ('tips/iphone-stuck-on-apple-logo', 'iPhone stuck on the Apple logo, or restarting in a loop', 'Identify the pattern, use the correct force restart, and try recovery mode without erasing first.', ''),
                 ('tips/iphone-restarts-every-three-minutes', 'iPhone restarts about every three minutes', 'It may be logging a repeating panic. Protect the data and avoid erasing before the hardware is diagnosed.', ''),
             ]),
             ('cracked', 'The glass is cracked', [
                 ('tips/cracked-screen-safe-to-use', 'Cracked, but touch still works', 'Tell a hairline glass crack from display damage, when a protector helps, and when it is time to repair.', ''),
                 ('tips/screen-protector-or-cracked-screen', 'Not sure if it is the screen or only the protector', 'Find the protector’s edge and check the picture without pressing on the crack.', ''),
+                ('tips/cracked-ipad-screen', "It is an iPad with a cracked screen", "Apple’s safety advice, two tests for display damage, and which iPad models can have the glass replaced on its own.", ''),
                 ('tips/cracked-iphone-back-glass', 'The back of the iPhone is cracked', 'When a case is a fair stopgap, and the signs to stop: heat, a bent frame, or camera damage.', ''),
+                ('tips/cracked-samsung-back-glass', "The back of a Samsung or Pixel is cracked", "What the back glass protects, five things to check before a case goes on, and why a lifting back is a battery warning.", ''),
+                ('tips/cracked-iphone-camera-lens', "The camera lens on the back is cracked", "Take one photo with each lens to tell cracked cover glass from a damaged camera, and keep dust out until it’s fixed.", ''),
             ]),
             ('picture', 'The picture or touch is wrong', [
                 ('tips/iphone-green-white-line-screen', 'A green, white or pink line on an iPhone', 'Take a screenshot and view it on another device to tell a display fault from software.', ''),
                 ('tips/samsung-screen-issues', 'Samsung green line, flicker, dead touch or burn-in', 'What each AMOLED symptom points to, what to try first, and when it is the screen.', ''),
                 ('tips/white-spot-on-phone-screen', 'A white or bright spot that stays in one place', 'Tell an LCD backlight pressure mark from a stuck pixel with a screenshot and a color test.', ''),
+                ('tips/black-spot-on-phone-screen', "A black spot, ink blot or half the screen black", "Panel damage that can spread: back up first, confirm it with a screenshot viewed on another device, and don’t press on it.", ''),
                 ('tips/iphone-ghost-touch-cracked-screen', 'The iPhone taps, types or opens apps by itself', 'Stop the accidental input first, then test the case, protector, charger and moisture.', ''),
+                ('tips/phone-touch-screen-not-working-after-drop', "Picture is fine, but touch is dead, patchy or laggy after a drop", "Clear the protector and case, restart once, map the dead zone, then get the data off before a screen repair.", ''),
                 ('tips/swollen-phone-battery-screen-lifting', 'The screen is lifting away from the frame', 'A lifting screen or separating back can mean a swollen lithium battery.', STOP),
             ]),
             ('after', 'After a drop or a repair', [
                 ('tips/face-id-not-working-after-drop', 'Face ID stopped working after a drop or screen repair', 'Check obstruction and settings, read the exact message, and inspect Parts and Service History.', ''),
+                ('tips/phone-speaker-not-working-after-drop', "Speaker silent, crackling or rattling after a drop", "Rule out settings and Bluetooth, find which speaker failed, and tell a damaged speaker from the mic.", ''),
+                ('tips/phone-buttons-not-working-after-drop', "Power or volume button stuck, mushy or dead after a drop", "Rule out the case, back up while the phone is still on, and turn on the on-screen stand-in until it’s repaired.", ''),
+                ('tips/bent-phone-or-ipad', "The phone or iPad is bent", "Tell a bend from a swollen-battery bulge, check it without flexing it, and why bending it back is the wrong fix.", ''),
                 ('tips/iphone-unknown-part-important-message', 'iPhone shows Unknown Part or an Important Message', 'What Genuine, Used, Finish Repair and Unknown Part mean, and what to ask your repairer.', ''),
                 ('tips/lcd-vs-oled', 'Quoted two very different prices for a screen', 'LCD and OLED screens are priced differently. How to tell which your phone has.', ''),
                 ('tips/backup-iphone-broken-screen', 'Need the data off an iPhone with a broken screen', 'Check existing iCloud copies, trusted-computer limits, and data-preserving repair options.', ''),
@@ -77,7 +86,7 @@ FINDERS = [
         'strip': 'Won’t charge, drains, heat, swelling',
         'stop': [
             ('tips/swollen-phone-battery-screen-lifting', 'Anything is bulging or lifting', 'Stop using and charging it. Read this first.'),
-            ('tips/iphone-liquid-detected-port-dry', 'The phone warns about liquid', 'Do not override the warning until you have read this.'),
+            ('tips/iphone-liquid-detected-port-dry', 'An iPhone warns about liquid', 'Do not override the warning until you have read this.'),
             ('tips/spilled-liquid-on-laptop', 'Liquid went into a laptop', 'Disconnect power safely. Drying alone is not a repair.'),
         ],
         'groups': [
@@ -85,6 +94,7 @@ FINDERS = [
                 ('tips/phone-charges-slowly', 'Phone charging slowly, or not at all', 'Test the brick and cable, check the port without poking it, and read the pattern before buying a battery.', ''),
                 ('tips/iphone-charging-cable-loose-angle', 'The iPhone cable feels loose, or only works at an angle', 'Tell packed lint from a worn cable, moisture, or a damaged charging port.', ''),
                 ('tips/iphone-liquid-detected-port-dry', 'iPhone says Liquid Detected, but the port looks dry', 'Safe drying steps, how to test the cable, and when the port needs service.', ''),
+                ('tips/samsung-moisture-detected', "Samsung says Moisture detected, but the phone is dry", "Samsung’s drying steps and times, then the cable, room, restart and USB-cache checks, and when the port needs service.", ''),
                 ('tips/laptop-plugged-in-not-charging', 'Laptop says plugged in, not charging', 'Check the charger’s wattage first, then the port and battery.', ''),
             ]),
             ('drain', 'It drains fast or dies early', [
@@ -101,6 +111,8 @@ FINDERS = [
                 ('tips/apple-watch-not-charging', 'Apple Watch not charging, or showing a red bolt', 'Check charger contact, allow time for a flat battery, and separate charge limits from faults.', ''),
                 ('tips/one-airpod-not-working', 'One AirPod is silent or quieter', 'Check each earbud’s charge, isolate the sound problem, and choose the correct reset.', ''),
                 ('tips/ps5-controller-not-charging', 'PS5 controller will not charge', 'Turn on USB power in rest mode, then test one cable and port at a time.', ''),
+                ('tips/ps5-controller-stick-drift', "PS5 controller drifting on its own", "Confirm it is the stick, reset and update once, then a new stick is the lasting fix.", ''),
+                ('tips/ps5-controller-not-connecting', "DualSense will not pair or keeps disconnecting", "Pair by USB with the PS button on a data cable, reset once, then check battery and interference.", ''),
                 ('tips/nintendo-switch-wont-turn-on', 'Nintendo Switch will not turn on or charge', 'Test the console directly with the correct adapter and reset power once.', ''),
             ]),
         ],
@@ -123,7 +135,9 @@ FINDERS = [
         'groups': [
             ('screen', 'Screen and display', [
                 ('tips/laptop-screen-black-but-running', 'Screen black, but the fans are running', 'Try brightness, Win+Ctrl+Shift+B and an external monitor to tell a bad screen from a startup problem.', ''),
+                ('tips/laptop-screen-damaged-after-drop', "Lines, ink blotches or flicker after a drop", "Plug in an external display and move the lid once to tell a damaged panel from a damaged display cable.", ''),
                 ('tips/macbook-pro-stage-light', 'Bright bars along the bottom of a MacBook Pro screen', 'On 2016–2017 models this points to a worn backlight cable. Confirm it with a screenshot and lid test.', ''),
+                ('tips/acer-chromebook-black-screen', 'Chromebook screen black, flickering or full of lines', 'Tap brightness, do one hard reset and try an external display to tell a dead screen or cable from a ChromeOS problem.', ''),
                 ('tips/macbook-external-monitor-black', 'External monitor stays black on a MacBook', 'Check input, the video connection, Detect Displays and your model’s limits.', ''),
                 ('tips/laptop-hinge-breaking', 'Hinge popping, stiff, or pulling the case apart', 'The mounts inside the housing often broke, not the hinge. Tightening will not fix it.', ''),
             ]),
@@ -146,6 +160,7 @@ FINDERS = [
             ]),
             ('storage', 'Drives and Wi-Fi', [
                 ('tips/external-drive-not-showing-up-mac', 'External drive not showing up on a Mac', 'Check Finder, connections and mounting safely. Protect files before First Aid or formatting.', ''),
+                ('tips/dropped-external-hard-drive-clicking', "A dropped hard drive clicks, beeps or won’t show up", "Unplug it and leave it off, tell normal sounds from stop sounds, and try one cable only if the drive is quiet.", STOP),
                 ('tips/wifi-keeps-dropping', 'Wi-Fi keeps dropping', 'Router, distance and interference, one device versus the whole house, or a failing Wi-Fi card.', ''),
             ]),
         ],

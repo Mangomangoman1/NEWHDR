@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = '20261103'
+VERSION = '20261125'
 CSS = f'<link rel="stylesheet" href="/assets/css/ask-bench.css?v={VERSION}">'
 JS = f'<script src="/assets/ask-bench.js?v={VERSION}" defer></script>'
 START, END = '<!-- ask-bench:start -->', '<!-- ask-bench:end -->'
@@ -23,11 +23,14 @@ HUB_CTA_RE = re.compile(r'<section class="rh-cta">.*?</section>', re.S)
 
 
 def place(html: str, hub: bool = False) -> str:
-    if START in html:
+    if START in html and hub:
         html = BLOCK_RE.sub(lambda _: BLOCK, html)
     elif hub and HUB_CTA_RE.search(html):
         html = HUB_CTA_RE.sub(lambda _: BLOCK, html, count=1)
     else:
+        # Tips pages: the box always closes the page, after the price strip and
+        # symptom finders, so it is removed and placed again just before </main>.
+        html = re.sub(re.escape(START) + r'.*?' + re.escape(END) + r'\n?', '', html, flags=re.S)
         idx = html.rindex('</main>')
         html = html[:idx] + BLOCK + '\n' + html[idx:]
     html = CSS_RE.sub(CSS, html) if CSS_RE.search(html) else html.replace('</head>', CSS + '</head>', 1)
