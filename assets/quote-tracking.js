@@ -51,6 +51,9 @@
 
   document.addEventListener('submit', function (event) {
     var form = event.target;
-    if (form && form.hasAttribute && form.hasAttribute('data-formspree')) send('form');
+    if (!form || !form.hasAttribute) return;
+    // Ask the bench questions are counted on their own, not as quote requests.
+    if (form.hasAttribute('data-ask-bench')) send('ask_bench');
+    else if (form.hasAttribute('data-formspree')) send('form');
   }, true);
 })();

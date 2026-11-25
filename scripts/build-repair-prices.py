@@ -289,6 +289,7 @@ def template_parts():
     nav = nav.replace('<a class="nav-link" href="/pricing">', '<a class="nav-link active" aria-current="location" href="/pricing">')
     tail = source[source.index('<footer class="fg-footer">'):]
     tail = re.sub(r'<script src="/assets/repair-tip-pages\.js[^"]*" defer></script>', '', tail)
+    tail = re.sub(r'<script src="/assets/ask-bench\.js[^"]*" defer></script>', '', tail)  # the question box lives on tips pages only
     return nav, tail
 
 

@@ -9,6 +9,7 @@ python3 scripts/build-search-index.py
 python3 scripts/build-shared-navigation.py
 python3 scripts/build-tips-price-links.py
 python3 scripts/add-quote-tracking.py
+python3 scripts/build-ask-bench.py
 
 echo "🥭 HDR Build — Minifying assets..."
 
