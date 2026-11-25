@@ -191,7 +191,7 @@ IPADS = [
     ('iPad Pro 11" (M4, 2024)', 'ipad-pro-11-m4', ['iPad Pro 11" (5th gen, 2024)', 'iPad Pro (any)'], 'Pro 11" M4'),
     ('iPad Pro 11" (M5, 2025)', 'ipad-pro-11-m5', ['iPad Pro 11" (6th gen, 2025)', 'iPad Pro (any)'], 'Pro 11" M5'),
     ('iPad Pro 12.9" (3rd and 4th gen)', 'ipad-pro-12-9-3rd-4th-gen', ['iPad Pro 12.9" (3rd-4th gen, 2020)', 'iPad Pro (any)'], 'Pro 12.9" 3rd / 4th'),
-    ('iPad Pro 12.9" (5th gen)', 'ipad-pro-12-9-5th-gen', ['iPad Pro 12.9" (5th gen, 2022)', 'iPad Pro (any)'], 'Pro 12.9" 5th gen'),
+    ('iPad Pro 12.9" (5th gen)', 'ipad-pro-12-9-5th-gen', ['iPad Pro 12.9" (5th gen, 2021)', 'iPad Pro (any)'], 'Pro 12.9" 5th gen'),
     ('iPad Pro 13" (M4 and M5)', 'ipad-pro-13-m4-m5', ['iPad Pro 13" (M4/M5)', 'iPad Pro (any)'], 'Pro 13"'),
 ]
 for name, slug, devices, short in IPADS:

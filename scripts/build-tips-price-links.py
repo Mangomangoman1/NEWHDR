@@ -237,7 +237,7 @@ def main():
             print(f'  price links: skipped {slug} (no page)')
             continue
         html = page.read_text()
-        html = re.sub(re.escape(START) + r'.*?' + re.escape(END), '', html, flags=re.S)
+        html = re.sub(re.escape(START) + r'.*?' + re.escape(END) + r'\n?', '', html, flags=re.S)
         new = block(cfg)
         anchor = '<!-- symptom-finder-strip:start -->'
         if anchor in html:
