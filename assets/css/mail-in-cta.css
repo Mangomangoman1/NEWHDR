@@ -1,70 +1,161 @@
-/* Mail-in button in the header, the same spot on every page.
-   Inserted by scripts/add-mail-in-nav.py; links to the mail-in intake. */
-.mi-nav{--mi:#6fd3b3;--mi-ink:#d4f5ea;--mi-soft:rgba(111,211,179,.14);--mi-line:rgba(111,211,179,.4);
-  position:relative;display:inline-flex!important;align-items:center;gap:.5rem;flex-shrink:0;height:36px;
-  padding:0 .9rem 0 .75rem!important;border-radius:999px!important;overflow:hidden;isolation:isolate;
-  background:linear-gradient(180deg,rgba(111,211,179,.17),rgba(111,211,179,.06))!important;
-  border:1px solid var(--mi-line);color:var(--mi-ink)!important;text-decoration:none!important;
-  font:600 .78rem/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;letter-spacing:.01em;
-  white-space:nowrap;box-shadow:0 0 0 0 rgba(111,211,179,0);
-  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease,background-color .2s ease}
-.mi-nav svg{width:17px;height:17px;flex-shrink:0;color:var(--mi)}
-.mi-nav__sub{display:none;align-items:center;gap:.4rem;padding-left:.55rem;border-left:1px solid rgba(111,211,179,.3);
-  color:rgba(212,245,234,.66);font-weight:500}
-.mi-nav__dot{width:6px;height:6px;border-radius:50%;background:var(--mi);box-shadow:0 0 0 3px rgba(111,211,179,.16)}
-/* A slow sheen that crosses the pill every few seconds: noticeable, never loud. */
-.mi-nav:after{content:"";position:absolute;inset:-1px auto -1px -40%;width:36%;z-index:-1;pointer-events:none;
-  background:linear-gradient(100deg,transparent,rgba(212,245,234,.16),transparent);transform:skewX(-18deg);
-  animation:mi-sheen 7s ease-in-out 1.2s infinite}
-@keyframes mi-sheen{0%,72%{left:-40%}100%{left:120%}}
-.mi-nav:hover,.mi-nav:focus-visible{border-color:var(--mi);transform:translateY(-1px);
-  box-shadow:0 0 18px rgba(111,211,179,.28)}
-.mi-nav:focus-visible{outline:2px solid var(--mi);outline-offset:2px}
-.mi-nav[aria-current="page"]{background:var(--mi-soft)!important;border-color:var(--mi)}
-.mi-nav[aria-current="page"]:after{animation:none;display:none}
+/* Header action buttons: Mail-in repair, Quick Find and Get a Quote share one
+   component. Same height, shape, border, type and icon placement; only the hue
+   changes (teal, amber, blue). Loaded on every page by scripts/add-mail-in-nav.py.
+   Selectors are deliberately specific so they win over the older per-button
+   styles in style.css, nav-quote.css and the inline canonical nav CSS. */
 
-/* The older repair-tip header styles every link in its row; keep the pill whole. */
-.tip-nav-links a.mi-nav{display:inline-flex!important;margin-right:.35rem}
+html body .nav .nav-inner,html body .tip-nav{
+  --ha-h:38px;--ha-r:999px;--ha-ink:#eef3f7;--ha-base:#0f151d;
+  --ha-font:600 .8rem/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 
-@media(max-width:620px){.tip-nav-links .tip-quote{white-space:nowrap}}
-@media(max-width:430px){.tip-nav-inner{padding:0 .75rem!important;gap:.4rem!important}.tip-nav-links{gap:.15rem!important}.tip-nav-links .tip-quote{font-size:.76rem!important;padding:.45rem .6rem!important}.tip-brand{gap:.3rem!important}}
-/* Light theme */
-html[data-theme="light"] .mi-nav{--mi:#0f7a5f;--mi-ink:#0b4f3e;--mi-line:rgba(15,122,95,.38);
-  background:linear-gradient(180deg,rgba(15,122,95,.1),rgba(15,122,95,.04))!important}
-html[data-theme="light"] .mi-nav__sub{color:rgba(11,79,62,.7);border-left-color:rgba(15,122,95,.28)}
-html[data-theme="light"] .mi-nav:after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent)}
+/* Hues, as rgb triplets so fills and borders can share them */
+html body .mi-nav{--hb:111,211,179}
+html body .nav .nav-actions .qf-trigger{--hb:226,160,92}
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper){--hb:126,168,226}
 
-/* Make room in the desktop header: slightly tighter link spacing, same look. */
+/* ── The shared shape ─────────────────────────────────────────────── */
+html body .mi-nav,
+html body .nav .nav-actions .qf-trigger,
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .water-btn{
+  box-sizing:border-box!important;position:relative!important;inset:auto!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  gap:.5rem!important;height:var(--ha-h)!important;min-height:0!important;width:auto!important;
+  padding:0 1rem 0 .85rem!important;margin:0!important;flex-shrink:0!important;
+  border-radius:var(--ha-r)!important;overflow:hidden!important;isolation:isolate!important;
+  background:linear-gradient(180deg,rgba(var(--hb),.15),rgba(var(--hb),.06)),var(--ha-base)!important;
+  border:1px solid rgba(var(--hb),.38)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 1px 2px rgba(0,0,0,.25)!important;
+  color:var(--ha-ink)!important;font:var(--ha-font)!important;letter-spacing:.012em!important;
+  text-decoration:none!important;text-shadow:none!important;white-space:nowrap!important;cursor:pointer!important;
+  filter:none!important;transform:none!important;transform-style:flat!important;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease,background .2s ease!important;
+  -webkit-tap-highlight-color:transparent}
+
+/* Icons: one size, in the button's hue */
+html body .mi-nav svg{width:17px;height:17px;flex-shrink:0;color:rgb(var(--hb))}
+html body .nav .nav-actions .qf-trigger .material-symbols-outlined,
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .btn-text .material-symbols-outlined{
+  font-size:17px!important;width:17px;height:17px;color:rgb(var(--hb))!important;
+  font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 20!important;transition:none!important;transform:none!important}
+
+/* Hover and keyboard focus: the same lift on all three */
+html body .mi-nav:hover,
+html body .nav .nav-actions .qf-trigger:hover,
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .water-btn:hover{
+  background:linear-gradient(180deg,rgba(var(--hb),.22),rgba(var(--hb),.1)),var(--ha-base)!important;
+  border-color:rgba(var(--hb),.75)!important;transform:translateY(-1px)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 6px 18px rgba(var(--hb),.16)!important}
+html body .mi-nav:focus-visible,
+html body .nav .nav-actions .qf-trigger:focus-visible,
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .water-btn:focus-visible{
+  outline:2px solid rgb(var(--hb))!important;outline-offset:2px!important}
+html body .mi-nav[aria-current="page"]{border-color:rgba(var(--hb),.75)!important}
+
+/* ── Quick Find: the ⌘K chip goes; the shortcut still works ───────── */
+html body .nav .nav-actions .qf-trigger kbd{display:none!important}
+
+/* ── Get a Quote: retire the glass and shimmer layers ─────────────── */
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper){
+  position:relative!important;display:inline-flex!important;align-items:center!important;
+  width:auto!important;height:var(--ha-h)!important;flex-shrink:0!important;
+  filter:none!important;transform:none!important;isolation:auto!important}
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .ambient-shadow,
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .caustic,
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .rectangle-volume,
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .glare-radial,
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .glare-sharp{display:none!important}
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .water-btn::before,
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .water-btn::after,
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .btn-text::after{content:none!important;display:none!important;animation:none!important}
+html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .btn-text{
+  position:static!important;inset:auto!important;display:inline-flex!important;align-items:center!important;
+  gap:.5rem!important;color:inherit!important;font:inherit!important;letter-spacing:inherit!important;
+  text-shadow:none!important;transform:none!important;pointer-events:none!important}
+
+/* ── Mail-in label pieces ─────────────────────────────────────────── */
+.mi-nav__sub{display:none!important}
+.tip-nav-links a.mi-nav{margin-right:.35rem!important}
+
+/* ── Older repair-tip header: its Get a quote pill joins the set ──── */
+html body .tip-nav-links .tip-quote{--hb:126,168,226;
+  box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;
+  height:var(--ha-h)!important;padding:0 1rem!important;border-radius:var(--ha-r)!important;
+  background:linear-gradient(180deg,rgba(var(--hb),.15),rgba(var(--hb),.06)),var(--ha-base)!important;
+  border:1px solid rgba(var(--hb),.38)!important;color:var(--ha-ink)!important;font:var(--ha-font)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 1px 2px rgba(0,0,0,.25)!important;white-space:nowrap!important;
+  text-decoration:none!important;transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease!important}
+html body .tip-nav-links .tip-quote:hover{border-color:rgba(var(--hb),.75)!important;transform:translateY(-1px)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 6px 18px rgba(var(--hb),.16)!important}
+
+/* ── Light theme ──────────────────────────────────────────────────── */
+html[data-theme="light"] body .nav .nav-inner,html[data-theme="light"] body .tip-nav{--ha-ink:#17202b;--ha-base:#ffffff}
+html[data-theme="light"] body .mi-nav{--hb:15,122,95}
+html[data-theme="light"] body .nav .nav-actions .qf-trigger{--hb:168,92,22}
+html[data-theme="light"] body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper),
+html[data-theme="light"] body .tip-nav-links .tip-quote{--hb:43,94,168}
+html[data-theme="light"] body .mi-nav,
+html[data-theme="light"] body .nav .nav-actions .qf-trigger,
+html[data-theme="light"] body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .water-btn,
+html[data-theme="light"] body .tip-nav-links .tip-quote{
+  background:linear-gradient(180deg,rgba(var(--hb),.09),rgba(var(--hb),.03)),var(--ha-base)!important;
+  box-shadow:0 1px 2px rgba(20,30,45,.08)!important}
+
+/* ── Room in the desktop header ───────────────────────────────────── */
 @media(min-width:769px){
   html body .nav .nav-inner{gap:.75rem!important}
   html body .nav .nav-links{gap:.1rem!important}
   html body .nav .nav-links .nav-link{padding:.35rem .5rem!important}
+  html body .nav .nav-actions{gap:.5rem!important}
 }
-@media(min-width:1400px){.mi-nav__sub{display:inline-flex}}
-@media(max-width:1199px){.mi-nav{padding:0 .8rem 0 .65rem!important}.mi-nav__long{display:none}
+@media(max-width:1199px){.mi-nav__long{display:none}
   html body .nav .nav-links .nav-link{padding:.35rem .4rem!important}}
-/* Tablet widths keep every nav link, so the pill folds to its icon, like Quick Find. */
+/* Below 1100px Quick Find folds to its icon, as before, now as a matching circle */
+@media(max-width:1099px){
+  html body .nav .nav-actions .qf-trigger{width:var(--ha-h)!important;padding:0!important;gap:0!important}
+  html body .nav .nav-actions .qf-trigger .qf-label{display:none!important}
+}
+/* Tablet widths keep every nav link, so Mail-in folds to its icon too */
 @media(min-width:769px) and (max-width:1023px){
   html body .nav .nav-inner{gap:.55rem!important}
   html body .nav .nav-links .nav-link{padding:.35rem .3rem!important}
-  .mi-nav{width:36px;padding:0!important;justify-content:center;gap:0}
-  .mi-nav>span{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  html body .nav .mi-nav{width:var(--ha-h)!important;padding:0!important;gap:0!important}
+  html body .nav .mi-nav>span{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 }
-/* Phones and tablets: the links fold into the menu, so the pill sits beside it. */
+/* Phones: the links fold into the menu, so Mail-in sits beside it */
 @media(max-width:768px){
-  .nav-inner>.mi-nav{margin-left:auto}
+  .nav-inner>.mi-nav{margin-left:auto!important}
   .nav-inner>.mi-nav~.nav-hamburger{margin-left:0!important}
-  .mi-nav{height:38px}
 }
-@media(max-width:620px){.tip-nav-links a.mi-nav{margin-right:.15rem}}
+@media(max-width:620px){.tip-nav-links .tip-quote{white-space:nowrap}.tip-nav-links a.mi-nav{margin-right:.15rem!important}}
+@media(max-width:430px){.tip-nav-inner{padding:0 .75rem!important;gap:.4rem!important}.tip-nav-links{gap:.15rem!important}
+  html body .tip-nav-links .tip-quote{padding:0 .7rem!important;font-size:.76rem!important}.tip-brand{gap:.3rem!important}}
 @media(max-width:380px){
   html body .nav .nav-inner,.tip-nav-inner{gap:.5rem!important}
   html body .nav .nav-logo-text,.tip-brand{font-size:.82rem!important}
-  .mi-nav{padding:0 .65rem 0 .55rem!important;gap:.35rem;height:36px}
-  .mi-nav svg{width:15px;height:15px}
+  html body .mi-nav{padding:0 .7rem 0 .6rem!important;gap:.35rem!important;--ha-h:36px}
+  html body .mi-nav svg{width:15px;height:15px}
 }
-@media(max-width:340px){html body .nav .nav-logo-icon,.tip-brand .material-symbols-outlined{display:none!important}.tip-quote{padding:.42rem .55rem!important}}
-@media(prefers-reduced-motion:reduce){.mi-nav{transition:none}.mi-nav:after{animation:none;display:none}}
-@media print{.mi-nav{display:none!important}}
 @media(max-width:370px){.tip-brand .material-symbols-outlined{display:none!important}}
-@media(max-width:330px){.tip-brand{font-size:.76rem!important}.tip-nav-links .tip-quote{padding:.45rem .45rem!important}.mi-nav{padding:0 .5rem!important}}
+@media(max-width:340px){html body .nav .nav-logo-icon,.tip-brand .material-symbols-outlined{display:none!important}}
+@media(max-width:330px){.tip-brand{font-size:.76rem!important}
+  html body .tip-nav-links .tip-quote{padding:0 .5rem!important}html body .mi-nav{padding:0 .55rem!important}}
+@media(prefers-reduced-motion:reduce){
+  html body .mi-nav,html body .nav .nav-actions .qf-trigger,html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper) .water-btn,
+  html body .tip-nav-links .tip-quote{transition:none!important}}
+@media print{.mi-nav{display:none!important}}
+/* Get a Quote moves into the menu below 900px, as before */
+@media(max-width:900px){html body .nav .nav-actions :is(#water-wrapper-nav,.water-wrapper){display:none!important}}
+/* The older tip header's quote pill gets the same left icon as the others */
+html body .tip-nav-links .tip-quote{gap:.5rem!important}
+html body .tip-nav-links .tip-quote::before{content:"request_quote";font-family:'Material Symbols Outlined';font-size:17px;line-height:1;
+  font-weight:normal;color:rgb(var(--hb));font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 20;-webkit-font-smoothing:antialiased}
+@media(max-width:500px){
+  html body .tip-nav-links .tip-quote::before{display:none}
+  html body .tip-nav-links .mi-nav{padding:0 .7rem 0 .6rem!important;gap:.35rem!important}
+  html body .tip-nav-links .tip-quote{padding:0 .65rem!important}
+}
+@media(max-width:360px){
+  html body .tip-nav-links .mi-nav{padding:0 .55rem 0 .5rem!important;gap:.3rem!important}
+  html body .tip-nav-links .tip-quote{padding:0 .5rem!important;font-size:.74rem!important}
+  html body .tip-nav-links .mi-nav,html body .tip-nav-links .tip-quote{font-size:.74rem!important}
+}

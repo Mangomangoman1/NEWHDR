@@ -11,7 +11,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parent.parent
-CSS_TAG = '<link rel="stylesheet" href="/assets/css/mail-in-cta.css?v=20261127">'
+CSS_TAG = '<link rel="stylesheet" href="/assets/css/mail-in-cta.css?v=20261127b">'
 HUB = '/mail-in-repair'
 ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" '
         'stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/>'
@@ -21,8 +21,7 @@ ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width
 def button(current):
     cur = ' aria-current="page"' if current else ''
     return (f'<a class="mi-nav" href="{HUB}" data-quote-kind="mail_in_top"{cur}>{ICON}'
-            '<span>Mail-in<span class="mi-nav__long"> repair</span></span>'
-            '<span class="mi-nav__sub"><span class="mi-nav__dot" aria-hidden="true"></span>Any state</span></a>')
+            '<span>Mail-in<span class="mi-nav__long"> repair</span></span></a>')
 
 
 pages = [p for p in ROOT.glob('*.html')] + [p for d in ('tips', 'guides', 'mail-in', 'repair') for p in (ROOT / d).glob('*.html')]
