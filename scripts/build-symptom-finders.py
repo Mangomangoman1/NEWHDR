@@ -92,6 +92,7 @@ FINDERS = [
         'groups': [
             ('charging', 'It will not charge, or charges slowly', [
                 ('tips/phone-charges-slowly', 'Phone charging slowly, or not at all', 'Test the brick and cable, check the port without poking it, and read the pattern before buying a battery.', ''),
+                ('tips/phone-not-charging-port-or-battery', 'Phone won’t charge: port or battery?', 'Four quick tests, a wireless pad, a computer, off the charger and the battery report, tell which part has failed.', ''),
                 ('tips/iphone-charging-cable-loose-angle', 'The iPhone cable feels loose, or only works at an angle', 'Tell packed lint from a worn cable, moisture, or a damaged charging port.', ''),
                 ('tips/iphone-liquid-detected-port-dry', 'iPhone says Liquid Detected, but the port looks dry', 'Safe drying steps, how to test the cable, and when the port needs service.', ''),
                 ('tips/samsung-moisture-detected', "Samsung says Moisture detected, but the phone is dry", "Samsung’s drying steps and times, then the cable, room, restart and USB-cache checks, and when the port needs service.", ''),

@@ -3999,6 +3999,13 @@ if(w.hopsLeft===0){walkers.splice(i,1);continue;}
     "kw": " tips wifi keeps dropping"
   },
   {
+    "name": "Won’t charge? Port or battery.",
+    "desc": "Phone won’t charge? A few safe tests tell a dirty or worn charging port from a worn-out battery, so the right part gets fixed the first time.",
+    "href": "/tips/phone-not-charging-port-or-battery",
+    "icon": "menu_book",
+    "kw": " tips phone not charging port or battery"
+  },
+  {
     "name": "Xbox controller repair prices",
     "desc": "Xbox Wireless and Elite controller repair prices: stick drift fix $90. By mail with return shipping included. Firm quote first, 40-day warranty.",
     "href": "/repair/xbox-controller",

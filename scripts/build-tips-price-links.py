@@ -77,6 +77,10 @@ TIPS = {
     # iPhone charging port
     **{s: iphone(['Charge Port']) for s in (
         'iphone-charging-cable-loose-angle', 'iphone-liquid-detected-port-dry', 'phone-charges-slowly')},
+    'phone-not-charging-port-or-battery': cats(
+        [M('iphone-16', ['Battery']), M('iphone-16', ['Charge Port']),
+         M('samsung-galaxy-s24', ['Battery']), M('samsung-galaxy-s24', ['Charge Port'])],
+        'Battery or port: what each costs', ('/repair', 'Every phone model')),
     'cracked-iphone-back-glass': iphone(['Back Glass']),
     # iPhone, other hardware: link the model pages without quoting a job that is not on the list
     **{s: iphone() for s in (

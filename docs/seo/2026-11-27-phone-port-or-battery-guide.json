@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-27",
+  "topic": "Phone won't charge: charging port or battery?",
+  "prepared_route": "/tips/phone-not-charging-port-or-battery",
+  "intended_url": "https://www.haileyrepair.com/tips/phone-not-charging-port-or-battery",
+  "record_type": "new tips page (Sam asked for it Nov 25; goes live only on his publish yes)",
+  "uniqueness": "A decision page, not another troubleshooting list. /tips/phone-charges-slowly covers the whole charging path and slow charging; /tips/iphone-charging-cable-loose-angle covers fit, lint and safe cleaning. This page is the split between the two repairs: the charging-sign pattern, the half-hour Apple sequence, four deciding tests (wireless pad, computer connection, off the charger, the battery's own report) and a result matrix.",
+  "bench_point": "None added. No invented bench stories, stats or prices. Prices only in the generated price strip, from pricing-data.json.",
+  "scope": "Hardware triage (charging port, battery, charge circuit). Counts toward the 80% hardware mix.",
+  "sources": [
+    {"url": "https://support.apple.com/en-us/108805", "used_for": "Outlet and connection checks, inspect cable, remove port debris, charge half an hour, force restart steps, charge another half hour, 80% charging behaviour"},
+    {"url": "https://support.apple.com/en-us/101575", "used_for": "Settings > Battery > Battery Health path, service message meaning, performance management after an unexpected shutdown"},
+    {"url": "https://support.google.com/pixelphone/answer/14140287?hl=en", "used_for": "Device health & support shows battery health on Pixel 6 and later"},
+    {"url": "https://www.samsung.com/us/support/answer/ANS10013266/", "used_for": "Samsung Members > Support > Get Started > Battery status"}
+  ],
+  "integration": ["tips.html card + ItemList position 33, counts 89 -> 90", "guides.html card + ItemList position 1 (Phone & watch section), numberOfItems 71", "sitemap.xml new url; lastmod bumped for tips, guides, iphone-repair, tips/battery-charging-problems", "iphone-repair.html guide strip link", "battery-charging-problems symptom finder row (scripts/build-symptom-finders.py)", "price strip: iPhone 16 and Galaxy S24 battery and charging port rows (scripts/build-tips-price-links.py)", "Quick Find entry via build.sh"],
+  "checks": ["audit-site.py", "audit-indexability.mjs", "audit-accessibility.py", "node --test scripts/test-*.mjs", "git diff --check"],
+  "limits": "Pixel and Galaxy charge-protection settings named generally, not by menu path. The port-versus-battery tests are general repair knowledge. Measure clicks about four weeks after publishing."
+}
