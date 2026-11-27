@@ -15,7 +15,7 @@ import importlib.util
 import re
 
 ROOT = Path(__file__).resolve().parent.parent
-CSS_TAG = '<link rel="stylesheet" href="/assets/css/price-bridge.css?v=20261124">'
+CSS_TAG = '<link rel="stylesheet" href="/assets/css/price-bridge.css?v=20261127">'
 START, END = '<!-- PRICE-LINK:START -->', '<!-- PRICE-LINK:END -->'
 
 spec = importlib.util.spec_from_file_location('brp', ROOT / 'scripts' / 'build-repair-prices.py')
@@ -211,6 +211,10 @@ def title_for(cfg):
     return f'{names[0]} repair prices'
 
 
+TRUCK = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" '
+         'stroke-linejoin="round" focusable="false"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/>'
+         '<path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/><path d="m7.8 5.3 8.4 4.5"/></svg>')
+
 MAIL_GUIDES = {'#g-iphone': '/mail-in/iphone', '#g-samsung': '/mail-in/android', '#g-pixel': '/mail-in/android',
                '#g-ipad': '/mail-in/ipad', '#g-macbook': '/mail-in/macbook', '#g-console': '/mail-in/console'}
 
@@ -234,9 +238,11 @@ def block(cfg):
         f'<p class="pb-note">Straight from our price list. Mail-in prices include return shipping.</p>'
         f'<a class="pb-all" href="{all_href}">{escape(all_label)} <i class="pb-arrow" aria-hidden="true"></i></a></div>'
         f'<ul class="pb-rows">{"".join(rows)}</ul>'
-        f'<a class="pb-mail" href="{mail_guide(cfg, accent)}"><span><strong>Not near Hailey?</strong> '
-        f'Mail it in from any state in the lower 48. You get a firm quote before any work begins.</span>'
-        f'<i class="pb-arrow" aria-hidden="true"></i></a>'
+        f'<a class="pb-mail" href="{mail_guide(cfg, accent)}"><span class="pb-mail__icon" aria-hidden="true">{TRUCK}</span>'
+        f'<span class="pb-mail__copy"><strong>Not local? Mail it in from any state.</strong>'
+        f'<small>Ships from anywhere in the lower 48. Free quote by text before you ship, and most repairs are done '
+        f'within 1–2 days of arriving.</small></span>'
+        f'<span class="pb-mail__btn">Start a mail-in <i class="pb-arrow" aria-hidden="true"></i></span></a>'
         f'</section>{END}'
     )
 

@@ -444,7 +444,7 @@ def build_model(model, nav, tail):
 <div class="rp-cards">{cards}</div>{grade_note}</section>
 <section class="rp-section rp-mail" aria-labelledby="mail-title"><header class="rp-section__head"><p class="fg-kicker">02 / By mail</p><h2 id="mail-title">Send it in, get it back fixed</h2></header>
 <ol class="rp-steps">{steps}</ol>
-<div class="rp-mail__end"><p>Not near Hailey? This is how most {escape(name)} repairs reach the bench, from any state in the lower 48.</p><a class="rp-btn rp-btn--main" href="{SMS}">Text the model and the problem {ARROW}</a><a class="rp-btn" href="/{fam['mailin'][0]}">{escape(fam['mailin'][1])}</a></div></section>
+<div class="rp-mail__end"><p>Not local? This is how most {escape(name)} repairs reach the bench, from any state in the lower 48.</p><a class="rp-btn rp-btn--main" href="{SMS}">Text the model and the problem {ARROW}</a><a class="rp-btn" href="/{fam['mailin'][0]}">{escape(fam['mailin'][1])}</a></div></section>
 <section class="rp-section" aria-labelledby="more-title"><header class="rp-section__head"><p class="fg-kicker">03 / Before you send it</p><h2 id="more-title">Not sure it’s the part?</h2></header>
 <div class="rp-related">{related}<a href="/{service[0]}">{escape(service[1])} {ARROW}</a><a href="/device-check">Device Check: a few questions, then an estimate {ARROW}</a></div></section>
 <nav class="rp-models" aria-label="Other {escape(fam['label'])} models"><p class="fg-kicker">Other {escape(fam['label'])} prices</p><div class="rp-models__list">{sib_links}</div><div class="rp-models__pn">{prev_next}</div><a class="rp-models__all" href="/repair">Every model we price {ARROW}</a></nav>

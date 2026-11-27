@@ -18,6 +18,9 @@
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 
   function kindFor(link) {
+    // A link can name its own kind, e.g. the header mail-in button ("mail_in_top").
+    var named = link.getAttribute('data-quote-kind');
+    if (named && /^[a-z_]{2,24}$/.test(named)) return named;
     var href = (link.getAttribute('href') || '').trim().toLowerCase();
     if (href.indexOf('sms:') === 0) return 'text';
     if (href.indexOf('tel:') === 0) return 'call';

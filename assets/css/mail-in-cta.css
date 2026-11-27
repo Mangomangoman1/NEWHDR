@@ -1,0 +1,70 @@
+/* Mail-in button in the header, the same spot on every page.
+   Inserted by scripts/add-mail-in-nav.py; links to the mail-in intake. */
+.mi-nav{--mi:#6fd3b3;--mi-ink:#d4f5ea;--mi-soft:rgba(111,211,179,.14);--mi-line:rgba(111,211,179,.4);
+  position:relative;display:inline-flex!important;align-items:center;gap:.5rem;flex-shrink:0;height:36px;
+  padding:0 .9rem 0 .75rem!important;border-radius:999px!important;overflow:hidden;isolation:isolate;
+  background:linear-gradient(180deg,rgba(111,211,179,.17),rgba(111,211,179,.06))!important;
+  border:1px solid var(--mi-line);color:var(--mi-ink)!important;text-decoration:none!important;
+  font:600 .78rem/1 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;letter-spacing:.01em;
+  white-space:nowrap;box-shadow:0 0 0 0 rgba(111,211,179,0);
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease,background-color .2s ease}
+.mi-nav svg{width:17px;height:17px;flex-shrink:0;color:var(--mi)}
+.mi-nav__sub{display:none;align-items:center;gap:.4rem;padding-left:.55rem;border-left:1px solid rgba(111,211,179,.3);
+  color:rgba(212,245,234,.66);font-weight:500}
+.mi-nav__dot{width:6px;height:6px;border-radius:50%;background:var(--mi);box-shadow:0 0 0 3px rgba(111,211,179,.16)}
+/* A slow sheen that crosses the pill every few seconds: noticeable, never loud. */
+.mi-nav:after{content:"";position:absolute;inset:-1px auto -1px -40%;width:36%;z-index:-1;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(212,245,234,.16),transparent);transform:skewX(-18deg);
+  animation:mi-sheen 7s ease-in-out 1.2s infinite}
+@keyframes mi-sheen{0%,72%{left:-40%}100%{left:120%}}
+.mi-nav:hover,.mi-nav:focus-visible{border-color:var(--mi);transform:translateY(-1px);
+  box-shadow:0 0 18px rgba(111,211,179,.28)}
+.mi-nav:focus-visible{outline:2px solid var(--mi);outline-offset:2px}
+.mi-nav[aria-current="page"]{background:var(--mi-soft)!important;border-color:var(--mi)}
+.mi-nav[aria-current="page"]:after{animation:none;display:none}
+
+/* The older repair-tip header styles every link in its row; keep the pill whole. */
+.tip-nav-links a.mi-nav{display:inline-flex!important;margin-right:.35rem}
+
+@media(max-width:620px){.tip-nav-links .tip-quote{white-space:nowrap}}
+@media(max-width:430px){.tip-nav-inner{padding:0 .75rem!important;gap:.4rem!important}.tip-nav-links{gap:.15rem!important}.tip-nav-links .tip-quote{font-size:.76rem!important;padding:.45rem .6rem!important}.tip-brand{gap:.3rem!important}}
+/* Light theme */
+html[data-theme="light"] .mi-nav{--mi:#0f7a5f;--mi-ink:#0b4f3e;--mi-line:rgba(15,122,95,.38);
+  background:linear-gradient(180deg,rgba(15,122,95,.1),rgba(15,122,95,.04))!important}
+html[data-theme="light"] .mi-nav__sub{color:rgba(11,79,62,.7);border-left-color:rgba(15,122,95,.28)}
+html[data-theme="light"] .mi-nav:after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent)}
+
+/* Make room in the desktop header: slightly tighter link spacing, same look. */
+@media(min-width:769px){
+  html body .nav .nav-inner{gap:.75rem!important}
+  html body .nav .nav-links{gap:.1rem!important}
+  html body .nav .nav-links .nav-link{padding:.35rem .5rem!important}
+}
+@media(min-width:1400px){.mi-nav__sub{display:inline-flex}}
+@media(max-width:1199px){.mi-nav{padding:0 .8rem 0 .65rem!important}.mi-nav__long{display:none}
+  html body .nav .nav-links .nav-link{padding:.35rem .4rem!important}}
+/* Tablet widths keep every nav link, so the pill folds to its icon, like Quick Find. */
+@media(min-width:769px) and (max-width:1023px){
+  html body .nav .nav-inner{gap:.55rem!important}
+  html body .nav .nav-links .nav-link{padding:.35rem .3rem!important}
+  .mi-nav{width:36px;padding:0!important;justify-content:center;gap:0}
+  .mi-nav>span{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
+/* Phones and tablets: the links fold into the menu, so the pill sits beside it. */
+@media(max-width:768px){
+  .nav-inner>.mi-nav{margin-left:auto}
+  .nav-inner>.mi-nav~.nav-hamburger{margin-left:0!important}
+  .mi-nav{height:38px}
+}
+@media(max-width:620px){.tip-nav-links a.mi-nav{margin-right:.15rem}}
+@media(max-width:380px){
+  html body .nav .nav-inner,.tip-nav-inner{gap:.5rem!important}
+  html body .nav .nav-logo-text,.tip-brand{font-size:.82rem!important}
+  .mi-nav{padding:0 .65rem 0 .55rem!important;gap:.35rem;height:36px}
+  .mi-nav svg{width:15px;height:15px}
+}
+@media(max-width:340px){html body .nav .nav-logo-icon,.tip-brand .material-symbols-outlined{display:none!important}.tip-quote{padding:.42rem .55rem!important}}
+@media(prefers-reduced-motion:reduce){.mi-nav{transition:none}.mi-nav:after{animation:none;display:none}}
+@media print{.mi-nav{display:none!important}}
+@media(max-width:370px){.tip-brand .material-symbols-outlined{display:none!important}}
+@media(max-width:330px){.tip-brand{font-size:.76rem!important}.tip-nav-links .tip-quote{padding:.45rem .45rem!important}.mi-nav{padding:0 .5rem!important}}
