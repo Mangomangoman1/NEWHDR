@@ -1805,7 +1805,194 @@ a{color:inherit;text-decoration:none}
 <link rel="stylesheet" href="/assets/css/site-design.css?v=20260906"/>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/assets/quote-tracking.js?v=20261127"></script>
-<link rel="stylesheet" href="/assets/css/mail-in-cta.css?v=20261127b"></head>
+<link rel="stylesheet" href="/assets/css/mail-in-cta.css?v=20261127b"><style id="mx-css">/* Mail-in page, Nov 2026: one promise, one action, calm sections */
+.mx{--mx-teal:111,211,179;--mx-ink:#eef3f7;--mx-go:#6fd3b3;--mx-go-ink:#06231b;--mx-line:var(--border-subtle);--mx-card:rgba(255,255,255,.025);--mx-tint:rgba(255,255,255,.018);overflow-x:clip}
+.mx-wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto;position:relative}
+.mx-narrow{width:min(760px,100% - 2.5rem)}
+.mx h1,.mx h2,.mx h3{color:var(--mx-ink);text-wrap:balance}
+.mx p{text-wrap:pretty}
+
+/* Hero */
+.mx-hero{position:relative;isolation:isolate;padding:clamp(3.2rem,8vw,6.5rem) 0 clamp(2.6rem,6vw,4.5rem);text-align:center;overflow:hidden}
+.mx-hero-glow{position:absolute;inset:-20% -10% auto;height:120%;z-index:-2;background:radial-gradient(ellipse 50% 45% at 50% 30%,rgba(var(--mx-teal),.13),transparent 70%),radial-gradient(ellipse 38% 36% at 78% 62%,rgba(126,168,226,.09),transparent 70%);pointer-events:none}
+.mx-route{position:absolute;left:0;right:0;top:18%;width:100%;height:62%;z-index:-1;pointer-events:none;opacity:.55}
+.mx-route-path{fill:none;stroke:rgba(var(--mx-teal),.32);stroke-width:1.4;stroke-dasharray:2 9;stroke-linecap:round;vector-effect:non-scaling-stroke;animation:mxRoute 14s linear infinite}
+@keyframes mxRoute{to{stroke-dashoffset:-220}}
+.mx-crumbs{display:flex;justify-content:center;gap:.5rem;font-size:.8rem;color:var(--text-muted);margin:0 0 1.6rem}
+.mx .mx-crumbs a{color:var(--text-muted);text-decoration:none}
+.mx .mx-crumbs a:hover{color:var(--text-primary)}
+.mx-eyebrow{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 1.4rem;padding:.42rem .9rem .42rem .75rem;border:1px solid rgba(var(--mx-teal),.32);border-radius:999px;background:rgba(var(--mx-teal),.07);color:var(--text-secondary);font-size:.82rem;font-weight:550;letter-spacing:.01em}
+.mx-pulse{width:7px;height:7px;border-radius:50%;background:rgb(var(--mx-teal));box-shadow:0 0 0 0 rgba(var(--mx-teal),.5);animation:mxPulse 2.6s ease-out infinite}
+@keyframes mxPulse{0%{box-shadow:0 0 0 0 rgba(var(--mx-teal),.45)}70%,100%{box-shadow:0 0 0 9px rgba(var(--mx-teal),0)}}
+.mx-h1{font-size:clamp(2.5rem,5.4vw,4.3rem)!important;line-height:1.04!important;margin:0 auto 1.4rem!important;max-width:980px}
+.mx-h1 span{display:block;color:var(--text-secondary);opacity:.82}
+.mx-lede{max-width:50ch;margin:0 auto 2rem;color:var(--text-secondary);font-size:clamp(1.02rem,1.6vw,1.15rem);line-height:1.65}
+.mx-ctas{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
+.mx-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:52px;padding:0 1.5rem;border-radius:14px;font:600 1rem/1 var(--font-body);text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease}
+.mx-btn .material-symbols-outlined{font-size:1.2rem}
+.mx-btn--go{background:var(--mx-go);color:var(--mx-go-ink);box-shadow:0 10px 30px -10px rgba(var(--mx-teal),.55),inset 0 1px 0 rgba(255,255,255,.35)}
+.mx-btn--go:hover{transform:translateY(-1px);box-shadow:0 14px 36px -10px rgba(var(--mx-teal),.7),inset 0 1px 0 rgba(255,255,255,.35);color:var(--mx-go-ink)}
+.mx-btn--quiet{color:var(--text-primary);border:1px solid var(--border-default);background:transparent}
+.mx-btn--quiet:hover{border-color:var(--border-strong);transform:translateY(-1px);color:var(--text-primary)}
+.mx-btn:focus-visible,.mx a:focus-visible,.mx summary:focus-visible{outline:2px solid rgb(var(--mx-teal));outline-offset:3px}
+.mx-alt{margin:1.1rem 0 0;color:var(--text-muted);font-size:.9rem}
+.mx-alt a{color:var(--text-secondary);text-decoration:underline;text-decoration-color:var(--border-strong);text-underline-offset:3px;font-variant-numeric:tabular-nums}
+.mx-alt a:hover{color:var(--text-primary)}
+.mx-facts{list-style:none;padding:0;margin:clamp(2.6rem,5vw,3.6rem) auto 0;max-width:880px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--mx-line);border-radius:18px;background:var(--mx-card);backdrop-filter:blur(6px)}
+.mx-facts li{padding:1.15rem 1rem;display:flex;flex-direction:column;gap:.25rem}
+.mx-facts li+li{border-left:1px solid var(--mx-line)}
+.mx-facts strong{color:var(--mx-ink);font:500 1.45rem/1.1 var(--font-body);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.mx-facts span{color:var(--text-muted);font-size:.82rem}
+
+/* Sections */
+.mx-section{padding:clamp(3.6rem,8vw,6rem) 0;border-top:1px solid var(--mx-line)}
+.mx-section--tint{background:var(--mx-tint)}
+.mx-head{text-align:center;max-width:640px;margin:0 auto clamp(2rem,4vw,2.8rem)}
+.mx-head--left{text-align:left;margin:0 0 1.6rem}
+.mx-kicker{margin:0 0 .6rem;color:var(--mx-go);font-size:.76rem;font-weight:650;letter-spacing:.14em;text-transform:uppercase}
+.mx-head h2,.mx-idaho h2,.mx-end h2{font-size:clamp(1.8rem,3.6vw,2.6rem)!important;line-height:1.08!important;margin:0!important;letter-spacing:-.015em}
+.mx-sub{margin:.9rem auto 0;color:var(--text-secondary);line-height:1.6;max-width:52ch}
+.mx a:not(.mx-btn){color:var(--text-primary)}
+
+/* Steps */
+.mx-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;position:relative}
+.mx-steps::before{content:"";position:absolute;top:2.35rem;left:16.6%;right:16.6%;border-top:1px dashed rgba(var(--mx-teal),.35);z-index:0}
+.mx-step{position:relative;z-index:1;padding:1.6rem 1.5rem 1.5rem;border:1px solid var(--mx-line);border-radius:20px;background:var(--bg-primary);display:flex;flex-direction:column;gap:.7rem}
+.mx-step-n{width:2.3rem;height:2.3rem;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(var(--mx-teal),.45);background:rgba(var(--mx-teal),.1);color:var(--mx-go);font:600 1rem/1 var(--font-body)}
+.mx-step h3{font-family:var(--font-body)!important;font-weight:600!important;font-size:1.2rem;margin:.2rem 0 0}
+.mx-step p{margin:0;color:var(--text-secondary);line-height:1.6;font-size:.96rem}
+.mx-bubble{margin-top:auto;padding-top:.4rem;display:flex;justify-content:flex-end}
+.mx-bubble span{max-width:90%;padding:.6rem .85rem;border-radius:16px 16px 4px 16px;background:linear-gradient(180deg,#4f8ef7,#3d7be6);color:#fff;font-size:.86rem;line-height:1.4}
+.mx-link{margin-top:auto;display:inline-flex;align-items:center;gap:.3rem;font-weight:600;font-size:.92rem;text-decoration:none}
+.mx-link .material-symbols-outlined{font-size:1rem;transition:transform .18s}
+.mx-link:hover .material-symbols-outlined{transform:translateX(3px)}
+.mx-step-note{margin-top:auto!important;display:flex;align-items:center;gap:.45rem;color:var(--text-muted)!important;font-size:.88rem!important}
+.mx-step-note .material-symbols-outlined{font-size:1.05rem;color:var(--mx-go)}
+
+/* Devices */
+.mx-devices{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.mx-dev{padding:1.5rem 1.35rem 1.3rem;border:1px solid var(--mx-line);border-radius:20px;background:var(--bg-primary);display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.mx-dev:hover{border-color:rgba(var(--mx-teal),.4);transform:translateY(-2px)}
+.mx-dev-ic{font-size:1.7rem!important;color:var(--mx-go);margin-bottom:.9rem}
+.mx-dev h3{font-family:var(--font-body)!important;font-weight:600!important;font-size:1.1rem;margin:0}
+.mx-range{margin:.25rem 0 .7rem;color:var(--mx-ink);font-size:1.5rem;font-weight:500;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.mx-dev-what{margin:0 0 1.1rem;color:var(--text-secondary);font-size:.9rem;line-height:1.55}
+.mx-dev-links{margin:auto 0 0;padding-top:.9rem;border-top:1px solid var(--mx-line);display:flex;flex-wrap:wrap;gap:.35rem 1rem;font-size:.86rem}
+.mx-dev-links a{color:var(--text-secondary)!important;text-decoration:none;font-weight:550}
+.mx-dev-links a:hover{color:var(--mx-go)!important}
+.mx-disclaimer{max-width:66ch;margin:1.8rem auto 0;text-align:center;color:var(--text-muted);font-size:.88rem;line-height:1.6}
+.mx-disclaimer a{white-space:nowrap;font-weight:600;color:var(--text-secondary)!important;text-underline-offset:3px}
+.mx-else{margin:.6rem auto 0;text-align:center;color:var(--text-muted);font-size:.88rem}
+
+/* Why */
+.mx-why{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.mx-note{margin:0;padding:2.9rem clamp(1.6rem,3vw,2.4rem) clamp(1.8rem,3vw,2.4rem);border-radius:24px;border:1px solid var(--mx-line);background:linear-gradient(160deg,rgba(var(--mx-teal),.08),transparent 60%),var(--mx-card);position:relative}
+.mx-note::before{content:"\201C";position:absolute;top:-.15em;left:.6rem;font:400 6rem/1 Georgia,serif;color:rgba(var(--mx-teal),.25)}
+.mx-note blockquote{margin:0}
+.mx-note blockquote p{margin:0 0 1rem;color:var(--mx-ink);font-size:clamp(1.08rem,1.8vw,1.25rem);line-height:1.6}
+.mx-note blockquote p+p{color:var(--text-secondary);font-size:1rem}
+.mx-note figcaption{display:flex;flex-direction:column;gap:.15rem;margin-top:1.4rem;color:var(--text-muted);font-size:.84rem}
+.mx-sig{font-family:'MuseoModerno',var(--font-body);font-size:1.25rem;color:var(--mx-ink)}
+.mx-trust{list-style:none;margin:0;padding:0;display:grid;gap:1.3rem}
+.mx-trust li{display:flex;gap:1rem;align-items:flex-start}
+.mx-trust .material-symbols-outlined{flex:none;width:2.4rem;height:2.4rem;display:grid;place-items:center;border-radius:12px;background:rgba(var(--mx-teal),.09);color:var(--mx-go);font-size:1.25rem}
+.mx-trust strong{display:block;color:var(--mx-ink);font-weight:600;margin:.1rem 0 .2rem}
+.mx-trust p{margin:0;color:var(--text-secondary);font-size:.94rem;line-height:1.55}
+
+/* Terms */
+.mx-terms{margin:0;display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--mx-line);border-radius:20px;overflow:hidden;background:var(--bg-primary)}
+.mx-terms>div{padding:1.3rem 1.5rem;border-bottom:1px solid var(--mx-line)}
+.mx-terms>div:nth-child(odd){border-right:1px solid var(--mx-line)}
+.mx-terms>div:nth-last-child(-n+2){border-bottom:none}
+.mx-terms dt{display:flex;align-items:center;gap:.55rem;color:var(--mx-ink);font-weight:600;margin:0 0 .35rem}
+.mx-terms dt .material-symbols-outlined{font-size:1.15rem;color:var(--mx-go)}
+.mx-terms dd{margin:0;color:var(--text-secondary);font-size:.94rem;line-height:1.6}
+.mx-terms dd a{text-underline-offset:3px;font-weight:550}
+
+/* Idaho */
+.mx-idaho{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:center;padding:clamp(1.8rem,4vw,2.8rem);border-radius:24px;border:1px solid var(--mx-line);background:radial-gradient(ellipse 60% 90% at 0% 0%,rgba(var(--mx-teal),.09),transparent 70%),var(--mx-card)}
+.mx-idaho h2{margin-bottom:.9rem!important}
+.mx-idaho p:not(.mx-kicker){margin:0;color:var(--text-secondary);line-height:1.65}
+.mx-chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.55rem}
+.mx-chips a{display:inline-flex;align-items:center;min-height:42px;padding:0 1rem;border:1px solid var(--border-default);border-radius:999px;font-size:.9rem;font-weight:550;text-decoration:none;color:var(--text-secondary)!important;transition:border-color .18s,color .18s,background-color .18s}
+.mx-chips a:hover{border-color:rgba(var(--mx-teal),.5);color:var(--text-primary)!important;background:rgba(var(--mx-teal),.06)}
+.mx-chips li:last-child a{border-color:rgba(var(--mx-teal),.42);color:var(--mx-go)!important}
+
+/* Packing */
+.mx-pack{list-style:none;counter-reset:mxp;margin:0;padding:0;display:grid;gap:.7rem}
+.mx-pack li{counter-increment:mxp;display:grid;grid-template-columns:1.1rem 1fr;gap:.9rem;align-items:baseline;padding:1rem 1.2rem;border:1px solid var(--mx-line);border-radius:16px;background:var(--bg-primary);color:var(--text-secondary);line-height:1.55}
+.mx-pack li::before{content:counter(mxp);color:var(--mx-go);font-weight:650;font-variant-numeric:tabular-nums}
+.mx-pack strong{color:var(--mx-ink);font-weight:600}
+.mx-more{margin-top:1rem;border:1px solid var(--mx-line);border-radius:16px;background:var(--bg-primary)}
+.mx-more summary,.mx-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:600;color:var(--mx-ink)}
+.mx-more summary::-webkit-details-marker,.mx-faq summary::-webkit-details-marker{display:none}
+.mx-more summary{padding:1rem 1.2rem}
+.mx-more summary .material-symbols-outlined,.mx-faq summary .material-symbols-outlined{flex:none;color:var(--text-muted);transition:transform .2s}
+.mx-more[open] summary .material-symbols-outlined,.mx-faq details[open] summary .material-symbols-outlined{transform:rotate(180deg)}
+.mx-more-body{padding:0 1.2rem 1.1rem}
+.mx-more-body p{margin:0 0 .7rem;color:var(--text-secondary);font-size:.94rem;line-height:1.6}
+.mx-more-body strong{color:var(--mx-ink)}
+
+/* FAQ */
+.mx-faq{border-top:1px solid var(--mx-line)}
+.mx-faq details{border-bottom:1px solid var(--mx-line)}
+.mx-faq summary{padding:1.15rem .2rem;font-size:1.02rem}
+.mx-faq summary:hover{color:var(--mx-go)}
+.mx-faq details p{margin:0;padding:0 .2rem 1.25rem;color:var(--text-secondary);line-height:1.65;max-width:64ch}
+
+/* Final call */
+.mx-end{position:relative;padding:clamp(4rem,9vw,6.5rem) 0;text-align:center;border-top:1px solid var(--mx-line);background:radial-gradient(ellipse 55% 70% at 50% 100%,rgba(var(--mx-teal),.11),transparent 70%)}
+.mx-end h2 span{display:block;color:var(--text-secondary);opacity:.82}
+.mx-end p{margin:1rem 0 1.8rem;color:var(--text-secondary)}
+.mx-end .mx-alt{margin:1.1rem 0 0}
+
+/* Tablet */
+@media(max-width:1000px){
+  .mx-devices{grid-template-columns:repeat(2,1fr)}
+  .mx-why,.mx-idaho{grid-template-columns:1fr}
+}
+/* Phone */
+@media(max-width:720px){
+  .mx-hero{text-align:left;padding-top:1.6rem}
+  .mx-crumbs{justify-content:flex-start;margin-bottom:1.1rem}
+  .mx-h1,.mx-lede{margin-left:0!important;margin-right:0!important}
+  .mx-h1{font-size:clamp(2.3rem,10.5vw,3rem)!important}
+  .mx-ctas{flex-direction:column;align-items:stretch}
+  .mx-btn{width:100%}
+  .mx-alt{font-size:.86rem}
+  .mx-facts{grid-template-columns:repeat(2,1fr);margin-top:2.2rem}
+  .mx-facts li{padding:1rem}
+  .mx-facts li+li{border-left:none}
+  .mx-facts li:nth-child(even){border-left:1px solid var(--mx-line)}
+  .mx-facts li:nth-child(n+3){border-top:1px solid var(--mx-line)}
+  .mx-facts strong{font-size:1.25rem}
+  .mx-route{display:none}
+  .mx-head{text-align:left;margin-left:0}
+  .mx-sub{margin-left:0}
+  .mx-steps{grid-template-columns:1fr;gap:.8rem}
+  .mx-steps::before{top:1.5rem;bottom:1.5rem;left:2.65rem;right:auto;border-top:none;border-left:1px dashed rgba(var(--mx-teal),.35)}
+  .mx-step{padding:1.3rem 1.2rem}
+  .mx-bubble{justify-content:flex-start}
+  .mx-devices{grid-template-columns:1fr;gap:.75rem}
+  .mx-dev{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"ic name range" "what what what" "links links links";column-gap:.8rem;align-items:center;padding:1.2rem}
+  .mx-dev-ic{grid-area:ic;margin:0;font-size:1.5rem!important}
+  .mx-dev h3{grid-area:name}
+  .mx-range{grid-area:range;margin:0;font-size:1.15rem}
+  .mx-dev-what{grid-area:what;margin:.6rem 0 0}
+  .mx-dev-links{grid-area:links;margin-top:.9rem}
+  .mx-disclaimer,.mx-else{text-align:left}
+  .mx-terms{grid-template-columns:1fr}
+  .mx-terms>div{border-right:none!important;border-bottom:1px solid var(--mx-line)!important;padding:1.1rem 1.2rem}
+  .mx-terms>div:last-child{border-bottom:none!important}
+  .mx-idaho{padding:1.5rem}
+  .mx-chips{gap:.45rem}
+  .mx-chips a{min-height:38px;padding:0 .85rem;font-size:.85rem}
+  .mx-end{text-align:left}
+  .mx-end .mx-btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.mx-route-path,.mx-pulse{animation:none}.mx-btn,.mx-dev{transition:none}}
+</style>
+</head>
 <body class="mailin-page">
 <nav class="nav" id="nav" role="navigation" aria-label="Primary">
 <div class="nav-inner">
@@ -1892,965 +2079,233 @@ a{color:inherit;text-decoration:none}
 <!-- Promo Banner -->
 <!-- NAV -->
 
-<main id="main" role="main">
-<!-- ═══════════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════════ -->
-<section class="lp-hero">
-<div aria-hidden="true" class="hdr-aur hdr-aur--a"></div>
-<div aria-hidden="true" class="hdr-aur hdr-aur--b"></div>
+<main id="main" role="main" class="mx">
 
-<div class="container">
-<div class="mail-hero-grid">
-<div class="mail-hero-copy">
-<nav aria-label="Breadcrumb" class="breadcrumb">
-<a href="/">Home</a>
-<span aria-hidden="true" class="material-symbols-outlined breadcrumb-sep" data-icon="chevron_right"></span>
-<span aria-current="page">Mail-In Repair</span>
-</nav>
-<div class="lp-hero-badge">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span>
-            Return shipping included · Quote before you ship
-          </div>
-<h1 class="lp-hero-title">Mail-In Device Repair, <span class="hdr-grad">Coast to Coast</span></h1>
-<p class="lp-hero-sub">Mail-in repair for phones, laptops, tablets, and game consoles from anywhere in the lower 48 states. Text the model, symptoms, and photos first — Samuel will tell you if shipping makes sense before you spend a dollar on postage.</p>
-<div class="hero-actions">
-<a class="btn btn-primary btn-lg" href="sms:+12084501606">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>
-              Text Photos for a Quote
-            </a>
-<a class="btn btn-outline btn-lg" href="#how-it-works">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="route"></span>
-              See the Mail-In Route
-            </a>
-</div>
-<div aria-label="Mail-in repair trust signals" class="mail-trust-row">
-<span class="mail-trust-chip"><svg aria-hidden="true" fill="none" viewbox="0 0 24 24"><path d="M4 12.5 9 17 20 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg>Text updates at every handoff</span>
-<span class="mail-trust-chip"><svg aria-hidden="true" fill="none" viewbox="0 0 24 24"><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"></path><path d="M5.5 11h13v9h-13z" stroke="currentColor" stroke-width="2"></path><path d="M12 15v2" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>Data stays private</span>
-<span class="mail-trust-chip"><svg aria-hidden="true" fill="none" viewbox="0 0 24 24"><path d="M3 8h13v8H3z" stroke="currentColor" stroke-width="2"></path><path d="M16 11h3l2 2v3h-5" stroke="currentColor" stroke-width="2"></path><circle cx="7" cy="18" fill="currentColor" r="1.5"></circle><circle cx="18" cy="18" fill="currentColor" r="1.5"></circle></svg>Return shipping included</span>
-</div>
-</div>
-<div aria-hidden="true" class="mail-hero-art">
-<div class="mail-route-orbit"></div>
-<div class="mail-floating-note"><strong>Bench rule</strong>Quote confirmed before repair. No surprise parts. No mystery inbox.</div>
-<div class="mail-parcel">
-<div class="mail-parcel-tape"></div>
-<div class="mail-parcel-inner">
-<div class="mail-label">
-<div class="mail-label-top">
-<div>
-<div class="mail-label-kicker">Priority Repair Route</div>
-<h3>Your town → Hailey bench → back to you</h3>
-</div>
-<div class="mail-stamp">Quote<br/>First</div>
-</div>
-<div class="mail-route-lines">
-<div class="mail-route-line"><span class="route-dot"></span><span>FROM: Seattle / Denver / Austin / any lower-48 address</span></div>
-<div class="mail-route-line"><span class="route-dot route-dot--hot"></span><span>TO: Hailey Device Repair bench</span></div>
-<div class="mail-route-line"><span class="route-dot"></span><span>RETURN: tested + tracked + packed clean</span></div>
-</div>
-<div class="mail-barcode"></div>
-</div>
-<div class="mail-micro-ledger">
-<div class="ledger-chip"><span>Arrived</span><span>TEXTED</span></div>
-<div class="ledger-chip"><span>Display test</span><span>PASS</span></div>
-<div class="ledger-chip"><span>Return label</span><span>FREE</span></div>
-</div>
-<div class="device-slab"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!-- HERO: one promise, one action -->
+<section class="mx-hero" aria-labelledby="mx-title">
+  <div class="mx-hero-glow" aria-hidden="true"></div>
+  <svg class="mx-route" aria-hidden="true" viewBox="0 0 1200 420" preserveAspectRatio="none">
+    <path class="mx-route-path" d="M-20 330 C 220 330, 300 120, 560 140 S 900 330, 1220 110"/>
+  </svg>
+  <div class="mx-wrap mx-hero-inner">
+    <nav aria-label="Breadcrumb" class="mx-crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Mail-in repair</span></nav>
+    <p class="mx-eyebrow"><span class="mx-pulse" aria-hidden="true"></span>Mail-in repair from all lower 48 states</p>
+    <h1 class="mx-h1" id="mx-title">Mail it in from any state.<span>We fix it and ship it back.</span></h1>
+    <p class="mx-lede">Phones, laptops, tablets and game consoles, repaired on one bench in Hailey, Idaho. Text a photo first and get a free quote before you buy postage.</p>
+    <div class="mx-ctas">
+      <a class="mx-btn mx-btn--go" href="sms:+12084501606?&amp;body=Hi%20Hailey%20Device%20Repair%2C%20I%20want%20to%20mail%20in%20a%20device%20for%20repair." data-quote-kind="mail_in_start"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>Text for a free quote</a>
+      <a class="mx-btn mx-btn--quiet" href="#how-it-works">How it works<span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_downward"></span></a>
+    </div>
+    <p class="mx-alt">Text <a href="sms:+12084501606" data-quote-kind="mail_in_start">208-450-1606</a> or <a href="mailto:samuel@haileyrepair.com?subject=Mail-in%20repair" data-quote-kind="mail_in_email">email a photo</a>. Replies usually come within 30 minutes.</p>
+
+    <ul class="mx-facts" aria-label="Mail-in at a glance">
+      <li><strong>1–2 days</strong><span>generally, on the bench</span></li>
+      <li><strong>40 days</strong><span>warranty, in every state</span></li>
+      <li><strong>$0</strong><span>return postage, on us</span></li>
+      <li><strong>Lower 48</strong><span>same published prices</span></li>
+    </ul>
+  </div>
 </section>
-<section class="section section--alt" id="mail-in-answer">
-<div class="container">
-<div class="answer-card" style="max-width:1040px;margin:0 auto;">
-<div class="mail-answer-layout">
-<div>
-<div class="section-eyebrow">Mail-In Answer</div>
-<h2 class="section-title" style="text-align:left;">Mail-in repair should start with a text, not a box.</h2>
-<p>Before shipping a device, text HDR the model, symptoms, damage photos, data importance, and location. Samuel will tell you whether mail-in repair is practical, what to pack, and whether a local option or manufacturer path makes more sense.</p>
-<div aria-label="What to send before shipping" class="mail-answer-checklist">
-<span>Exact model + what happened</span>
-<span>Photos of the damage or error</span>
-<span>Whether data matters before repair</span>
-</div>
-<div class="guide-link-strip"><a href="/phone-repair-hailey-vs-boise">Local vs Boise vs mail-in</a><a href="/broken-phone-what-to-text">What to text</a><a href="/warranty">Warranty</a></div>
-</div>
-<div aria-label="Mail-in intake ticket visual" class="mail-mini-ticket">
-<div class="mini-ticket-row"><span>HDR Intake</span><strong>MAIL-IN</strong></div>
-<div class="mini-ticket-row"><span>First move</span><strong>Text photos</strong></div>
-<div class="mini-ticket-row"><span>Risk check</span><strong>Data? Power? Liquid?</strong></div>
-<div class="mini-ticket-row"><span>Bench rule</span><strong>Quote before work</strong></div>
-<div class="mini-ticket-stamp">DO NOT SHIP BLIND</div>
-</div>
-</div>
-</div>
-</div>
+
+<!-- THREE STEPS -->
+<section class="mx-section" id="how-it-works" aria-labelledby="mx-steps-title">
+  <div class="mx-wrap">
+    <header class="mx-head">
+      <p class="mx-kicker">How it works</p>
+      <h2 id="mx-steps-title">Three steps, mostly by text.</h2>
+    </header>
+    <ol class="mx-steps">
+      <li class="mx-step">
+        <span class="mx-step-n" aria-hidden="true">1</span>
+        <h3>Get a quote</h3>
+        <p>Text the model, what happened and a photo. You get a free quote and the shipping address, usually within 30 minutes.</p>
+        <div class="mx-bubble" aria-label="Example first text"><span>iPhone 13, glass shattered, touch still works. Denver.</span></div>
+      </li>
+      <li class="mx-step">
+        <span class="mx-step-n" aria-hidden="true">2</span>
+        <h3>Ship it in</h3>
+        <p>Pack it snug, put your passcode on a note inside, and send it with any carrier. Postage to us is yours. Text us the tracking number.</p>
+        <a class="mx-link" href="#packing">How to pack it<span aria-hidden="true" class="material-symbols-outlined" data-icon="arrow_forward"></span></a>
+      </li>
+      <li class="mx-step">
+        <span class="mx-step-n" aria-hidden="true">3</span>
+        <h3>Get it back</h3>
+        <p>We text when it lands, then fix and test it, generally in 1–2 days. Pay the invoice by text or email and it ships back USPS Priority, on us.</p>
+        <p class="mx-step-note"><span aria-hidden="true" class="material-symbols-outlined" data-icon="forum"></span>A text at every handoff</p>
+      </li>
+    </ol>
+  </div>
 </section>
-<!-- ═══════════════════════════════════════════
-       WHERE THE BENCH IS
-  ══════════════════════════════════════════════ -->
-<section class="section section--alt" id="why-idaho">
-<div class="container">
-<div class="section-eyebrow">The Bench</div>
-<h2 class="section-title">One bench in Idaho, open to the lower 48</h2>
-<p class="section-sub">There's no regional depot and no factory line. A box from Boise and a box from Boston land on the same bench in Idaho's Wood River Valley, get the same text when they arrive, and ship back the same way.</p>
-<div class="idaho-route-card" data-animate="">
-<div aria-label="Map of Idaho showing mountain regions, major highways, and mail-in routes from Idaho cities to Hailey Device Repair" class="idaho-map-sketch" role="img">
-<svg aria-hidden="true" viewbox="0 0 620 600">
-<defs>
-<path d="M142.7 384.5 L145.6 389.2 L143.8 392.2 L145.1 394 L148.1 395.2 L150.2 393.5 L153 397.4 L157.1 396.4 L157.4 399.9 L161.5 402.7 L157 408.5 L159.3 415.7 L157.1 417.1 L158 421.1 L154.1 428.2 L154.4 569.1 L477.1 569 L477 378.6 L467.5 370.7 L467.5 367.1 L458.9 357 L457.3 360.4 L453.2 360.8 L454.1 363.9 L451.3 368.6 L454.2 373.5 L441.6 372 L435.3 375.9 L432.7 371.7 L419.9 375 L410.2 371.3 L406.6 373.9 L404.8 380.6 L400.1 378.1 L398.7 379.4 L386.9 376.3 L383.8 377.8 L380.6 382.6 L381.8 386 L379.5 387.4 L371.5 380.4 L371.3 374.6 L367.3 369.2 L369 366.6 L364.6 355.6 L358.4 351.7 L353.3 354.7 L347 347.8 L344.8 342.5 L347.8 341.2 L347.3 333.5 L343.6 331.2 L344.2 329.2 L340.7 328.2 L339.4 323.4 L334.7 318.6 L331.8 312.7 L332.1 308.1 L329.8 306.1 L330.3 298.1 L326.7 298 L328.2 291.7 L322.9 290.2 L321.1 284.5 L316.9 284.5 L316.9 287.7 L313.1 292.6 L307.3 296.8 L304.3 296.1 L303.1 300.7 L299.8 302.7 L292.9 294.9 L287.6 294.5 L288.7 291.4 L287.3 289 L290.3 287.4 L291 283.9 L287.2 278.5 L290 273.3 L295.7 272.4 L296.8 270.2 L294.5 266.1 L295.5 262.8 L291.9 261.7 L290.4 258.7 L292.9 253.6 L289.4 250.1 L293.7 247.7 L292.3 240.5 L294.8 238.9 L294.9 231.3 L297.6 227.5 L296 222.7 L299.3 221.1 L300.2 210.8 L298.3 209.6 L292.7 212.3 L284.8 212 L283.1 208.8 L284.2 206.6 L280.2 204.1 L276.4 207.4 L276.4 202.7 L267.7 196.9 L267.8 190.4 L263.7 186.2 L261.2 186.4 L256 176.3 L247.6 169.6 L246.5 164.5 L237.8 162.4 L232.6 155.9 L222.8 151.5 L229.8 147.2 L226.8 146.8 L226.2 143.4 L223.2 142.2 L226.4 137.9 L224 133.7 L224.8 130.5 L218.9 125.9 L217.8 120.4 L207.1 108.9 L207.1 30 L154.1 30.2 L154 228.9 L152.4 233.9 L156.5 238.2 L157.7 245.4 L160 248.2 L156.8 254.5 L163.4 268.2 L167.6 274.5 L171.4 274.5 L173.9 277.9 L180.3 280.3 L184.8 291.7 L173.4 313.3 L170.4 327.1 L164 336.3 L163.8 346.7 L159.4 354.7 L152.5 359.1 L147.8 373.8 L143.7 377.9 L142.7 384.5 Z" id="idahoBoundary"></path>
-<clippath id="idahoClip"><use href="#idahoBoundary"></use></clippath>
-<lineargradient id="idahoFill" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#1a2a3d"></stop><stop offset=".52" stop-color="#142235"></stop><stop offset="1" stop-color="#0d1725"></stop></lineargradient>
-<radialgradient id="terrainWash" cx="48%" cy="52%" r="65%"><stop offset="0" stop-color="#6e92bd" stop-opacity=".22"></stop><stop offset=".55" stop-color="#385773" stop-opacity=".11"></stop><stop offset="1" stop-color="#07101a" stop-opacity="0"></stop></radialgradient>
-<filter height="140%" id="idahoShadow" width="140%" x="-20%" y="-20%"><fegaussianblur stddeviation="9"></fegaussianblur></filter>
-<filter height="400%" id="hubGlow" width="400%" x="-150%" y="-150%"><fegaussianblur result="blur" stddeviation="4"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
-</defs>
-<text class="map-meta" x="493" y="40">IDAHO / ROUTE FIELD</text>
-<use class="idaho-state-shadow" href="#idahoBoundary"></use>
-<use class="idaho-state" href="#idahoBoundary"></use>
-<g clip-path="url(#idahoClip)">
-<rect class="map-terrain-wash" height="560" width="370" x="130" y="20"></rect>
-<g>
-<path class="map-contour" d="M130 184 C190 145 242 172 296 154 S405 128 488 170"></path>
-<path class="map-contour" d="M126 205 C184 168 244 195 302 176 S415 153 492 195"></path>
-<path class="map-contour" d="M132 252 C190 220 243 245 305 218 S408 206 488 240"></path>
-<path class="map-contour" d="M127 276 C181 246 248 275 304 246 S414 238 493 271"></path>
-<path class="map-contour" d="M133 315 C193 286 252 319 313 286 S416 281 486 314"></path>
-<path class="map-contour" d="M127 344 C187 315 250 350 307 322 S414 319 493 353"></path>
-<path class="map-contour" d="M131 386 C191 360 249 391 309 366 S419 361 490 397"></path>
-<path class="map-contour" d="M128 416 C192 392 249 423 309 400 S418 396 491 430"></path>
-<path class="map-contour" d="M131 464 C190 438 252 469 310 446 S415 441 491 473"></path>
-<path class="map-contour" d="M126 496 C188 471 249 504 311 479 S418 477 493 510"></path>
-</g>
-<g>
-<path class="map-ridge" d="M219 351 l10 -15 l8 10 l12 -22 l12 20 l8 -11 l11 18"></path>
-<path class="map-ridge" d="M229 371 l9 -13 l8 9 l11 -18 l10 18 l8 -10 l12 14"></path>
-<text class="map-range-label" transform="rotate(-9 220 386)" x="220" y="386">SAWTOOTH RANGE</text>
-<path class="map-ridge" d="M284 276 l9 -14 l9 10 l12 -20 l10 18 l9 -12 l12 18"></path>
-<path class="map-ridge" d="M273 300 l11 -16 l9 10 l10 -16 l11 16 l10 -9 l12 16"></path>
-<text class="map-range-label" transform="rotate(-12 246 316)" x="246" y="316">SALMON RIVER MTNS</text>
-<path class="map-ridge" d="M271 121 l9 -14 l8 9 l10 -18 l10 16 l8 -10 l10 15"></path>
-<path class="map-ridge" d="M284 145 l8 -12 l8 8 l10 -15 l9 15 l8 -9 l10 14"></path>
-<text class="map-range-label" transform="rotate(66 326 158)" x="326" y="158">BITTERROOT RANGE</text>
-</g>
-<path class="map-river" d="M466 475 C426 458 390 468 350 493 C320 510 292 525 258 509 C225 493 198 470 150 455"></path>
-<path class="map-river" d="M368 313 C337 318 313 335 283 334 C248 333 220 303 184 277 C168 266 159 250 154 232"></path>
-<path class="map-highway" d="M154 132 C171 130 190 132 207 132"></path>
-<path class="map-highway" d="M179 30 C168 79 168 132 156 230 C176 298 207 345 199 445 C183 474 164 493 151 512"></path>
-<path class="map-highway" d="M143 443 C170 447 199 445 235 470 C258 496 293 526 345 545 C385 555 425 560 466 562"></path>
-<path class="map-highway" d="M405 568 C400 535 402 502 424 454 C431 419 435 386 445 350"></path>
-<path class="map-highway map-highway--secondary" d="M293 526 C296 496 301 452 267 398 C286 365 323 325 346 291"></path>
-<path class="map-highway map-highway--secondary" d="M199 445 C237 457 265 470 301 452 C344 443 388 455 424 454"></path>
-<path class="map-highway map-highway--secondary" d="M293 526 C296 496 301 452 298 440 C291 424 278 408 267 398"></path>
-<path class="idaho-map-route idaho-map-route--warm idaho-map-route--remote" d="M167.7 131.9 C181 236 238 355 300.7 452.1"></path>
-<path class="idaho-map-route idaho-map-route--remote" d="M155.8 230.3 C186 302 248 386 300.7 452.1"></path>
-<path class="idaho-map-route idaho-map-route--warm" d="M198.9 444.7 C236 431 271 439 300.7 452.1"></path>
-<path class="idaho-map-route idaho-map-route--cool" d="M292.9 526.3 C310 500 310 475 300.7 452.1"></path>
-<path class="idaho-map-route" d="M423.8 454.1 C384 441 342 444 300.7 452.1"></path>
-<path class="idaho-map-route idaho-map-route--cool idaho-map-route--remote" d="M323.4 324.5 C320 365 307 410 300.7 452.1"></path>
-</g>
-<use fill="none" href="#idahoBoundary" stroke="rgba(204,221,239,.48)" stroke-width="1.4"></use>
-<g class="map-road-shield" transform="translate(178 116)"><rect height="18" rx="5" width="30"></rect><text x="15" y="9.5">I-90</text></g>
-<g class="map-road-shield" transform="translate(167 350)"><rect height="18" rx="5" width="34"></rect><text x="17" y="9.5">US-95</text></g>
-<g class="map-road-shield" transform="translate(239 476)"><rect height="18" rx="5" width="31"></rect><text x="15.5" y="9.5">I-84</text></g>
-<g class="map-road-shield" transform="translate(405 520)"><rect height="18" rx="5" width="31"></rect><text x="15.5" y="9.5">I-15</text></g>
-<g class="map-road-shield" transform="translate(274 410)"><rect height="18" rx="5" width="34"></rect><text x="17" y="9.5">ID-75</text></g>
-<g class="map-city"><circle cx="167.7" cy="131.9" r="4"></circle><text x="180" y="128">Coeur d'Alene</text></g>
-<g class="map-city"><circle cx="155.8" cy="230.3" r="4"></circle><text text-anchor="end" x="145" y="224">Lewiston</text></g>
-<g class="map-city map-city--minor"><circle cx="204.4" cy="344.9" r="3"></circle><text x="214" y="342">McCall</text></g>
-<g class="map-city"><circle cx="198.9" cy="444.7" r="4"></circle><text text-anchor="end" x="188" y="458">Boise</text></g>
-<g class="map-city"><circle cx="292.9" cy="526.3" r="4"></circle><text text-anchor="end" x="283" y="548">Twin Falls</text></g>
-<g class="map-city map-city--minor"><circle cx="401.6" cy="502" r="3"></circle><text x="412" y="518">Pocatello</text></g>
-<g class="map-city"><circle cx="423.8" cy="454.1" r="4"></circle><text x="437" y="450">Idaho Falls</text></g>
-<g class="map-city"><circle cx="323.4" cy="324.5" r="4"></circle><text x="335" y="316">Salmon</text></g>
-<g class="map-city map-city--minor"><circle cx="267.1" cy="398.3" r="3"></circle><text text-anchor="end" x="256" y="394">Stanley</text></g>
-<g transform="translate(300.7 452.1)"><circle class="map-hub-halo" r="12"></circle><circle class="map-hub-core" r="5.5"></circle><g class="map-hub-label"><rect height="29" rx="14.5" width="126" x="13" y="-38"></rect><text x="28" y="-20">HAILEY · MY BENCH</text></g></g>
-<g class="map-legend" transform="translate(493 73)"><line class="map-highway" x1="0" x2="31" y1="0" y2="0"></line><text x="40" y="3">MAJOR HIGHWAY</text><line class="idaho-map-route idaho-map-route--warm" x1="0" x2="31" y1="25" y2="25"></line><text x="40" y="28">MAIL-IN FLOW</text><path class="map-ridge" d="M0 55 l8 -10 l8 8 l8 -12 l9 14"></path><text x="40" y="55">MOUNTAIN REGION</text></g>
-<g class="map-compass" transform="translate(554 185)"><text x="0" y="-19">N</text><path d="M0 -13 L-5 2 L0 -1 L5 2 Z" fill="rgba(215,229,243,.62)"></path><line stroke="rgba(215,229,243,.35)" x1="0" x2="0" y1="1" y2="18"></line></g>
-<text class="map-meta" text-anchor="end" x="600" y="568">ROUTES ILLUSTRATIVE · NOT TO SCALE</text>
-</svg>
-</div>
-<div class="route-detail-panel">
-<h3>One practical route: your post office to my bench.</h3>
-<p>The point is not to make mail-in feel fancy. The point is to make it predictable: quote first, pack clean, text at arrival, repair on the bench, return with tracking.</p>
-<div aria-label="Mail-in route details" class="route-micro-grid">
-<div class="route-micro"><strong>Yours</strong><span>postage to us</span></div>
-<div class="route-micro"><strong>Ours</strong><span>postage back</span></div>
-<div class="route-micro"><strong>Texted</strong><span>every handoff</span></div>
-</div>
-</div>
-</div>
-<div class="mail-reality-grid">
-<div class="mail-reality-stat" data-animate="">
-<div class="mail-reality-number">48</div>
-<div class="mail-reality-label">States you can ship from, all at the same published mail-in prices</div>
-</div>
-<div class="mail-reality-stat" data-animate="">
-<div class="mail-reality-number">1–2 days</div>
-<div class="mail-reality-label">Generally on the bench once it arrives, depending on the device and the job</div>
-</div>
-<div class="mail-reality-stat" data-animate="">
-<div class="mail-reality-number">40 days</div>
-<div class="mail-reality-label">Warranty on parts and labor, the same wherever you ship from</div>
-</div>
-<div class="mail-reality-stat" data-animate="">
-<div class="mail-reality-number">$0</div>
-<div class="mail-reality-label">Return postage — always on us, warranty jobs included</div>
-</div>
-</div>
-<div class="mail-reality-note" data-animate="">
-<p>We're based in Hailey, in the Wood River Valley. We're not a massive chain, and we're not shipping your device to a factory across the country. One bench, real updates by text, and a firm quote before any work begins. If you can get to a post office, you've got access to a repair shop.</p>
-</div>
-</div>
+
+<!-- WHAT TO SEND + PRICES -->
+<section class="mx-section mx-section--tint" id="pricing" aria-labelledby="mx-dev-title">
+  <div class="mx-wrap">
+    <header class="mx-head">
+      <p class="mx-kicker">What you can mail in</p>
+      <h2 id="mx-dev-title">Typical mail-in prices.</h2>
+      <p class="mx-sub">Return shipping is already in every price. Your exact number comes by text before anything ships.</p>
+    </header>
+    <div class="mx-devices">
+      <article class="mx-dev">
+        <span aria-hidden="true" class="material-symbols-outlined mx-dev-ic" data-icon="phone_iphone"></span>
+        <h3>Phones</h3>
+        <p class="mx-range">$85–$380</p>
+        <p class="mx-dev-what">iPhone, Samsung, Pixel. Screens, batteries, charge ports, back glass.</p>
+        <p class="mx-dev-links"><a href="/mail-in/iphone">iPhone guide</a><a href="/mail-in/android">Galaxy &amp; Pixel guide</a></p>
+      </article>
+      <article class="mx-dev">
+        <span aria-hidden="true" class="material-symbols-outlined mx-dev-ic" data-icon="laptop_mac"></span>
+        <h3>Laptops</h3>
+        <p class="mx-range">$185–$810</p>
+        <p class="mx-dev-what">MacBooks on the menu, other laptops quoted by text. Screens, batteries, keyboards, charging.</p>
+        <p class="mx-dev-links"><a href="/mail-in/macbook">MacBook guide</a><a href="/laptop-repair">All laptops</a></p>
+      </article>
+      <article class="mx-dev">
+        <span aria-hidden="true" class="material-symbols-outlined mx-dev-ic" data-icon="tablet_mac"></span>
+        <h3>Tablets</h3>
+        <p class="mx-range">$165–$985</p>
+        <p class="mx-dev-what">Every iPad generation, plus Galaxy Tab. Glass, display, battery, charge port.</p>
+        <p class="mx-dev-links"><a href="/mail-in/ipad">iPad guide</a><a href="/tablet-repair">All tablets</a></p>
+      </article>
+      <article class="mx-dev">
+        <span aria-hidden="true" class="material-symbols-outlined mx-dev-ic" data-icon="sports_esports"></span>
+        <h3>Consoles</h3>
+        <p class="mx-range">$60–$295</p>
+        <p class="mx-dev-what">Switch, PS5, Xbox, Steam Deck. Drift, HDMI ports, overheating, fans.</p>
+        <p class="mx-dev-links"><a href="/mail-in/console">Console guide</a><a href="/console-repair">All consoles</a></p>
+      </article>
+    </div>
+    <p class="mx-disclaimer">These are estimates, not binding quotes. Your model, the part and the device's condition set the exact price, and you always get a firm quote before work starts. <a href="/pricing">Prices by model</a></p>
+    <p class="mx-else">Something else? Text a photo and ask. TVs are the one thing we don't take by mail.</p>
+  </div>
 </section>
-<!-- ═══════════════════════════════════════════
-       HOW IT WORKS — 4 STEPS
-  ══════════════════════════════════════════════ -->
-<section class="section" id="how-it-works">
-<div class="container">
-<div class="section-eyebrow">Simple Process</div>
-<h2 class="section-title">How mail-in repair works</h2>
-<p class="section-sub">Four steps. No appointments. No long drive. No shipping your life to a factory.</p>
-<div class="mail-steps-timeline">
-<div class="mail-step" data-animate="">
-<div class="mail-step-number">1</div>
-<div class="mail-step-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="chat"></span></div>
-<div class="mail-step-content">
-<h3>Text or email us</h3>
-<p>Describe what's going on with your device. Include the make, model, and what broke. We'll reply within 30 minutes with a repair estimate — often faster.</p>
-<div class="mail-step-detail">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="schedule"></span>
-              Usually within 30 minutes
-            </div>
-</div>
-</div>
-<div class="mail-step" data-animate="">
-<div class="mail-step-number">2</div>
-<div class="mail-step-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="inventory_2"></span></div>
-<div class="mail-step-content">
-<h3>Pack &amp; ship your device</h3>
-<p>We'll give you the shipping address. Grab a small box, wrap your device in bubble wrap or padding, and drop it at USPS, FedEx, or UPS. You buy the postage to us; a small USPS Priority Mail box works great for phones.</p>
-<div class="mail-step-detail">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="lightbulb"></span>
-              Pro tip: Power off the device. Remove any case.
-            </div>
-</div>
-</div>
-<div class="mail-step" data-animate="">
-<div class="mail-step-number">3</div>
-<div class="mail-step-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="build"></span></div>
-<div class="mail-step-content">
-<h3>We fix it (generally 1–2 days)</h3>
-<p>The moment your device arrives, we text you. Most repairs are done in 1–2 days, depending on the device and the job. If we find anything unexpected, we'll text you before doing extra work — no surprise charges.</p>
-<div class="mail-step-detail">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="notifications_active"></span>
-              Text updates: received → repairing → done → shipped
-            </div>
-</div>
-</div>
-<div class="mail-step" data-animate="">
-<div class="mail-step-number">4</div>
-<div class="mail-step-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span></div>
-<div class="mail-step-content">
-<h3>You pay, we ship it back free</h3>
-<p>Once it's repaired and tested, we send the invoice by text or email. When it's paid, it ships back via USPS Priority Mail on us, and the tracking number comes by text.</p>
-<div class="mail-step-detail">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="verified"></span>
-              Return shipping: included
-            </div>
-</div>
-</div>
-</div>
-</div>
+
+<!-- WHY THIS BENCH -->
+<section class="mx-section" id="from-sam" aria-labelledby="mx-why-title">
+  <div class="mx-wrap mx-why">
+    <figure class="mx-note">
+      <blockquote>
+        <p>I'm one person, not a call center. When you text, you're talking to the person who will open your device and fix it.</p>
+        <p>Most repairs take me under an hour. The shipping takes longer than the fix, so I keep you posted the whole way.</p>
+      </blockquote>
+      <figcaption><span class="mx-sig">Samuel Torres</span><span>Hailey Device Repair, Hailey, Idaho</span></figcaption>
+    </figure>
+    <div>
+      <header class="mx-head mx-head--left">
+        <p class="mx-kicker">Why ship it here</p>
+        <h2 id="mx-why-title">One bench, no depot.</h2>
+      </header>
+      <ul class="mx-trust">
+        <li><span aria-hidden="true" class="material-symbols-outlined" data-icon="handyman"></span><div><strong>Straight to the bench</strong><p>No regional depot, no factory line. A box from Boise and a box from Boston land in the same place.</p></div></li>
+        <li><span aria-hidden="true" class="material-symbols-outlined" data-icon="request_quote"></span><div><strong>Quote before work</strong><p>We confirm the price when it arrives. If we find something unexpected, we text before doing more.</p></div></li>
+        <li><span aria-hidden="true" class="material-symbols-outlined" data-icon="forum"></span><div><strong>Texts at every handoff</strong><p>When it arrives, when work starts, when it's done, and when it ships with tracking.</p></div></li>
+        <li><span aria-hidden="true" class="material-symbols-outlined" data-icon="lock"></span><div><strong>Your data stays put</strong><p>Nothing gets wiped without asking you first.</p></div></li>
+      </ul>
+    </div>
+  </div>
 </section>
-<!-- ═══════════════════════════════════════════
-       WHAT TO TEXT FOR A FAST QUOTE
-  ══════════════════════════════════════════════ -->
-<section class="section" id="what-to-text">
-<div class="container">
-<div class="section-eyebrow">Fastest Quote</div>
-<h2 class="section-title">What to text me so I can quote it fast</h2>
-<p class="section-sub">A good first message saves time. It lets me tell you whether the repair makes sense, what it'll probably cost, and whether mail-in is the right move.</p>
-<div class="text-proof-layout">
-<div>
-<div class="lp-info-grid lp-info-grid--quote">
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="badge"></span></div>
-<h3>Exact model</h3>
-<p>"iPhone 13" is good. "Samsung phone" is not. Include the exact model if you know it.</p>
-</div>
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--green"><span class="material-symbols-outlined" aria-hidden="true" data-icon="heart_broken"></span></div>
-<h3>What actually broke</h3>
-<p>Cracked screen, bad battery, no charge, back glass, water exposure, HDMI issue — be specific.</p>
-</div>
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--cyan"><span class="material-symbols-outlined" aria-hidden="true" data-icon="power_settings_new"></span></div>
-<h3>Current symptoms</h3>
-<p>Does it still turn on? Does touch still work? Any lines, flicker, swelling, or heat?</p>
-</div>
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--red"><span class="material-symbols-outlined" aria-hidden="true" data-icon="photo_camera"></span></div>
-<h3>Photo if you can</h3>
-<p>A quick photo of the damage helps a lot — especially for cracked screens, lifted batteries, and broken ports.</p>
-</div>
-</div>
-</div>
-<aside aria-label="Example text message for a fast quote" class="sms-proof-card" data-animate="">
-<div class="sms-proof-top"><div class="sms-avatar">HDR</div><div><strong>Quote text example</strong><span>What makes Samuel reply fast</span></div></div>
-<div class="sms-thread">
-<div class="sms-bubble sms-bubble--you">iPhone 13, front glass shattered but touch still works. Denver. Need it back this week.</div>
-<div class="sms-bubble sms-bubble--hdr">That is likely worth shipping. Send a photo of the screen and back glass and I’ll give you the price range before you box it up.</div>
-<div class="sms-bubble sms-bubble--you">Data matters. No water. Face ID still works.</div>
-<div class="sms-bubble sms-bubble--hdr">Perfect. Don’t wipe it. Power it off before shipping. I’ll text the packing/address details next.</div>
-</div>
-<div class="sms-proof-checks"><span>model</span><span>symptoms</span><span>data risk</span></div>
-</aside>
-</div>
-</div>
+
+<!-- TERMS IN PLAIN WORDS -->
+<section class="mx-section mx-section--tint" id="terms" aria-labelledby="mx-terms-title">
+  <div class="mx-wrap">
+    <header class="mx-head">
+      <p class="mx-kicker">The fine print</p>
+      <h2 id="mx-terms-title">Plain terms, same in every state.</h2>
+    </header>
+    <dl class="mx-terms">
+      <div><dt><span aria-hidden="true" class="material-symbols-outlined" data-icon="local_shipping"></span>Postage to us</dt><dd>Yours, with any carrier. USPS Priority includes $100 of insurance.</dd></div>
+      <div><dt><span aria-hidden="true" class="material-symbols-outlined" data-icon="package_2"></span>Postage back</dt><dd>Ours, USPS Priority with tracking. Warranty jobs too.</dd></div>
+      <div><dt><span aria-hidden="true" class="material-symbols-outlined" data-icon="receipt_long"></span>Paying</dt><dd>Invoice by text or email once it's fixed and tested. It ships back after it's paid.</dd></div>
+      <div><dt><span aria-hidden="true" class="material-symbols-outlined" data-icon="verified_user"></span>Warranty</dt><dd>40 days on parts and labor, the same as walk-in. <a href="/warranty">Warranty details</a></dd></div>
+      <div><dt><span aria-hidden="true" class="material-symbols-outlined" data-icon="troubleshoot"></span>Bench fee</dt><dd>$60, only when a diagnosis is needed, like no power, water or a mystery fault. It's credited toward the repair, and it still applies if the device can't be fixed.</dd></div>
+      <div><dt><span aria-hidden="true" class="material-symbols-outlined" data-icon="school"></span>Discounts</dt><dd>Student and military, on most repairs. Mention it when you text.</dd></div>
+    </dl>
+  </div>
 </section>
-<!-- ═══════════════════════════════════════════
-       WHAT WE FIX BY MAIL
-  ══════════════════════════════════════════════ -->
-<section class="section section--alt" id="devices">
-<div class="container">
-<div class="section-eyebrow">What We Fix</div>
-<h2 class="section-title">Every device, by mail</h2>
-<p class="section-sub">Same bench, same quote-before-work rule, from any state in the lower 48.</p>
-<div class="lp-info-grid">
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span>
-</div>
-<h3>Phones</h3>
-<p>iPhone, Samsung Galaxy, Google Pixel, OnePlus, Motorola. Screens, batteries, charging ports, water damage, cameras. <a href="/mail-in/iphone">See our iPhone mail-in guide</a> or the <a href="/mail-in/android">Galaxy and Pixel mail-in guide</a>, or view <a href="/iphone-repair">walk-in iPhone repair</a> and <a href="/android-repair">Android repair</a> details.</p>
-<div class="mail-turnaround">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="timer"></span>
-            Generally 1–2 days on the bench
-          </div>
-</div>
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--green">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop"></span>
-</div>
-<h3>Laptops</h3>
-<p>MacBook, Dell, HP, Lenovo, ASUS, Acer. Screens, batteries, keyboards, charging issues, SSD upgrades, fan replacement, virus removal. <a href="/mail-in/macbook">See our MacBook mail-in guide</a>, or view the full <a href="/laptop-repair">laptop repair</a> page for walk-in and model-specific details.</p>
-<div class="mail-turnaround">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="timer"></span>
-            Generally 1–2 days on the bench
-          </div>
-</div>
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--cyan">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="tablet"></span>
-</div>
-<h3>Tablets</h3>
-<p>iPad (all models), Samsung Galaxy Tab, Amazon Fire. Screen replacement, battery swap, charging port, and button repair. <a href="/mail-in/ipad">See our iPad mail-in guide</a>, or view the full <a href="/tablet-repair">tablet repair</a> page for walk-in and model-specific details.</p>
-<div class="mail-turnaround">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="timer"></span>
-            Generally 1–2 days on the bench
-          </div>
-</div>
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--red">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="sports_esports"></span>
-</div>
-<h3>Game Consoles</h3>
-<p>Nintendo Switch, PS5, Xbox, Steam Deck. Joy-Con drift, HDMI ports, overheating, disc drives, stick replacement. <a href="/mail-in/console">See our console mail-in guide</a>, or view <a href="/console-repair">game console repair</a> for walk-in details. Most jobs are done in 1–2 days on the bench.</p>
-<div class="mail-turnaround">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="timer"></span>
-            Generally 1–2 days on the bench
-          </div>
-</div>
-</div>
-<p class="mail-devices-note" data-animate=""><strong>Not on the list?</strong> Text a photo and ask. TVs are the one thing we don’t take by mail.</p>
-</div>
+
+<!-- IDAHO -->
+<section class="mx-section" id="coverage" aria-labelledby="mx-idaho-title">
+  <div class="mx-wrap">
+    <div class="mx-idaho">
+      <div>
+        <p class="mx-kicker">Closer to home</p>
+        <h2 id="mx-idaho-title">In Idaho? Same deal, shorter trip.</h2>
+        <p>From Coeur d'Alene to Pocatello, Idaho mails in exactly like everywhere else. In the Wood River Valley, skip the box and drop it off in Hailey.</p>
+      </div>
+      <ul class="mx-chips" aria-label="Idaho repair pages">
+        <li><a href="/boise-repair">Boise &amp; Treasure Valley</a></li>
+        <li><a href="/twin-falls-repair">Twin Falls</a></li>
+        <li><a href="/rexburg-repair">Rexburg &amp; Upper Valley</a></li>
+        <li><a href="/ketchum-repair">Ketchum &amp; Sun Valley</a></li>
+        <li><a href="/device-repair-hailey-idaho">Drop off in Hailey</a></li>
+      </ul>
+    </div>
+  </div>
 </section>
-<!-- ═══════════════════════════════════════════
-       COVERAGE MAP — CITIES WE SERVE
-  ══════════════════════════════════════════════ -->
-<section class="section" id="coverage">
-<div class="container">
-<div class="section-eyebrow">Coverage</div>
-<h2 class="section-title">Ship from anywhere in the lower 48</h2>
-<p class="section-sub">Seattle, Chicago, Atlanta, or Boise: the box goes to the same bench on the same terms.</p>
-<div aria-label="Mail-in terms in every state" class="mail-nation-strip">
-<span>Same published prices in every state</span>
-<span>Postage in is yours, postage back is ours</span>
-<span>Same 40-day warranty</span>
-</div>
-<h3 class="mail-coverage-home">Closest to the bench: Idaho</h3>
-<div class="mail-cities-grid">
-<div class="mail-city-card" data-animate="">
-<h3 class="mail-city-name">Boise</h3>
-<div class="mail-city-time">Treasure Valley</div>
-<p>Idaho's largest city and a short Priority Mail hop to the bench. <a href="/boise-repair">See the Boise &amp; Treasure Valley repair page.</a></p>
-</div>
-<div class="mail-city-card" data-animate="">
-<h3 class="mail-city-name">Twin Falls</h3>
-<div class="mail-city-time">Mail it — or drive up once</div>
-<p>Close enough to choose: mail it, or drive 80 minutes with the part staged before you leave. <a href="/twin-falls-repair">See the Twin Falls &amp; Magic Valley repair page.</a></p>
-</div>
-<div class="mail-city-card" data-animate="">
-<h3 class="mail-city-name">Idaho Falls</h3>
-<div class="mail-city-time">Eastern Idaho</div>
-<p>Snake River country. Box it, ship it Priority, and follow along by text.</p>
-</div>
-<div class="mail-city-card" data-animate="">
-<h3 class="mail-city-name">Pocatello</h3>
-<div class="mail-city-time">Southeast Idaho</div>
-<p>Gateway city. ISU students love the affordable repair option.</p>
-</div>
-<div class="mail-city-card" data-animate="">
-<h3 class="mail-city-name">Nampa / Meridian</h3>
-<div class="mail-city-time">Treasure Valley</div>
-<p>Treasure Valley suburbs. Same fast shipping as Boise.</p>
-</div>
-<div class="mail-city-card" data-animate="">
-<h3 class="mail-city-name">Coeur d'Alene</h3>
-<div class="mail-city-time">North Idaho</div>
-<p>The far end of the state. A bit further, but still faster than manufacturer repair.</p>
-</div>
-<div class="mail-city-card" data-animate="">
-<h3 class="mail-city-name">Moscow / Lewiston</h3>
-<div class="mail-city-time">The Palouse</div>
-<p>Palouse region. University of Idaho students welcome.</p>
-</div>
-<div class="mail-city-card" data-animate="">
-<h3 class="mail-city-name">Rexburg / Sugar City</h3>
-<div class="mail-city-time">Upper Valley</div>
-<p>Strong fit for BYU-Idaho students, roommates, and nearby East Idaho families. <a href="/rexburg-repair">See the Rexburg &amp; Upper Valley repair page.</a></p>
-</div>
-<div class="mail-city-card" data-animate="">
-<h3 class="mail-city-name">Ketchum / Sun Valley</h3>
-<div class="mail-city-time">Don't mail it — you're 20 minutes away</div>
-<p>North-valley neighbors skip the box entirely: text first, part staged, usually fixed same-day. <a href="/ketchum-repair">See the Ketchum &amp; Sun Valley page.</a></p>
-</div>
-</div>
-</div>
+
+<!-- PACKING -->
+<section class="mx-section mx-section--tint" id="packing" aria-labelledby="mx-pack-title">
+  <div class="mx-wrap mx-narrow">
+    <header class="mx-head">
+      <p class="mx-kicker">Packing</p>
+      <h2 id="mx-pack-title">Four things, then the post office.</h2>
+    </header>
+    <ol class="mx-pack">
+      <li><span><strong>Power it off</strong> and take off the case.</span></li>
+      <li><span><strong>Wrap it</strong> in two layers of bubble wrap, in a sturdy box with no room to slide.</span></li>
+      <li><span><strong>Add a note</strong> with your name, number and passcode.</span></li>
+      <li><span><strong>Text the tracking number</strong> once it's in the mail.</span></li>
+    </ol>
+    <details class="mx-more">
+      <summary>Box sizes and extras by device<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary>
+      <div class="mx-more-body">
+        <p><strong>Phones and tablets:</strong> a USPS Small Flat Rate box shipped Priority usually fits. Leave chargers and accessories at home.</p>
+        <p><strong>Laptops:</strong> a box at least 2 inches bigger on every side, or a USPS Medium Flat Rate box. Put the charger in its own bag. A laptop bag alone isn't enough protection.</p>
+        <p><strong>Consoles:</strong> the original box is ideal, otherwise a Medium Flat Rate box or any sturdy box by weight. Take out discs and cartridges, and wrap Joy-Cons separately.</p>
+      </div>
+    </details>
+  </div>
 </section>
-<!-- ═══════════════════════════════════════════
-       THE PROMISE — 3 GUARANTEES
-  ══════════════════════════════════════════════ -->
-<section class="section section--alt" id="guarantees">
-<div class="container">
-<div class="section-eyebrow">Our Promises</div>
-<h2 class="section-title">Why people trust us with their devices</h2>
-<div class="lp-compare-grid" style="grid-template-columns: repeat(3, 1fr);">
-<div class="lp-compare-card" data-animate="">
-<div class="lp-compare-icon" style="color: var(--color-green);">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="money_off"></span>
-</div>
-<h3>Honest Assessment</h3>
-<p>Every repair starts with a thorough diagnosis. We'll tell you exactly what we found and give you a clear quote before any work begins.</p>
-</div>
-<div class="lp-compare-card" data-animate="">
-<div class="lp-compare-icon" style="color: var(--accent);">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span>
-</div>
-<h3>Text updates at every step</h3>
-<p>You'll never wonder "where's my device?" We text you when it arrives, when we start the repair, when it's done, and when it ships — with a tracking number.</p>
-</div>
-<div class="lp-compare-card" data-animate="">
-<div class="lp-compare-icon" style="color: #f0b429;">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span>
-</div>
-<h3>Return shipping included</h3>
-<p>Tracked USPS Priority Mail back to you is built into every mail-in price. No surprises at the end. What we quote is what you pay — plus only the cost of shipping it to us.</p>
-</div>
-</div>
-</div>
+
+<!-- FAQ -->
+<section class="mx-section" id="faq" aria-labelledby="mx-faq-title">
+  <div class="mx-wrap mx-narrow">
+    <header class="mx-head">
+      <p class="mx-kicker">Questions</p>
+      <h2 id="mx-faq-title">Mail-in questions, answered.</h2>
+    </header>
+    <div class="mx-faq">
+      <details><summary>How does mail-in repair work?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Text or email us to describe your issue. We'll confirm the repair and give you a shipping address. Pack your device securely and ship it. We'll text you when it arrives, when the repair starts, and when it's done. We send the invoice by text or email, and once it's paid we ship it back. Return shipping is included in the mail-in price.</p></details>
+      <details><summary>How long does mail-in repair take?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Most repairs are done within 1-2 days of arriving on the bench, depending on the device and the job. Shipping time each way is on top of that, and we text you at every handoff so you always know where your device is.</p></details>
+      <details><summary>Is return shipping included?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Yes. Tracked USPS Priority Mail return shipping is built into every mail-in price, anywhere in the lower 48. You only pay the postage to send your device to us.</p></details>
+      <details><summary>How much does mail-in repair usually cost?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Most common mail-in jobs fall into these ranges: phones $85-$380+, tablets $165-$985+, laptops $185-$810+, and game consoles $60-$295+. Exact price depends on your model, the part needed, and whether the damage is limited to one component or not.</p></details>
+      <details><summary>What should I text to get a fast quote?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Send the exact model, what broke, whether it still powers on, and a photo if you can. Example: iPhone 13, front glass shattered but touch still works. Denver. Need it back this week. That is enough for us to tell you whether it makes sense to ship and what price range you are probably in.</p></details>
+      <details><summary>What if you can't fix my device?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Every repair starts with a thorough diagnosis. We'll explain what we found and give you a clear quote before any work begins. If the repair isn't feasible, we'll tell you honestly and ship your device back with return postage on us and no repair charge. If it needed a bench diagnosis (no-power, water damage or a mystery fault), the $60 bench fee still applies; when we can fix it, that fee is credited toward the repair.</p></details>
+      <details><summary>How should I pack my device for shipping?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Use a sturdy box with plenty of padding — bubble wrap, packing paper, or even crumpled newspaper works. Remove any cases or accessories. For phones, you can use a small USPS Priority Mail box (free at any post office). Power off the device before shipping.</p></details>
+      <details><summary>Do you take mail-in repairs from outside Idaho?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Yes. We take mail-in repairs from anywhere in the lower 48 states at the same published prices, with the same 40-day warranty. You pay the postage to us, and we pay it back.</p></details>
+      <details><summary>Is there anything you won't take by mail?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>TVs are the one thing we don't take. For anything else, text a photo and ask.</p></details>
+      <details><summary>Is my data safe? Will you wipe my phone?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Never without asking you first. We don't wipe data as part of any standard repair. Screen replacements, battery swaps, charging port fixes — none of these require touching your data. If a repair does require a reset (rare), we'll contact you first.</p></details>
+      <details><summary>Can I use my own shipping label?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Yes. You buy the postage to us, so ship via USPS, FedEx, or UPS, whatever's easiest. USPS Priority Mail is the simplest choice for most devices. Text us the tracking number once it's in the mail.</p></details>
+      <details><summary>Do you offer a warranty on mail-in repairs?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Yes. Mail-in repairs get the same 40-day warranty on parts and labor as walk-in repairs, wherever you ship from. Warranty work ships the same way: you send it to us, and return shipping is on us.</p></details>
+      <details><summary>What about water-damaged devices?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>We can assess water damage by mail, but results depend on how long it's been wet and whether the device was powered on after exposure. Text us your situation before shipping for an honest assessment.</p></details>
+      <details><summary>Do you offer student or military discounts?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Yes. We offer student and military discounts on most repairs. Mention it when you text us.</p></details>
+      <details><summary>What's the cheapest way to ship my device?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>For phones and small tablets, a USPS Small Flat Rate box is usually the easy pick. For laptops and consoles, a USPS Medium Flat Rate box or any sturdy box shipped Priority Mail by weight. The post office counter or usps.com shows current postage.</p></details>
+      <details><summary>Can you fix cracked back glass on iPhone?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Yes. Back glass repair is one of our most common mail-in jobs, especially for iPhone 11 and newer models. Text us your exact iPhone model for a quote.</p></details>
+      <details><summary>What if my device gets damaged during shipping?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>This is extremely rare when devices are packed properly. USPS Priority Mail includes $100 of insurance by default. For higher-value devices, you can add extra coverage at the counter.</p></details>
+      <details><summary>Do I need to include my passcode?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>Yes — include your passcode on a note inside the box. We need it to test the device after repair. We only use it to verify the repair worked.</p></details>
+      <details><summary>How do I pay for the repair?<span aria-hidden="true" class="material-symbols-outlined" data-icon="expand_more"></span></summary><p>When the repair is done and tested, we send an invoice by text or email. Once it's paid, your device ships back. Nothing is due before the repair is finished, so you know it's fixed before you pay.</p></details>
+    </div>
+  </div>
 </section>
-<!-- ═══════════════════════════════════════════
-       MAIL-IN VS ALTERNATIVES
-  ══════════════════════════════════════════════ -->
-<section class="section" id="compare">
-<div class="container">
-<div class="section-eyebrow">The Comparison</div>
-<h2 class="section-title">Mail-in to us vs. the alternatives</h2>
-<div class="lp-table-wrap" data-animate="">
-<table class="lp-table">
-<thead>
-<tr>
-<th scope="col"></th>
-<th class="lp-table-highlight" scope="col">Hailey Device Repair</th>
-<th scope="col">Manufacturer (Apple/Samsung)</th>
-<th scope="col">Big Box Store</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Turnaround</strong></td>
-<td class="lp-table-highlight">1–2 days on the bench + shipping (mail) / same-day (local)</td>
-<td>1-3 weeks</td>
-<td>3-7 days</td>
-</tr>
-<tr>
-<td><strong>Typical phone screen repair</strong></td>
-<td class="lp-table-highlight">$115-$380+</td>
-<td>quote by model</td>
-<td>quote by model</td>
-</tr>
-<tr>
-<td><strong>Thorough Diagnosis</strong></td>
-<td class="lp-table-highlight">✓ $60 only if needed, credited</td>
-<td>Sometimes</td>
-<td>$30-$50</td>
-</tr>
-<tr>
-<td><strong>Return Shipping</strong></td>
-<td class="lp-table-highlight">✓ Free</td>
-<td>Varies</td>
-<td>N/A (in-store)</td>
-</tr>
-<tr>
-<td><strong>Text Updates</strong></td>
-<td class="lp-table-highlight">✓ Every step</td>
-<td>Email only</td>
-<td>Call to check</td>
-</tr>
-<tr>
-<td><strong>Quote Before You Ship</strong></td>
-<td class="lp-table-highlight">✓ Free by text</td>
-<td>Varies</td>
-<td>Varies</td>
-</tr>
-<tr>
-<td><strong>Data Safety</strong></td>
-<td class="lp-table-highlight">Never wiped without asking</td>
-<td>Often wiped</td>
-<td>May be wiped</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<!-- ═══════════════════════════════════════════
-       PACKING TIPS
-  ══════════════════════════════════════════════ -->
-<section class="section section--alt" id="packing">
-<div class="container">
-<div class="section-eyebrow">Packing Guide</div>
-<h2 class="section-title">How to pack your device for shipping</h2>
-<p class="section-sub">Proper packing = safe device. Here's the quick version.</p>
-<div aria-label="Four-layer packing diagram" class="packing-diagram" data-animate="">
-<div class="packing-layer"><svg aria-hidden="true" fill="none" viewbox="0 0 32 32"><rect height="22" rx="3" stroke="currentColor" stroke-width="2" width="14" x="9" y="5"></rect><circle cx="16" cy="23" fill="currentColor" r="1"></circle></svg><strong>Power off</strong><span>no accessories unless asked</span></div>
-<div class="packing-layer"><svg aria-hidden="true" fill="none" viewbox="0 0 32 32"><path d="M8 13c4-6 12-6 16 0v10H8V13Z" stroke="currentColor" stroke-width="2"></path><path d="M10 17h12M10 21h12" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg><strong>Wrap</strong><span>two padded layers</span></div>
-<div class="packing-layer"><svg aria-hidden="true" fill="none" viewbox="0 0 32 32"><path d="M5 10 16 5l11 5v13l-11 5-11-5V10Z" stroke="currentColor" stroke-width="2"></path><path d="m5 10 11 5 11-5M16 15v13" stroke="currentColor" stroke-width="2"></path></svg><strong>Box tight</strong><span>no corner movement</span></div>
-<div class="packing-layer"><svg aria-hidden="true" fill="none" viewbox="0 0 32 32"><path d="M6 10h14v10H6z" stroke="currentColor" stroke-width="2"></path><path d="M20 14h4l2 3v3h-6" stroke="currentColor" stroke-width="2"></path><circle cx="10" cy="23" fill="currentColor" r="2"></circle><circle cx="23" cy="23" fill="currentColor" r="2"></circle></svg><strong>Track</strong><span>text the tracking number</span></div>
-</div>
-<div class="mail-packing-grid">
-<div class="mail-packing-card" data-animate="">
-<div class="mail-packing-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span></div>
-<h3>Phones &amp; Tablets</h3>
-<ul class="mail-packing-list">
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Power off the device</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Remove case and screen protector</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Wrap in bubble wrap (2+ layers)</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Use a small USPS Priority Mail box (free at any post office)</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Fill gaps with packing paper or crumpled newspaper</li>
-<li><span class="material-symbols-outlined" style="color: #ef4444;" aria-hidden="true" data-icon="cancel"></span> <em>Don't</em> include chargers or accessories</li>
-</ul>
-<div class="mail-packing-cost">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span>
-<strong>Good fit:</strong> USPS Small Flat Rate box, shipped Priority Mail
-          </div>
-</div>
-<div class="mail-packing-card" data-animate="">
-<div class="mail-packing-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop"></span></div>
-<h3>Laptops</h3>
-<ul class="mail-packing-list">
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Power off and close the lid</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Wrap in bubble wrap or foam</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Use a box at least 2" larger on all sides</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Pad all sides, especially corners</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Include charger in a separate bag</li>
-<li><span class="material-symbols-outlined" style="color: #ef4444;" aria-hidden="true" data-icon="cancel"></span> <em>Don't</em> ship in a laptop bag (not enough protection)</li>
-</ul>
-<div class="mail-packing-cost">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span>
-<strong>Good fit:</strong> USPS Medium Flat Rate box, or any sturdy box by weight
-          </div>
-</div>
-<div class="mail-packing-card" data-animate="">
-<div class="mail-packing-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sports_esports"></span></div>
-<h3>Game Consoles</h3>
-<ul class="mail-packing-list">
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Power off and unplug everything</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Remove discs and cartridges</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Wrap in bubble wrap</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Original box is ideal if you have it</li>
-<li><span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle"></span> Joy-Cons: ship detached, wrap individually</li>
-<li><span class="material-symbols-outlined" style="color: #ef4444;" aria-hidden="true" data-icon="cancel"></span> <em>Don't</em> include power cables unless asked</li>
-</ul>
-<div class="mail-packing-cost">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span>
-<strong>Good fit:</strong> USPS Medium Flat Rate box, or any sturdy box by weight
-          </div>
-</div>
-</div>
-<div class="mail-packing-tip" data-animate="">
-<span class="material-symbols-outlined" aria-hidden="true" data-icon="info"></span>
-<p><strong>Postage to us is yours, postage back is ours.</strong> Ship with USPS, UPS, or FedEx, whichever is closest. Once it's in the mail, <a href="sms:+12084501606">text us the tracking number</a> so we know it's coming.</p>
-</div>
-</div>
-</section>
-<!-- ═══════════════════════════════════════════
-       PRICING CALLOUT
-  ══════════════════════════════════════════════ -->
-<section class="section" id="pricing">
-<div class="container">
-<div class="section-eyebrow">Transparent Pricing</div>
-<h2 class="section-title">What mail-in pricing actually looks like</h2>
-<p class="price-estimate-note" role="note" style="display:flex;gap:.55rem;align-items:flex-start;max-width:72ch;margin:1.1rem 0;padding:.75rem .95rem;border:1px solid rgba(255,255,255,.14);border-left:3px solid #5B8BCF;border-radius:10px;background:rgba(91,139,207,.09);font-size:.9rem;line-height:1.55;color:#c3ceda"><span aria-hidden="true" style="color:#74a4de;font-weight:700;flex-shrink:0">&#9432;</span><span><strong style="color:#eef3f9">These are not binding quotes.</strong> Your exact price depends on your model, part grade, device condition, and parts availability &mdash; you get a firm number by text before any work begins.</span></p>
-<p class="section-sub">These ranges run from the lowest to the highest mail-in price on the published menu — not bait prices. Final quote depends on the exact model, part quality, and whether the damage is limited to one part or not.</p>
-<div class="mail-pricing-grid">
-<div class="mail-pricing-card" data-animate="">
-<div class="mail-pricing-device"><span class="material-symbols-outlined" aria-hidden="true" data-icon="smartphone"></span> Phones</div>
-<div class="mail-pricing-price"><strong>$85–$380</strong></div>
-<ul class="mail-pricing-items">
-<li>iPhone, Samsung, Pixel, Motorola</li>
-<li>Screens, batteries, charging ports, back glass</li>
-<li>OLED / AMOLED models run higher than LCD</li>
-</ul>
-</div>
-<div class="mail-pricing-card" data-animate="">
-<div class="mail-pricing-device"><span class="material-symbols-outlined" aria-hidden="true" data-icon="laptop"></span> Laptops / MacBooks</div>
-<div class="mail-pricing-price"><strong>$185–$810</strong></div>
-<ul class="mail-pricing-items">
-<li>Screens, batteries, keyboards, charging issues</li>
-<li>SSD upgrades and fan work usually land lower</li>
-<li>MacBook displays and liquid damage run higher</li>
-<li>Range is the MacBook menu; other laptops are quoted by text</li>
-</ul>
-</div>
-<div class="mail-pricing-card" data-animate="">
-<div class="mail-pricing-device"><span class="material-symbols-outlined" aria-hidden="true" data-icon="tablet"></span> Tablets / iPads</div>
-<div class="mail-pricing-price"><strong>$165–$985</strong></div>
-<ul class="mail-pricing-items">
-<li>Glass, display, battery, charging port repairs</li>
-<li>Standard iPads land lower than Pro models</li>
-<li>Model and screen type matter a lot here</li>
-</ul>
-</div>
-<div class="mail-pricing-card" data-animate="">
-<div class="mail-pricing-device"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sports_esports"></span> Game Consoles / Handhelds</div>
-<div class="mail-pricing-price"><strong>$60–$295</strong></div>
-<ul class="mail-pricing-items">
-<li>Joy-Con drift, HDMI ports, overheating, fan issues</li>
-<li>Switch, PS5, Xbox, Steam Deck</li>
-<li>Most common console jobs stay well under replacement cost</li>
-</ul>
-</div>
-</div>
-<div class="mail-reality-note" data-animate="" style="margin-top: 1.75rem; max-width: 760px;">
-<p><strong>Important:</strong> these ranges already include tracked return shipping from me back to you. Every iPhone and console we price has <a href="/repair">its own price page</a>, and the full menu is on the <a href="/pricing">pricing page</a>. You pay only the postage to send it to Hailey. If you want the exact repair price, text me your model and a photo of the damage and I'll quote it before you ship anything.</p>
-</div>
-<p style="text-align:center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">Need model-specific numbers? <a href="/pricing">See the main pricing page</a> · <a href="sms:+12084501606">Text for an exact quote</a></p>
-</div>
-</section>
-<!-- ═══════════════════════════════════════════
-       WHAT HAPPENS AFTER YOU SHIP — DAY BY DAY
-  ══════════════════════════════════════════════ -->
-<section class="section" id="timeline">
-<div class="container">
-<div class="section-eyebrow">Day by Day</div>
-<h2 class="section-title">What happens after you ship</h2>
-<p class="section-sub">Here's exactly what to expect, from the moment you drop your box at the post office to the moment your fixed device is back in your hands.</p>
-<div class="mail-timeline-strip">
-<div class="mail-timeline-day" data-animate="">
-<div class="mail-timeline-day-num">First</div>
-<div class="mail-timeline-day-label">You text us</div>
-<p>You describe what's broken: make, model, what happened. We reply with a repair estimate and our shipping address. Usually within 30 minutes.</p>
-<div class="mail-timeline-day-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="chat"></span></div>
-</div>
-<div class="mail-timeline-day" data-animate="">
-<div class="mail-timeline-day-num">Ship day</div>
-<div class="mail-timeline-day-label">You ship it</div>
-<p>Drop your packed device at USPS, FedEx, or UPS, from anywhere in the lower 48. You buy the postage to us. Text the tracking number so we know it's coming.</p>
-<div class="mail-timeline-day-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="inventory_2"></span></div>
-</div>
-<div class="mail-timeline-day" data-animate="">
-<div class="mail-timeline-day-num">Arrival</div>
-<div class="mail-timeline-day-label">It arrives · We text you</div>
-<p>Your package lands on our bench. We text you: "Got it." We open it, confirm the issue matches what you described, and give you a final quote before starting any work.</p>
-<div class="mail-timeline-day-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="notifications_active"></span></div>
-</div>
-<div class="mail-timeline-day" data-animate="">
-<div class="mail-timeline-day-num">1–2 days</div>
-<div class="mail-timeline-day-label">We fix it</div>
-<p>Most repairs are done in 1–2 days, depending on the device and the job. We text you when repair starts and when it's finished. If we find something unexpected, we text before doing extra work — no surprise charges, ever.</p>
-<div class="mail-timeline-day-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="build"></span></div>
-</div>
-<div class="mail-timeline-day" data-animate="">
-<div class="mail-timeline-day-num">Ship-back</div>
-<div class="mail-timeline-day-label">Back in your hands</div>
-<p>We text or email the invoice. Once it's paid, it ships back via USPS Priority Mail on us, with the tracking number by text. Done.</p>
-<div class="mail-timeline-day-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span></div>
-</div>
-</div>
-</div>
-</section>
-<!-- ═══════════════════════════════════════════
-       FROM THE BENCH — FOUNDER NOTE
-  ══════════════════════════════════════════════ -->
-<section class="section section--alt" id="from-sam">
-<div class="container">
-<div class="mail-founder-note" data-animate="">
-<div class="mail-founder-note-header">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="edit_note"></span>
-<span class="mail-founder-note-label">From the bench</span>
-<div aria-hidden="true" class="bench-ledger">
-<div class="bench-ledger-row"><span>Bench</span><strong>One person</strong></div>
-<div class="bench-ledger-row"><span>Rule</span><strong>Quote first</strong></div>
-<div class="bench-ledger-row"><span>Status</span><strong>Texts sent</strong></div>
-<div class="bench-ledger-row"><span>Return</span><strong>Packed clean</strong></div>
-</div>
-</div>
-<div class="mail-founder-note-body">
-<p>Hey — Samuel here. I run this shop out of Hailey, Idaho.</p>
-<p>I started offering mail-in repair because I kept hearing the same thing from people across the state: <em>"There's nobody close enough to make this easy."</em> McCall, Stanley, Salmon, Challis, Driggs — and a lot of smaller Idaho towns in between — people were driving hours, mailing devices out of state, or just living with broken tech longer than they should have.</p>
-<p>That's ridiculous. Most repairs take me under an hour. The shipping takes longer than the fix. So I made it simple: text me, ship it, I'll fix it, and ship it back — the tracked return trip is included in your mail-in price. You get text updates the whole time so you're not wondering where your stuff is.</p>
-<p>The same deal now covers the whole lower 48. You pay the postage to me, I pay it back, and the 40-day warranty is the same wherever you live.</p>
-<p>I'm one person, not a call center. If you text me, you're talking to the person who's actually going to open your device and fix it. That matters to me, and I think it'll matter to you too.</p>
-<p class="mail-founder-note-sig">— Samuel Torres<br><span>Hailey Device Repair · Hailey, Idaho</span></br></p>
-</div>
-</div>
-</div>
-</section>
-<!-- ═══════════════════════════════════════════
-       TESTIMONIALS
-  ══════════════════════════════════════════════ -->
-<section class="section section--alt" id="testimonials">
-<div class="container">
-<div class="section-eyebrow">Why It Works</div>
-<h2 class="section-title">Why mail-in repair stays practical</h2>
-<p class="section-sub">Most people use this route for the same simple reasons: they can start by text, ship on their own schedule, and follow the repair without guessing what’s happening.</p>
-<div class="lp-info-grid">
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon"><span class="material-symbols-outlined" aria-hidden="true" data-icon="sms"></span></div>
-<h3>Start with a clear estimate</h3>
-<p>Text the model, the issue, and a photo if you can. You get a realistic range and next steps before you box anything up.</p>
-</div>
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--green"><span class="material-symbols-outlined" aria-hidden="true" data-icon="local_shipping"></span></div>
-<h3>Ship from anywhere in the lower 48</h3>
-<p>Most customers just use USPS Priority Mail, which keeps the process simple whether you’re in Boise, Phoenix, Chicago, or a town with no repair shop at all.</p>
-</div>
-<div class="lp-info-card" data-animate="">
-<div class="lp-info-card-icon lp-info-card-icon--cyan"><span class="material-symbols-outlined" aria-hidden="true" data-icon="verified"></span></div>
-<h3>Get updates through return shipping</h3>
-<p>You’ll know when it arrives, when work starts, and when it ships back. Return shipping is on us, warranty jobs included.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- ═══════════════════════════════════════════
-       FAQ
-  ══════════════════════════════════════════════ -->
-<section class="section section--alt" id="faq">
-<div class="container">
-<div class="section-eyebrow">Questions</div>
-<h2 class="section-title">Mail-in FAQ</h2>
-<div class="faq-list">
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>How does mail-in repair work?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Text or email us to describe your issue. We'll confirm the repair and give you a shipping address. Pack your device securely and ship it. We'll text you when it arrives, when the repair starts, and when it's done. We send the invoice by text or email, and once it's paid we ship it back. Return shipping is included in the mail-in price.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>How long does the whole process take?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Most repairs are done within 1–2 days of arriving on the bench, depending on the device and the job. Shipping time each way is on top of that, and we text you at every handoff so you always know where your device is.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>Is return shipping really free?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Yes. Return shipping via USPS Priority Mail is always on us, anywhere in the lower 48, warranty jobs included. You only pay the postage to send your device to us.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>How much does mail-in repair usually cost?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Most common mail-in jobs fall into these ranges: <strong>phones $85-$380+</strong>, <strong>tablets $165-$985+</strong>, <strong>laptops $185-$810+</strong>, and <strong>game consoles $60-$295+</strong> (see the <a href="/ps5-repair">PS5 mail-in page</a>). Exact price depends on your model, the part needed, and whether the damage is limited to one component or not. <a href="#pricing">See the pricing section above</a> for realistic ranges.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>What should I text you to get a fast quote?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Send the exact model, what broke, whether it still powers on, and a photo if you can. Example: <strong>"iPhone 13, front glass shattered but touch still works. Denver. Need it back this week."</strong> That's enough for me to tell you whether it makes sense to ship and what price range you're probably in.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>What if you can't fix my device?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Every repair starts with a thorough diagnosis. We'll explain what we found and give you a clear quote before any work begins. If the repair isn't feasible, we'll tell you honestly and ship your device back with return postage on us and no repair charge. If it needed a bench diagnosis (no-power, water damage or a mystery fault), the <strong>$60 bench fee</strong> still applies; when we can fix it, that fee is credited toward the repair.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>How should I pack my device?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Use a sturdy box with plenty of padding — bubble wrap, packing paper, or even crumpled newspaper works. Remove any cases or accessories. For phones, a small USPS Priority Mail box (free at any post office) is perfect. Power off the device before shipping. <a href="#packing">See our full packing guide above.</a></p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>Do you take mail-in repairs from outside Idaho?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Yes. We take mail-in repairs from anywhere in the lower 48 states at the same <a href="/pricing">published prices</a>, with the same <a href="/warranty">40-day warranty</a>. You pay the postage to us, and we pay it back.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>Is there anything you won't take by mail?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>TVs are the one thing we don't take. For anything else, <a href="sms:+12084501606">text a photo and ask</a>.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>Is my data safe? Will you wipe my phone?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Never without asking you first. We don't wipe data as part of any standard repair. Screen replacements, battery swaps, charging port fixes — none of these require touching your data. If a repair does require a reset (rare), we'll contact you first and make sure you have a backup.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>Can I use my own shipping label?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Yes. You buy the postage to us, so ship via USPS, FedEx, or UPS, whatever's easiest. USPS Priority Mail is the simplest choice for most devices. Text us the tracking number once it's in the mail.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>Do you offer a warranty on mail-in repairs?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Yes. Mail-in repairs get the same 40-day warranty on parts and labor as walk-in repairs, wherever you ship from. Warranty work ships the same way: you send it to us, and return shipping is on us. <a href="/warranty">See our full warranty details.</a></p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>What about water-damaged devices?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>We can assess water damage by mail, but results depend on how long it's been wet and whether the device was powered on after exposure. Text us your situation before shipping and we'll give you an honest assessment of whether it's worth sending. <a href="/tips/water-damaged-phone">See our water damage first-aid guide.</a></p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>I'm a college student. Any discounts?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Yes. We offer student and military discounts on most repairs. Mention it when you text us. <a href="/pricing">See details on our student &amp; military page.</a></p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>What's the cheapest way to ship my device?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>For phones and small tablets: a <strong>USPS Small Flat Rate Box</strong> fits most phones wrapped in bubble wrap. For laptops and consoles: a <strong>USPS Medium Flat Rate Box</strong>, or any sturdy box you already have shipped Priority Mail by weight. The post office counter or usps.com shows current postage.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>Can you fix a cracked back glass on iPhone?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>Yes. Back glass repair is one of our most common mail-in jobs, especially for iPhone 11 and newer models. Pricing varies by model — text us your exact iPhone model and we'll give you a quote in minutes. <a href="/iphone-repair">See iPhone repair details.</a></p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>What if my device gets damaged during shipping?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>This is extremely rare when devices are packed properly, but it's why we include detailed <a href="#packing">packing instructions</a>. Use enough padding, use a sturdy box, and you'll be fine. USPS Priority Mail includes $100 of insurance by default. For higher-value devices, you can add extra coverage at the counter.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>Do I need to include my passcode?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>We need to be able to test the device after repair, so yes — include your passcode on a note inside the box (not written on the outside). We only use it to verify the repair worked. Your data stays private.</p>
-</div>
-</details>
-<details class="faq-item" data-animate="">
-<summary class="faq-question">
-<span>How do I pay for the repair?</span>
-<span class="material-symbols-outlined faq-chevron" aria-hidden="true" data-icon="expand_more"></span>
-</summary>
-<div class="faq-answer">
-<p>When the repair is done and tested, we send an invoice by text or email. Once it's paid, your device ships back. Nothing is due before the repair is finished, so you know it's actually fixed before you pay.</p>
-</div>
-</details>
-</div>
-</div>
-</section>
-<!-- ═══════════════════════════════════════════
-       BOTTOM CTA
-  ══════════════════════════════════════════════ -->
-<section class="section mail-final-section">
-<div class="container">
-<div class="lp-bottom-cta" data-animate="">
-<h2 class="section-title">Ready to get your device fixed?</h2>
-<p class="section-sub">Text us right now. Describe the problem. We'll have a quote and shipping instructions back to you within 30 minutes.</p>
-<div class="hero-actions" style="justify-content: center;">
-<a class="btn btn-primary btn-lg" href="sms:+12084501606">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>
-            Text 208-450-1606
-          </a>
-<a class="btn btn-outline btn-lg" href="mailto:samuel@haileyrepair.com">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="mail"></span>
-            Email Us
-          </a>
-</div>
-</div>
-</div>
+
+<!-- LAST CALL -->
+<section class="mx-end" aria-labelledby="mx-end-title">
+  <div class="mx-wrap mx-end-inner">
+    <h2 id="mx-end-title">Text a photo. Get a price.<span>Then decide.</span></h2>
+    <p>Nothing ships until you know what it costs.</p>
+    <a class="mx-btn mx-btn--go" href="sms:+12084501606?&amp;body=Hi%20Hailey%20Device%20Repair%2C%20I%20want%20to%20mail%20in%20a%20device%20for%20repair." data-quote-kind="mail_in_start"><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span>Text for a free quote</a>
+    <p class="mx-alt">208-450-1606, or <a href="mailto:samuel@haileyrepair.com?subject=Mail-in%20repair" data-quote-kind="mail_in_email">email samuel@haileyrepair.com</a></p>
+  </div>
 </section>
 </main>
 <!-- FOOTER -->
@@ -3151,7 +2606,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 <div class="hdr-mcta" id="hdrMcta">
-<a class="hdr-mcta-text" href="sms:+12084501606?&amp;body=Hi%20Hailey%20Device%20Repair%2C%20I%20want%20to%20mail%20in%20a%20device%20for%20repair."><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span> Text for a quote</a>
+<a class="hdr-mcta-text" data-quote-kind="mail_in_start" href="sms:+12084501606?&amp;body=Hi%20Hailey%20Device%20Repair%2C%20I%20want%20to%20mail%20in%20a%20device%20for%20repair."><span aria-hidden="true" class="material-symbols-outlined" data-icon="sms"></span> Text for a quote</a>
 <a class="hdr-mcta-call" href="tel:+12084501606"><span aria-hidden="true" class="material-symbols-outlined" data-icon="call"></span> Call</a>
 </div>
 <script>
