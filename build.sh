@@ -7,6 +7,7 @@ cd "$(dirname "$0")"
 python3 scripts/build-repair-prices.py
 python3 scripts/build-search-index.py
 python3 scripts/add-mail-in-nav.py
+python3 scripts/add-tips-mail-in-line.py
 python3 scripts/build-shared-navigation.py
 python3 scripts/build-tips-price-links.py
 python3 scripts/add-quote-tracking.py

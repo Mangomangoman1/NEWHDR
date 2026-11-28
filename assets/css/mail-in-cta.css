@@ -159,3 +159,9 @@ html body .tip-nav-links .tip-quote::before{content:"request_quote";font-family:
   html body .tip-nav-links .tip-quote{padding:0 .5rem!important;font-size:.74rem!important}
   html body .tip-nav-links .mi-nav,html body .tip-nav-links .tip-quote{font-size:.74rem!important}
 }
+
+/* Tips pages: quiet mail-in line inside the top text box (scripts/add-tips-mail-in-line.py) */
+.bench-cta .bench-mail-in{margin:.55rem 0 0;padding-top:.55rem;border-top:1px solid rgba(111,211,179,.16);font-size:.86rem;line-height:1.4}
+.bench-cta .bench-mail-in a{color:rgb(111,211,179);font-weight:600;text-decoration:none;transition:color .18s}
+.bench-cta .bench-mail-in a:hover{color:#9be4cb;text-decoration:underline;text-underline-offset:3px}
+.bench-cta .bench-mail-in a:focus-visible{outline:2px solid rgb(111,211,179);outline-offset:3px;border-radius:4px}

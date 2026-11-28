@@ -11,7 +11,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parent.parent
-CSS_TAG = '<link rel="stylesheet" href="/assets/css/mail-in-cta.css?v=20261127b">'
+CSS_TAG = '<link rel="stylesheet" href="/assets/css/mail-in-cta.css?v=20261128">'
 HUB = '/mail-in-repair'
 ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" '
         'stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/>'
